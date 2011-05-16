@@ -1,0 +1,44 @@
+<screen name="VIXEPG" position="center,center" size="1280,720" backgroundColor="#000000" title="Programme Guide" flags="wfNoBorder">
+  <eLabel text="Programme Guide" position="460,20" size="480,30" font="Regular;26" foregroundColor="#FFFFFF" backgroundColor="#000000" shadowColor="#000000" halign="center" transparent="1" />
+  <widget name="date" position="40,20" size="180,30" font="Regular;26" halign="left" foregroundColor="#00e5b243" backgroundColor="#000000" transparent="1" />
+  <widget source="global.CurrentTime" render="Label" position="283, 20" size="90,30" font="Regular;26" foregroundColor="#FFFFFF" backgroundColor="#000000" shadowColor="#000000" halign="right" transparent="1">
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Label" position="1070, 20" size="160,30" font="Regular;26" foregroundColor="#FFFFFF" backgroundColor="#000000" shadowColor="#000000" halign="right" transparent="1">
+    <convert type="ClockToText">Format:%d.%m.%Y</convert>
+  </widget>
+  <eLabel position="858,60" size="382,215" zPosition="2" backgroundColor="#000000" foregroundColor="#000000" />
+  <widget source="session.VideoPicture" render="Pig" position="860,62" size="378,211" zPosition="3" backgroundColor="#ff000000" />
+  <widget source="Event" render="Label" position="5,60" size="100, 30" font="Regular;26" foregroundColor="#00e5b243" backgroundColor="#000000" shadowColor="#000000" halign="right" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText" />
+  </widget>
+  <widget source="Event" render="Label" position="113,60" size="100, 30" font="Regular;26" foregroundColor="#00e5b243" backgroundColor="#000000" shadowColor="#000000" halign="left" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Format:- %H:%M</convert>
+  </widget>
+  <widget source="Event" render="Label" position="230,60" size="600,30" font="Regular;26" foregroundColor="#00e5b243" backgroundColor="#000000" transparent="1" halign="left">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget source="Event" render="Label" position="40,90" zPosition="1" size="790,185" font="Regular;20" foregroundColor="#00dddddd" backgroundColor="#000000" shadowColor="#000000" transparent="1" valign="top">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget name="lab1" position="40,320" size="1200,350" font="Regular;24" halign="center" transparent="0" zPosition="2" />
+  <widget name="timeline_text" position="9,290" size="1230,30" foregroundColor="#00e5b243" backgroundColor="#000000" transparent="1" />
+  <widget name="list" position="40,320" size="1200,350" scrollbarMode="showNever" transparent="1" />
+  <widget name="timeline0" position="0,320" zPosition="1" size="0,0" pixmap="skin_default/timeline.png" />
+  <widget name="timeline1" position="0,320" zPosition="1" size="0,0" pixmap="skin_default/timeline.png" />
+  <widget name="timeline2" position="0,320" zPosition="1" size="0,0" pixmap="skin_default/timeline.png" />
+  <widget name="timeline3" position="0,320" zPosition="1" size="0,0" pixmap="skin_default/timeline.png" />
+  <widget name="timeline4" position="0,320" zPosition="1" size="0,0" pixmap="skin_default/timeline.png" />
+  <widget name="timeline5" position="0,320" zPosition="1" size="0,0" pixmap="skin_default/timeline.png" />
+  <widget name="timeline_now" position="0,320" zPosition="2" size="19,350" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/VIXEPG/timeline-now.png" alphatest="on" />
+    <ePixmap pixmap="skin_default/buttons/red.png" position="270, 675" size="25,25" alphatest="blend" />
+  <widget name="key_red" position="305, 679" size="150, 24" font="Regular;20" foregroundColor="#9F1313" backgroundColor="#000000" shadowColor="#000000" halign="left" valign="top" transparent="1" />
+    <ePixmap pixmap="skin_default/buttons/green.png" position="460, 675" size="25,25" alphatest="blend" />
+  <widget name="key_green" position="495, 679" size="150, 24" font="Regular;20" foregroundColor="#00389416" backgroundColor="#000000" shadowColor="#000000" halign="left" valign="top" transparent="1" />
+    <ePixmap pixmap="skin_default/buttons/yellow.png" position="670, 675" size="25,25" alphatest="blend" />
+  <widget name="key_yellow" position="705, 679" size="150, 24" font="Regular;20" foregroundColor="#B59E01" backgroundColor="#000000" shadowColor="#000000" halign="left" valign="top" transparent="1" />
+    <ePixmap pixmap="skin_default/buttons/blue.png" position="860, 675" size="25,25" alphatest="blend" />
+  <widget name="key_blue" position="895, 679" size="150, 24" font="Regular;20" foregroundColor="#1E28B6" backgroundColor="#000000" shadowColor="#000000" halign="left" valign="top" transparent="1" />
+</screen>

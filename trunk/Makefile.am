@@ -1,0 +1,3 @@
+AUTOMAKE_OPTIONS = gnu
+
+SUBDIRS = VIX python2.6 etc

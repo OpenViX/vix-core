@@ -1,0 +1,125 @@
+# English translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Andrew Blackburn <andyblac@vuplus-support.co.uk>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-20 16:05+0000\n"
+"PO-Revision-Date: 2010-12-20 16:05+0000\n"
+"Last-Translator: Andrew Blackburn <andyblac@vuplus-support.co.uk>\n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: SwapManager.py:52
+msgid "Swap Manager"
+msgstr "Swap Manager"
+
+#: SwapManager.py:56
+msgid "Swap Place:"
+msgstr "Swap Place:"
+
+#: SwapManager.py:58
+msgid "Swap Size:"
+msgstr "Swap Size:"
+
+#: SwapManager.py:60
+msgid "Status:"
+msgstr "Status:"
+
+#: SwapManager.py:61
+msgid "Inactive"
+msgstr "Inactive"
+
+#: SwapManager.py:62
+msgid "Active"
+msgstr "Active"
+
+#: SwapManager.py:63 SwapManager.py:141 SwapManager.py:187
+msgid "Activate"
+msgstr "Activate"
+
+#: SwapManager.py:64 SwapManager.py:144
+msgid "Create"
+msgstr "Create"
+
+#: SwapManager.py:65
+msgid "Autostart"
+msgstr "Autostart"
+
+#: SwapManager.py:84
+msgid "Wait please while scanning..."
+msgstr "Wait please while scanning..."
+
+#: SwapManager.py:137 SwapManager.py:184
+msgid "Deactivate"
+msgstr "Deactivate"
+
+#: SwapManager.py:142
+msgid " "
+msgstr " "
+
+#: SwapManager.py:166
+msgid "Delete"
+msgstr "Delete"
+
+#: SwapManager.py:188
+msgid "Enable Swap at startup"
+msgstr "Enable Swap at startup"
+
+#: SwapManager.py:203
+msgid "Swap File not found. You have to create the file before to activate."
+msgstr "Swap File not found. You have to create the file before to activate."
+
+#: SwapManager.py:204 SwapManager.py:262 SwapManager.py:267 SwapManager.py:282
+msgid "Info"
+msgstr "Info"
+
+#: SwapManager.py:233
+msgid "Please select device to use as swapfile location"
+msgstr "Please select device to use as swapfile location"
+
+#: SwapManager.py:239
+msgid "8 Mb"
+msgstr "8 Mb"
+
+#: SwapManager.py:239
+msgid "16 Mb"
+msgstr "16 Mb"
+
+#: SwapManager.py:239
+msgid "32 Mb"
+msgstr "32 Mb"
+
+#: SwapManager.py:239
+msgid "64 Mb"
+msgstr "64 Mb"
+
+#: SwapManager.py:239
+msgid "96 Mb"
+msgstr "96 Mb"
+
+#: SwapManager.py:240
+msgid "Select the Swap File Size:"
+msgstr "Select the Swap File Size:"
+
+#: SwapManager.py:251
+msgid "Wait please while creating swapfile..."
+msgstr "Wait please while creating swapfile..."
+
+#: SwapManager.py:261
+msgid "Swap File successfully created."
+msgstr "Swap File successfully created."
+
+#: SwapManager.py:266
+msgid "Swap File creation Failed. Check for Available space."
+msgstr "Swap File creation Failed. Check for Available space."
+
+#: SwapManager.py:281
+msgid "You have to create a Swap File before to activate the autostart."
+msgstr "You have to create a Swap File before to activate the autostart."

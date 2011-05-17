@@ -552,9 +552,9 @@ class CheckTask(Components.Task.PythonTask):
 		fileurl = fd.read()
 		fd.close()
 		if fileurl.find('experimental') < 0:
-			sourcefile='http://www.world-of-satellite.com/plugin_feed/feeds/' + version + '/' + box_type + '/image-version'
+			sourcefile='http://enigma2.world-of-satellite.com/feeds/release/' + box_type + '/image-version'
 		else:
-			sourcefile='http://www.world-of-satellite.com/plugin_feed/feeds/experimental/' + box_type + '/image-version'
+			sourcefile='http://enigma2.world-of-satellite.com/feeds/ghtudh66383/' + box_type + '/image-version'
 		sourcefile,headers = urllib.urlretrieve(sourcefile)
 		rename(sourcefile,'/tmp/online-image-version')
 

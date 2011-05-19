@@ -499,9 +499,9 @@ class VersionCheckPoller:
 
 	def start(self, initial = True):
 		if initial:
-			delay = 0
+			delay = 600 #10 minutes
 		else:
-			delay = 86400 #once a day
+			delay = 43200 #twice a day
 
 		if self.version_check not in self.timer.callback:
 			self.timer.callback.append(self.version_check)

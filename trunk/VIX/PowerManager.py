@@ -39,14 +39,6 @@ def PowerManagerautostart(reason, session=None, **kwargs):
 			_session = session
 			if autoPowerManagerTimer is None:
 				autoPowerManagerTimer = AutoPowerManagerTimer(session)
-		if pathExists("/etc/enigmastandby"):
-			print "[StartupToStandby] Returning to standby"
-			from Tools import Notifications
-			Notifications.AddNotification(Standby)
-			try:
-				remove("/etc/enigmastandby")
-			except:
-				pass	
 	else:
 		print "[PowerManager] Stop"
 		autoPowerManagerTimer.stop()        
@@ -425,10 +417,6 @@ class AutoPowerManagerTimer:
 				ybox = self.session.openWithCallback(self.doDeepStandby, MessageBox, message, MessageBox.TYPE_YESNO, timeout = 30)
 				ybox.setTitle('Restart Enigma2.')
 			else:
-				try:
-					open('/etc/enigmastandby', 'wb').close()
-				except:
-					print "Failed to create /etc/enigmastandby"
 				self.doDeepStandby(answer=True)
 
 	def doDeepStandby(self, answer):
@@ -494,10 +482,6 @@ class AutoPowerManagerTimer:
 				ybox = self.session.openWithCallback(self.doGuiRestart, MessageBox, message, MessageBox.TYPE_YESNO, timeout = 30)
 				ybox.setTitle('Restart Enigma2.')
 			else:
-				try:
-					open('/etc/enigmastandby', 'wb').close()
-				except:
-					print "Failed to create /etc/enigmastandby"
 				self.doGuiRestart(answer=True)
 
 	def doGuiRestart(self, answer):
@@ -564,10 +548,6 @@ class AutoPowerManagerTimer:
 				ybox = self.session.openWithCallback(self.doReboot, MessageBox, message, MessageBox.TYPE_YESNO, timeout = 30)
 				ybox.setTitle('Restart Enigma2.')
 			else:
-				try:
-					open('/etc/enigmastandby', 'wb').close()
-				except:
-					print "Failed to create /etc/enigmastandby"
 				self.doReboot(answer=True)
 
 	def doReboot(self, answer):

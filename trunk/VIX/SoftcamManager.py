@@ -654,14 +654,6 @@ class VIXSoftcamMenu(ConfigListScreen, Screen):
 			x[1].cancel()
 		self.close()
 
-class FailedPostcondition(Components.Task.Condition):
-	def __init__(self, exception):
-		self.exception = exception
-	def getErrorMessage(self, task):
-		return str(self.exception)
-	def check(self, task):
-		return self.exception is None
-
 class SoftcamCheckTask(Components.Task.PythonTask):
 	def setup(self, autostartcams):
 		self.autostartcams = autostartcams
@@ -677,6 +669,26 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 				fh.write(data)
 				fh.truncate()
 				fh.close()
+
+		if path.exists('/etc/CCcam.cfg'):
+			f = open('/etc/CCcam.cfg', 'r')
+			for line in f.readlines():
+				if line.find('LOG WARNINGS') != -1:
+					parts = line.strip().split()
+					logwarn = parts[2]
+					if logwarn.find(':') >=0:
+						logwarn = logwarn.replace(':','')
+					if logwarn == '':
+						logwarn = parts[3]
+			if path.exists(logwarn):
+				if path.getsize(logwarn) > 40000:
+					fh = open(logwarn, 'rb+')
+					fh.seek(-40000, 2)
+					data = fh.read()
+					fh.seek(0) # rewind
+					fh.write(data)
+					fh.truncate()
+					fh.close()
 
 		for softcamcheck in self.autostartcams:
 			softcamcheck = softcamcheck.replace("\n","")
@@ -732,10 +744,6 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 							print '[SoftcamManager] Checking if ' + softcamcheck + ' is frozen'
 							if port == "":
 								port="16000"
-							output = open('/tmp/cam.check.log','a')
-							now = datetime.now()
-							output.write(now.strftime("%Y-%m-%d %H:%M") + ": OScam process is present, now checking if OScam is frozen\n")
-							output.close()
 							self.Console.ePopen("wget http://127.0.0.1:" + port + "/status.html 2> /tmp/frozen")
 							sleep(2)
 							frozen = file('/tmp/frozen').read()
@@ -782,7 +790,7 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 							remove('/tmp/frozen')
 
 						elif softcamcheck.startswith('CCcam') or softcamcheck.startswith('cccam'):
-							allow = 'no'
+							allow = 'notset'
 							port = ''
 							f = open('/etc/CCcam.cfg', 'r')
 							for line in f.readlines():
@@ -819,10 +827,6 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 								print '[SoftcamManager] Checking if ' + softcamcheck + ' is frozen'
 								if port == "":
 									port="16000"
-								output = open('/tmp/cam.check.log','a')
-								now = datetime.now()
-								output.write(now.strftime("%Y-%m-%d %H:%M") + ": CCcam process is present, now checking if CCcam is frozen\n")
-								output.close()
 								self.Console.ePopen("echo info|nc 127.0.0.1 " + port + " | grep Welcome | awk '{print $1}' > /tmp/frozen")
 								sleep(2)
 								frozen = file('/tmp/frozen').read()
@@ -844,8 +848,10 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 									print '[SoftcamManager] Starting ' + softcamcheck
 									self.Console.ePopen('/usr/softcams/' + softcamcheck)
 								remove('/tmp/frozen')
-							else:
+							elif allow.find('NO') >= 0 or allow.find('no') >= 0:
 								print '[SoftcamManager] Telnet info not allowed, can not check if frozen'
+							else:
+								print "[SoftcamManager] Telnet info not setup, please enable 'ALLOW TELNETINFO = YES'"
 
 					elif softcamcheck_process == "":
 						output = open('/tmp/cam.check.log','a')
@@ -884,7 +890,6 @@ class SoftcamAutoPoller:
 	"""Automatically Poll SoftCam"""
 	def __init__(self):
 		# Init Timer
-		self.Console = Console()
 		self.timer = eTimer()
 
 	def start(self, initial = True):
@@ -908,7 +913,6 @@ class SoftcamAutoPoller:
 		now = int(time())
 		print "[SoftcamManager] Poll occured at", strftime("%c", localtime(now))
 
-		self.Console = Console()
 		if path.exists('/tmp/SoftcamRuningCheck.tmp'):
 			remove('/tmp/SoftcamRuningCheck.tmp')
 		if not path.exists('/etc/keys'):
@@ -930,14 +934,12 @@ class SoftcamAutoPoller:
 
 		if path.exists('/etc/SoftcamsAutostart'):
 			autostartcams = file('/etc/SoftcamsAutostart').readlines()
-		else:
-			autostartcams = ""
+			name = _("SoftcamCheck")
+			job = Components.Task.Job(name)
+			task = SoftcamCheckTask(job, name)
+			task.setup(autostartcams)
+			Components.Task.job_manager.AddJob(job)
 
-		name = _("SoftcamCheck")
-		job = Components.Task.Job(name)
-		task = SoftcamCheckTask(job, name)
-		task.setup(autostartcams)
-		Components.Task.job_manager.AddJob(job)
 		if config.plugins.ViXSettings.Softcamenabled.value:
 			self.timer.startLongTimer(config.plugins.ViXSettings.Softcamtimer.value * 60)
 		else:

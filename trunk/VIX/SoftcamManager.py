@@ -680,6 +680,8 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 						logwarn = logwarn.replace(':','')
 					if logwarn == '':
 						logwarn = parts[3]
+				else:
+					logwarn = ""
 			if path.exists(logwarn):
 				if path.getsize(logwarn) > 40000:
 					fh = open(logwarn, 'rb+')

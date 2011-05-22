@@ -223,9 +223,6 @@ class VIXMenu(Screen):
 
 		if self.sel == 0:
 			self.session.open(VIXCronManager)
-		elif self.sel == 1:
-			if fileExists("/usr/lib/enigma2/python/Plugins/SystemPlugins/CrossEPG/plugin.pyo"):
-				self.session.open(CrossEPG_Menu)
 		elif self.sel == 2:
 			self.session.open(VIXDevicesPanel)
 		elif self.sel == 3:
@@ -238,8 +235,6 @@ class VIXMenu(Screen):
 			self.session.open(VIXScriptRunner)
 		elif self.sel == 7:
 			self.session.open(VIXSwap)
-		elif self.sel == 8:
-			self.session.openWithCallback(doneConfiguring, EPGMainSetup)
 
 	def updateList(self):
 		self.list = []
@@ -247,11 +242,6 @@ class VIXMenu(Screen):
 		idx = 0
 		res = (name, idx)
 		self.list.append(res)
-		if fileExists("/usr/lib/enigma2/python/Plugins/SystemPlugins/CrossEPG/plugin.pyo"):
-			name = _("CrossEPG")
-			idx = 1
-			res = (name, idx)
-			self.list.append(res)
 		name = _("Devices Manager")
 		idx = 2
 		res = (name, idx)
@@ -274,10 +264,6 @@ class VIXMenu(Screen):
 		self.list.append(res)
 		name = _("Swap Manager")
 		idx = 7
-		res = (name, idx)
-		self.list.append(res)
-		name = _("XMLTV-Importer")
-		idx = 8
 		res = (name, idx)
 		self.list.append(res)
 		self['list'].list = self.list
@@ -321,19 +307,6 @@ class VIXSetup(ConfigListScreen, Screen):
 		self.restartneeded = False
 		self.olddebug = config.plugins.ViXSettings.enabledebug.value
 		self.oldoverscan = config.plugins.ViXSettings.overscanamount.value
-		self.epgcache_filename = config.misc.epgcache_filename.value
-
-		epgdata = []
-		for p in harddiskmanager.getMountedPartitions():
-			d = path.normpath(p.mountpoint)
-			if pathExists(p.mountpoint):
-				if p.mountpoint == '/':
-					epgdata.append(('/hdd/epg.dat', p.description))
-				else:
-					epgdata.append((d + '/epg.dat', p.mountpoint))
-		if len(epgdata):
-			print 'epgdata ' + str(epgdata)
-			config.misc.epgcache_filename = ConfigSelection(default = "/hdd/epg.dat", choices = epgdata)
 
 		self.onChangedEntry = [ ]
 
@@ -353,7 +326,6 @@ class VIXSetup(ConfigListScreen, Screen):
 		self.editListEntry = None
 		self.list = []
 		self.list.append(getConfigListEntry(_("Menu Overscan amount"), config.plugins.ViXSettings.overscanamount))
-		self.list.append(getConfigListEntry(_("Choose EPG location"), config.misc.epgcache_filename))
 		self.list.append(getConfigListEntry(_("Use TV button to"), config.plugins.ViXSettings.TVButtonAction))
 		self.list.append(getConfigListEntry(_("Use ViX Coloured Butons"), config.plugins.ViXSettings.ColouredButtons))
 		self.list.append(getConfigListEntry(_("Subservice (Green)"), config.plugins.ViXSettings.Subservice))
@@ -386,11 +358,10 @@ class VIXSetup(ConfigListScreen, Screen):
 		return str(self["config"].getCurrent()[1].getText())
 
 	def keySaveNew(self):
-		print 'EPG location ', config.misc.epgcache_filename.value
 		for x in self["config"].list:
 			x[1].save()
 
-		if self.olddebug != config.plugins.ViXSettings.enabledebug.value or self.oldoverscan != config.plugins.ViXSettings.overscanamount.value or self.epgcache_filename != config.misc.epgcache_filename.value:
+		if self.olddebug != config.plugins.ViXSettings.enabledebug.value or self.oldoverscan != config.plugins.ViXSettings.overscanamount.value:
 			self.restartneeded = True
 
 		if config.plugins.ViXSettings.enabledebug.value:

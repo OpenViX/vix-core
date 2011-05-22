@@ -672,6 +672,7 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 
 		if path.exists('/etc/CCcam.cfg'):
 			f = open('/etc/CCcam.cfg', 'r')
+			logwarn = ""
 			for line in f.readlines():
 				if line.find('LOG WARNINGS') != -1:
 					parts = line.strip().split()

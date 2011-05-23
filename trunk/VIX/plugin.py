@@ -37,7 +37,6 @@ from twisted.internet import reactor, threads, task
 from time import localtime, time, strftime
 from enigma import eTimer, getDesktop
 from os import system, environ, remove, rename, path, chmod
-from glob import glob
 import gettext
 
 # Partnerbox installed and icons in epglist enabled?
@@ -86,8 +85,6 @@ def Plugins(**kwargs):
 	plist.append(PluginDescriptor(where=PluginDescriptor.WHERE_MENU, fnc=OScamInfoMain))
 	plist.append(PluginDescriptor(where=PluginDescriptor.WHERE_MENU, fnc=SoftcamSetup))
 	plist.append(PluginDescriptor(name=_("Softcam Manager"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=SoftcamMenu))
-	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = AutoVersionCheck))
-	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = autostart))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = SwapAutostart))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = SoftcamAutostart))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = PowerManagerautostart, wakeupfnc = PowerManagerNextWakeup))
@@ -149,40 +146,6 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
-def autostart(reason, session = None):
-	if reason == 0:
-		if config.plugins.ViXSettings.enabledebug.value:
-			inputfile = "/usr/bin/enigma2.sh"
-			outputfile = inputfile+'.tmp'
-			stext = 'LD_PRELOAD=/usr/lib/libopen.so.0.0.0 /usr/bin/enigma2\n'
-			rtext = 'LD_PRELOAD=/usr/lib/libopen.so.0.0.0 /usr/bin/enigma2 &>/home/root/Enigma2-$(date +%d-%m-%Y_%H-%M-%S).log\n'
-			input = open(inputfile)
-			output = open(outputfile,'w')
-			for s in input:
-				output.write(s.replace(stext,rtext))
-			output.close()
-			input.close()
-			remove(inputfile)
-			rename(outputfile,inputfile)
-			chmod('/usr/bin/enigma2.sh',0755)
-			print '[DEBUG] Enabled'
-		elif not config.plugins.ViXSettings.enabledebug.value:
-			inputfile = "/usr/bin/enigma2.sh"
-			outputfile = inputfile+'.tmp'
-			stext = 'LD_PRELOAD=/usr/lib/libopen.so.0.0.0 /usr/bin/enigma2 /usr/bin/enigma2 &>/home/root/Enigma2-$(date +%d-%m-%Y_%H-%M-%S).log\n'
-			rtext = 'LD_PRELOAD=/usr/lib/libopen.so.0.0.0 /usr/bin/enigma2\n'
-			input = open(inputfile)
-			output = open(outputfile,'w')
-			for s in input:
-				output.write(s.replace(stext,rtext))
-			output.close()
-			input.close()
-			remove(inputfile)
-			rename(outputfile,inputfile)
-			print '[DEBUG] Disabled'
-			chmod('/usr/bin/enigma2.sh',0755)
-
-
 ############################################################
 # VIX Main Menu
 ############################################################
@@ -223,17 +186,17 @@ class VIXMenu(Screen):
 
 		if self.sel == 0:
 			self.session.open(VIXCronManager)
-		elif self.sel == 2:
+		elif self.sel == 1:
 			self.session.open(VIXDevicesPanel)
-		elif self.sel == 3:
+		elif self.sel == 2:
 			self.session.open(VIXImageManager)
-		elif self.sel == 4:
+		elif self.sel == 3:
 			self.session.open(VIXIPKInstaller)
-		elif self.sel == 5:
+		elif self.sel == 4:
 			self.session.open(VIXPowerManager)
-		elif self.sel == 6:
+		elif self.sel == 5:
 			self.session.open(VIXScriptRunner)
-		elif self.sel == 7:
+		elif self.sel == 6:
 			self.session.open(VIXSwap)
 
 	def updateList(self):
@@ -243,27 +206,27 @@ class VIXMenu(Screen):
 		res = (name, idx)
 		self.list.append(res)
 		name = _("Devices Manager")
-		idx = 2
+		idx = 1
 		res = (name, idx)
 		self.list.append(res)
 		name = _("Image Manager")
-		idx = 3
+		idx = 2
 		res = (name, idx)
 		self.list.append(res)
 		name = _("IPK Installer")
-		idx = 4
+		idx = 3
 		res = (name, idx)
 		self.list.append(res)
 		name = _("Power Manager")
-		idx = 5
+		idx = 4
 		res = (name, idx)
 		self.list.append(res)
 		name = _("Script Runner")
-		idx = 6
+		idx = 5
 		res = (name, idx)
 		self.list.append(res)
 		name = _("Swap Manager")
-		idx = 7
+		idx = 6
 		res = (name, idx)
 		self.list.append(res)
 		self['list'].list = self.list
@@ -305,7 +268,6 @@ class VIXSetup(ConfigListScreen, Screen):
 		self.mountpoint = []
 		self.mountdescription = []
 		self.restartneeded = False
-		self.olddebug = config.plugins.ViXSettings.enabledebug.value
 		self.oldoverscan = config.plugins.ViXSettings.overscanamount.value
 
 		self.onChangedEntry = [ ]
@@ -331,10 +293,6 @@ class VIXSetup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Subservice (Green)"), config.plugins.ViXSettings.Subservice))
 		self.list.append(getConfigListEntry(_("EPG buton mode"), config.plugins.ViXEPG.mode))
 		self.list.append(getConfigListEntry(_("QuickEPG Usage"), config.plugins.QuickEPG.mode))
-		self.list.append(getConfigListEntry(_('Show event info on 2nd "OK"'), config.plugins.ViXSettings.InfoBarMode))
-		self.list.append(getConfigListEntry(_("Enable Debug logs"), config.plugins.ViXSettings.enabledebug))
-		if config.plugins.ViXSettings.enabledebug.value:
-			self.list.append(getConfigListEntry(_("Clean Debug logs"), config.plugins.ViXSettings.cleandebug))
 		self["config"].list = self.list
 		self["config"].setList(self.list)
 
@@ -361,44 +319,8 @@ class VIXSetup(ConfigListScreen, Screen):
 		for x in self["config"].list:
 			x[1].save()
 
-		if self.olddebug != config.plugins.ViXSettings.enabledebug.value or self.oldoverscan != config.plugins.ViXSettings.overscanamount.value:
+		if self.oldoverscan != config.plugins.ViXSettings.overscanamount.value:
 			self.restartneeded = True
-
-		if config.plugins.ViXSettings.enabledebug.value:
-			inputfile = "/usr/bin/enigma2.sh"
-			outputfile = inputfile+'.tmp'
-			stext = 'LD_PRELOAD=/usr/lib/libopen.so.0.0.0 /usr/bin/enigma2\n'
-			rtext = 'LD_PRELOAD=/usr/lib/libopen.so.0.0.0 /usr/bin/enigma2 &>/home/root/Enigma2-$(date +%d-%m-%Y_%H-%M-%S).log\n'
-			input = open(inputfile)
-			output = open(outputfile,'w')
-			for s in input:
-				output.write(s.replace(stext,rtext))
-			output.close()
-			input.close()
-			remove(inputfile)
-			rename(outputfile,inputfile)
-			chmod('/usr/bin/enigma2.sh',0755)
-			print '[DEBUG] Enabled'
-		elif not config.plugins.ViXSettings.enabledebug.value:
-			inputfile = "/usr/bin/enigma2.sh"
-			outputfile = inputfile+'.tmp'
-			stext = 'LD_PRELOAD=/usr/lib/libopen.so.0.0.0 /usr/bin/enigma2 /usr/bin/enigma2 &>/home/root/Enigma2-$(date +%d-%m-%Y_%H-%M-%S).log\n'
-			rtext = 'LD_PRELOAD=/usr/lib/libopen.so.0.0.0 /usr/bin/enigma2\n'
-			input = open(inputfile)
-			output = open(outputfile,'w')
-			for s in input:
-				output.write(s.replace(stext,rtext))
-			output.close()
-			input.close()
-			remove(inputfile)
-			rename(outputfile,inputfile)
-			print '[DEBUG] Disabled'
-			chmod('/usr/bin/enigma2.sh',0755)
-
-		if not config.plugins.ViXSettings.enabledebug.value or config.plugins.ViXSettings.cleandebug.value:
-			for filename in glob('/home/root/*.log') :
-			    remove(filename)
-			print '[DEBUG] Logs Cleaned'
 
 		if config.plugins.ViXSettings.overscanamount.value <= "0":
 			inputfile = "/usr/share/enigma2/ViX_HD/skin.xml"
@@ -447,85 +369,3 @@ class VIXSetup(ConfigListScreen, Screen):
 		for x in self["config"].list:
 			x[1].cancel()
 		self.close()
-
-def AutoVersionCheck(reason, session=None, **kwargs):
-	"called with reason=1 to during shutdown, with reason=0 at startup?"
-	global versioncheckpoller
-	if reason == 0:
-		print "[OnlineVersionCheck] AutoStart Enabled"
-		versioncheckpoller = VersionCheckPoller()
-		versioncheckpoller.start()
-	elif reason == 1:
-		# Stop Poller
-		if versioncheckpoller is not None:
-			versioncheckpoller.stop()
-			versioncheckpoller = None
-
-
-class VersionCheckPoller:
-	"""Automatically Poll SoftCam"""
-	def __init__(self):
-		# Init Timer
-		self.timer = eTimer()
-
-	def start(self, initial = True):
-		if initial:
-			delay = 600 #10 minutes
-		else:
-			delay = 43200 #twice a day
-
-		if self.version_check not in self.timer.callback:
-			self.timer.callback.append(self.version_check)
-		self.timer.startLongTimer(delay)
-
-	def stop(self):
-		if self.version_check in self.timer.callback:
-			self.timer.callback.remove(self.version_check)
-		self.timer.stop()
-
-	def version_check(self):
-		now = int(time())
-		print "[VersionCheck] Poll occured at", strftime("%c", localtime(now))
-		name = _("OnlineCheck")
-		job = Components.Task.Job(name)
-		task = CheckTask(job, name)
-		Components.Task.job_manager.AddJob(job)
-		self.timer.startLongTimer(86400) #once a day
-
-class FailedPostcondition(Components.Task.Condition):
-	def __init__(self, exception):
-		self.exception = exception
-	def getErrorMessage(self, task):
-		return str(self.exception)
-	def check(self, task):
-		return self.exception is None
-
-
-class CheckTask(Components.Task.PythonTask):
-	def work(self):
-		if pathExists('/tmp/online-image-version'):
-			remove('/tmp/online-image-version')
-
-		file = open('/etc/image-version', 'r')
-		lines = file.readlines()
-		file.close()
-		for x in lines:
-			splitted = x.split('=')
-			if splitted[0] == "box_type":
-				box_type = splitted[1].replace('\n','') # 0 = release, 1 = experimental
-			elif splitted[0] == "version":
-				version = splitted[1].replace('\n','')
-				version = version.split('.')
-				version = version[0] + '.' + version[1]
-
-		import urllib
-		fd = open('/etc/opkg/all-feed.conf', 'r')
-		fileurl = fd.read()
-		fd.close()
-		if fileurl.find('experimental') < 0:
-			sourcefile='http://enigma2.world-of-satellite.com/feeds/release/' + box_type + '/image-version'
-		else:
-			sourcefile='http://enigma2.world-of-satellite.com/feeds/ghtudh66383/' + box_type + '/image-version'
-		sourcefile,headers = urllib.urlretrieve(sourcefile)
-		rename(sourcefile,'/tmp/online-image-version')
-

@@ -30,14 +30,13 @@ gettext.textdomain("enigma2")
 gettext.bindtextdomain("CronManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
 
 choiceslist = [('None', 'None')]
-config.plugins.vixcron  = ConfigSubsection()
-config.plugins.vixcron.default_command = NoSave(ConfigSelection(default='None', choices = choiceslist))
-config.plugins.vixcron.cmdtime = NoSave(ConfigClock(default=0))
-config.plugins.vixcron.cmdtime.value, mytmpt = ([0, 0], [0, 0])
-config.plugins.vixcron.user_command = NoSave(ConfigText(default='None', fixed_size=False))
-config.plugins.vixcron.runwhen = NoSave(ConfigSelection(default='Daily', choices = [('Hourly', 'Hourly'),('Daily', 'Daily'),('Weekly', 'Weekly'),('Monthly', 'Monthly')]))
-config.plugins.vixcron.dayofweek = NoSave(ConfigSelection(default='Monday', choices = [('Monday', 'Monday'),('Tuesday', 'Tuesday'),('Wednesday', 'Wednesday'),('Thursday', 'Thursday'),('Friday', 'Friday'),('Saturday', 'Saturday'),('Sunday', 'Sunday')]))
-config.plugins.vixcron.dayofmonth = NoSave(ConfigInteger(default=1, limits=(1, 31)))
+config.vixsettings.default_command = NoSave(ConfigSelection(default='None', choices = choiceslist))
+config.vixsettings.cmdtime = NoSave(ConfigClock(default=0))
+config.vixsettings.cmdtime.value, mytmpt = ([0, 0], [0, 0])
+config.vixsettings.user_command = NoSave(ConfigText(default='None', fixed_size=False))
+config.vixsettings.runwhen = NoSave(ConfigSelection(default='Daily', choices = [('Hourly', 'Hourly'),('Daily', 'Daily'),('Weekly', 'Weekly'),('Monthly', 'Monthly')]))
+config.vixsettings.dayofweek = NoSave(ConfigSelection(default='Monday', choices = [('Monday', 'Monday'),('Tuesday', 'Tuesday'),('Wednesday', 'Wednesday'),('Thursday', 'Thursday'),('Friday', 'Friday'),('Saturday', 'Saturday'),('Sunday', 'Sunday')]))
+config.vixsettings.dayofmonth = NoSave(ConfigInteger(default=1, limits=(1, 31)))
 
 def _(txt):
 	t = gettext.dgettext("CronManager", txt)
@@ -155,15 +154,15 @@ class VIXSetupCronConf(Screen, ConfigListScreen):
 			choiceslist.sort()
 		self.editListEntry = None
 		self.list = []
-		self.list.append(getConfigListEntry(_("Run how often ?"), config.plugins.vixcron.runwhen))
-		if config.plugins.vixcron.runwhen.value != 'Hourly':
-			self.list.append(getConfigListEntry(_("Time to execute command or script"), config.plugins.vixcron.cmdtime))
-		if config.plugins.vixcron.runwhen.value == 'Weekly':
-			self.list.append(getConfigListEntry(_("What Day of week ?"), config.plugins.vixcron.dayofweek))
-		if config.plugins.vixcron.runwhen.value == 'Monthly':
-			self.list.append(getConfigListEntry(_("What Day of month ?"), config.plugins.vixcron.dayofmonth))
-		self.list.append(getConfigListEntry(_('Predefined Command to execute'), config.plugins.vixcron.default_command))
-		self.list.append(getConfigListEntry(_("Command To Run"), config.plugins.vixcron.user_command))
+		self.list.append(getConfigListEntry(_("Run how often ?"), config.vixsettings.runwhen))
+		if config.vixsettings.runwhen.value != 'Hourly':
+			self.list.append(getConfigListEntry(_("Time to execute command or script"), config.vixsettings.cmdtime))
+		if config.vixsettings.runwhen.value == 'Weekly':
+			self.list.append(getConfigListEntry(_("What Day of week ?"), config.vixsettings.dayofweek))
+		if config.vixsettings.runwhen.value == 'Monthly':
+			self.list.append(getConfigListEntry(_("What Day of month ?"), config.vixsettings.dayofmonth))
+		self.list.append(getConfigListEntry(_('Predefined Command to execute'), config.vixsettings.default_command))
+		self.list.append(getConfigListEntry(_("Command To Run"), config.vixsettings.user_command))
 		self["config"].list = self.list
 		self["config"].setList(self.list)
 
@@ -190,7 +189,7 @@ class VIXSetupCronConf(Screen, ConfigListScreen):
 			self.vkvar = sel[0]
 			value = 'xmeo'
 			if self.vkvar == _("Command To Run"):
-				value = config.plugins.vixcron.user_command.value
+				value = config.vixsettings.user_command.value
 				if value == _("None"):
 					value = ''
 			if value != 'xmeo':
@@ -204,28 +203,28 @@ class VIXSetupCronConf(Screen, ConfigListScreen):
 		self.list = []
 		if newt is None or newt == '':
 			newt = _("None")
-		config.plugins.vixcron.user_command.value = newt
-		self.list.append(getConfigListEntry(_("Run how often ?"), config.plugins.vixcron.runwhen))
-		if config.plugins.vixcron.runwhen.value != 'Hourly':
-			self.list.append(getConfigListEntry(_("Time to execute command or script"), config.plugins.vixcron.cmdtime))
-		if config.plugins.vixcron.runwhen.value == 'Weekly':
-			self.list.append(getConfigListEntry(_("What Day of week ?"), config.plugins.vixcron.dayofweek))
-		if config.plugins.vixcron.runwhen.value == 'Monthly':
-			self.list.append(getConfigListEntry(_("What Day of month ?"), config.plugins.vixcron.dayofmonth))
-		self.list.append(getConfigListEntry(_('Predefined Command to execute'), config.plugins.vixcron.default_command))
-		self.list.append(getConfigListEntry(_("Command To Run"), config.plugins.vixcron.user_command))
+		config.vixsettings.user_command.value = newt
+		self.list.append(getConfigListEntry(_("Run how often ?"), config.vixsettings.runwhen))
+		if config.vixsettings.runwhen.value != 'Hourly':
+			self.list.append(getConfigListEntry(_("Time to execute command or script"), config.vixsettings.cmdtime))
+		if config.vixsettings.runwhen.value == 'Weekly':
+			self.list.append(getConfigListEntry(_("What Day of week ?"), config.vixsettings.dayofweek))
+		if config.vixsettings.runwhen.value == 'Monthly':
+			self.list.append(getConfigListEntry(_("What Day of month ?"), config.vixsettings.dayofmonth))
+		self.list.append(getConfigListEntry(_('Predefined Command to execute'), config.vixsettings.default_command))
+		self.list.append(getConfigListEntry(_("Command To Run"), config.vixsettings.user_command))
 		self['config'].list = self.list
 		self['config'].l.setList(self.list)
 		return None
 
 	def checkentry(self):
 		msg = ''
-		if config.plugins.vixcron.user_command.value == 'None':
-			config.plugins.vixcron.user_command.value = ''
-		if config.plugins.vixcron.default_command.value == 'None' and config.plugins.vixcron.user_command.value == '':
+		if config.vixsettings.user_command.value == 'None':
+			config.vixsettings.user_command.value = ''
+		if config.vixsettings.default_command.value == 'None' and config.vixsettings.user_command.value == '':
 			msg = 'You must set at least one Command'
-			config.plugins.vixcron.user_command.value = 'None'
-		if config.plugins.vixcron.default_command.value != 'None' and config.plugins.vixcron.user_command.value != '':
+			config.vixsettings.user_command.value = 'None'
+		if config.vixsettings.default_command.value != 'None' and config.vixsettings.user_command.value != '':
 			msg = 'Entering a Custom command you have to set Predefined command: None '
 		if msg:
 			self.session.open(MessageBox, msg, MessageBox.TYPE_ERROR)
@@ -233,45 +232,45 @@ class VIXSetupCronConf(Screen, ConfigListScreen):
 			self.saveMycron()
 
 	def saveMycron(self):
-		hour = '%02d' % config.plugins.vixcron.cmdtime.value[0]
-		minutes = '%02d' % config.plugins.vixcron.cmdtime.value[1]
-		if config.plugins.vixcron.default_command.value != 'None':
-			command = config.plugins.vixcron.default_command.value
+		hour = '%02d' % config.vixsettings.cmdtime.value[0]
+		minutes = '%02d' % config.vixsettings.cmdtime.value[1]
+		if config.vixsettings.default_command.value != 'None':
+			command = config.vixsettings.default_command.value
 		else:
-			command = config.plugins.vixcron.user_command.value
+			command = config.vixsettings.user_command.value
 
-		if config.plugins.vixcron.runwhen.value == 'Hourly':
+		if config.vixsettings.runwhen.value == 'Hourly':
 			newcron = minutes + ' ' + ' * * * * ' + command.strip() + '\n'
-		elif config.plugins.vixcron.runwhen.value == 'Daily':
+		elif config.vixsettings.runwhen.value == 'Daily':
 			newcron = minutes + ' ' + hour + ' * * * ' + command.strip() + '\n'
-		elif config.plugins.vixcron.runwhen.value == 'Weekly':
-			if config.plugins.vixcron.dayofweek.value == 'Sunday':
+		elif config.vixsettings.runwhen.value == 'Weekly':
+			if config.vixsettings.dayofweek.value == 'Sunday':
 				newcron = minutes + ' ' + hour + ' * * 0 ' + command.strip() + '\n'
-			elif config.plugins.vixcron.dayofweek.value == 'Monday':
+			elif config.vixsettings.dayofweek.value == 'Monday':
 				newcron = minutes + ' ' + hour + ' * * 1 ' + command.strip() + '\n'
-			elif config.plugins.vixcron.dayofweek.value == 'Tuesday':
+			elif config.vixsettings.dayofweek.value == 'Tuesday':
 				newcron = minutes + ' ' + hour + ' * * 2 ' + command.strip() + '\n'
-			elif config.plugins.vixcron.dayofweek.value == 'Wednesday':
+			elif config.vixsettings.dayofweek.value == 'Wednesday':
 				newcron = minutes + ' ' + hour + ' * * 3 ' + command.strip() + '\n'
-			elif config.plugins.vixcron.dayofweek.value == 'Thursday':
+			elif config.vixsettings.dayofweek.value == 'Thursday':
 				newcron = minutes + ' ' + hour + ' * * 4 ' + command.strip() + '\n'
-			elif config.plugins.vixcron.dayofweek.value == 'Friday':
+			elif config.vixsettings.dayofweek.value == 'Friday':
 				newcron = minutes + ' ' + hour + ' * * 5 ' + command.strip() + '\n'
-			elif config.plugins.vixcron.dayofweek.value == 'Saturday':
+			elif config.vixsettings.dayofweek.value == 'Saturday':
 				newcron = minutes + ' ' + hour + ' * * 6 ' + command.strip() + '\n'
-		elif config.plugins.vixcron.runwhen.value == 'Monthly':
-			newcron = minutes + ' ' + hour + ' ' + str(config.plugins.vixcron.dayofmonth.value) + ' * * ' + command.strip() + '\n'
+		elif config.vixsettings.runwhen.value == 'Monthly':
+			newcron = minutes + ' ' + hour + ' ' + str(config.vixsettings.dayofmonth.value) + ' * * ' + command.strip() + '\n'
 		else:
-			command = config.plugins.vixcron.user_command.value
+			command = config.vixsettings.user_command.value
 
 		out = open('/etc/cron/crontabs/root', 'a')
 		out.write(newcron)
 		out.close()
 		rc = system('crontab /etc/cron/crontabs/root -c /etc/cron/crontabs')
-		config.plugins.vixcron.default_command.value = 'None'
-		config.plugins.vixcron.user_command.value = 'None'
-		config.plugins.vixcron.runwhen.value = 'Daily'
-		config.plugins.vixcron.dayofweek.value = 'Monday'
-		config.plugins.vixcron.dayofmonth.value = 1
-		config.plugins.vixcron.cmdtime.value, mytmpt = ([0, 0], [0, 0])
+		config.vixsettings.default_command.value = 'None'
+		config.vixsettings.user_command.value = 'None'
+		config.vixsettings.runwhen.value = 'Daily'
+		config.vixsettings.dayofweek.value = 'Monday'
+		config.vixsettings.dayofmonth.value = 1
+		config.vixsettings.cmdtime.value, mytmpt = ([0, 0], [0, 0])
 		self.close()

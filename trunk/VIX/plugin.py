@@ -77,7 +77,6 @@ else:
 
 def Plugins(**kwargs):
 	plist = [PluginDescriptor(name=_("VIXMenu"), where=PluginDescriptor.WHERE_MENU, fnc=startVIXMenu)]
-	plist.append(PluginDescriptor(where=PluginDescriptor.WHERE_MENU, fnc=startVIXSettings))
 	plist.append(PluginDescriptor(name="VIX",  where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=showVIXMenu))
 	plist.append(PluginDescriptor(name="CCcam Info",  where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=CCcamInfo))
 	plist.append(PluginDescriptor(where=PluginDescriptor.WHERE_MENU, fnc=CCcamInfoMenu))
@@ -95,16 +94,8 @@ def startVIXMenu(menuid):
 		return [(_("VIX"), showVIXMenu, "vix_menu", 1010)]
 	return [ ]
 
-def startVIXSettings(menuid):
-	if menuid == "system":
-		return [(_("VIX"), showVIXSettings, "vix_settings", 1010)]
-	return [ ]
-
 def showVIXMenu(session, **kwargs):
 	session.open(VIXMenu)
-
-def showVIXSettings(session, **kwargs):
-	session.open(VIXSetup)
 
 def OScamInfoMain(menuid):
 	if menuid == "cam":
@@ -247,125 +238,3 @@ class VIXMenuSummary(Screen):
 
 	def selectionChanged(self, name):
 		self["entry"].text = name
-
-class VIXSetup(ConfigListScreen, Screen):
-	skin = """
-		<screen name="VIXSetup" position="center,center" size="500,330" title="VIX Setup">
-			<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
-			<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
-			<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
-			<widget name="config" position="10,45" size="480,320" scrollbarMode="showOnDemand" />
-		</screen>"""
-
-	def __init__(self, session):
-		Screen.__init__(self, session)
-		self.session = session
-		self.skin = VIXSetup.skin
-		self.skinName = "VIXSetup"
-		self["title"] = Label(_("VIX Setup"))
-		self.skinfile = "/usr/share/enigma2/ViX_HD/skin.xml"
-		self.mountpoint = []
-		self.mountdescription = []
-		self.restartneeded = False
-		self.oldoverscan = config.plugins.ViXSettings.overscanamount.value
-
-		self.onChangedEntry = [ ]
-
-		self.list = []
-		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
-		self.createSetup()
-		
-		self["actions"] = NumberActionMap(["SetupActions"],
-		{
-		  "cancel": self.keyCancel,
-		  "save": self.keySaveNew
-		}, -2)
-		self["key_red"] = Button(_("Cancel"))
-		self["key_green"] = Button(_("OK"))
-
-	def createSetup(self):
-		self.editListEntry = None
-		self.list = []
-		self.list.append(getConfigListEntry(_("Menu Overscan amount"), config.plugins.ViXSettings.overscanamount))
-		self.list.append(getConfigListEntry(_("Use TV button to"), config.plugins.ViXSettings.TVButtonAction))
-		self.list.append(getConfigListEntry(_("Use ViX Coloured Butons"), config.plugins.ViXSettings.ColouredButtons))
-		self.list.append(getConfigListEntry(_("Subservice (Green)"), config.plugins.ViXSettings.Subservice))
-		self.list.append(getConfigListEntry(_("EPG buton mode"), config.plugins.ViXEPG.mode))
-		self.list.append(getConfigListEntry(_("QuickEPG Usage"), config.plugins.QuickEPG.mode))
-		self["config"].list = self.list
-		self["config"].setList(self.list)
-
-	def keyLeft(self):
-		ConfigListScreen.keyLeft(self)
-		self.createSetup()
-
-	def keyRight(self):
-		ConfigListScreen.keyRight(self)
-		self.createSetup()
-
-	# for summary:
-	def changedEntry(self):
-		for x in self.onChangedEntry:
-			x()
-
-	def getCurrentEntry(self):
-		return self["config"].getCurrent()[0]
-
-	def getCurrentValue(self):
-		return str(self["config"].getCurrent()[1].getText())
-
-	def keySaveNew(self):
-		for x in self["config"].list:
-			x[1].save()
-
-		if self.oldoverscan != config.plugins.ViXSettings.overscanamount.value:
-			self.restartneeded = True
-
-		if config.plugins.ViXSettings.overscanamount.value <= "0":
-			inputfile = "/usr/share/enigma2/ViX_HD/skin.xml"
-			outputfile = inputfile+'.tmp'
-			skinposinputfile = '/usr/share/enigma2/ViX_HD/skinpos.loc'
-			skinposoutputfile = '/usr/share/enigma2/ViX_HD/skinpos.tmp'
-			if pathExists(skinposinputfile):
-				skinposinput = open(skinposinputfile,'r')
-				stext = skinposinput.readline()
-			else:
-				stext = 'position="32,0" size="541,720"'
-			rtext = 'position="' + str(config.plugins.ViXSettings.overscanamount.value) + ',0" size="541,720"'
-			print '[SEARCH] ' + stext
-			print '[REPLACE] ' + rtext
-
-			input = open(inputfile)
-			output = open(outputfile,'w')
-			for s in input:
-				output.write(s.replace(stext,rtext))
-			output.close()
-			input.close()
-			remove(inputfile)
-			rename(outputfile,inputfile)
-			skinposoutput = open(skinposoutputfile,'w')
-			skinposoutput.write(rtext)
-			skinposoutput.close()
-			if pathExists(skinposinputfile):
-				skinposinput.close()
-				remove(skinposinputfile)
-			rename(skinposoutputfile,skinposinputfile)
-
-		if self.restartneeded:
-			message = _("GUI needs a restart to apply the changes !!!\nDo you want to restart GUI now ?")
-			ybox = self.session.openWithCallback(self.restBox, MessageBox, message, MessageBox.TYPE_YESNO)
-			ybox.setTitle(_("Restart Enigma2."))
-		else:
-			self.close()
-					
-	def restBox(self, answer):
-		if answer is True:
-			self.session.open(TryQuitMainloop, 3)
-		else:
-			self.close()
-
-	def keyCancel(self):
-		for x in self["config"].list:
-			x[1].cancel()
-		self.close()

@@ -13,6 +13,24 @@ from enigma import eTimer
 from os import environ, remove
 import gettext
 
+config.vixsettings.powermanager = ConfigYesNo(default = False)
+config.vixsettings.powermanager_standby = ConfigYesNo(default = False)
+config.vixsettings.powermanager_standbytime = ConfigClock(default = 0) # 1:00
+config.vixsettings.powermanager_standbyretry = ConfigNumber(default = 30)
+config.vixsettings.powermanager_standbyretrycount = NoSave(ConfigNumber(default = 0))
+config.vixsettings.powermanager_deepstandby = ConfigYesNo(default = False)
+config.vixsettings.powermanager_deepstandbytime = ConfigClock(default = 0) # 1:00
+config.vixsettings.powermanager_deepstandbyretry = ConfigNumber(default = 30)
+config.vixsettings.powermanager_deepstandbyretrycount = NoSave(ConfigNumber(default = 0))
+config.vixsettings.powermanager_guirestart = ConfigYesNo(default = False)
+config.vixsettings.powermanager_guirestarttime = ConfigClock(default = 0) # 1:00
+config.vixsettings.powermanager_guirestartretry = ConfigNumber(default = 30)
+config.vixsettings.powermanager_guirestartretrycount = NoSave(ConfigNumber(default = 0))
+config.vixsettings.powermanager_reboot = ConfigYesNo(default = False)
+config.vixsettings.powermanager_reboottime = ConfigClock(default = 0) # 1:00
+config.vixsettings.powermanager_rebootretry = ConfigNumber(default = 30)
+config.vixsettings.powermanager_rebootretrycount = NoSave(ConfigNumber(default = 0))
+
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
 print "[PowerManager] set language to ", lang[:2]
@@ -46,8 +64,8 @@ def PowerManagerautostart(reason, session=None, **kwargs):
 def PowerManagerNextWakeup():
 	"returns timestamp of next time when autostart should be called"
 	if autoPowerManagerTimer:
-		if config.plugins.ViXSettings.powermanager.value:
-			if config.plugins.ViXSettings.powermanager_standby.value:
+		if config.vixsettings.powermanager.value:
+			if config.vixsettings.powermanager_standby.value:
 				print "[PowerManager] set to wake up"
 				return autoPowerManagerTimer.standbyupdate()
 	return -1
@@ -91,24 +109,24 @@ class VIXPowerManager(ConfigListScreen, Screen):
 	def createSetup(self):
 		self.editListEntry = None
 		self.list = []
-		self.list.append(getConfigListEntry(_("Enable Power Manager"), config.plugins.ViXSettings.powermanager))
-		if config.plugins.ViXSettings.powermanager.value:
-			self.list.append(getConfigListEntry(_("Enable Standby"), config.plugins.ViXSettings.powermanager_standby))
-			if config.plugins.ViXSettings.powermanager_standby.value:
-				self.list.append(getConfigListEntry(_("Standby Time"), config.plugins.ViXSettings.powermanager_standbytime))
-				self.list.append(getConfigListEntry(_("Retry after cancel (mins)"), config.plugins.ViXSettings.powermanager_standbyretry))
-			self.list.append(getConfigListEntry(_("Enable Deep Standby"), config.plugins.ViXSettings.powermanager_deepstandby))
-			if config.plugins.ViXSettings.powermanager_deepstandby.value:
-				self.list.append(getConfigListEntry(_("Deep Standby Time"), config.plugins.ViXSettings.powermanager_deepstandbytime))
-				self.list.append(getConfigListEntry(_("Retry after cancel (mins)"), config.plugins.ViXSettings.powermanager_deepstandbyretry))
-			self.list.append(getConfigListEntry(_("Enable GUI Restart"), config.plugins.ViXSettings.powermanager_guirestart))
-			if config.plugins.ViXSettings.powermanager_guirestart.value:
-				self.list.append(getConfigListEntry(_("GUI Restart Time"), config.plugins.ViXSettings.powermanager_guirestarttime))
-				self.list.append(getConfigListEntry(_("Retry after cancel (mins)"), config.plugins.ViXSettings.powermanager_guirestartretry))
-			self.list.append(getConfigListEntry(_("Enable Reboot"), config.plugins.ViXSettings.powermanager_reboot))
-			if config.plugins.ViXSettings.powermanager_reboot.value:
-				self.list.append(getConfigListEntry(_("Reboot Time"), config.plugins.ViXSettings.powermanager_reboottime))
-				self.list.append(getConfigListEntry(_("Retry after cancel (mins)"), config.plugins.ViXSettings.powermanager_rebootretry))
+		self.list.append(getConfigListEntry(_("Enable Power Manager"), config.vixsettings.powermanager))
+		if config.vixsettings.powermanager.value:
+			self.list.append(getConfigListEntry(_("Enable Standby"), config.vixsettings.powermanager_standby))
+			if config.vixsettings.powermanager_standby.value:
+				self.list.append(getConfigListEntry(_("Standby Time"), config.vixsettings.powermanager_standbytime))
+				self.list.append(getConfigListEntry(_("Retry after cancel (mins)"), config.vixsettings.powermanager_standbyretry))
+			self.list.append(getConfigListEntry(_("Enable Deep Standby"), config.vixsettings.powermanager_deepstandby))
+			if config.vixsettings.powermanager_deepstandby.value:
+				self.list.append(getConfigListEntry(_("Deep Standby Time"), config.vixsettings.powermanager_deepstandbytime))
+				self.list.append(getConfigListEntry(_("Retry after cancel (mins)"), config.vixsettings.powermanager_deepstandbyretry))
+			self.list.append(getConfigListEntry(_("Enable GUI Restart"), config.vixsettings.powermanager_guirestart))
+			if config.vixsettings.powermanager_guirestart.value:
+				self.list.append(getConfigListEntry(_("GUI Restart Time"), config.vixsettings.powermanager_guirestarttime))
+				self.list.append(getConfigListEntry(_("Retry after cancel (mins)"), config.vixsettings.powermanager_guirestartretry))
+			self.list.append(getConfigListEntry(_("Enable Reboot"), config.vixsettings.powermanager_reboot))
+			if config.vixsettings.powermanager_reboot.value:
+				self.list.append(getConfigListEntry(_("Reboot Time"), config.vixsettings.powermanager_reboottime))
+				self.list.append(getConfigListEntry(_("Retry after cancel (mins)"), config.vixsettings.powermanager_rebootretry))
 		self["config"].list = self.list
 		self["config"].setList(self.list)
 		if StandbyTime > 0:
@@ -157,8 +175,8 @@ class VIXPowerManager(ConfigListScreen, Screen):
 
 	def doneConfiguring(self):
 		now = int(time())
-		if config.plugins.ViXSettings.powermanager.value:
-			if config.plugins.ViXSettings.powermanager_standby.value:
+		if config.vixsettings.powermanager.value:
+			if config.vixsettings.powermanager_standby.value:
 				if autoPowerManagerTimer is not None:
 					print "[PowerManager] Standby Enabled at", strftime("%c", localtime(now))
 					autoPowerManagerTimer.standbyupdate()
@@ -169,7 +187,7 @@ class VIXPowerManager(ConfigListScreen, Screen):
 					print "[PowerManager] Standby Disabled at", strftime("%c", localtime(now))
 					autoPowerManagerTimer.standbystop()
 
-			if config.plugins.ViXSettings.powermanager_deepstandby.value:
+			if config.vixsettings.powermanager_deepstandby.value:
 				if autoPowerManagerTimer is not None:
 					print "[PowerManager] Deep Standby Enabled at", strftime("%c", localtime(now))
 					autoPowerManagerTimer.deepstandbyupdate()
@@ -180,7 +198,7 @@ class VIXPowerManager(ConfigListScreen, Screen):
 					print "[PowerManager] Deep Standby Disabled at", strftime("%c", localtime(now))
 					autoPowerManagerTimer.deepstandbystop()
 
-			if config.plugins.ViXSettings.powermanager_guirestart.value:
+			if config.vixsettings.powermanager_guirestart.value:
 				if autoPowerManagerTimer is not None:
 					print "[PowerManager] GUI Restart Enabled at", strftime("%c", localtime(now))
 					autoPowerManagerTimer.guirestartupdate()
@@ -191,7 +209,7 @@ class VIXPowerManager(ConfigListScreen, Screen):
 					print "[PowerManager] GUI Restart Disabled at", strftime("%c", localtime(now))
 					autoPowerManagerTimer.guirestartstop()
 
-			if config.plugins.ViXSettings.powermanager_reboot.value:
+			if config.vixsettings.powermanager_reboot.value:
 				if autoPowerManagerTimer is not None:
 					print "[PowerManager] Reboot Enabled at", strftime("%c", localtime(now))
 					autoPowerManagerTimer.rebootupdate()
@@ -253,8 +271,8 @@ class AutoPowerManagerTimer:
 		global DeepStandbyTime
 		global GuiRestartTime
 		global RebootTime
-		if config.plugins.ViXSettings.powermanager.value:
-			if config.plugins.ViXSettings.powermanager_standby.value:
+		if config.vixsettings.powermanager.value:
+			if config.vixsettings.powermanager_standby.value:
 				print "[PowerManager] Standby Enabled at ", strftime("%c", localtime(now))
 				if now > 1262304000:
 					self.standbyupdate()
@@ -267,7 +285,7 @@ class AutoPowerManagerTimer:
 				print "[PowerManager] Standby Disabled at", strftime("(now=%c)", localtime(now))
 				self.standbyactivityTimer.stop()
 
-			if config.plugins.ViXSettings.powermanager_deepstandby.value:
+			if config.vixsettings.powermanager_deepstandby.value:
 				print "[PowerManager] DeepStandby Enabled at ", strftime("%c", localtime(now))
 				if now > 1262304000:
 					self.deepstandbyupdate()
@@ -280,7 +298,7 @@ class AutoPowerManagerTimer:
 				print "[PowerManager] DeepStandby Disabled at", strftime("(now=%c)", localtime(now))
 				self.deepstandbyactivityTimer.stop()
 
-			if config.plugins.ViXSettings.powermanager_guirestart.value:
+			if config.vixsettings.powermanager_guirestart.value:
 				print "[PowerManager] GUI Restart Enabled at ", strftime("%c", localtime(now))
 				if now > 1262304000:
 					self.guirestartupdate()
@@ -293,7 +311,7 @@ class AutoPowerManagerTimer:
 				print "[PowerManager] GUI Restart Disabled at", strftime("(now=%c)", localtime(now))
 				self.guirestartactivityTimer.stop()
 
-			if config.plugins.ViXSettings.powermanager_reboot.value:
+			if config.vixsettings.powermanager_reboot.value:
 				print "[PowerManager] Reboot Enabled at ", strftime("%c", localtime(now))
 				if now > 1262304000:
 					self.rebootupdate()
@@ -316,7 +334,7 @@ class AutoPowerManagerTimer:
 		self.standbyupdate()
 
 	def getStandbyTime(self):
-		standbyclock = config.plugins.ViXSettings.powermanager_standbytime.value
+		standbyclock = config.vixsettings.powermanager_standbytime.value
 		nowt = time()
 		now = localtime(nowt)
 		return int(mktime((now.tm_year, now.tm_mon, now.tm_mday, standbyclock[0], standbyclock[1], 0, now.tm_wday, now.tm_yday, now.tm_isdst)))
@@ -357,12 +375,12 @@ class AutoPowerManagerTimer:
 		now = int(time())
 		if answer is False:
 			print "[PowerManager] Standby delayed."
-			repeat = config.plugins.ViXSettings.powermanager_standbyretrycount.value
+			repeat = config.vixsettings.powermanager_standbyretrycount.value
 			repeat += 1
-			config.plugins.ViXSettings.powermanager_standbyretrycount.value = repeat
-			StandbyTime = now + (int(config.plugins.ViXSettings.powermanager_standbyretry.value) * 60)
+			config.vixsettings.powermanager_standbyretrycount.value = repeat
+			StandbyTime = now + (int(config.vixsettings.powermanager_standbyretry.value) * 60)
 			print "[PowerManager] Standby Time now set to", strftime("%c", localtime(StandbyTime)), strftime("(now=%c)", localtime(now))
-			self.standbytimer.startLongTimer(int(config.plugins.ViXSettings.powermanager_standbyretry.value) * 60)
+			self.standbytimer.startLongTimer(int(config.vixsettings.powermanager_standbyretry.value) * 60)
 		else:
 			atLeast = 60
 			print "[PowerManager] Going to Standby occured at", strftime("%c", localtime(now))
@@ -375,7 +393,7 @@ class AutoPowerManagerTimer:
 		self.deepstandbyupdate()
 
 	def getDeepStandbyTime(self):
-		deepstandbyclock = config.plugins.ViXSettings.powermanager_deepstandbytime.value
+		deepstandbyclock = config.vixsettings.powermanager_deepstandbytime.value
 		nowt = time()
 		now = localtime(nowt)
 		return int(mktime((now.tm_year, now.tm_mon, now.tm_mday, deepstandbyclock[0], deepstandbyclock[1], 0, now.tm_wday, now.tm_yday, now.tm_isdst)))
@@ -404,12 +422,12 @@ class AutoPowerManagerTimer:
 		print "[PowerManager] DeepStandby onTimer occured at", strftime("%c", localtime(now))
 		if self.session.nav.RecordTimer.isRecording() or abs(self.session.nav.RecordTimer.getNextRecordingTime() - time()) <= 900 or abs(self.session.nav.RecordTimer.getNextZapTime() - time()) <= 900:
 			print "[PowerManager] A recording is in progress, can not go to Deep Standby try occured at", strftime("%c", localtime(now))
-			repeat = config.plugins.ViXSettings.powermanager_deepstandbyretrycount.value
+			repeat = config.vixsettings.powermanager_deepstandbyretrycount.value
 			repeat += 1
-			config.plugins.ViXSettings.powermanager_deepstandbyretrycount.value = repeat
-			DeepStandbyTime = now + (int(config.plugins.ViXSettings.powermanager_deepstandbyretry.value) * 60)
+			config.vixsettings.powermanager_deepstandbyretrycount.value = repeat
+			DeepStandbyTime = now + (int(config.vixsettings.powermanager_deepstandbyretry.value) * 60)
 			print "[PowerManager] Deep Standby Time now set to", strftime("%c", localtime(DeepStandbyTime)), strftime("(now=%c)", localtime(now))
-			self.deepstandbytimer.startLongTimer(int(config.plugins.ViXSettings.powermanager_deepstandbyretry.value) * 60)
+			self.deepstandbytimer.startLongTimer(int(config.vixsettings.powermanager_deepstandbyretry.value) * 60)
 		else:
 			from Screens.Standby import inStandby
 			if not inStandby:
@@ -423,12 +441,12 @@ class AutoPowerManagerTimer:
 		now = int(time())
 		if answer is False:
 			print "[PowerManager] DeepStandby delayed."
-			repeat = config.plugins.ViXSettings.powermanager_deepstandbyretrycount.value
+			repeat = config.vixsettings.powermanager_deepstandbyretrycount.value
 			repeat += 1
-			config.plugins.ViXSettings.powermanager_deepstandbyretrycount.value = repeat
-			DeepStandbyTime = now + (int(config.plugins.ViXSettings.powermanager_deepstandbyretry.value) * 60)
+			config.vixsettings.powermanager_deepstandbyretrycount.value = repeat
+			DeepStandbyTime = now + (int(config.vixsettings.powermanager_deepstandbyretry.value) * 60)
 			print "[PowerManager] Deep Standby Time now set to", strftime("%c", localtime(DeepStandbyTime)), strftime("(now=%c)", localtime(now))
-			self.deepstandbytimer.startLongTimer(int(config.plugins.ViXSettings.powermanager_deepstandbyretry.value) * 60)
+			self.deepstandbytimer.startLongTimer(int(config.vixsettings.powermanager_deepstandbyretry.value) * 60)
 		else:
 			atLeast = 60
 			print "[PowerManager] Going to Deep Standby occured at", strftime("%c", localtime(now))
@@ -441,7 +459,7 @@ class AutoPowerManagerTimer:
 		self.guirestartupdate()
 
 	def getGuiRestartTime(self):
-		guirestartclock = config.plugins.ViXSettings.powermanager_guirestarttime.value
+		guirestartclock = config.vixsettings.powermanager_guirestarttime.value
 		nowt = time()
 		now = localtime(nowt)
 		return int(mktime((now.tm_year, now.tm_mon, now.tm_mday, guirestartclock[0], guirestartclock[1], 0, now.tm_wday, now.tm_yday, now.tm_isdst)))
@@ -469,12 +487,12 @@ class AutoPowerManagerTimer:
 		now = int(time())
 		print "[PowerManager] GuiRestart onTimer occured at", strftime("%c", localtime(now))
 		if self.session.nav.RecordTimer.isRecording() or abs(self.session.nav.RecordTimer.getNextRecordingTime() - time()) <= 900 or abs(self.session.nav.RecordTimer.getNextZapTime() - time()) <= 900:
-			repeat = config.plugins.ViXSettings.powermanager_guirestartretrycount.value
+			repeat = config.vixsettings.powermanager_guirestartretrycount.value
 			repeat += 1
-			config.plugins.ViXSettings.powermanager_guirestartretrycount.value = repeat
-			GuiRestartTime = now + (int(config.plugins.ViXSettings.powermanager_guirestartretry.value) * 60)
+			config.vixsettings.powermanager_guirestartretrycount.value = repeat
+			GuiRestartTime = now + (int(config.vixsettings.powermanager_guirestartretry.value) * 60)
 			print "[PowerManager] Gui Restart Time now set to", strftime("%c", localtime(GuiRestartTime)), strftime("(now=%c)", localtime(now))
-			self.guirestarttimer.startLongTimer(int(config.plugins.ViXSettings.powermanager_guirestartretry.value) * 60)
+			self.guirestarttimer.startLongTimer(int(config.vixsettings.powermanager_guirestartretry.value) * 60)
 		else:
 			from Screens.Standby import inStandby
 			if not inStandby:
@@ -488,12 +506,12 @@ class AutoPowerManagerTimer:
 		now = int(time())
 		if answer is False:
 			print "[PowerManager] GuiRestart delayed."
-			repeat = config.plugins.ViXSettings.powermanager_guirestartretrycount.value
+			repeat = config.vixsettings.powermanager_guirestartretrycount.value
 			repeat += 1
-			config.plugins.ViXSettings.powermanager_guirestartretrycount.value = repeat
-			GuiRestartTime = now + (int(config.plugins.ViXSettings.powermanager_guirestartretry.value) * 60)
+			config.vixsettings.powermanager_guirestartretrycount.value = repeat
+			GuiRestartTime = now + (int(config.vixsettings.powermanager_guirestartretry.value) * 60)
 			print "[PowerManager] Gui Restart Time now set to", strftime("%c", localtime(GuiRestartTime)), strftime("(now=%c)", localtime(now))
-			self.guirestarttimer.startLongTimer(int(config.plugins.ViXSettings.powermanager_guirestartretry.value) * 60)
+			self.guirestarttimer.startLongTimer(int(config.vixsettings.powermanager_guirestartretry.value) * 60)
 		else:
 			atLeast = 60
 			print "[PowerManager] Gui Restart occured at", strftime("%c", localtime(now))
@@ -507,7 +525,7 @@ class AutoPowerManagerTimer:
 		self.rebootupdate()
 
 	def getRebootTime(self):
-		rebootclock = config.plugins.ViXSettings.powermanager_reboottime.value
+		rebootclock = config.vixsettings.powermanager_reboottime.value
 		nowt = time()
 		now = localtime(nowt)
 		return int(mktime((now.tm_year, now.tm_mon, now.tm_mday, rebootclock[0], rebootclock[1], 0, now.tm_wday, now.tm_yday, now.tm_isdst)))
@@ -535,12 +553,12 @@ class AutoPowerManagerTimer:
 		now = int(time())
 		print "[PowerManager] Reboot onTimer occured at", strftime("%c", localtime(now))
 		if self.session.nav.RecordTimer.isRecording() or abs(self.session.nav.RecordTimer.getNextRecordingTime() - time()) <= 900 or abs(self.session.nav.RecordTimer.getNextZapTime() - time()) <= 900:
-			repeat = config.plugins.ViXSettings.powermanager_rebootretrycount.value
+			repeat = config.vixsettings.powermanager_rebootretrycount.value
 			repeat += 1
-			config.plugins.ViXSettings.powermanager_rebootretrycount.value = repeat
-			RebootTime = now + (int(config.plugins.ViXSettings.powermanager_rebootretry.value) * 60)
+			config.vixsettings.powermanager_rebootretrycount.value = repeat
+			RebootTime = now + (int(config.vixsettings.powermanager_rebootretry.value) * 60)
 			print "[PowerManager] Reboot Time now set to", strftime("%c", localtime(RebootTime)), strftime("(now=%c)", localtime(now))
-			self.reboottimer.startLongTimer(int(config.plugins.ViXSettings.powermanager_rebootretry.value) * 60)
+			self.reboottimer.startLongTimer(int(config.vixsettings.powermanager_rebootretry.value) * 60)
 		else:
 			from Screens.Standby import inStandby
 			if not inStandby:
@@ -554,12 +572,12 @@ class AutoPowerManagerTimer:
 		now = int(time())
 		if answer is False:
 			print "[PowerManager] Reboot delayed."
-			repeat = config.plugins.ViXSettings.powermanager_rebootretrycount.value
+			repeat = config.vixsettings.powermanager_rebootretrycount.value
 			repeat += 1
-			config.plugins.ViXSettings.powermanager_rebootretrycount.value = repeat
-			RebootTime = now + (int(config.plugins.ViXSettings.powermanager_rebootretry.value) * 60)
+			config.vixsettings.powermanager_rebootretrycount.value = repeat
+			RebootTime = now + (int(config.vixsettings.powermanager_rebootretry.value) * 60)
 			print "[PowerManager] Reboot Time now set to", strftime("%c", localtime(RebootTime)), strftime("(now=%c)", localtime(now))
-			self.reboottimer.startLongTimer(int(config.plugins.ViXSettings.powermanager_rebootretry.value) * 60)
+			self.reboottimer.startLongTimer(int(config.vixsettings.powermanager_rebootretry.value) * 60)
 		else:
 			atLeast = 60
 			print "[PowerManager] Reboot occured at", strftime("%c", localtime(now))

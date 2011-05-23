@@ -14,6 +14,8 @@ from os import system, stat as mystat, chmod, path, remove, rename, access, W_OK
 from enigma import eTimer
 import stat, time, gettext
 
+config.vixsettings.swapautostart = ConfigYesNo(default = False)
+
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
 print "[SwapManager] set language to ", lang[:2]
@@ -44,7 +46,7 @@ def SwapAutostart(reason, session = None):
 					print "[SwapManager] Swap partition %s is already active.", device
 		f.close()
 
-		if config.plugins.ViXSettings.swapautostart.value:
+		if config.vixsettings.swapautostart.value:
 			swap_place = ''
 			parts = []
 			for p in harddiskmanager.getMountedPartitions():
@@ -126,8 +128,8 @@ class VIXSwap(Screen):
 		self.activityTimer.stop()
 		if path.exists('/etc/rcS.d/S98SwapManager'):
 			remove('/etc/rcS.d/S98SwapManager')
-			config.plugins.ViXSettings.swapautostart.value = True
-			config.plugins.ViXSettings.swapautostart.save()
+			config.vixsettings.swapautostart.value = True
+			config.vixsettings.swapautostart.save()
 		if path.exists('/tmp/swapdevices.tmp'):
 			remove('/tmp/swapdevices.tmp')
 		self.Console.ePopen("fdisk -l /dev/sd? | grep swap >/tmp/swapdevices.tmp", self.updateSwap2)
@@ -179,7 +181,7 @@ class VIXSwap(Screen):
 			self['key_green'].setText(_(" "))
 		else:
 			self['key_green'].setText(_("Create"))
-			if config.plugins.ViXSettings.swapautostart.value:
+			if config.vixsettings.swapautostart.value:
 				self['autostart_off'].hide()
 				self['autostart_on'].show()
 				self.autos_start = True
@@ -253,9 +255,9 @@ class VIXSwap(Screen):
 				if self.swap_active == True:
 					self.Console.ePopen('swapoff ' + self.swap_place)
 				remove(self.swap_place)
-				if config.plugins.ViXSettings.swapautostart.value:
-					config.plugins.ViXSettings.swapautostart.value = False
-					config.plugins.ViXSettings.swapautostart.save()
+				if config.vixsettings.swapautostart.value:
+					config.vixsettings.swapautostart.value = False
+					config.vixsettings.swapautostart.save()
 				self.updateSwap()
 			else:
 				self.doCreateSwap()
@@ -307,13 +309,13 @@ class VIXSwap(Screen):
 		
 	def autoSsWap(self):
 		if device == "":
-			if config.plugins.ViXSettings.swapautostart.value:
-				config.plugins.ViXSettings.swapautostart.value = False
-				config.plugins.ViXSettings.swapautostart.save()
+			if config.vixsettings.swapautostart.value:
+				config.vixsettings.swapautostart.value = False
+				config.vixsettings.swapautostart.save()
 			else:
 				if self.swap_place:
-					config.plugins.ViXSettings.swapautostart.value = True
-					config.plugins.ViXSettings.swapautostart.save()
+					config.vixsettings.swapautostart.value = True
+					config.vixsettings.swapautostart.save()
 				else:
 					mybox = self.session.open(MessageBox, _("You have to create a Swap File before to activate the autostart."), MessageBox.TYPE_INFO)
 					mybox.setTitle(_("Info"))

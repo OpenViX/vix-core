@@ -26,8 +26,7 @@ from os import path, system, unlink, stat, mkdir, popen, makedirs, chdir, getcwd
 import datetime, time, gettext
 from shutil import rmtree, move, copy
 
-config.plugins.VIXSettings  = ConfigSubsection()
-config.plugins.VIXSettings.backuplocation = ConfigText(default = '/media/hdd', visible_width = 50, fixed_size = False)
+config.vixsettings.backuplocation = ConfigText(default = '/media/hdd', visible_width = 50, fixed_size = False)
 
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
@@ -91,13 +90,13 @@ class VIXImageManager(Screen):
 	def populate_List(self):
 		global boxtype
 		global BACKUP_DIRECTORY
-		if not path.exists(config.plugins.VIXSettings.backuplocation.value):
+		if not path.exists(config.vixsettings.backuplocation.value):
 			BACKUP_DIRECTORY = '/media/hdd/imagebackups'
 			self['lab1'].setText(_("Device: /media/hdd") + _("\nSelect an image to Restore / Delete:"))
 			self.session.open(MessageBox, _("The chosen location does not exist, using /media/hdd"), MessageBox.TYPE_INFO, timeout = 10)
 		else:
-			BACKUP_DIRECTORY = config.plugins.VIXSettings.backuplocation.value + '/imagebackups'
-			self['lab1'].setText(_("Device: ") + config.plugins.VIXSettings.backuplocation.value + _("\nSelect an image to Restore / Delete:"))
+			BACKUP_DIRECTORY = config.vixsettings.backuplocation.value + '/imagebackups'
+			self['lab1'].setText(_("Device: ") + config.vixsettings.backuplocation.value + _("\nSelect an image to Restore / Delete:"))
 		try:
 			file = open('/etc/image-version', 'r')
 			lines = file.readlines()
@@ -342,8 +341,8 @@ class VIXImageManager(Screen):
 
 	def backuplocation_choosen(self, option):
 		if option is not None:
-			config.plugins.VIXSettings.backuplocation.value = str(option[1])
-		config.plugins.VIXSettings.backuplocation.save()
-		config.plugins.VIXSettings.save()
+			config.vixsettings.backuplocation.value = str(option[1])
+		config.vixsettings.backuplocation.save()
+		config.vixsettings.save()
 		config.save()
 		self.populate_List()

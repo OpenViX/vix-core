@@ -577,8 +577,8 @@ class VIXSoftcamLog(Screen):
 	def cancel(self):
 		self.close()
 
-config.plugins.ViXSettings.Softcamenabled = ConfigYesNo(default = True)
-config.plugins.ViXSettings.Softcamtimer = ConfigNumber(default = 6)
+config.vixsettings.Softcamenabled = ConfigYesNo(default = True)
+config.vixsettings.Softcamtimer = ConfigNumber(default = 6)
 
 class VIXSoftcamMenu(ConfigListScreen, Screen):
 	skin = """
@@ -613,9 +613,9 @@ class VIXSoftcamMenu(ConfigListScreen, Screen):
 	def createSetup(self):
 		self.editListEntry = None
 		self.list = []
-		self.list.append(getConfigListEntry(_("Enable Auto Timer Check ?"), config.plugins.ViXSettings.Softcamenabled))
-		if config.plugins.ViXSettings.Softcamenabled.value:
-			self.list.append(getConfigListEntry(_("Check every (mins)"), config.plugins.ViXSettings.Softcamtimer))
+		self.list.append(getConfigListEntry(_("Enable Auto Timer Check ?"), config.vixsettings.Softcamenabled))
+		if config.vixsettings.Softcamenabled.value:
+			self.list.append(getConfigListEntry(_("Check every (mins)"), config.vixsettings.Softcamtimer))
 		self["config"].list = self.list
 		self["config"].setList(self.list)
 
@@ -641,7 +641,7 @@ class VIXSoftcamMenu(ConfigListScreen, Screen):
 	def keySaveNew(self):
 		for x in self["config"].list:
 			x[1].save()
-		if config.plugins.ViXSettings.Softcamenabled.value:
+		if config.vixsettings.Softcamenabled.value:
 			print "[SoftcamManager] Timer Check Enabled"
 			softcamautopoller.start()
 		else:
@@ -899,9 +899,9 @@ class SoftcamAutoPoller:
 		if initial:
 			delay = 15
 		else:
-			if config.plugins.ViXSettings.Softcamenabled.value:
+			if config.vixsettings.Softcamenabled.value:
 				print "[SoftcamManager] Timer Check Enabled"
-				delay = config.plugins.ViXSettings.Softcamtimer.value * 60
+				delay = config.vixsettings.Softcamtimer.value * 60
 
 		if self.softcam_check not in self.timer.callback:
 			self.timer.callback.append(self.softcam_check)
@@ -943,8 +943,8 @@ class SoftcamAutoPoller:
 			task.setup(autostartcams)
 			Components.Task.job_manager.AddJob(job)
 
-		if config.plugins.ViXSettings.Softcamenabled.value:
-			self.timer.startLongTimer(config.plugins.ViXSettings.Softcamtimer.value * 60)
+		if config.vixsettings.Softcamenabled.value:
+			self.timer.startLongTimer(config.vixsettings.Softcamtimer.value * 60)
 		else:
 			softcamautopoller.stop()
 

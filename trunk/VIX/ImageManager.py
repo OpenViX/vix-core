@@ -22,7 +22,7 @@ from Tools.Directories import pathExists, fileExists, resolveFilename,SCOPE_LANG
 from Tools.LoadPixmap import LoadPixmap
 from enigma import eConsoleAppContainer, eTimer, quitMainloop, RT_HALIGN_LEFT, RT_VALIGN_CENTER, eListboxPythonMultiContent, eListbox, gFont, getDesktop, ePicLoad
 from ServiceReference import ServiceReference
-from os import path, system, unlink, stat, mkdir, popen, makedirs, chdir, getcwd, listdir, rename, remove, access, W_OK, R_OK, F_OK, environ
+from os import path, system, unlink, stat, mkdir, popen, makedirs, chdir, getcwd, listdir, rename, remove, access, W_OK, R_OK, F_OK, environ, statvfs
 import datetime, time, gettext
 from shutil import rmtree, move, copy
 
@@ -119,7 +119,7 @@ class VIXImageManager(Screen):
 		self.emlist.sort()	
 
 	def keyBackup(self):
-		if boxtype == "vusolo" or boxtype == "vuduo" or boxtype == "et9000" or boxtype == "et5000":
+		if boxtype == "vuuno" or boxtype == "vuultimo" or boxtype == "vusolo" or boxtype == "vuduo" or boxtype == "et9000" or boxtype == "et5000":
 			message = _("Are you ready to create a backup image ?")
 			ybox = self.session.openWithCallback(self.BackupMemCheck, MessageBox, message, MessageBox.TYPE_YESNO)
 			ybox.setTitle(_("Backup Confirmation"))
@@ -127,7 +127,7 @@ class VIXImageManager(Screen):
 			self.session.open(MessageBox, _("Sorry you box is not yet compatible."), MessageBox.TYPE_INFO, timeout = 10)
 
 	def keyResstore(self):
-		if boxtype == "vusolo" or boxtype == "vuduo":
+		if boxtype == "vuuno" or boxtype == "vuultimo" or boxtype == "vusolo" or boxtype == "vuduo" or boxtype == "et9000" or boxtype == "et5000":
 			self.sel = self['list'].getCurrent()
 			if self.sel:
 				message = _("Are you sure you want to restore this image:\n ") + self.sel
@@ -149,10 +149,26 @@ class VIXImageManager(Screen):
 				
 	def BackupMemCheck(self,answer):
 		if answer is True:
-			try:
-				memcheck_stdout = popen('free | grep Total | tr -s " " | cut -d " " -f 4', "r")
-				memcheck = memcheck_stdout.read()
-				if int(memcheck) < 61440:
+			BACKUP_DRIVE = BACKUP_DIRECTORY.replace('/imagebackups','')
+			s = statvfs(BACKUP_DRIVE)
+			free = (s.f_bsize * s.f_bavail)/(1024*1024)
+			if int(free) < 200:
+				self.session.open(MessageBox, _("The backup location does not have enough freespace."), MessageBox.TYPE_INFO, timeout = 10)
+			else:
+				try:
+					memcheck_stdout = popen('free | grep Total | tr -s " " | cut -d " " -f 4', "r")
+					memcheck = memcheck_stdout.read()
+					if int(memcheck) < 61440:
+						mycmd1 = "echo '************************************************************************'"
+						mycmd2 = "echo 'Creating swapfile'"
+						mycmd3 = "dd if=/dev/zero of=" + BACKUP_DIRECTORY + "/swapfile_backup bs=1024 count=61440"
+						mycmd4 = "mkswap " + BACKUP_DIRECTORY + "/swapfile_backup"
+						mycmd5 = "swapon " + BACKUP_DIRECTORY + "/swapfile_backup"
+						mycmd6 = "echo '************************************************************************'"
+						self.session.open(Console, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doBackup,closeOnSuccess = True)
+					else:
+						self.doBackup()
+				except:
 					mycmd1 = "echo '************************************************************************'"
 					mycmd2 = "echo 'Creating swapfile'"
 					mycmd3 = "dd if=/dev/zero of=" + BACKUP_DIRECTORY + "/swapfile_backup bs=1024 count=61440"
@@ -160,16 +176,6 @@ class VIXImageManager(Screen):
 					mycmd5 = "swapon " + BACKUP_DIRECTORY + "/swapfile_backup"
 					mycmd6 = "echo '************************************************************************'"
 					self.session.open(Console, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doBackup,closeOnSuccess = True)
-				else:
-					self.doBackup()
-			except:
-				mycmd1 = "echo '************************************************************************'"
-				mycmd2 = "echo 'Creating swapfile'"
-				mycmd3 = "dd if=/dev/zero of=" + BACKUP_DIRECTORY + "/swapfile_backup bs=1024 count=61440"
-				mycmd4 = "mkswap " + BACKUP_DIRECTORY + "/swapfile_backup"
-				mycmd5 = "swapon " + BACKUP_DIRECTORY + "/swapfile_backup"
-				mycmd6 = "echo '************************************************************************'"
-				self.session.open(Console, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doBackup,closeOnSuccess = True)
 	
 	def doBackup(self):
 		global DATE
@@ -218,6 +224,33 @@ class VIXImageManager(Screen):
 			mycmd15 = BUILDIMAGE + ' ' + BACKUP_DIRECTORY + '/bi/root.jffs2 ' + BACKUP_DIRECTORY + '/bi/boot.jffs2 ' + BACKUP_DIRECTORY + '/bi/vmlinux.gz > ' + BACKUPIMAGE
 			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15], finishedCallback=self.doBackup2,closeOnSuccess = True)
 
+		elif boxtype == "vuuno" or boxtype == "vuultimo":
+			if path.exists(BACKUP_DIRECTORY + '/bi'):
+				rmtree(BACKUP_DIRECTORY + '/bi')
+			mkdir(BACKUP_DIRECTORY + '/bi', 0777)
+			mkdir('/tmp/bi', 0777)
+			mkdir('/tmp/bi/root', 0777)
+			mkdir('/tmp/bi/boot', 0777)
+			if path.exists(BACKUP_DIRECTORY + '/' + DATE + '/vuplus'):
+				rmtree(BACKUP_DIRECTORY + '/' + DATE + '/vuplus')
+			mkdir(BACKUP_DIRECTORY + '/' + DATE, 0777)
+			mkdir(BACKUP_DIRECTORY + '/' + DATE + '/vuplus', 0777)
+			mkdir(BACKUP_DIRECTORY + '/' + DATE + '/vuplus/' + boxtype, 0777)
+
+			mycmd1 = "echo '************************************************************************'"
+			mycmd2 = "echo 'Vu+ " + boxtype +  " detected'"
+			mycmd3 = "echo '************************************************************************'"
+			mycmd4 = "mount -t jffs2 /dev/mtdblock0 /tmp/bi/root"
+			mycmd5 = "mount -t jffs2 /dev/mtdblock2 /tmp/bi/boot"
+			mycmd6 = "echo 'Creating Boot sector'"
+			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + BACKUP_DIRECTORY + '/bi/boot.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd8 = "echo 'Creating system root, this will take some time to complete, please wait...'"
+			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + BACKUP_DIRECTORY + '/bi/root.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd10 = "echo 'Creating kernel structure'"
+			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + BACKUP_DIRECTORY + '/bi/vmlinux.gz'
+			mycmd12 = "echo 'Creating bootsplash'"
+			mycmd13 = NANDDUMP + ' /dev/mtd3 -o -b > ' + BACKUP_DIRECTORY + '/bi/splash.bin'
+			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13], finishedCallback=self.doBackup2,closeOnSuccess = True)
 		elif boxtype == "et9000" or boxtype == "et5000":
 			if path.exists(BACKUP_DIRECTORY + '/bi'):
 				rmtree(BACKUP_DIRECTORY + '/bi')
@@ -231,7 +264,7 @@ class VIXImageManager(Screen):
 			mkdir(BACKUP_DIRECTORY + '/' + DATE + '/' + boxtype, 0777)
 
 			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Clarke-Tech " + boxtype +  " detected'"
+			mycmd2 = "echo 'Xtrend " + boxtype +  " detected'"
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "mount -t jffs2 /dev/mtdblock2 /tmp/bi/boot"
 			mycmd5 = "mount -t jffs2 /dev/mtdblock3 /tmp/bi/root"
@@ -242,15 +275,17 @@ class VIXImageManager(Screen):
 			mycmd10 = "echo 'Creating kernel structure'"
 			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + BACKUP_DIRECTORY + '/bi/vmlinux.gz'
 			mycmd12 = "echo '************************************************************************'"
-			mycmd13 = "echo 'Creating Clarke-Tech " + boxtype +  " Backup Images'"
+			mycmd13 = "echo 'Creating Xtrend " + boxtype +  " Backup Images'"
 			mycmd14 = "echo '************************************************************************'"
 			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14], finishedCallback=self.doBackup2,closeOnSuccess = True)
 
 	def doBackup2(self):
-		if boxtype == "vusolo" or boxtype == "vuduo":
+		if boxtype == "vusolo" or boxtype == "vuduo" or boxtype == "vuuno" or boxtype == "vuultimo":
 			move(BACKUP_DIRECTORY + '/bi/root.jffs2', BACKUP_DIRECTORY + '/' + DATE + '/vuplus/' + boxtype +'/root_cfe_auto.jffs2')
 			move(BACKUP_DIRECTORY + '/bi/boot.jffs2', BACKUP_DIRECTORY + '/' + DATE + '/vuplus/' + boxtype +'/boot_cfe_auto.jffs2')
 			move(BACKUP_DIRECTORY + '/bi/vmlinux.gz', BACKUP_DIRECTORY + '/' + DATE + '/vuplus/' + boxtype +'/kernel_cfe_auto.bin')
+			if boxtype == "vuuno" or boxtype == "vuultimo":
+				move(BACKUP_DIRECTORY + '/bi/splash.bin', BACKUP_DIRECTORY + '/' + DATE + '/vuplus/' + boxtype +'/splash_cfe_auto.bin')
 			system('umount /tmp/bi/root')
 			system('umount /tmp/bi/boot')
 			rmtree('/tmp/bi')
@@ -258,8 +293,12 @@ class VIXImageManager(Screen):
 			if path.exists(BACKUP_DIRECTORY + '/swapfile_backup'):
 				system('swapoff ' + BACKUP_DIRECTORY + '/swapfile_backup')
 				remove(BACKUP_DIRECTORY + '/swapfile_backup')
-			if path.exists(BACKUPIMAGE) and path.exists(BACKUP_DIRECTORY + '/' + DATE + '/vuplus/' + boxtype):
-				self.session.open(MessageBox, _("NFI & USB Images created in " + BACKUP_DIRECTORY + '/' + DATE), MessageBox.TYPE_INFO, timeout = 10)
+			if boxtype == "vusolo" or boxtype == "vuduo":
+				if path.exists(BACKUPIMAGE) and path.exists(BACKUP_DIRECTORY + '/' + DATE + '/vuplus/' + boxtype):
+					self.session.open(MessageBox, _("NFI & USB Images created in " + BACKUP_DIRECTORY + '/' + DATE), MessageBox.TYPE_INFO, timeout = 10)
+			elif boxtype == "vuuno" or boxtype == "vuultimo":
+				if path.exists(BACKUP_DIRECTORY + '/' + DATE + '/vuplus/' + boxtype):
+					self.session.open(MessageBox, _("USB Images created in " + BACKUP_DIRECTORY + '/' + DATE), MessageBox.TYPE_INFO, timeout = 10)
 			else:
 				self.session.open(MessageBox, _("Image creation failed - e. g. wrong backup destination or no space left on backup device"), MessageBox.TYPE_INFO, timeout = 10)
 		elif boxtype == "et9000" or boxtype == "et5000":
@@ -290,32 +329,89 @@ class VIXImageManager(Screen):
 	def doResstore(self, answer):
 		NANDWRITE='/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/nandwrite'
 		if answer is True:
-			selectedimage = self.sel
-			if not path.exists(BACKUP_DIRECTORY + '/turnoff_power'):
-				copy('/usr/bin/turnoff_power', BACKUP_DIRECTORY + '/')
-			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Vu+ " + boxtype +  " detected'"
-			mycmd3 = "echo '************************************************************************'"
-			mycmd4 = "echo ' '"
-			mycmd5 = "echo 'Attention:'"
-			mycmd6 = "echo ' '"
-			mycmd7 = "echo 'Your Vuplus will be powered off automatically after the flashing progress.'"
-			mycmd8 = "echo 'Please power on again after 60 seconds to boot the flashed image.'"
-			mycmd9 = "echo ' '"
-			mycmd10 = "echo 'Preparing Flashprogress.'"
-			mycmd11 = "echo 'Erasing NAND Flash.'"
-			mycmd12 = 'flash_eraseall --j /dev/mtd2'
-			mycmd13 = 'flash_eraseall --j /dev/mtd1'
-			mycmd14 = "echo ' '"
-			mycmd15 = "echo 'Flasing Image to NAND.'"
-			mycmd16 = "echo ' '"
-			mycmd17 = NANDWRITE + ' -p /dev/mtd2 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/boot_cfe_auto.jffs2'
-			mycmd18 = NANDWRITE + ' -p /dev/mtd1 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/kernel_cfe_auto.bin'
-			mycmd19 = 'flash_eraseall -j /dev/mtd0'
-			mycmd20 = NANDWRITE + ' -p /dev/mtd0 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/root_cfe_auto.jffs2'
-			mycmd21 = "echo 'Flasing Complete.'"
-			mycmd22 = BACKUP_DIRECTORY + '/turnoff_power'
-			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22],closeOnSuccess = True)
+			if boxtype == "vusolo" or boxtype == "vuduo":
+				selectedimage = self.sel
+				if not path.exists(BACKUP_DIRECTORY + '/turnoff_power'):
+					copy('/usr/bin/turnoff_power', BACKUP_DIRECTORY + '/')
+				mycmd1 = "echo '************************************************************************'"
+				mycmd2 = "echo 'Vu+ " + boxtype +  " detected'"
+				mycmd3 = "echo '************************************************************************'"
+				mycmd4 = "echo ' '"
+				mycmd5 = "echo 'Attention:'"
+				mycmd6 = "echo ' '"
+				mycmd7 = "echo 'Your Vuplus will be powered off automatically after the flashing progress.'"
+				mycmd8 = "echo 'Please power on again after 60 seconds to boot the flashed image.'"
+				mycmd9 = "echo ' '"
+				mycmd10 = "echo 'Preparing Flashprogress.'"
+				mycmd11 = "echo 'Erasing NAND Flash.'"
+				mycmd12 = 'flash_eraseall --j /dev/mtd2'
+				mycmd13 = 'flash_eraseall --j /dev/mtd1'
+				mycmd14 = "echo ' '"
+				mycmd15 = "echo 'Flasing Image to NAND.'"
+				mycmd16 = "echo ' '"
+				mycmd17 = NANDWRITE + ' -p /dev/mtd2 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/boot_cfe_auto.jffs2'
+				mycmd18 = NANDWRITE + ' -p /dev/mtd1 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/kernel_cfe_auto.bin'
+				mycmd19 = 'flash_eraseall -j /dev/mtd0'
+				mycmd20 = NANDWRITE + ' -p /dev/mtd0 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/root_cfe_auto.jffs2'
+				mycmd21 = "echo 'Flasing Complete.'"
+				mycmd22 = BACKUP_DIRECTORY + '/turnoff_power'
+				self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22],closeOnSuccess = True)
+			elif boxtype == "vuuno" or boxtype == "vuultimo":
+				selectedimage = self.sel
+				if not path.exists(BACKUP_DIRECTORY + '/turnoff_power'):
+					copy('/usr/bin/turnoff_power', BACKUP_DIRECTORY + '/')
+				mycmd1 = "echo '************************************************************************'"
+				mycmd2 = "echo 'Vu+ " + boxtype +  " detected'"
+				mycmd3 = "echo '************************************************************************'"
+				mycmd4 = "echo ' '"
+				mycmd5 = "echo 'Attention:'"
+				mycmd6 = "echo ' '"
+				mycmd7 = "echo 'Your Vuplus will be powered off automatically after the flashing progress.'"
+				mycmd8 = "echo 'Please power on again after 60 seconds to boot the flashed image.'"
+				mycmd9 = "echo ' '"
+				mycmd10 = "echo 'Preparing Flashprogress.'"
+				mycmd11 = "echo 'Erasing NAND Flash.'"
+				mycmd12 = 'flash_eraseall --j /dev/mtd2'
+				mycmd13 = 'flash_eraseall --j /dev/mtd1'
+				mycmd14 = "echo ' '"
+				mycmd15 = "echo 'Flasing Image to NAND.'"
+				mycmd16 = "echo ' '"
+				mycmd17 = NANDWRITE + ' -p /dev/mtd2 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/boot_cfe_auto.jffs2'
+				mycmd18 = NANDWRITE + ' -p /dev/mtd1 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/kernel_cfe_auto.bin'
+				mycmd19 = 'flash_eraseall -j /dev/mtd0'
+				mycmd20 = NANDWRITE + ' -p /dev/mtd0 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/root_cfe_auto.jffs2'
+				mycmd21 = 'flash_eraseall -j /dev/mtd3'
+				mycmd22 = NANDWRITE + ' -p /dev/mtd3 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/splash_cfe_auto.bin'
+				mycmd23 = "echo 'Flasing Complete.'"
+				mycmd24 = BACKUP_DIRECTORY + '/turnoff_power'
+				self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24],closeOnSuccess = True)
+			elif boxtype == "et9000" or boxtype == "et5000":
+				selectedimage = self.sel
+				if not path.exists(BACKUP_DIRECTORY + '/turnoff_power'):
+					copy('/usr/bin/turnoff_power', BACKUP_DIRECTORY + '/')
+				mycmd1 = "echo '************************************************************************'"
+				mycmd2 = "echo 'Xtrend " + boxtype +  " detected'"
+				mycmd3 = "echo '************************************************************************'"
+				mycmd4 = "echo ' '"
+				mycmd5 = "echo 'Attention:'"
+				mycmd6 = "echo ' '"
+				mycmd7 = "echo 'Your Xtrend will be powered off automatically after the flashing progress.'"
+				mycmd8 = "echo 'Please power on again after 60 seconds to boot the flashed image.'"
+				mycmd9 = "echo ' '"
+				mycmd10 = "echo 'Preparing Flashprogress.'"
+				mycmd11 = "echo 'Erasing NAND Flash.'"
+				mycmd12 = 'flash_eraseall --j /dev/mtd2'
+				mycmd13 = 'flash_eraseall --j /dev/mtd1'
+				mycmd14 = "echo ' '"
+				mycmd15 = "echo 'Flasing Image to NAND.'"
+				mycmd16 = "echo ' '"
+				mycmd17 = NANDWRITE + ' -p /dev/mtd2 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/boot.bin'
+				mycmd18 = NANDWRITE + ' -p /dev/mtd1 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/kernel.bin'
+				mycmd19 = 'flash_eraseall -j /dev/mtd3'
+				mycmd20 = NANDWRITE + ' -p /dev/mtd3 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/rootfs.bin'
+				mycmd21 = "echo 'Flasing Complete.'"
+				mycmd22 = BACKUP_DIRECTORY + '/turnoff_power'
+				self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22],closeOnSuccess = True)
 
 	def doDelete(self, answer):
 		if answer is True:

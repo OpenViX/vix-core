@@ -66,7 +66,7 @@ class VIXCronManager(Screen):
 		self['key_yellow'] = Label(_('Delete'))
 		self.list = []
 		self['list'] = List(self.list)
-		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'ok': self.close, 'back': self.close, 'red': self.addtocron, 'yellow': self.delcron})
+		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'ok': self.info, 'back': self.close, 'red': self.addtocron, 'yellow': self.delcron})
 		self.updateList()
 
 	def addtocron(self):
@@ -78,44 +78,51 @@ class VIXCronManager(Screen):
 			f = open('/etc/cron/crontabs/root', 'r')
 			for line in f.readlines():
 				parts = line.strip().split()
-				if parts[1] == '*':
-					line2 = 'Hourly: \t\t' + 'Command: ' + parts[5]
-				elif parts[2] == '*' and parts[4] == '*':
-					line2 = 'Daily: ' + parts[1] + ':' + parts[0] + '\t\t' + 'Command: ' + parts[5]
-				elif parts[3] == '*':
+				if parts:
+					if parts[1] == '*':
+						line2 = 'H: 00:' + parts[0].zfill(2) + '\t' + parts[5]
+						res = (line2, line)
+						self.list.append(res)
+					elif parts[2] == '*' and parts[4] == '*':
+						line2 = 'D: ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
+						res = (line2, line)
+						self.list.append(res)
+					elif parts[3] == '*':
 						if parts[4] == "*":
-							line2 = 'Monthly:  Day ' + parts[2] + '  ' + parts[1] + ':' + parts[0] + '\t' + 'Command: ' + parts[5]
+							line2 = 'M:  Day ' + parts[2] + '  ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "0":
-							line2 = 'Weekly:  Sunday ' + parts[1] + ':' + parts[0] + '\t' + 'Command: ' + parts[5]
+							line2 = 'W:  Sunday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "1":
-							line2 = 'Weekly:  Monday ' + parts[1] + ':' + parts[0] + '\t' + 'Command: ' + parts[5]
+							line2 = 'W:  Monday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "2":
-							line2 = 'Weekly:  Tuesday ' + parts[1] + ':' + parts[0] + '\t' + 'Command: ' + parts[5]
+							line2 = 'W:  Tuesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "3":
-							line2 = 'Weekly:  Wednesday ' + parts[1] + ':' + parts[0] + '\t' + 'Command: ' + parts[5]
+							line2 = 'W:  Wednesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "4":
-							line2 = 'Weekly:  Thursday ' + parts[1] + ':' + parts[0] + '\t' + 'Command: ' + parts[5]
+							line2 = 'W:  Thursday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "5":
-							line2 = 'Weekly:  Friday ' + parts[1] + ':' + parts[0] + '\t' + 'Command: ' + parts[5]
+							line2 = 'W:  Friday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "6":
-							line2 = 'Weekly:  Saturday ' + parts[1] + ':' + parts[0] + '\t' + 'Command: ' + parts[5]
-
-				res = (line2, line)
-				self.list.append(res)
+							line2 = 'W:  Saturday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
+						res = (line2, line)
+						self.list.append(res)
 			f.close()
 		self['list'].list = self.list
 
 	def delcron(self):
 		mysel = self['list'].getCurrent()
 		if mysel:
-			mysel
 			myline = mysel[1]
 			file('/etc/cron/crontabs/root.tmp', 'w').writelines([l for l in file('/etc/cron/crontabs/root').readlines() if myline not in l])
 			rename('/etc/cron/crontabs/root.tmp','/etc/cron/crontabs/root')
 			rc = system('crontab /etc/cron/crontabs/root -c /etc/cron/crontabs')
 			self.updateList()
-		else:
-			mysel
+
+	def info(self):
+		mysel = self['list'].getCurrent()
+		if mysel:
+			myline = mysel[1]
+			self.session.open(MessageBox, _(myline), MessageBox.TYPE_INFO)
 
 class VIXSetupCronConf(Screen, ConfigListScreen):
 	skin = """

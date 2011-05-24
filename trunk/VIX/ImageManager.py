@@ -66,26 +66,20 @@ class VIXImageManager(Screen):
 		self.emlist = []
 		self.populate_List()
 		self['list'] = MenuList(self.emlist)
-		self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions'],
+		self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
 			{
 				'cancel': self.close,
 				'red': self.close,
 				'green': self.keyBackup,
 				'yellow': self.keyResstore,
 				'blue': self.keyDelete,
+				"menu": self.createSetup,
 			}, -1)
 
 		self["key_red"] = Button(_("Close"))
 		self["key_green"] = Button(_("New Backup"))
 		self["key_yellow"] = Button(_("Restore"))
 		self["key_blue"] = Button(_("Delete"))
-
-		self["MenuActions"] = HelpableActionMap(self, "MenuActions",
-			{
-				"menu": (self.createSetup, _("Open Context Menu"))
-			}
-		)
-
 
 	def populate_List(self):
 		global boxtype
@@ -428,8 +422,6 @@ class VIXImageManager(Screen):
 		parts = []
 		for p in harddiskmanager.getMountedPartitions():
 			d = path.normpath(p.mountpoint)
-			print 'd test',d
-			print 'p test',p
 			if path.exists(p.mountpoint) and p.mountpoint != "/" and (p.mountpoint != ''):
 				parts.append((p.description, d))
 		if len(parts):

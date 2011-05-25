@@ -65,7 +65,8 @@ class VIXCronManager(Screen):
 		self["title"] = Label(_("Cron Manager"))
 		
 		self['lab1'] = Label(_("Autostart:"))
-		self['labactive'] = Label(_(_("Disabled")))
+		self['labactive'] = Label(_(_("Active")))
+		self['labdisabled'] = Label(_(_("Disabled")))
 		self['lab2'] = Label(_("Current Status:"))
 		self['labstop'] = Label(_("Stopped"))
 		self['labrun'] = Label(_("Running"))
@@ -155,13 +156,17 @@ class VIXCronManager(Screen):
 		crond_process = str(p.named('crond')).strip('[]')
 		self['labrun'].hide()
 		self['labstop'].hide()
-		self['labactive'].setText(_("Disabled"))
+		self['labactive'].hide()
+		self['labdisabled'].hide()
 		self.my_crond_active = False
 		self.my_crond_run = False
 		if path.exists('/etc/rc3.d/S20busybox-cron'):
-			self['labactive'].setText(_("Enabled"))
+			self['labdisabled'].hide()
 			self['labactive'].show()
 			self.my_crond_active = True
+		else:
+			self['labactive'].hide()
+			self['labdisabled'].show()
 		if crond_process:
 			self.my_crond_run = True
 		if self.my_crond_run == True:

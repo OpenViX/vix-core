@@ -12,7 +12,7 @@ from Components.Pixmap import Pixmap,MultiPixmap
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
-from Screens.Console import Console
+from Components.Console import Console
 from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from Tools.LoadPixmap import LoadPixmap
 from base64 import encodestring
@@ -21,6 +21,7 @@ from skin import parseColor
 from os import system, environ, listdir, remove, rename, symlink, unlink, path, mkdir, access, W_OK, R_OK, F_OK
 import gettext
 from enigma import eTimer, ePoint
+from time import sleep
 
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
@@ -62,17 +63,116 @@ class VIXCronManager(Screen):
 		if not path.exists('/usr/scripts'):
 			mkdir('/usr/scripts', 0755)
 		self["title"] = Label(_("Cron Manager"))
+		
+		self['lab1'] = Label(_("Autostart:"))
+		self['labactive'] = Label(_(_("Disabled")))
+		self['lab2'] = Label(_("Current Status:"))
+		self['labstop'] = Label(_("Stopped"))
+		self['labrun'] = Label(_("Running"))
+		self.Console = Console()
+		self.my_crond_active = False
+		self.my_crond_run = False
+		
 		self['key_red'] = Label(_('Add'))
-		self['key_yellow'] = Label(_('Delete'))
+		self['key_green'] = Label(_('Delete'))
+		self['key_yellow'] = Label(_("Start"))
+		self['key_blue'] = Label(_("Autostart"))
 		self.list = []
 		self['list'] = List(self.list)
-		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'ok': self.info, 'back': self.close, 'red': self.addtocron, 'yellow': self.delcron})
+		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'ok': self.info, 'back': self.close, 'red': self.addtocron, 'green': self.delcron, 'yellow': self.CrondStart, 'blue': self.autostart})
+		self.onLayoutFinish.append(self.updateList)
+
+	def CrondStart(self):
+		if self.my_crond_run == False:
+			self.Console.ePopen('/etc/init.d/busybox-cron start')
+			sleep(3)
+			self.updateList()
+		elif self.my_crond_run == True:
+			self.Console.ePopen('/etc/init.d/busybox-cron stop')
+			sleep(3)
+			self.updateList()
+
+	def autostart(self):
+		if path.exists('/etc/rc0.d/K20busybox-cron'):
+			unlink('/etc/rc0.d/K20busybox-cron')
+			mymess = _("Autostart Disabled.")
+		else:
+			symlink('/etc/init.d/busybox-cron', '/etc/rc0.d/K20busybox-cron')
+			mymess = _("Autostart Enabled.")
+
+		if path.exists('/etc/rc1.d/K20busybox-cron'):
+			unlink('/etc/rc1.d/K20busybox-cron')
+			mymess = _("Autostart Disabled.")
+		else:
+			symlink('/etc/init.d/busybox-cron', '/etc/rc1.d/K20busybox-cron')
+			mymess = _("Autostart Enabled.")
+
+		if path.exists('/etc/rc2.d/S20busybox-cron'):
+			unlink('/etc/rc2.d/S20busybox-cron')
+			mymess = _("Autostart Disabled.")
+		else:
+			symlink('/etc/init.d/busybox-cron', '/etc/rc2.d/S20busybox-cron')
+			mymess = _("Autostart Enabled.")
+
+		if path.exists('/etc/rc3.d/S20busybox-cron'):
+			unlink('/etc/rc3.d/S20busybox-cron')
+			mymess = _("Autostart Disabled.")
+		else:
+			symlink('/etc/init.d/busybox-cron', '/etc/rc3.d/S20busybox-cron')
+			mymess = _("Autostart Enabled.")
+
+		if path.exists('/etc/rc4.d/S20busybox-cron'):
+			unlink('/etc/rc4.d/S20busybox-cron')
+			mymess = _("Autostart Disabled.")
+		else:
+			symlink('/etc/init.d/busybox-cron', '/etc/rc4.d/S20busybox-cron')
+			mymess = _("Autostart Enabled.")
+
+		if path.exists('/etc/rc5.d/S20busybox-cron'):
+			unlink('/etc/rc5.d/S20busybox-cron')
+			mymess = _("Autostart Disabled.")
+		else:
+			symlink('/etc/init.d/busybox-cron', '/etc/rc5.d/S20busybox-cron')
+			mymess = _("Autostart Enabled.")
+
+		if path.exists('/etc/rc6.d/K20busybox-cron'):
+			unlink('/etc/rc6.d/K20busybox-cron')
+			mymess = _("Autostart Disabled.")
+		else:
+			symlink('/etc/init.d/busybox-cron', '/etc/rc6.d/K20busybox-cron')
+			mymess = _("Autostart Enabled.")
+
+		mybox = self.session.open(MessageBox, mymess, MessageBox.TYPE_INFO)
+		mybox.setTitle(_("Info"))
 		self.updateList()
 
 	def addtocron(self):
 		self.session.openWithCallback(self.updateList, VIXSetupCronConf)
 
 	def updateList(self):
+		import process
+		p = process.ProcessList()
+		crond_process = str(p.named('crond')).strip('[]')
+		self['labrun'].hide()
+		self['labstop'].hide()
+		self['labactive'].setText(_("Disabled"))
+		self.my_crond_active = False
+		self.my_crond_run = False
+		if path.exists('/etc/rc3.d/S20busybox-cron'):
+			self['labactive'].setText(_("Enabled"))
+			self['labactive'].show()
+			self.my_crond_active = True
+		if crond_process:
+			self.my_crond_run = True
+		if self.my_crond_run == True:
+			self['labstop'].hide()
+			self['labrun'].show()
+			self['key_yellow'].setText(_("Stop"))
+		else:
+			self['labstop'].show()
+			self['labrun'].hide()
+			self['key_yellow'].setText(_("Start"))
+
 		self.list = []
 		if path.exists('/etc/cron/crontabs/root'):
 			f = open('/etc/cron/crontabs/root', 'r')
@@ -80,30 +180,150 @@ class VIXCronManager(Screen):
 				parts = line.strip().split()
 				if parts:
 					if parts[1] == '*':
-						line2 = 'H: 00:' + parts[0].zfill(2) + '\t' + parts[5]
+						try:
+							line2 = 'H: 00:' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8] + parts[9]
+						except:
+							try:
+								line2 = 'H: 00:' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8]
+							except:
+								try:
+									line2 = 'H: 00:' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7]
+								except:
+									try:
+										line2 = 'H: 00:' + parts[0].zfill(2) + '\t' + parts[5] + parts[6]
+									except:
+										line2 = 'H: 00:' + parts[0].zfill(2) + '\t' + parts[5]
 						res = (line2, line)
 						self.list.append(res)
 					elif parts[2] == '*' and parts[4] == '*':
-						line2 = 'D: ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
+						try:
+							line2 = 'D: ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8] + parts[9]
+						except:
+							try:
+								line2 = 'D: ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8]
+							except:
+								try:
+									line2 = 'D: ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7]
+								except:
+									try:
+										line2 = 'D: ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6]
+									except:
+										line2 = 'D: ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						res = (line2, line)
 						self.list.append(res)
 					elif parts[3] == '*':
 						if parts[4] == "*":
-							line2 = 'M:  Day ' + parts[2] + '  ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
+							try:
+								line2 = 'M:  Day ' + parts[2] + '  ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8] + parts[9]
+							except:
+								try:
+									line2 = 'M:  Day ' + parts[2] + '  ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8]
+								except:
+									try:
+										line2 = 'M:  Day ' + parts[2] + '  ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7]
+									except:
+										try:
+											line2 = 'M:  Day ' + parts[2] + '  ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6]
+										except:
+											line2 = 'M:  Day ' + parts[2] + '  ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "0":
-							line2 = 'W:  Sunday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
+							try:
+								line2 = 'W:  Sunday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8] + parts[9]
+							except:
+								try:
+									line2 = 'W:  Sunday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8]
+								except:
+									try:
+										line2 = 'W:  Sunday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7]
+									except:
+										try:
+											line2 = 'W:  Sunday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6]
+										except:
+											line2 = 'W:  Sunday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "1":
-							line2 = 'W:  Monday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
+							try:
+								line2 = 'W:  Monnday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8] + parts[9]
+							except:
+								try:
+									line2 = 'W:  Monday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8]
+								except:
+									try:
+										line2 = 'W:  Monday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7]
+									except:
+										try:
+											line2 = 'W:  Monday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6]
+										except:
+											line2 = 'W:  Monday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "2":
-							line2 = 'W:  Tuesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
+							try:
+								line2 = 'W:  Tuesnday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8] + parts[9]
+							except:
+								try:
+									line2 = 'W:  Tuesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8]
+								except:
+									try:
+										line2 = 'W:  Tuesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7]
+									except:
+										try:
+											line2 = 'W:  Tuesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6]
+										except:
+											line2 = 'W:  Tuesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "3":
-							line2 = 'W:  Wednesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
+							try:
+								line2 = 'W:  Wednesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8] + parts[9]
+							except:
+								try:
+									line2 = 'W:  Wednesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8]
+								except:
+									try:
+										line2 = 'W:  Wednesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7]
+									except:
+										try:
+											line2 = 'W:  Wednesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6]
+										except:
+											line2 = 'W:  Wednesday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "4":
-							line2 = 'W:  Thursday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
+							try:
+								line2 = 'W:  Thursday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8] + parts[9]
+							except:
+								try:
+									line2 = 'W:  Thursday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8]
+								except:
+									try:
+										line2 = 'W:  Thursday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7]
+									except:
+										try:
+											line2 = 'W:  Thursday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6]
+										except:
+											line2 = 'W:  Thursday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "5":
-							line2 = 'W:  Friday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
+							try:
+								line2 = 'W:  Friday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8] + parts[9]
+							except:
+								try:
+									line2 = 'W:  Friday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8]
+								except:
+									try:
+										line2 = 'W:  Friday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7]
+									except:
+										try:
+											line2 = 'W:  Friday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6]
+										except:
+											line2 = 'W:  Friday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						elif parts[4] == "6":
-							line2 = 'W:  Saturday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
+							try:
+								line2 = 'W:  Saturday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8] + parts[9]
+							except:
+								try:
+									line2 = 'W:  Saturday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7] + parts[8]
+								except:
+									try:
+										line2 = 'W:  Saturday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6] + parts[7]
+									except:
+										try:
+											line2 = 'W:  Saturday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5] + parts[6]
+										except:
+											line2 = 'W:  Saturday ' + parts[1].zfill(2) + ':' + parts[0].zfill(2) + '\t' + parts[5]
 						res = (line2, line)
 						self.list.append(res)
 			f.close()

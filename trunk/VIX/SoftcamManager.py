@@ -893,31 +893,6 @@ class SoftcamAutoPoller:
 	"""Automatically Poll SoftCam"""
 	def __init__(self):
 		# Init Timer
-		self.timer = eTimer()
-
-	def start(self, initial = True):
-		if initial:
-			delay = 15
-		else:
-			if config.vixsettings.Softcamenabled.value:
-				print "[SoftcamManager] Timer Check Enabled"
-				delay = config.vixsettings.Softcamtimer.value * 60
-
-		if self.softcam_check not in self.timer.callback:
-			self.timer.callback.append(self.softcam_check)
-		self.timer.startLongTimer(delay)
-
-	def stop(self):
-		if self.softcam_check in self.timer.callback:
-			self.timer.callback.remove(self.softcam_check)
-		self.timer.stop()
-
-	def softcam_check(self):
-		now = int(time())
-		print "[SoftcamManager] Poll occured at", strftime("%c", localtime(now))
-
-		if path.exists('/tmp/SoftcamRuningCheck.tmp'):
-			remove('/tmp/SoftcamRuningCheck.tmp')
 		if not path.exists('/etc/keys'):
 			mkdir('/etc/keys', 0755)
 		if not path.exists('/etc/tuxbox/config'):
@@ -934,6 +909,23 @@ class SoftcamAutoPoller:
 			symlink('/etc/scce', '/var/scce')
 		if not path.exists('/usr/softcams'):
 			mkdir('/usr/softcams', 0755)
+		self.timer = eTimer()
+
+	def start(self):
+		if self.softcam_check not in self.timer.callback:
+			self.timer.callback.append(self.softcam_check)
+		self.timer.startLongTimer(30)
+
+	def stop(self):
+		if self.softcam_check in self.timer.callback:
+			self.timer.callback.remove(self.softcam_check)
+		self.timer.stop()
+
+	def softcam_check(self):
+		now = int(time())
+		print "[SoftcamManager] Poll occured at", strftime("%c", localtime(now))
+		if path.exists('/tmp/SoftcamRuningCheck.tmp'):
+			remove('/tmp/SoftcamRuningCheck.tmp')
 
 		if path.exists('/etc/SoftcamsAutostart'):
 			autostartcams = file('/etc/SoftcamsAutostart').readlines()

@@ -10,7 +10,6 @@ AC_PROG_CXX
 
 AC_OUTPUT([
 Makefile
-python2.6/Makefile
 etc/Makefile
 etc/cron/Makefile
 etc/cron/crontabs/Makefile

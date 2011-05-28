@@ -104,8 +104,6 @@ class VIXImageManager(Screen):
 
 		if not path.exists(BACKUP_DIRECTORY):
 			mkdir(BACKUP_DIRECTORY, 0755)
-		if path.exists(BACKUP_DIRECTORY + '/turnoff_power'):
-			remove(BACKUP_DIRECTORY + '/turnoff_power')
 		images = listdir(BACKUP_DIRECTORY)
 		del self.emlist[:]
 		for fil in images:
@@ -325,64 +323,58 @@ class VIXImageManager(Screen):
 		if answer is True:
 			if boxtype == "vusolo" or boxtype == "vuduo":
 				selectedimage = self.sel
-				if not path.exists(BACKUP_DIRECTORY + '/turnoff_power'):
-					copy('/usr/bin/turnoff_power', BACKUP_DIRECTORY + '/')
 				mycmd1 = "echo '************************************************************************'"
 				mycmd2 = "echo 'Vu+ " + boxtype +  " detected'"
 				mycmd3 = "echo '************************************************************************'"
 				mycmd4 = "echo ' '"
 				mycmd5 = "echo 'Attention:'"
 				mycmd6 = "echo ' '"
-				mycmd7 = "echo 'Your Vuplus will be powered off automatically after the flashing progress.'"
-				mycmd8 = "echo 'Please power on again after 60 seconds to boot the flashed image.'"
-				mycmd9 = "echo ' '"
-				mycmd10 = "echo 'Preparing Flashprogress.'"
-				mycmd11 = "echo 'Erasing NAND Flash.'"
-				mycmd12 = 'flash_eraseall --j /dev/mtd2'
-				mycmd13 = 'flash_eraseall --j /dev/mtd1'
-				mycmd14 = "echo ' '"
-				mycmd15 = "echo 'Flasing Image to NAND.'"
-				mycmd16 = "echo ' '"
-				mycmd17 = NANDWRITE + ' -p /dev/mtd2 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/boot_cfe_auto.jffs2'
-				mycmd18 = NANDWRITE + ' -p /dev/mtd1 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/kernel_cfe_auto.bin'
-				mycmd19 = 'flash_eraseall -j /dev/mtd0'
-				mycmd20 = NANDWRITE + ' -p /dev/mtd0 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/root_cfe_auto.jffs2'
-				mycmd21 = "echo 'Flasing Complete.'"
-				mycmd22 = BACKUP_DIRECTORY + '/turnoff_power'
+				mycmd7 = "echo 'Your Vuplus will be rebooted automatically after the flashing progress.'"
+				mycmd8 = "echo ' '"
+				mycmd9 = "echo 'Preparing Flashprogress.'"
+				mycmd10 = "echo 'Erasing NAND Flash.'"
+				mycmd11 = 'flash_eraseall --j /dev/mtd2'
+				mycmd12 = 'flash_eraseall --j /dev/mtd1'
+				mycmd13 = "echo ' '"
+				mycmd14 = "echo 'Flasing Image to NAND.'"
+				mycmd15 = "echo ' '"
+				mycmd16 = NANDWRITE + ' -p /dev/mtd2 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/boot_cfe_auto.jffs2'
+				mycmd17 = NANDWRITE + ' -p /dev/mtd1 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/kernel_cfe_auto.bin'
+				mycmd18 = 'flash_eraseall -j /dev/mtd0'
+				mycmd19 = NANDWRITE + ' -p /dev/mtd0 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/root_cfe_auto.jffs2'
+				mycmd20 = "echo 'Flasing Complete.'"
+				mycmd21 = 'sleep 2'
+				mycmd22 = 'shutdown -r now'
 				self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22],closeOnSuccess = True)
 			elif boxtype == "vuuno" or boxtype == "vuultimo":
 				selectedimage = self.sel
-				if not path.exists(BACKUP_DIRECTORY + '/turnoff_power'):
-					copy('/usr/bin/turnoff_power', BACKUP_DIRECTORY + '/')
 				mycmd1 = "echo '************************************************************************'"
 				mycmd2 = "echo 'Vu+ " + boxtype +  " detected'"
 				mycmd3 = "echo '************************************************************************'"
 				mycmd4 = "echo ' '"
 				mycmd5 = "echo 'Attention:'"
 				mycmd6 = "echo ' '"
-				mycmd7 = "echo 'Your Vuplus will be powered off automatically after the flashing progress.'"
-				mycmd8 = "echo 'Please power on again after 60 seconds to boot the flashed image.'"
-				mycmd9 = "echo ' '"
-				mycmd10 = "echo 'Preparing Flashprogress.'"
-				mycmd11 = "echo 'Erasing NAND Flash.'"
-				mycmd12 = 'flash_eraseall --j /dev/mtd2'
-				mycmd13 = 'flash_eraseall --j /dev/mtd1'
-				mycmd14 = "echo ' '"
-				mycmd15 = "echo 'Flasing Image to NAND.'"
-				mycmd16 = "echo ' '"
-				mycmd17 = NANDWRITE + ' -p /dev/mtd2 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/boot_cfe_auto.jffs2'
-				mycmd18 = NANDWRITE + ' -p /dev/mtd1 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/kernel_cfe_auto.bin'
-				mycmd19 = 'flash_eraseall -j /dev/mtd0'
-				mycmd20 = NANDWRITE + ' -p /dev/mtd0 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/root_cfe_auto.jffs2'
-				mycmd21 = 'flash_eraseall -j /dev/mtd3'
-				mycmd22 = NANDWRITE + ' -p /dev/mtd3 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/splash_cfe_auto.bin'
-				mycmd23 = "echo 'Flasing Complete.'"
-				mycmd24 = BACKUP_DIRECTORY + '/turnoff_power'
+				mycmd7 = "echo 'Your Vuplus will be rebooted automatically after the flashing progress.'"
+				mycmd8 = "echo ' '"
+				mycmd9 = "echo 'Preparing Flashprogress.'"
+				mycmd10 = "echo 'Erasing NAND Flash.'"
+				mycmd11 = 'flash_eraseall --j /dev/mtd2'
+				mycmd12 = 'flash_eraseall --j /dev/mtd1'
+				mycmd13 = "echo ' '"
+				mycmd14 = "echo 'Flasing Image to NAND.'"
+				mycmd15 = "echo ' '"
+				mycmd16 = NANDWRITE + ' -p /dev/mtd2 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/boot_cfe_auto.jffs2'
+				mycmd17 = NANDWRITE + ' -p /dev/mtd1 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/kernel_cfe_auto.bin'
+				mycmd18 = 'flash_eraseall -j /dev/mtd0'
+				mycmd19 = NANDWRITE + ' -p /dev/mtd0 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/root_cfe_auto.jffs2'
+				mycmd20 = 'flash_eraseall -j /dev/mtd3'
+				mycmd21 = NANDWRITE + ' -p /dev/mtd3 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/splash_cfe_auto.bin'
+				mycmd22 = "echo 'Flasing Complete.'"
+				mycmd23 = 'sleep 2'
+				mycmd24 = 'shutdown -r now'
 				self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24],closeOnSuccess = True)
 			elif boxtype == "et9000" or boxtype == "et5000":
 				selectedimage = self.sel
-				if not path.exists(BACKUP_DIRECTORY + '/turnoff_power'):
-					copy('/usr/bin/turnoff_power', BACKUP_DIRECTORY + '/')
 				mycmd1 = "echo '************************************************************************'"
 				mycmd2 = "echo 'Xtrend " + boxtype +  " detected'"
 				mycmd3 = "echo '************************************************************************'"
@@ -390,21 +382,21 @@ class VIXImageManager(Screen):
 				mycmd5 = "echo 'Attention:'"
 				mycmd6 = "echo ' '"
 				mycmd7 = "echo 'Your Xtrend will be powered off automatically after the flashing progress.'"
-				mycmd8 = "echo 'Please power on again after 60 seconds to boot the flashed image.'"
-				mycmd9 = "echo ' '"
-				mycmd10 = "echo 'Preparing Flashprogress.'"
-				mycmd11 = "echo 'Erasing NAND Flash.'"
-				mycmd12 = 'flash_eraseall --j /dev/mtd2'
-				mycmd13 = 'flash_eraseall --j /dev/mtd1'
-				mycmd14 = "echo ' '"
-				mycmd15 = "echo 'Flasing Image to NAND.'"
-				mycmd16 = "echo ' '"
-				mycmd17 = NANDWRITE + ' -p /dev/mtd2 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/boot.bin'
-				mycmd18 = NANDWRITE + ' -p /dev/mtd1 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/kernel.bin'
-				mycmd19 = 'flash_eraseall -j /dev/mtd3'
-				mycmd20 = NANDWRITE + ' -p /dev/mtd3 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/rootfs.bin'
-				mycmd21 = "echo 'Flasing Complete.'"
-				mycmd22 = BACKUP_DIRECTORY + '/turnoff_power'
+				mycmd8 = "echo ' '"
+				mycmd9 = "echo 'Preparing Flashprogress.'"
+				mycmd10 = "echo 'Erasing NAND Flash.'"
+				mycmd11 = 'flash_eraseall --j /dev/mtd2'
+				mycmd12 = 'flash_eraseall --j /dev/mtd1'
+				mycmd13 = "echo ' '"
+				mycmd14 = "echo 'Flasing Image to NAND.'"
+				mycmd15 = "echo ' '"
+				mycmd16 = NANDWRITE + ' -p /dev/mtd2 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/boot.bin'
+				mycmd17 = NANDWRITE + ' -p /dev/mtd1 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/kernel.bin'
+				mycmd18 = 'flash_eraseall -j /dev/mtd3'
+				mycmd19 = NANDWRITE + ' -p /dev/mtd3 ' + BACKUP_DIRECTORY + '/' + selectedimage + '/vuplus/' + boxtype + '/rootfs.bin'
+				mycmd20 = "echo 'Flasing Complete.'"
+				mycmd21 = 'sleep 2'
+				mycmd22 = 'shutdown -r now'
 				self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22],closeOnSuccess = True)
 
 	def doDelete(self, answer):

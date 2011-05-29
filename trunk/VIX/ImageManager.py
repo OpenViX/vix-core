@@ -172,7 +172,6 @@ class VIXImageManager(Screen):
 	def doBackup(self):
 		global DATE
 		global IMAGEVERSION
-		global BUILDIMAGE
 		global BACKUPIMAGE
 		DATE_stdout = popen('date +%Y%m%d_%H%M%S', "r")
 		DATEtmp = DATE_stdout.read()
@@ -182,7 +181,6 @@ class VIXImageManager(Screen):
 		IMAGEVERSION = DATEtmp.rstrip('\n')
 #		OPTIONS=' --eraseblock=0x20000 -n -l'
 		MKFS='/usr/bin/mkfs.jffs2'
-		BUILDIMAGE='/usr/bin/buildimage'
 		NANDDUMP='/usr/bin/nanddump'
 
 		if boxtype == "vusolo" or boxtype == "vuduo":
@@ -210,11 +208,7 @@ class VIXImageManager(Screen):
 			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + BACKUP_DIRECTORY + '/bi/root.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd10 = "echo 'Creating kernel structure'"
 			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + BACKUP_DIRECTORY + '/bi/vmlinux.gz'
-			mycmd12 = "echo '************************************************************************'"
-			mycmd13 = "echo 'Creating Vu+ " + boxtype +  " Backup Images'"
-			mycmd14 = "echo '************************************************************************'"
-			mycmd15 = BUILDIMAGE + ' ' + BACKUP_DIRECTORY + '/bi/root.jffs2 ' + BACKUP_DIRECTORY + '/bi/boot.jffs2 ' + BACKUP_DIRECTORY + '/bi/vmlinux.gz > ' + BACKUPIMAGE
-			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15], finishedCallback=self.doBackup2,closeOnSuccess = True)
+			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11], finishedCallback=self.doBackup2,closeOnSuccess = True)
 
 		elif boxtype == "vuuno" or boxtype == "vuultimo":
 			if path.exists(BACKUP_DIRECTORY + '/bi'):
@@ -266,10 +260,7 @@ class VIXImageManager(Screen):
 			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + BACKUP_DIRECTORY + '/bi/root.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd10 = "echo 'Creating kernel structure'"
 			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + BACKUP_DIRECTORY + '/bi/vmlinux.gz'
-			mycmd12 = "echo '************************************************************************'"
-			mycmd13 = "echo 'Creating Xtrend " + boxtype +  " Backup Images'"
-			mycmd14 = "echo '************************************************************************'"
-			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14], finishedCallback=self.doBackup2,closeOnSuccess = True)
+			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11], finishedCallback=self.doBackup2,closeOnSuccess = True)
 
 	def doBackup2(self):
 		if boxtype == "vusolo" or boxtype == "vuduo" or boxtype == "vuuno" or boxtype == "vuultimo":

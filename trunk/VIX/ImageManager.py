@@ -181,9 +181,9 @@ class VIXImageManager(Screen):
 		IMAGEVERSIONtmp = IMAGEVERSION_stdout.read()
 		IMAGEVERSION = DATEtmp.rstrip('\n')
 #		OPTIONS=' --eraseblock=0x20000 -n -l'
-		MKFS='/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/mkfs.jffs2'
-		BUILDIMAGE='/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/buildimage'
-		NANDDUMP='/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/nanddump'
+		MKFS='/usr/bin/mkfs.jffs2'
+		BUILDIMAGE='/usr/bin/buildimage'
+		NANDDUMP='/usr/bin/nanddump'
 
 		if boxtype == "vusolo" or boxtype == "vuduo":
 			BACKUPIMAGE=BACKUP_DIRECTORY + '/' + DATE + '/vuplus-' + DATE + '.nfi'
@@ -319,7 +319,7 @@ class VIXImageManager(Screen):
 		self.populate_List()
 
 	def doResstore(self, answer):
-		NANDWRITE='/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/nandwrite'
+		NANDWRITE='/usr/bin/nandwrite'
 		if answer is True:
 			if boxtype == "vusolo" or boxtype == "vuduo":
 				selectedimage = self.sel

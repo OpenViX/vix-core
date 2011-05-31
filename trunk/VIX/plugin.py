@@ -55,7 +55,7 @@ except ImportError:
 
 from CronManager import VIXCronManager
 from DeviceManager import VIXDevicesPanel
-from ImageManager import VIXImageManager
+from ImageManager import VIXImageManager, AutoImageManagerTimer, ImageManagerautostart
 from IPKInstaller import VIXIPKInstaller
 from ScriptRunner import VIXScriptRunner
 from SwapManager import VIXSwap, SwapAutostart
@@ -87,6 +87,7 @@ def Plugins(**kwargs):
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = SwapAutostart))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = SoftcamAutostart))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = PowerManagerautostart, wakeupfnc = PowerManagerNextWakeup))
+	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = ImageManagerautostart))
 	return plist
 
 def startVIXMenu(menuid):

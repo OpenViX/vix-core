@@ -136,6 +136,9 @@ class VIXImageManager(Screen):
 
 		if not path.exists(self.BackupDirectory):
 			mkdir(self.BackupDirectory, 0755)
+		if path.exists(self.BackupDirectory + 'swapfile_backup'):
+			system('swapoff ' + self.BackupDirectory + 'swapfile_backup')
+			remove(self.BackupDirectory + 'swapfile_backup')
 		images = listdir(self.BackupDirectory)
 		del self.emlist[:]
 		for fil in images:
@@ -464,7 +467,7 @@ class VIXImageManager(Screen):
 			mycmd24 = "sleep 2"
 			mycmd25 = "/sbin/shutdown.sysvinit -r now"
 			self.session.open(Console, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25],closeOnSuccess = True)
-
+				
 	def doDelete(self, answer):
 		if answer is True:
 			self.sel = self['list'].getCurrent()

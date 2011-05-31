@@ -853,8 +853,16 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 								remove('/tmp/frozen')
 							elif allow.find('NO') >= 0 or allow.find('no') >= 0:
 								print '[SoftcamManager] Telnet info not allowed, can not check if frozen'
+								output = open('/tmp/cam.check.log','a')
+								now = datetime.now()
+								output.write(now.strftime("%Y-%m-%d %H:%M") + ":  Telnet info not allowed, can not check if frozen,\n\tplease enable 'ALLOW TELNETINFO = YES'\n")
+								output.close()
 							else:
 								print "[SoftcamManager] Telnet info not setup, please enable 'ALLOW TELNETINFO = YES'"
+								output = open('/tmp/cam.check.log','a')
+								now = datetime.now()
+								output.write(now.strftime("%Y-%m-%d %H:%M") + ":  Telnet info not setup, can not check if frozen,\n\tplease enable 'ALLOW TELNETINFO = YES'\n")
+								output.close()
 
 					elif softcamcheck_process == "":
 						output = open('/tmp/cam.check.log','a')

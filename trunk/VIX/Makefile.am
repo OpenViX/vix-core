@@ -4,7 +4,7 @@ install_DATA = hd.png sd.png
 install_PYTHON = CCcamInfo.py \
 		OScamInfo.py \
 		CronManager.py \
-		DeviceManager.py \
+		MountManager.py \
 		ImageManager.py \
 		__init__.py \
 		IPKInstaller.py \

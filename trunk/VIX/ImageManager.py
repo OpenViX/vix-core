@@ -38,6 +38,14 @@ def _(txt):
 
 autoImageManagerTimer = None
 
+imparts = []
+for p in harddiskmanager.getMountedPartitions():
+	d = path.normpath(p.mountpoint)
+	if pathExists(p.mountpoint):
+		if p.mountpoint != '/':
+			imparts.append((d + '/', p.mountpoint))
+config.vixsettings.imagemanager_backuplocation = ConfigSelection(choices = imparts)
+
 def ImageManagerautostart(reason, session=None, **kwargs):
 	"called with reason=1 to during /sbin/shutdown.sysvinit, with reason=0 at startup?"
 	global autoImageManagerTimer
@@ -95,15 +103,6 @@ class VIXImageManager(Screen):
 		self["key_yellow"] = Button(_("Restore"))
 		self["key_blue"] = Button(_("Delete"))
 
-	def populate_List(self):
-		parts = []
-		for p in harddiskmanager.getMountedPartitions():
-			d = path.normpath(p.mountpoint)
-			if pathExists(p.mountpoint) and p.mountpoint != "/":
-				parts.append((d, p.mountpoint))
-		if len(parts):
-			config.vixsettings.imagemanager_backuplocation = ConfigSelection(default = "/media/hdd/", choices = parts)
-
 		try:
 			file = open('/etc/image-version', 'r')
 			lines = file.readlines()
@@ -112,9 +111,28 @@ class VIXImageManager(Screen):
 				splitted = x.split('=')
 				if splitted[0] == "box_type":
 					folderprefix = splitted[1].replace('\n','') # 0 = release, 1 = experimental
+					self.boxtype = splitted[1].replace('\n','') # 0 = release, 1 = experimental
 		except:
 			folderprefix=""
+			self.boxtype="not detected"
 		config.vixsettings.imagemanager_folderprefix = ConfigText(default=folderprefix, fixed_size=False)
+
+		if BackupTime > 0:
+			backuptext = _("Next Backup: ") + strftime("%c", localtime(BackupTime))
+		else:
+			backuptext = _("Next Backup: ")
+		self["backupstatus"].setText(str(backuptext))
+
+	def populate_List(self):
+		imparts = []
+		for p in harddiskmanager.getMountedPartitions():
+			if pathExists(p.mountpoint):
+				d = path.normpath(p.mountpoint)
+				m = d + '/', p.mountpoint
+				if m not in config.vixsettings.imagemanager_backuplocation.choices.choices:
+					if p.mountpoint != '/':
+						config.vixsettings.imagemanager_backuplocation.choices.choices.append((d + '/', p.mountpoint))
+		config.vixsettings.imagemanager_backuplocation.choices.choices.sort()
 
 		if not path.exists(config.vixsettings.imagemanager_backuplocation.value):
 			self.BackupDirectory = '/media/hdd/imagebackups/'
@@ -123,36 +141,28 @@ class VIXImageManager(Screen):
 		else:
 			self.BackupDirectory = config.vixsettings.imagemanager_backuplocation.value + 'imagebackups/'
 			self['lab1'].setText(_("Device: ") + config.vixsettings.imagemanager_backuplocation.value + _("\nSelect an image to Restore / Delete:"))
-		try:
-			file = open('/etc/image-version', 'r')
-			lines = file.readlines()
-			file.close()
-			for x in lines:
-				splitted = x.split('=')
-				if splitted[0] == "box_type":
-					self.boxtype = splitted[1].replace('\n','') # 0 = release, 1 = experimental
-		except:
-			self.boxtype="not detected"
 
-		if not path.exists(self.BackupDirectory):
-			mkdir(self.BackupDirectory, 0755)
-		if path.exists(self.BackupDirectory + 'swapfile_backup'):
-			system('swapoff ' + self.BackupDirectory + 'swapfile_backup')
-			remove(self.BackupDirectory + 'swapfile_backup')
-		images = listdir(self.BackupDirectory)
-		del self.emlist[:]
-		for fil in images:
-			self.emlist.append(fil)
-		self.emlist.sort()	
-		if BackupTime > 0:
-			backuptext = _("Next Backup: ") + strftime("%c", localtime(BackupTime))
-		else:
-			backuptext = _("Next Backup: ")
-		self["backupstatus"].setText(str(backuptext))
+		try:
+			if not path.exists(self.BackupDirectory):
+				mkdir(self.BackupDirectory, 0755)
+			if path.exists(self.BackupDirectory + 'swapfile_backup'):
+				system('swapoff ' + self.BackupDirectory + 'swapfile_backup')
+				remove(self.BackupDirectory + 'swapfile_backup')
+			images = listdir(self.BackupDirectory)
+			del self.emlist[:]
+			for fil in images:
+				self.emlist.append(fil)
+			self.emlist.sort()
+		except:
+			self['lab1'].setText(_("Device: ") + config.vixsettings.imagemanager_backuplocation.value + _("\nthere was a problem with this deivce, please reformet and try again."))
 
 	def createSetup(self):
-		self.session.openWithCallback(self.doneConfiguring, ImageManagerMenu)
+		self.session.openWithCallback(self.setupDone, ImageManagerMenu)
 
+	def setupDone(self):
+		self.populate_List()
+		self.doneConfiguring()
+		
 	def doneConfiguring(self):
 		now = int(time())
 		if config.vixsettings.imagemanager_schedule.value:
@@ -527,8 +537,8 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 		self["actions"] = ActionMap(["SetupActions", 'ColorActions', 'VirtualKeyboardActions'],
 		{
 			"cancel": self.keyCancel,
-			"save": self.keySaveNew,
-			'showVirtualKeyboard': self.vkeyb
+			"save": self.keySave,
+			'showVirtualKeyboard': self.KeyText
 		}, -2)
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
@@ -545,16 +555,10 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 		self["config"].list = self.list
 		self["config"].setList(self.list)
 
-	def keyLeft(self):
-		ConfigListScreen.keyLeft(self)
-		self.createSetup()
-
-	def keyRight(self):
-		ConfigListScreen.keyRight(self)
-		self.createSetup()
-
 	# for summary:
 	def changedEntry(self):
+		if self["config"].getCurrent()[0] == "Schedule Backups":
+			self.createSetup()
 		for x in self.onChangedEntry:
 			x()
 
@@ -564,39 +568,42 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 	def getCurrentValue(self):
 		return str(self["config"].getCurrent()[1].getText())
 
-	def keySaveNew(self):
+	def KeyText(self):
+		if self['config'].getCurrent():
+			if self['config'].getCurrent()[0] == "Folder prefix":
+				from Screens.VirtualKeyBoard import VirtualKeyBoard
+				self.session.openWithCallback(self.VirtualKeyBoardCallback, VirtualKeyBoard, title = self["config"].getCurrent()[0], text = self["config"].getCurrent()[1].getValue())
+
+	def VirtualKeyBoardCallback(self, callback = None):
+		if callback is not None and len(callback):
+			self["config"].getCurrent()[1].setValue(callback)
+			self["config"].invalidate(self["config"].getCurrent())
+
+	def saveAll(self):
 		for x in self["config"].list:
 			x[1].save()
-		self.close()
 
-	def keyCancel(self):
+	# keySave and keyCancel are just provided in case you need them.
+	# you have to call them by yourself.
+	def keySave(self):
+		self.saveAll()
+		self.close()
+		config.vixsettings.save()
+		config.save()
+	
+	def cancelConfirm(self, result):
+		if not result:
+			return
+
 		for x in self["config"].list:
 			x[1].cancel()
 		self.close()
 
-	def vkeyb(self):
-		sel = self['config'].getCurrent()
-		if sel:
-			self.vkvar = sel[0]
-			if self.vkvar == "Folder prefix":
-				self.session.openWithCallback(self.UpdateAgain, VirtualKeyBoard, title=self.vkvar, text=config.vixsettings.imagemanager_folderprefix.value)
-
-	def UpdateAgain(self, text):
-		self.list = []
-		if text is None or text == '':
-			text = ''
-		if self.vkvar == "Folder prefix":
-			config.vixsettings.imagemanager_folderprefix.value = text
-		self.list = []
-		self.list.append(getConfigListEntry(_("Backup Location"), config.vixsettings.imagemanager_backuplocation))
-		self.list.append(getConfigListEntry(_("Folder prefix"), config.vixsettings.imagemanager_folderprefix))
-		self.list.append(getConfigListEntry(_("Schedule Backups"), config.vixsettings.imagemanager_schedule))
-		if config.vixsettings.imagemanager_schedule.value:
-			self.list.append(getConfigListEntry(_("Time of Backup to start"), config.vixsettings.imagemanager__scheduletime))
-			self.list.append(getConfigListEntry(_("Repeat how often"), config.vixsettings.imagemanager_repeattype))
-		self["config"].list = self.list
-		self["config"].setList(self.list)
-		return None
+	def keyCancel(self):
+		if self["config"].isChanged():
+			self.session.openWithCallback(self.cancelConfirm, MessageBox, _("Really close without saving settings?"))
+		else:
+			self.close()
 
 class AutoImageManagerTimer:
 	def __init__(self, session):

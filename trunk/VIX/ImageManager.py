@@ -154,7 +154,7 @@ class VIXImageManager(Screen):
 				self.emlist.append(fil)
 			self.emlist.sort()
 		except:
-			self['lab1'].setText(_("Device: ") + config.vixsettings.imagemanager_backuplocation.value + _("\nthere was a problem with this deivce, please reformet and try again."))
+			self['lab1'].setText(_("Device: ") + config.vixsettings.imagemanager_backuplocation.value + _("\nthere was a problem with this device, please reformat and try again."))
 
 	def createSetup(self):
 		self.session.openWithCallback(self.setupDone, ImageManagerMenu)

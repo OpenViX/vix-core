@@ -23,20 +23,20 @@ import time, datetime, gettext
 
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
-print "[DeviceManager] set language to ", lang[:2]
+print "[MounManager] set language to ", lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
-gettext.bindtextdomain("DeviceManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
+gettext.bindtextdomain("MounManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
 
 def _(txt):
-	t = gettext.dgettext("DeviceManager", txt)
+	t = gettext.dgettext("MounManager", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
 
 class VIXDevicesPanel(Screen):
 	skin = """
-	<screen position="center,center" size="640,460" title="Devices Manager">
+	<screen position="center,center" size="640,460" title="Mount Manager">
 		<ePixmap pixmap="skin_default/buttons/red.png" position="25,0" size="140,40" alphatest="on" />
 		<ePixmap pixmap="skin_default/buttons/green.png" position="175,0" size="140,40" alphatest="on" />
 		<ePixmap pixmap="skin_default/buttons/yellow.png" position="325,0" size="140,40" alphatest="on" />
@@ -61,16 +61,16 @@ class VIXDevicesPanel(Screen):
 	</screen>"""
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self["title"] = Label(_("Devices Manager"))
+		self["title"] = Label(_("Mount Manager"))
 		self['key_red'] = Label(" ")
 		self['key_green'] = Label(_('Setup Mounts'))
-		self['key_yellow'] = Label(_('Repartition'))
-		self['key_blue'] = Label(_('Format'))
+		self['key_yellow'] = Label(_(' '))
+		self['key_blue'] = Label(_(' '))
 		self['lab1'] = Label()
 		self.list = []
 		self['list'] = List(self.list)
 		self["list"].onSelectionChanged.append(self.selectionChanged)
-		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'back': self.close, 'green': self.SetupMounts, 'red': self.saveMypoints, 'yellow': self.Partition, 'blue': self.Format})
+		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'back': self.close, 'green': self.SetupMounts, 'red': self.saveMypoints})
 		self.activityTimer = eTimer()
 		self.activityTimer.timeout.get().append(self.updateList2)
 		self.Console = Console()
@@ -159,10 +159,12 @@ class VIXDevicesPanel(Screen):
 			if line.find(device) != -1:
 				parts = line.strip().split()
 				d1 = parts[1]
+				rw = parts[3]
 				break
 				continue
 			else:
 				d1 = _("None")
+				rw = _("None")
 		f.close()
 		f = open('/proc/partitions', 'r')
 		for line in f.readlines():
@@ -197,7 +199,13 @@ class VIXDevicesPanel(Screen):
 				continue
 		f.close()
 		if des != '':
-			des += '\t' + _("Mount: ") + d1 + '\n' + _("Device: ") + '/dev/' + device + '\t' + _("Type: ") + dtype
+			if rw.startswith('rw'):
+				rw = ' R/W'
+			elif rw.startswith('ro'):
+				rw = ' R/O'
+			else:
+				rw = ""			
+			des += '\t' + _("Mount: ") + d1 + '\n' + _("Device: ") + '/dev/' + device + '\t' + _("Type: ") + dtype + rw
 			png = LoadPixmap(mypixmap)
 			res = (name, des, png)
 			self.list.append(res)
@@ -558,7 +566,13 @@ class VIXPartitionPanelConf(Screen, ConfigListScreen):
 				continue
 		f.close()
 		if des != '':
-			des += '\n' + _("Device: ") + '/dev/' + device2
+			if rw.startswith('rw'):
+				rw = ' R/W'
+			elif rw.startswith('ro'):
+				rw = ' R/O'
+			else:
+				rw = ""			
+			des += '\t' + _("Mount: ") + d1 + '\n' + _("Device: ") + '/dev/' + device + '\t' + _("Type: ") + dtype + rw
 			png = LoadPixmap(mypixmap)
 			res = (name, des, png)
 			self.list.append(res)

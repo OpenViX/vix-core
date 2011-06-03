@@ -54,7 +54,7 @@ except ImportError:
 	pass
 
 from CronManager import VIXCronManager
-from DeviceManager import VIXDevicesPanel
+from MountManager import VIXDevicesPanel
 from ImageManager import VIXImageManager, AutoImageManagerTimer, ImageManagerautostart
 from IPKInstaller import VIXIPKInstaller
 from ScriptRunner import VIXScriptRunner
@@ -179,11 +179,11 @@ class VIXMenu(Screen):
 		if self.sel == 0:
 			self.session.open(VIXCronManager)
 		elif self.sel == 1:
-			self.session.open(VIXDevicesPanel)
-		elif self.sel == 2:
 			self.session.open(VIXImageManager)
-		elif self.sel == 3:
+		elif self.sel == 2:
 			self.session.open(VIXIPKInstaller)
+		elif self.sel == 3:
+			self.session.open(VIXDevicesPanel)
 		elif self.sel == 4:
 			self.session.open(VIXPowerManager)
 		elif self.sel == 5:
@@ -197,15 +197,15 @@ class VIXMenu(Screen):
 		idx = 0
 		res = (name, idx)
 		self.list.append(res)
-		name = _("Devices Manager")
+		name = _("Image Manager")
 		idx = 1
 		res = (name, idx)
 		self.list.append(res)
-		name = _("Image Manager")
+		name = _("IPK Installer")
 		idx = 2
 		res = (name, idx)
 		self.list.append(res)
-		name = _("IPK Installer")
+		name = _("Mount Manager")
 		idx = 3
 		res = (name, idx)
 		self.list.append(res)

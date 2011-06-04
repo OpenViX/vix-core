@@ -956,7 +956,17 @@ class SoftcamAutoPoller:
 			Components.Task.job_manager.AddJob(job)
 
 		if config.vixsettings.Softcamenabled.value:
+			print "[SoftcamManager] Timer Check Enabled"
+			output = open('/tmp/cam.check.log','a')
+			now = datetime.now()
+			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Timer Check Enabled\n")
+			output.close()
 			self.timer.startLongTimer(config.vixsettings.Softcamtimer.value * 60)
 		else:
+			output = open('/tmp/cam.check.log','a')
+			now = datetime.now()
+			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Timer Check Disabled\n")
+			output.close()
+			print "[SoftcamManager] Timer Check Disabled"
 			softcamautopoller.stop()
 

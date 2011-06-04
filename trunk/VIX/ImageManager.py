@@ -88,21 +88,11 @@ class VIXImageManager(Screen):
 		self.emlist = []
 		self.populate_List()
 		self['list'] = MenuList(self.emlist)
-		self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
-			{
-				'cancel': self.close,
-				'red': self.close,
-				'green': self.keyBackup,
-				'yellow': self.keyResstore,
-				'blue': self.keyDelete,
-				"menu": self.createSetup,
-			}, -1)
 
 		self["key_red"] = Button(_("Close"))
 		self["key_green"] = Button(_("New Backup"))
 		self["key_yellow"] = Button(_("Restore"))
 		self["key_blue"] = Button(_("Delete"))
-
 		try:
 			file = open('/etc/image-version', 'r')
 			lines = file.readlines()
@@ -132,12 +122,58 @@ class VIXImageManager(Screen):
 				if m not in config.vixsettings.imagemanager_backuplocation.choices.choices:
 					if p.mountpoint != '/':
 						config.vixsettings.imagemanager_backuplocation.choices.choices.append((d + '/', p.mountpoint))
+		mountchk = []
+		for p in harddiskmanager.getMountedPartitions():
+			if pathExists(p.mountpoint):
+				d = path.normpath(p.mountpoint)
+				m = d + '/', p.mountpoint
+				if p.mountpoint != '/':
+					mountchk.append((d + '/', p.mountpoint))
+		for p in config.vixsettings.imagemanager_backuplocation.choices.choices:
+			print 'CHOICES',p
+			print 'LIST',mountchk
+			if p not in mountchk:
+				print 'REMOVE DEVICE',p
+				config.vixsettings.imagemanager_backuplocation.choices.choices.remove(p)
+			
 		config.vixsettings.imagemanager_backuplocation.choices.choices.sort()
+		mount = config.vixsettings.imagemanager_backuplocation.value, config.vixsettings.imagemanager_backuplocation.value
+		hdd = '/media/hdd/','/media/hdd/'
+		if mount not in config.vixsettings.imagemanager_backuplocation.choices.choices:
+			if hdd in config.vixsettings.imagemanager_backuplocation.choices.choices:
+				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
+					{
+						'cancel': self.close,
+						'red': self.close,
+						'green': self.keyBackup,
+						'yellow': self.keyResstore,
+						'blue': self.keyDelete,
+						"menu": self.createSetup,
+					}, -1)
 
-		if not path.exists(config.vixsettings.imagemanager_backuplocation.value):
-			self.BackupDirectory = '/media/hdd/imagebackups/'
-			self['lab1'].setText(_("The chosen location does not exist, using /media/hdd") + _("\nSelect an image to Restore / Delete:"))
+				self.BackupDirectory = '/media/hdd/imagebackups/'
+				config.vixsettings.imagemanager_backuplocation.value = '/media/hdd/'
+				config.vixsettings.imagemanager_backuplocation.save
+				self['lab1'].setText(_("The chosen location does not exist, using /media/hdd") + _("\nSelect an image to Restore / Delete:"))
+			else:
+				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
+					{
+						'cancel': self.close,
+						"menu": self.createSetup,
+					}, -1)
+
+				self['lab1'].setText(_("Device: None available") + _("\nSelect an image to Restore / Delete:"))
 		else:
+			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
+				{
+					'cancel': self.close,
+					'red': self.close,
+					'green': self.keyBackup,
+					'yellow': self.keyResstore,
+					'blue': self.keyDelete,
+					"menu": self.createSetup,
+				}, -1)
+
 			self.BackupDirectory = config.vixsettings.imagemanager_backuplocation.value + 'imagebackups/'
 			self['lab1'].setText(_("Device: ") + config.vixsettings.imagemanager_backuplocation.value + _("\nSelect an image to Restore / Delete:"))
 

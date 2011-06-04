@@ -799,31 +799,43 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 							for line in f.readlines():
 								if line.find('ALLOW TELNETINFO') != -1:
 									parts = line.strip().split()
-									allow = parts[2]
+									if parts[1].startswith('TELNETINFO='):
+										allow = parts[1].replace('TELNETINFO=','')
+									else:
+										allow = parts[2]
 									if allow.find(':') >=0:
 										allow = allow.replace(':','')
-									if allow == '':
+									if allow == '' or allow == '=':
 										allow = parts[3]
 								if line.find('TELNETINFO USERNAME') != -1:
 									parts = line.strip().split()
-									username = parts[2]
+									if parts[1].startswith('USERNAME='):
+										username = parts[1].replace('USERNAME=','')
+									else:
+										username = parts[2]
 									if username.find(':') >=0:
 										username = username.replace(':','')
-									if username == '':
+									if username == '' or allow == '=':
 										username = parts[3]
 								if line.find('TELNETINFO PASSWORD') != -1:
 									parts = line.strip().split()
-									password = parts[2]
+									if parts[1].startswith('PASSWORD='):
+										password = parts[1].replace('PASSWORD=','')
+									else:
+										password = parts[2]
 									if password.find(':') >=0:
 										password = password.replace(':','')
-									if password == '':
+									if password == '' or allow == '=':
 										password = parts[3]
 								if line.find('TELNETINFO LISTEN PORT') != -1:
 									parts = line.strip().split()
-									port = parts[3]
+									if parts[2].startswith('PORT='):
+										port = parts[2].replace('PORT=','')
+									else:
+										port = parts[3]
 									if port.find(':') >=0:
 										port = port.replace(':','')
-									if port == '':
+									if port == '' or allow == '=':
 										port = parts[4]
 							f.close()
 							if allow.find('YES') >= 0 or allow.find('yes') >= 0:
@@ -922,7 +934,7 @@ class SoftcamAutoPoller:
 	def start(self):
 		if self.softcam_check not in self.timer.callback:
 			self.timer.callback.append(self.softcam_check)
-		self.timer.startLongTimer(30)
+		self.timer.startLongTimer(0)
 
 	def stop(self):
 		if self.softcam_check in self.timer.callback:

@@ -136,8 +136,7 @@ class VIXImageManager(Screen):
 
 		if not path.exists(config.vixsettings.imagemanager_backuplocation.value):
 			self.BackupDirectory = '/media/hdd/imagebackups/'
-			self['lab1'].setText(_("Device: /media/hdd") + _("\nSelect an image to Restore / Delete:"))
-			self.session.open(MessageBox, _("The chosen location does not exist, using /media/hdd"), MessageBox.TYPE_INFO, timeout = 10)
+			self['lab1'].setText(_("The chosen location does not exist, using /media/hdd") + _("\nSelect an image to Restore / Delete:"))
 		else:
 			self.BackupDirectory = config.vixsettings.imagemanager_backuplocation.value + 'imagebackups/'
 			self['lab1'].setText(_("Device: ") + config.vixsettings.imagemanager_backuplocation.value + _("\nSelect an image to Restore / Delete:"))

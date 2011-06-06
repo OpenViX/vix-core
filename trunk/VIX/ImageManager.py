@@ -135,7 +135,12 @@ class VIXImageManager(Screen):
 		if self.mountschages:
 			config.vixsettings.imagemanager_backuplocation.setChoices(imparts)
 
-		mount = config.vixsettings.imagemanager_backuplocation.value, config.vixsettings.imagemanager_backuplocation.value
+		if config.vixsettings.imagemanager_backuplocation.value.startswith('/media/net/'):
+			mount1 = config.vixsettings.imagemanager_backuplocation.value.replace('/','')
+			mount1 = mount1.replace('medianet','/media/net/')
+			mount = config.vixsettings.imagemanager_backuplocation.value, mount1
+		else:
+			mount = config.vixsettings.imagemanager_backuplocation.value, config.vixsettings.imagemanager_backuplocation.value
 		hdd = '/media/hdd/','/media/hdd/'
 		if mount not in config.vixsettings.imagemanager_backuplocation.choices.choices:
 			if hdd in config.vixsettings.imagemanager_backuplocation.choices.choices:
@@ -178,9 +183,9 @@ class VIXImageManager(Screen):
 		try:
 			if not path.exists(self.BackupDirectory):
 				mkdir(self.BackupDirectory, 0755)
-			if path.exists(self.BackupDirectory + 'swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + 'swapfile_backup')
-				remove(self.BackupDirectory + 'swapfile_backup')
+			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup'):
+				system('swapoff ' + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
+				remove(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
 			images = listdir(self.BackupDirectory)
 			del self.emlist[:]
 			for fil in images:
@@ -366,9 +371,9 @@ class VIXImageManager(Screen):
 			system('umount /tmp/bi/boot')
 			rmtree('/tmp/bi')
 			rmtree(self.BackupDirectory + 'bi')
-			if path.exists(self.BackupDirectory + 'swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + 'swapfile_backup')
-				remove(self.BackupDirectory + 'swapfile_backup')
+			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup'):
+				system('swapoff ' + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
+				remove(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
 			if fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/root_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/boot_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/kernel_cfe_auto.bin'):
 				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
 			else:
@@ -389,9 +394,9 @@ class VIXImageManager(Screen):
 			system('umount /tmp/bi/boot')
 			rmtree('/tmp/bi')
 			rmtree(self.BackupDirectory + 'bi')
-			if path.exists(self.BackupDirectory + 'swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + 'swapfile_backup')
-				remove(self.BackupDirectory + 'swapfile_backup')
+			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup'):
+				system('swapoff ' + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
+				remove(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
 			if fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/rootfs.bin') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/boot.bin') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/kernel.bin'):
 				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
 			else:
@@ -871,9 +876,9 @@ class AutoImageManagerTimer:
 			system('umount /tmp/bi/boot')
 			rmtree('/tmp/bi')
 			rmtree(self.BackupDirectory + 'bi')
-			if path.exists(self.BackupDirectory + 'swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + 'swapfile_backup')
-				remove(self.BackupDirectory + 'swapfile_backup')
+			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup'):
+				system('swapoff ' + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
+				remove(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
 			if fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/root_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/boot_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/kernel_cfe_auto.bin'):
 				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
 			else:
@@ -894,9 +899,9 @@ class AutoImageManagerTimer:
 			system('umount /tmp/bi/boot')
 			rmtree('/tmp/bi')
 			rmtree(self.BackupDirectory + 'bi')
-			if path.exists(self.BackupDirectory + 'swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + 'swapfile_backup')
-				remove(self.BackupDirectory + 'swapfile_backup')
+			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup'):
+				system('swapoff ' + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
+				remove(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
 			if fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/rootfs.bin') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/boot.bin') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/kernel.bin'):
 				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
 			else:

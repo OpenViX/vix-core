@@ -119,21 +119,22 @@ class VIXImageManager(Screen):
 			if pathExists(p.mountpoint):
 				d = path.normpath(p.mountpoint)
 				m = d + '/', p.mountpoint
-				if m not in config.vixsettings.imagemanager_backuplocation.choices.choices:
-					if p.mountpoint != '/':
-						config.vixsettings.imagemanager_backuplocation.choices.choices.append((d + '/', p.mountpoint))
-		mountchk = []
-		for p in harddiskmanager.getMountedPartitions():
-			if pathExists(p.mountpoint):
-				d = path.normpath(p.mountpoint)
-				m = d + '/', p.mountpoint
 				if p.mountpoint != '/':
-					mountchk.append((d + '/', p.mountpoint))
+					imparts.append((d + '/', p.mountpoint))
+				if m not in config.vixsettings.imagemanager_backuplocation.choices.choices:
+					self.mountschages = True
+				else:
+					self.mountschages = False
+
 		for p in config.vixsettings.imagemanager_backuplocation.choices.choices:
-			if p not in mountchk:
-				config.vixsettings.imagemanager_backuplocation.choices.choices.remove(p)
-			
-		config.vixsettings.imagemanager_backuplocation.choices.choices.sort()
+			if p not in imparts:
+				self.mountschages = True
+			else:
+				self.mountschages = False
+
+		if self.mountschages:
+			config.vixsettings.imagemanager_backuplocation.setChoices(imparts)
+
 		mount = config.vixsettings.imagemanager_backuplocation.value, config.vixsettings.imagemanager_backuplocation.value
 		hdd = '/media/hdd/','/media/hdd/'
 		if mount not in config.vixsettings.imagemanager_backuplocation.choices.choices:

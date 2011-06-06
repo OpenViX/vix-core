@@ -130,10 +130,7 @@ class VIXImageManager(Screen):
 				if p.mountpoint != '/':
 					mountchk.append((d + '/', p.mountpoint))
 		for p in config.vixsettings.imagemanager_backuplocation.choices.choices:
-			print 'CHOICES',p
-			print 'LIST',mountchk
 			if p not in mountchk:
-				print 'REMOVE DEVICE',p
 				config.vixsettings.imagemanager_backuplocation.choices.choices.remove(p)
 			
 		config.vixsettings.imagemanager_backuplocation.choices.choices.sort()

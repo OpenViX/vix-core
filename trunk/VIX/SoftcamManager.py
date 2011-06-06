@@ -11,13 +11,14 @@ from Components.Pixmap import MultiPixmap
 from Components.ConfigList import ConfigListScreen
 from Components.config import config, ConfigSubsection, ConfigText, getConfigListEntry, ConfigSelection, ConfigYesNo, ConfigNumber
 from Components.Console import Console
+from Components.FileList import MultiFileSelectList
 from Components.Language import language
 from Screens.MessageBox import MessageBox
 from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from ServiceReference import ServiceReference
 from subprocess import Popen, PIPE
 from twisted.internet import reactor, threads, task
-from os import path, makedirs, listdir, system, remove, rename, symlink, mkdir, environ
+from os import path, makedirs, remove, rename, symlink, mkdir, environ
 from shutil import rmtree
 from datetime import datetime
 from time import localtime, time, strftime, mktime, strftime, sleep
@@ -68,8 +69,6 @@ class VIXSoftcamManager(Screen):
 		<widget name="list" position="225,60" size="240,100" transparent="0" scrollbarMode="showOnDemand" />
 		<widget name="lab2" position="40,165" size="170,30" font="Regular; 22" halign="right" zPosition="2" transparent="0" />
 		<widget name="activecam" position="225,166" size="240,100" font="Regular; 20" halign="left" zPosition="2" transparent="0" noWrap="1" />
-		<widget name="lab3" position="40,270" size="170,20" font="Regular; 22" halign="right" zPosition="2" transparent="0" />
-		<widget name="list2" position="225,270" size="240,100" selectionDisabled="1" transparent="0" scrollbarMode="showOnDemand" />
 		<applet type="onLayoutFinish">
 			self["list"].instance.setItemHeight(25)
 		</applet>
@@ -80,25 +79,24 @@ class VIXSoftcamManager(Screen):
 		self["title"] = Label(_("Softcam Setup"))
 		self['lab1'] = Label(_('Select:'))
 		self['lab2'] = Label(_('Active:'))
-		self['lab3'] = Label(_('Autostart:'))
 		self['activecam'] = Label()
-		self.emlist = []
-		self.emlist2 = []
-		self.populate_List()
-		self['list'] = MenuList(self.emlist)
-		self["list"].onSelectionChanged.append(self.selectionChanged)
-		self['list2'] = MenuList(self.emlist2)
-		camnum = len(self.emlist)
-		totcam = str(camnum)
-		self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "TimerEditActions"],
+
+		self.sentsingle = ""
+		self.selectedFiles = config.softcammanager.softcams_autostart.value
+		self.defaultDir = '/usr/softcams/'
+		self.emlist = MultiFileSelectList(self.selectedFiles, self.defaultDir, showDirectories = False )
+		self["list"] = self.emlist
+
+		self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "TimerEditActions", "MenuActions"],
 			{
 				'ok': self.keyStart,
 				'cancel': self.close,
 				'red': self.close,
 				'green': self.keyStart,
 				'yellow': self.getRestartPID,
-				'blue': self.keyAutoStartup,
+				'blue': self.changeSelectionState,
 				'log': self.showLog,
+				'menu': self.createSetup,
 			}, -1)
 
 		self["key_red"] = Button(_("Close"))
@@ -106,25 +104,20 @@ class VIXSoftcamManager(Screen):
 		self["key_yellow"] = Button(_("Restart"))
 		self["key_blue"] = Button(_("Autostart"))
 
-		self["MenuActions"] = HelpableActionMap(self, "MenuActions",
-			{
-				"menu": (self.createSetup, _("Open Context Menu"))
-			}
-		)
 		self.activityTimer = eTimer()
 		self.activityTimer.timeout.get().append(self.getActivecam)
 		self.Console = Console()
 		self.showActivecam()
+		if not self.selectionChanged in self["list"].onSelectionChanged:
+			self["list"].onSelectionChanged.append(self.selectionChanged)
 
 	def createSetup(self):
 		self.session.open(VIXSoftcamMenu)
 
 	def selectionChanged(self):
-		if len(self.emlist) == 0:
-			return
-		self.sel = self['list'].getCurrent()
-		selcam = self.sel
-		print '[SoftcamManager] Selectedcam: ' + selcam
+		current = self["list"].getCurrent()[0]
+		selcam = current[0]
+		print '[SoftcamManager] Selectedcam: ' + str(selcam)
 		if currentactivecam.find(selcam) < 0:
 			self["key_green"].setText(_("Start"))
 		else:
@@ -134,15 +127,22 @@ class VIXSoftcamManager(Screen):
 		else:
 			self["key_yellow"].setText(_("Restart"))
 
-		if path.exists('/etc/AutoStartCams'):
-			rmtree('/etc/AutoStartCams')
-		if path.exists('/etc/SoftcamsAutostart'):
-			data = file('/etc/SoftcamsAutostart').read()
-			finddata = data.find(selcam)
-			if data.find(selcam) >= 0:
-				self["key_blue"].setText(_("Disable Startup"))
-			elif data.find(selcam) < 0:
-				self["key_blue"].setText(_("Enable Startup"))
+		if current[2] is True:
+			self["key_blue"].setText(_("Disable Startup"))
+		else:
+			self["key_blue"].setText(_("Enable Startup"))
+		self.saveSelection()
+
+	def changeSelectionState(self):
+		self["list"].changeSelectionState()
+		self.selectedFiles = self["list"].getSelectedList()
+
+	def saveSelection(self):
+		self.selectedFiles = self["list"].getSelectedList()
+		config.softcammanager.softcams_autostart.value = self.selectedFiles
+		config.softcammanager.softcams_autostart.save()
+		config.softcammanager.save()
+		config.save()
 
 	def showActivecam(self):
 		scanning = _("Wait please while scanning\nfor softcam's...")
@@ -170,53 +170,27 @@ class VIXSoftcamManager(Screen):
 			print 'RESULT FAILED: ' + str(result)
 		self.selectionChanged()
 
-	def populate_List(self):
-		self.camnames = {}
-		cams = listdir('/usr/softcams')
-		del self.emlist[:]
-		for fil in cams:
-			self.emlist.append(fil)
-		self.emlist.sort()	
-		if path.exists('/etc/SoftcamsAutostart'):
-			autostartcams = file('/etc/SoftcamsAutostart').readlines()
-		else:
-			autostartcams = ""
-
-		del self.emlist2[:]
-		for fil2 in autostartcams:
-			self.emlist2.append(fil2)
-
-	def showAutostartcam(self):
-		if path.exists('/etc/SoftcamsAutostart'):
-			autostartcams = file('/etc/SoftcamsAutostart').readlines()
-		else:
-			autostartcams = ""
-		del self.emlist2[:]
-		for fil2 in autostartcams:
-			self.emlist2.append(fil2)
-		self.selectionChanged()
-		
 	def keyStart(self):
-		self.sel = self['list'].getCurrent()
-		selectedcam = self.sel
+		self.sel = self['list'].getCurrent()[0]
+		selectedcam = self.sel[0]
 		if currentactivecam.find(selectedcam) < 0:
 			if (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and fileExists('/etc/CCcam.cfg') == True:
 				if (currentactivecam.find('MGcam') < 0) or (currentactivecam.find('mgcam') < 0):
-					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel)
+					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 				else:
 					self.session.open(MessageBox, _("CCcam can't run whilst MGcamd is running"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 			elif (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and fileExists('/etc/CCcam.cfg') == False:
 				self.session.open(MessageBox, _("No config files found, please setup CCcam first\nin /etc/CCcam.cfg"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 			elif (selectedcam.startswith('Hypercam') or selectedcam.startswith('hypercam')) and fileExists('/etc/hypercam.cfg') == True:
-				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel)
+				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 			elif (selectedcam.startswith('Hypercam') or selectedcam.startswith('hypercam')) and fileExists('/etc/hypercam.cfg') == False:
 				self.session.open(MessageBox, _("No config files found, please setup Oscam first\nin /etc/hypercam.cfg"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and fileExists('/etc/tuxbox/config/oscam.conf') == True:
-				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel)
+				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and fileExists('/etc/tuxbox/config/oscam.conf') == False:
 				self.session.open(MessageBox, _("No config files found, please setup Oscam first\nin /etc/tuxbox/config"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and fileExists('/var/keys/mg_cfg') == True:
-				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel)
+				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and fileExists('/var/keys/mg_cfg') == False:
 				if (currentactivecam.find('CCcam') < 0) or (currentactivecam.find('cccam') < 0):
 					self.session.open(MessageBox, _("No config files found, please setup MGcamd first\nin /var/keys"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
@@ -224,14 +198,14 @@ class VIXSoftcamManager(Screen):
 					self.session.open(MessageBox, _("MGcamd can't run whilst CCcam is running"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 			elif not selectedcam.startswith('CCcam') or selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('MGcamd'):
 				self.session.open(MessageBox, _("Found none standard softcam, trying to start, this may fail"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel)
+				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 		else:
-			self.session.openWithCallback(self.showActivecam, VIXStopCam, self.sel)
+			self.session.openWithCallback(self.showActivecam, VIXStopCam, self.sel[0])
 
 	def getRestartPID(self):
 		global selectedcam
-		self.sel = self['list'].getCurrent()
-		selectedcam = self.sel
+		self.sel = self['list'].getCurrent()[0]
+		selectedcam = self.sel[0]
 		self.Console.ePopen("pidof " + selectedcam, self.keyRestart)
 
 	def keyRestart(self, result, retval, extra_args):
@@ -252,19 +226,19 @@ class VIXSoftcamManager(Screen):
 				print 'RESULT FAILED: ' + str(result)
 			if (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and fileExists('/etc/CCcam.cfg') == True:
 				if (currentactivecam.find('MGcam') < 0) or (currentactivecam.find('mgcam') < 0):
-					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel)
+					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 				else:
 					self.session.open(MessageBox, _("CCcam can't run whilst MGcamd is running"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 			elif (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and fileExists('/etc/CCcam.cfg') == False:
 				self.session.open(MessageBox, _("No config files found, please setup CCcam first\nin /etc/CCcam.cfg"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and fileExists('/etc/tuxbox/config/oscam.conf') == True:
-				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel)
+				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and fileExists('/etc/tuxbox/config/oscam.conf') == False:
 				if not path.exists('/etc/tuxbox/config'):
 				    cmd = makedirs('/etc/tuxbox/config')
 				self.session.open(MessageBox, _("No config files found, please setup Oscam first\nin /etc/tuxbox/config"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and fileExists('/var/keys/mg_cfg') == True:
-				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel)
+				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and fileExists('/var/keys/mg_cfg') == False:
 				if (currentactivecam.find('CCcam') < 0) or (currentactivecam.find('cccam') < 0):
 					self.session.open(MessageBox, _("No config files found, please setup MGcamd first\nin /var/keys"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
@@ -272,12 +246,12 @@ class VIXSoftcamManager(Screen):
 					self.session.open(MessageBox, _("MGcamd can't run whilst CCcam is running"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 			elif not selectedcam.startswith('CCcam') or selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('MGcamd'):
 				self.session.open(MessageBox, _("Found none stanadard softcam, trying to start, this may fail"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel)
+				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 		
 	def keyAutoStartup(self):
-		self.sel = self['list'].getCurrent()
-		selectedcam = self.sel
-		self.session.openWithCallback(self.showAutostartcam, VIXAutoStartCam, self.sel)
+		self.sel = self['list'].getCurrent()[0]
+		selectedcam = self.sel[0]
+		self.session.openWithCallback(self.showAutostartcam, VIXAutoStartCam, self.sel[0])
 
 	def showLog(self):
 		self.session.open(VIXSoftcamLog)
@@ -285,75 +259,6 @@ class VIXSoftcamManager(Screen):
 	def myclose(self):
 		self.close()
 			
-class VIXAutoStartCam(Screen):
-	skin = """<screen name="VIXAutoStartCam" position="center,center" size="484, 150" title="Setting up AutoStart" flags="wfBorder">
-		<widget name="connect" position="217, 0" size="64,64" zPosition="2" pixmaps="ViX_HD/busy/busy1.png,ViX_HD/busy/busy2.png,ViX_HD/busy/busy3.png,ViX_HD/busy/busy4.png,ViX_HD/busy/busy5.png,ViX_HD/busy/busy6.png,ViX_HD/busy/busy7.png,ViX_HD/busy/busy8.png,ViX_HD/busy/busy9.png,ViX_HD/busy/busy9.png,ViX_HD/busy/busy10.png,ViX_HD/busy/busy11.png,ViX_HD/busy/busy12.png,ViX_HD/busy/busy13.png,ViX_HD/busy/busy14.png,ViX_HD/busy/busy15.png,ViX_HD/busy/busy17.png,ViX_HD/busy/busy18.png,ViX_HD/busy/busy19.png,ViX_HD/busy/busy20.png,ViX_HD/busy/busy21.png,ViX_HD/busy/busy22.png,ViX_HD/busy/busy23.png,ViX_HD/busy/busy24.png"  transparent="1" alphatest="blend" />
-		<widget name="lab1" position="10, 80" halign="center" size="460, 60" zPosition="1" font="Regular;20" valign="top" transparent="1" />
-	</screen>"""
-	def __init__(self, session, selectedcam):
-		Screen.__init__(self, session)
-		self["title"] = Label(_("Softcam Setup"))
-		global autoselectedcam
-		autoselectedcam = selectedcam
-		self['lab1'] = Label(_("Please wait while making the changes\n") + selectedcam + '...')
-		self['connect'] = MultiPixmap()
-		self.Console = Console()
-		self.activityTimer = eTimer()
-		self.activityTimer.timeout.get().append(self.updatepix)
-		self.onShow.append(self.startShow)
-		self.onClose.append(self.delTimer)
-
-	def startShow(self):
-		self.curpix = 0
-		self.count = 0
-		self['connect'].setPixmapNum(0)
-		print '[SoftcamManager] Selectedcam: ' + str(autoselectedcam)
-		if path.exists('/etc/SoftcamsAutostart'):
-			data = file('/etc/SoftcamsAutostart').read()
-			finddata = data.find(autoselectedcam)
-			if data.find(autoselectedcam) >= 0:
-				print '[SoftcamManager] Deactivating autostart for ' + autoselectedcam
-				output = open('/tmp/cam.check.log','a')
-				now = datetime.now()
-				output.write(now.strftime("%Y-%m-%d %H:%M") + ": Deactivating autostart for " + autoselectedcam + "\n")
-				output.close()
-				file('/etc/SoftcamsAutostart.tmp', 'w').writelines([l for l in file('/etc/SoftcamsAutostart').readlines() if autoselectedcam not in l])
-				rename('/etc/SoftcamsAutostart.tmp','/etc/SoftcamsAutostart')
-			elif data.find(autoselectedcam) < 0:
-				print '[SoftcamManager] Activating autostart for ' + autoselectedcam
-				output = open('/tmp/cam.check.log','a')
-				now = datetime.now()
-				output.write(now.strftime("%Y-%m-%d %H:%M") + ": Activating autostart for " + autoselectedcam + "\n")
-				output.close()
-				fileout = open('/etc/SoftcamsAutostart', 'a')
-				line = autoselectedcam + '\n'
-				fileout.write(line)
-				fileout.close()
-		else:
-			print '[SoftcamManager] Activating autostart for ' + autoselectedcam
-			fileout = open('/etc/SoftcamsAutostart', 'w')
-			line = autoselectedcam + '\n'
-			fileout.write(line)
-			fileout.close()
-		self.activityTimer.start(1)
-
-	def updatepix(self):
-		self.activityTimer.stop()
-		if self.curpix > 23:
-			self.curpix = 0
-		if self.count > 24:
-			self.curpix = 0
-		self['connect'].setPixmapNum(self.curpix)
-		if self.count == 24: # timer on screen
-			self.hide()
-			self.close()
-		self.activityTimer.start(120) # cycle speed
-		self.curpix += 1
-		self.count += 1
-
-	def delTimer(self):
-		del self.activityTimer
-
 class VIXStartCam(Screen):
 	skin = """<screen name="VIXStartCam" position="center,center" size="484, 150" title="Starting Softcam" flags="wfBorder">
 		<widget name="connect" position="217, 0" size="64,64" zPosition="2" pixmaps="ViX_HD/busy/busy1.png,ViX_HD/busy/busy2.png,ViX_HD/busy/busy3.png,ViX_HD/busy/busy4.png,ViX_HD/busy/busy5.png,ViX_HD/busy/busy6.png,ViX_HD/busy/busy7.png,ViX_HD/busy/busy8.png,ViX_HD/busy/busy9.png,ViX_HD/busy/busy9.png,ViX_HD/busy/busy10.png,ViX_HD/busy/busy11.png,ViX_HD/busy/busy12.png,ViX_HD/busy/busy13.png,ViX_HD/busy/busy14.png,ViX_HD/busy/busy15.png,ViX_HD/busy/busy17.png,ViX_HD/busy/busy18.png,ViX_HD/busy/busy19.png,ViX_HD/busy/busy20.png,ViX_HD/busy/busy21.png,ViX_HD/busy/busy22.png,ViX_HD/busy/busy23.png,ViX_HD/busy/busy24.png"  transparent="1" alphatest="blend" />
@@ -397,7 +302,7 @@ class VIXStartCam(Screen):
 			now = datetime.now()
 			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Starting " + startselectedcam + "\n")
 			output.close()
-			self.Console.ePopen('/usr/softcams/' + startselectedcam + ' start' )
+			self.Console.ePopen(startselectedcam + ' start' )
 		else:
 			if path.exists('/tmp/SoftcamsDisableCheck'):
 				data = file('/tmp/SoftcamsDisableCheck').read()
@@ -414,15 +319,15 @@ class VIXStartCam(Screen):
 			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Starting " + startselectedcam + "\n")
 			output.close()
 			if (startselectedcam.startswith('Hypercam') or startselectedcam.startswith('hypercam')):
-				self.Console.ePopen('/usr/softcams/' + startselectedcam + ' -c /etc/hypercam.cfg')
+				self.Console.ePopen(startselectedcam + ' -c /etc/hypercam.cfg')
 			elif (startselectedcam.startswith('Oscam') or startselectedcam.startswith('OScam') or startselectedcam.startswith('oscam')):
-				self.Console.ePopen('/usr/softcams/' + startselectedcam + ' -b')
+				self.Console.ePopen(startselectedcam + ' -b')
 			elif startselectedcam.startswith('Gbox') or startselectedcam.startswith('gbox'):
-				self.Console.ePopen('/usr/softcams/' + startselectedcam)
+				self.Console.ePopen(startselectedcam)
 				sleep(3)
 				self.Console.ePopen('start-stop-daemon --start --quiet --background --exec /usr/bin/gbox')
 			else:
-				self.Console.ePopen('/usr/softcams/' + startselectedcam)
+				self.Console.ePopen(startselectedcam)
 		self.activityTimer.start(1)
 
 	def updatepix(self):
@@ -483,7 +388,7 @@ class VIXStopCam(Screen):
 			now = datetime.now()
 			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Stopping " + stopselectedcam + "\n")
 			output.close()
-			self.Console.ePopen('/usr/softcams/' + stopselectedcam + ' stop' )
+			self.Console.ePopen(stopselectedcam + ' stop' )
 			if path.exists('/tmp/SoftcamsScriptsRunning'):
 				remove('/tmp/SoftcamsScriptsRunning')
 			if path.exists('/etc/SoftcamsAutostart'):
@@ -554,9 +459,9 @@ class VIXStopCam(Screen):
 
 class VIXSoftcamLog(Screen):
 	skin = """
-<screen name="VIXSoftcamLog" position="center,center" size="560,400" title="Softcam Manager Log" >
-	<widget name="list" position="0,0" size="560,400" font="Regular;14" />
-</screen>"""
+		<screen name="VIXSoftcamLog" position="center,center" size="560,400" title="Softcam Manager Log" >
+			<widget name="list" position="0,0" size="560,400" font="Regular;14" />
+		</screen>"""
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -576,9 +481,6 @@ class VIXSoftcamLog(Screen):
 
 	def cancel(self):
 		self.close()
-
-config.vixsettings.Softcamenabled = ConfigYesNo(default = True)
-config.vixsettings.Softcamtimer = ConfigNumber(default = 6)
 
 class VIXSoftcamMenu(ConfigListScreen, Screen):
 	skin = """
@@ -613,9 +515,9 @@ class VIXSoftcamMenu(ConfigListScreen, Screen):
 	def createSetup(self):
 		self.editListEntry = None
 		self.list = []
-		self.list.append(getConfigListEntry(_("Enable Auto Timer Check ?"), config.vixsettings.Softcamenabled))
-		if config.vixsettings.Softcamenabled.value:
-			self.list.append(getConfigListEntry(_("Check every (mins)"), config.vixsettings.Softcamtimer))
+		self.list.append(getConfigListEntry(_("Enable Auto Timer Check ?"), config.softcammanager.softcamtimerenabled))
+		if config.softcammanager.softcamtimerenabled.value:
+			self.list.append(getConfigListEntry(_("Check every (mins)"), config.softcammanager.softcamtimer))
 		self["config"].list = self.list
 		self["config"].setList(self.list)
 
@@ -641,7 +543,7 @@ class VIXSoftcamMenu(ConfigListScreen, Screen):
 	def keySaveNew(self):
 		for x in self["config"].list:
 			x[1].save()
-		if config.vixsettings.Softcamenabled.value:
+		if config.softcammanager.softcamtimerenabled.value:
 			print "[SoftcamManager] Timer Check Enabled"
 			softcamautopoller.start()
 		else:
@@ -709,14 +611,14 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 							fileout.write(line)
 							fileout.close()
 							print '[SoftcamManager] Starting ' + softcamcheck
-							self.Console.ePopen('/usr/softcams/' + softcamcheck + ' start' )
+							self.Console.ePopen(softcamcheck + ' start' )
 					else:
 						fileout = open('/tmp/SoftcamsScriptsRunning', 'w')
 						line = softcamcheck + '\n'
 						fileout.write(line)
 						fileout.close()
 						print '[SoftcamManager] Starting ' + softcamcheck
-						self.Console.ePopen('/usr/softcams/' + softcamcheck + ' start' )
+						self.Console.ePopen(softcamcheck + ' start' )
 			else:
 				if path.exists('/tmp/SoftcamsDisableCheck'):
 					data = file('/tmp/SoftcamsDisableCheck').read()
@@ -788,7 +690,7 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 								now = datetime.now()
 								output.write(now.strftime("%Y-%m-%d %H:%M") + ": AutoStarting: " + softcamcheck + "\n")
 								output.close()
-								self.Console.ePopen('/usr/softcams/' + softcamcheck + ' -b')
+								self.Console.ePopen(softcamcheck + ' -b')
 								sleep(10)
 							remove('/tmp/frozen')
 
@@ -861,7 +763,7 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 									self.Console.ePopen("killall -9 " + softcamcheck)
 									sleep(1)
 									print '[SoftcamManager] Starting ' + softcamcheck
-									self.Console.ePopen('/usr/softcams/' + softcamcheck)
+									self.Console.ePopen(softcamcheck)
 								remove('/tmp/frozen')
 							elif allow.find('NO') >= 0 or allow.find('no') >= 0:
 								print '[SoftcamManager] Telnet info not allowed, can not check if frozen'
@@ -896,18 +798,18 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 									self.Console.ePopen("killall -9 /usr/softcams/" + str(cccamcheck_process))
 								except:
 									pass
-							self.Console.ePopen('/usr/softcams/' + softcamcheck + " -b")
+							self.Console.ePopen(softcamcheck + " -b")
 							sleep(10)
 							remove('/tmp/cccamRuningCheck.tmp')
 						elif softcamcheck.startswith('Sbox') or softcamcheck.startswith('sbox'):
-							self.Console.ePopen('/usr/softcams/' + softcamcheck)
+							self.Console.ePopen(softcamcheck)
 							sleep(7)
 						elif softcamcheck.startswith('Gbox') or softcamcheck.startswith('gbox'):
-							self.Console.ePopen('/usr/softcams/' + softcamcheck)
+							self.Console.ePopen(softcamcheck)
 							sleep(3)
 							self.Console.ePopen('start-stop-daemon --start --quiet --background --exec /usr/bin/gbox')
 						else:
-							self.Console.ePopen('/usr/softcams/' + softcamcheck)
+							self.Console.ePopen(softcamcheck)
 
 class SoftcamAutoPoller:
 	"""Automatically Poll SoftCam"""
@@ -947,21 +849,21 @@ class SoftcamAutoPoller:
 		if path.exists('/tmp/SoftcamRuningCheck.tmp'):
 			remove('/tmp/SoftcamRuningCheck.tmp')
 
-		if path.exists('/etc/SoftcamsAutostart'):
-			autostartcams = file('/etc/SoftcamsAutostart').readlines()
+		if config.softcammanager.softcams_autostart:
+			autostartcams = config.softcammanager.softcams_autostart.value
 			name = _("SoftcamCheck")
 			job = Components.Task.Job(name)
 			task = SoftcamCheckTask(job, name)
 			task.setup(autostartcams)
 			Components.Task.job_manager.AddJob(job)
 
-		if config.vixsettings.Softcamenabled.value:
+		if config.softcammanager.softcamtimerenabled.value:
 			print "[SoftcamManager] Timer Check Enabled"
 			output = open('/tmp/cam.check.log','a')
 			now = datetime.now()
 			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Timer Check Enabled\n")
 			output.close()
-			self.timer.startLongTimer(config.vixsettings.Softcamtimer.value * 60)
+			self.timer.startLongTimer(config.softcammanager.softcamtimer.value * 60)
 		else:
 			output = open('/tmp/cam.check.log','a')
 			now = datetime.now()

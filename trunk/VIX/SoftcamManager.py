@@ -18,7 +18,7 @@ from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE
 from ServiceReference import ServiceReference
 from subprocess import Popen, PIPE
 from twisted.internet import reactor, threads, task
-from os import path, makedirs, remove, rename, symlink, mkdir, environ
+from os import path, makedirs, remove, rename, symlink, mkdir, environ, listdir
 from shutil import rmtree
 from datetime import datetime
 from time import localtime, time, strftime, mktime, strftime, sleep
@@ -115,23 +115,25 @@ class VIXSoftcamManager(Screen):
 		self.session.open(VIXSoftcamMenu)
 
 	def selectionChanged(self):
-		current = self["list"].getCurrent()[0]
-		selcam = current[0]
-		print '[SoftcamManager] Selectedcam: ' + str(selcam)
-		if currentactivecam.find(selcam) < 0:
-			self["key_green"].setText(_("Start"))
-		else:
-			self["key_green"].setText(_("Stop"))
-		if currentactivecam.find(selcam) < 0:
-			self["key_yellow"].setText(_(" "))
-		else:
-			self["key_yellow"].setText(_("Restart"))
+		cams = listdir('/usr/softcams')
+		if cams:
+			current = self["list"].getCurrent()[0]
+			selcam = current[0]
+			print '[SoftcamManager] Selectedcam: ' + str(selcam)
+			if currentactivecam.find(selcam) < 0:
+				self["key_green"].setText(_("Start"))
+			else:
+				self["key_green"].setText(_("Stop"))
+			if currentactivecam.find(selcam) < 0:
+				self["key_yellow"].setText(_(" "))
+			else:
+				self["key_yellow"].setText(_("Restart"))
 
-		if current[2] is True:
-			self["key_blue"].setText(_("Disable Startup"))
-		else:
-			self["key_blue"].setText(_("Enable Startup"))
-		self.saveSelection()
+			if current[2] is True:
+				self["key_blue"].setText(_("Disable Startup"))
+			else:
+				self["key_blue"].setText(_("Enable Startup"))
+			self.saveSelection()
 
 	def changeSelectionState(self):
 		self["list"].changeSelectionState()

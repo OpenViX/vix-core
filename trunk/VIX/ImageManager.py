@@ -38,14 +38,6 @@ def _(txt):
 
 autoImageManagerTimer = None
 
-imparts = []
-for p in harddiskmanager.getMountedPartitions():
-	d = path.normpath(p.mountpoint)
-	if pathExists(p.mountpoint):
-		if p.mountpoint != '/':
-			imparts.append((d + '/', p.mountpoint))
-config.vixsettings.imagemanager_backuplocation = ConfigSelection(choices = imparts)
-
 def ImageManagerautostart(reason, session=None, **kwargs):
 	"called with reason=1 to during /sbin/shutdown.sysvinit, with reason=0 at startup?"
 	global autoImageManagerTimer
@@ -93,19 +85,6 @@ class VIXImageManager(Screen):
 		self["key_green"] = Button(_("New Backup"))
 		self["key_yellow"] = Button(_("Restore"))
 		self["key_blue"] = Button(_("Delete"))
-		try:
-			file = open('/etc/image-version', 'r')
-			lines = file.readlines()
-			file.close()
-			for x in lines:
-				splitted = x.split('=')
-				if splitted[0] == "box_type":
-					folderprefix = splitted[1].replace('\n','') # 0 = release, 1 = experimental
-					self.boxtype = splitted[1].replace('\n','') # 0 = release, 1 = experimental
-		except:
-			folderprefix=""
-			self.boxtype="not detected"
-		config.vixsettings.imagemanager_folderprefix = ConfigText(default=folderprefix, fixed_size=False)
 
 		if BackupTime > 0:
 			backuptext = _("Next Backup: ") + strftime("%c", localtime(BackupTime))
@@ -121,29 +100,18 @@ class VIXImageManager(Screen):
 				m = d + '/', p.mountpoint
 				if p.mountpoint != '/':
 					imparts.append((d + '/', p.mountpoint))
-				if m not in config.vixsettings.imagemanager_backuplocation.choices.choices:
-					self.mountschages = True
-				else:
-					self.mountschages = False
 
-		for p in config.vixsettings.imagemanager_backuplocation.choices.choices:
-			if p not in imparts:
-				self.mountschages = True
-			else:
-				self.mountschages = False
+		config.imagemanager.backuplocation.setChoices(imparts)
 
-		if self.mountschages:
-			config.vixsettings.imagemanager_backuplocation.setChoices(imparts)
-
-		if config.vixsettings.imagemanager_backuplocation.value.startswith('/media/net/'):
-			mount1 = config.vixsettings.imagemanager_backuplocation.value.replace('/','')
+		if config.imagemanager.backuplocation.value.startswith('/media/net/'):
+			mount1 = config.imagemanager.backuplocation.value.replace('/','')
 			mount1 = mount1.replace('medianet','/media/net/')
-			mount = config.vixsettings.imagemanager_backuplocation.value, mount1
+			mount = config.imagemanager.backuplocation.value, mount1
 		else:
-			mount = config.vixsettings.imagemanager_backuplocation.value, config.vixsettings.imagemanager_backuplocation.value
+			mount = config.imagemanager.backuplocation.value, config.imagemanager.backuplocation.value
 		hdd = '/media/hdd/','/media/hdd/'
-		if mount not in config.vixsettings.imagemanager_backuplocation.choices.choices:
-			if hdd in config.vixsettings.imagemanager_backuplocation.choices.choices:
+		if mount not in config.imagemanager.backuplocation.choices.choices:
+			if hdd in config.imagemanager.backuplocation.choices.choices:
 				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
 					{
 						'cancel': self.close,
@@ -155,8 +123,8 @@ class VIXImageManager(Screen):
 					}, -1)
 
 				self.BackupDirectory = '/media/hdd/imagebackups/'
-				config.vixsettings.imagemanager_backuplocation.value = '/media/hdd/'
-				config.vixsettings.imagemanager_backuplocation.save
+				config.imagemanager.backuplocation.value = '/media/hdd/'
+				config.imagemanager.backuplocation.save
 				self['lab1'].setText(_("The chosen location does not exist, using /media/hdd") + _("\nSelect an image to Restore / Delete:"))
 			else:
 				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
@@ -177,22 +145,22 @@ class VIXImageManager(Screen):
 					"menu": self.createSetup,
 				}, -1)
 
-			self.BackupDirectory = config.vixsettings.imagemanager_backuplocation.value + 'imagebackups/'
-			self['lab1'].setText(_("Device: ") + config.vixsettings.imagemanager_backuplocation.value + _("\nSelect an image to Restore / Delete:"))
+			self.BackupDirectory = config.imagemanager.backuplocation.value + 'imagebackups/'
+			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + _("\nSelect an image to Restore / Delete:"))
 
 		try:
 			if not path.exists(self.BackupDirectory):
 				mkdir(self.BackupDirectory, 0755)
-			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
-				remove(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup'):
+				system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
+				remove(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
 			images = listdir(self.BackupDirectory)
 			del self.emlist[:]
 			for fil in images:
 				self.emlist.append(fil)
 			self.emlist.sort()
 		except:
-			self['lab1'].setText(_("Device: ") + config.vixsettings.imagemanager_backuplocation.value + _("\nthere was a problem with this device, please reformat and try again."))
+			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + _("\nthere was a problem with this device, please reformat and try again."))
 
 	def createSetup(self):
 		self.session.openWithCallback(self.setupDone, ImageManagerMenu)
@@ -203,7 +171,7 @@ class VIXImageManager(Screen):
 		
 	def doneConfiguring(self):
 		now = int(time())
-		if config.vixsettings.imagemanager_schedule.value:
+		if config.imagemanager.schedule.value:
 			if autoImageManagerTimer is not None:
 				print "[ImageManager] Backup Schedule Enabled at", strftime("%c", localtime(now))
 				autoImageManagerTimer.backupupdate()
@@ -220,7 +188,7 @@ class VIXImageManager(Screen):
 		self["backupstatus"].setText(str(backuptext))
 
 	def keyBackup(self):
-		if self.boxtype == "vuuno" or self.boxtype == "vuultimo" or self.boxtype == "vusolo" or self.boxtype == "vuduo" or self.boxtype == "et9000" or self.boxtype == "et5000":
+		if config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo" or config.misc.boxtype.value == "vusolo" or config.misc.boxtype.value == "vuduo" or config.misc.boxtype.value == "et9000" or config.misc.boxtype.value == "et5000":
 			message = _("Are you ready to create a backup image ?")
 			ybox = self.session.openWithCallback(self.BackupMemCheck, MessageBox, message, MessageBox.TYPE_YESNO)
 			ybox.setTitle(_("Backup Confirmation"))
@@ -230,7 +198,7 @@ class VIXImageManager(Screen):
 	def keyResstore(self):
 		self.sel = self['list'].getCurrent()
 		if not config.crash.enabledebug.value:
-			if (self.boxtype == "vuuno" and path.exists(self.BackupDirectory + self.sel + '/vuplus/uno')) or (self.boxtype == "vuultimo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/ultimo')) or (self.boxtype == "vusolo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/solo')) or (self.boxtype == "vuduo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/vuduo')) or (self.boxtype == "et9000" and path.exists(self.BackupDirectory + self.sel + '/et9000')) or (self.boxtype == "et5000" and path.exists(self.BackupDirectory + self.sel + '/et5000')):
+			if (config.misc.boxtype.value == "vuuno" and path.exists(self.BackupDirectory + self.sel + '/vuplus/uno')) or (config.misc.boxtype.value == "vuultimo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/ultimo')) or (config.misc.boxtype.value == "vusolo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/solo')) or (config.misc.boxtype.value == "vuduo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/vuduo')) or (config.misc.boxtype.value == "et9000" and path.exists(self.BackupDirectory + self.sel + '/et9000')) or (config.misc.boxtype.value == "et5000" and path.exists(self.BackupDirectory + self.sel + '/et5000')):
 				if self.sel:
 					message = _("Are you sure you want to restore this image:\n ") + self.sel
 					ybox = self.session.openWithCallback(self.RestoreMemCheck, MessageBox, message, MessageBox.TYPE_YESNO)
@@ -265,9 +233,9 @@ class VIXImageManager(Screen):
 					if int(memcheck) < 61440:
 						mycmd1 = "echo '************************************************************************'"
 						mycmd2 = "echo 'Creating swapfile'"
-						mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + "/swapfile_backup bs=1024 count=61440"
-						mycmd4 = "mkswap " + self.BackupDirectory + "/swapfile_backup"
-						mycmd5 = "swapon " + self.BackupDirectory + "/swapfile_backup"
+						mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
+						mycmd4 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
+						mycmd5 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
 						mycmd6 = "echo '************************************************************************'"
 						self.session.open(Console, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doBackup,closeOnSuccess = True)
 					else:
@@ -275,9 +243,9 @@ class VIXImageManager(Screen):
 				except:
 					mycmd1 = "echo '************************************************************************'"
 					mycmd2 = "echo 'Creating swapfile'"
-					mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + "/swapfile_backup bs=1024 count=61440"
-					mycmd4 = "mkswap " + self.BackupDirectory + "/swapfile_backup"
-					mycmd5 = "swapon " + self.BackupDirectory + "/swapfile_backup"
+					mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
+					mycmd4 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
+					mycmd5 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
 					mycmd6 = "echo '************************************************************************'"
 					self.session.open(Console, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doBackup,closeOnSuccess = True)
 	
@@ -291,114 +259,114 @@ class VIXImageManager(Screen):
 #		OPTIONS=' --eraseblock=0x20000 -n -l'
 		MKFS='/usr/bin/mkfs.jffs2'
 		NANDDUMP='/usr/bin/nanddump'
-		if path.exists(self.BackupDirectory + 'bi'):
-			rmtree(self.BackupDirectory + 'bi')
-		mkdir(self.BackupDirectory + 'bi', 0777)
-		if path.exists('/tmp/bi'):
-			rmtree('/tmp/bi')
-		mkdir('/tmp/bi', 0777)
-		mkdir('/tmp/bi/root', 0777)
-		mkdir('/tmp/bi/boot', 0777)
+		if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi'):
+			rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi')
+		mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi', 0777)
+		if path.exists('/tmp/' + config.imagemanager.folderprefix.value + '/bi'):
+			rmtree('/tmp/' + config.imagemanager.folderprefix.value + '/bi')
+		mkdir('/tmp/' + config.imagemanager.folderprefix.value + '/bi', 0777)
+		mkdir('/tmp/' + config.imagemanager.folderprefix.value + '/bi/root', 0777)
+		mkdir('/tmp/' + config.imagemanager.folderprefix.value + '/bi/boot', 0777)
 
-		if self.boxtype == "vusolo" or self.boxtype == "vuduo":
-			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus'):
-				rmtree(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus')
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate, 0777)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus', 0777)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu',''), 0777)
+		if config.misc.boxtype.value == "vusolo" or config.misc.boxtype.value == "vuduo":
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus'):
+				rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus')
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate, 0777)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus', 0777)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu',''), 0777)
 
 			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Vu+ " + self.boxtype +  " detected'"
+			mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  " detected'"
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "mount -t jffs2 /dev/mtdblock0 /tmp/bi/root"
 			mycmd5 = "mount -t jffs2 /dev/mtdblock2 /tmp/bi/boot"
 			mycmd6 = "echo 'Creating Boot sector'"
-			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + 'bi/boot.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/boot.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd8 = "echo 'Creating System root, this will take some time to complete, please wait...'"
-			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + 'bi/root.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/root.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd10 = "echo 'Creating Kernel structure'"
-			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + 'bi/vmlinux.gz'
+			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/vmlinux.gz'
 			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11], finishedCallback=self.doBackup2,closeOnSuccess = True)
 
-		elif self.boxtype == "vuuno" or self.boxtype == "vuultimo":
-			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus'):
-				rmtree(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus')
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate, 0777)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus', 0777)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu',''), 0777)
+		elif config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus'):
+				rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus')
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate, 0777)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus', 0777)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu',''), 0777)
 
 			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Vu+ " + self.boxtype +  " detected'"
+			mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  " detected'"
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "mount -t jffs2 /dev/mtdblock0 /tmp/bi/root"
 			mycmd5 = "mount -t jffs2 /dev/mtdblock2 /tmp/bi/boot"
 			mycmd6 = "echo 'Creating Boot sector'"
-			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + 'bi/boot.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/boot.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd8 = "echo 'Creating System root, this will take some time to complete, please wait...'"
-			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + 'bi/root.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/root.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd10 = "echo 'Creating Kernel structure'"
-			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + 'bi/vmlinux.gz'
+			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/vmlinux.gz'
 			mycmd12 = "echo 'Creating bootsplash'"
-			mycmd13 = NANDDUMP + ' /dev/mtd3 -o -b > ' + self.BackupDirectory + 'bi/splash.bin'
+			mycmd13 = NANDDUMP + ' /dev/mtd3 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/splash.bin'
 			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13], finishedCallback=self.doBackup2,closeOnSuccess = True)
-		elif self.boxtype == "et9000" or self.boxtype == "et5000":
-			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate):
-				rmtree(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate, 0777)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype, 0777)
+		elif config.misc.boxtype.value == "et9000" or config.misc.boxtype.value == "et5000":
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate):
+				rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate, 0777)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value, 0777)
 
 			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Xtrend " + self.boxtype +  " detected'"
+			mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  " detected'"
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "mount -t jffs2 /dev/mtdblock2 /tmp/bi/boot"
 			mycmd5 = "mount -t jffs2 /dev/mtdblock3 /tmp/bi/root"
 			mycmd6 = "echo 'Creating Boot sector'"
-			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + 'bi/boot.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/boot.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd8 = "echo 'Creating System root, this will take some time to complete, please wait...'"
-			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + 'bi/root.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/root.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd10 = "echo 'Creating Kernel structure'"
-			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + 'bi/vmlinux.gz'
+			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/vmlinux.gz'
 			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11], finishedCallback=self.doBackup2,closeOnSuccess = True)
 
 	def doBackup2(self):
-		if self.boxtype == "vusolo" or self.boxtype == "vuduo" or self.boxtype == "vuuno" or self.boxtype == "vuultimo":
-			move(self.BackupDirectory + 'bi/root.jffs2', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/root_cfe_auto.jffs2')
-			move(self.BackupDirectory + 'bi/boot.jffs2', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/boot_cfe_auto.jffs2')
-			move(self.BackupDirectory + 'bi/vmlinux.gz', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/kernel_cfe_auto.bin')
-			if self.boxtype == "vuuno" or self.boxtype == "vuultimo":
-				move(self.BackupDirectory + 'bi/splash.bin', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/splash_cfe_auto.bin')
+		if config.misc.boxtype.value == "vusolo" or config.misc.boxtype.value == "vuduo" or config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/root.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2')
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/boot.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/boot_cfe_auto.jffs2')
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/vmlinux.gz', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin')
+			if config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
+				move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/splash.bin', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/splash_cfe_auto.bin')
 			system('umount /tmp/bi/root')
 			system('umount /tmp/bi/boot')
-			rmtree('/tmp/bi')
-			rmtree(self.BackupDirectory + 'bi')
-			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
-				remove(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
-			if fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/root_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/boot_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/kernel_cfe_auto.bin'):
-				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
+			rmtree('/tmp/' + config.imagemanager.folderprefix.value + '/bi')
+			rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi')
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup'):
+				system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
+				remove(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
+			if fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/boot_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'):
+				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
 			else:
 				self.session.open(MessageBox, _("Image creation failed - e. g. wrong backup destination or no space left on backup device"), MessageBox.TYPE_INFO, timeout = 10)
-		elif self.boxtype == "et9000" or self.boxtype == "et5000":
-			move(self.BackupDirectory + 'bi/root.jffs2', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/rootfs.bin')
-			move(self.BackupDirectory + 'bi/boot.jffs2', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/boot.bin')
-			move(self.BackupDirectory + 'bi/vmlinux.gz', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/kernel.bin')
-			fileout = open(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/noforce', 'w')
+		elif config.misc.boxtype.value == "et9000" or config.misc.boxtype.value == "et5000":
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/root.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/rootfs.bin')
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/boot.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/boot.bin')
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/vmlinux.gz', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/kernel.bin')
+			fileout = open(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/noforce', 'w')
 			line = "rename this file to 'force' to force an update without confirmation"
 			fileout.write(line)
 			fileout.close()
-			fileout = open(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/imageversion', 'w')
+			fileout = open(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + 'imageversion', 'w')
 			line = "ViX-" + self.ImageVersion
 			fileout.write(line)
 			fileout.close()
 			system('umount /tmp/bi/root')
 			system('umount /tmp/bi/boot')
-			rmtree('/tmp/bi')
-			rmtree(self.BackupDirectory + 'bi')
-			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
-				remove(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
-			if fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/rootfs.bin') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/boot.bin') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/kernel.bin'):
-				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
+			rmtree('/tmp/' + config.imagemanager.folderprefix.value + '/bi')
+			rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi')
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup'):
+				system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
+				remove(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
+			if fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/rootfs.bin') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/boot.bin') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/kernel.bin'):
+				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
 			else:
 				self.session.open(MessageBox, _("Image creation failed - e. g. wrong backup destination or no space left on backup device"), MessageBox.TYPE_INFO, timeout = 10)
 		self.populate_List()
@@ -411,9 +379,9 @@ class VIXImageManager(Screen):
 				if int(memcheck) < 61440:
 					mycmd1 = "echo '************************************************************************'"
 					mycmd2 = "echo 'Creating swapfile'"
-					mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + "/swapfile_backup bs=1024 count=61440"
-					mycmd4 = "mkswap " + self.BackupDirectory + "/swapfile_backup"
-					mycmd5 = "swapon " + self.BackupDirectory + "/swapfile_backup"
+					mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
+					mycmd4 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
+					mycmd5 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
 					mycmd6 = "echo '************************************************************************'"
 					self.session.open(Console, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doResstore,closeOnSuccess = True)
 				else:
@@ -421,18 +389,18 @@ class VIXImageManager(Screen):
 			except:
 				mycmd1 = "echo '************************************************************************'"
 				mycmd2 = "echo 'Creating swapfile'"
-				mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + "/swapfile_backup bs=1024 count=61440"
-				mycmd4 = "mkswap " + self.BackupDirectory + "/swapfile_backup"
-				mycmd5 = "swapon " + self.BackupDirectory + "/swapfile_backup"
+				mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
+				mycmd4 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
+				mycmd5 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
 				mycmd6 = "echo '************************************************************************'"
 				self.session.open(Console, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doResstore,closeOnSuccess = True)
 
 	def doResstore(self):
 		NANDWRITE='/usr/bin/nandwrite'
 		selectedimage = self.sel
-		if self.boxtype == "vusolo" or self.boxtype == "vuduo":
+		if config.misc.boxtype.value == "vusolo" or config.misc.boxtype.value == "vuduo":
 			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Vu+ " + self.boxtype +  " detected'"
+			mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  " detected'"
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "echo ' '"
 			mycmd5 = "echo 'Attention:'"
@@ -443,23 +411,23 @@ class VIXImageManager(Screen):
 			mycmd10 = "echo 'Erasing Boot aera.'"
 			mycmd11 = 'flash_eraseall -j -q /dev/mtd2'
 			mycmd12 = "echo 'Flasing Boot to NAND.'"
-			mycmd13 = NANDWRITE + ' -p -q /dev/mtd2 ' + self.BackupDirectory + selectedimage + '/vuplus/' + self.boxtype.replace('vu','') + '/boot_cfe_auto.jffs2'
+			mycmd13 = NANDWRITE + ' -p -q /dev/mtd2 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/boot_cfe_auto.jffs2'
 			mycmd14 = "echo 'Erasing Root aera.'"
 			mycmd15 = 'flash_eraseall -j -q /dev/mtd0'
 			mycmd16 = "echo 'Flasing Root to NAND.'"
-			mycmd17 = NANDWRITE + ' -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + self.boxtype.replace('vu','') + '/root_cfe_auto.jffs2'
+			mycmd17 = NANDWRITE + ' -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2'
 			mycmd18 = "echo 'Erasing Kernel aera.'"
 			mycmd19 = 'flash_eraseall -j -q /dev/mtd1'
 			mycmd20 = "echo 'Flasing Kernel to NAND.'"
-			mycmd21 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + self.boxtype.replace('vu','') + '/kernel_cfe_auto.bin'
+			mycmd21 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'
 			mycmd22 = "echo ' '"
 			mycmd23 = "echo 'Flasing Complete\nRebooting.'"
 			mycmd24 = "sleep 2"
 			mycmd25 = "/sbin/shutdown.sysvinit -r now"
 			self.session.open(Console, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25],closeOnSuccess = True)
-		elif self.boxtype == "vuuno" or self.boxtype == "vuultimo":
+		elif config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
 			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Vu+ " + self.boxtype +  " detected'"
+			mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  " detected'"
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "echo ' '"
 			mycmd5 = "echo 'Attention:'"
@@ -470,27 +438,27 @@ class VIXImageManager(Screen):
 			mycmd10 = "echo 'Erasing Bootsplash aera.'"
 			mycmd11 = 'flash_eraseall -j -q /dev/mtd3'
 			mycmd12 = "echo 'Flasing Bootsplash to NAND.'"
-			mycmd13 = NANDWRITE + ' -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/vuplus/' + self.boxtype.replace('vu','') + '/splash_cfe_auto.bin'
+			mycmd13 = NANDWRITE + ' -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/splash_cfe_auto.bin'
 			mycmd14 = "echo 'Erasing Boot aera.'"
 			mycmd15 = 'flash_eraseall -j -q /dev/mtd2'
 			mycmd16 = "echo 'Flasing Boot to NAND.'"
-			mycmd17 = NANDWRITE + ' -p -q /dev/mtd2 ' + self.BackupDirectory + selectedimage + '/vuplus/' + self.boxtype.replace('vu','') + '/boot_cfe_auto.jffs2'
+			mycmd17 = NANDWRITE + ' -p -q /dev/mtd2 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/boot_cfe_auto.jffs2'
 			mycmd18 = "echo 'Erasing Root aera.'"
 			mycmd19 = 'flash_eraseall -j -q /dev/mtd0'
 			mycmd20 = "echo 'Flasing Root to NAND.'"
-			mycmd21 = NANDWRITE + ' -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + self.boxtype.replace('vu','') + '/root_cfe_auto.jffs2'
+			mycmd21 = NANDWRITE + ' -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2'
 			mycmd22 = "echo 'Erasing Kernel aera.'"
 			mycmd23 = 'flash_eraseall -j -q /dev/mtd1'
 			mycmd24 = "echo 'Flasing Kernel to NAND.'"
-			mycmd25 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + self.boxtype.replace('vu','') + '/kernel_cfe_auto.bin'
+			mycmd25 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'
 			mycmd26 = "echo ' '"
 			mycmd27 = "echo 'Flasing Complete\nRebooting.'"
 			mycmd28 = "sleep 2"
 			mycmd29 = "/sbin/shutdown.sysvinit -r now"
 			self.session.open(Console, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25, mycmd26, mycmd27, mycmd28, mycmd29],closeOnSuccess = True)
-		elif self.boxtype == "et9000" or self.boxtype == "et5000":
+		elif config.misc.boxtype.value == "et9000" or config.misc.boxtype.value == "et5000":
 			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Xtrend " + self.boxtype +  " detected'"
+			mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  " detected'"
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "echo ' '"
 			mycmd5 = "echo 'Attention:'"
@@ -501,15 +469,15 @@ class VIXImageManager(Screen):
 			mycmd10 = "echo 'Erasing Boot aera.'"
 			mycmd11 = 'flash_eraseall -j -q /dev/mtd2'
 			mycmd12 = "echo 'Flasing Boot to NAND.'"
-			mycmd13 = NANDWRITE + ' -p -q /dev/mtd2 ' + self.BackupDirectory + selectedimage + '/' + self.boxtype + '/boot.bin'
+			mycmd13 = NANDWRITE + ' -p -q /dev/mtd2 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/boot.bin'
 			mycmd14 = "echo 'Erasing Root aera.'"
 			mycmd15 = 'flash_eraseall -j -q /dev/mtd3'
 			mycmd16 = "echo 'Flasing Root to NAND.'"
-			mycmd17 = NANDWRITE + ' -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/' + self.boxtype + '/rootfs.bin'
+			mycmd17 = NANDWRITE + ' -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/rootfs.bin'
 			mycmd18 = "echo 'Erasing Kernel aera.'"
 			mycmd19 = 'flash_eraseall -j -q /dev/mtd1'
 			mycmd20 = "echo 'Flasing Kernel to NAND.'"
-			mycmd21 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/' + self.boxtype + '/kernel.bin'
+			mycmd21 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/kernel.bin'
 			mycmd22 = "echo ' '"
 			mycmd23 = "echo 'Flasing Complete\nRebooting.'"
 			mycmd24 = "sleep 2"
@@ -525,13 +493,6 @@ class VIXImageManager(Screen):
 
 	def myclose(self):
 		self.close()
-		
-
-config.vixsettings.imagemanager_schedule = ConfigYesNo(default = False)
-config.vixsettings.imagemanager_scheduletime = ConfigClock(default = 0) # 1:00
-config.vixsettings.imagemanager_repeattype = ConfigSelection(default = "daily", choices = [("daily", _("Daily")), ("weekly", _("Weely")), ("monthly", _("30 Days"))])
-config.vixsettings.imagemanager_backupretry = ConfigNumber(default = 30)
-config.vixsettings.imagemanager_backupretrycount = NoSave(ConfigNumber(default = 0))
 
 class ImageManagerMenu(ConfigListScreen, Screen):
 	sz_w = getDesktop(0).size().width()
@@ -582,14 +543,23 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 		self["key_green"] = Button(_("OK"))
 
 	def createSetup(self):
+		imparts = []
+		for p in harddiskmanager.getMountedPartitions():
+			if pathExists(p.mountpoint):
+				d = path.normpath(p.mountpoint)
+				m = d + '/', p.mountpoint
+				if p.mountpoint != '/':
+					imparts.append((d + '/', p.mountpoint))
+
+		config.imagemanager.backuplocation.setChoices(imparts)
 		self.editListEntry = None
 		self.list = []
-		self.list.append(getConfigListEntry(_("Backup Location"), config.vixsettings.imagemanager_backuplocation))
-		self.list.append(getConfigListEntry(_("Folder prefix"), config.vixsettings.imagemanager_folderprefix))
-		self.list.append(getConfigListEntry(_("Schedule Backups"), config.vixsettings.imagemanager_schedule))
-		if config.vixsettings.imagemanager_schedule.value:
-			self.list.append(getConfigListEntry(_("Time of Backup to start"), config.vixsettings.imagemanager_scheduletime))
-			self.list.append(getConfigListEntry(_("Repeat how often"), config.vixsettings.imagemanager_repeattype))
+		self.list.append(getConfigListEntry(_("Backup Location"), config.imagemanager.backuplocation))
+		self.list.append(getConfigListEntry(_("Folder prefix"), config.imagemanager.folderprefix))
+		self.list.append(getConfigListEntry(_("Schedule Backups"), config.imagemanager.schedule))
+		if config.imagemanager.schedule.value:
+			self.list.append(getConfigListEntry(_("Time of Backup to start"), config.imagemanager.scheduletime))
+			self.list.append(getConfigListEntry(_("Repeat how often"), config.imagemanager.repeattype))
 		self["config"].list = self.list
 		self["config"].setList(self.list)
 
@@ -652,7 +622,7 @@ class AutoImageManagerTimer:
 		self.backupactivityTimer.timeout.get().append(self.backupupdatedelay)
 		now = int(time())
 		global BackupTime
-		if config.vixsettings.imagemanager_schedule.value:
+		if config.imagemanager.schedule.value:
 			print "[ImageManager] Backup Schedule Enabled at ", strftime("%c", localtime(now))
 			if now > 1262304000:
 				self.backupupdate()
@@ -670,7 +640,7 @@ class AutoImageManagerTimer:
 		self.backupupdate()
 
 	def getBackupTime(self):
-		backupclock = config.vixsettings.imagemanager_scheduletime.value
+		backupclock = config.imagemanager.scheduletime.value
 		nowt = time()
 		now = localtime(nowt)
 		return int(mktime((now.tm_year, now.tm_mon, now.tm_mday, backupclock[0], backupclock[1], 0, now.tm_wday, now.tm_yday, now.tm_isdst)))
@@ -682,11 +652,11 @@ class AutoImageManagerTimer:
 		now = int(time())
 		if BackupTime > 0:
 			if BackupTime < now + atLeast:
-				if config.vixsettings.imagemanager_repeattype.value == "daily":
+				if config.imagemanager.repeattype.value == "daily":
 					BackupTime += 24*3600
-				elif config.vixsettings.imagemanager_repeattype.value == "weekly":
+				elif config.imagemanager.repeattype.value == "weekly":
 					BackupTime += 7*24*3600
-				elif config.vixsettings.imagemanager_repeattype.value == "monthly":
+				elif config.imagemanager.repeattype.value == "monthly":
 					BackupTime += 30*24*3600
 			next = BackupTime - now
 			self.backuptimer.startLongTimer(next)
@@ -716,16 +686,16 @@ class AutoImageManagerTimer:
 					
 	def doBackup(self, answer):
 		now = int(time())
-		print 'RETRIES',config.vixsettings.imagemanager_backupretrycount.value
-		if config.vixsettings.imagemanager_backupretrycount.value < 2:
+		print 'RETRIES',config.imagemanager.backupretrycount.value
+		if config.imagemanager.backupretrycount.value < 2:
 			if answer is False:
 				print "[ImageManager] Backup delayed."
-				repeat = config.vixsettings.imagemanager_backupretrycount.value
+				repeat = config.imagemanager.backupretrycount.value
 				repeat += 1
-				config.vixsettings.imagemanager_backupretrycount.value = repeat
-				BackupTime = now + (int(config.vixsettings.imagemanager_backupretry.value) * 60)
+				config.imagemanager.backupretrycount.value = repeat
+				BackupTime = now + (int(config.imagemanager.backupretry.value) * 60)
 				print "[ImageManager] Backup Time now set to", strftime("%c", localtime(BackupTime)), strftime("(now=%c)", localtime(now))
-				self.backuptimer.startLongTimer(int(config.vixsettings.imagemanager_backupretry.value) * 60)
+				self.backuptimer.startLongTimer(int(config.imagemanager.backupretry.value) * 60)
 			else:
 				atLeast = 60
 				print "[ImageManager] Running Backup", strftime("%c", localtime(now))
@@ -735,15 +705,15 @@ class AutoImageManagerTimer:
 			atLeast = 60
 			print "[ImageManager] Enough Retries, delaying till next schedule.", strftime("%c", localtime(now))
 			self.session.open(MessageBox, _("Enough Retries, delaying till next schedule."), MessageBox.TYPE_INFO, timeout = 10)
-			config.vixsettings.imagemanager_backupretrycount.value = 0
+			config.imagemanager.backupretrycount.value = 0
 			self.backupupdate(atLeast)
 
 
 	def BackupMemCheck(self):
-		if not path.exists(config.vixsettings.imagemanager_backuplocation.value):
+		if not path.exists(config.imagemanager.backuplocation.value):
 			self.BackupDirectory = '/media/hdd/imagebackups/'
 		else:
-			self.BackupDirectory = config.vixsettings.imagemanager_backuplocation.value + '/imagebackups/'
+			self.BackupDirectory = config.imagemanager.backuplocation.value + '/imagebackups/'
 		try:
 			file = open('/etc/image-version', 'r')
 			lines = file.readlines()
@@ -751,9 +721,9 @@ class AutoImageManagerTimer:
 			for x in lines:
 				splitted = x.split('=')
 				if splitted[0] == "box_type":
-					self.boxtype = splitted[1].replace('\n','') # 0 = release, 1 = experimental
+					config.misc.boxtype.value = splitted[1].replace('\n','') # 0 = release, 1 = experimental
 		except:
-			self.boxtype="not detected"
+			config.misc.boxtype.value="not detected"
 
 		if not path.exists(self.BackupDirectory):
 			mkdir(self.BackupDirectory, 0755)
@@ -770,9 +740,9 @@ class AutoImageManagerTimer:
 				if int(memcheck) < 61440:
 					mycmd1 = "echo '************************************************************************'"
 					mycmd2 = "echo 'Creating swapfile'"
-					mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + "/swapfile_backup bs=1024 count=61440"
-					mycmd4 = "mkswap " + self.BackupDirectory + "/swapfile_backup"
-					mycmd5 = "swapon " + self.BackupDirectory + "/swapfile_backup"
+					mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
+					mycmd4 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
+					mycmd5 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
 					mycmd6 = "echo '************************************************************************'"
 					self.session.open(Console, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doBackup1,closeOnSuccess = True)
 				else:
@@ -780,9 +750,9 @@ class AutoImageManagerTimer:
 			except:
 				mycmd1 = "echo '************************************************************************'"
 				mycmd2 = "echo 'Creating swapfile'"
-				mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + "/swapfile_backup bs=1024 count=61440"
-				mycmd4 = "mkswap " + self.BackupDirectory + "/swapfile_backup"
-				mycmd5 = "swapon " + self.BackupDirectory + "/swapfile_backup"
+				mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
+				mycmd4 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
+				mycmd5 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
 				mycmd6 = "echo '************************************************************************'"
 				self.session.open(Console, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doBackup1,closeOnSuccess = True)
 	
@@ -796,113 +766,113 @@ class AutoImageManagerTimer:
 #		OPTIONS=' --eraseblock=0x20000 -n -l'
 		MKFS='/usr/bin/mkfs.jffs2'
 		NANDDUMP='/usr/bin/nanddump'
-		if path.exists(self.BackupDirectory + 'bi'):
-			rmtree(self.BackupDirectory + 'bi')
-		mkdir(self.BackupDirectory + 'bi', 0777)
-		if path.exists('/tmp/bi'):
-			rmtree('/tmp/bi')
-		mkdir('/tmp/bi', 0777)
-		mkdir('/tmp/bi/root', 0777)
-		mkdir('/tmp/bi/boot', 0777)
+		if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi'):
+			rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi')
+		mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi', 0777)
+		if path.exists('/tmp/' + config.imagemanager.folderprefix.value + '/bi'):
+			rmtree('/tmp/' + config.imagemanager.folderprefix.value + '/bi')
+		mkdir('/tmp/' + config.imagemanager.folderprefix.value + '/bi', 0777)
+		mkdir('/tmp/' + config.imagemanager.folderprefix.value + '/bi/root', 0777)
+		mkdir('/tmp/' + config.imagemanager.folderprefix.value + '/bi/boot', 0777)
 
-		if self.boxtype == "vusolo" or self.boxtype == "vuduo":
-			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus'):
-				rmtree(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus')
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate, 0777)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus', 0777)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu',''), 0777)
+		if config.misc.boxtype.value == "vusolo" or config.misc.boxtype.value == "vuduo":
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus'):
+				rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus')
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate, 0777)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus', 0777)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu',''), 0777)
 
 			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Vu+ " + self.boxtype +  " detected'"
+			mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  " detected'"
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "mount -t jffs2 /dev/mtdblock0 /tmp/bi/root"
 			mycmd5 = "mount -t jffs2 /dev/mtdblock2 /tmp/bi/boot"
 			mycmd6 = "echo 'Creating Boot sector'"
-			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + 'bi/boot.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/boot.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd8 = "echo 'Creating System root, this will take some time to complete, please wait...'"
-			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + 'bi/root.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/root.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd10 = "echo 'Creating Kernel structure'"
-			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + 'bi/vmlinux.gz'
+			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/vmlinux.gz'
 			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11], finishedCallback=self.doBackup2,closeOnSuccess = True)
 
-		elif self.boxtype == "vuuno" or self.boxtype == "vuultimo":
-			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus'):
-				rmtree(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus')
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate, 0777)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus', 0777)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu',''), 0777)
+		elif config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus'):
+				rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus')
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate, 0777)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus', 0777)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu',''), 0777)
 
 			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Vu+ " + self.boxtype +  " detected'"
+			mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  " detected'"
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "mount -t jffs2 /dev/mtdblock0 /tmp/bi/root"
 			mycmd5 = "mount -t jffs2 /dev/mtdblock2 /tmp/bi/boot"
 			mycmd6 = "echo 'Creating Boot sector'"
-			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + 'bi/boot.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/boot.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd8 = "echo 'Creating System root, this will take some time to complete, please wait...'"
-			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + 'bi/root.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/root.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd10 = "echo 'Creating Kernel structure'"
-			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + 'bi/vmlinux.gz'
+			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/vmlinux.gz'
 			mycmd12 = "echo 'Creating bootsplash'"
-			mycmd13 = NANDDUMP + ' /dev/mtd3 -o -b > ' + self.BackupDirectory + 'bi/splash.bin'
+			mycmd13 = NANDDUMP + ' /dev/mtd3 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/splash.bin'
 			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13], finishedCallback=self.doBackup2,closeOnSuccess = True)
-		elif self.boxtype == "et9000" or self.boxtype == "et5000":
-			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate):
-				rmtree(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate, 0777)
-			mkdir(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype, 0777)
+		elif config.misc.boxtype.value == "et9000" or config.misc.boxtype.value == "et5000":
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate):
+				rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate, 0777)
+			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value, 0777)
 
 			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Xtrend " + self.boxtype +  " detected'"
+			mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  " detected'"
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "mount -t jffs2 /dev/mtdblock2 /tmp/bi/boot"
 			mycmd5 = "mount -t jffs2 /dev/mtdblock3 /tmp/bi/root"
 			mycmd6 = "echo 'Creating Boot sector'"
-			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + 'bi/boot.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd7 = MKFS + ' --root=/tmp/bi/boot --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/boot.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd8 = "echo 'Creating System root, this will take some time to complete, please wait...'"
-			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + 'bi/root.jffs2 --eraseblock=0x20000 -n -l'
+			mycmd9 = MKFS + ' --root=/tmp/bi/root --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/root.jffs2 --eraseblock=0x20000 -n -l'
 			mycmd10 = "echo 'Creating Kernel structure'"
-			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + 'bi/vmlinux.gz'
+			mycmd11 = NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/vmlinux.gz'
 			self.session.open(Console, title='Creating Image...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11], finishedCallback=self.doBackup2,closeOnSuccess = True)
 
 	def doBackup2(self):
-		if self.boxtype == "vusolo" or self.boxtype == "vuduo" or self.boxtype == "vuuno" or self.boxtype == "vuultimo":
-			move(self.BackupDirectory + 'bi/root.jffs2', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/root_cfe_auto.jffs2')
-			move(self.BackupDirectory + 'bi/boot.jffs2', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/boot_cfe_auto.jffs2')
-			move(self.BackupDirectory + 'bi/vmlinux.gz', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/kernel_cfe_auto.bin')
-			if self.boxtype == "vuuno" or self.boxtype == "vuultimo":
-				move(self.BackupDirectory + 'bi/splash.bin', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/splash_cfe_auto.bin')
+		if config.misc.boxtype.value == "vusolo" or config.misc.boxtype.value == "vuduo" or config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/root.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2')
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/boot.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/boot_cfe_auto.jffs2')
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/vmlinux.gz', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin')
+			if config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
+				move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/splash.bin', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/splash_cfe_auto.bin')
 			system('umount /tmp/bi/root')
 			system('umount /tmp/bi/boot')
-			rmtree('/tmp/bi')
-			rmtree(self.BackupDirectory + 'bi')
-			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
-				remove(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
-			if fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/root_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/boot_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/vuplus/' + self.boxtype.replace('vu','') + '/kernel_cfe_auto.bin'):
-				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
+			rmtree('/tmp/' + config.imagemanager.folderprefix.value + '/bi')
+			rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi')
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup'):
+				system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
+				remove(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
+			if fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/boot_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'):
+				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
 			else:
 				self.session.open(MessageBox, _("Image creation failed - e. g. wrong backup destination or no space left on backup device"), MessageBox.TYPE_INFO, timeout = 10)
-		elif self.boxtype == "et9000" or self.boxtype == "et5000":
-			move(self.BackupDirectory + 'bi/root.jffs2', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/rootfs.bin')
-			move(self.BackupDirectory + 'bi/boot.jffs2', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/boot.bin')
-			move(self.BackupDirectory + 'bi/vmlinux.gz', self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/kernel.bin')
-			fileout = open(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/noforce', 'w')
+		elif config.misc.boxtype.value == "et9000" or config.misc.boxtype.value == "et5000":
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/root.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/rootfs.bin')
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/boot.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/boot.bin')
+			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi/vmlinux.gz', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/kernel.bin')
+			fileout = open(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/noforce', 'w')
 			line = "rename this file to 'force' to force an update without confirmation"
 			fileout.write(line)
 			fileout.close()
-			fileout = open(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/imageversion', 'w')
+			fileout = open(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + 'imageversion', 'w')
 			line = "ViX-" + self.ImageVersion
 			fileout.write(line)
 			fileout.close()
 			system('umount /tmp/bi/root')
 			system('umount /tmp/bi/boot')
-			rmtree('/tmp/bi')
-			rmtree(self.BackupDirectory + 'bi')
-			if path.exists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
-				remove(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + 'swapfile_backup')
-			if fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/rootfs.bin') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/boot.bin') and fileExists(self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate + '/' + self.boxtype + '/kernel.bin'):
-				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.vixsettings.imagemanager_folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
+			rmtree('/tmp/' + config.imagemanager.folderprefix.value + '/bi')
+			rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '/bi')
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup'):
+				system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
+				remove(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
+			if fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/rootfs.bin') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/boot.bin') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/kernel.bin'):
+				self.session.open(MessageBox, _("Image created in " + self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate), MessageBox.TYPE_INFO, timeout = 10)
 			else:
 				self.session.open(MessageBox, _("Image creation failed - e. g. wrong backup destination or no space left on backup device"), MessageBox.TYPE_INFO, timeout = 10)

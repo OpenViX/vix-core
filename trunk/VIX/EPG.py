@@ -763,8 +763,8 @@ class VIXEPG(Screen):
 			{
 				"cancel": self.VIXEPGClose,
 				"displayHelp": self.myhelp,
-				"nextBouquet": self.prevPressed,
-				"prevBouquet": self.nextPressed,
+				"nextBouquet": self.nextPressed,
+				"prevBouquet": self.prevPressed,
 				"prevService": self.nextBouquet,
 				"nextService": self.prevBouquet,
 			})

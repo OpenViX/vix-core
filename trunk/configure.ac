@@ -14,6 +14,4 @@ etc/Makefile
 etc/cron/Makefile
 etc/cron/crontabs/Makefile
 VIX/Makefile
-VIX/VIXEPG/Makefile
-VIX/VIXEPG/skins/Makefile
 ])

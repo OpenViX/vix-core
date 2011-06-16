@@ -61,7 +61,7 @@ class VIXDevicesPanel(Screen):
 	</screen>"""
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self["title"] = Label(_("Mount Manager"))
+		Screen.setTitle(self, _("Mount Manager"))
 		self['key_red'] = Label(" ")
 		self['key_green'] = Label(_('Setup Mounts'))
 		self['key_yellow'] = Label(_(' '))
@@ -266,40 +266,42 @@ class VIXDevicesPanel(Screen):
 		self.updateList()
 
 	def saveMypoints(self):
-		for x in self['list'].list:
-			try:
-				x = x[1].strip()
-				print 'x',x
-				if x.find('Mount') >= 0:
-					parts = x.split()
-					device = parts[5]
-					print 'parts',parts
-					print 'device',device
-					file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if device not in l])
-					rename('/etc/fstab.tmp','/etc/fstab')
-			except:
-				pass
-		for line in self.sel:
-			try:
-				line = line.strip()
-				if line.find('Mount') >= 0:
-					if line.find('/media/hdd') < 0:
-						parts = line.split()
+		sel = self['list'].getCurrent()
+		if sel:
+			for x in self['list'].list:
+				try:
+					x = x[1].strip()
+					print 'x',x
+					if x.find('Mount') >= 0:
+						parts = x.split()
 						device = parts[5]
 						print 'parts',parts
 						print 'device',device
-						device = device.replace('/autofs/', '/dev/')
-						out = open('/etc/fstab', 'a')
-						line = device + '            /media/hdd           auto       defaults              0 0\n'
-						out.write(line)
-						out.close()
-						message = _("Devices changes need a system restart to take effects.\nRestart your Box now?")
-						ybox = self.session.openWithCallback(self.restBo, MessageBox, message, MessageBox.TYPE_YESNO)
-						ybox.setTitle(_("Restart box."))
-					else:
-						self.session.open(MessageBox, _("This Device is already mounted as HDD."), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-			except:
-				pass
+						file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if device not in l])
+						rename('/etc/fstab.tmp','/etc/fstab')
+				except:
+					pass
+			for line in self.sel:
+				try:
+					line = line.strip()
+					if line.find('Mount') >= 0:
+						if line.find('/media/hdd') < 0:
+							parts = line.split()
+							device = parts[5]
+							print 'parts',parts
+							print 'device',device
+							device = device.replace('/autofs/', '/dev/')
+							out = open('/etc/fstab', 'a')
+							line = device + '            /media/hdd           auto       defaults              0 0\n'
+							out.write(line)
+							out.close()
+							message = _("Devices changes need a system restart to take effects.\nRestart your Box now?")
+							ybox = self.session.openWithCallback(self.restBo, MessageBox, message, MessageBox.TYPE_YESNO)
+							ybox.setTitle(_("Restart box."))
+						else:
+							self.session.open(MessageBox, _("This Device is already mounted as HDD."), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
+				except:
+					pass
 			
 	def restBo(self, answer):
 		if answer is True:
@@ -322,7 +324,7 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		Screen.__init__(self, session)
 		self.list = []
 		ConfigListScreen.__init__(self, self.list)
-		self["title"] = Label(_("Choose where to mount your devices to:"))
+		Screen.setTitle(self, _("Choose where to mount your devices to:"))
 		self['key_green'] = Label(_('Save'))
 		self['key_red'] = Label(_('Cancel'))
 		self['Linconn'] = Label(_("Wait please while scanning your box devices..."))
@@ -494,7 +496,7 @@ class VIXPartitionPanelConf(Screen, ConfigListScreen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self["title"] = Label(_("Repartition Device"))
+		Screen.setTitle(self, _("Repartition Device"))
 		self['key_green'] = Label(_('Format'))
 		self['key_red'] = Label(_('Cancel'))
 		self['lab1'] = Label()

@@ -87,7 +87,7 @@ class VIXPowerManager(ConfigListScreen, Screen):
 	def __init__(self, session, args = 0):
 		self.session = session
 		Screen.__init__(self, session)
-		self["title"] = Label(_("Power Manager"))
+		Screen.setTitle(self, _("Power Manager"))
 		self["standbystatus"] = Label()
 		self["deepstandbystatus"] = Label()
 		self["guirestartstatus"] = Label()

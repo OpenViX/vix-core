@@ -43,7 +43,7 @@ class VIXIPKInstaller(Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self["title"] = Label(_("IPK Installer"))
+		Screen.setTitle(self, _("IPK Installer"))
 		self['lab1'] = Label()
 		self.list = []
 		self.populate_List()

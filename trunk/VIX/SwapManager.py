@@ -89,7 +89,7 @@ class VIXSwap(Screen):
 	</screen>"""
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self["title"] = Label(_("Swap Manager"))
+		Screen.setTitle(self, _("Swap Manager"))
 		self['lab1'] = Label()
 		self['autostart_on'] = Pixmap()
 		self['autostart_off'] = Pixmap()

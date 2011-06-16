@@ -70,8 +70,7 @@ class VIXCronManager(Screen):
 		Screen.__init__(self, session)
 		if not path.exists('/usr/scripts'):
 			mkdir('/usr/scripts', 0755)
-		self["title"] = Label(_("Cron Manager"))
-		
+		Screen.setTitle(self, _("Cron Manager"))
 		self['lab1'] = Label(_("Autostart:"))
 		self['labactive'] = Label(_(_("Active")))
 		self['labdisabled'] = Label(_(_("Disabled")))
@@ -369,7 +368,7 @@ class VIXSetupCronConf(Screen, ConfigListScreen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self["title"] = Label(_("Cron Manager"))
+		Screen.setTitle(self, _("Cron Manager"))
 		self.onChangedEntry = [ ]
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)

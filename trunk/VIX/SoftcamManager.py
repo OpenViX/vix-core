@@ -76,7 +76,7 @@ class VIXSoftcamManager(Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self["title"] = Label(_("Softcam Setup"))
+		Screen.setTitle(self, _("Softcam Setup"))
 		self['lab1'] = Label(_('Select:'))
 		self['lab2'] = Label(_('Active:'))
 		self['activecam'] = Label()
@@ -263,7 +263,7 @@ class VIXStartCam(Screen):
 	</screen>"""
 	def __init__(self, session, selectedcam):
 		Screen.__init__(self, session)
-		self["title"] = Label(_("Softcam Setup"))
+		Screen.setTitle(self, _("Softcam Setup"))
 		self['connect'] = MultiPixmap()
 		self['lab1'] = Label(_("Please wait while starting\n") + selectedcam + '...')
 		global startselectedcam
@@ -366,7 +366,7 @@ class VIXStopCam(Screen):
 		Screen.__init__(self, session)
 		global stopselectedcam
 		stopselectedcam = selectedcam
-		self["title"] = Label(_("Softcam Setup"))
+		Screen.setTitle(self, _("Softcam Setup"))
 		self['connect'] = MultiPixmap()
 		self['lab1'] = Label(_("Please wait while stopping\n") + selectedcam + '...')
 		self.Console = Console()
@@ -494,7 +494,7 @@ class VIXSoftcamMenu(ConfigListScreen, Screen):
 		self.session = session
 		self.skin = VIXSoftcamMenu.skin
 		self.skinName = "VIXSoftcamMenu"
-		self["title"] = Label(_("Softcam Setup"))
+		Screen.setTitle(self, _("Softcam Setup"))
 		self.onChangedEntry = [ ]
 
 		self.list = []

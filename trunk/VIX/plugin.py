@@ -152,7 +152,7 @@ class VIXMenu(Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		self["title"] = Label(_("VIX"))
+		Screen.setTitle(self, "VIX")
 		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'ok': self.KeyOk, 'back': self.close})
 		self.list = []
 		self['list'] = List(self.list)

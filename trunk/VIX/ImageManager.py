@@ -774,7 +774,7 @@ class ImageBackup(Screen):
 				else:
 					print '[ImageManager] Sorry, not enough free ram found, and no phyical devices attached'
 					self.session.open(MessageBox, _("Sorry, not enough free ram found, and no phyical devices attached. Can't create Swapfile on network mounts, unable to make backup"), MessageBox.TYPE_INFO, timeout = 10)
-					self.backupupdate(atLeast)
+					autoImageManagerTimer.backupupdate(atLeast)
 			else:
 				print '[ImageManager] Stage1: Found Enough Ram'
 				self.RamChecked = True

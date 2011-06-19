@@ -112,7 +112,7 @@ class VIXSwap(Screen):
 		self.activityTimer.timeout.get().append(self.getSwapDevice)
 		self.updateSwap()
 
-	def updateSwap(self):
+	def updateSwap(self, result = None, retval = None, extra_args = None):
 		self.swap_active = False
 		self.autos_start = False
 		self['autostart_on'].hide()
@@ -194,7 +194,7 @@ class VIXSwap(Screen):
 			parts = []
 			for p in harddiskmanager.getMountedPartitions():
 				d = path.normpath(p.mountpoint)
-				if path.exists(p.mountpoint) and p.mountpoint != "/":
+				if path.exists(p.mountpoint) and p.mountpoint != "/" and not p.mountpoint.startswith('/media/net'):
 					parts.append((p.description, d))
 			if len(parts):
 				for x in parts:
@@ -232,42 +232,45 @@ class VIXSwap(Screen):
 	def actDeact(self):
 		if device == "":
 			if self.swap_active == True:
-				self.Console.ePopen('swapoff ' + self.swap_place)
-				self.updateSwap()
+				self.Console.ePopen('swapoff ' + self.swap_place, self.updateSwap)
 			else:
 				if self.swap_place != '':
-					self.Console.ePopen('mkswap ' + self.swap_place)
-					self.Console.ePopen('swapon ' + self.swap_place)
-					self.updateSwap()
+					self.commands = []
+					self.commands.append('mkswap ' + self.swap_place)
+					self.commands.append('swapon ' + self.swap_place)
+					self.Console.eBatch(self.commands, self.updateSwap, debug=True)
 				else:
 					mybox = self.session.open(MessageBox, _("Swap File not found. You have to create the file before to activate."), MessageBox.TYPE_INFO)
 					mybox.setTitle(_("Info"))
 		else:
 			if self.swap_active == True:
-				self.Console.ePopen('swapoff ' + device)
-				self.updateSwap()
+				self.Console.ePopen('swapoff ' + device, self.updateSwap)
 			else:
-				self.Console.ePopen('swapon ' + device)
-				self.updateSwap()
+				self.Console.ePopen('swapon ' + device, self.updateSwap)
 
 	def createDel(self):
 		if device == "":
 			if self.swap_place != '':
 				if self.swap_active == True:
-					self.Console.ePopen('swapoff ' + self.swap_place)
-				remove(self.swap_place)
-				if config.vixsettings.swapautostart.value:
-					config.vixsettings.swapautostart.value = False
-					config.vixsettings.swapautostart.save()
-				self.updateSwap()
+					self.Console.ePopen('swapoff ' + self.swap_place, self.createDel2)
+				else:
+					self.createDel2(None, 0)
 			else:
 				self.doCreateSwap()
+
+	def createDel2(self, result, retval, extra_args = None):
+		if retval == 0:
+			remove(self.swap_place)
+			if config.vixsettings.swapautostart.value:
+				config.vixsettings.swapautostart.value = False
+				config.vixsettings.swapautostart.save()
+			self.updateSwap()
 
 	def doCreateSwap(self):
 		parts = []
 		for p in harddiskmanager.getMountedPartitions():
 			d = path.normpath(p.mountpoint)
-			if path.exists(p.mountpoint) and p.mountpoint != "/":
+			if path.exists(p.mountpoint) and p.mountpoint != "/"  and not p.mountpoint.startswith('/media/net'):
 				parts.append((p.description, d))
 		if len(parts):
 			self.session.openWithCallback(self.doCSplace, ChoiceBox, title = _("Please select device to use as swapfile location"), list = parts)
@@ -291,22 +294,17 @@ class VIXSwap(Screen):
 			scanning = _("Wait please while creating swapfile...")
 			self['lab1'].setText(scanning)
 			self['lab1'].show()
-#			mybox = self.session.open(MessageBox, 'Please wait, while swapflie is being created.', MessageBox.TYPE_INFO, timeout = 5)
-#			mybox.setTitle('Info')
 		else:
 			size
 
 	def doCScreateCheck(self, result, retval, extra_args):
 		if retval == 0:
-			mybox = self.session.open(MessageBox, _("Swap File successfully created."), MessageBox.TYPE_INFO)
-			mybox.setTitle(_("Info"))
-			self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'back': self.close, 'red': self.actDeact, 'green': self.createDel, 'yellow': self.autoSsWap})
-			self.updateSwap()
+			mybox = self.session.open(MessageBox, _("Swap File successfully created."), MessageBox.TYPE_INFO, timeout = 5)
 		else:
 			mybox = self.session.open(MessageBox, _("Swap File creation Failed. Check for Available space."), MessageBox.TYPE_INFO)
-			mybox.setTitle(_("Info"))
-			self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'back': self.close, 'red': self.actDeact, 'green': self.createDel, 'yellow': self.autoSsWap})
-			self.updateSwap()
+		mybox.setTitle(_("Info"))
+		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'back': self.close, 'red': self.actDeact, 'green': self.createDel, 'yellow': self.autoSsWap})
+		self.updateSwap()
 		
 	def autoSsWap(self):
 		if device == "":
@@ -328,7 +326,6 @@ class VIXSwap(Screen):
 				if line.find('swap') != -1:
 					parts = line.strip().split()
 					swapdevice = parts[0]
-					print 'swapdevice: ' + str(swapdevice)
 					break
 					continue
 			f.close()

@@ -89,7 +89,9 @@ class VIXImageManager(Screen):
 		self.emlist = []
 		self['list'] = MenuList(self.emlist)
 		self.populate_List()
-		#self['list'] = MenuList(self.emlist)
+		self.activityTimer = eTimer()
+		self.activityTimer.timeout.get().append(self.backupRunning)
+		self.activityTimer.start(10)
 
 		if BackupTime > 0:
 			backuptext = _("Next Backup: ") + strftime("%c", localtime(BackupTime))
@@ -98,6 +100,18 @@ class VIXImageManager(Screen):
 		self["backupstatus"].setText(str(backuptext))
 		if not self.selectionChanged in self["list"].onSelectionChanged:
 			self["list"].onSelectionChanged.append(self.selectionChanged)
+
+	def backupRunning(self):
+		self.BackupRunning = False
+		for job in Components.Task.job_manager.getPendingJobs():
+			jobname = str(job.name)
+			if jobname.startswith('ImageManager'):
+				self.BackupRunning = True
+		if self.BackupRunning:
+			self["key_green"].setText(_("View Progress"))
+		else:
+			self["key_green"].setText(_("New Backup"))
+		self.activityTimer.startLongTimer(5)
 
 	def refreshUp(self):
 		images = listdir(self.BackupDirectory)
@@ -128,15 +142,6 @@ class VIXImageManager(Screen):
 	def selectionChanged(self):
 		for x in self.onChangedEntry:
 			x()
-		self.BackupRunning = False
-		for job in Components.Task.job_manager.getPendingJobs():
-			jobname = str(job.name)
-			if jobname.startswith('ImageManager'):
-				self.BackupRunning = True
-		if self.BackupRunning:
-			self["key_green"].setText(_("View Progress"))
-		else:
-			self["key_green"].setText(_("New Backup"))
 		
 	def getJobName(self, job):
 		return "%s: %s (%d%%)" % (job.getStatustext(), job.name, int(100*job.progress/float(job.end)))
@@ -150,10 +155,6 @@ class VIXImageManager(Screen):
 		Components.Task.job_manager.in_background = in_background
 
 	def populate_List(self):
-		if self.BackupRunning:
-			self["key_green"].setText(_("View Progress"))
-		else:
-			self["key_green"].setText(_("New Backup"))
 		imparts = []
 		for p in harddiskmanager.getMountedPartitions():
 			if pathExists(p.mountpoint):
@@ -220,7 +221,6 @@ class VIXImageManager(Screen):
 				system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
 				remove(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
 			images = listdir(self.BackupDirectory)
-			self.oldlist = images
 			del self.emlist[:]
 			for fil in images:
 				if not fil.endswith('swapfile_backup') and not fil.endswith('bi'):
@@ -673,6 +673,7 @@ class ImageBackup(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.RamChecked = False
+		self.SwapCreated = False
 		self.Stage1Completed = False
 		self.Stage2Completed = False
 
@@ -683,27 +684,31 @@ class ImageBackup(Screen):
 		task.work = self.JobStart
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Checking Free RAM.."), timeoutCount=20)
+		task = Components.Task.ConditionTask(job, _("Checking Free RAM.."), timeoutCount=1)
 		task.check = lambda: self.RamChecked
 		task.weighting = 1
 
-		task = Components.Task.PythonTask(job, _("Running Backup..."))
+		task = Components.Task.ConditionTask(job, _("Creating Swap.."), timeoutCount=20)
+		task.check = lambda: self.SwapCreated
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Creating Backup Files..."))
 		task.work = self.doBackup1
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Running Backup..."), timeoutCount=600)
+		task = Components.Task.ConditionTask(job, _("Creating Backup Files..."), timeoutCount=600)
 		task.check = lambda: self.Stage1Completed
 		task.weighting = 1
 
-		task = Components.Task.PythonTask(job, _("Running Backup..."))
+		task = Components.Task.PythonTask(job, _("Moving to Backup Location..."))
 		task.work = self.doBackup2
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Running Backup..."), timeoutCount=600)
+		task = Components.Task.ConditionTask(job, _("Moving to Backup Location..."), timeoutCount=600)
 		task.check = lambda: self.Stage2Completed
 		task.weighting = 1
 
-		task = Components.Task.PythonTask(job, _("Running Backup..."))
+		task = Components.Task.PythonTask(job, _("Backup Complete..."))
 		task.work = self.BackupComplete
 		task.weighting = 1
 
@@ -770,18 +775,28 @@ class ImageBackup(Screen):
 		if retval == 0:
 			if int(result) < 3000:
 				if not config.imagemanager.backuplocation.value.startswith('/media/net/'):
+					print '[ImageManager] Stage1: Creating Swapfile.'
+					self.RamChecked = True
 					self.MemCheck2()
 				else:
 					print '[ImageManager] Sorry, not enough free ram found, and no phyical devices attached'
 					self.session.open(MessageBox, _("Sorry, not enough free ram found, and no phyical devices attached. Can't create Swapfile on network mounts, unable to make backup"), MessageBox.TYPE_INFO, timeout = 10)
-					autoImageManagerTimer.backupupdate(atLeast)
+					if config.imagemanager.schedule.value:
+						atLeast = 60
+						autoImageManagerTimer.backupupdate(atLeast)
+					else:
+						autoImageManagerTimer.backupstop()
 			else:
 				print '[ImageManager] Stage1: Found Enough Ram'
 				self.RamChecked = True
+				self.SwapCreated = True
 		else:
 			print '[ImageManager] Stage1: Free Ram chack fail.'
-			atLeast = 60
-			autoImageManagerTimer.backupupdate(atLeast)
+			if config.imagemanager.schedule.value:
+				atLeast = 60
+				autoImageManagerTimer.backupupdate(atLeast)
+			else:
+				autoImageManagerTimer.backupstop()
 
 	def MemCheck2(self):
 		self.MemCheckConsole = Console()
@@ -801,7 +816,7 @@ class ImageBackup(Screen):
 			self.MemCheckConsole.ePopen(cmd, self.MemCheck5)
 
 	def MemCheck5(self, result, retval, extra_args = None):
-		self.RamChecked = True
+		self.SwapCreated = True
 
 	def doBackup1(self):
 		self.BackupConsole = Console()

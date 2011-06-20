@@ -14,15 +14,13 @@ from Components.Console import Console
 from Components.FileList import MultiFileSelectList
 from Components.Language import language
 from Screens.MessageBox import MessageBox
-from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
+from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from ServiceReference import ServiceReference
-from subprocess import Popen, PIPE
-from twisted.internet import reactor, threads, task
 from os import path, makedirs, remove, rename, symlink, mkdir, environ, listdir
 from shutil import rmtree
 from datetime import datetime
 from time import localtime, time, strftime, mktime, strftime, sleep
-from enigma import iServiceInformation, eTimer
+from enigma import eTimer
 import gettext
 
 lang = language.getLanguage()
@@ -176,24 +174,24 @@ class VIXSoftcamManager(Screen):
 		self.sel = self['list'].getCurrent()[0]
 		selectedcam = self.sel[0]
 		if currentactivecam.find(selectedcam) < 0:
-			if (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and fileExists('/etc/CCcam.cfg') == True:
+			if (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and path.exists('/etc/CCcam.cfg') == True:
 				if (currentactivecam.find('MGcam') < 0) or (currentactivecam.find('mgcam') < 0):
 					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 				else:
 					self.session.open(MessageBox, _("CCcam can't run whilst MGcamd is running"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-			elif (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and fileExists('/etc/CCcam.cfg') == False:
+			elif (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and path.exists('/etc/CCcam.cfg') == False:
 				self.session.open(MessageBox, _("No config files found, please setup CCcam first\nin /etc/CCcam.cfg"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-			elif (selectedcam.startswith('Hypercam') or selectedcam.startswith('hypercam')) and fileExists('/etc/hypercam.cfg') == True:
+			elif (selectedcam.startswith('Hypercam') or selectedcam.startswith('hypercam')) and path.exists('/etc/hypercam.cfg') == True:
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
-			elif (selectedcam.startswith('Hypercam') or selectedcam.startswith('hypercam')) and fileExists('/etc/hypercam.cfg') == False:
+			elif (selectedcam.startswith('Hypercam') or selectedcam.startswith('hypercam')) and path.exists('/etc/hypercam.cfg') == False:
 				self.session.open(MessageBox, _("No config files found, please setup Oscam first\nin /etc/hypercam.cfg"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and fileExists('/etc/tuxbox/config/oscam.conf') == True:
+			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and path.exists('/etc/tuxbox/config/oscam.conf') == True:
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
-			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and fileExists('/etc/tuxbox/config/oscam.conf') == False:
+			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and path.exists('/etc/tuxbox/config/oscam.conf') == False:
 				self.session.open(MessageBox, _("No config files found, please setup Oscam first\nin /etc/tuxbox/config"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and fileExists('/var/keys/mg_cfg') == True:
+			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and path.exists('/var/keys/mg_cfg') == True:
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
-			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and fileExists('/var/keys/mg_cfg') == False:
+			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and path.exists('/var/keys/mg_cfg') == False:
 				if (currentactivecam.find('CCcam') < 0) or (currentactivecam.find('cccam') < 0):
 					self.session.open(MessageBox, _("No config files found, please setup MGcamd first\nin /var/keys"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 				else:
@@ -226,22 +224,22 @@ class VIXSoftcamManager(Screen):
 				sleep(4)
 			else:
 				print 'RESULT FAILED: ' + str(result)
-			if (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and fileExists('/etc/CCcam.cfg') == True:
+			if (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and path.exists('/etc/CCcam.cfg') == True:
 				if (currentactivecam.find('MGcam') < 0) or (currentactivecam.find('mgcam') < 0):
 					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 				else:
 					self.session.open(MessageBox, _("CCcam can't run whilst MGcamd is running"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-			elif (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and fileExists('/etc/CCcam.cfg') == False:
+			elif (selectedcam.startswith('CCcam') or selectedcam.startswith('cccam')) and path.exists('/etc/CCcam.cfg') == False:
 				self.session.open(MessageBox, _("No config files found, please setup CCcam first\nin /etc/CCcam.cfg"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and fileExists('/etc/tuxbox/config/oscam.conf') == True:
+			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and path.exists('/etc/tuxbox/config/oscam.conf') == True:
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
-			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and fileExists('/etc/tuxbox/config/oscam.conf') == False:
+			elif (selectedcam.startswith('Oscam') or selectedcam.startswith('OScam') or selectedcam.startswith('oscam')) and path.exists('/etc/tuxbox/config/oscam.conf') == False:
 				if not path.exists('/etc/tuxbox/config'):
 				    cmd = makedirs('/etc/tuxbox/config')
 				self.session.open(MessageBox, _("No config files found, please setup Oscam first\nin /etc/tuxbox/config"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and fileExists('/var/keys/mg_cfg') == True:
+			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and path.exists('/var/keys/mg_cfg') == True:
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
-			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and fileExists('/var/keys/mg_cfg') == False:
+			elif (selectedcam.startswith('MGcam') or selectedcam.startswith('mgcam')) and path.exists('/var/keys/mg_cfg') == False:
 				if (currentactivecam.find('CCcam') < 0) or (currentactivecam.find('cccam') < 0):
 					self.session.open(MessageBox, _("No config files found, please setup MGcamd first\nin /var/keys"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 				else:
@@ -650,7 +648,7 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 							self.Console.ePopen("wget http://127.0.0.1:" + port + "/status.html 2> /tmp/frozen")
 							sleep(2)
 							frozen = file('/tmp/frozen').read()
-							if frozen.find('Unauthorized') >=0:
+							if frozen.find('Unauthorized') or frozen.find('100%')>=0:
 								print '[SoftcamManager] ' + softcamcheck + ' is responding like it should'
 								output = open('/tmp/cam.check.log','a')
 								now = datetime.now()

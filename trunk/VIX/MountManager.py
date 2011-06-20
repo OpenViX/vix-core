@@ -15,10 +15,8 @@ from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import fileExists, pathExists, createDir, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from Plugins.Plugin import PluginDescriptor
 from enigma import eTimer
-#from Screens.Console import Console
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from os import system, rename, path, mkdir, remove, statvfs, environ, listdir
-from subprocess import Popen, PIPE
 import time, datetime, gettext
 
 lang = language.getLanguage()

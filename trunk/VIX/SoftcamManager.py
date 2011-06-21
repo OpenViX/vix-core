@@ -16,6 +16,7 @@ from Components.Language import language
 from Screens.MessageBox import MessageBox
 from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from ServiceReference import ServiceReference
+from Components.SystemInfo import SystemInfo
 from os import path, makedirs, remove, rename, symlink, mkdir, environ, listdir
 from shutil import rmtree
 from datetime import datetime
@@ -114,6 +115,15 @@ class VIXSoftcamManager(Screen):
 
 	def selectionChanged(self):
 		cams = listdir('/usr/softcams')
+		SystemInfo["CCcamInstalled"] = False
+		SystemInfo["OScamInstalled"] = False
+		for softcam in cams:
+			if softcam.lower().startswith('cccam'):
+				SystemInfo["CCcamInstalled"] = True
+			elif softcam.lower().startswith('oscam'):
+				SystemInfo["OScamInstalled"] = True
+		print 'OSCAM INSTALLED', SystemInfo["OScamInstalled"]
+		print 'CCCAM INSTALLED', SystemInfo["CCcamInstalled"]
 		if cams:
 			current = self["list"].getCurrent()[0]
 			selcam = current[0]

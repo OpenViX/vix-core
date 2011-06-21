@@ -18,40 +18,20 @@
 #    GNU General Public License for more details.
 #
 #######################################################################
-import Components.Task
-from Components.ActionMap import ActionMap, NumberActionMap
+from Components.ActionMap import ActionMap
 from Components.Button import Button
 from Components.config import config, ConfigSelection, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
-from Components.Harddisk import harddiskmanager
 from Components.Label import Label
 from Components.Language import language
 from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
 from Plugins.Plugin import PluginDescriptor
-from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
-from Screens.Standby import TryQuitMainloop, Standby
-from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
-from twisted.internet import reactor, threads, task
-from time import localtime, time, strftime
+from Tools.Directories import pathExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from enigma import eTimer, getDesktop
-from os import system, environ, remove, rename, path, chmod
+from os import environ
 import gettext
-
-# Partnerbox installed and icons in epglist enabled?
-try:
-	from Plugins.Extensions.Partnerbox.plugin import PartnerboxSetup
-except ImportError:
-	pass
-try:
-	from Plugins.SystemPlugins.CrossEPG.crossepg_menu import CrossEPG_Menu
-except ImportError:
-	pass
-try:
-	from Plugins.Extensions.EPGImport.plugin import EPGMainSetup, doneConfiguring
-except ImportError:
-	pass
 
 from CronManager import VIXCronManager
 from MountManager import VIXDevicesPanel
@@ -61,27 +41,12 @@ from ScriptRunner import VIXScriptRunner
 from SwapManager import VIXSwap, SwapAutostart
 from SoftcamManager import SoftcamAutoPoller, VIXSoftcamManager, SoftcamAutostart
 from PowerManager import VIXPowerManager, AutoPowerManagerTimer, PowerManagerautostart, PowerManagerNextWakeup
-from CCcamInfo import CCcamInfoMain
-from OScamInfo import OscamInfoMenu
 
 _session = None
-
-fb = getDesktop(0).size()
-if fb.width() > 1024:
-	sizeH = fb.width() - 100
-	HDSKIN = True
-else:
-	# sizeH = fb.width() - 50
-	sizeH = 700
-	HDSKIN = False
 
 def Plugins(**kwargs):
 	plist = [PluginDescriptor(name=_("VIXMenu"), where=PluginDescriptor.WHERE_MENU, fnc=startVIXMenu)]
 	plist.append(PluginDescriptor(name="VIX",  where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=showVIXMenu))
-	plist.append(PluginDescriptor(name="CCcam Info",  where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=CCcamInfo))
-	plist.append(PluginDescriptor(where=PluginDescriptor.WHERE_MENU, fnc=CCcamInfoMenu))
-	plist.append(PluginDescriptor(name="OScam Info",  where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=OScamInfo))
-	plist.append(PluginDescriptor(where=PluginDescriptor.WHERE_MENU, fnc=OScamInfoMain))
 	plist.append(PluginDescriptor(where=PluginDescriptor.WHERE_MENU, fnc=SoftcamSetup))
 	plist.append(PluginDescriptor(name=_("Softcam Manager"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=SoftcamMenu))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = SwapAutostart))
@@ -97,23 +62,6 @@ def startVIXMenu(menuid):
 
 def showVIXMenu(session, **kwargs):
 	session.open(VIXMenu)
-
-def OScamInfoMain(menuid):
-	if menuid == "cam":
-		return [(_("OScam Info"), OScamInfo, "oscam_info", None)]
-	return [ ]
-
-def OScamInfo(session, **kwargs):
-	global HDSKIN, sizeH
-	session.open(OscamInfoMenu)
-
-def CCcamInfoMenu(menuid):
-	if menuid == "cam":
-		return [(_("CCcam Info"), CCcamInfo, "cccam_info", None)]
-	return [ ]
-
-def CCcamInfo(session, **kwargs):
-	session.open(CCcamInfoMain)
 
 def SoftcamSetup(menuid):
 	if menuid == "cam":

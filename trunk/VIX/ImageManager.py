@@ -667,7 +667,7 @@ class AutoImageManagerTimer:
 			print "[ImageManager] Running Backup", strftime("%c", localtime(now))
 			self.ImageBackup = ImageBackup(self.session)
 			Components.Task.job_manager.AddJob(self.ImageBackup.createBackupJob())
-			self.close()
+			#self.close()
 
 class ImageBackup(Screen):
 	def __init__(self, session):

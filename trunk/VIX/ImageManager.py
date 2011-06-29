@@ -12,6 +12,7 @@ from Components.Harddisk import harddiskmanager
 from Components.Language import language
 from Screens.Screen import Screen
 from Components.Console import Console
+from Screens.Console import Console as RestareConsole
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Tools.Directories import pathExists, fileExists, resolveFilename,SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_PLUGIN, SCOPE_CURRENT_SKIN, SCOPE_METADIR
@@ -330,9 +331,9 @@ class VIXImageManager(Screen):
 						mycmd4 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
 						mycmd5 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
 						mycmd6 = "echo '************************************************************************'"
-						self.session.open(Console, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doResstore,closeOnSuccess = True)
-					else:
-						self.doResstore()
+						self.session.open(RestareConsole, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doResstore,closeOnSuccess = True)
+				else:
+					self.doResstore()
 			except:
 				mycmd1 = "echo '************************************************************************'"
 				mycmd2 = "echo 'Creating swapfile'"
@@ -340,7 +341,7 @@ class VIXImageManager(Screen):
 				mycmd4 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
 				mycmd5 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
 				mycmd6 = "echo '************************************************************************'"
-				self.session.open(Console, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doResstore,closeOnSuccess = True)
+				self.session.open(RestareConsole, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doResstore,closeOnSuccess = True)
 
 	def doResstore(self):
 		NANDWRITE='/usr/bin/nandwrite'
@@ -371,7 +372,7 @@ class VIXImageManager(Screen):
 			mycmd23 = "echo 'Flasing Complete\nRebooting.'"
 			mycmd24 = "sleep 2"
 			mycmd25 = "/sbin/shutdown.sysvinit -r now"
-			self.session.open(Console, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25],closeOnSuccess = True)
+			self.session.open(RestareConsole, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25],closeOnSuccess = True)
 		elif config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
 			mycmd1 = "echo '************************************************************************'"
 			mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  " detected'"
@@ -402,7 +403,7 @@ class VIXImageManager(Screen):
 			mycmd27 = "echo 'Flasing Complete\nRebooting.'"
 			mycmd28 = "sleep 2"
 			mycmd29 = "/sbin/shutdown.sysvinit -r now"
-			self.session.open(Console, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25, mycmd26, mycmd27, mycmd28, mycmd29],closeOnSuccess = True)
+			self.session.open(RestareConsole, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25, mycmd26, mycmd27, mycmd28, mycmd29],closeOnSuccess = True)
 		elif config.misc.boxtype.value == "et9000" or config.misc.boxtype.value == "et5000":
 			mycmd1 = "echo '************************************************************************'"
 			mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  " detected'"
@@ -429,7 +430,7 @@ class VIXImageManager(Screen):
 			mycmd23 = "echo 'Flasing Complete\nRebooting.'"
 			mycmd24 = "sleep 2"
 			mycmd25 = "/sbin/shutdown.sysvinit -r now"
-			self.session.open(Console, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25],closeOnSuccess = True)
+			self.session.open(RestareConsole, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25],closeOnSuccess = True)
 
 	def myclose(self):
 		self.close()

@@ -911,7 +911,7 @@ class ImageBackup(Screen):
 			line = "rename this file to 'force' to force an update without confirmation"
 			fileout.write(line)
 			fileout.close()
-			fileout = open(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + 'imageversion', 'w')
+			fileout = open(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/imageversion', 'w')
 			line = "ViX-" + self.ImageVersion
 			fileout.write(line)
 			fileout.close()

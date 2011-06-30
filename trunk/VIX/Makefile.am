@@ -1,8 +1,6 @@
 installdir = $(LIBDIR)/enigma2/python/Plugins/SystemPlugins/ViX
 install_DATA = hd.png sd.png
-install_PYTHON = CCcamInfo.py \
-		OScamInfo.py \
-		CronManager.py \
+install_PYTHON = CronManager.py \
 		MountManager.py \
 		ImageManager.py \
 		__init__.py \

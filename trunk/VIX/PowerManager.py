@@ -36,7 +36,7 @@ environ["LANGUAGE"] = lang[:2]
 print "[PowerManager] set language to ", lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
-gettext.bindtextdomain("VIX", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "ViX/locale"))
+gettext.bindtextdomain("VIX", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
 
 def _(txt):
 	t = gettext.dgettext("VIXPowerManager", txt)

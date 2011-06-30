@@ -29,7 +29,7 @@ environ["LANGUAGE"] = lang[:2]
 print "[SoftcamManager] set language to ", lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
-gettext.bindtextdomain("SoftcamManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "ViX/locale"))
+gettext.bindtextdomain("SoftcamManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
 
 softcamautopoller = None
 

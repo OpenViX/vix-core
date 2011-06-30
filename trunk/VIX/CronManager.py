@@ -27,7 +27,7 @@ environ["LANGUAGE"] = lang[:2]
 print "[CronManager] set language to ", lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
-gettext.bindtextdomain("CronManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "ViX/locale"))
+gettext.bindtextdomain("CronManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
 
 config.vixsettings.cronmanager_commandtype = NoSave(ConfigSelection(choices = [ ('custom','Custom'),('predefined','Predefined') ]))
 config.vixsettings.cronmanager_cmdtime = NoSave(ConfigClock(default=0))

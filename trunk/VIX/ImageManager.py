@@ -30,7 +30,7 @@ environ["LANGUAGE"] = lang[:2]
 print "[ImageManager] set language to ", lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
-gettext.bindtextdomain("ImageManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
+gettext.bindtextdomain("ImageManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "ViX/locale"))
 
 def _(txt):
 	t = gettext.dgettext("ImageManager", txt)

@@ -22,7 +22,7 @@ environ["LANGUAGE"] = lang[:2]
 print "[SwapManager] set language to ", lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
-gettext.bindtextdomain("SwapManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
+gettext.bindtextdomain("SwapManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "ViX/locale"))
 
 def _(txt):
 	t = gettext.dgettext("SwapManager", txt)

@@ -1,4 +1,4 @@
-installdir = $(LIBDIR)/enigma2/python/Plugins/SystemPlugins/ViX
+installdir = $(LIBDIR)/enigma2/python/Plugins/ViX
 install_PYTHON = CronManager.py \
 		MountManager.py \
 		ImageManager.py \

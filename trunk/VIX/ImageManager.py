@@ -474,12 +474,15 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
 		self.createSetup()
 		
-		self["actions"] = ActionMap(['ColorActions', 'VirtualKeyboardActions'],
+		self["actions"] = ActionMap(['SetupActions', 'ColorActions', 'VirtualKeyboardActions'],
 		{
+			"ok": self.keySave,
+			"cancel": self.keyCancel,
 			"red": self.keyCancel,
 			"green": self.keySave,
 			'showVirtualKeyboard': self.KeyText
 		}, -2)
+
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
 

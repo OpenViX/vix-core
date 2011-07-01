@@ -33,6 +33,7 @@ from enigma import eTimer, getDesktop
 from os import environ
 import gettext
 
+from BackupManager import VIXBackupManager, AutoBackupManagerTimer, BackupManagerautostart
 from CronManager import VIXCronManager
 from MountManager import VIXDevicesPanel
 from ImageManager import VIXImageManager, AutoImageManagerTimer, ImageManagerautostart
@@ -53,6 +54,7 @@ def Plugins(**kwargs):
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = SoftcamAutostart))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = PowerManagerautostart, wakeupfnc = PowerManagerNextWakeup))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = ImageManagerautostart))
+	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = BackupManagerautostart))
 	return plist
 
 def startVIXMenu(menuid):
@@ -125,48 +127,54 @@ class VIXMenu(Screen):
 		self.sel = self.sel[1]
 
 		if self.sel == 0:
-			self.session.open(VIXCronManager)
+			self.session.open(VIXBackupManager)
 		elif self.sel == 1:
-			self.session.open(VIXImageManager)
+			self.session.open(VIXCronManager)
 		elif self.sel == 2:
-			self.session.open(VIXIPKInstaller)
+			self.session.open(VIXImageManager)
 		elif self.sel == 3:
-			self.session.open(VIXDevicesPanel)
+			self.session.open(VIXIPKInstaller)
 		elif self.sel == 4:
-			self.session.open(VIXPowerManager)
+			self.session.open(VIXDevicesPanel)
 		elif self.sel == 5:
-			self.session.open(VIXScriptRunner)
+			self.session.open(VIXPowerManager)
 		elif self.sel == 6:
+			self.session.open(VIXScriptRunner)
+		elif self.sel == 7:
 			self.session.open(VIXSwap)
 
 	def updateList(self):
 		self.list = []
-		name = _("Cron Manager")
+		name = _("Backup Manager")
 		idx = 0
 		res = (name, idx)
 		self.list.append(res)
-		name = _("Image Manager")
+		name = _("Cron Manager")
 		idx = 1
 		res = (name, idx)
 		self.list.append(res)
-		name = _("IPK Installer")
+		name = _("Image Manager")
 		idx = 2
 		res = (name, idx)
 		self.list.append(res)
-		name = _("Mount Manager")
+		name = _("IPK Installer")
 		idx = 3
 		res = (name, idx)
 		self.list.append(res)
-		name = _("Power Manager")
+		name = _("Mount Manager")
 		idx = 4
 		res = (name, idx)
 		self.list.append(res)
-		name = _("Script Runner")
+		name = _("Power Manager")
 		idx = 5
 		res = (name, idx)
 		self.list.append(res)
-		name = _("Swap Manager")
+		name = _("Script Runner")
 		idx = 6
+		res = (name, idx)
+		self.list.append(res)
+		name = _("Swap Manager")
+		idx = 7
 		res = (name, idx)
 		self.list.append(res)
 		self['list'].list = self.list

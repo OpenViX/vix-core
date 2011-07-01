@@ -430,9 +430,13 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		('/media/usb3', '/media/usb3')]))
 		if (d1 == '/media/meoboot'):
 			item = NoSave(ConfigSelection(default='/media/meoboot', choices=[('/media/meoboot', '/media/meoboot')]))
+		if dtype == 'Linux':
+			dtype = 'ext3'
+		else:
+			dtype = 'auto'
 		item.value = d1.strip()
 		text = name + ' ' + des + ' /dev/' + device
-		res = getConfigListEntry(text, item, device)
+		res = getConfigListEntry(text, item, device, dtype)
 
 		if des != '' and self.list.append(res):
 			pass
@@ -442,6 +446,7 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		for x in self['config'].list:
 			device = x[2]
 			mountp = x[1].value
+			type = x[3]
 			file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if device not in l])
 			rename('/etc/fstab.tmp','/etc/fstab')
 
@@ -453,7 +458,7 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 			if mountp == '/media/meoboot':
 				continue
 			out = open('/etc/fstab', 'a')
-			line = '/dev/' + device + '            ' + mountp + '           auto       defaults              0 0\n'
+			line = '/dev/' + device + '            ' + mountp + '           ' + type + '       defaults              0 0\n'
 			out.write(line)
 			out.close()
 		if mycheck == True:

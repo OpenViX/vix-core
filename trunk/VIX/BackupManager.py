@@ -12,6 +12,7 @@ from Components.Harddisk import harddiskmanager
 from Components.Language import language
 from Components.Sources.StaticText import StaticText
 from Components.FileList import MultiFileSelectList
+from Components.ScrollLabel import ScrollLabel
 from Screens.Screen import Screen
 from Components.Console import Console
 from Screens.Console import Console as RestareConsole
@@ -69,6 +70,7 @@ class VIXBackupManager(Screen):
 		<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />
 		<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />
 		<ePixmap pixmap="skin_default/buttons/key_menu.png" position="0,40" size="35,25" alphatest="blend" transparent="1" zPosition="3" />
+		<ePixmap pixmap="skin_default/buttons/key_info.png" position="40,40" size="35,25" alphatest="blend" transparent="1" zPosition="3" />
 		<widget name="lab1" position="0,50" size="560,50" font="Regular; 18" zPosition="2" transparent="0" halign="center"/>
 		<widget name="list" position="10,105" size="540,260" scrollbarMode="showOnDemand" />
 		<widget name="backupstatus" position="10,370" size="400,30" font="Regular;20" zPosition="5" />
@@ -179,7 +181,7 @@ class VIXBackupManager(Screen):
 		hdd = '/media/hdd/','/media/hdd/'
 		if mount not in config.backupmanager.backuplocation.choices.choices:
 			if hdd in config.backupmanager.backuplocation.choices.choices:
-				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
+				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "TimerEditActions"],
 					{
 						'cancel': self.close,
 						'red': self.populate_List,
@@ -189,22 +191,24 @@ class VIXBackupManager(Screen):
 						"menu": self.createSetup,
 						"up": self.refreshUp,
 						"down": self.refreshDown,
+						'log': self.showLog,
 					}, -1)
 
 				self.BackupDirectory = '/media/hdd/backup/'
 				config.backupmanager.backuplocation.value = '/media/hdd/'
 				config.backupmanager.backuplocation.save
-				self['lab1'].setText(_("The chosen location does not exist, using /media/hdd") + _("\nSelect an image to Restore / Delete:"))
+				self['lab1'].setText(_("The chosen location does not exist, using /media/hdd") + _("\nSelect a backup to Restore / Delete:"))
 			else:
-				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
+				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "TimerEditActions"],
 					{
 						'cancel': self.close,
 						"menu": self.createSetup,
+						'log': self.showLog,
 					}, -1)
 
-				self['lab1'].setText(_("Device: None available") + _("\nSelect an image to Restore / Delete:"))
+				self['lab1'].setText(_("Device: None available") + _("\nSelect a backup to Restore / Delete:"))
 		else:
-			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
+			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "TimerEditActions"],
 				{
 					'cancel': self.close,
 					'red': self.populate_List,
@@ -214,10 +218,11 @@ class VIXBackupManager(Screen):
 					"menu": self.createSetup,
 					"up": self.refreshUp,
 					"down": self.refreshDown,
+					'log': self.showLog,
 				}, -1)
 
 			self.BackupDirectory = config.backupmanager.backuplocation.value + 'backup/'
-			self['lab1'].setText(_("Device: ") + config.backupmanager.backuplocation.value + _("\nSelect an image to Restore / Delete:"))
+			self['lab1'].setText(_("Device: ") + config.backupmanager.backuplocation.value + _("\nSelect a backup to Restore / Delete:"))
 
 		try:
 			if not path.exists(self.BackupDirectory):
@@ -234,7 +239,10 @@ class VIXBackupManager(Screen):
 			self['lab1'].setText(_("Device: ") + config.backupmanager.backuplocation.value + _("\nthere was a problem with this device, please reformat and try again."))
 
 	def createSetup(self):
-		self.session.openWithCallback(self.setupDone, BackupManagerMenu)
+		self.session.openWithCallback(self.setupDone, VIXBackupManagerMenu)
+
+	def showLog(self):
+		self.session.open(VIXBackupManagerLogView)
 
 	def setupDone(self):
 		self.populate_List()
@@ -265,7 +273,7 @@ class VIXBackupManager(Screen):
 			ybox = self.session.openWithCallback(self.doDelete, MessageBox, message, MessageBox.TYPE_YESNO)
 			ybox.setTitle(_("Remove Confirmation"))
 		else:
-			self.session.open(MessageBox, _("You have no image to delete."), MessageBox.TYPE_INFO, timeout = 10)
+			self.session.open(MessageBox, _("You have no backup to delete."), MessageBox.TYPE_INFO, timeout = 10)
 
 	def doDelete(self, answer):
 		if answer is True:
@@ -286,7 +294,7 @@ class VIXBackupManager(Screen):
 			self.keyBackup()
 
 	def keyBackup(self):
-		message = _("Are you ready to create a backup image ?")
+		message = _("Are you ready to create a backup ?")
 		ybox = self.session.openWithCallback(self.doBackup, MessageBox, message, MessageBox.TYPE_YESNO)
 		ybox.setTitle(_("Backup Confirmation"))
  
@@ -404,9 +412,9 @@ class BackupSelection(Screen):
 			self.filelist.descent()
 
 
-class BackupManagerMenu(ConfigListScreen, Screen):
+class VIXBackupManagerMenu(ConfigListScreen, Screen):
 	skin = """
-		<screen name="BackupManagerMenu" position="center,center" size="500,285" title="Backup Manager Setup">
+		<screen name="VIXBackupManagerMenu" position="center,center" size="500,285" title="Backup Manager Setup">
 			<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
 			<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
 			<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" alphatest="on" />
@@ -421,8 +429,8 @@ class BackupManagerMenu(ConfigListScreen, Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.session = session
-		self.skin = BackupManagerMenu.skin
-		self.skinName = "BackupManagerMenu"
+		self.skin = VIXBackupManagerMenu.skin
+		self.skinName = "VIXBackupManagerMenu"
 		Screen.setTitle(self, _("Backup Manager Setup"))
 		self["HelpWindow"] = Pixmap()
 		self["HelpWindow"].hide()
@@ -524,6 +532,27 @@ class BackupManagerMenu(ConfigListScreen, Screen):
 		config.backupmanager.backupdirs.save()
 		config.plugins.configurationbackup.save()
 		config.save()
+
+class VIXBackupManagerLogView(Screen):
+	skin = """
+<screen name="VIXBackupManagerLogView" position="center,center" size="560,400" title="Backup Log" >
+	<widget name="list" position="0,0" size="560,400" font="Regular;16" />
+</screen>"""
+	def __init__(self, session):
+		self.session = session
+		Screen.__init__(self, session)
+		self.skinName = "VIXBackupManagerLogView"
+		self["list"] = ScrollLabel(config.backupmanager.lastlog.value)
+		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "DirectionActions"],
+		{
+			"cancel": self.cancel,
+			"ok": self.cancel,
+			"up": self["list"].pageUp,
+			"down": self["list"].pageDown
+		}, -2)
+
+	def cancel(self):
+		self.close()
 
 class AutoBackupManagerTimer:
 	def __init__(self, session):
@@ -726,11 +755,15 @@ class BackupFiles(Screen):
 		self.BackupConsole.ePopen('tar -czvf ' + self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz ' + self.backupdirs, self.StageComplete)
 
 	def StageComplete(self, result, retval, extra_args):
+		config.backupmanager.lastlog.setValue(result)
+		config.backupmanager.lastlog.save()
 		if retval == 0:
 			if fileExists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
 				print '[BackupManager] Complete.'
 				self.StageCompleted = True
 		else:
+			self.session.open(MessageBox, _("Backup failed - e. g. wrong backup destination or no space left on backup device"), MessageBox.TYPE_INFO, timeout = 10)
+			print '[BackupManager] Result.',result
 			print "{BackupManager] Backup failed - e. g. wrong backup destination or no space left on backup device"
 
 	def BackupComplete(self):

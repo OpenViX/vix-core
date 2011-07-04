@@ -15,7 +15,7 @@ from Components.FileList import MultiFileSelectList
 from Components.ScrollLabel import ScrollLabel
 from Screens.Screen import Screen
 from Components.Console import Console
-from Screens.Console import Console as RestareConsole
+from Screens.Console import Console as RestoreConsole
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Tools.Directories import pathExists, fileExists, resolveFilename,SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_PLUGIN, SCOPE_CURRENT_SKIN, SCOPE_METADIR
@@ -320,7 +320,7 @@ class VIXBackupManager(Screen):
 
 	def doResstore(self,answer):
 		if answer is True:
-			self.session.open(RestareConsole, title = _("Restore running"), cmdlist = ["tar -xzvf " + self.BackupDirectory + self.sel + " -C /", "killall -9 enigma2"])
+			self.session.open(RestoreConsole, title = _("Restore running"), cmdlist = ["tar -xzvf " + self.BackupDirectory + self.sel + " -C /", "killall -9 enigma2"])
 
 	def myclose(self):
 		self.close()
@@ -673,17 +673,45 @@ class AutoBackupManagerTimer:
 class BackupFiles(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self.StageCompleted = False
+		self.Stage1Completed = False
+		self.Stage2Completed = False
+		self.Stage3Completed = False
+		self.Stage4Completed = False
+		self.Stage5Completed = False
 
 	def createBackupJob(self):
 		job = Components.Task.Job(_("BackupManager"))
 
-		task = Components.Task.PythonTask(job, _("Backing Up..."))
+		task = Components.Task.PythonTask(job, _("Starting..."))
 		task.work = self.JobStart
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Backing Up..."), timeoutCount=600)
-		task.check = lambda: self.StageCompleted
+		task = Components.Task.ConditionTask(job, _("Starting..."), timeoutCount=30)
+		task.check = lambda: self.Stage1Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Renaming old backup..."))
+		task.work = self.Stage2
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Renaming old backup..."), timeoutCount=30)
+		task.check = lambda: self.Stage2Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Creating list of instlled plugins..."))
+		task.work = self.Stage3
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Creating list of instlled plugins..."), timeoutCount=30)
+		task.check = lambda: self.Stage3Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Backing up files..."))
+		task.work = self.Stage4
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Backing up files..."), timeoutCount=600)
+		task.check = lambda: self.Stage4Completed
 		task.weighting = 1
 
 		task = Components.Task.PythonTask(job, _("Backup Complete..."))
@@ -736,12 +764,15 @@ class BackupFiles(Screen):
 
 		s = statvfs(self.BackupDevice)
 		free = (s.f_bsize * s.f_bavail)/(1024*1024)
-		if int(free) < 200:
+		if int(free) < 50:
 			self.session.open(MessageBox, _("The backup location does not have enough freespace."), MessageBox.TYPE_INFO, timeout = 10)
 		else:
-			self.doBackup1()
+			self.Stage1Complete()
 
-	def doBackup1(self):
+	def Stage1Complete(self):
+		self.Stage1Completed = True
+
+	def Stage2(self):
 		self.BackupConsole = Console()
 		self.backupdirs = ' '.join(config.backupmanager.backupdirs.value)
 		print '[BackupManager] Renaming old backup'
@@ -751,16 +782,45 @@ class BackupFiles(Screen):
 			if path.exists(self.newfilename):
 				remove(self.newfilename)
 			rename(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz',self.newfilename)
-		print '[BackupManager] Backup running'
-		self.BackupConsole.ePopen('tar -czvf ' + self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz ' + self.backupdirs, self.StageComplete)
+		self.Stage2Complete()
 
-	def StageComplete(self, result, retval, extra_args):
+	def Stage2Complete(self):
+		self.Stage2Completed = True
+
+	def Stage3(self):
+		self.BackupConsole = Console()
+		print '[BackupManager] Listing installed plugins'
+		self.BackupConsole.ePopen('opkg list-installed', self.Stage3Complete)
+
+	def Stage3Complete(self, result, retval, extra_args):
+		if retval == 0:
+			output = open('/tmp/ExtraInstalledPlugins','w')
+			output.write(result)
+			output.close()
+
+		if fileExists('/tmp/ExtraInstalledPlugins'):
+			print '[BackupManager] Listing completed.'
+			self.Stage3Completed = True
+		else:
+			self.session.open(MessageBox, _("Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"), MessageBox.TYPE_INFO, timeout = 10)
+			print '[BackupManager] Result.',result
+			print "{BackupManager] Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+
+	def Stage4(self):
+		self.BackupConsole = Console()
+		tmplist = config.backupmanager.backupdirs.value
+		tmplist.append('/tmp/ExtraInstalledPlugins')
+		self.backupdirs = ' '.join(tmplist)
+		print '[BackupManager] Backup running'
+		self.BackupConsole.ePopen('tar -czvf ' + self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz ' + self.backupdirs, self.Stage4Complete)
+
+	def Stage4Complete(self, result, retval, extra_args):
 		config.backupmanager.lastlog.setValue(result)
 		config.backupmanager.lastlog.save()
-		if retval == 0:
-			if fileExists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
-				print '[BackupManager] Complete.'
-				self.StageCompleted = True
+		if fileExists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
+			print '[BackupManager] Complete.'
+			remove('/tmp/ExtraInstalledPlugins')
+			self.Stage4Completed = True
 		else:
 			self.session.open(MessageBox, _("Backup failed - e. g. wrong backup destination or no space left on backup device"), MessageBox.TYPE_INFO, timeout = 10)
 			print '[BackupManager] Result.',result
@@ -772,3 +832,4 @@ class BackupFiles(Screen):
 			autoBackupManagerTimer.backupupdate(atLeast)
 		else:
 			autoBackupManagerTimer.backupstop()
+

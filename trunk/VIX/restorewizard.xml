@@ -1,0 +1,30 @@
+<wizard>
+	<step id="restorequestion">
+		<condition>
+from Plugins.SystemPlugins.ViX.RestoreWizard import checkConfigBackup
+self.backuppath = checkConfigBackup()
+self.condition = (self.backuppath is not None and config.misc.firstrun.value)
+		</condition>
+		<text value="Do you want to restore your settings?" />
+		<list>
+			<listentry caption="Yes" step="restore" />
+			<listentry caption="No" step="end" />
+		</list>
+		<code>
+self.clearSelectedKeys()
+self.selectKey("OK")
+		</code>
+	</step>
+
+	<step id="restore" nextstep="plugins">
+		<text value="You have chosen to restore your settings. Please press OK to start the restore now." />
+		<config screen="RestoreSetting" module="Plugins.SystemPlugins.ViX.RestoreWizard" type="ConfigList" />
+	</step>
+
+	<step id="end" laststep="true">
+		<condition>
+self.condition = self.isLastWizard
+		</condition>
+		<text value="The wizard is finished now." />
+	</step>
+</wizard>

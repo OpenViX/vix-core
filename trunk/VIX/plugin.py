@@ -33,6 +33,7 @@ from enigma import eTimer, getDesktop
 from os import environ
 import gettext
 
+from RestoreWizard import RestoreWizard
 from BackupManager import VIXBackupManager, AutoBackupManagerTimer, BackupManagerautostart
 from CronManager import VIXCronManager
 from MountManager import VIXDevicesPanel

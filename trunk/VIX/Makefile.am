@@ -9,4 +9,6 @@ install_PYTHON = BackupManager.py \
 		SoftcamManager.py \
 		SwapManager.py \
 		ScriptRunner.py \
-		PowerManager.py
+		PowerManager.py \
+		RestoreWizard.py \
+		restorewizard.xml

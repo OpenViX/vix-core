@@ -152,20 +152,11 @@ class RestoreSetting(Screen, ConfigListScreen):
 			self.commands = ["tar -xzvf " + self.fullbackupfilename + " -C /", "echo 0 > /proc/stb/vmpeg/0/dst_height", "echo 0 > /proc/stb/vmpeg/0/dst_left", "echo 0 > /proc/stb/vmpeg/0/dst_top", "echo 0 > /proc/stb/vmpeg/0/dst_width"]
 		else:
 			self.commands = ["tar -xzvf " + self.fullbackupfilename + " -C /"]
-		self.RestoreConsole.eBatch(self.commands, self.doRestorePluginsQuestion, debug=True)
+		self.RestoreConsole.eBatch(self.commands, self.doRestorePlugins1, debug=True)
 
-	def doRestorePluginsQuestion(self, extra_args = None):
-		message = _("Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?")
-		ybox = self.session.openWithCallback(self.doRestorePlugins1, MessageBox, message, MessageBox.TYPE_YESNO)
-		ybox.setTitle(_("Re-install Plugins"))
-
-	def doRestorePlugins1(self, answer):
-		if answer is True:
-			self.RestoreConsole = Console()
-			self.RestoreConsole.ePopen('opkg list-installed', self.doRestorePlugins2)
-		else:
-			self.RestoreConsole = Console()
-			self.RestoreConsole.ePopen("killall -9 enigma2")
+	def doRestorePlugins1(self, extra_args):
+		self.RestoreConsole = Console()
+		self.RestoreConsole.ePopen('opkg list-installed', self.doRestorePlugins2)
 
 	def doRestorePlugins2(self, result, retval, extra_args):
 		if retval == 0:
@@ -182,15 +173,32 @@ class RestoreSetting(Screen, ConfigListScreen):
 					if parts[0] not in plugins:
 						output.write(parts[0] + '\n')
 			output.close()
-			self.doRestorePlugins3()
+			self.doRestorePluginsQuestion()
 
-	def doRestorePlugins3(self):
-		from Screens.Console import Console as RestoreConsole
+	def doRestorePluginsQuestion(self, extra_args = None):
 		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
 		pluginslist = plugintmp.replace('\n',' ')
-		restorecmdlist = ["opkg update", "opkg install " + pluginslist, 'rm -f /tmp/ExtraInstalledPlugins', 'rm -f /tmp/trimedExtraInstalledPlugins', "killall -9 enigma2"]
-		self.session.open(RestoreConsole, title = _("Restore is running..."), cmdlist = restorecmdlist)
+		if pluginslist:
+			message = _("Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?")
+			ybox = self.session.openWithCallback(self.doRestorePlugins3, MessageBox, message, MessageBox.TYPE_YESNO, wizard = True)
+			ybox.setTitle(_("Re-install Plugins"))
+		else:
+			self.RestoreConsole = Console()
+			self.RestoreConsole.ePopen("killall -9 enigma2")
 
+	def doRestorePlugins3(self, answer):
+		if answer is True:
+			plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
+			pluginslist = plugintmp.replace('\n',' ')
+			self.commands = ["opkg update", "opkg install " + pluginslist, 'rm -f /tmp/ExtraInstalledPlugins', 'rm -f /tmp/trimedExtraInstalledPlugins']
+			self.RestoreConsole.eBatch(self.commands,self.doRestorePlugins4, debug=True)
+		else:
+			self.RestoreConsole = Console()
+			self.RestoreConsole.ePopen("killall -9 enigma2")
+
+	def doRestorePlugins4(self, result):
+		self.RestoreConsole = Console()
+		self.RestoreConsole.ePopen("killall -9 enigma2")
 
 	def backupFinishedCB(self,retval = None):
 		self.close(True)

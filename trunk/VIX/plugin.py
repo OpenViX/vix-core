@@ -141,7 +141,7 @@ class VIXMenu(Screen):
 			self.list.append(("ipkg-install", _("Install local extension"),  _("\nInstall IPK's from your tmp folder." ), None))
 			self.list.append(("install-extensions", _("Manage Extensions"), _("\nManage extensions or plugins for your receiver" ), None))
 			self.list.append(("mount-manager",_("Mount Manager"), _("\nManage you devices mountpoints." ), None))
-			self.list.append(("ipkg-manager", _("Packet management"),  _("\nView, install and remove available or installed packages." ), None))
+			self.list.append(("ipkg-manager", _("Packet Manager"),  _("\nView, install and remove available or installed packages." ), None))
 			self.list.append(("power-manager",_("Power Manager"), _("\nCreate schedules for Standby, Restart GUI, DeepStandby and Reboot."), None))
 			self.list.append(("script-runner",_("Script Running"), _("\nRun your shell scripts." ), None))
 			self.list.append(("software-update", _("Software Update"), _("\nOnline update of your Receiver software." ), None))

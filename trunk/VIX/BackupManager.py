@@ -400,7 +400,7 @@ class BackupSelection(Screen):
 		self.selectedFiles = self["checkList"].getSelectedList()
 		config.backupmanager.backupdirs.value = self.selectedFiles
 		config.backupmanager.backupdirs.save()
-		config.plugins.configurationbackup.save()
+		config.backupmanager.save()
 		config.save()
 		self.close(None)
 

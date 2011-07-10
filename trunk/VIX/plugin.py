@@ -135,7 +135,6 @@ class VIXMenu(Screen):
 		self.text = ""
 		if self.menu == 0:
 			print "building menu entries"
-			#self.list.append(("software-update", _("Software Update"), _("\nOnline update of your Receiver software." ), None))
 			self.list.append(("backup-manager", _("Backup Manager"), _("\nManage your backups of your settings." ), None))
 			self.list.append(("cron-manager", _("Cron Manager"), _("\nManage your cron jobs." ), None))
 			self.list.append(("image-manager", _("Image Manager"), _("\nCreate and Restore complete images of the system." ), None))
@@ -145,7 +144,8 @@ class VIXMenu(Screen):
 			self.list.append(("ipkg-manager", _("Packet management"),  _("\nView, install and remove available or installed packages." ), None))
 			self.list.append(("power-manager",_("Power Manager"), _("\nCreate schedules for Standby, Restart GUI, DeepStandby and Reboot."), None))
 			self.list.append(("script-runner",_("Script Running"), _("\nRun your shell scripts." ), None))
-			self.list.append(("software-update-offline", _("Software update"), _("\nOnline update of your software." ) + _("\nShut down upgrade and reboot"), None))
+			self.list.append(("software-update", _("Software Update"), _("\nOnline update of your Receiver software." ), None))
+			#self.list.append(("software-update-offline", _("Software update"), _("\nOnline update of your software." ) + _("\nShut down upgrade and reboot"), None))
 			self.list.append(("swap-manager",_("Swap Manager"), _("\nCreate and Manage your swapfiles." ), None))
 
 			for p in plugins.getPlugins(PluginDescriptor.WHERE_SOFTWAREMANAGER):

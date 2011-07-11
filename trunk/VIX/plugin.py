@@ -165,7 +165,7 @@ class VIXMenu(Screen):
 				#self.list.append(("advanced", _("Advanced Options"), _("\nAdvanced options and settings." ), None))
 		#elif self.menu == 1:
 			#self.list.append(("advancedrestore", _("Advanced restore"), _("\nRestore your backups by date." ), None))
-			#self.list.append(("backuplocation", _("Choose backup location"),  _("\nSelect your backup device.\nCurrent device: " ) + config.plugins.configurationbackup.backuplocation.value, None))
+			#self.list.append(("backuplocation", _("Choose backup location"),  _("\nSelect your backup device.\nCurrent device: " ) + config.backupmanager.backuplocation.value, None))
 			#self.list.append(("backupfiles", _("Choose backup files"),  _("Select files for backup."), None))
 			#if config.usage.setup_level.index >= 2: # expert+
 				#self.list.append(("ipkg-manager", _("Packet management"),  _("\nView, install and remove available or installed packages." ), None))
@@ -1124,13 +1124,13 @@ class UpdatePlugin(Screen):
 			memcheck_stdout = popen('free | grep Total | tr -s " " | cut -d " " -f 4', "r")
 			memcheck = memcheck_stdout.read()
 			if int(memcheck) < 61440:
-				os_system("dd if=/dev/zero of=" + config.plugins.configurationbackup.backuplocation.value + "swapfile_upgrade bs=1024 count=16440")
-				os_system("mkswap " + config.plugins.configurationbackup.backuplocation.value + "swapfile_upgrade")
-				os_system("swapon " + config.plugins.configurationbackup.backuplocation.value + "swapfile_upgrade")
+				os_system("dd if=/dev/zero of=" + config.backupmanager.backuplocation.value + "swapfile_upgrade bs=1024 count=16440")
+				os_system("mkswap " + config.backupmanager.backuplocation.value + "swapfile_upgrade")
+				os_system("swapon " + config.backupmanager.backuplocation.value + "swapfile_upgrade")
 		except:
-			os_system("dd if=/dev/zero of=" + config.plugins.configurationbackup.backuplocation.value + "swapfile_upgrade bs=1024 count=16440")
-			os_system("mkswap " + config.plugins.configurationbackup.backuplocation.value + "swapfile_upgrade")
-			os_system("swapon " + config.plugins.configurationbackup.backuplocation.value + "swapfile_upgrade")
+			os_system("dd if=/dev/zero of=" + config.backupmanager.backuplocation.value + "swapfile_upgrade bs=1024 count=16440")
+			os_system("mkswap " + config.backupmanager.backuplocation.value + "swapfile_upgrade")
+			os_system("swapon " + config.backupmanager.backuplocation.value + "swapfile_upgrade")
 
 		self.sliderPackages = { "dreambox-dvb-modules": 1, "enigma2": 2, "tuxbox-image-info": 3 }
 
@@ -1225,9 +1225,9 @@ class UpdatePlugin(Screen):
 				self.activityTimer.stop()
 				self.activityslider.setValue(0)
 				
-				if os_path.exists(config.plugins.configurationbackup.backuplocation.value + 'swapfile_upgrade'):
-					popen("swapoff " + config.plugins.configurationbackup.backuplocation.value + "swapfile_upgrade")
-					remove(config.plugins.configurationbackup.backuplocation.value + 'swapfile_upgrade')
+				if os_path.exists(config.backupmanager.backuplocation.value + 'swapfile_upgrade'):
+					popen("swapoff " + config.backupmanager.backuplocation.value + "swapfile_upgrade")
+					remove(config.backupmanager.backuplocation.value + 'swapfile_upgrade')
 
 				self.package.setText(_("Done - Installed or upgraded %d packages") % self.packages)
 				self.status.setText(self.oktext)

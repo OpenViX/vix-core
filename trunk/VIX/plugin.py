@@ -18,6 +18,9 @@
 #    GNU General Public License for more details.
 #
 #######################################################################
+# for localized messages
+from . import _
+
 from Plugins.Plugin import PluginDescriptor
 from Screens.Console import Console
 from Screens.MessageBox import MessageBox
@@ -1591,7 +1594,7 @@ def Plugins(path, **kwargs):
 	global plugin_path
 	plugin_path = path
 	plist = [PluginDescriptor(name=_("VIXMenu"), where=PluginDescriptor.WHERE_MENU, needsRestart = False, fnc=startSetup)]
-	plist.append(PluginDescriptor(name="VIX",  where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=UpgradeMain))
+	plist.append(PluginDescriptor(name=_("VIX"),  where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=UpgradeMain))
 	plist.append(PluginDescriptor(where=PluginDescriptor.WHERE_MENU, fnc=SoftcamSetup))
 	plist.append(PluginDescriptor(name=_("Softcam Manager"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=SoftcamMenu))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = SwapAutostart))

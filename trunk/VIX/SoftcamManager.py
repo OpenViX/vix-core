@@ -14,30 +14,16 @@ from Components.Console import Console
 from Components.FileList import MultiFileSelectList
 from Components.Language import language
 from Screens.MessageBox import MessageBox
-from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from ServiceReference import ServiceReference
 from Components.SystemInfo import SystemInfo
-from os import path, makedirs, remove, rename, symlink, mkdir, environ, listdir
+from os import path, makedirs, remove, rename, symlink, mkdir, listdir
 from shutil import rmtree
 from datetime import datetime
 from time import localtime, time, strftime, mktime, strftime, sleep
 from enigma import eTimer
-import gettext
-
-lang = language.getLanguage()
-environ["LANGUAGE"] = lang[:2]
-print "[SoftcamManager] set language to ", lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("SoftcamManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
 
 softcamautopoller = None
-
-def _(txt):
-	t = gettext.dgettext("SoftcamManager", txt)
-	if t == txt:
-		t = gettext.gettext(txt)
-	return t
 
 def SoftcamAutostart(reason, session=None, **kwargs):
 	"called with reason=1 to during shutdown, with reason=0 at startup?"

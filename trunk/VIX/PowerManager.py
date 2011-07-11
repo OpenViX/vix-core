@@ -7,11 +7,10 @@ from Components.Language import language
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Standby import TryQuitMainloop, Standby
-from Tools.Directories import pathExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
+from Tools.Directories import pathExists, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from time import localtime, time, strftime, mktime
 from enigma import eTimer
-from os import environ, remove
-import gettext
+from os import remove
 
 config.vixsettings.powermanager = ConfigYesNo(default = False)
 config.vixsettings.powermanager_standby = ConfigYesNo(default = False)
@@ -30,19 +29,6 @@ config.vixsettings.powermanager_reboot = ConfigYesNo(default = False)
 config.vixsettings.powermanager_reboottime = ConfigClock(default = 0) # 1:00
 config.vixsettings.powermanager_rebootretry = ConfigNumber(default = 30)
 config.vixsettings.powermanager_rebootretrycount = NoSave(ConfigNumber(default = 0))
-
-lang = language.getLanguage()
-environ["LANGUAGE"] = lang[:2]
-print "[PowerManager] set language to ", lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("VIX", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
-
-def _(txt):
-	t = gettext.dgettext("VIXPowerManager", txt)
-	if t == txt:
-		t = gettext.gettext(txt)
-	return t
 
 autoPowerManagerTimer = None
 

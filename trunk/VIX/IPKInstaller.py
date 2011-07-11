@@ -10,22 +10,9 @@ from Components.Button import Button
 from Components.MenuList import MenuList
 from Components.Sources.List import List
 from Screens.Standby import TryQuitMainloop
-from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
-from os import listdir, remove, environ
-import datetime, time, gettext
-
-lang = language.getLanguage()
-environ["LANGUAGE"] = lang[:2]
-print "[IPKInstaller] set language to ", lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("IPKInstaller", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
-
-def _(txt):
-	t = gettext.dgettext("IPKInstaller", txt)
-	if t == txt:
-		t = gettext.gettext(txt)
-	return t
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
+from os import listdir, remove
+import datetime, time
 
 class VIXIPKInstaller(Screen):
 	skin = """<screen name="VIXIPKInstaller" position="center,center" size="560,400" title="IPK Installer" flags="wfBorder" >

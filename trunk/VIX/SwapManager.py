@@ -10,25 +10,12 @@ from Components.Harddisk import harddiskmanager
 from Components.Console import Console
 from Components.config import config
 from Components.Language import language
-from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
+from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from os import system, stat as mystat, chmod, path, remove, rename, access, W_OK, R_OK, F_OK, environ
 from enigma import eTimer
-import stat, time, gettext
+import stat, time
 
 config.vixsettings.swapautostart = ConfigYesNo(default = False)
-
-lang = language.getLanguage()
-environ["LANGUAGE"] = lang[:2]
-print "[SwapManager] set language to ", lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("SwapManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
-
-def _(txt):
-	t = gettext.dgettext("SwapManager", txt)
-	if t == txt:
-		t = gettext.gettext(txt)
-	return t
 
 def SwapAutostart(reason, session = None):
 	if reason == 0:

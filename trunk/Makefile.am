@@ -1,3 +1,5 @@
-AUTOMAKE_OPTIONS = gnu
+SUBDIRS = VIX po etc
 
-SUBDIRS = VIX etc
+ACLOCAL_AMFLAGS = -I m4
+
+installdir = $(pkglibdir)/python

@@ -12,22 +12,14 @@ from Components.Pixmap import Pixmap,MultiPixmap
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Components.Console import Console
-from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Tools.LoadPixmap import LoadPixmap
 from base64 import encodestring
 from enigma import eListboxPythonMultiContent, ePoint, eTimer, getDesktop, gFont, iPlayableService, iServiceInformation, loadPNG, RT_HALIGN_RIGHT
 from skin import parseColor
-from os import system, environ, listdir, remove, rename, symlink, unlink, path, mkdir, access, W_OK, R_OK, F_OK
-import gettext
+from os import system, listdir, remove, rename, symlink, unlink, path, mkdir, access, W_OK, R_OK, F_OK
 from enigma import eTimer, ePoint
 from time import sleep
-
-lang = language.getLanguage()
-environ["LANGUAGE"] = lang[:2]
-print "[CronManager] set language to ", lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("CronManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
 
 config.vixsettings.cronmanager_commandtype = NoSave(ConfigSelection(choices = [ ('custom','Custom'),('predefined','Predefined') ]))
 config.vixsettings.cronmanager_cmdtime = NoSave(ConfigClock(default=0))
@@ -36,12 +28,6 @@ config.vixsettings.cronmanager_user_command = NoSave(ConfigText(fixed_size=False
 config.vixsettings.cronmanager_runwhen = NoSave(ConfigSelection(default='Daily', choices = [('Hourly', 'Hourly'),('Daily', 'Daily'),('Weekly', 'Weekly'),('Monthly', 'Monthly')]))
 config.vixsettings.cronmanager_dayofweek = NoSave(ConfigSelection(default='Monday', choices = [('Monday', 'Monday'),('Tuesday', 'Tuesday'),('Wednesday', 'Wednesday'),('Thursday', 'Thursday'),('Friday', 'Friday'),('Saturday', 'Saturday'),('Sunday', 'Sunday')]))
 config.vixsettings.cronmanager_dayofmonth = NoSave(ConfigInteger(default=1, limits=(1, 31)))
-
-def _(txt):
-	t = gettext.dgettext("CronManager", txt)
-	if t == txt:
-		t = gettext.gettext(txt)
-	return t
 
 class VIXCronManager(Screen):
 	skin = """

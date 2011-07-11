@@ -10,22 +10,9 @@ from Components.Button import Button
 from Components.MenuList import MenuList
 from Components.Sources.List import List
 from Screens.Standby import TryQuitMainloop
-from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
-from os import listdir, remove, environ, mkdir, path, access, X_OK, chmod
-import datetime, time, gettext
-
-lang = language.getLanguage()
-environ["LANGUAGE"] = lang[:2]
-print "[ScriptRunner] set language to ", lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("ScriptRunner", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
-
-def _(txt):
-	t = gettext.dgettext("ScriptRunner", txt)
-	if t == txt:
-		t = gettext.gettext(txt)
-	return t
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
+from os import listdir, remove, mkdir, path, access, X_OK, chmod
+import datetime, time
 
 class VIXScriptRunner(Screen):
 	skin = """<screen name="VIXScriptRunner" position="center,center" size="560,400" title="Script Runner" flags="wfBorder" >

@@ -12,25 +12,12 @@ from Components.Sources.List import List
 from Components.Console import Console
 from Components.Language import language
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import fileExists, pathExists, createDir, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
+from Tools.Directories import fileExists, pathExists, createDir, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from Plugins.Plugin import PluginDescriptor
 from enigma import eTimer
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from os import system, rename, path, mkdir, remove, statvfs, environ, listdir
-import time, datetime, gettext
-
-lang = language.getLanguage()
-environ["LANGUAGE"] = lang[:2]
-print "[MounManager] set language to ", lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("MounManager", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "SystemPlugins/ViX/locale"))
-
-def _(txt):
-	t = gettext.dgettext("MounManager", txt)
-	if t == txt:
-		t = gettext.gettext(txt)
-	return t
+from os import system, rename, path, mkdir, remove, statvfs, listdir
+import time, datetime
 
 class VIXDevicesPanel(Screen):
 	skin = """

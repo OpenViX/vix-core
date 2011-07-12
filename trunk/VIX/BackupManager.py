@@ -298,16 +298,71 @@ class VIXBackupManager(Screen):
 		if not self.BackupRunning:
 			if self.sel:
 				message = _("Are you sure you want to restore this backup:\n ") + self.sel
-				ybox = self.session.openWithCallback(self.doResstore, MessageBox, message, MessageBox.TYPE_YESNO)
+				ybox = self.session.openWithCallback(self.doRestore, MessageBox, message, MessageBox.TYPE_YESNO)
 				ybox.setTitle(_("Restore Confirmation"))
 			else:
 				self.session.open(MessageBox, _("You have no backups to restore."), MessageBox.TYPE_INFO, timeout = 10)
 		else:
 			self.session.open(MessageBox, _("Backup in progress,\nPlease for it to finish, before trying again"), MessageBox.TYPE_INFO, timeout = 10)
 
-	def doResstore(self,answer):
+	def doRestore(self,answer):
 		if answer is True:
-			self.session.open(RestoreConsole, title = _("Restore running"), cmdlist = ["tar -xzvf " + self.BackupDirectory + self.sel + " -C /", "killall -9 enigma2"])
+			self.RestoreConsole = Console()
+			if path.exists("/proc/stb/vmpeg/0/dst_width"):
+				self.commands = ["tar -xzvf " + self.BackupDirectory + self.sel + " -C /", "echo 0 > /proc/stb/vmpeg/0/dst_height", "echo 0 > /proc/stb/vmpeg/0/dst_left", "echo 0 > /proc/stb/vmpeg/0/dst_top", "echo 0 > /proc/stb/vmpeg/0/dst_width"]
+			else:
+				self.commands = ["tar -xzvf " + self.BackupDirectory + self.sel + " -C /"]
+			self.RestoreConsole.eBatch(self.commands, self.doRestorePlugins1, debug=True)
+
+	def doRestorePlugins1(self, extra_args):
+		self.RestoreConsole = Console()
+		self.RestoreConsole.ePopen('opkg list-installed', self.doRestorePlugins2)
+
+	def doRestorePlugins2(self, result, retval, extra_args):
+		if retval == 0:
+			if fileExists('/tmp/ExtraInstalledPlugins'):
+				pluginlist = file('/tmp/ExtraInstalledPlugins').readlines()
+				plugins = []
+				for line in result.split('\n'):
+					if line:
+						parts = line.strip().split()
+						plugins.append(parts[0])
+				output = open('/tmp/trimedExtraInstalledPlugins','a')
+				for line in pluginlist:
+					if line:
+						parts = line.strip().split()
+						if parts[0] not in plugins:
+							output.write(parts[0] + '\n')
+				output.close()
+				self.doRestorePluginsQuestion()
+
+	def doRestorePluginsQuestion(self, extra_args = None):
+		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
+		pluginslist = plugintmp.replace('\n',' ')
+		if pluginslist:
+			message = _("Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?")
+			ybox = self.session.openWithCallback(self.doRestorePlugins3, MessageBox, message, MessageBox.TYPE_YESNO)
+			ybox.setTitle(_("Re-install Plugins"))
+		else:
+			self.RestoreConsole = Console()
+			self.RestoreConsole.ePopen("killall -9 enigma2")
+
+	def doRestorePlugins3(self, answer):
+		if answer is True:
+			plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
+			pluginslist = plugintmp.replace('\n',' ')
+			self.commands = ["opkg update", "opkg install " + pluginslist, 'rm -f /tmp/ExtraInstalledPlugins', 'rm -f /tmp/trimedExtraInstalledPlugins']
+			self.RestoreConsole.eBatch(self.commands,self.doRestorePlugins4, debug=True)
+		else:
+			self.RestoreConsole = Console()
+			self.RestoreConsole.ePopen("killall -9 enigma2")
+
+	def doRestorePlugins4(self, result):
+		self.RestoreConsole = Console()
+		self.RestoreConsole.ePopen("killall -9 enigma2")
+
+
+
 
 	def myclose(self):
 		self.close()
@@ -780,6 +835,9 @@ class BackupFiles(Screen):
 		self.BackupConsole.ePopen('opkg list-installed', self.Stage3Complete)
 
 	def Stage3Complete(self, result, retval, extra_args):
+		print 'result',result
+		print 'retval',retval
+		print 'extra_args',extra_args
 		if retval == 0:
 			output = open('/tmp/ExtraInstalledPlugins','w')
 			output.write(result)

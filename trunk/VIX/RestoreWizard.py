@@ -160,20 +160,21 @@ class RestoreSetting(Screen, ConfigListScreen):
 
 	def doRestorePlugins2(self, result, retval, extra_args):
 		if retval == 0:
-			pluginlist = file('/tmp/ExtraInstalledPlugins').readlines()
-			plugins = []
-			for line in result.split('\n'):
-				if line:
-					parts = line.strip().split()
-					plugins.append(parts[0])
-			output = open('/tmp/trimedExtraInstalledPlugins','a')
-			for line in pluginlist:
-				if line:
-					parts = line.strip().split()
-					if parts[0] not in plugins:
-						output.write(parts[0] + '\n')
-			output.close()
-			self.doRestorePluginsQuestion()
+			if fileExists('/tmp/ExtraInstalledPlugins'):
+				pluginlist = file('/tmp/ExtraInstalledPlugins').readlines()
+				plugins = []
+				for line in result.split('\n'):
+					if line:
+						parts = line.strip().split()
+						plugins.append(parts[0])
+				output = open('/tmp/trimedExtraInstalledPlugins','a')
+				for line in pluginlist:
+					if line:
+						parts = line.strip().split()
+						if parts[0] not in plugins:
+							output.write(parts[0] + '\n')
+				output.close()
+				self.doRestorePluginsQuestion()
 
 	def doRestorePluginsQuestion(self, extra_args = None):
 		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()

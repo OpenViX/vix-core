@@ -679,7 +679,7 @@ class AutoBackupManagerTimer:
 			print "[BackupManager] Backup onTimer occured at", strftime("%c", localtime(now))
 			from Screens.Standby import inStandby
 			if not inStandby:
-				message = _("Your box is about to run a full image backup, this can take about 6 minutes to complete,\ndo you want to allow this?")
+				message = _("Your box is about to run a backup of your settings and detect your plugins,\nDo you want to allow this?")
 				ybox = self.session.openWithCallback(self.doBackup, MessageBox, message, MessageBox.TYPE_YESNO, timeout = 30)
 				ybox.setTitle('Scheduled Backup.')
 			else:

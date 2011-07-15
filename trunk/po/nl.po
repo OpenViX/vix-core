@@ -8,14 +8,17 @@ msgstr ""
 "Project-Id-Version: plugins 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-11 16:05+0100\n"
-"PO-Revision-Date: 2011-07-14 15:30+0100\n"
+"PO-Revision-Date: 2011-07-15 02:37-0000\n"
 "Last-Translator: R.L. van der Does <robvddoes@gmail.com>\n"
 "Language-Team: none\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: NEDERLAND\n"
+"X-Poedit-SourceCharset: iso-8859-15\n"
 
 #: ../VIX/MountManager.py:234
 msgid ""
@@ -1260,15 +1263,15 @@ msgstr ""
 
 #: ../VIX/plugin.py:898
 msgid "This plugin is installed."
-msgstr "Deze plugin is geïnstalleerd"
+msgstr "Deze plugin is geÃ¯nstalleerd"
 
 #: ../VIX/plugin.py:900
 msgid "This plugin is not installed."
-msgstr "Deze plugin is niet geïnstalleerd"
+msgstr "Deze plugin is niet geÃ¯nstalleerd"
 
 #: ../VIX/plugin.py:902
 msgid "This plugin will be installed."
-msgstr "Deze plugin zal worden geïnstalleerd"
+msgstr "Deze plugin zal worden geÃ¯nstalleerd"
 
 #: ../VIX/plugin.py:904
 msgid "This plugin will be removed."

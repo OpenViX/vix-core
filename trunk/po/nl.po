@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: plugins 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-11 16:05+0100\n"
-"PO-Revision-Date: 2011-07-11 16:05+0100\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2011-07-14 15:30+0100\n"
+"Last-Translator: R.L. van der Does <robvddoes@gmail.com>\n"
 "Language-Team: none\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgid ""
 "ALL THE DATA ON THIS PARTITION WILL BE LOST!\n"
 " Are you sure to continue?"
 msgstr ""
+"\n"
+"ALLE GEGEVENS OP DEZE PARTITIE ZULLEN VERLOREN GAAN!\n"
+"Weet u zeker dat u verder wilt gaan?"
 
 #: ../VIX/MountManager.py:599
 msgid ""
@@ -30,13 +33,20 @@ msgid ""
 "ALL THE DATA WILL BE LOST!\n"
 "Are you sure to continue?"
 msgstr ""
+"\n"
+"ALLE GEGEVENS ZULLEN VERLOREN GAAN!\n"
+"Weet u zeker dat u verder wilt gaan?"
 
-#: ../VIX/plugin.py:253 ../VIX/plugin.py:352 ../VIX/plugin.py:968
+#: ../VIX/plugin.py:253
+#: ../VIX/plugin.py:352
+#: ../VIX/plugin.py:968
 #: ../VIX/plugin.py:1328
 msgid ""
 "\n"
 "After pressing OK, please wait!"
 msgstr ""
+"\n"
+"Na op OK te drukken, even wachten aub!"
 
 #: ../VIX/plugin.py:149
 msgid ""
@@ -98,14 +108,16 @@ msgid ""
 "Run your shell scripts."
 msgstr ""
 
-#: ../VIX/BackupManager.py:200 ../VIX/BackupManager.py:209
+#: ../VIX/BackupManager.py:200
+#: ../VIX/BackupManager.py:209
 #: ../VIX/BackupManager.py:225
 msgid ""
 "\n"
 "Select a backup to Restore / Delete:"
 msgstr ""
 
-#: ../VIX/ImageManager.py:194 ../VIX/ImageManager.py:202
+#: ../VIX/ImageManager.py:194
+#: ../VIX/ImageManager.py:202
 #: ../VIX/ImageManager.py:217
 msgid ""
 "\n"
@@ -118,50 +130,57 @@ msgid ""
 "View, install and remove available or installed packages."
 msgstr ""
 
-#: ../VIX/BackupManager.py:239 ../VIX/ImageManager.py:234
+#: ../VIX/BackupManager.py:239
+#: ../VIX/ImageManager.py:234
 msgid ""
 "\n"
 "there was a problem with this device, please reformat and try again."
 msgstr ""
 
-#: ../VIX/MountManager.py:65 ../VIX/MountManager.py:66
-#: ../VIX/MountManager.py:89 ../VIX/SoftcamManager.py:134
+#: ../VIX/MountManager.py:65
+#: ../VIX/MountManager.py:66
+#: ../VIX/MountManager.py:89
+#: ../VIX/SoftcamManager.py:134
 #: ../VIX/SwapManager.py:182
 msgid " "
 msgstr ""
 
 #: ../VIX/plugin.py:670
 msgid " extensions."
-msgstr ""
+msgstr "Extensies"
 
-#: ../VIX/plugin.py:468 ../VIX/plugin.py:480
+#: ../VIX/plugin.py:468
+#: ../VIX/plugin.py:480
 msgid " packages selected."
-msgstr ""
+msgstr "pakketten geselecteerd."
 
-#: ../VIX/plugin.py:232 ../VIX/plugin.py:237 ../VIX/plugin.py:422
-#: ../VIX/plugin.py:466 ../VIX/plugin.py:477
+#: ../VIX/plugin.py:232
+#: ../VIX/plugin.py:237
+#: ../VIX/plugin.py:422
+#: ../VIX/plugin.py:466
+#: ../VIX/plugin.py:477
 msgid " updates available."
-msgstr ""
+msgstr " updates beschikbaar."
 
 #: ../VIX/SwapManager.py:282
 msgid "16 Mb"
-msgstr ""
+msgstr "16 Mb"
 
 #: ../VIX/SwapManager.py:282
 msgid "32 Mb"
-msgstr ""
+msgstr "32 Mb"
 
 #: ../VIX/SwapManager.py:282
 msgid "64 Mb"
-msgstr ""
+msgstr "64 Mb"
 
 #: ../VIX/SwapManager.py:282
 msgid "8 Mb"
-msgstr ""
+msgstr "8 Mb"
 
 #: ../VIX/SwapManager.py:282
 msgid "96 Mb"
-msgstr ""
+msgstr "96 Mb"
 
 #: ../VIX/plugin.py:1211
 #, python-format
@@ -178,22 +197,24 @@ msgstr ""
 msgid "A small overview of the available icon states and actions."
 msgstr ""
 
-#: ../VIX/SwapManager.py:103 ../VIX/SwapManager.py:181
+#: ../VIX/SwapManager.py:103
+#: ../VIX/SwapManager.py:181
 #: ../VIX/SwapManager.py:227
 msgid "Activate"
-msgstr ""
+msgstr "Aktiveer"
 
-#: ../VIX/CronManager.py:75 ../VIX/SwapManager.py:102
+#: ../VIX/CronManager.py:75
+#: ../VIX/SwapManager.py:102
 msgid "Active"
-msgstr ""
+msgstr "Actief"
 
 #: ../VIX/SoftcamManager.py:80
 msgid "Active:"
-msgstr ""
+msgstr "Actief:"
 
 #: ../VIX/CronManager.py:84
 msgid "Add"
-msgstr ""
+msgstr "Voeg toe"
 
 #: ../VIX/BackupManager.py:297
 msgid "Are you ready to create a backup ?"
@@ -211,7 +232,8 @@ msgstr ""
 msgid "Are you ready to run the script ?"
 msgstr ""
 
-#: ../VIX/BackupManager.py:272 ../VIX/ImageManager.py:264
+#: ../VIX/BackupManager.py:272
+#: ../VIX/ImageManager.py:264
 msgid ""
 "Are you sure you want to delete this backup:\n"
 " "
@@ -231,66 +253,77 @@ msgstr ""
 
 #: ../VIX/plugin.py:1008
 msgid "Author: "
-msgstr ""
+msgstr "Auteur"
 
-#: ../VIX/CronManager.py:87 ../VIX/SoftcamManager.py:104
+#: ../VIX/CronManager.py:87
+#: ../VIX/SoftcamManager.py:104
 #: ../VIX/SwapManager.py:105
 msgid "Autostart"
-msgstr ""
+msgstr "Autostart"
 
-#: ../VIX/CronManager.py:106 ../VIX/CronManager.py:113
-#: ../VIX/CronManager.py:120 ../VIX/CronManager.py:127
-#: ../VIX/CronManager.py:134 ../VIX/CronManager.py:141
+#: ../VIX/CronManager.py:106
+#: ../VIX/CronManager.py:113
+#: ../VIX/CronManager.py:120
+#: ../VIX/CronManager.py:127
+#: ../VIX/CronManager.py:134
+#: ../VIX/CronManager.py:141
 #: ../VIX/CronManager.py:148
 msgid "Autostart Disabled."
-msgstr ""
+msgstr "Autostart uitgeschakeld."
 
-#: ../VIX/CronManager.py:109 ../VIX/CronManager.py:116
-#: ../VIX/CronManager.py:123 ../VIX/CronManager.py:130
-#: ../VIX/CronManager.py:137 ../VIX/CronManager.py:144
+#: ../VIX/CronManager.py:109
+#: ../VIX/CronManager.py:116
+#: ../VIX/CronManager.py:123
+#: ../VIX/CronManager.py:130
+#: ../VIX/CronManager.py:137
+#: ../VIX/CronManager.py:144
 #: ../VIX/CronManager.py:151
 msgid "Autostart Enabled."
-msgstr ""
+msgstr "Autostart ingeschakeld."
 
 #: ../VIX/CronManager.py:74
 msgid "Autostart:"
-msgstr ""
+msgstr "Autostart:"
 
 #: ../VIX/plugin.py:450
 msgid "Back"
-msgstr ""
+msgstr "Terug"
 
-#: ../VIX/BackupManager.py:709 ../VIX/BackupManager.py:713
+#: ../VIX/BackupManager.py:709
+#: ../VIX/BackupManager.py:713
 msgid "Backing up files..."
-msgstr ""
+msgstr "Bestanden worden gebackupped"
 
-#: ../VIX/BackupManager.py:717 ../VIX/ImageManager.py:716
+#: ../VIX/BackupManager.py:717
+#: ../VIX/ImageManager.py:716
 msgid "Backup Complete..."
-msgstr ""
+msgstr "Backup kompleet..."
 
-#: ../VIX/BackupManager.py:299 ../VIX/ImageManager.py:292
+#: ../VIX/BackupManager.py:299
+#: ../VIX/ImageManager.py:292
 msgid "Backup Confirmation"
-msgstr ""
+msgstr "Backup bevestiging"
 
-#: ../VIX/BackupManager.py:469 ../VIX/ImageManager.py:502
+#: ../VIX/BackupManager.py:469
+#: ../VIX/ImageManager.py:502
 msgid "Backup Location"
-msgstr ""
+msgstr "Back-up locatie"
 
-#: ../VIX/BackupManager.py:85 ../VIX/plugin.py:138
+#: ../VIX/BackupManager.py:85
+#: ../VIX/plugin.py:138
 msgid "Backup Manager"
-msgstr ""
+msgstr "Backup Manager"
 
 #: ../VIX/BackupManager.py:434
 msgid "Backup Manager Setup"
-msgstr ""
+msgstr "Backup Manager instellingen"
 
 #: ../VIX/BackupManager.py:825
-msgid ""
-"Backup failed - e. g. wrong backup destination or no space left on backup "
-"device"
+msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr ""
 
-#: ../VIX/BackupManager.py:319 ../VIX/ImageManager.py:320
+#: ../VIX/BackupManager.py:319
+#: ../VIX/ImageManager.py:320
 msgid ""
 "Backup in progress,\n"
 "Please for it to finish, before trying again"
@@ -298,26 +331,31 @@ msgstr ""
 
 #: ../VIX/BackupManager.py:683
 msgid "BackupManager"
-msgstr ""
+msgstr "BackupManager"
 
-#: ../VIX/SoftcamManager.py:193 ../VIX/SoftcamManager.py:245
+#: ../VIX/SoftcamManager.py:193
+#: ../VIX/SoftcamManager.py:245
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr ""
 
-#: ../VIX/MountManager.py:254 ../VIX/MountManager.py:618
-#: ../VIX/MountManager.py:629 ../VIX/MountManager.py:640
+#: ../VIX/MountManager.py:254
+#: ../VIX/MountManager.py:618
+#: ../VIX/MountManager.py:629
+#: ../VIX/MountManager.py:640
 #: ../VIX/MountManager.py:650
-msgid ""
-"Can't unmount partiton, make sure it is not being used for swap or record/"
-"timeshift paths"
+msgid "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths"
 msgstr ""
 
-#: ../VIX/BackupManager.py:342 ../VIX/BackupManager.py:453
-#: ../VIX/ImageManager.py:487 ../VIX/MountManager.py:327
-#: ../VIX/MountManager.py:504 ../VIX/PowerManager.py:106
-#: ../VIX/SoftcamManager.py:521 ../VIX/plugin.py:774
+#: ../VIX/BackupManager.py:342
+#: ../VIX/BackupManager.py:453
+#: ../VIX/ImageManager.py:487
+#: ../VIX/MountManager.py:327
+#: ../VIX/MountManager.py:504
+#: ../VIX/PowerManager.py:106
+#: ../VIX/SoftcamManager.py:521
+#: ../VIX/plugin.py:774
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleer"
 
 #: ../VIX/SoftcamManager.py:529
 msgid "Check every (mins)"
@@ -325,24 +363,30 @@ msgstr ""
 
 #: ../VIX/ImageManager.py:692
 msgid "Checking Free RAM.."
-msgstr ""
+msgstr "Controleert vrije RAM..."
 
 #: ../VIX/BackupManager.py:455
 msgid "Choose Files"
-msgstr ""
+msgstr "Kies bestanden"
 
 #: ../VIX/MountManager.py:325
 msgid "Choose where to mount your devices to:"
 msgstr ""
 
-#: ../VIX/IPKInstaller.py:59 ../VIX/ScriptRunner.py:59
-#: ../VIX/SoftcamManager.py:101 ../VIX/plugin.py:188 ../VIX/plugin.py:345
-#: ../VIX/plugin.py:472 ../VIX/plugin.py:872 ../VIX/plugin.py:951
+#: ../VIX/IPKInstaller.py:59
+#: ../VIX/ScriptRunner.py:59
+#: ../VIX/SoftcamManager.py:101
+#: ../VIX/plugin.py:188
+#: ../VIX/plugin.py:345
+#: ../VIX/plugin.py:472
+#: ../VIX/plugin.py:872
+#: ../VIX/plugin.py:951
 #: ../VIX/plugin.py:1316
 msgid "Close"
-msgstr ""
+msgstr "Sluit"
 
-#: ../VIX/CronManager.py:405 ../VIX/CronManager.py:407
+#: ../VIX/CronManager.py:405
+#: ../VIX/CronManager.py:407
 #: ../VIX/CronManager.py:425
 msgid "Command To Run"
 msgstr ""
@@ -365,17 +409,20 @@ msgstr ""
 
 #: ../VIX/plugin.py:404
 msgid "Continue"
-msgstr ""
+msgstr "Ga door"
 
-#: ../VIX/SwapManager.py:104 ../VIX/SwapManager.py:184
+#: ../VIX/SwapManager.py:104
+#: ../VIX/SwapManager.py:184
 msgid "Create"
 msgstr ""
 
-#: ../VIX/ImageManager.py:700 ../VIX/ImageManager.py:704
+#: ../VIX/ImageManager.py:700
+#: ../VIX/ImageManager.py:704
 msgid "Creating Backup Files..."
 msgstr ""
 
-#: ../VIX/ImageManager.py:335 ../VIX/ImageManager.py:345
+#: ../VIX/ImageManager.py:335
+#: ../VIX/ImageManager.py:345
 msgid "Creating Image..."
 msgstr ""
 
@@ -383,55 +430,67 @@ msgstr ""
 msgid "Creating Swap.."
 msgstr ""
 
-#: ../VIX/BackupManager.py:701 ../VIX/BackupManager.py:705
+#: ../VIX/BackupManager.py:701
+#: ../VIX/BackupManager.py:705
 msgid "Creating list of instlled plugins..."
 msgstr ""
 
-#: ../VIX/CronManager.py:73 ../VIX/CronManager.py:371 ../VIX/plugin.py:139
+#: ../VIX/CronManager.py:73
+#: ../VIX/CronManager.py:371
+#: ../VIX/plugin.py:139
 msgid "Cron Manager"
-msgstr ""
+msgstr "Cron Manager"
 
 #: ../VIX/CronManager.py:77
 msgid "Current Status:"
-msgstr ""
+msgstr "Actuele status"
 
-#: ../VIX/SwapManager.py:177 ../VIX/SwapManager.py:224
+#: ../VIX/SwapManager.py:177
+#: ../VIX/SwapManager.py:224
 msgid "Deactivate"
-msgstr ""
+msgstr "De-activeer"
 
 #: ../VIX/PowerManager.py:120
 msgid "Deep Standby Time"
-msgstr ""
+msgstr "Deep Sleep"
 
 #: ../VIX/plugin.py:656
 msgid "Default Settings"
-msgstr ""
+msgstr "Standaard instellingen"
 
-#: ../VIX/BackupManager.py:92 ../VIX/CronManager.py:85
-#: ../VIX/ImageManager.py:87 ../VIX/SwapManager.py:206
+#: ../VIX/BackupManager.py:92
+#: ../VIX/CronManager.py:85
+#: ../VIX/ImageManager.py:87
+#: ../VIX/SwapManager.py:206
 msgid "Delete"
-msgstr ""
+msgstr "Verwijder"
 
 #: ../VIX/BackupManager.py:379
 msgid "Deselect"
-msgstr ""
+msgstr "Deselecteer"
 
 #: ../VIX/plugin.py:975
 msgid "Details for plugin: "
-msgstr ""
+msgstr "Details over plugin: "
 
-#: ../VIX/BackupManager.py:225 ../VIX/BackupManager.py:239
-#: ../VIX/ImageManager.py:217 ../VIX/ImageManager.py:234
-#: ../VIX/MountManager.py:206 ../VIX/MountManager.py:230
-#: ../VIX/MountManager.py:580 ../VIX/MountManager.py:595
+#: ../VIX/BackupManager.py:225
+#: ../VIX/BackupManager.py:239
+#: ../VIX/ImageManager.py:217
+#: ../VIX/ImageManager.py:234
+#: ../VIX/MountManager.py:206
+#: ../VIX/MountManager.py:230
+#: ../VIX/MountManager.py:580
+#: ../VIX/MountManager.py:595
 msgid "Device: "
-msgstr ""
+msgstr "Device: "
 
-#: ../VIX/BackupManager.py:209 ../VIX/ImageManager.py:202
+#: ../VIX/BackupManager.py:209
+#: ../VIX/ImageManager.py:202
 msgid "Device: None available"
 msgstr ""
 
-#: ../VIX/MountManager.py:296 ../VIX/MountManager.py:468
+#: ../VIX/MountManager.py:296
+#: ../VIX/MountManager.py:468
 msgid ""
 "Devices changes need a system restart to take effects.\n"
 "Restart your Box now?"
@@ -443,26 +502,32 @@ msgstr ""
 
 #: ../VIX/CronManager.py:76
 msgid "Disabled"
-msgstr ""
+msgstr "Uitgeschakeld"
 
 #: ../VIX/plugin.py:664
 msgid "Display and Userinterface"
 msgstr ""
 
-#: ../VIX/plugin.py:1077 ../VIX/plugin.py:1426
+#: ../VIX/plugin.py:1077
+#: ../VIX/plugin.py:1426
 msgid "Do you want to install the package:\n"
 msgstr ""
 
-#: ../VIX/plugin.py:718 ../VIX/plugin.py:1087 ../VIX/plugin.py:1252
-#: ../VIX/plugin.py:1433 ../VIX/plugin.py:1455
+#: ../VIX/plugin.py:718
+#: ../VIX/plugin.py:1087
+#: ../VIX/plugin.py:1252
+#: ../VIX/plugin.py:1433
+#: ../VIX/plugin.py:1455
 msgid "Do you want to reboot your Receiver?"
 msgstr ""
 
-#: ../VIX/plugin.py:1070 ../VIX/plugin.py:1418
+#: ../VIX/plugin.py:1070
+#: ../VIX/plugin.py:1418
 msgid "Do you want to remove the package:\n"
 msgstr ""
 
-#: ../VIX/plugin.py:253 ../VIX/plugin.py:255
+#: ../VIX/plugin.py:253
+#: ../VIX/plugin.py:255
 msgid "Do you want to update your Receiver?"
 msgstr ""
 
@@ -477,11 +542,11 @@ msgstr ""
 
 #: ../VIX/plugin.py:1179
 msgid "Downloading"
-msgstr ""
+msgstr "Bezig met downloaden"
 
 #: ../VIX/plugin.py:666
 msgid "Electronic Program Guide"
-msgstr ""
+msgstr "Electronisch Programma Gids"
 
 #: ../VIX/SoftcamManager.py:527
 msgid "Enable Auto Timer Check ?"
@@ -489,7 +554,7 @@ msgstr ""
 
 #: ../VIX/PowerManager.py:118
 msgid "Enable Deep Standby"
-msgstr ""
+msgstr "Schakel Deep Standby in"
 
 #: ../VIX/PowerManager.py:122
 msgid "Enable GUI Restart"
@@ -515,14 +580,17 @@ msgstr ""
 msgid "Enable Swap at startup"
 msgstr ""
 
-#: ../VIX/BackupManager.py:665 ../VIX/ImageManager.py:668
+#: ../VIX/BackupManager.py:665
+#: ../VIX/ImageManager.py:668
 msgid "Enough Retries, delaying till next schedule."
 msgstr ""
 
-#: ../VIX/MountManager.py:466 ../VIX/plugin.py:406 ../VIX/plugin.py:1242
+#: ../VIX/MountManager.py:466
+#: ../VIX/plugin.py:406
+#: ../VIX/plugin.py:1242
 #: ../VIX/plugin.py:1393
 msgid "Error"
-msgstr ""
+msgstr "Fout"
 
 #: ../VIX/MountManager.py:465
 msgid "Error: You have to set Mountpoins for all your devices."
@@ -540,7 +608,8 @@ msgstr ""
 msgid "Extensions management"
 msgstr ""
 
-#: ../VIX/BackupManager.py:470 ../VIX/ImageManager.py:503
+#: ../VIX/BackupManager.py:470
+#: ../VIX/ImageManager.py:503
 msgid "Folder prefix"
 msgstr ""
 
@@ -550,7 +619,7 @@ msgstr ""
 
 #: ../VIX/MountManager.py:503
 msgid "Format"
-msgstr ""
+msgstr "Formatteer"
 
 #: ../VIX/SoftcamManager.py:262
 msgid "Found none stanadard softcam, trying to start, this may fail"
@@ -560,49 +629,58 @@ msgstr ""
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr ""
 
-#: ../VIX/MountManager.py:173 ../VIX/MountManager.py:184
-#: ../VIX/MountManager.py:398 ../VIX/MountManager.py:409
-#: ../VIX/MountManager.py:547 ../VIX/MountManager.py:558
+#: ../VIX/MountManager.py:173
+#: ../VIX/MountManager.py:184
+#: ../VIX/MountManager.py:398
+#: ../VIX/MountManager.py:409
+#: ../VIX/MountManager.py:547
+#: ../VIX/MountManager.py:558
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: ../VIX/PowerManager.py:124
 msgid "GUI Restart Time"
 msgstr ""
 
-#: ../VIX/MountManager.py:152 ../VIX/MountManager.py:379
+#: ../VIX/MountManager.py:152
+#: ../VIX/MountManager.py:379
 #: ../VIX/MountManager.py:538
 msgid "HARD DISK: "
-msgstr ""
+msgstr "HARDE SCHIJF: "
 
 #: ../VIX/IPKInstaller.py:46
 msgid "IPK Installer"
 msgstr ""
 
-#: ../VIX/ImageManager.py:80 ../VIX/plugin.py:140
+#: ../VIX/ImageManager.py:80
+#: ../VIX/plugin.py:140
 msgid "Image Manager"
-msgstr ""
+msgstr "Image Manager"
 
 #: ../VIX/ImageManager.py:469
 msgid "Image Manager Setup"
-msgstr ""
+msgstr "Image Manager instellingen"
 
 #: ../VIX/ImageManager.py:686
 msgid "ImageManager"
-msgstr ""
+msgstr "ImageManager"
 
 #: ../VIX/SwapManager.py:101
 msgid "Inactive"
-msgstr ""
+msgstr "Inaktief"
 
-#: ../VIX/CronManager.py:154 ../VIX/SwapManager.py:244
-#: ../VIX/SwapManager.py:305 ../VIX/SwapManager.py:320
+#: ../VIX/CronManager.py:154
+#: ../VIX/SwapManager.py:244
+#: ../VIX/SwapManager.py:305
+#: ../VIX/SwapManager.py:320
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
-#: ../VIX/IPKInstaller.py:60 ../VIX/plugin.py:454 ../VIX/plugin.py:1012
+#: ../VIX/IPKInstaller.py:60
+#: ../VIX/plugin.py:454
+#: ../VIX/plugin.py:1012
 msgid "Install"
-msgstr ""
+msgstr "Installeer"
 
 #: ../VIX/IPKInstaller.py:76
 msgid "Install Confirmation"
@@ -620,7 +698,8 @@ msgstr ""
 msgid "Installation finished."
 msgstr ""
 
-#: ../VIX/plugin.py:815 ../VIX/plugin.py:1190
+#: ../VIX/plugin.py:815
+#: ../VIX/plugin.py:1190
 msgid "Installing"
 msgstr ""
 
@@ -628,75 +707,93 @@ msgstr ""
 msgid "Installing..."
 msgstr ""
 
-#: ../VIX/MountManager.py:175 ../VIX/MountManager.py:186
-#: ../VIX/MountManager.py:400 ../VIX/MountManager.py:411
-#: ../VIX/MountManager.py:549 ../VIX/MountManager.py:560
+#: ../VIX/MountManager.py:175
+#: ../VIX/MountManager.py:186
+#: ../VIX/MountManager.py:400
+#: ../VIX/MountManager.py:411
+#: ../VIX/MountManager.py:549
+#: ../VIX/MountManager.py:560
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
-#: ../VIX/SoftcamManager.py:210 ../VIX/SoftcamManager.py:260
+#: ../VIX/SoftcamManager.py:210
+#: ../VIX/SoftcamManager.py:260
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr ""
 
 #: ../VIX/plugin.py:142
 msgid "Manage Extensions"
-msgstr ""
+msgstr "Beheer extensies"
 
-#: ../VIX/MountManager.py:62 ../VIX/plugin.py:143
+#: ../VIX/MountManager.py:62
+#: ../VIX/plugin.py:143
 msgid "Mount Manager"
-msgstr ""
+msgstr "Mount Manager"
 
-#: ../VIX/MountManager.py:206 ../VIX/MountManager.py:229
+#: ../VIX/MountManager.py:206
+#: ../VIX/MountManager.py:229
 #: ../VIX/MountManager.py:580
 msgid "Mount: "
-msgstr ""
+msgstr "Mount: "
 
-#: ../VIX/ImageManager.py:708 ../VIX/ImageManager.py:712
+#: ../VIX/ImageManager.py:708
+#: ../VIX/ImageManager.py:712
 msgid "Moving to Backup Location..."
 msgstr ""
 
 #: ../VIX/plugin.py:662
 msgid "Multimedia"
-msgstr ""
+msgstr "Multimedia"
 
 #: ../VIX/plugin.py:652
 msgid "Network"
-msgstr ""
+msgstr "Netwerk"
 
-#: ../VIX/BackupManager.py:120 ../VIX/ImageManager.py:115
+#: ../VIX/BackupManager.py:120
+#: ../VIX/ImageManager.py:115
 msgid "New Backup"
-msgstr ""
+msgstr "Nieuwe Backup"
 
-#: ../VIX/BackupManager.py:104 ../VIX/BackupManager.py:106
-#: ../VIX/BackupManager.py:264 ../VIX/BackupManager.py:266
-#: ../VIX/ImageManager.py:99 ../VIX/ImageManager.py:101
-#: ../VIX/ImageManager.py:256 ../VIX/ImageManager.py:258
+#: ../VIX/BackupManager.py:104
+#: ../VIX/BackupManager.py:106
+#: ../VIX/BackupManager.py:264
+#: ../VIX/BackupManager.py:266
+#: ../VIX/ImageManager.py:99
+#: ../VIX/ImageManager.py:101
+#: ../VIX/ImageManager.py:256
+#: ../VIX/ImageManager.py:258
 msgid "Next Backup: "
-msgstr ""
+msgstr "Volgende Backup"
 
-#: ../VIX/PowerManager.py:139 ../VIX/PowerManager.py:141
+#: ../VIX/PowerManager.py:139
+#: ../VIX/PowerManager.py:141
 msgid "Next Deep Standby: \n"
 msgstr ""
 
-#: ../VIX/PowerManager.py:145 ../VIX/PowerManager.py:147
+#: ../VIX/PowerManager.py:145
+#: ../VIX/PowerManager.py:147
 msgid "Next GUI Restart: \n"
 msgstr ""
 
-#: ../VIX/PowerManager.py:151 ../VIX/PowerManager.py:153
+#: ../VIX/PowerManager.py:151
+#: ../VIX/PowerManager.py:153
 msgid "Next Reboot: \n"
 msgstr ""
 
-#: ../VIX/PowerManager.py:133 ../VIX/PowerManager.py:135
+#: ../VIX/PowerManager.py:133
+#: ../VIX/PowerManager.py:135
 msgid "Next Standby: \n"
 msgstr ""
 
-#: ../VIX/SoftcamManager.py:195 ../VIX/SoftcamManager.py:247
+#: ../VIX/SoftcamManager.py:195
+#: ../VIX/SoftcamManager.py:247
 msgid ""
 "No config files found, please setup CCcam first\n"
 "in /etc/CCcam.cfg"
 msgstr ""
 
-#: ../VIX/SoftcamManager.py:208 ../VIX/SoftcamManager.py:258
+#: ../VIX/SoftcamManager.py:208
+#: ../VIX/SoftcamManager.py:258
 msgid ""
 "No config files found, please setup MGcamd first\n"
 "in /var/keys"
@@ -708,7 +805,8 @@ msgid ""
 "in /etc/hypercam.cfg"
 msgstr ""
 
-#: ../VIX/SoftcamManager.py:203 ../VIX/SoftcamManager.py:253
+#: ../VIX/SoftcamManager.py:203
+#: ../VIX/SoftcamManager.py:253
 msgid ""
 "No config files found, please setup Oscam first\n"
 "in /etc/tuxbox/config"
@@ -716,42 +814,47 @@ msgstr ""
 
 #: ../VIX/plugin.py:1006
 msgid "No description available."
-msgstr ""
+msgstr "Geen beschrijving beschikbaar"
 
-#: ../VIX/plugin.py:242 ../VIX/plugin.py:432
+#: ../VIX/plugin.py:242
+#: ../VIX/plugin.py:432
 msgid "No network connection available."
-msgstr ""
+msgstr "Geen netwerkverbinding beschikbaar."
 
 #: ../VIX/plugin.py:1239
-msgid ""
-"No packages were upgraded yet. So you can check your network and try again."
+msgid "No packages were upgraded yet. So you can check your network and try again."
 msgstr ""
 
-#: ../VIX/MountManager.py:164 ../VIX/MountManager.py:165
+#: ../VIX/MountManager.py:164
+#: ../VIX/MountManager.py:165
 #: ../VIX/MountManager.py:390
 msgid "None"
-msgstr ""
+msgstr "Geen"
 
-#: ../VIX/BackupManager.py:454 ../VIX/ImageManager.py:488
-#: ../VIX/PowerManager.py:107 ../VIX/SoftcamManager.py:522
+#: ../VIX/BackupManager.py:454
+#: ../VIX/ImageManager.py:488
+#: ../VIX/PowerManager.py:107
+#: ../VIX/SoftcamManager.py:522
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: ../VIX/plugin.py:775
 msgid "Only extensions."
-msgstr ""
+msgstr "Alleen extensies"
 
-#: ../VIX/plugin.py:402 ../VIX/plugin.py:1143 ../VIX/plugin.py:1389
+#: ../VIX/plugin.py:402
+#: ../VIX/plugin.py:1143
+#: ../VIX/plugin.py:1389
 msgid "Package list update"
 msgstr ""
 
 #: ../VIX/plugin.py:144
 msgid "Packet Manager"
-msgstr ""
+msgstr "Packet Manager"
 
 #: ../VIX/plugin.py:1381
 msgid "Packet manager"
-msgstr ""
+msgstr "Packet manager"
 
 #: ../VIX/SwapManager.py:276
 msgid "Please select device to use as swapfile location"
@@ -767,12 +870,10 @@ msgstr ""
 
 #: ../VIX/plugin.py:1141
 msgid "Please wait..."
-msgstr ""
+msgstr "Wacht aub..."
 
 #: ../VIX/BackupManager.py:805
-msgid ""
-"Plugin Listing failed - e. g. wrong backup destination or no space left on "
-"backup device"
+msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 msgstr ""
 
 #: ../VIX/plugin.py:782
@@ -781,11 +882,12 @@ msgstr ""
 
 #: ../VIX/plugin.py:879
 msgid "Plugin manager help"
-msgstr ""
+msgstr "Plugin manager help"
 
-#: ../VIX/PowerManager.py:90 ../VIX/plugin.py:145
+#: ../VIX/PowerManager.py:90
+#: ../VIX/plugin.py:145
 msgid "Power Manager"
-msgstr ""
+msgstr "Power Manager"
 
 #: ../VIX/plugin.py:134
 msgid "Press MENU on your remote control for additional options."
@@ -797,13 +899,14 @@ msgstr ""
 
 #: ../VIX/plugin.py:481
 msgid "Process"
-msgstr ""
+msgstr "Verwerk"
 
 #: ../VIX/RestoreWizard.py:184
 msgid "Re-install Plugins"
-msgstr ""
+msgstr "Herinstalleer Plugins"
 
-#: ../VIX/BackupManager.py:523 ../VIX/ImageManager.py:556
+#: ../VIX/BackupManager.py:523
+#: ../VIX/ImageManager.py:556
 msgid "Really close without saving settings?"
 msgstr ""
 
@@ -817,21 +920,23 @@ msgstr ""
 
 #: ../VIX/plugin.py:650
 msgid "Recordings"
-msgstr ""
+msgstr "Opnames"
 
-#: ../VIX/BackupManager.py:89 ../VIX/ImageManager.py:84
+#: ../VIX/BackupManager.py:89
+#: ../VIX/ImageManager.py:84
 msgid "Refresh List"
 msgstr ""
 
 #: ../VIX/plugin.py:1317
 msgid "Reload"
-msgstr ""
+msgstr "Herlaad"
 
 #: ../VIX/plugin.py:1016
 msgid "Remove"
-msgstr ""
+msgstr "Verwijder"
 
-#: ../VIX/BackupManager.py:274 ../VIX/ImageManager.py:266
+#: ../VIX/BackupManager.py:274
+#: ../VIX/ImageManager.py:266
 msgid "Remove Confirmation"
 msgstr ""
 
@@ -839,11 +944,13 @@ msgstr ""
 msgid "Remove finished."
 msgstr ""
 
-#: ../VIX/plugin.py:817 ../VIX/plugin.py:1196
+#: ../VIX/plugin.py:817
+#: ../VIX/plugin.py:1196
 msgid "Removing"
 msgstr ""
 
-#: ../VIX/BackupManager.py:693 ../VIX/BackupManager.py:697
+#: ../VIX/BackupManager.py:693
+#: ../VIX/BackupManager.py:697
 msgid "Renaming old backup..."
 msgstr ""
 
@@ -851,27 +958,31 @@ msgstr ""
 msgid "Repartition Device"
 msgstr ""
 
-#: ../VIX/BackupManager.py:474 ../VIX/ImageManager.py:507
+#: ../VIX/BackupManager.py:474
+#: ../VIX/ImageManager.py:507
 msgid "Repeat how often"
 msgstr ""
 
 #: ../VIX/SoftcamManager.py:136
 msgid "Restart"
-msgstr ""
+msgstr "Herstart"
 
 #: ../VIX/IPKInstaller.py:88
 msgid "Restart Enigma2."
-msgstr ""
+msgstr "Herstart Enigma2."
 
-#: ../VIX/MountManager.py:298 ../VIX/MountManager.py:470
+#: ../VIX/MountManager.py:298
+#: ../VIX/MountManager.py:470
 msgid "Restart box."
-msgstr ""
+msgstr "Herstart ontvanger."
 
-#: ../VIX/BackupManager.py:91 ../VIX/ImageManager.py:86
+#: ../VIX/BackupManager.py:91
+#: ../VIX/ImageManager.py:86
 msgid "Restore"
-msgstr ""
+msgstr "Herstel"
 
-#: ../VIX/BackupManager.py:315 ../VIX/ImageManager.py:312
+#: ../VIX/BackupManager.py:315
+#: ../VIX/ImageManager.py:312
 msgid "Restore Confirmation"
 msgstr ""
 
@@ -884,13 +995,13 @@ msgid "Restore running"
 msgstr ""
 
 #: ../VIX/RestoreWizard.py:182
-msgid ""
-"Restore wizard has detected that you had extra plugins installed at the time "
-"of you backup, Do you want to reinstall these plugins ?"
+msgid "Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?"
 msgstr ""
 
-#: ../VIX/PowerManager.py:117 ../VIX/PowerManager.py:121
-#: ../VIX/PowerManager.py:125 ../VIX/PowerManager.py:129
+#: ../VIX/PowerManager.py:117
+#: ../VIX/PowerManager.py:121
+#: ../VIX/PowerManager.py:125
+#: ../VIX/PowerManager.py:129
 msgid "Retry after cancel (mins)"
 msgstr ""
 
@@ -914,12 +1025,14 @@ msgstr ""
 msgid "Satellite equipment"
 msgstr ""
 
-#: ../VIX/BackupManager.py:343 ../VIX/CronManager.py:375
+#: ../VIX/BackupManager.py:343
+#: ../VIX/CronManager.py:375
 #: ../VIX/MountManager.py:326
 msgid "Save"
-msgstr ""
+msgstr "Bewaar"
 
-#: ../VIX/BackupManager.py:471 ../VIX/ImageManager.py:504
+#: ../VIX/BackupManager.py:471
+#: ../VIX/ImageManager.py:504
 msgid "Schedule Backups"
 msgstr ""
 
@@ -941,7 +1054,7 @@ msgstr ""
 
 #: ../VIX/BackupManager.py:381
 msgid "Select"
-msgstr ""
+msgstr "Selecteer"
 
 #: ../VIX/IPKInstaller.py:63
 msgid "Select a package to install:"
@@ -961,7 +1074,7 @@ msgstr ""
 
 #: ../VIX/SoftcamManager.py:79
 msgid "Select:"
-msgstr ""
+msgstr "Selecteer:"
 
 #: ../VIX/ImageManager.py:688
 msgid "Setting Up..."
@@ -969,41 +1082,50 @@ msgstr ""
 
 #: ../VIX/MountManager.py:64
 msgid "Setup Mounts"
-msgstr ""
+msgstr "Mounts instellingen"
 
-#: ../VIX/MountManager.py:173 ../VIX/MountManager.py:175
-#: ../VIX/MountManager.py:184 ../VIX/MountManager.py:186
-#: ../VIX/MountManager.py:398 ../VIX/MountManager.py:400
-#: ../VIX/MountManager.py:409 ../VIX/MountManager.py:411
-#: ../VIX/MountManager.py:547 ../VIX/MountManager.py:549
-#: ../VIX/MountManager.py:558 ../VIX/MountManager.py:560
+#: ../VIX/MountManager.py:173
+#: ../VIX/MountManager.py:175
+#: ../VIX/MountManager.py:184
+#: ../VIX/MountManager.py:186
+#: ../VIX/MountManager.py:398
+#: ../VIX/MountManager.py:400
+#: ../VIX/MountManager.py:409
+#: ../VIX/MountManager.py:411
+#: ../VIX/MountManager.py:547
+#: ../VIX/MountManager.py:549
+#: ../VIX/MountManager.py:558
+#: ../VIX/MountManager.py:560
 msgid "Size: "
-msgstr ""
+msgstr "Afmetingen:"
 
 #: ../VIX/plugin.py:648
 msgid "Skins"
-msgstr ""
+msgstr "Skins"
 
-#: ../VIX/plugin.py:1596 ../VIX/plugin.py:1606
+#: ../VIX/plugin.py:1596
+#: ../VIX/plugin.py:1606
 msgid "Softcam Manager"
-msgstr ""
+msgstr "Softcam Manager"
 
-#: ../VIX/SoftcamManager.py:78 ../VIX/SoftcamManager.py:278
-#: ../VIX/SoftcamManager.py:381 ../VIX/SoftcamManager.py:509
+#: ../VIX/SoftcamManager.py:78
+#: ../VIX/SoftcamManager.py:278
+#: ../VIX/SoftcamManager.py:381
+#: ../VIX/SoftcamManager.py:509
 msgid "Softcam Setup"
-msgstr ""
+msgstr "Softcam instellingen"
 
 #: ../VIX/SoftcamManager.py:864
 msgid "SoftcamCheck"
-msgstr ""
+msgstr "SoftcamCheck"
 
 #: ../VIX/plugin.py:660
 msgid "Software"
-msgstr ""
+msgstr "Software"
 
 #: ../VIX/plugin.py:147
 msgid "Software Update"
-msgstr ""
+msgstr "Software Update"
 
 #: ../VIX/ImageManager.py:316
 msgid "Sorry the image "
@@ -1024,35 +1146,36 @@ msgid "Sorry, no Details available!"
 msgstr ""
 
 #: ../VIX/ImageManager.py:788
-msgid ""
-"Sorry, not enough free ram found, and no phyical devices attached. Can't "
-"create Swapfile on network mounts, unable to make backup"
+msgid "Sorry, not enough free ram found, and no phyical devices attached. Can't create Swapfile on network mounts, unable to make backup"
 msgstr ""
 
 #: ../VIX/PowerManager.py:116
 msgid "Standby Time"
 msgstr ""
 
-#: ../VIX/CronManager.py:86 ../VIX/CronManager.py:186
+#: ../VIX/CronManager.py:86
+#: ../VIX/CronManager.py:186
 #: ../VIX/SoftcamManager.py:130
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
-#: ../VIX/BackupManager.py:685 ../VIX/BackupManager.py:689
+#: ../VIX/BackupManager.py:685
+#: ../VIX/BackupManager.py:689
 msgid "Starting..."
 msgstr ""
 
 #: ../VIX/SwapManager.py:100
 msgid "Status:"
-msgstr ""
+msgstr "Status:"
 
-#: ../VIX/CronManager.py:182 ../VIX/SoftcamManager.py:132
+#: ../VIX/CronManager.py:182
+#: ../VIX/SoftcamManager.py:132
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
 #: ../VIX/CronManager.py:78
 msgid "Stopped"
-msgstr ""
+msgstr "Gestopt"
 
 #: ../VIX/SwapManager.py:304
 msgid "Swap File creation Failed. Check for Available space."
@@ -1066,9 +1189,10 @@ msgstr ""
 msgid "Swap File successfully created."
 msgstr ""
 
-#: ../VIX/SwapManager.py:92 ../VIX/plugin.py:149
+#: ../VIX/SwapManager.py:92
+#: ../VIX/plugin.py:149
 msgid "Swap Manager"
-msgstr ""
+msgstr "Swap Manager"
 
 #: ../VIX/SwapManager.py:96
 msgid "Swap Place:"
@@ -1080,13 +1204,15 @@ msgstr ""
 
 #: ../VIX/plugin.py:646
 msgid "System"
-msgstr ""
+msgstr "Systeem"
 
-#: ../VIX/BackupManager.py:768 ../VIX/ImageManager.py:770
+#: ../VIX/BackupManager.py:768
+#: ../VIX/ImageManager.py:770
 msgid "The backup location does not have enough freespace."
 msgstr ""
 
-#: ../VIX/BackupManager.py:200 ../VIX/ImageManager.py:194
+#: ../VIX/BackupManager.py:200
+#: ../VIX/ImageManager.py:194
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr ""
 
@@ -1103,16 +1229,19 @@ msgid ""
 msgstr ""
 
 #: ../VIX/plugin.py:255
-msgid ""
-"The screen will go blank while upgrading, be patient and wait for the reboot."
+msgid "The screen will go blank while upgrading, be patient and wait for the reboot."
 msgstr ""
 
-#: ../VIX/plugin.py:232 ../VIX/plugin.py:237 ../VIX/plugin.py:422
-#: ../VIX/plugin.py:466 ../VIX/plugin.py:477
+#: ../VIX/plugin.py:232
+#: ../VIX/plugin.py:237
+#: ../VIX/plugin.py:422
+#: ../VIX/plugin.py:466
+#: ../VIX/plugin.py:477
 msgid "There are at least "
-msgstr ""
+msgstr "Er zijn minstens"
 
-#: ../VIX/plugin.py:470 ../VIX/plugin.py:483
+#: ../VIX/plugin.py:470
+#: ../VIX/plugin.py:483
 msgid "There are currently no outstanding actions."
 msgstr ""
 
@@ -1120,7 +1249,8 @@ msgstr ""
 msgid "There are no updates available."
 msgstr ""
 
-#: ../VIX/plugin.py:406 ../VIX/plugin.py:1393
+#: ../VIX/plugin.py:406
+#: ../VIX/plugin.py:1393
 msgid "There was an error downloading the packetlist. Please try again."
 msgstr ""
 
@@ -1130,21 +1260,22 @@ msgstr ""
 
 #: ../VIX/plugin.py:898
 msgid "This plugin is installed."
-msgstr ""
+msgstr "Deze plugin is geïnstalleerd"
 
 #: ../VIX/plugin.py:900
 msgid "This plugin is not installed."
-msgstr ""
+msgstr "Deze plugin is niet geïnstalleerd"
 
 #: ../VIX/plugin.py:902
 msgid "This plugin will be installed."
-msgstr ""
+msgstr "Deze plugin zal worden geïnstalleerd"
 
 #: ../VIX/plugin.py:904
 msgid "This plugin will be removed."
-msgstr ""
+msgstr "Deze plugin zal worden verwijderd"
 
-#: ../VIX/BackupManager.py:473 ../VIX/ImageManager.py:506
+#: ../VIX/BackupManager.py:473
+#: ../VIX/ImageManager.py:506
 msgid "Time of Backup to start"
 msgstr ""
 
@@ -1156,9 +1287,10 @@ msgstr ""
 msgid "Trying to download a new packetlist. Please wait..."
 msgstr ""
 
-#: ../VIX/MountManager.py:206 ../VIX/MountManager.py:580
+#: ../VIX/MountManager.py:206
+#: ../VIX/MountManager.py:580
 msgid "Type: "
-msgstr ""
+msgstr "Type: "
 
 #: ../VIX/plugin.py:460
 msgid "Undo install"
@@ -1170,11 +1302,11 @@ msgstr ""
 
 #: ../VIX/plugin.py:452
 msgid "Uninstall"
-msgstr ""
+msgstr "De-installeer"
 
 #: ../VIX/plugin.py:478
 msgid "Update"
-msgstr ""
+msgstr "Update"
 
 #: ../VIX/plugin.py:430
 msgid "Updatefeed not available."
@@ -1184,42 +1316,46 @@ msgstr ""
 msgid "Updating software catalog"
 msgstr ""
 
-#: ../VIX/plugin.py:1252 ../VIX/plugin.py:1455
+#: ../VIX/plugin.py:1252
+#: ../VIX/plugin.py:1455
 msgid "Upgrade finished."
 msgstr ""
 
-#: ../VIX/plugin.py:819 ../VIX/plugin.py:1184
+#: ../VIX/plugin.py:819
+#: ../VIX/plugin.py:1184
 msgid "Upgrading"
 msgstr ""
 
 #: ../VIX/MountManager.py:87
 msgid "Use as HDD"
-msgstr ""
+msgstr "Gebruik als HDD"
 
 #: ../VIX/plugin.py:1588
 msgid "VIX"
-msgstr ""
+msgstr "VIX"
 
 #: ../VIX/plugin.py:1593
 msgid "VIXMenu"
-msgstr ""
+msgstr "VIXMenu"
 
 #: ../VIX/plugin.py:222
 msgid "ViX"
-msgstr ""
+msgstr "ViX"
 
-#: ../VIX/BackupManager.py:118 ../VIX/BackupManager.py:306
-#: ../VIX/ImageManager.py:113 ../VIX/ImageManager.py:301
+#: ../VIX/BackupManager.py:118
+#: ../VIX/BackupManager.py:306
+#: ../VIX/ImageManager.py:113
+#: ../VIX/ImageManager.py:301
 msgid "View Progress"
-msgstr ""
+msgstr "Bekijk voortgang"
 
 #: ../VIX/plugin.py:463
 msgid "View details"
-msgstr ""
+msgstr "Bekijk details"
 
 #: ../VIX/plugin.py:670
 msgid "View list of available "
-msgstr ""
+msgstr "Toon lijst van beschikbare"
 
 #: ../VIX/plugin.py:654
 msgid "View list of available CommonInterface extensions"
@@ -1301,11 +1437,11 @@ msgstr ""
 
 #: ../VIX/CronManager.py:402
 msgid "What Day of month ?"
-msgstr ""
+msgstr "Welke dag van de maand?"
 
 #: ../VIX/CronManager.py:400
 msgid "What Day of week ?"
-msgstr ""
+msgstr "Welke dag van de week?"
 
 #: ../VIX/plugin.py:902
 msgid "You can cancel the installation."
@@ -1317,27 +1453,27 @@ msgstr ""
 
 #: ../VIX/plugin.py:900
 msgid "You can install this plugin."
-msgstr ""
+msgstr "U kunt deze plugin installeren."
 
 #: ../VIX/plugin.py:898
 msgid "You can remove this plugin."
-msgstr ""
+msgstr "U kunt deze plugin verwijderen."
 
 #: ../VIX/BackupManager.py:276
 msgid "You have no backup to delete."
-msgstr ""
+msgstr "Er is geen backup die verwijderd kan worden."
 
 #: ../VIX/BackupManager.py:317
 msgid "You have no backups to restore."
-msgstr ""
+msgstr "Er is geen backup die hersteld kan worden."
 
 #: ../VIX/ImageManager.py:268
 msgid "You have no image to delete."
-msgstr ""
+msgstr "Er is geen image dat verwijderd kan worden."
 
 #: ../VIX/ImageManager.py:314
 msgid "You have no image to restore."
-msgstr ""
+msgstr "Er is geen image dat hersteld kan worden."
 
 #: ../VIX/ScriptRunner.py:82
 msgid "You have no script to run."
@@ -1347,10 +1483,10 @@ msgstr ""
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr ""
 
-#: ../VIX/BackupManager.py:640 ../VIX/ImageManager.py:643
+#: ../VIX/BackupManager.py:640
+#: ../VIX/ImageManager.py:643
 msgid ""
-"Your box is about to run a full image backup, this can take about 6 minutes "
-"to complete,\n"
+"Your box is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
 
@@ -1379,17 +1515,15 @@ msgid ""
 msgstr ""
 
 #: ../VIX/plugin.py:1241
-msgid ""
-"Your receiver isn't connected to the internet properly. Please check it and "
-"try again."
+msgid "Your receiver isn't connected to the internet properly. Please check it and try again."
 msgstr ""
 
-#: ../VIX/plugin.py:996 ../VIX/plugin.py:1001
+#: ../VIX/plugin.py:996
+#: ../VIX/plugin.py:1001
 msgid "unknown"
-msgstr ""
+msgstr "onbekend"
 
 #: ../VIX/plugin.py:1237
-msgid ""
-"your receiver might be unusable now. Please consult the manual for further "
-"assistance before rebooting your receiver."
+msgid "your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver."
 msgstr ""
+

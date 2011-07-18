@@ -96,7 +96,7 @@ class VIXImageManager(Screen):
 		self.BackupRunning = False
 		for job in Components.Task.job_manager.getPendingJobs():
 			jobname = str(job.name)
-			if jobname.startswith('ImageManager'):
+			if jobname.startswith(_("ImageManager")):
 				self.BackupRunning = True
 		if self.BackupRunning:
 			self["key_green"].setText(_("View Progress"))
@@ -267,7 +267,7 @@ class VIXImageManager(Screen):
 		self.BackupRunning = False
 		for job in Components.Task.job_manager.getPendingJobs():
 			jobname = str(job.name)
-			if jobname.startswith('ImageManager'):
+			if jobname.startswith(_("ImageManager")):
 				self.BackupRunning = True
 		if self.BackupRunning:
 			self.showJobView(job)

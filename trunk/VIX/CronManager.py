@@ -23,12 +23,12 @@ from os import system, listdir, remove, rename, symlink, unlink, path, mkdir, ac
 from enigma import eTimer, ePoint
 from time import sleep
 
-config.vixsettings.cronmanager_commandtype = NoSave(ConfigSelection(choices = [ ('custom','Custom'),('predefined','Predefined') ]))
+config.vixsettings.cronmanager_commandtype = NoSave(ConfigSelection(choices = [ ('custom',_("Custom")),('predefined',_("Predefined")) ]))
 config.vixsettings.cronmanager_cmdtime = NoSave(ConfigClock(default=0))
 config.vixsettings.cronmanager_cmdtime.value, mytmpt = ([0, 0], [0, 0])
 config.vixsettings.cronmanager_user_command = NoSave(ConfigText(fixed_size=False))
-config.vixsettings.cronmanager_runwhen = NoSave(ConfigSelection(default='Daily', choices = [('Hourly', 'Hourly'),('Daily', 'Daily'),('Weekly', 'Weekly'),('Monthly', 'Monthly')]))
-config.vixsettings.cronmanager_dayofweek = NoSave(ConfigSelection(default='Monday', choices = [('Monday', 'Monday'),('Tuesday', 'Tuesday'),('Wednesday', 'Wednesday'),('Thursday', 'Thursday'),('Friday', 'Friday'),('Saturday', 'Saturday'),('Sunday', 'Sunday')]))
+config.vixsettings.cronmanager_runwhen = NoSave(ConfigSelection(default='Daily', choices = [('Hourly', _("Hourly")),('Daily', _("Daily")),('Weekly', _("Weekly")),('Monthly', _("Monthly"))]))
+config.vixsettings.cronmanager_dayofweek = NoSave(ConfigSelection(default='Monday', choices = [('Monday', _("Monday")),('Tuesday', _("Tuesday")),('Wednesday', _("Wednesday")),('Thursday', _("Thursday")),('Friday', _("Friday")),('Saturday', _("Saturday")),('Sunday', _("Sunday"))]))
 config.vixsettings.cronmanager_dayofmonth = NoSave(ConfigInteger(default=1, limits=(1, 31)))
 
 class VIXCronManager(Screen):
@@ -69,8 +69,8 @@ class VIXCronManager(Screen):
 		self.my_crond_active = False
 		self.my_crond_run = False
 		
-		self['key_red'] = Label(_('Add'))
-		self['key_green'] = Label(_('Delete'))
+		self['key_red'] = Label(_("Add"))
+		self['key_green'] = Label(_("Delete"))
 		self['key_yellow'] = Label(_("Start"))
 		self['key_blue'] = Label(_("Autostart"))
 		self.list = []
@@ -360,7 +360,7 @@ class VIXSetupCronConf(Screen, ConfigListScreen):
 		self.onChangedEntry = [ ]
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
-		self['key_red'] = Label(_('Save'))
+		self['key_red'] = Label(_("Save"))
 		self['actions'] = ActionMap(['WizardActions', 'ColorActions', 'VirtualKeyboardActions'], {'red': self.checkentry, 'back': self.close, 'showVirtualKeyboard': self.KeyText})
 		self["HelpWindow"] = Pixmap()
 		self["HelpWindow"].hide()
@@ -388,17 +388,17 @@ class VIXSetupCronConf(Screen, ConfigListScreen):
 			self.list.append(getConfigListEntry(_("What Day of week ?"), config.vixsettings.cronmanager_dayofweek))
 		if config.vixsettings.cronmanager_runwhen.value == 'Monthly':
 			self.list.append(getConfigListEntry(_("What Day of month ?"), config.vixsettings.cronmanager_dayofmonth))
-		self.list.append(getConfigListEntry(_('Command type'), config.vixsettings.cronmanager_commandtype))
+		self.list.append(getConfigListEntry(_("Command type"), config.vixsettings.cronmanager_commandtype))
 		if config.vixsettings.cronmanager_commandtype.value == 'custom':
 			self.list.append(getConfigListEntry(_("Command To Run"), config.vixsettings.cronmanager_user_command))
 		else:
-			self.list.append(getConfigListEntry(_('Command To Run'), config.vixsettings.cronmanager_predefined_command))
+			self.list.append(getConfigListEntry(_("Command To Run"), config.vixsettings.cronmanager_predefined_command))
 		self["config"].list = self.list
 		self["config"].setList(self.list)
 
 	# for summary:
 	def changedEntry(self):
-		if self["config"].getCurrent()[0] == "Run how often ?" or self["config"].getCurrent()[0] == "Command type":
+		if self["config"].getCurrent()[0] == _("Run how often ?") or self["config"].getCurrent()[0] == _("Command type"):
 			self.createSetup()
 		for x in self.onChangedEntry:
 			x()

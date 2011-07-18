@@ -50,9 +50,9 @@ class VIXDevicesPanel(Screen):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("Mount Manager"))
 		self['key_red'] = Label(" ")
-		self['key_green'] = Label(_('Setup Mounts'))
-		self['key_yellow'] = Label(_(' '))
-		self['key_blue'] = Label(_(' '))
+		self['key_green'] = Label(_("Setup Mounts"))
+		self['key_yellow'] = Label(" ")
+		self['key_blue'] = Label(" ")
 		self['lab1'] = Label()
 		self.list = []
 		self['list'] = List(self.list)
@@ -75,7 +75,7 @@ class VIXDevicesPanel(Screen):
 					if line.find('/media/hdd') < 0:
 						self["key_red"].setText(_("Use as HDD"))
 				else:
-					self["key_red"].setText(_(" "))
+					self["key_red"].setText(" ")
 			except:
 				pass
 
@@ -312,8 +312,8 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		self.list = []
 		ConfigListScreen.__init__(self, self.list)
 		Screen.setTitle(self, _("Choose where to mount your devices to:"))
-		self['key_green'] = Label(_('Save'))
-		self['key_red'] = Label(_('Cancel'))
+		self['key_green'] = Label(_("Save"))
+		self['key_red'] = Label(_("Cancel"))
 		self['Linconn'] = Label(_("Wait please while scanning your box devices..."))
 		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'green': self.saveMypoints, 'red': self.close, 'back': self.close})
 		self.Console = Console()
@@ -452,7 +452,7 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 			out.close()
 		if mycheck == True:
 			nobox = self.session.open(MessageBox, _("Error: You have to set Mountpoins for all your devices."), MessageBox.TYPE_INFO)
-			nobox.setTitle(_('Error'))
+			nobox.setTitle(_("Error"))
 		else:
 			message = _("Devices changes need a system restart to take effects.\nRestart your Box now?")
 			ybox = self.session.openWithCallback(self.restBo, MessageBox, message, MessageBox.TYPE_YESNO)
@@ -489,8 +489,8 @@ class VIXPartitionPanelConf(Screen, ConfigListScreen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("Repartition Device"))
-		self['key_green'] = Label(_('Format'))
-		self['key_red'] = Label(_('Cancel'))
+		self['key_green'] = Label(_("Format"))
+		self['key_red'] = Label(_("Cancel"))
 		self['lab1'] = Label()
 		self.list = []
 		self['list'] = List(self.list)

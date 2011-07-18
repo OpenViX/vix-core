@@ -1,3 +1,5 @@
+# for localized messages
+from . import _
 from Components.Button import Button
 from Components.ActionMap import ActionMap, NumberActionMap
 from Components.config import getConfigListEntry, config, ConfigSubsection, ConfigYesNo, ConfigText, ConfigSelection, ConfigInteger, ConfigClock, NoSave, configfile

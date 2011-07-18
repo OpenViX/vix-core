@@ -1,3 +1,5 @@
+# for localized messages
+from . import _
 from Components.ActionMap import ActionMap
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label

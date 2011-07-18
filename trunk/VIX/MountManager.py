@@ -1,3 +1,5 @@
+# for localized messages
+from . import _
 from Screens.Screen import Screen
 from enigma import eTimer
 from Screens.MessageBox import MessageBox

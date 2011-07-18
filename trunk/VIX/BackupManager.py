@@ -1,3 +1,5 @@
+# for localized messages
+from . import _
 import Components.Task
 from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap

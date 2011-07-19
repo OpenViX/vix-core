@@ -157,11 +157,11 @@ class VIXMenu(Screen):
 						if p.__call__.has_key("menuEntryName"):
 							menuEntryName = p.__call__["menuEntryName"](None)
 						else:
-							menuEntryName = _("Extended Software"))
+							menuEntryName = _("Extended Software")
 						if p.__call__.has_key("menuEntryDescription"):
 							menuEntryDescription = p.__call__["menuEntryDescription"](None)
 						else:
-							menuEntryDescription = _("Extended Software Plugin"))
+							menuEntryDescription = _("Extended Software Plugin")
 						self.list.append(('default-plugin', menuEntryName, menuEntryDescription, callFnc))
 			#if config.usage.setup_level.index >= 2: # expert+
 				#self.list.append(("advanced", _("Advanced Options"), _("\nAdvanced options and settings." ), None))
@@ -179,11 +179,11 @@ class VIXMenu(Screen):
 						#if p.__call__.has_key("menuEntryName"):
 							#menuEntryName = p.__call__["menuEntryName"](None)
 						#else:
-							#menuEntryName = _("Advanced Software"))
+							#menuEntryName = _("Advanced Software")
 						#if p.__call__.has_key("menuEntryDescription"):
 							#menuEntryDescription = p.__call__["menuEntryDescription"](None)
 						#else:
-							#menuEntryDescription = _("Advanced Software Plugin"))
+							#menuEntryDescription = _("Advanced Software Plugin")
 						#self.list.append(('advanced-plugin', menuEntryName, menuEntryDescription, callFnc))
 
 		self["menu"] = List(self.list)
@@ -814,11 +814,11 @@ class PluginManagerInfo(Screen):
 		installpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX/install.png"))
 		removepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX/remove.png"))
 		if action == 'install':
-			return(( _("Installing")), info, installpng, divpng))
+			return(( _("Installing"), info, installpng, divpng))
 		elif action == 'remove':
-			return(( _("Removing")), info, removepng, divpng))
+			return(( _("Removing"), info, removepng, divpng))
 		else:
-			return(( _("Upgrading")), info, upgradepng, divpng))
+			return(( _("Upgrading"), info, upgradepng, divpng))
 
 	def exit(self):
 		self.close()
@@ -897,13 +897,13 @@ class PluginManagerHelp(Screen):
 		installpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX/install.png"))
 
 		if state == 'installed':
-			return(( _("This plugin is installed.")), _("You can remove this plugin.")), installedpng, divpng))
+			return(( _("This plugin is installed."), _("You can remove this plugin."), installedpng, divpng))
 		elif state == 'installable':
-			return(( _("This plugin is not installed.")), _("You can install this plugin.")), installablepng, divpng))
+			return(( _("This plugin is not installed."), _("You can install this plugin."), installablepng, divpng))
 		elif state == 'install':
-			return(( _("This plugin will be installed.")), _("You can cancel the installation.")), installpng, divpng))
+			return(( _("This plugin will be installed."), _("You can cancel the installation."), installpng, divpng))
 		elif state == 'remove':
-			return(( _("This plugin will be removed.")), _("You can cancel the removal.")), removepng, divpng))
+			return(( _("This plugin will be removed."), _("You can cancel the removal."), removepng, divpng))
 
 	def exit(self):
 		self.close()

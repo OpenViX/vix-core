@@ -65,6 +65,7 @@ class VIXCronManager(Screen):
 		self['lab2'] = Label(_("Current Status:"))
 		self['labstop'] = Label(_("Stopped"))
 		self['labrun'] = Label(_("Running"))
+		self['key'] = Label(_("H: = Hourly / D: = Daily / W: = Weekly / M: = Monthly"))
 		self.Console = Console()
 		self.my_crond_active = False
 		self.my_crond_run = False

@@ -574,7 +574,7 @@ class VIXBackupManagerMenu(ConfigListScreen, Screen):
 	def backupfiles_choosen(self, ret):
 		self.backupdirs = ' '.join( config.backupmanager.backupdirs.value )
 		config.backupmanager.backupdirs.save()
-		config.plugins.configurationbackup.save()
+		config.backupmanager.save()
 		config.save()
 
 class VIXBackupManagerLogView(Screen):

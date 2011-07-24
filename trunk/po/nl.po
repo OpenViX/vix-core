@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plugins 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-19 17:54+0100\n"
-"PO-Revision-Date: 2011-07-19 19:14+0100\n"
+"PO-Revision-Date: 2011-07-22 15:30+0100\n"
 "Last-Translator: R.L. van der Does <robvddoes@gmail.com>\n"
 "Language-Team: none\n"
 "Language: nl\n"
@@ -545,7 +545,7 @@ msgid "Mount: "
 msgstr "Mount: "
 
 msgid "Moving to Backup Location..."
-msgstr "Verplaatsen naar Backup lokatie"
+msgstr "Verplaatsen naar Backup locatie"
 
 msgid "Multimedia"
 msgstr "Multimedia"
@@ -618,7 +618,7 @@ msgid "Only extensions."
 msgstr "Alleen extensies"
 
 msgid "Package list update"
-msgstr "Pakkettenlijst update"
+msgstr "Pakketlijst update"
 
 msgid "Packet Manager"
 msgstr "Packet Manager"
@@ -654,10 +654,10 @@ msgid "Predefined"
 msgstr "Vastgesteld"
 
 msgid "Press MENU on your remote control for additional options."
-msgstr "Druk op MENU op uw AB voor extra mogelijkheden."
+msgstr "Druk op MENU voor extra mogelijkheden."
 
 msgid "Press OK on your remote control to continue."
-msgstr "Druk op OK op uw AB om door te gaan."
+msgstr "Druk op OK om door te gaan."
 
 msgid "Process"
 msgstr "Verwerk"
@@ -832,7 +832,7 @@ msgid "Sorry, no Details available!"
 msgstr "Sorry, geen details beschikbaar!"
 
 msgid "Sorry, not enough free ram found, and no phyical devices attached. Can't create Swapfile on network mounts, unable to make backup"
-msgstr "Sorry,er is niet genoeg vrij RAM gevonden, en er zijn geen opslagmedia gevonden. Op een netwerk apparaat kan geen swapfile gemaakt worden; kan dus geen backup maken"
+msgstr "Sorry, er is niet genoeg vrij RAM gevonden en er zijn geen opslagmedia gevonden. Op een netwerk apparaat kan geen swapfile gemaakt worden; kan dus geen backup maken"
 
 msgid "Standby"
 msgstr "Standby"
@@ -871,7 +871,7 @@ msgid "Swap Manager"
 msgstr "Swap Manager"
 
 msgid "Swap Place:"
-msgstr "Swap lokatie:"
+msgstr "Swap locatie:"
 
 msgid "Swap Size:"
 msgstr "Swap grootte:"
@@ -880,7 +880,7 @@ msgid "System"
 msgstr "Systeem"
 
 msgid "The backup location does not have enough freespace."
-msgstr "De backup lokatie heeft niet voldoende vrije ruimte."
+msgstr "De backup locatie heeft niet voldoende vrije ruimte."
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "De gekozen locatie bestaat niet, gebruik nu /media/hdd"

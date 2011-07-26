@@ -91,6 +91,7 @@ class VIXSoftcamManager(Screen):
 		self["key_yellow"] = Button("")
 		self["key_blue"] = Button(_("Autostart"))
 
+		self.currentactivecam = ""
 		self.activityTimer = eTimer()
 		self.activityTimer.timeout.get().append(self.getActivecam)
 		self.Console = Console()
@@ -114,11 +115,11 @@ class VIXSoftcamManager(Screen):
 			current = self["list"].getCurrent()[0]
 			selcam = current[0]
 			print '[SoftcamManager] Selectedcam: ' + str(selcam)
-			if currentactivecam.find(selcam) < 0:
+			if self.currentactivecam.find(selcam) < 0:
 				self["key_green"].setText(_("Start"))
 			else:
 				self["key_green"].setText(_("Stop"))
-			if currentactivecam.find(selcam) < 0:
+			if self.currentactivecam.find(selcam) < 0:
 				self["key_yellow"].setText(_(" "))
 			else:
 				self["key_yellow"].setText(_("Restart"))
@@ -152,17 +153,17 @@ class VIXSoftcamManager(Screen):
 		self.Console.ePopen("ps | grep softcams | grep -v 'grep' | sed 's/</ /g' | awk '{print $5}' | awk '{a[$1] = $0} END { for (x in a) { print a[x] } }' | awk -F'[/]' '{print $4}'", self.showActivecam2)
 
 	def showActivecam2(self, result, retval, extra_args):
-		global currentactivecam
+# 		global self.currentactivecam
 		if retval == 0:
-			currentactivecamtemp = result
-			currentactivecam = "".join([s for s in currentactivecamtemp.splitlines(True) if s.strip("\r\n")])
-			currentactivecam = currentactivecam.replace('\n',', ')
-			print '[SoftcamManager] Active: '  + currentactivecam.replace("\n",", ")
+			self.currentactivecamtemp = result
+			self.currentactivecam = "".join([s for s in self.currentactivecamtemp.splitlines(True) if s.strip("\r\n")])
+			self.currentactivecam = self.currentactivecam.replace('\n',', ')
+			print '[SoftcamManager] Active: '  + self.currentactivecam.replace("\n",", ")
 			if path.exists('/tmp/SoftcamsScriptsRunning'):
 				SoftcamsScriptsRunning = file('/tmp/SoftcamsScriptsRunning').read()
 				SoftcamsScriptsRunning = SoftcamsScriptsRunning.replace('\n',', ')
-				currentactivecam = currentactivecam + SoftcamsScriptsRunning
-			self['activecam'].setText(currentactivecam)
+				self.currentactivecam = self.currentactivecam + SoftcamsScriptsRunning
+			self['activecam'].setText(self.currentactivecam)
 			self['activecam'].show()
 		else:
 			print 'RESULT FAILED: ' + str(result)
@@ -173,9 +174,9 @@ class VIXSoftcamManager(Screen):
 		if cams:
 			self.sel = self['list'].getCurrent()[0]
 			selectedcam = self.sel[0]
-			if currentactivecam.find(selectedcam) < 0:
+			if self.currentactivecam.find(selectedcam) < 0:
 				if selectedcam.lower().startswith('cccam') and path.exists('/etc/CCcam.cfg') == True:
-					if currentactivecam.lower().find('mgcam') < 0:
+					if self.currentactivecam.lower().find('mgcam') < 0:
 						self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 					else:
 						self.session.open(MessageBox, _("CCcam can't run whilst MGcamd is running"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
@@ -192,7 +193,7 @@ class VIXSoftcamManager(Screen):
 				elif selectedcam.lower().startswith('mgcam') and path.exists('/var/keys/mg_cfg') == True:
 					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 				elif selectedcam.lower().startswith('mgcam') and path.exists('/var/keys/mg_cfg') == False:
-					if currentactivecam.lower().find('cccam') < 0:
+					if self.currentactivecam.lower().find('cccam') < 0:
 						self.session.open(MessageBox, _("No config files found, please setup MGcamd first\nin /var/keys"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 					else:
 						self.session.open(MessageBox, _("MGcamd can't run whilst CCcam is running"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
@@ -211,7 +212,7 @@ class VIXSoftcamManager(Screen):
 			self.Console.ePopen("pidof " + selectedcam, self.keyRestart)
 
 	def keyRestart(self, result, retval, extra_args):
-		strpos = currentactivecam.find(selectedcam)
+		strpos = self.currentactivecam.find(selectedcam)
 		if strpos < 0:
 			return
 		else:
@@ -227,7 +228,7 @@ class VIXSoftcamManager(Screen):
 			else:
 				print 'RESULT FAILED: ' + str(result)
 			if selectedcam.lower().startswith('cccam') and path.exists('/etc/CCcam.cfg') == True:
-				if currentactivecam.lower().find('mgcam') < 0:
+				if self.currentactivecam.lower().find('mgcam') < 0:
 					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 				else:
 					self.session.open(MessageBox, _("CCcam can't run whilst MGcamd is running"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
@@ -242,7 +243,7 @@ class VIXSoftcamManager(Screen):
 			elif selectedcam.lower().startswith('mgcam') and path.exists('/var/keys/mg_cfg') == True:
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 			elif selectedcam.lower().startswith('mgcam') and path.exists('/var/keys/mg_cfg') == False:
-				if currentactivecam.lower().find('cccam') < 0:
+				if self.currentactivecam.lower().find('cccam') < 0:
 					self.session.open(MessageBox, _("No config files found, please setup MGcamd first\nin /var/keys"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 				else:
 					self.session.open(MessageBox, _("MGcamd can't run whilst CCcam is running"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)

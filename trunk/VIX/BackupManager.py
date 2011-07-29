@@ -28,8 +28,9 @@ from os import path, system, unlink, stat, mkdir, popen, makedirs, chdir, getcwd
 import datetime
 from shutil import rmtree, move, copy
 from time import localtime, time, strftime, mktime, sleep
-from datetime import date
+from datetime import date, datetime
 from enigma import eTimer
+import tarfile
 
 autoBackupManagerTimer = None
 
@@ -231,7 +232,10 @@ class VIXBackupManager(Screen):
 		self.session.openWithCallback(self.setupDone, VIXBackupManagerMenu)
 
 	def showLog(self):
-		self.session.open(VIXBackupManagerLogView)
+		self.sel = self['list'].getCurrent()
+		if self.sel:
+			filename = self.BackupDirectory + self.sel
+			self.session.open(VIXBackupManagerLogView, filename)
 
 	def setupDone(self):
 		self.populate_List()
@@ -362,9 +366,6 @@ class VIXBackupManager(Screen):
 	def doRestorePlugins4(self, result):
 		self.RestoreConsole = Console()
 		self.RestoreConsole.ePopen("killall -9 enigma2")
-
-
-
 
 	def myclose(self):
 		self.close()
@@ -582,11 +583,22 @@ class VIXBackupManagerLogView(Screen):
 <screen name="VIXBackupManagerLogView" position="center,center" size="560,400" title="Backup Log" >
 	<widget name="list" position="0,0" size="560,400" font="Regular;16" />
 </screen>"""
-	def __init__(self, session):
+	def __init__(self, session, filename):
 		self.session = session
 		Screen.__init__(self, session)
+		Screen.setTitle(self, _("Backup Manager Log"))
 		self.skinName = "VIXBackupManagerLogView"
-		self["list"] = ScrollLabel(config.backupmanager.lastlog.value)
+		filedate = str(date.fromtimestamp(stat(filename).st_mtime))
+		backuplog = _('Backup') + _('created') + ': ' + filedate + '\n\n'
+		tar = tarfile.open(filename, "r")
+		contents = ""
+		for tarinfo in tar:
+			file = tarinfo.name
+			contents += str(file) + '\n'
+		tar.close()
+		backuplog = backuplog + contents
+
+		self["list"] = ScrollLabel(str(backuplog))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "DirectionActions"],
 		{
 			"cancel": self.cancel,
@@ -817,6 +829,11 @@ class BackupFiles(Screen):
 		self.Stage1Completed = True
 
 	def Stage2(self):
+		print 'STAGE2'
+		output = open('/var/log/backupmanager.log','w')
+		now = datetime.now()
+		output.write(now.strftime("%Y-%m-%d %H:%M") + ": Backup Started\n")
+		output.close()
 		self.BackupConsole = Console()
 		self.backupdirs = ' '.join(config.backupmanager.backupdirs.value)
 		print '[BackupManager] Renaming old backup'
@@ -832,14 +849,12 @@ class BackupFiles(Screen):
 		self.Stage2Completed = True
 
 	def Stage3(self):
+		print 'STAGE3'
 		self.BackupConsole = Console()
 		print '[BackupManager] Listing installed plugins'
 		self.BackupConsole.ePopen('opkg list-installed', self.Stage3Complete)
 
 	def Stage3Complete(self, result, retval, extra_args):
-		print 'result',result
-		print 'retval',retval
-		print 'extra_args',extra_args
 		if retval == 0:
 			output = open('/tmp/ExtraInstalledPlugins','w')
 			output.write(result)
@@ -859,11 +874,14 @@ class BackupFiles(Screen):
 		tmplist.append('/tmp/ExtraInstalledPlugins')
 		self.backupdirs = ' '.join(tmplist)
 		print '[BackupManager] Backup running'
-		self.BackupConsole.ePopen('tar -czvf ' + self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz ' + self.backupdirs, self.Stage4Complete)
+		tar = tarfile.open(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz', "w:gz")
+		# turn the three test files into a tar archive
+		for name in tmplist:
+			tar.add(name)
+		tar.close()
+		self.Stage4Complete()
 
-	def Stage4Complete(self, result, retval, extra_args):
-		config.backupmanager.lastlog.setValue(result)
-		config.backupmanager.lastlog.save()
+	def Stage4Complete(self):
 		if fileExists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
 			print '[BackupManager] Complete.'
 			remove('/tmp/ExtraInstalledPlugins')

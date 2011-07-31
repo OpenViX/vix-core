@@ -34,6 +34,21 @@ import tarfile
 
 autoBackupManagerTimer = None
 
+MONTHS = (_("January"),
+          _("February"),
+          _("March"),
+          _("April"),
+          _("May"),
+          _("June"),
+          _("July"),
+          _("August"),
+          _("September"),
+          _("October"),
+          _("November"),
+          _("December"))
+
+dayOfWeek = (_("Mon"), _("Tue"), _("Wed"), _("Thu"), _("Fri"), _("Sat"), _("Sun"))
+
 def BackupManagerautostart(reason, session=None, **kwargs):
 	"called with reason=1 to during /sbin/shutdown.sysvinit, with reason=0 at startup?"
 	global autoBackupManagerTimer
@@ -91,7 +106,8 @@ class VIXBackupManager(Screen):
 		self.activityTimer.start(10)
 
 		if BackupTime > 0:
-			backuptext = _("Next Backup: ") + strftime("%c", localtime(BackupTime))
+			t = localtime(BackupTime)
+			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " " + MONTHS[t[1]-1] + ", " + str(t[2]) + "  %02d:%02d" % (t.tm_hour, t.tm_min)
 		else:
 			backuptext = _("Next Backup: ")
 		self["backupstatus"].setText(str(backuptext))
@@ -254,7 +270,8 @@ class VIXBackupManager(Screen):
 				print "[BackupManager] Backup Schedule Disabled at", strftime("%c", localtime(now))
 				autoBackupManagerTimer.backupstop()
 		if BackupTime > 0:
-			backuptext = _("Next Backup: ") + strftime("%c", localtime(BackupTime))
+			t = localtime(BackupTime)
+			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " " + MONTHS[t[1]-1] + ", " + str(t[2]) + "  %02d:%02d" % (t.tm_hour, t.tm_min)
 		else:
 			backuptext = _("Next Backup: ")
 		self["backupstatus"].setText(str(backuptext))
@@ -522,7 +539,7 @@ class VIXBackupManagerMenu(ConfigListScreen, Screen):
 
 	# for summary:
 	def changedEntry(self):
-		if self["config"].getCurrent()[0] == "Schedule Backups":
+		if self["config"].getCurrent()[0] == _("Schedule Backups"):
 			self.createSetup()
 		for x in self.onChangedEntry:
 			x()
@@ -535,7 +552,7 @@ class VIXBackupManagerMenu(ConfigListScreen, Screen):
 
 	def KeyText(self):
 		if self['config'].getCurrent():
-			if self['config'].getCurrent()[0] == "Folder prefix":
+			if self['config'].getCurrent()[0] == _("Folder prefix"):
 				from Screens.VirtualKeyBoard import VirtualKeyBoard
 				self.session.openWithCallback(self.VirtualKeyBoardCallback, VirtualKeyBoard, title = self["config"].getCurrent()[0], text = self["config"].getCurrent()[1].getValue())
 

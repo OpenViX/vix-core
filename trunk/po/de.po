@@ -370,10 +370,10 @@ msgid "Deselect"
 msgstr "Abwählen"
 
 msgid "Details for plugin: "
-msgstr "Plugin-Details:"
+msgstr "Plugin-Details: "
 
 msgid "Device: "
-msgstr "Gerät:"
+msgstr "Gerät: "
 
 msgid "Device: None available"
 msgstr "Gerät: Nicht verfügbar"
@@ -556,7 +556,7 @@ msgid "Mount Manager"
 msgstr "Mount-Manager"
 
 msgid "Mount: "
-msgstr "Mount:"
+msgstr "Mount: "
 
 msgid "Moving to Backup Location..."
 msgstr "An Sicherungsspeicherort verschieben..."
@@ -571,7 +571,7 @@ msgid "New Backup"
 msgstr "Neue Sicherung"
 
 msgid "Next Backup: "
-msgstr "Nächste Sicherung:"
+msgstr "Nächste Sicherung: "
 
 msgid "Next Deep Standby: \n"
 msgstr "Nächster Deep-Standby: \n"
@@ -821,7 +821,7 @@ msgid "Shut-down."
 msgstr "Herunterfahren."
 
 msgid "Size: "
-msgstr "Größe:"
+msgstr "Größe: "
 
 msgid "Skins"
 msgstr "Skins"
@@ -983,7 +983,7 @@ msgid "Tuesday"
 msgstr "Dienstag"
 
 msgid "Type: "
-msgstr "Typ:"
+msgstr "Typ: "
 
 msgid "Undo install"
 msgstr "Installation wiederrufen"

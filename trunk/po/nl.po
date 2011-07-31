@@ -230,7 +230,7 @@ msgstr ""
 " "
 
 msgid "Author: "
-msgstr "Auteur"
+msgstr "Auteur: "
 
 msgid "Autostart"
 msgstr "Autostart"
@@ -571,7 +571,7 @@ msgid "New Backup"
 msgstr "Nieuwe Backup"
 
 msgid "Next Backup: "
-msgstr "Volgende Backup"
+msgstr "Volgende Backup: "
 
 msgid "Next Deep Standby: \n"
 msgstr "Volgende Deep Standby: \n"
@@ -821,7 +821,7 @@ msgid "Shut-down."
 msgstr "Afskuiten."
 
 msgid "Size: "
-msgstr "Afmetingen:"
+msgstr "Afmetingen: "
 
 msgid "Skins"
 msgstr "Skins"

@@ -606,7 +606,7 @@ class VIXBackupManagerLogView(Screen):
 		Screen.setTitle(self, _("Backup Manager Log"))
 		self.skinName = "VIXBackupManagerLogView"
 		filedate = str(date.fromtimestamp(stat(filename).st_mtime))
-		backuplog = _('Backup') + _('created') + ': ' + filedate + '\n\n'
+		backuplog = _('Backup Created') + ': ' + filedate + '\n\n'
 		tar = tarfile.open(filename, "r")
 		contents = ""
 		for tarinfo in tar:

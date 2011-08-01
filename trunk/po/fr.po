@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-19 17:54+0100\n"
+"POT-Creation-Date: 2011-08-01 17:41+0100\n"
 "PO-Revision-Date: 2011-07-11 16:05+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,18 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=ASCII\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-msgid ""
-"\n"
-"ALL THE DATA ON THIS PARTITION WILL BE LOST!\n"
-" Are you sure to continue?"
-msgstr ""
-
-msgid ""
-"\n"
-"ALL THE DATA WILL BE LOST!\n"
-"Are you sure to continue?"
-msgstr ""
 
 msgid ""
 "\n"
@@ -155,6 +143,9 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+msgid "April"
+msgstr ""
+
 msgid "Are you ready to create a backup ?"
 msgstr ""
 
@@ -173,6 +164,11 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Are you sure you want to delete this:\n"
+" "
+msgstr ""
+
+msgid ""
 "Are you sure you want to restore this backup:\n"
 " "
 msgstr ""
@@ -180,6 +176,9 @@ msgstr ""
 msgid ""
 "Are you sure you want to restore this image:\n"
 " "
+msgstr ""
+
+msgid "August"
 msgstr ""
 
 msgid "Author: "
@@ -209,10 +208,16 @@ msgstr ""
 msgid "Backup Confirmation"
 msgstr ""
 
+msgid "Backup Created"
+msgstr ""
+
 msgid "Backup Location"
 msgstr ""
 
 msgid "Backup Manager"
+msgstr ""
+
+msgid "Backup Manager Log"
 msgstr ""
 
 msgid "Backup Manager Setup"
@@ -305,6 +310,9 @@ msgstr ""
 msgid "Deactivate"
 msgstr ""
 
+msgid "December"
+msgstr ""
+
 msgid "Deep Standby Time"
 msgstr ""
 
@@ -324,11 +332,6 @@ msgid "Device: "
 msgstr ""
 
 msgid "Device: None available"
-msgstr ""
-
-msgid ""
-"Devices changes need a system restart to take effects.\n"
-"Restart your Box now?"
 msgstr ""
 
 msgid "Disable Startup"
@@ -407,19 +410,22 @@ msgstr ""
 msgid "Extensions management"
 msgstr ""
 
+msgid "February"
+msgstr ""
+
 msgid "Folder prefix"
 msgstr ""
 
 msgid "Following tasks will be done after you press OK!"
 msgstr ""
 
-msgid "Format"
-msgstr ""
-
 msgid "Found none stanadard softcam, trying to start, this may fail"
 msgstr ""
 
 msgid "Found none standard softcam, trying to start, this may fail"
+msgstr ""
+
+msgid "Fri"
 msgstr ""
 
 msgid "Friday"
@@ -479,6 +485,15 @@ msgstr ""
 msgid "Installing..."
 msgstr ""
 
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
 msgid "MB"
 msgstr ""
 
@@ -488,6 +503,15 @@ msgstr ""
 msgid "Manage Extensions"
 msgstr ""
 
+msgid "March"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "Mon"
+msgstr ""
+
 msgid "Monday"
 msgstr ""
 
@@ -495,6 +519,9 @@ msgid "Monthly"
 msgstr ""
 
 msgid "Mount Manager"
+msgstr ""
+
+msgid "Mount failed"
 msgstr ""
 
 msgid "Mount: "
@@ -560,7 +587,13 @@ msgstr ""
 msgid "None"
 msgstr ""
 
+msgid "November"
+msgstr ""
+
 msgid "OK"
+msgstr ""
+
+msgid "October"
 msgstr ""
 
 msgid "Only extensions."
@@ -652,9 +685,6 @@ msgstr ""
 msgid "Renaming old backup..."
 msgstr ""
 
-msgid "Repartition Device"
-msgstr ""
-
 msgid "Repeat how often"
 msgstr ""
 
@@ -662,9 +692,6 @@ msgid "Restart"
 msgstr ""
 
 msgid "Restart Enigma2."
-msgstr ""
-
-msgid "Restart box."
 msgstr ""
 
 msgid "Restore"
@@ -694,6 +721,9 @@ msgid "Run how often ?"
 msgstr ""
 
 msgid "Running"
+msgstr ""
+
+msgid "Sat"
 msgstr ""
 
 msgid "Satellite equipment"
@@ -736,6 +766,9 @@ msgid "Select the Swap File Size:"
 msgstr ""
 
 msgid "Select:"
+msgstr ""
+
+msgid "September"
 msgstr ""
 
 msgid "Setting Up..."
@@ -808,6 +841,9 @@ msgstr ""
 msgid "Stopped"
 msgstr ""
 
+msgid "Sun"
+msgstr ""
+
 msgid "Sunday"
 msgstr ""
 
@@ -836,16 +872,6 @@ msgid "The backup location does not have enough freespace."
 msgstr ""
 
 msgid "The chosen location does not exist, using /media/hdd"
-msgstr ""
-
-msgid ""
-"The device in now formatted to ext3\n"
-"Press ok to continue"
-msgstr ""
-
-msgid ""
-"The device in now formatted.\n"
-"Press ok to continue"
 msgstr ""
 
 msgid ""
@@ -879,6 +905,9 @@ msgstr ""
 msgid "This plugin will be removed."
 msgstr ""
 
+msgid "Thu"
+msgstr ""
+
 msgid "Thursday"
 msgstr ""
 
@@ -889,6 +918,9 @@ msgid "Time to execute command or script"
 msgstr ""
 
 msgid "Trying to download a new packetlist. Please wait..."
+msgstr ""
+
+msgid "Tue"
 msgstr ""
 
 msgid "Tuesday"
@@ -995,10 +1027,7 @@ msgstr ""
 msgid "Wait please while scanning..."
 msgstr ""
 
-msgid "Warning you are going to format\n"
-msgstr ""
-
-msgid "Warning you are going to format "
+msgid "Wed"
 msgstr ""
 
 msgid "Wednesday"
@@ -1077,6 +1106,9 @@ msgstr ""
 msgid ""
 "Your receiver isn't connected to the internet properly. Please check it and "
 "try again."
+msgstr ""
+
+msgid "unavailable"
 msgstr ""
 
 msgid "unknown"

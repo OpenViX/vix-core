@@ -331,6 +331,13 @@ class VIXCronManager(Screen):
 		self['list'].list = self.list
 
 	def delcron(self):
+		self.sel = self['list'].getCurrent()
+		if self.sel:
+			message = _("Are you sure you want to delete this:\n ") + self.sel
+			ybox = self.session.openWithCallback(self.doDelCron, MessageBox, message, MessageBox.TYPE_YESNO)
+			ybox.setTitle(_("Remove Confirmation"))
+
+	def doDelCron(self):
 		mysel = self['list'].getCurrent()
 		if mysel:
 			myline = mysel[1]

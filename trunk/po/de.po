@@ -73,7 +73,7 @@ msgid ""
 "Manage your backups of your settings."
 msgstr ""
 "\n"
-"Einstellungs-Backups verwalten."
+"Backups der Einstellungen verwalten."
 
 msgid ""
 "\n"
@@ -87,7 +87,7 @@ msgid ""
 "Online update of your Receiver software."
 msgstr ""
 "\n"
-"Online-Update der Receiver-Software."
+"Online-Softwareupdate"
 
 msgid ""
 "\n"
@@ -172,7 +172,7 @@ msgid "Active"
 msgstr "Aktiv"
 
 msgid "Active:"
-msgstr "Active:"
+msgstr "Aktiv:"
 
 msgid "Add"
 msgstr "Hinzufügen"
@@ -184,7 +184,7 @@ msgid "Are you ready to create a backup ?"
 msgstr "Sicherung jetzt erstellen?"
 
 msgid "Are you ready to create a backup image ?"
-msgstr "Sicherungs-Image jetzt erstellen? "
+msgstr "Image jetzt erstellen? "
 
 msgid "Are you ready to install ?"
 msgstr "Jetzt installieren?"
@@ -203,7 +203,7 @@ msgid ""
 "Are you sure you want to delete this:\n"
 " "
 msgstr ""
-""
+"Diese jetzt löschen:\n"
 " "
 
 msgid ""
@@ -263,7 +263,7 @@ msgid "Backup Manager Log"
 msgstr "Backup-Manager Log"
 
 msgid "Backup Manager Setup"
-msgstr "Einstellungen Sicherungs-Manager"
+msgstr "Einstellungen Backup-Manager"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Sicherung fehlgeschlagen - z.B. falscher Sicherungsort oder zu wenig freier Speicher auf dem Sicherungslaufwerk "
@@ -276,7 +276,7 @@ msgstr ""
 "Bitte vor neuem Versuch Beendigung abwarten"
 
 msgid "BackupManager"
-msgstr "Sicherungs-Manager"
+msgstr "Backup-Manager"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "Während MGcamd läuft kann CCcam nicht ausgeführt werden"
@@ -303,13 +303,13 @@ msgid "Close"
 msgstr "Schließen"
 
 msgid "Command To Run"
-msgstr "Befehl zum ausführen"
+msgstr "Befehl zum Ausführen"
 
 msgid "Command type"
 msgstr "Befehlsart"
 
 msgid "CommonInterface"
-msgstr "CommonInterface"
+msgstr "Common Interface"
 
 msgid "Communication"
 msgstr "Kommunikation"
@@ -339,7 +339,7 @@ msgid "Cron Manager"
 msgstr "Cron-Manager"
 
 msgid "Current Status:"
-msgstr "Derzeitiger Status:"
+msgstr "Status:"
 
 msgid "Custom"
 msgstr "Benutzerdefiniert"
@@ -448,7 +448,7 @@ msgid "Extended Software Plugin"
 msgstr "Erweiterte Software-Plugins"
 
 msgid "Extensions management"
-msgstr "Erweiterungs-Management"
+msgstr "Erweiterungs-Verwaltung"
 
 msgid "February"
 msgstr "Februar"
@@ -457,13 +457,13 @@ msgid "Folder prefix"
 msgstr "Ordner-Präfix"
 
 msgid "Following tasks will be done after you press OK!"
-msgstr "Folgende Aufgaben werden nach drücken von OK ausgeführt!"
+msgstr "Folgende Aufgaben werden nach Drücken von OK ausgeführt!"
 
 msgid "Found none stanadard softcam, trying to start, this may fail"
-msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl "
+msgstr "Unbekanntes Softcam gefunden. Startversuch, könnte fehlschlagen"
 
 msgid "Found none standard softcam, trying to start, this may fail"
-msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl"
+msgstr "Unbekanntes Softcam gefunden. Startversuch, könnte fehlschlagen"
 
 msgid "Fri"
 msgstr "Fr."
@@ -478,10 +478,10 @@ msgid "GUI Restart Time"
 msgstr "Zeit für GUI-Neustart"
 
 msgid "H: = Hourly / D: = Daily / W: = Weekly / M: = Monthly"
-msgstr "H: = stündlich / D: = täglich / W: = wöchentlich / M: = monatlich"
+msgstr "H: = stündl. / D: = tägl. / W: = wöch. / M: = monatl."
 
 msgid "HARD DISK: "
-msgstr "FESTPLATTE:"
+msgstr "Festplatte:"
 
 msgid "Hourly"
 msgstr "Stündlich"
@@ -511,7 +511,7 @@ msgid "Install Confirmation"
 msgstr "Bestätigung der Installation"
 
 msgid "Install local extension"
-msgstr "Lokale Erweiterung installieren"
+msgstr "Lokale IPK-Datei installieren"
 
 msgid "Install or remove finished."
 msgstr "Installation oder Entfernung abgeschlossen."
@@ -629,7 +629,7 @@ msgid "No network connection available."
 msgstr "Keine Netzwerkverbindung verfügbar."
 
 msgid "No packages were upgraded yet. So you can check your network and try again."
-msgstr "Es wurden noch keine Pakete aktualisiert. Das Netzwerk kann überprüft und nochmals versucht werden. "
+msgstr "Es wurden noch keine Pakete aktualisiert. Das Netzwerk kann überprüft werden und erneut versuchen. "
 
 msgid "None"
 msgstr "Keine"
@@ -671,7 +671,7 @@ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left o
 msgstr "Auflistung der Plugins fehlgeschlagen - z.B. falscher Sicherungsspeicherort oder ungenügend Speicher auf dem Sicherungslaufwerk"
 
 msgid "Plugin manager activity information"
-msgstr "Aktivitäten-Information Plugin-Manager"
+msgstr "Plugin-Manager Aktivitätsinfo"
 
 msgid "Plugin manager help"
 msgstr "Hilfe Plugin-Manager"
@@ -686,7 +686,7 @@ msgid "Press MENU on your remote control for additional options."
 msgstr "Für weitere Optionen MENU auf der Fernbedienung drücken. "
 
 msgid "Press OK on your remote control to continue."
-msgstr "Zum fortfahren OK auf der Fernbedienung drücken"
+msgstr "Zum Fortfahren OK auf der Fernbedienung drücken"
 
 msgid "Process"
 msgstr "Verarbeiten"
@@ -695,7 +695,7 @@ msgid "Re-install Plugins"
 msgstr "Plugins neu installieren"
 
 msgid "Really close without saving settings?"
-msgstr "Wirklich ohne speichern der Einstellungen beenden?"
+msgstr "Wirklich ohne Speichern der Einstellungen beenden?"
 
 msgid "Reboot"
 msgstr "Neustart"
@@ -752,7 +752,7 @@ msgid "Restore wizard has detected that you had extra plugins installed at the t
 msgstr "Der Wiederherstellungs-Wizard hat festgestellt, dass zum Zeitpunkt der Sicherung zusätzliche Plugins installiert waren. Sollen diese Plugins neu installiert werden?"
 
 msgid "Retry after cancel (mins)"
-msgstr "Nach Abbruch (Min) wiederholen"
+msgstr "Wiviele (Min) nach Abbruch wiederholen"
 
 msgid "Run"
 msgstr "Ausführen"
@@ -782,7 +782,7 @@ msgid "Schedule Backups"
 msgstr "Zeitgeplante Sicherungen"
 
 msgid "Script Runner"
-msgstr "Script-Runner"
+msgstr "Script ausführen"
 
 msgid "Script Running"
 msgstr "Skript wird ausgeführt"
@@ -800,10 +800,10 @@ msgid "Select a package to install:"
 msgstr "Paket zur Installation wählen:"
 
 msgid "Select a script to run:"
-msgstr "Skript zum ausführen auswählen:"
+msgstr "Script zum Ausführen auswählen:"
 
 msgid "Select files/folders to backup"
-msgstr "Dateien/ordner zur Sicherung auswählen"
+msgstr "Dateien/Ordner zur Sicherung auswählen"
 
 msgid "Select the Swap File Size:"
 msgstr "Größe der Auslagerungsdatei auswählen:"
@@ -854,8 +854,8 @@ msgid ""
 "Sorry you have Debug Logs enabed,\n"
 "Please disable and restart GUI, before trying again"
 msgstr ""
-"Leider sind keine Debug Logs akltiviert,\n"
-"Bitte vor erneutem Versuch deaktivieren und GUI neu starten"
+"Leider sind keine Debug Logs aktiviert,\n"
+"bitte vor erneutem Versuch deaktivieren und GUI neu starten"
 
 msgid "Sorry, no Details available!"
 msgstr "Leider keine Details verfügbar!"
@@ -867,7 +867,7 @@ msgid "Standby"
 msgstr "Standby"
 
 msgid "Standby Time"
-msgstr "Uhrzeit Standby"
+msgstr "Uhrzeit für Standby"
 
 msgid "Start"
 msgstr "Start"
@@ -891,7 +891,7 @@ msgid "Sunday"
 msgstr "Sontag"
 
 msgid "Swap File creation Failed. Check for Available space."
-msgstr "AUslagerungsdatei konnte nicht erstellt werden. Bitte verfügbaren Speicher prüfen."
+msgstr "Auslagerungsdatei konnte nicht erstellt werden. Bitte verfügbaren Speicher prüfen."
 
 msgid "Swap File not found. You have to create the file before to activate."
 msgstr "Auslagerungsdatei nicht gefunden. Vor Aktivierung muss die Datei erstellt werden-"
@@ -957,13 +957,13 @@ msgid "Time of Backup to start"
 msgstr "Startzeit der Sicherung"
 
 msgid "Time to execute command or script"
-msgstr "Startzeit für Befehls- / Skriptausführung"
+msgstr "Startzeit für Befehls- / Scriptausführung"
 
 msgid "Trying to download a new packetlist. Please wait..."
 msgstr "Es wird versucht eine neue Paketliste herunterzuladen. Bitte warten..."
 
 msgid "Tue"
-msgstr "Die."
+msgstr "Di."
 
 msgid "Tuesday"
 msgstr "Dienstag"
@@ -987,7 +987,7 @@ msgid "Updatefeed not available."
 msgstr "Update-Feed nicht verfügbar"
 
 msgid "Updating software catalog"
-msgstr "SOftware-Katalog wird aktualisiert"
+msgstr "Software-Katalog wird aktualisiert"
 
 msgid "Upgrade finished."
 msgstr "Upgrade abgeschlossen"
@@ -1053,7 +1053,7 @@ msgid "View list of available system extensions"
 msgstr "Anzeigen der Liste verfügbarer System-Erweiterungen"
 
 msgid "Wait please while creating swapfile..."
-msgstr "WÄhrend der Erstellung derAUslagerungsdatei bitte warten..."
+msgstr "Während der Erstellung der Auslagerungsdatei bitte warten..."
 
 msgid ""
 "Wait please while scanning\n"
@@ -1102,13 +1102,13 @@ msgid "You have no backup to delete."
 msgstr "Keine Sicherung zum löschen."
 
 msgid "You have no backups to restore."
-msgstr "Keine Sicherungen zum wiederherstellen."
+msgstr "Keine Sicherungen zum Wiederherstellen."
 
 msgid "You have no image to delete."
-msgstr "Kein Image zum löschen"
+msgstr "Kein Image zum Löschen"
 
 msgid "You have no image to restore."
-msgstr "Kein Image zum wiederherstellen"
+msgstr "Kein Image zum Wiederherstellen"
 
 msgid "You have no script to run."
 msgstr "Kein Skript zur Ausführung."
@@ -1121,42 +1121,42 @@ msgid ""
 "Do you want to allow this?"
 msgstr ""
 "Ihr Gerät wird eine Sicherung der Einstellungen anlegen und die aktuellen Plugins feststellen,\n"
-"Wollen Sie das zulassen?"
+"wollen Sie das zulassen?"
 
 msgid ""
 "Your box is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"Ihr Gerät wird ein komplettes Sicherungs-Image anlegen. Die Fertigstellung kann bis zu 6min dauern,\n"
-"Wollen Sie das zulassen?"
+"Ihr Gerät wird ein komplettes Sicherungs-Image anlegen. Die Fertigstellung kann bis zu 6 Min. dauern,\n"
+"wollen Sie das zulassen?"
 
 msgid ""
 "Your box is going for a nightly Reboot,\n"
 "do you want to allow this?"
 msgstr ""
 "Ihr Gerät wird einen nächtlichen Neustart ausführen,\n"
-"Wollen Sie das zulassen?"
+"wollen Sie das zulassen?"
 
 msgid ""
 "Your box is going for nightly GUI Restart,\n"
 "do you want to allow this?"
 msgstr ""
 "Ihr Gerät wird einen nächtlichen GUI-Neustart ausführen,\n"
-"Wollen Sie das zulassen?"
+"wollen Sie das zulassen?"
 
 msgid ""
 "Your box is going for nightly shut-down,\n"
 "do you want to allow this?"
 msgstr ""
 "Ihr Gerät wird sich in der Nacht ausschalten,\n"
-"Wollen Sie das zulassen?"
+"wollen Sie das zulassen?"
 
 msgid ""
 "Your box is going for nightly standby,\n"
 "do you want to allow this?"
 msgstr ""
 "Ihr Gerät wird in der Nacht in Standby gehen,\n"
-"Wollen Sie das zulassen?"
+"wollen Sie das zulassen?"
 
 msgid "Your receiver isn't connected to the internet properly. Please check it and try again."
 msgstr "Der Receiver ist nicht korrekt mit dem Internet verbunden. Bitte prüfen und nochmals versuchen."

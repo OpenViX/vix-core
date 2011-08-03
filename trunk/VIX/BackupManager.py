@@ -107,7 +107,7 @@ class VIXBackupManager(Screen):
 
 		if BackupTime > 0:
 			t = localtime(BackupTime)
-			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " " + MONTHS[t[1]-1] + ", " + str(t[2]) + "  %02d:%02d" % (t.tm_hour, t.tm_min)
+			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " "  + str(t[2]) +  ", " + MONTHS[t[1]-1] + "  %02d:%02d" % (t.tm_hour, t.tm_min)
 		else:
 			backuptext = _("Next Backup: ")
 		self["backupstatus"].setText(str(backuptext))
@@ -271,7 +271,7 @@ class VIXBackupManager(Screen):
 				autoBackupManagerTimer.backupstop()
 		if BackupTime > 0:
 			t = localtime(BackupTime)
-			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " " + MONTHS[t[1]-1] + ", " + str(t[2]) + "  %02d:%02d" % (t.tm_hour, t.tm_min)
+			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " "  + str(t[2]) +  ", " + MONTHS[t[1]-1] + "  %02d:%02d" % (t.tm_hour, t.tm_min)
 		else:
 			backuptext = _("Next Backup: ")
 		self["backupstatus"].setText(str(backuptext))
@@ -330,14 +330,24 @@ class VIXBackupManager(Screen):
 
 	def doRestore(self,answer):
 		if answer is True:
-			self.RestoreConsole = Console()
-			if path.exists("/proc/stb/vmpeg/0/dst_width"):
-				self.commands = ["tar -xzvf " + self.BackupDirectory + self.sel + " -C /", "echo 0 > /proc/stb/vmpeg/0/dst_height", "echo 0 > /proc/stb/vmpeg/0/dst_left", "echo 0 > /proc/stb/vmpeg/0/dst_top", "echo 0 > /proc/stb/vmpeg/0/dst_width"]
-			else:
-				self.commands = ["tar -xzvf " + self.BackupDirectory + self.sel + " -C /"]
-			self.RestoreConsole.eBatch(self.commands, self.doRestorePlugins1, debug=True)
+			from Screens.Console import Console as RestareConsole
+			mycmd1 = "echo '************************************************************************'"
+			if config.misc.boxtype.value.startswith('vu'):
+				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
+			elif config.misc.boxtype.value.startswith('et'):
+				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
+			mycmd3 = "echo '************************************************************************'"
+			mycmd4 = "echo ' '"
+			mycmd5 = _("echo 'Attention:'")
+			mycmd6 = "echo ' '"
+			mycmd7 = _("echo 'Enigma2 will be restarted automatically after the restore progress.'")
+			mycmd8 = "echo ' '"
+			mycmd9 = _("echo 'Restoring.'")
+			mycmd10 = "tar -xzvf " + self.BackupDirectory + self.sel + " -C /"
+			self.session.open(RestareConsole, title=_('Restoring Backup...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10],closeOnSuccess = True)
+			self.doRestorePlugins1()
 
-	def doRestorePlugins1(self, extra_args):
+	def doRestorePlugins1(self):
 		self.RestoreConsole = Console()
 		self.RestoreConsole.ePopen('opkg list-installed', self.doRestorePlugins2)
 
@@ -359,7 +369,7 @@ class VIXBackupManager(Screen):
 				output.close()
 				self.doRestorePluginsQuestion()
 
-	def doRestorePluginsQuestion(self, extra_args = None):
+	def doRestorePluginsQuestion(self):
 		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
 		pluginslist = plugintmp.replace('\n',' ')
 		if pluginslist:
@@ -374,15 +384,27 @@ class VIXBackupManager(Screen):
 		if answer is True:
 			plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
 			pluginslist = plugintmp.replace('\n',' ')
-			self.commands = ["opkg update", "opkg install " + pluginslist, 'rm -f /tmp/ExtraInstalledPlugins', 'rm -f /tmp/trimedExtraInstalledPlugins']
-			self.RestoreConsole.eBatch(self.commands,self.doRestorePlugins4, debug=True)
+			from Screens.Console import Console as RestareConsole
+			mycmd1 = "echo '************************************************************************'"
+			if config.misc.boxtype.value.startswith('vu'):
+				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
+			elif config.misc.boxtype.value.startswith('et'):
+				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
+			mycmd3 = "echo '************************************************************************'"
+			mycmd4 = "echo ' '"
+			mycmd5 = _("echo 'Attention:'")
+			mycmd6 = "echo ' '"
+			mycmd7 = _("echo 'Enigma2 will be restarted automatically after the restore progress.'")
+			mycmd8 = "echo ' '"
+			mycmd9 = _("echo 'Installing Plugins.'")
+			mycmd10 = "opkg update"
+			mycmd11 = "opkg install " + pluginslist
+			mycmd12 = 'rm -f /tmp/trimedExtraInstalledPlugins'
+			mycmd13 = 'killall -9 enigma2'
+			self.session.open(RestareConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
 		else:
 			self.RestoreConsole = Console()
 			self.RestoreConsole.ePopen("killall -9 enigma2")
-
-	def doRestorePlugins4(self, result):
-		self.RestoreConsole = Console()
-		self.RestoreConsole.ePopen("killall -9 enigma2")
 
 	def myclose(self):
 		self.close()

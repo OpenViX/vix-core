@@ -29,6 +29,21 @@ from enigma import eTimer
 
 autoImageManagerTimer = None
 
+MONTHS = (_("January"),
+          _("February"),
+          _("March"),
+          _("April"),
+          _("May"),
+          _("June"),
+          _("July"),
+          _("August"),
+          _("September"),
+          _("October"),
+          _("November"),
+          _("December"))
+
+dayOfWeek = (_("Mon"), _("Tue"), _("Wed"), _("Thu"), _("Fri"), _("Sat"), _("Sun"))
+
 def ImageManagerautostart(reason, session=None, **kwargs):
 	"called with reason=1 to during /sbin/shutdown.sysvinit, with reason=0 at startup?"
 	global autoImageManagerTimer
@@ -85,7 +100,8 @@ class VIXImageManager(Screen):
 		self.activityTimer.start(10)
 
 		if BackupTime > 0:
-			backuptext = _("Next Backup: ") + strftime("%c", localtime(BackupTime))
+			t = localtime(BackupTime)
+			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " "  + str(t[2]) +  ", " + MONTHS[t[1]-1] + "  %02d:%02d" % (t.tm_hour, t.tm_min)
 		else:
 			backuptext = _("Next Backup: ")
 		self["backupstatus"].setText(str(backuptext))
@@ -242,7 +258,8 @@ class VIXImageManager(Screen):
 				print "[ImageManager] Backup Schedule Disabled at", strftime("%c", localtime(now))
 				autoImageManagerTimer.backupstop()
 		if BackupTime > 0:
-			backuptext = _("Next Backup: ") + strftime("%c", localtime(BackupTime))
+			t = localtime(BackupTime)
+			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " "  + str(t[2]) +  ", " + MONTHS[t[1]-1] + "  %02d:%02d" % (t.tm_hour, t.tm_min)
 		else:
 			backuptext = _("Next Backup: ")
 		self["backupstatus"].setText(str(backuptext))
@@ -309,118 +326,77 @@ class VIXImageManager(Screen):
 			self.session.open(MessageBox, _("Backup in progress,\nPlease for it to finish, before trying again"), MessageBox.TYPE_INFO, timeout = 10)
 
 	def RestoreMemCheck(self,answer):
+		if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"):
+			system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup")
+			remove(self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup")
 		if answer is True:
-			try:
-				memcheck_stdout = popen('free | grep Total | tr -s " " | cut -d " " -f 4', "r")
-				memcheck = memcheck_stdout.read()
-				if int(memcheck) < 3000:
-					if not config.imagemanager.backuplocation.value.startswith('/media/net/'):
-						mycmd1 = "echo '************************************************************************'"
-						mycmd2 = "echo 'Creating swapfile'"
-						mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
-						mycmd4 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
-						mycmd5 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
-						mycmd6 = "echo '************************************************************************'"
-						self.session.open(RestareConsole, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doResstore,closeOnSuccess = True)
+			f = open('/proc/meminfo', 'r')
+			for line in f.readlines():
+				if line.find('MemFree') != -1:
+					parts = line.strip().split()
+					memfree = int(parts[1])
+				elif line.find('SwapFree') != -1:
+					parts = line.strip().split()
+					swapfree = int(parts[1])
+			f.close()
+			TotalFree = memfree + swapfree
+			print 'ToalFree',TotalFree
+			if int(TotalFree) < 3000:
+				if not config.imagemanager.backuplocation.value.startswith('/media/net/'):
+					mycmd1 = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
+					mycmd2 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
+					mycmd3 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
+					self.session.open(RestareConsole, title=_("reating swapfile..."), cmdlist=[mycmd1, mycmd2, mycmd3], finishedCallback=self.doResstore,closeOnSuccess = True)
 				else:
-					self.doResstore()
-			except:
-				mycmd1 = "echo '************************************************************************'"
-				mycmd2 = "echo 'Creating swapfile'"
-				mycmd3 = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
-				mycmd4 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
-				mycmd5 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
-				mycmd6 = "echo '************************************************************************'"
-				self.session.open(RestareConsole, title=_("Creating Image..."), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6], finishedCallback=self.doResstore,closeOnSuccess = True)
+					print '[ImageManager] Sorry, not enough free ram found, and no phyical devices attached'
+					self.session.open(MessageBox, _("Sorry, not enough free ram found, and no phyical devices attached. Can't create Swapfile on network mounts, unable to make backup"), MessageBox.TYPE_INFO, timeout = 10)
+					if config.imagemanager.schedule.value:
+						atLeast = 60
+						autoImageManagerTimer.backupupdate(atLeast)
+					else:
+						autoImageManagerTimer.backupstop()
+			else:
+				print '[ImageManager] Stage1: Found Enough Ram'
+				self.doResstore()
 
 	def doResstore(self):
 		NANDWRITE='/usr/bin/nandwrite'
 		selectedimage = self.sel
-		if config.misc.boxtype.value == "vusolo" or config.misc.boxtype.value == "vuduo":
+		if config.misc.boxtype.value.startswith('vu') or config.misc.boxtype.value.startswith('et'):
 			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  " detected'"
+			if config.misc.boxtype.value.startswith('vu'):
+				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
+			elif config.misc.boxtype.value.startswith('et'):
+				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "echo ' '"
-			mycmd5 = "echo 'Attention:'"
+			mycmd5 = _("echo 'Attention:'")
 			mycmd6 = "echo ' '"
-			mycmd7 = "echo 'Your Vuplus will be rebooted automatically after the flashing progress.'"
+			mycmd7 = _("echo 'Your receiver will be rebooted automatically after the flashing progress.'")
 			mycmd8 = "echo ' '"
-			mycmd9 = "echo 'Preparing Flashprogress.'"
-			mycmd10 = "echo 'Erasing Boot aera.'"
-			mycmd11 = 'flash_eraseall -j -q /dev/mtd2'
-			mycmd12 = "echo 'Flasing Boot to NAND.'"
-			mycmd13 = NANDWRITE + ' -p -q /dev/mtd2 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/boot_cfe_auto.jffs2'
-			mycmd14 = "echo 'Erasing Root aera.'"
-			mycmd15 = 'flash_eraseall -j -q /dev/mtd0'
-			mycmd16 = "echo 'Flasing Root to NAND.'"
-			mycmd17 = NANDWRITE + ' -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2'
-			mycmd18 = "echo 'Erasing Kernel aera.'"
-			mycmd19 = 'flash_eraseall -j -q /dev/mtd1'
-			mycmd20 = "echo 'Flasing Kernel to NAND.'"
-			mycmd21 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'
-			mycmd22 = "echo ' '"
-			mycmd23 = "echo 'Flasing Complete\nRebooting.'"
-			mycmd24 = "sleep 2"
-			mycmd25 = "/sbin/shutdown.sysvinit -r now"
-			self.session.open(RestareConsole, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25],closeOnSuccess = True)
-		elif config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
-			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  " detected'"
-			mycmd3 = "echo '************************************************************************'"
-			mycmd4 = "echo ' '"
-			mycmd5 = "echo 'Attention:'"
-			mycmd6 = "echo ' '"
-			mycmd7 = "echo 'Your Vuplus will be rebooted automatically after the flashing progress.'"
-			mycmd8 = "echo ' '"
-			mycmd9 = "echo 'Preparing Flashprogress.'"
-			mycmd10 = "echo 'Erasing Bootsplash aera.'"
-			mycmd11 = 'flash_eraseall -j -q /dev/mtd3'
-			mycmd12 = "echo 'Flasing Bootsplash to NAND.'"
-			mycmd13 = NANDWRITE + ' -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/splash_cfe_auto.bin'
-			mycmd14 = "echo 'Erasing Boot aera.'"
-			mycmd15 = 'flash_eraseall -j -q /dev/mtd2'
-			mycmd16 = "echo 'Flasing Boot to NAND.'"
-			mycmd17 = NANDWRITE + ' -p -q /dev/mtd2 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/boot_cfe_auto.jffs2'
-			mycmd18 = "echo 'Erasing Root aera.'"
-			mycmd19 = 'flash_eraseall -j -q /dev/mtd0'
-			mycmd20 = "echo 'Flasing Root to NAND.'"
-			mycmd21 = NANDWRITE + ' -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2'
-			mycmd22 = "echo 'Erasing Kernel aera.'"
-			mycmd23 = 'flash_eraseall -j -q /dev/mtd1'
-			mycmd24 = "echo 'Flasing Kernel to NAND.'"
-			mycmd25 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'
-			mycmd26 = "echo ' '"
-			mycmd27 = "echo 'Flasing Complete\nRebooting.'"
-			mycmd28 = "sleep 2"
-			mycmd29 = "/sbin/shutdown.sysvinit -r now"
-			self.session.open(RestareConsole, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25, mycmd26, mycmd27, mycmd28, mycmd29],closeOnSuccess = True)
-		elif config.misc.boxtype.value == "et9000" or config.misc.boxtype.value == "et5000":
-			mycmd1 = "echo '************************************************************************'"
-			mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  " detected'"
-			mycmd3 = "echo '************************************************************************'"
-			mycmd4 = "echo ' '"
-			mycmd5 = "echo 'Attention:'"
-			mycmd6 = "echo ' '"
-			mycmd7 = "echo 'Your Xtrend will be rebooted automatically after the flashing progress.'"
-			mycmd8 = "echo ' '"
-			mycmd9 = "echo 'Preparing Flashprogress.'"
-			mycmd10 = "echo 'Erasing Boot aera.'"
-			mycmd11 = 'flash_eraseall -j -q /dev/mtd2'
-			mycmd12 = "echo 'Flasing Boot to NAND.'"
-			mycmd13 = NANDWRITE + ' -p -q /dev/mtd2 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/boot.bin'
-			mycmd14 = "echo 'Erasing Root aera.'"
-			mycmd15 = 'flash_eraseall -j -q /dev/mtd3'
-			mycmd16 = "echo 'Flasing Root to NAND.'"
-			mycmd17 = NANDWRITE + ' -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/rootfs.bin'
-			mycmd18 = "echo 'Erasing Kernel aera.'"
-			mycmd19 = 'flash_eraseall -j -q /dev/mtd1'
-			mycmd20 = "echo 'Flasing Kernel to NAND.'"
-			mycmd21 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/kernel.bin'
-			mycmd22 = "echo ' '"
-			mycmd23 = "echo 'Flasing Complete\nRebooting.'"
-			mycmd24 = "sleep 2"
-			mycmd25 = "/sbin/shutdown.sysvinit -r now"
-			self.session.open(RestareConsole, title='Flashing NAND...', cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21, mycmd22, mycmd23, mycmd24, mycmd25],closeOnSuccess = True)
+			mycmd9 = _("echo 'Preparing Flashprogress.'")
+			mycmd10 = _("echo 'Erasing Root aera.'")
+			if config.misc.boxtype.value.startswith('vu'):
+				mycmd11 = 'flash_eraseall -j -q /dev/mtd0'
+			elif config.misc.boxtype.value.startswith('et'):
+				mycmd11 = 'flash_eraseall -j -q /dev/mtd3'
+			mycmd12 = _("echo 'Flasing Root to NAND.'")
+			if config.misc.boxtype.value.startswith('vu'):
+				mycmd13 = NANDWRITE + ' -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2'
+			elif config.misc.boxtype.value.startswith('et'):
+				mycmd13 = NANDWRITE + ' -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/rootfs.bin'
+			mycmd14 = _("echo 'Erasing Kernel aera.'")
+			mycmd15 = 'flash_eraseall -j -q /dev/mtd1'
+			mycmd16 = _("echo 'Flasing Kernel to NAND.'")
+			if config.misc.boxtype.value.startswith('vu'):
+				mycmd17 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'
+			elif config.misc.boxtype.value.startswith('et'):
+				mycmd17 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/kernel.bin'
+			mycmd18 = "echo ' '"
+			mycmd19 = _("echo 'Flasing Complete\nRebooting.'")
+			mycmd20 = "sleep 2"
+			mycmd21 = "/sbin/shutdown.sysvinit -r now"
+			self.session.open(RestareConsole, title=_('Flashing NAND...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21],closeOnSuccess = True)
 
 	def myclose(self):
 		self.close()
@@ -494,12 +470,14 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 		if config.imagemanager.schedule.value:
 			self.list.append(getConfigListEntry(_("Time of Backup to start"), config.imagemanager.scheduletime))
 			self.list.append(getConfigListEntry(_("Repeat how often"), config.imagemanager.repeattype))
+		self.list.append(getConfigListEntry(_("Enable Debug log"), config.crash.enabledebug))
+
 		self["config"].list = self.list
 		self["config"].setList(self.list)
 
 	# for summary:
 	def changedEntry(self):
-		if self["config"].getCurrent()[0] == "Schedule Backups":
+		if self["config"].getCurrent()[0] == _("Schedule Backups"):
 			self.createSetup()
 		for x in self.onChangedEntry:
 			x()
@@ -512,7 +490,7 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 
 	def KeyText(self):
 		if self['config'].getCurrent():
-			if self['config'].getCurrent()[0] == "Folder prefix":
+			if self['config'].getCurrent()[0] == _("Folder prefix"):
 				from Screens.VirtualKeyBoard import VirtualKeyBoard
 				self.session.openWithCallback(self.VirtualKeyBoardCallback, VirtualKeyBoard, title = self["config"].getCurrent()[0], text = self["config"].getCurrent()[1].getValue())
 
@@ -746,9 +724,9 @@ class ImageBackup(Screen):
 		try:
 			if not path.exists(self.BackupDirectory):
 				mkdir(self.BackupDirectory, 0755)
-			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
-				remove(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
+			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"):
+				system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup")
+				remove(self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup")
 		except Exception,e:
 			print str(e)
 			print "Device: " + config.imagemanager.backuplocation.value + ", i don't seem to have write access to this device."
@@ -761,36 +739,34 @@ class ImageBackup(Screen):
 			self.MemCheck()
 
 	def MemCheck(self):
-		self.MemCheckConsole = Console()
-		cmd = 'free | grep Total | tr -s " " | cut -d " " -f 4'
-		self.MemCheckConsole.ePopen(cmd, self.MemCheck1)
-
-	def MemCheck1(self, result, retval, extra_args = None):
-		if retval == 0:
-			if int(result) < 3000:
-				if not config.imagemanager.backuplocation.value.startswith('/media/net/'):
-					print '[ImageManager] Stage1: Creating Swapfile.'
-					self.RamChecked = True
-					self.MemCheck2()
-				else:
-					print '[ImageManager] Sorry, not enough free ram found, and no phyical devices attached'
-					self.session.open(MessageBox, _("Sorry, not enough free ram found, and no phyical devices attached. Can't create Swapfile on network mounts, unable to make backup"), MessageBox.TYPE_INFO, timeout = 10)
-					if config.imagemanager.schedule.value:
-						atLeast = 60
-						autoImageManagerTimer.backupupdate(atLeast)
-					else:
-						autoImageManagerTimer.backupstop()
-			else:
-				print '[ImageManager] Stage1: Found Enough Ram'
+		f = open('/proc/meminfo', 'r')
+		for line in f.readlines():
+			if line.find('MemFree') != -1:
+				parts = line.strip().split()
+				memfree = int(parts[1])
+			elif line.find('SwapFree') != -1:
+				parts = line.strip().split()
+				swapfree = int(parts[1])
+		f.close()
+		TotalFree = memfree + swapfree
+		print '[ImageManager] Stage1: Free Mem',TotalFree
+		if int(TotalFree) < 3000:
+			if not config.imagemanager.backuplocation.value.startswith('/media/net/'):
+				print '[ImageManager] Stage1: Creating Swapfile.'
 				self.RamChecked = True
-				self.SwapCreated = True
-		else:
-			print '[ImageManager] Stage1: Free Ram chack fail.'
-			if config.imagemanager.schedule.value:
-				atLeast = 60
-				autoImageManagerTimer.backupupdate(atLeast)
+				self.MemCheck2()
 			else:
-				autoImageManagerTimer.backupstop()
+				print '[ImageManager] Sorry, not enough free ram found, and no phyical devices attached'
+				self.session.open(MessageBox, _("Sorry, not enough free ram found, and no phyical devices attached. Can't create Swapfile on network mounts, unable to make backup"), MessageBox.TYPE_INFO, timeout = 10)
+				if config.imagemanager.schedule.value:
+					atLeast = 60
+					autoImageManagerTimer.backupupdate(atLeast)
+				else:
+					autoImageManagerTimer.backupstop()
+		else:
+			print '[ImageManager] Stage1: Found Enough Ram'
+			self.RamChecked = True
+			self.SwapCreated = True
 
 	def MemCheck2(self):
 		self.MemCheckConsole = Console()
@@ -813,6 +789,13 @@ class ImageBackup(Screen):
 		self.SwapCreated = True
 
 	def doBackup1(self):
+		filesystem = file('/proc/mounts').read()
+		print 'filesystem',filesystem
+		if filesystem.find('ubifs') != -1:
+			self.ROOTFSTYPE = 'ubifs'
+		else:
+			self.ROOTFSTYPE= 'jffs2'
+
 		self.BackupConsole = Console()
 		print '[ImageManager] Stage1: Creating tmp folders.'
 		self.BackupDate_stdout = popen('date +%Y%m%d_%H%M%S', "r")
@@ -821,60 +804,63 @@ class ImageBackup(Screen):
 		self.ImageVersion_stdout = popen('date +%Y%m%d_%H%M%S', "r")
 		self.ImageVersiontmp = self.ImageVersion_stdout.read()
 		self.ImageVersion = self.BackupDatetmp.rstrip('\n')
-#		OPTIONS=' --eraseblock=0x20000 -n -l'
-		MKFS='/usr/bin/mkfs.jffs2'
 		NANDDUMP='/usr/bin/nanddump'
-		if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi'):
-			rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi')
-		mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi', 0777)
-		if path.exists('/tmp/' + config.imagemanager.folderprefix.value + '-bi/root'):
-			system('umount /tmp/' + config.imagemanager.folderprefix.value + '-bi/root')
-		if path.exists('/tmp/' + config.imagemanager.folderprefix.value + '-bi/boot'):
-			system('umount /tmp/' + config.imagemanager.folderprefix.value + '-bi/boot')
-		if path.exists('/tmp/' + config.imagemanager.folderprefix.value + '-bi'):
-			rmtree('/tmp/' + config.imagemanager.folderprefix.value + '-bi')
-		mkdir('/tmp/' + config.imagemanager.folderprefix.value + '-bi', 0777)
-		mkdir('/tmp/' + config.imagemanager.folderprefix.value + '-bi/root', 0777)
-		mkdir('/tmp/' + config.imagemanager.folderprefix.value + '-bi/boot', 0777)
-		if config.misc.boxtype.value == "vusolo" or config.misc.boxtype.value == "vuduo":
-			print '[ImageManager] Stage1: Creating backup folders.'
-			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate, 0777)
-			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus', 0777)
-			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu',''), 0777)
-			print '[ImageManager] Stage1: Making Image.'
-			self.commands = []
-			self.commands.append("mount -t jffs2 /dev/mtdblock0 /tmp/" + config.imagemanager.folderprefix.value + "-bi/root")
-			self.commands.append("mount -t jffs2 /dev/mtdblock2 /tmp/" + config.imagemanager.folderprefix.value + "-bi/boot")
-			self.commands.append(MKFS + ' --root=/tmp/' + config.imagemanager.folderprefix.value + '-bi/boot --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/boot.jffs2 --eraseblock=0x20000 -n -l')
-			self.commands.append(MKFS + ' --root=/tmp/' + config.imagemanager.folderprefix.value + '-bi/root --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/root.jffs2 --eraseblock=0x20000 -n -l')
-			self.commands.append(NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/vmlinux.gz')
+		self.WORKDIR=self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi'
+		self.TMPDIR='/var/volatile/tmp/' + config.imagemanager.folderprefix.value + '-bi'
+		self.MAINDEST=self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate
+		if path.exists(self.WORKDIR):
+			rmtree(self.WORKDIR)
+		mkdir(self.WORKDIR, 0777)
+		mkdir(self.WORKDIR + '/root', 0777)
+		if path.exists(self.TMPDIR + '/root'):
+			system('umount ' + self.TMPDIR + '/root')
+		if path.exists(self.TMPDIR):
+			rmtree(self.TMPDIR)
+		mkdir(self.TMPDIR, 0777)
+		mkdir(self.TMPDIR + '/root', 0777)
+		MKFS='/usr/bin/mkfs.' + self.ROOTFSTYPE
+		JFFS2OPTIONS="--eraseblock=0x20000 -n -l"
+		UBINIZE='/usr/bin/ubinize'
+		MKUBIFS_ARGS="-m 2048 -e 126976 -c 1024"
+		UBINIZE_ARGS="-m 2048 -p 128KiB"
+		print '[ImageManager] Stage1: Creating backup Folders.'
+		mkdir(self.MAINDEST, 0777)
+		if self.ROOTFSTYPE == 'jffs2':
+			if config.misc.boxtype.value.startswith('vu'):
+				mkdir(self.MAINDEST + '/vuplus', 0777)
+				mkdir(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu',''), 0777)
+				print '[ImageManager] Stage1: Making Image.'
+				self.commands = []
+				self.commands.append('mount -t jffs2 /dev/mtdblock0 ' + self.TMPDIR + '/root')
+			elif config.misc.boxtype.value.startswith('et'):
+				mkdir(self.MAINDEST + '/' + config.misc.boxtype.value, 0777)
+				print '[ImageManager] Stage1: Making Image.'
+				self.commands = []
+				self.commands.append('mount -t jffs2 /dev/mtdblock3 ' + self.TMPDIR + '/root')
+			self.commands.append(MKFS + ' --root=' + self.TMPDIR + '/root --faketime --output=' + self.WORKDIR + '/root.jffs2 ' + JFFS2OPTIONS)
+			self.commands.append(NANDDUMP + ' /dev/mtd1 -o -b > ' + self.WORKDIR + '/vmlinux.gz')
 			self.BackupConsole.eBatch(self.commands, self.Stage1Complete, debug=True)
-		elif config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
-			print '[ImageManager] Stage1: Creating backup folders.'
-			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate, 0777)
-			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus', 0777)
-			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu',''), 0777)
-			print '[ImageManager] Stage1: Making Image.'
-			self.commands = []
-			self.commands.append("mount -t jffs2 /dev/mtdblock0 /tmp/" + config.imagemanager.folderprefix.value + "-bi/root")
-			self.commands.append("mount -t jffs2 /dev/mtdblock2 /tmp/" + config.imagemanager.folderprefix.value + "-bi/boot")
-			self.commands.append(MKFS + ' --root=/tmp/' + config.imagemanager.folderprefix.value + '-bi/boot --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/boot.jffs2 --eraseblock=0x20000 -n -l')
-			self.commands.append(MKFS + ' --root=/tmp/' + config.imagemanager.folderprefix.value + '-bi/root --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/root.jffs2 --eraseblock=0x20000 -n -l')
-			self.commands.append(NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/vmlinux.gz')
-			self.commands.append(NANDDUMP + ' /dev/mtd3 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/splash.bin')
-			self.BackupConsole.eBatch(self.commands, self.Stage1Complete, debug=True)
-		elif config.misc.boxtype.value == "et9000" or config.misc.boxtype.value == "et5000":
-			print '[ImageManager] Stage1: Creating backup Folders.'
-			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate, 0777)
-			mkdir(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value, 0777)
-			print '[ImageManager] Stage1: Making Image.'
-			self.commands = []
-			self.commands.append("mount -t jffs2 /dev/mtdblock2 /tmp/" + config.imagemanager.folderprefix.value + "-bi/boot")
-			self.commands.append("mount -t jffs2 /dev/mtdblock3 /tmp/" + config.imagemanager.folderprefix.value + "-bi/root")
-			self.commands.append(MKFS + ' --root=/tmp/' + config.imagemanager.folderprefix.value + '-bi/boot --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/boot.jffs2 --eraseblock=0x20000 -n -l')
-			self.commands.append(MKFS + ' --root=/tmp/' + config.imagemanager.folderprefix.value + '-bi/root --faketime --output=' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/root.jffs2 --eraseblock=0x20000 -n -l')
-			self.commands.append(NANDDUMP + ' /dev/mtd1 -o -b > ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/vmlinux.gz')
-			self.BackupConsole.eBatch(self.commands, self.Stage1Complete, debug=True)
+		elif self.ROOTFSTYPE == 'ubifs':
+			if config.misc.boxtype.value.startswith('et'):
+				mkdir(self.MAINDEST + '/' + config.misc.boxtype.value, 0777)
+				print '[ImageManager] Stage1: Making Image.'
+				output = open(self.WORKDIR + '/ubinize.cfg','w')
+				output.write('[ubifs]\n')
+				output.write('mode=ubi\n')
+				output.write('image=' + self.WORKDIR + '/root.ubi\n')
+				output.write('vol_id=0\n')
+				output.write('vol_type=dynamic\n')
+				output.write('vol_name=rootfs\n')
+				output.write('vol_flags=autoresize\n')
+				output.close()
+				self.commands = []
+				self.commands.append('mount --bind / ' + self.TMPDIR + '/root')
+				self.commands.append('touch ' + self.WORKDIR + '/root.ubi')
+# 				self.commands.append('cp -ar ' + self.TMPDIR + '/root ' + self.WORKDIR)
+				self.commands.append(MKFS + ' -r ' + self.WORKDIR + '/root -o ' + self.WORKDIR + '/root.ubi ' + MKUBIFS_ARGS)
+				self.commands.append(UBINIZE + ' -o ' + self.WORKDIR + '/root.ubifs ' + UBINIZE_ARGS + ' ' + self.WORKDIR + '/ubinize.cfg')
+				self.commands.append(NANDDUMP + ' /dev/mtd1 -o -b > ' + self.WORKDIR + '/vmlinux.gz')
+				self.BackupConsole.eBatch(self.commands, self.Stage1Complete, debug=True)
 			print '{ImageManager] Stage1: Complete.'
 
 	def Stage1Complete(self, extra_args):
@@ -884,39 +870,36 @@ class ImageBackup(Screen):
 
 	def doBackup2(self):
 		print '[ImageManager] Stage2: Unmounting tmp system'
-		if path.exists('/tmp/' + config.imagemanager.folderprefix.value + '-bi/root'):
-			system('umount /tmp/' + config.imagemanager.folderprefix.value + '-bi/root')
-		if path.exists('/tmp/' + config.imagemanager.folderprefix.value + '-bi/boot'):
-			system('umount /tmp/' + config.imagemanager.folderprefix.value + '-bi/boot')
-		if path.exists('/tmp/' + config.imagemanager.folderprefix.value + '-bi'):
-			rmtree('/tmp/' + config.imagemanager.folderprefix.value + '-bi')
+		if path.exists(self.TMPDIR + '/root'):
+			system('umount ' + self.TMPDIR + '/root')
+		if path.exists(self.TMPDIR):
+			rmtree(self.TMPDIR)
 		print '[ImageManager] Stage2: Moving from tmp to backup folders'
-		if config.misc.boxtype.value == "vusolo" or config.misc.boxtype.value == "vuduo" or config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
-			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/root.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2')
-			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/boot.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/boot_cfe_auto.jffs2')
-			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/vmlinux.gz', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin')
+		if config.misc.boxtype.value.startswith('vu'):
+			move(self.WORKDIR + '/root.' + self.ROOTFSTYPE, self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2')
+			move(self.WORKDIR + '/vmlinux.gz', self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin')
 			if config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
-				move(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/splash.bin', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/splash_cfe_auto.bin')
-		elif config.misc.boxtype.value == "et9000" or config.misc.boxtype.value == "et5000":
-			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/root.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/rootfs.bin')
-			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/boot.jffs2', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/boot.bin')
-			move(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi/vmlinux.gz', self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/kernel.bin')
-			fileout = open(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/noforce', 'w')
+				move('/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/splash_cfe_auto.bin', self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/splash_cfe_auto.bin')
+		elif config.misc.boxtype.value.startswith('et'):
+			move(self.WORKDIR + '/root.' + self.ROOTFSTYPE, self.MAINDEST + '/' + config.misc.boxtype.value + '/rootfs.bin')
+			move(self.WORKDIR + '/vmlinux.gz', self.MAINDEST + '/' + config.misc.boxtype.value + '/kernel.bin')
+			move('/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/splash.bin', self.MAINDEST + '/' + config.misc.boxtype.value + '/splash.bin')
+			fileout = open(self.MAINDEST + '/' + config.misc.boxtype.value + '/noforce', 'w')
 			line = "rename this file to 'force' to force an update without confirmation"
 			fileout.write(line)
 			fileout.close()
-			fileout = open(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/imageversion', 'w')
+			fileout = open(self.MAINDEST + '/' + config.misc.boxtype.value + '/imageversion', 'w')
 			line = "ViX-" + self.ImageVersion
 			fileout.write(line)
 			fileout.close()
 		print '[ImageManager] Stage2: Removing Swap.'
-		if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi'):
-			rmtree(self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi')
-		if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup'):
-			system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
-			remove(self.BackupDirectory + config.imagemanager.folderprefix.value + '-swapfile_backup')
-		if (fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/boot_cfe_auto.jffs2') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin')) or (fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/rootfs.bin') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/boot.bin') and fileExists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate + '/' + config.misc.boxtype.value + '/kernel.bin')):
-			print '{ImageManager] Stage2: Image created in ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate
+		if path.exists(self.WORKDIR + '/swapfile_backup'):
+			system('swapoff ' + self.WORKDIR + '/swapfile_backup')
+			remove(self.WORKDIR + '/swapfile_backup')
+		if path.exists(self.WORKDIR):
+			rmtree(self.WORKDIR)
+		if (fileExists(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2') and fileExists(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin')) or (fileExists(self.MAINDEST + '/' + config.misc.boxtype.value + '/rootfs.bin') and fileExists(self.MAINDEST + '/' + config.misc.boxtype.value + '/kernel.bin')):
+			print '{ImageManager] Stage2: Image created in ' + self.MAINDEST
 			self.Stage2Complete()
 		else:
 			print "{ImageManager] Stage2: Image creation failed - e. g. wrong backup destination or no space left on backup device"

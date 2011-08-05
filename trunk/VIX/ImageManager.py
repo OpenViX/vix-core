@@ -26,6 +26,8 @@ import datetime
 from shutil import rmtree, move, copy
 from time import localtime, time, strftime, mktime, sleep
 from enigma import eTimer
+import urllib, zipfile, base64
+
 
 autoImageManagerTimer = None
 
@@ -125,7 +127,7 @@ class VIXImageManager(Screen):
 		self.oldlist = images
 		del self.emlist[:]
 		for fil in images:
-			if not fil.endswith('swapfile_backup') and not fil.endswith('bi'):
+			if not fil.endswith('swapfile_backup') and not fil.endswith('bi') and not fil.endswith('nandwrite') and not fil.endswith('flash_eraseall'):
 				self.emlist.append(fil)
 		self.emlist.sort()
 		self["list"].setList(self.emlist)
@@ -138,7 +140,7 @@ class VIXImageManager(Screen):
 		self.oldlist = images
 		del self.emlist[:]
 		for fil in images:
-			if not fil.endswith('swapfile_backup') and not fil.endswith('bi'):
+			if not fil.endswith('swapfile_backup') and not fil.endswith('bi') and not fil.endswith('nandwrite') and not fil.endswith('flash_eraseall'):
 				self.emlist.append(fil)
 		self.emlist.sort()
 		self["list"].setList(self.emlist)
@@ -181,7 +183,7 @@ class VIXImageManager(Screen):
 		hdd = '/media/hdd/','/media/hdd/'
 		if mount not in config.imagemanager.backuplocation.choices.choices:
 			if hdd in config.imagemanager.backuplocation.choices.choices:
-				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
+				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "HelpActions"],
 					{
 						'cancel': self.close,
 						'red': self.populate_List,
@@ -191,6 +193,7 @@ class VIXImageManager(Screen):
 						"menu": self.createSetup,
 						"up": self.refreshUp,
 						"down": self.refreshDown,
+						"displayHelp": self.doDownload,
 					}, -1)
 
 				self.BackupDirectory = '/media/hdd/imagebackups/'
@@ -206,7 +209,7 @@ class VIXImageManager(Screen):
 
 				self['lab1'].setText(_("Device: None available") + _("\nSelect an image to Restore / Delete:"))
 		else:
-			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
+			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "HelpActions"],
 				{
 					'cancel': self.close,
 					'red': self.populate_List,
@@ -216,6 +219,7 @@ class VIXImageManager(Screen):
 					"menu": self.createSetup,
 					"up": self.refreshUp,
 					"down": self.refreshDown,
+					"displayHelp": self.doDownload,
 				}, -1)
 
 			self.BackupDirectory = config.imagemanager.backuplocation.value + 'imagebackups/'
@@ -230,16 +234,19 @@ class VIXImageManager(Screen):
 			images = listdir(self.BackupDirectory)
 			del self.emlist[:]
 			for fil in images:
-				if not fil.endswith('swapfile_backup') and not fil.endswith('bi'):
+				if not fil.endswith('swapfile_backup') and not fil.endswith('bi') and not fil.endswith('nandwrite') and not fil.endswith('flash_eraseall'):
 					self.emlist.append(fil)
 			self.emlist.sort()
 			self["list"].setList(self.emlist)
 			self["list"].show()
 		except:
-			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + _("\nthere was a problem with this device, please reformat and try again."))
+ 			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + _("\nthere was a problem with this device, please reformat and try again."))
 
 	def createSetup(self):
 		self.session.openWithCallback(self.setupDone, ImageManagerMenu)
+
+	def doDownload(self):
+		self.session.openWithCallback(self.populate_List, ImageManagerDownload, self.BackupDirectory)
 
 	def setupDone(self):
 		self.populate_List()
@@ -341,7 +348,7 @@ class VIXImageManager(Screen):
 			f.close()
 			TotalFree = memfree + swapfree
 			print 'ToalFree',TotalFree
-			if int(TotalFree) < 3000:
+			if int(TotalFree) < 4000:
 				if not config.imagemanager.backuplocation.value.startswith('/media/net/'):
 					mycmd1 = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
 					mycmd2 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
@@ -360,8 +367,11 @@ class VIXImageManager(Screen):
 				self.doResstore()
 
 	def doResstore(self):
-		NANDWRITE='/usr/bin/nandwrite'
 		selectedimage = self.sel
+		if not fileExists(self.BackupDirectory + 'nandwrite'):
+			copy('/usr/bin/nandwrite',self.BackupDirectory)
+		if not fileExists(self.BackupDirectory + 'flash_eraseall'):
+			copy('/usr/bin/flash_eraseall',self.BackupDirectory)
 		if config.misc.boxtype.value.startswith('vu') or config.misc.boxtype.value.startswith('et'):
 			mycmd1 = "echo '************************************************************************'"
 			if config.misc.boxtype.value.startswith('vu'):
@@ -377,26 +387,24 @@ class VIXImageManager(Screen):
 			mycmd9 = _("echo 'Preparing Flashprogress.'")
 			mycmd10 = _("echo 'Erasing Root aera.'")
 			if config.misc.boxtype.value.startswith('vu'):
-				mycmd11 = 'flash_eraseall -j -q /dev/mtd0'
+				mycmd11 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd0'
 			elif config.misc.boxtype.value.startswith('et'):
-				mycmd11 = 'flash_eraseall -j -q /dev/mtd3'
+				mycmd11 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd3'
 			mycmd12 = _("echo 'Flasing Root to NAND.'")
 			if config.misc.boxtype.value.startswith('vu'):
-				mycmd13 = NANDWRITE + ' -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2'
+				mycmd13 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2'
 			elif config.misc.boxtype.value.startswith('et'):
-				mycmd13 = NANDWRITE + ' -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/rootfs.bin'
+				mycmd13 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/rootfs.bin'
 			mycmd14 = _("echo 'Erasing Kernel aera.'")
-			mycmd15 = 'flash_eraseall -j -q /dev/mtd1'
+			mycmd15 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd1'
 			mycmd16 = _("echo 'Flasing Kernel to NAND.'")
 			if config.misc.boxtype.value.startswith('vu'):
-				mycmd17 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'
+				mycmd17 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'
 			elif config.misc.boxtype.value.startswith('et'):
-				mycmd17 = NANDWRITE + ' -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/kernel.bin'
+				mycmd17 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/kernel.bin'
 			mycmd18 = "echo ' '"
-			mycmd19 = _("echo 'Flasing Complete\nRebooting.'")
-			mycmd20 = "sleep 2"
-			mycmd21 = "/sbin/shutdown.sysvinit -r now"
-			self.session.open(RestareConsole, title=_('Flashing NAND...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19, mycmd20, mycmd21],closeOnSuccess = True)
+			mycmd19 = _("echo 'Flasing Complete\nPlease power off your receiver, wait 15 seconds then power backon.'")
+			self.session.open(RestareConsole, title=_('Flashing NAND...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19],closeOnSuccess = False)
 
 	def myclose(self):
 		self.close()
@@ -804,7 +812,6 @@ class ImageBackup(Screen):
 		self.ImageVersion_stdout = popen('date +%Y%m%d_%H%M%S', "r")
 		self.ImageVersiontmp = self.ImageVersion_stdout.read()
 		self.ImageVersion = self.BackupDatetmp.rstrip('\n')
-		NANDDUMP='/usr/bin/nanddump'
 		self.WORKDIR=self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi'
 		self.TMPDIR='/var/volatile/tmp/' + config.imagemanager.folderprefix.value + '-bi'
 		self.MAINDEST=self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate
@@ -818,9 +825,9 @@ class ImageBackup(Screen):
 			rmtree(self.TMPDIR)
 		mkdir(self.TMPDIR, 0777)
 		mkdir(self.TMPDIR + '/root', 0777)
-		MKFS='/usr/bin/mkfs.' + self.ROOTFSTYPE
+		MKFS='mkfs.' + self.ROOTFSTYPE
 		JFFS2OPTIONS="--eraseblock=0x20000 -n -l"
-		UBINIZE='/usr/bin/ubinize'
+		UBINIZE='ubinize'
 		MKUBIFS_ARGS="-m 2048 -e 126976 -c 1024"
 		UBINIZE_ARGS="-m 2048 -p 128KiB"
 		print '[ImageManager] Stage1: Creating backup Folders.'
@@ -838,7 +845,7 @@ class ImageBackup(Screen):
 				self.commands = []
 				self.commands.append('mount -t jffs2 /dev/mtdblock3 ' + self.TMPDIR + '/root')
 			self.commands.append(MKFS + ' --root=' + self.TMPDIR + '/root --faketime --output=' + self.WORKDIR + '/root.jffs2 ' + JFFS2OPTIONS)
-			self.commands.append(NANDDUMP + ' /dev/mtd1 -o -b > ' + self.WORKDIR + '/vmlinux.gz')
+			self.commands.append('nanddump /dev/mtd1 -o -b > ' + self.WORKDIR + '/vmlinux.gz')
 			self.BackupConsole.eBatch(self.commands, self.Stage1Complete, debug=True)
 		elif self.ROOTFSTYPE == 'ubifs':
 			if config.misc.boxtype.value.startswith('et'):
@@ -858,8 +865,8 @@ class ImageBackup(Screen):
 				self.commands.append('touch ' + self.WORKDIR + '/root.ubi')
 # 				self.commands.append('cp -ar ' + self.TMPDIR + '/root ' + self.WORKDIR)
 				self.commands.append(MKFS + ' -r ' + self.WORKDIR + '/root -o ' + self.WORKDIR + '/root.ubi ' + MKUBIFS_ARGS)
-				self.commands.append(UBINIZE + ' -o ' + self.WORKDIR + '/root.ubifs ' + UBINIZE_ARGS + ' ' + self.WORKDIR + '/ubinize.cfg')
-				self.commands.append(NANDDUMP + ' /dev/mtd1 -o -b > ' + self.WORKDIR + '/vmlinux.gz')
+				self.commands.append('ubinize -o ' + self.WORKDIR + '/root.ubifs ' + UBINIZE_ARGS + ' ' + self.WORKDIR + '/ubinize.cfg')
+				self.commands.append('nanddump /dev/mtd1 -o -b > ' + self.WORKDIR + '/vmlinux.gz')
 				self.BackupConsole.eBatch(self.commands, self.Stage1Complete, debug=True)
 			print '{ImageManager] Stage1: Complete.'
 
@@ -915,3 +922,108 @@ class ImageBackup(Screen):
 			autoImageManagerTimer.backupupdate(atLeast)
 		else:
 			autoImageManagerTimer.backupstop()
+
+class ImageManagerDownload(Screen):
+	skin = """<screen name="VIXImageManager" position="center,center" size="560,400" title="Image Manager" flags="wfBorder" >
+		<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
+		<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
+		<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" alphatest="on" />
+		<ePixmap pixmap="skin_default/buttons/blue.png" position="420,0" size="140,40" alphatest="on" />
+		<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
+		<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
+		<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />
+		<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />
+		<widget name="lab1" position="0,50" size="560,50" font="Regular; 18" zPosition="2" transparent="0" halign="center"/>
+		<widget name="list" position="10,105" size="540,260" scrollbarMode="showOnDemand" />
+		<applet type="onLayoutFinish">
+			self["list"].instance.setItemHeight(25)
+		</applet>
+	</screen>"""
+
+
+	def __init__(self, session, BackupDirectory):
+		Screen.__init__(self, session)
+		Screen.setTitle(self, _("Image Manager"))
+		self.BackupDirectory = BackupDirectory
+		self['lab1'] = Label(_("Select an image to Download:"))
+		self["key_red"] = Button(_("Close"))
+		self["key_green"] = Button(_("Download"))
+		self["key_yellow"] = Button()
+		self["key_blue"] = Button()
+
+		self.onChangedEntry = [ ]
+		self.emlist = []
+		self['list'] = MenuList(self.emlist)
+		self.populate_List()
+
+		if not self.selectionChanged in self["list"].onSelectionChanged:
+			self["list"].onSelectionChanged.append(self.selectionChanged)
+
+	def selectionChanged(self):
+		for x in self.onChangedEntry:
+			x()
+		
+	def populate_List(self):
+		self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions'],
+			{
+				'cancel': self.close,
+				'red': self.close,
+				'green': self.keyDownload,
+			}, -1)
+
+# 		try:
+		if not path.exists(self.BackupDirectory):
+			mkdir(self.BackupDirectory, 0755)
+		from ftplib import FTP
+		# Send the email via our own SMTP server.
+		wos_user = 'vixlogs@world-of-satellite.com'
+		wos_pwd = base64.b64decode('NDJJWnojMEpldUxX')
+		ftp = FTP('world-of-satellite.com')
+		ftp.login(wos_user,wos_pwd)
+# 		ftp.cwd('/enigma2/image_builds')
+		del self.emlist[:]
+		for fil in ftp.nlst():
+			if not fil.endswith('.') and fil.find(config.imagemanager.folderprefix.value) != -1:
+				self.emlist.append(fil)
+		self.emlist.sort()
+		self["list"].setList(self.emlist)
+		self["list"].show()
+# 		except:
+# 			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + _("\nthere was a problem with this device, please reformat and try again."))
+
+	def keyDownload(self):
+		self.sel = self['list'].getCurrent()
+		if self.sel:
+			message = _("Are you sure you want to download this image:\n ") + self.sel
+			ybox = self.session.openWithCallback(self.doDownload, MessageBox, message, MessageBox.TYPE_YESNO)
+			ybox.setTitle(_("Download Confirmation"))
+		else:
+			self.session.open(MessageBox, _("You have no image to download."), MessageBox.TYPE_INFO, timeout = 10)
+
+	def doDownload(self,answer):
+		if answer is True:
+			self.selectedimage = self['list'].getCurrent()
+			file = self.BackupDirectory + self.selectedimage
+			dir =  self.BackupDirectory + self.selectedimage.replace('.zip','')
+			if not path.exists(dir):
+				mkdir(dir, 0777)
+			from Screens.Console import Console as RestareConsole
+			mycmd1 = "echo '************************************************************************'"
+			if config.misc.boxtype.value.startswith('vu'):
+				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
+			elif config.misc.boxtype.value.startswith('et'):
+				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
+			mycmd3 = "echo '************************************************************************'"
+			mycmd4 = "echo ' '"
+			mycmd5 = _("echo 'Downloading Image.'")
+			mycmd6 = "wget http://enigma2.world-of-satellite.com/image_builds/" + self.selectedimage + " -O /tmp/image.zip"
+			mycmd7 = "mv /tmp/image.zip " + file
+			mycmd5 = _("echo 'Expanding Image.'")
+			mycmd8 = 'unzip -o ' + file + ' -d ' + dir
+			mycmd9 = 'rm ' + file
+			self.session.open(RestareConsole, title=_('Downloading Image...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9],closeOnSuccess = True)
+
+	def myclose(self, result, retval, extra_args):
+ 		remove(self.BackupDirectory + self.selectedimage)
+		self.close()
+

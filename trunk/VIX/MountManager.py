@@ -11,6 +11,7 @@ from Components.PluginComponent import plugins
 from Components.ConfigList import ConfigListScreen
 from Components.config import getConfigListEntry, config, ConfigSelection, NoSave, configfile
 from Components.Sources.List import List
+from Components.Console import Console
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import fileExists, pathExists, createDir, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from Plugins.Plugin import PluginDescriptor
@@ -246,7 +247,7 @@ class VIXDevicesPanel(Screen):
 							line = device + '            /media/hdd           auto       defaults              0 0\n'
 							out.write(line)
 							out.close()
-							system ('mount ' + device)
+							system ('mount /dev/' + device)
 							self.updateList()
 						else:
 							self.session.open(MessageBox, _("This Device is already mounted as HDD."), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
@@ -386,35 +387,42 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 			pass
 
 	def saveMypoints(self):
+		self.Console = Console()
 		mycheck = False
 		for x in self['config'].list:
-			device = x[2]
-			mountp = x[1].value
-			type = x[3]
-			file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if device not in l])
+			self.device = x[2]
+			self.mountp = x[1].value
+			self.type = x[3]
+			file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device not in l])
 			rename('/etc/fstab.tmp','/etc/fstab')
 
 		for x in self['config'].list:
-			device = x[2]
-			mountp = x[1].value
-			if not path.exists(mountp):
-				mkdir(mountp, 0755)
-			if mountp == '/media/meoboot':
+			self.device = x[2]
+			self.mountp = x[1].value
+			if self.mountp == '/media/meoboot':
 				continue
-			out = open('/etc/fstab', 'a')
-			line = '/dev/' + device + '            ' + mountp + '           ' + type + '       defaults              0 0\n'
-			out.write(line)
-			out.close()
-		if mycheck == True:
-			nobox = self.session.open(MessageBox, _("Error: You have to set Mountpoins for all your devices."), MessageBox.TYPE_INFO)
-			nobox.setTitle(_("Error"))
-		else:
-			system ('mount ' + device)
-			self.updateList()
+			if not path.exists(self.mountp):
+				mkdir(self.mountp, 0755)
+			self.Console.ePopen('umount /dev/' + self.device, self.Stage2)
 			
-	def restBo(self, answer):
+	def Stage2(self, result, retval, extra_args):
+		out = open('/etc/fstab', 'a')
+		line = '/dev/' + self.device + '            ' + self.mountp + '           ' + self.type + '       defaults              0 0\n'
+		out.write(line)
+		out.close()
+		if retval == 0:
+			self.Console.ePopen('mount /dev/' + self.device, self.Finish)
+		else:
+			message = _("Devices changes need a system restart to take effects.\nRestart your Box now?")
+			ybox = self.session.openWithCallback(self.restartBox, MessageBox, message, MessageBox.TYPE_YESNO)
+			ybox.setTitle(_("Restart box."))
+
+	def restartBox(self):
 		if answer is True:
 			self.session.open(TryQuitMainloop, 2)
 		else:
 			self.close()
+
+	def Finish(self, result, retval, extra_args):
+		self.close()
 

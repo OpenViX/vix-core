@@ -417,7 +417,7 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 			ybox = self.session.openWithCallback(self.restartBox, MessageBox, message, MessageBox.TYPE_YESNO)
 			ybox.setTitle(_("Restart box."))
 
-	def restartBox(self):
+	def restartBox(self, answer):
 		if answer is True:
 			self.session.open(TryQuitMainloop, 2)
 		else:

@@ -333,10 +333,8 @@ class VIXCronManager(Screen):
 	def delcron(self):
 		self.sel = self['list'].getCurrent()
 		if self.sel:
-			print 'SEL:', self.sel
 			parts = self.sel[0]
 			parts = parts.split('\t')
-			print 'PARTS:',parts
 			message = _("Are you sure you want to delete this:\n ") + parts[1]
 			ybox = self.session.openWithCallback(self.doDelCron, MessageBox, message, MessageBox.TYPE_YESNO)
 			ybox.setTitle(_("Remove Confirmation"))

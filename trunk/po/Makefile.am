@@ -1,3 +1,5 @@
+dist_noinst_SCRIPTS = xml2po.py
+
 LANGS = aa ab ae af ak am an ar as av ay az ba be bg bh bi bm bn bo br bs ca ce ch co cr cs cu cv cy da de dv dz ee el en eo es et eu fa ff fi fj fo fr fy ga gd gl gn gu gv ha he hi ho hr ht hu hy hz ia id ie ig ii ik io is it iu ja jv ka kg ki kj kk kl km kn ko kr ks ku kv kw ky la lb lg li ln lo lt lu lv mg mh mi mk ml mn mo mr ms mt my na nb nd ne ng nl nn no nr nv ny oc oj om or os pa pi pl ps pt qu rm rn ro ru rw sa sc sd se sg si sk sl sm sn so sq sr ss st su sv sw ta te tg th ti tk tl tn to tr ts tt tw ty ug uk ur uz ve vi vo wa wo xh yi yo za zh zu
 LANGMO = $(LANGS:=.mo)
 LANGPO = $(LANGS:=.po)
@@ -6,13 +8,16 @@ EXTRA_DIST = $(LANGPO)
 
 if UPDATE_PO
 # the TRANSLATORS: allows putting translation comments before the to-be-translated line.
-enigma2-py.pot: $(top_srcdir)/VIX/*.py
+vix-py.pot: $(top_srcdir)/VIX/*.py
 	$(XGETTEXT) -L Python --from-code=UTF-8 --add-comments="TRANSLATORS:" -d @PACKAGE_NAME@ -s -o $@ $^
 
-enigma2.pot: enigma2-py.pot
-	$(MSGUNIQ) $^ -o $@
+vix-xml.pot: $(top_srcdir)/VIX/*.xml
+	$(PYTHON) $^ > $@
 
-%.po: enigma2.pot
+vix.pot: vix-py.pot vix-xml.pot
+	cat $^ | $(MSGUNIQ) --no-location -o $@ -
+
+%.po: vix.pot
 	if [ -f $@ ]; then \
 		$(MSGMERGE) --backup=none --no-location -s -N -U $@ $< && touch $@; \
 	else \
@@ -21,11 +26,10 @@ enigma2.pot: enigma2-py.pot
 endif
 
 .po.mo:
-	echo 	$(MSGFMT) -o $@ $<
 	$(MSGFMT) -o $@ $<
 
 BUILT_SOURCES = $(LANGMO)
-CLEANFILES = $(LANGMO) enigma2-py.pot enigma2.pot
+CLEANFILES = $(LANGMO) vix-py.pot vix.pot
 
 dist-hook: $(LANGPO)
 

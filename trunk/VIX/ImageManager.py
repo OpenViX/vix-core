@@ -382,29 +382,27 @@ class VIXImageManager(Screen):
 			mycmd4 = "echo ' '"
 			mycmd5 = _("echo 'Attention:'")
 			mycmd6 = "echo ' '"
-			mycmd7 = _("echo 'Your receiver will be rebooted automatically after the flashing progress.'")
-			mycmd8 = "echo ' '"
-			mycmd9 = _("echo 'Preparing Flashprogress.'")
-			mycmd10 = _("echo 'Erasing Root aera.'")
+			mycmd7 = _("echo 'Preparing Flashprogress.'")
+			mycmd8 = _("echo 'Erasing Root aera.'")
 			if config.misc.boxtype.value.startswith('vu'):
-				mycmd11 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd0'
+				mycmd9 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd0'
 			elif config.misc.boxtype.value.startswith('et'):
-				mycmd11 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd3'
-			mycmd12 = _("echo 'Flasing Root to NAND.'")
+				mycmd9 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd3'
+			mycmd10 = _("echo 'Flasing Root to NAND.'")
 			if config.misc.boxtype.value.startswith('vu'):
-				mycmd13 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2'
+				mycmd11 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2'
 			elif config.misc.boxtype.value.startswith('et'):
-				mycmd13 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/rootfs.bin'
-			mycmd14 = _("echo 'Erasing Kernel aera.'")
-			mycmd15 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd1'
-			mycmd16 = _("echo 'Flasing Kernel to NAND.'")
+				mycmd11 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/rootfs.bin'
+			mycmd12 = _("echo 'Erasing Kernel aera.'")
+			mycmd13 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd1'
+			mycmd14 = _("echo 'Flasing Kernel to NAND.'")
 			if config.misc.boxtype.value.startswith('vu'):
-				mycmd17 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'
+				mycmd15 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'
 			elif config.misc.boxtype.value.startswith('et'):
-				mycmd17 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/kernel.bin'
-			mycmd18 = "echo ' '"
-			mycmd19 = _("echo 'Flasing Complete\nPlease power off your receiver, wait 15 seconds then power backon.'")
-			self.session.open(RestareConsole, title=_('Flashing NAND...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17, mycmd18, mycmd19],closeOnSuccess = False)
+				mycmd15 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/kernel.bin'
+			mycmd16 = "echo ' '"
+			mycmd17 = _("echo 'Flashing Complete\nPlease power off your receiver, wait 15 seconds then power backon.'")
+			self.session.open(RestareConsole, title=_('Flashing NAND...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17],closeOnSuccess = False)
 
 	def myclose(self):
 		self.close()

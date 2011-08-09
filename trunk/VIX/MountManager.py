@@ -344,6 +344,7 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 				continue
 			else:
 				d1 = _("None")
+				dtype = _("unavailable")
 		f.close()
 		f = open('/proc/partitions', 'r')
 		for line in f.readlines():
@@ -391,38 +392,28 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		mycheck = False
 		for x in self['config'].list:
 			self.device = x[2]
-			self.mountp = x[1].value
-			self.type = x[3]
+			self.Console.ePopen('umount /dev/' + self.device)
 			file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device not in l])
 			rename('/etc/fstab.tmp','/etc/fstab')
 
 		for x in self['config'].list:
 			self.device = x[2]
 			self.mountp = x[1].value
-			if self.mountp == '/media/meoboot':
-				continue
+			self.type = x[3]
 			if not path.exists(self.mountp):
 				mkdir(self.mountp, 0755)
-			self.Console.ePopen('umount /dev/' + self.device, self.Stage2)
-			
-	def Stage2(self, result, retval, extra_args):
-		out = open('/etc/fstab', 'a')
-		line = '/dev/' + self.device + '            ' + self.mountp + '           ' + self.type + '       defaults              0 0\n'
-		out.write(line)
-		out.close()
-		if retval == 0:
-			self.Console.ePopen('mount /dev/' + self.device, self.Finish)
-		else:
-			message = _("Devices changes need a system restart to take effects.\nRestart your Box now?")
-			ybox = self.session.openWithCallback(self.restartBox, MessageBox, message, MessageBox.TYPE_YESNO)
-			ybox.setTitle(_("Restart box."))
+			out = open('/etc/fstab', 'a')
+			line = '/dev/' + self.device + '            ' + self.mountp + '           ' + self.type + '       defaults              0 0\n'
+			out.write(line)
+			out.close()
+			self.Console.ePopen('mount /dev/' + self.device)
+
+		message = _("Devices changes need a system restart to take effects.\nRestart your Box now?")
+		ybox = self.session.openWithCallback(self.restartBox, MessageBox, message, MessageBox.TYPE_YESNO)
+		ybox.setTitle(_("Restart box."))
 
 	def restartBox(self, answer):
 		if answer is True:
 			self.session.open(TryQuitMainloop, 2)
 		else:
 			self.close()
-
-	def Finish(self, result, retval, extra_args):
-		self.close()
-

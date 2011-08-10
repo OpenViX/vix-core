@@ -978,7 +978,13 @@ class ImageManagerDownload(Screen):
 		wos_pwd = base64.b64decode('NDJJWnojMEpldUxX')
 		ftp = FTP('world-of-satellite.com')
 		ftp.login(wos_user,wos_pwd)
-# 		ftp.cwd('/enigma2/image_builds')
+		fd = open('/etc/opkg/all-feed.conf', 'r')
+		fileurl = fd.read()
+		fd.close()
+		if fileurl.find('release') != -1:
+	 		ftp.cwd('/release')
+		else:
+	 		ftp.cwd('/experimental')
 		del self.emlist[:]
 		for fil in ftp.nlst():
 			if not fil.endswith('.') and fil.find(config.imagemanager.folderprefix.value) != -1:

@@ -884,11 +884,11 @@ class ImageBackup(Screen):
 			move(self.WORKDIR + '/root.' + self.ROOTFSTYPE, self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2')
 			move(self.WORKDIR + '/vmlinux.gz', self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin')
 			if config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
-				move('/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/splash_cfe_auto.bin', self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/splash_cfe_auto.bin')
+				copy('/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/splash_cfe_auto.bin', self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/splash_cfe_auto.bin')
 		elif config.misc.boxtype.value.startswith('et'):
 			move(self.WORKDIR + '/root.' + self.ROOTFSTYPE, self.MAINDEST + '/' + config.misc.boxtype.value + '/rootfs.bin')
 			move(self.WORKDIR + '/vmlinux.gz', self.MAINDEST + '/' + config.misc.boxtype.value + '/kernel.bin')
-			move('/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/splash.bin', self.MAINDEST + '/' + config.misc.boxtype.value + '/splash.bin')
+			copy('/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/splash.bin', self.MAINDEST + '/' + config.misc.boxtype.value + '/splash.bin')
 			fileout = open(self.MAINDEST + '/' + config.misc.boxtype.value + '/noforce', 'w')
 			line = "rename this file to 'force' to force an update without confirmation"
 			fileout.write(line)

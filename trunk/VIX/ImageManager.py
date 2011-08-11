@@ -26,8 +26,6 @@ import datetime
 from shutil import rmtree, move, copy
 from time import localtime, time, strftime, mktime, sleep
 from enigma import eTimer
-import urllib, zipfile, base64
-
 
 autoImageManagerTimer = None
 
@@ -861,8 +859,7 @@ class ImageBackup(Screen):
 				self.commands = []
 				self.commands.append('mount --bind / ' + self.TMPDIR + '/root')
 				self.commands.append('touch ' + self.WORKDIR + '/root.ubi')
-# 				self.commands.append('cp -ar ' + self.TMPDIR + '/root ' + self.WORKDIR)
-				self.commands.append(MKFS + ' -r ' + self.WORKDIR + '/root -o ' + self.WORKDIR + '/root.ubi ' + MKUBIFS_ARGS)
+				self.commands.append(MKFS + ' -r ' + self.TMPDIR + '/root -o ' + self.WORKDIR + '/root.ubi ' + MKUBIFS_ARGS)
 				self.commands.append('ubinize -o ' + self.WORKDIR + '/root.ubifs ' + UBINIZE_ARGS + ' ' + self.WORKDIR + '/ubinize.cfg')
 				self.commands.append('nanddump /dev/mtd1 -o -b > ' + self.WORKDIR + '/vmlinux.gz')
 				self.BackupConsole.eBatch(self.commands, self.Stage1Complete, debug=True)
@@ -969,11 +966,10 @@ class ImageManagerDownload(Screen):
 				'green': self.keyDownload,
 			}, -1)
 
-# 		try:
 		if not path.exists(self.BackupDirectory):
 			mkdir(self.BackupDirectory, 0755)
 		from ftplib import FTP
-		# Send the email via our own SMTP server.
+		import urllib, zipfile, base64
 		wos_user = 'vixlogs@world-of-satellite.com'
 		wos_pwd = base64.b64decode('NDJJWnojMEpldUxX')
 		ftp = FTP('world-of-satellite.com')
@@ -992,8 +988,6 @@ class ImageManagerDownload(Screen):
 		self.emlist.sort()
 		self["list"].setList(self.emlist)
 		self["list"].show()
-# 		except:
-# 			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + _("\nthere was a problem with this device, please reformat and try again."))
 
 	def keyDownload(self):
 		self.sel = self['list'].getCurrent()
@@ -1030,4 +1024,3 @@ class ImageManagerDownload(Screen):
 	def myclose(self, result, retval, extra_args):
  		remove(self.BackupDirectory + self.selectedimage)
 		self.close()
-

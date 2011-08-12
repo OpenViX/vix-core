@@ -1,23 +1,3 @@
-#######################################################################
-#
-#    Vu HD plus skin setup for Enigma-2
-#    Vesion 2.0
-#    Coded by AndyBlac (c)2011
-#    Support: andyblac@vuplus-support.co.uk
-#
-#    Some the code code is borrowed from Vali's Second InfoBar for Enigma-2
-#
-#    This program is free software; you can redistribute it and/or
-#    modify it under the terms of the GNU General Public License
-#    as published by the Free Software Foundation; either version 2
-#    of the License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#######################################################################
 # for localized messages
 from . import _
 

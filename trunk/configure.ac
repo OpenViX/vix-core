@@ -9,6 +9,10 @@ AM_PATH_PYTHON()
 AC_PYTHON_DEVEL
 
 AC_PROG_CXX
+
+CPPFLAGS="$CPPFLAGS $PYTHON_CPPFLAGS"
+LDFLAGS="$LDFLAGS $PYTHON_LDFLAGS"
+
 AC_ARG_WITH(po,
 	AS_HELP_STRING([--with-po],[enable updating of po files]),
 	[with_po="$withval"],[with_po="no"])

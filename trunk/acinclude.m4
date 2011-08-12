@@ -413,14 +413,9 @@ AC_DEFUN([AC_PYTHON_DEVEL],[
 		# FIXME: yes, this is wrong. sorry about that. (tmbinc)
 		cross_PYTHON_VERSION=$PYTHON_VERSION
 		python_path=
-		for i in $CPPFLAGS ; do
-			p=`echo $i | sed "s,^-I,,"`
-			p=`echo $p | sed "s,^-isystem,,"`
-			if test -f "$p/python$cross_PYTHON_VERSION/Python.h"; then
-				python_path="$p/python$cross_PYTHON_VERSION"
-				break
-			fi
-		done
+		if test -f "$STAGING_INCDIR/python$cross_PYTHON_VERSION/Python.h"; then
+			python_path="$p/python$cross_PYTHON_VERSION"
+		fi
 		AC_MSG_RESULT([$python_path])
 		if test -z "$python_path" ; then
 						AC_MSG_ERROR([cannot find Python include path])
@@ -430,13 +425,10 @@ AC_DEFUN([AC_PYTHON_DEVEL],[
 		# Check for Python library path
 		AC_MSG_CHECKING([for Python library path])
 		python_path=
-		for i in $LDFLAGS; do
-			l=`echo $i | sed "s,^-L,,"`
-			python_path=`find $l -type f -name libpython$cross_PYTHON_VERSION.* -print | sed "1q"`
-			if test -n "$python_path" ; then
-				break
-			fi
-		done
+		python_path=`find $STAGING_LIBDIR -type f -name libpython$cross_PYTHON_VERSION.* -print | sed "1q"`
+		if test -n "$python_path" ; then
+			break
+		fi
 		python_path=`echo $python_path | sed "s,/libpython.*$,,"`
 		AC_MSG_RESULT([$python_path])
 		if test -z "$python_path" ; then

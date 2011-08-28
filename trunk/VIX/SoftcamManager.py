@@ -319,15 +319,15 @@ class VIXStartCam(Screen):
 			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Starting " + startselectedcam + "\n")
 			output.close()
 			if startselectedcam.lower().startswith('hypercam'):
-				self.Console.ePopen('/usr/softcams/' + startselectedcam + ' -c /etc/hypercam.cfg')
+				self.Console.ePopen('ulimit -s 1024;/usr/softcams/' + startselectedcam + ' -c /etc/hypercam.cfg')
 			elif startselectedcam.lower().startswith('oscam'):
-				self.Console.ePopen('/usr/softcams/' + startselectedcam + ' -b')
+				self.Console.ePopen('ulimit -s 1024;/usr/softcams/' + startselectedcam + ' -b')
 			elif startselectedcam.lower().startswith('gbox'):
-				self.Console.ePopen('/usr/softcams/' + startselectedcam)
+				self.Console.ePopen('ulimit -s 1024;/usr/softcams/' + startselectedcam)
 				sleep(3)
 				self.Console.ePopen('start-stop-daemon --start --quiet --background --exec /usr/bin/gbox')
 			else:
-				self.Console.ePopen('/usr/softcams/' + startselectedcam)
+				self.Console.ePopen('ulimit -s 1024;/usr/softcams/' + startselectedcam)
 		self.activityTimer.start(1)
 
 	def updatepix(self):
@@ -686,7 +686,7 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 								now = datetime.now()
 								output.write(now.strftime("%Y-%m-%d %H:%M") + ": AutoStarting: " + softcamcheck + "\n")
 								output.close()
-								self.Console.ePopen('/usr/softcams/' + softcamcheck + ' -b')
+								self.Console.ePopen('ulimit -s 1024;/usr/softcams/' + softcamcheck + ' -b')
 								sleep(10)
 							remove('/tmp/frozen')
 
@@ -740,7 +740,7 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 									self.Console.ePopen("killall -9 " + softcamcheck)
 									sleep(1)
 									print '[SoftcamManager] Starting ' + softcamcheck
-									self.Console.ePopen('/usr/softcams/' + softcamcheck)
+									self.Console.ePopen('ulimit -s 1024;/usr/softcams/' + softcamcheck)
 								remove('/tmp/frozen')
 							elif allow.find('NO') >= 0 or allow.find('no') >= 0:
 								print '[SoftcamManager] Telnet info not allowed, can not check if frozen'
@@ -775,18 +775,18 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 									self.Console.ePopen("killall -9 /usr/softcams/" + str(cccamcheck_process))
 								except:
 									pass
-							self.Console.ePopen('/usr/softcams/' + softcamcheck + " -b")
+							self.Console.ePopen('ulimit -s 1024;/usr/softcams/' + softcamcheck + " -b")
 							sleep(10)
 							remove('/tmp/cccamRuningCheck.tmp')
 						elif softcamcheck.lower().startswith('sbox'):
-							self.Console.ePopen('/usr/softcams/' + softcamcheck)
+							self.Console.ePopen('ulimit -s 1024;/usr/softcams/' + softcamcheck)
 							sleep(7)
 						elif softcamcheck.lower().startswith('gbox'):
-							self.Console.ePopen('/usr/softcams/' + softcamcheck)
+							self.Console.ePopen('ulimit -s 1024;/usr/softcams/' + softcamcheck)
 							sleep(3)
 							self.Console.ePopen('start-stop-daemon --start --quiet --background --exec /usr/bin/gbox')
 						else:
-							self.Console.ePopen('/usr/softcams/' + softcamcheck)
+							self.Console.ePopen('ulimit -s 1024;/usr/softcams/' + softcamcheck)
 
 class SoftcamAutoPoller:
 	"""Automatically Poll SoftCam"""

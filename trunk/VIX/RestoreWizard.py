@@ -33,34 +33,25 @@ def checkConfigBackup():
 		for x in parts:
 			if x[1].endswith('/'):
 				fullbackupfile =  x[1] + 'backup/' + backupfile
-				if fileExists(fullbackupfile):
-					config.backupmanager.backuplocation.value = str(x[1])
-					config.backupmanager.backuplocation.save()
-					config.backupmanager.save()
-					return x
 			else:
 				fullbackupfile =  x[1] + '/backup/' + backupfile
-				if fileExists(fullbackupfile):
-					config.backupmanager.backuplocation.value = str(x[1])
-					config.backupmanager.backuplocation.save()
-					config.backupmanager.save()
-					return x
+			if fileExists(fullbackupfile):
+				config.backupmanager.backuplocation.value = str(x[1])
+				config.backupmanager.backuplocation.save()
+				config.backupmanager.save()
+				return x
 		return None		
 
 def checkBackupFile():
 	backuplocation = config.backupmanager.backuplocation.value
 	if backuplocation.endswith('/'):
 		fullbackupfile =  backuplocation + 'backup/' + backupfile
-		if fileExists(fullbackupfile):
-			return True
-		else:
-			return False
 	else:
 		fullbackupfile =  backuplocation + '/backup/' + backupfile
-		if fileExists(fullbackupfile):
-			return True
-		else:
-			return False
+	if fileExists(fullbackupfile):
+		return True
+	else:
+		return False
 
 if checkConfigBackup() is None:
 	backupAvailable = 0

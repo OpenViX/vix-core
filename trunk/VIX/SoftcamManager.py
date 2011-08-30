@@ -551,11 +551,73 @@ class VIXSoftcamMenu(ConfigListScreen, Screen):
 			x[1].cancel()
 		self.close()
 
-class SoftcamCheckTask(Components.Task.PythonTask):
-	def setup(self, autostartcams):
-		self.autostartcams = autostartcams
+class SoftcamAutoPoller:
+	"""Automatically Poll SoftCam"""
+	def __init__(self):
+		# Init Timer
+		if not path.exists('/etc/keys'):
+			mkdir('/etc/keys', 0755)
+		if not path.exists('/etc/tuxbox/config'):
+			mkdir('/etc/tuxbox/config', 0755)
+		if not path.exists('/var/tuxbox'):
+			symlink('/etc/tuxbox', '/var/tuxbox')
+		if not path.exists('/var/keys'):
+			symlink('/etc/keys', '/var/keys')
+		if not path.exists('/usr/keys'):
+			symlink('/etc/keys', '/usr/keys')
+		if not path.exists('/etc/scce'):
+			mkdir('/etc/scce', 0755)
+		if not path.exists('/var/scce'):
+			symlink('/etc/scce', '/var/scce')
+		if not path.exists('/usr/softcams'):
+			mkdir('/usr/softcams', 0755)
+		self.timer = eTimer()
 
-	def work(self):
+	def start(self):
+		if self.softcam_check not in self.timer.callback:
+			self.timer.callback.append(self.softcam_check)
+		self.timer.startLongTimer(0)
+
+	def stop(self):
+		if self.softcam_check in self.timer.callback:
+			self.timer.callback.remove(self.softcam_check)
+		self.timer.stop()
+
+	def softcam_check(self):
+		now = int(time())
+		print "[SoftcamManager] Poll occured at", strftime("%c", localtime(now))
+		if path.exists('/tmp/SoftcamRuningCheck.tmp'):
+			remove('/tmp/SoftcamRuningCheck.tmp')
+
+		if config.softcammanager.softcams_autostart:
+			Components.Task.job_manager.AddJob(self.createCheckJob())
+
+		if config.softcammanager.softcamtimerenabled.value:
+			print "[SoftcamManager] Timer Check Enabled"
+			output = open('/tmp/cam.check.log','a')
+			now = datetime.now()
+			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Timer Check Enabled\n")
+			output.close()
+			self.timer.startLongTimer(config.softcammanager.softcamtimer.value * 60)
+		else:
+			output = open('/tmp/cam.check.log','a')
+			now = datetime.now()
+			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Timer Check Disabled\n")
+			output.close()
+			print "[SoftcamManager] Timer Check Disabled"
+			softcamautopoller.stop()
+
+	def createCheckJob(self):
+		job = Components.Task.Job(_("SoftcamCheck"))
+
+		task = Components.Task.PythonTask(job, _("Checking softcams..."))
+		task.work = self.JobStart
+		task.weighting = 1
+
+		return job
+
+	def JobStart(self):
+		self.autostartcams = config.softcammanager.softcams_autostart.value
 		self.Console = Console()
 		if path.exists('/tmp/cam.check.log'):
 			if path.getsize('/tmp/cam.check.log') > 40000:
@@ -787,65 +849,3 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 							self.Console.ePopen('start-stop-daemon --start --quiet --background --exec /usr/bin/gbox')
 						else:
 							self.Console.ePopen('ulimit -s 1024;/usr/softcams/' + softcamcheck)
-
-class SoftcamAutoPoller:
-	"""Automatically Poll SoftCam"""
-	def __init__(self):
-		# Init Timer
-		if not path.exists('/etc/keys'):
-			mkdir('/etc/keys', 0755)
-		if not path.exists('/etc/tuxbox/config'):
-			mkdir('/etc/tuxbox/config', 0755)
-		if not path.exists('/var/tuxbox'):
-			symlink('/etc/tuxbox', '/var/tuxbox')
-		if not path.exists('/var/keys'):
-			symlink('/etc/keys', '/var/keys')
-		if not path.exists('/usr/keys'):
-			symlink('/etc/keys', '/usr/keys')
-		if not path.exists('/etc/scce'):
-			mkdir('/etc/scce', 0755)
-		if not path.exists('/var/scce'):
-			symlink('/etc/scce', '/var/scce')
-		if not path.exists('/usr/softcams'):
-			mkdir('/usr/softcams', 0755)
-		self.timer = eTimer()
-
-	def start(self):
-		if self.softcam_check not in self.timer.callback:
-			self.timer.callback.append(self.softcam_check)
-		self.timer.startLongTimer(0)
-
-	def stop(self):
-		if self.softcam_check in self.timer.callback:
-			self.timer.callback.remove(self.softcam_check)
-		self.timer.stop()
-
-	def softcam_check(self):
-		now = int(time())
-		print "[SoftcamManager] Poll occured at", strftime("%c", localtime(now))
-		if path.exists('/tmp/SoftcamRuningCheck.tmp'):
-			remove('/tmp/SoftcamRuningCheck.tmp')
-
-		if config.softcammanager.softcams_autostart:
-			autostartcams = config.softcammanager.softcams_autostart.value
-			name = _("SoftcamCheck")
-			job = Components.Task.Job(name)
-			task = SoftcamCheckTask(job, name)
-			task.setup(autostartcams)
-			Components.Task.job_manager.AddJob(job)
-
-		if config.softcammanager.softcamtimerenabled.value:
-			print "[SoftcamManager] Timer Check Enabled"
-			output = open('/tmp/cam.check.log','a')
-			now = datetime.now()
-			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Timer Check Enabled\n")
-			output.close()
-			self.timer.startLongTimer(config.softcammanager.softcamtimer.value * 60)
-		else:
-			output = open('/tmp/cam.check.log','a')
-			now = datetime.now()
-			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Timer Check Disabled\n")
-			output.close()
-			print "[SoftcamManager] Timer Check Disabled"
-			softcamautopoller.stop()
-

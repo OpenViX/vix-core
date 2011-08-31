@@ -1014,7 +1014,13 @@ class ImageManagerDownload(Screen):
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "echo ' '"
 			mycmd5 = _("echo 'Downloading Image.'")
-			mycmd6 = "wget http://enigma2.world-of-satellite.com/image_builds/" + self.selectedimage + " -O /tmp/image.zip"
+			fd = open('/etc/opkg/all-feed.conf', 'r')
+			fileurl = fd.read()
+			fd.close()
+			if fileurl.find('release') != -1:
+				mycmd6 = "wget http://enigma2.world-of-satellite.com/images/release/" + self.selectedimage + " -O /tmp/image.zip"
+			else:
+				mycmd6 = "wget http://enigma2.world-of-satellite.com/images/experimental/" + self.selectedimage + " -O /tmp/image.zip"
 			mycmd7 = "mv /tmp/image.zip " + file
 			mycmd5 = _("echo 'Expanding Image.'")
 			mycmd8 = 'unzip -o ' + file + ' -d ' + dir

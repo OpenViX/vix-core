@@ -868,7 +868,6 @@ class BackupFiles(Screen):
 		self.Stage1Completed = True
 
 	def Stage2(self):
-		print 'STAGE2'
 		output = open('/var/log/backupmanager.log','w')
 		now = datetime.now()
 		output.write(now.strftime("%Y-%m-%d %H:%M") + ": Backup Started\n")
@@ -888,13 +887,12 @@ class BackupFiles(Screen):
 		self.Stage2Completed = True
 
 	def Stage3(self):
-		print 'STAGE3'
 		self.BackupConsole = Console()
 		print '[BackupManager] Listing installed plugins'
 		self.BackupConsole.ePopen('opkg list-installed', self.Stage3Complete)
 
 	def Stage3Complete(self, result, retval, extra_args):
-		if retval == 0:
+		if result:
 			output = open('/tmp/ExtraInstalledPlugins','w')
 			output.write(result)
 			output.close()

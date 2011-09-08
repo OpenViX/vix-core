@@ -366,38 +366,39 @@ class VIXImageManager(Screen):
 
 	def doResstore(self):
 		selectedimage = self.sel
+		boxtype = config.misc.boxtype.value
 		if not fileExists(self.BackupDirectory + 'nandwrite'):
 			copy('/usr/bin/nandwrite',self.BackupDirectory)
 		if not fileExists(self.BackupDirectory + 'flash_eraseall'):
 			copy('/usr/bin/flash_eraseall',self.BackupDirectory)
-		if config.misc.boxtype.value.startswith('vu') or config.misc.boxtype.value.startswith('et'):
+		if boxtype.startswith('vu') or boxtype.startswith('et'):
 			mycmd1 = "echo '************************************************************************'"
-			if config.misc.boxtype.value.startswith('vu'):
-				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
-			elif config.misc.boxtype.value.startswith('et'):
-				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
+			if boxtype.startswith('vu'):
+				mycmd2 = "echo 'Vu+ " + boxtype +  _(" detected'")
+			elif boxtype.startswith('et'):
+				mycmd2 = "echo 'Xtrend " + boxtype +  _(" detected'")
 			mycmd3 = "echo '************************************************************************'"
 			mycmd4 = "echo ' '"
 			mycmd5 = _("echo 'Attention:'")
 			mycmd6 = "echo ' '"
 			mycmd7 = _("echo 'Preparing Flashprogress.'")
 			mycmd8 = _("echo 'Erasing Root aera.'")
-			if config.misc.boxtype.value.startswith('vu'):
+			if boxtype.startswith('vu'):
 				mycmd9 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd0'
-			elif config.misc.boxtype.value.startswith('et'):
+			elif boxtype.startswith('et'):
 				mycmd9 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd3'
 			mycmd10 = _("echo 'Flasing Root to NAND.'")
-			if config.misc.boxtype.value.startswith('vu'):
-				mycmd11 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2'
-			elif config.misc.boxtype.value.startswith('et'):
-				mycmd11 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/rootfs.bin'
+			if boxtype.startswith('vu'):
+				mycmd11 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + boxtype.replace('vu','') + '/root_cfe_auto.jffs2'
+			elif boxtype.startswith('et'):
+				mycmd11 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/' + boxtype + '/rootfs.bin'
 			mycmd12 = _("echo 'Erasing Kernel aera.'")
 			mycmd13 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd1'
 			mycmd14 = _("echo 'Flasing Kernel to NAND.'")
-			if config.misc.boxtype.value.startswith('vu'):
-				mycmd15 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin'
-			elif config.misc.boxtype.value.startswith('et'):
-				mycmd15 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/' + config.misc.boxtype.value + '/kernel.bin'
+			if boxtype.startswith('vu'):
+				mycmd15 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + boxtype.replace('vu','') + '/kernel_cfe_auto.bin'
+			elif boxtype.startswith('et'):
+				mycmd15 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/' + boxtype + '/kernel.bin'
 			mycmd16 = "echo ' '"
 			mycmd17 = _("echo 'Flashing Complete\nPlease power off your receiver, wait 15 seconds then power backon.'")
 			self.session.open(RestareConsole, title=_('Flashing NAND...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17],closeOnSuccess = False)
@@ -1018,10 +1019,10 @@ class ImageManagerDownload(Screen):
 			fileurl = fd.read()
 			fd.close()
 			if fileurl.find('release') != -1:
-				mycmd6 = "wget http://enigma2.world-of-satellite.com/images/release/" + self.selectedimage + " -O /tmp/image.zip"
+				mycmd6 = "wget http://enigma2.world-of-satellite.com/images/release/" + self.selectedimage + " -O " + self.BackupDirectory + "image.zip"
 			else:
-				mycmd6 = "wget http://enigma2.world-of-satellite.com/images/experimental/" + self.selectedimage + " -O /tmp/image.zip"
-			mycmd7 = "mv /tmp/image.zip " + file
+				mycmd6 = "wget http://enigma2.world-of-satellite.com/images/experimental/" + self.selectedimage + " -O " + self.BackupDirectory + "image.zip"
+			mycmd7 = "mv " + self.BackupDirectory + "image.zip " + file
 			mycmd5 = _("echo 'Expanding Image.'")
 			mycmd8 = 'unzip -o ' + file + ' -d ' + dir
 			mycmd9 = 'rm ' + file

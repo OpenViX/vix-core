@@ -330,26 +330,13 @@ class VIXBackupManager(Screen):
 
 	def doRestore(self,answer):
 		if answer is True:
-			from Screens.Console import Console as RestareConsole
-			mycmd1 = "echo '************************************************************************'"
-			if config.misc.boxtype.value.startswith('vu'):
-				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
-			elif config.misc.boxtype.value.startswith('et'):
-				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
-			mycmd3 = "echo '************************************************************************'"
-			mycmd4 = "echo ' '"
-			mycmd5 = _("echo 'Attention:'")
-			mycmd6 = "echo ' '"
-			mycmd7 = _("echo 'Enigma2 will be restarted automatically after the restore progress.'")
-			mycmd8 = "echo ' '"
-			mycmd9 = _("echo 'Restoring.'")
-			mycmd10 = "tar -xzvf " + self.BackupDirectory + self.sel + " -C /"
-			self.session.open(RestareConsole, title=_('Restoring Backup...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10],closeOnSuccess = True)
-			self.doRestorePlugins1()
+			self.Console = Console()
+			self.Console.ePopen("tar -xzvf " + self.BackupDirectory + self.sel + " -C /", self.doRestorePlugins1)
 
-	def doRestorePlugins1(self):
-		self.RestoreConsole = Console()
-		self.RestoreConsole.ePopen('opkg list-installed', self.doRestorePlugins2)
+	def doRestorePlugins1(self, result, retval, extra_args):
+		if retval == 0:
+			self.Console = Console()
+			self.Console.ePopen('opkg list-installed', self.doRestorePlugins2)
 
 	def doRestorePlugins2(self, result, retval, extra_args):
 		if retval == 0:
@@ -377,14 +364,13 @@ class VIXBackupManager(Screen):
 			ybox = self.session.openWithCallback(self.doRestorePlugins3, MessageBox, message, MessageBox.TYPE_YESNO)
 			ybox.setTitle(_("Re-install Plugins"))
 		else:
-			self.RestoreConsole = Console()
-			self.RestoreConsole.ePopen("killall -9 enigma2")
+			self.Console = Console()
+			self.Console.ePopen("killall -9 enigma2")
 
 	def doRestorePlugins3(self, answer):
 		if answer is True:
 			plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
 			pluginslist = plugintmp.replace('\n',' ')
-			from Screens.Console import Console as RestareConsole
 			mycmd1 = "echo '************************************************************************'"
 			if config.misc.boxtype.value.startswith('vu'):
 				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
@@ -401,10 +387,14 @@ class VIXBackupManager(Screen):
 			mycmd11 = "opkg install " + pluginslist
 			mycmd12 = 'rm -f /tmp/trimedExtraInstalledPlugins'
 			mycmd13 = 'killall -9 enigma2'
-			self.session.open(RestareConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
+			self.session.openWithCallback(self.RestoreComplete, RestoreConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
 		else:
 			self.RestoreConsole = Console()
 			self.RestoreConsole.ePopen("killall -9 enigma2")
+
+	def RestoreComplete(self):
+		self.RestoreConsole = Console()
+		self.RestoreConsole.ePopen("killall -9 enigma2")
 
 	def myclose(self):
 		self.close()

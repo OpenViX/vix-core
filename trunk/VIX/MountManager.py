@@ -134,6 +134,14 @@ class VIXDevicesPanel(Screen):
 			name = _("HARD DISK: ")
 			mypixmap = '/usr/share/enigma2/ViX_HD/icons/dev_hdd.png'
 		name = name + model
+		self.Console = Console()
+		self.Console.ePopen("sfdisk -l /dev/sd? | grep swap | awk '{print $(NF-9)}' >/tmp/devices.tmp")
+		time.sleep(0.5)
+		f = open('/tmp/devices.tmp', 'r')
+		swapdevices = f.read()
+		f.close()
+		swapdevices = swapdevices.replace('\n','')
+		swapdevices = swapdevices.split('/')
 		f = open('/proc/mounts', 'r')
 		for line in f.readlines():
 			if line.find(device) != -1:
@@ -144,9 +152,17 @@ class VIXDevicesPanel(Screen):
 				break
 				continue
 			else:
-				d1 = _("None")
-				dtype = _("unavailable")
-				rw = _("None")
+				if device in swapdevices:
+					parts = line.strip().split()
+					d1 = _("None")
+					dtype = 'swap'
+					rw = _("None")
+					break
+					continue
+				else:
+					d1 = _("None")
+					dtype = _("unavailable")
+					rw = _("None")
 		f.close()
 		f = open('/proc/partitions', 'r')
 		for line in f.readlines():
@@ -286,8 +302,8 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		self.list = []
 		list2 = []
 		self.Console = Console()
-		self.Console.ePopen("sfdisk -l /dev/sd? | awk '{print $(NF-6)}' | grep swap >/tmp/devices.tmp")
-		time.sleep(1)
+		self.Console.ePopen("sfdisk -l /dev/sd? | grep swap | awk '{print $(NF-9)}' >/tmp/devices.tmp")
+		time.sleep(0.5)
 		f = open('/tmp/devices.tmp', 'r')
 		swapdevices = f.read()
 		f.close()

@@ -285,6 +285,14 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 	def updateList(self):
 		self.list = []
 		list2 = []
+		self.Console = Console()
+		self.Console.ePopen("sfdisk -l /dev/sd? | awk '{print $(NF-6)}' | grep swap >/tmp/devices.tmp")
+		time.sleep(1)
+		f = open('/tmp/devices.tmp', 'r')
+		swapdevices = f.read()
+		f.close()
+		swapdevices = swapdevices.replace('\n','')
+		swapdevices = swapdevices.split('/')
 		f = open('/proc/partitions', 'r')
 		for line in f.readlines():
 			parts = line.strip().split()
@@ -294,6 +302,8 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
  			if not re.search('sd[a-z][1-9]',device):
 				continue
 			if device in list2:
+				continue
+			if device in swapdevices:
 				continue
 			self.buildMy_rec(device)
 			list2.append(device)
@@ -334,9 +344,12 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 			name = _("HARD DISK: ")
 			mypixmap = '/usr/share/enigma2/ViX_HD/icons/dev_hdd.png'
 		name = name + model
+		if path.exists('/tmp/devices.tmp'):
+			remove('/tmp/devices.tmp')
 		f = open('/proc/mounts', 'r')
 		for line in f.readlines():
 			if line.find(device) != -1:
+				print 'device',device
 				parts = line.strip().split()
 				d1 = parts[1]
 				dtype = parts[2]

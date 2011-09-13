@@ -1,5 +1,6 @@
 # for localized messages
 from . import _
+
 from Screens.Screen import Screen
 from enigma import eTimer
 from Screens.MessageBox import MessageBox
@@ -7,17 +8,14 @@ from Screens.Standby import TryQuitMainloop
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Pixmap import Pixmap
-from Components.PluginComponent import plugins
 from Components.ConfigList import ConfigListScreen
 from Components.config import getConfigListEntry, config, ConfigSelection, NoSave, configfile
 from Components.Sources.List import List
 from Components.Console import Console
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import fileExists, pathExists, createDir, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
-from Plugins.Plugin import PluginDescriptor
-from os import system, rename, path, mkdir, remove, statvfs, listdir
-import time, datetime
-import re
+from os import system, rename, path, mkdir, remove
+from time import sleep
+from re import search
 
 class VIXDevicesPanel(Screen):
 	skin = """
@@ -91,7 +89,7 @@ class VIXDevicesPanel(Screen):
 			if not parts:
 				continue
 			device = parts[3]
- 			if not re.search('sd[a-z][1-9]',device):
+ 			if not search('sd[a-z][1-9]',device):
 				continue
 			if device in list2:
 				continue
@@ -136,7 +134,7 @@ class VIXDevicesPanel(Screen):
 		name = name + model
 		self.Console = Console()
 		self.Console.ePopen("sfdisk -l /dev/sd? | grep swap | awk '{print $(NF-9)}' >/tmp/devices.tmp")
-		time.sleep(0.5)
+		sleep(0.5)
 		f = open('/tmp/devices.tmp', 'r')
 		swapdevices = f.read()
 		f.close()
@@ -303,7 +301,7 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		list2 = []
 		self.Console = Console()
 		self.Console.ePopen("sfdisk -l /dev/sd? | grep swap | awk '{print $(NF-9)}' >/tmp/devices.tmp")
-		time.sleep(0.5)
+		sleep(0.5)
 		f = open('/tmp/devices.tmp', 'r')
 		swapdevices = f.read()
 		f.close()
@@ -315,7 +313,7 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 			if not parts:
 				continue
 			device = parts[3]
- 			if not re.search('sd[a-z][1-9]',device):
+ 			if not search('sd[a-z][1-9]',device):
 				continue
 			if device in list2:
 				continue

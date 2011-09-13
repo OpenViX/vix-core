@@ -1,6 +1,6 @@
 # for localized messages
 from . import _
-from Plugins.Plugin import PluginDescriptor
+
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.ChoiceBox import ChoiceBox
@@ -11,11 +11,8 @@ from Components.Pixmap import Pixmap
 from Components.Harddisk import harddiskmanager
 from Components.Console import Console
 from Components.config import config
-from Components.Language import language
-from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
-from os import system, stat as mystat, chmod, path, remove, rename, access, W_OK, R_OK, F_OK, environ
+from os import system, stat as mystat, path, remove, rename
 from enigma import eTimer
-import stat, time
 
 config.vixsettings.swapautostart = ConfigYesNo(default = False)
 

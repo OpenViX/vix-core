@@ -1,9 +1,8 @@
 # for localized messages
 from . import _
-from Plugins.Plugin import PluginDescriptor
-from Screens.Screen import Screen
+
 import Components.Task
-from Components.ActionMap import ActionMap, HelpableActionMap
+from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Button import Button
 from Components.ScrollLabel import ScrollLabel
@@ -11,13 +10,11 @@ from Components.MenuList import MenuList
 from Components.Sources.List import List
 from Components.Pixmap import MultiPixmap
 from Components.ConfigList import ConfigListScreen
-from Components.config import config, ConfigSubsection, ConfigText, getConfigListEntry, ConfigSelection, ConfigYesNo, ConfigNumber
+from Components.config import config, getConfigListEntry
 from Components.Console import Console
 from Components.FileList import MultiFileSelectList
-from Components.Language import language
+from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
-from ServiceReference import ServiceReference
 from Components.SystemInfo import SystemInfo
 from os import path, makedirs, remove, rename, symlink, mkdir, listdir
 from shutil import rmtree

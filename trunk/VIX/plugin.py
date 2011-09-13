@@ -7,28 +7,15 @@ from Screens.Screen import Screen
 from Components.ActionMap import ActionMap
 from Components.Sources.StaticText import StaticText
 from Components.Sources.List import List
-from Components.config import config
 from Components.MultiContent import MultiContentEntryText
-from Components.PluginComponent import plugins
-from Components.Language import language
-from enigma import eTimer, quitMainloop, RT_HALIGN_LEFT, RT_VALIGN_CENTER, gFont
-
-from SoftwareManager import PluginManager, UpdatePlugin, PacketManager
+from enigma import RT_HALIGN_LEFT, RT_VALIGN_CENTER, gFont
 
 from RestoreWizard import RestoreWizard
-from BackupManager import VIXBackupManager, AutoBackupManagerTimer, BackupManagerautostart
-from CronManager import VIXCronManager
-from MountManager import VIXDevicesPanel
-from ImageManager import VIXImageManager, AutoImageManagerTimer, ImageManagerautostart
-from IPKInstaller import VIXIPKInstaller
-from ScriptRunner import VIXScriptRunner
-from SwapManager import VIXSwap, SwapAutostart
-from SoftcamManager import SoftcamAutoPoller, VIXSoftcamManager, SoftcamAutostart
-from PowerManager import VIXPowerManager, AutoPowerManagerTimer, PowerManagerautostart, PowerManagerNextWakeup
-
-_session = None
-
-#######################################################################
+from BackupManager import BackupManagerautostart
+from ImageManager import ImageManagerautostart
+from SwapManager import SwapAutostart
+from SoftcamManager import SoftcamAutostart
+from PowerManager import PowerManagerautostart, PowerManagerNextWakeup
 
 class VIXMenu(Screen):
 	skin = """
@@ -61,11 +48,10 @@ class VIXMenu(Screen):
 		
 	def __init__(self, session, args = 0):
 		Screen.__init__(self, session)
+		self.setTitle(_("ViX"))
 		self.skin_path = plugin_path
 		self.menu = args
 		self.list = []
-		self.menutext = _("Press MENU on your remote control for additional options.")
-		self.text = ""
 		if self.menu == 0:
 			self.list.append(("backup-manager", _("Backup Manager"), _("\nManage your backups of your settings." ), None))
 			self.list.append(("cron-manager", _("Cron Manager"), _("\nManage your cron jobs." ), None))
@@ -78,24 +64,8 @@ class VIXMenu(Screen):
 			self.list.append(("script-runner",_("Script Running"), _("\nRun your shell scripts." ), None))
 			self.list.append(("software-update", _("Software Update"), _("\nOnline update of your Receiver software." ), None))
 			self.list.append(("swap-manager",_("Swap Manager"), _("\nCreate and Manage your swapfiles." ), None))
-
-			for p in plugins.getPlugins(PluginDescriptor.WHERE_SOFTWAREMANAGER):
-				if p.__call__.has_key("SoftwareSupported"):
-					callFnc = p.__call__["SoftwareSupported"](None)
-					if callFnc is not None:
-						if p.__call__.has_key("menuEntryName"):
-							menuEntryName = p.__call__["menuEntryName"](None)
-						else:
-							menuEntryName = _("Extended Software")
-						if p.__call__.has_key("menuEntryDescription"):
-							menuEntryDescription = p.__call__["menuEntryDescription"](None)
-						else:
-							menuEntryDescription = _("Extended Software Plugin")
-						self.list.append(('default-plugin', menuEntryName, menuEntryDescription, callFnc))
-
 		self["menu"] = List(self.list)
 		self["key_red"] = StaticText(_("Close"))
-		self["status"] = StaticText(self.menutext)
 
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions", "InfobarEPGActions", "MenuActions"],
 		{
@@ -104,13 +74,11 @@ class VIXMenu(Screen):
 			"red": self.close,
 		}, -1)
 		self.onLayoutFinish.append(self.layoutFinished)
-		self.onShown.append(self.setWindowTitle)
 		self.onChangedEntry = []
 		self["menu"].onSelectionChanged.append(self.selectionChanged)
 
 	def createSummary(self):
-		from Screens.PluginBrowser import PluginBrowserSummary
-		return PluginBrowserSummary
+		return VIXMenuSummary
 
 	def selectionChanged(self):
 		item = self["menu"].getCurrent()
@@ -127,68 +95,67 @@ class VIXMenu(Screen):
 		idx = 0
 		self["menu"].index = idx
 
-	def setWindowTitle(self):
-		self.setTitle(_("ViX"))
-
-	def cleanup(self):
-		iSoftwareTools.cleanupSoftwareTools()
-
-	def getUpdateInfos(self):
-		self.text = ""
-		if iSoftwareTools.NetworkConnectionAvailable == True:
-			if iSoftwareTools.list_updating is False:
-				if iSoftwareTools.available_updates is not 0:
-					self.text = _("There are at least ") + str(iSoftwareTools.available_updates) + _(" updates available.")
-				else:
-					self.text = "" #_("There are no updates available.")
-			else:
-				if iSoftwareTools.available_updates is not 0:
-					self.text = _("There are at least ") + str(iSoftwareTools.available_updates) + _(" updates available.")
-				else:
-					self.text = ""  #_("There are no updates available.")
-				self.text += "\n" + _("A search for available updates is currently in progress.")
-		else:
-			self.text = _("No network connection available.")
-		self["status"].setText(self.text)
-
 	def go(self):
 		current = self["menu"].getCurrent()
 		if current:
 			currentEntry = current[0]
 			if self.menu == 0:
 				if (currentEntry == "install-extensions"):
+					from SoftwareManager import PluginManager
 					self.session.open(PluginManager, self.skin_path)
 				elif (currentEntry == "software-update"):
 					self.session.openWithCallback(self.runUpgrade, MessageBox, _("Do you want to update your Receiver?")+"\n"+_("\nAfter pressing OK, please wait!"))
 				elif (currentEntry == "backup-manager"):
+					from BackupManager import VIXBackupManager
 					self.session.open(VIXBackupManager)
 				elif (currentEntry == "cron-manager"):
+					from CronManager import VIXCronManager
 					self.session.open(VIXCronManager)
 				elif (currentEntry == "image-manager"):
+					from ImageManager import VIXImageManager
 					self.session.open(VIXImageManager)
 				elif (currentEntry == "ipkg-install"):
+					from IPKInstaller import VIXIPKInstaller
 					self.session.open(VIXIPKInstaller)
 				elif (currentEntry == "mount-manager"):
+					from MountManager import VIXDevicesPanel
 					self.session.open(VIXDevicesPanel)
 				elif (currentEntry == "power-manager"):
+					from PowerManager import VIXPowerManager
 					self.session.open(VIXPowerManager)
 				elif (currentEntry == "script-runner"):
+					from ScriptRunner import VIXScriptRunner
 					self.session.open(VIXScriptRunner)
 				elif (currentEntry == "swap-manager"):
+					from SwapManager import VIXSwap
 					self.session.open(VIXSwap)
-				elif (currentEntry == "default-plugin"):
-					self.extended = current[3]
-					self.extended(self.session, None)
 				elif (currentEntry == "ipkg-manager"):
+					from SoftwareManager import PacketManager
 					self.session.open(PacketManager, self.skin_path)
 
 	def runUpgrade(self, result):
 		if result:
+			from SoftwareManager import UpdatePlugin
 			self.session.open(UpdatePlugin, self.skin_path)
 
-	def runUpgradeOffline(self, result):
-		if result:
-			self.session.open(UpdatePlugin, self.skin_path, 'offline')
+class VIXMenuSummary(Screen):
+	def __init__(self, session, parent):
+		Screen.__init__(self, session, parent = parent)
+		self["entry"] = StaticText("")
+		self["desc"] = StaticText("")
+		self.onShow.append(self.addWatcher)
+		self.onHide.append(self.removeWatcher)
+
+	def addWatcher(self):
+		self.parent.onChangedEntry.append(self.selectionChanged)
+		self.parent.selectionChanged()
+
+	def removeWatcher(self):
+		self.parent.onChangedEntry.remove(self.selectionChanged)
+
+	def selectionChanged(self, name, desc):
+		self["entry"].text = name
+		self["desc"].text = desc
 
 def UpgradeMain(session, **kwargs):
 	session.open(VIXMenu)
@@ -196,13 +163,13 @@ def UpgradeMain(session, **kwargs):
 def startSetup(menuid):
 	if menuid != "setup": 
 		return [ ]
-	return [(_("VIX"), UpgradeMain, "vix_menu", 1010)]
+	return [(_("ViX"), UpgradeMain, "vix_menu", 1010)]
 
 def Plugins(path, **kwargs):
 	global plugin_path
 	plugin_path = path
 	plist = [PluginDescriptor(name=_("VIXMenu"), where=PluginDescriptor.WHERE_MENU, needsRestart = False, fnc=startSetup)]
-	plist.append(PluginDescriptor(name=_("VIX"),  where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=UpgradeMain))
+	plist.append(PluginDescriptor(name=_("ViX"),  where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=UpgradeMain))
 	plist.append(PluginDescriptor(where=PluginDescriptor.WHERE_MENU, fnc=SoftcamSetup))
 	plist.append(PluginDescriptor(name=_("Softcam Manager"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=SoftcamMenu))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = SwapAutostart))
@@ -218,4 +185,5 @@ def SoftcamSetup(menuid):
 	return []
 
 def SoftcamMenu(session, **kwargs):
+	from SoftcamManager import VIXSoftcamManager
 	session.open(VIXSoftcamManager)

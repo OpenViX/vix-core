@@ -1,17 +1,16 @@
 # for localized messages
 from . import _
+
 import Components.Task
-from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Button import Button
 from Components.MenuList import MenuList
 from Components.Sources.List import List
-from Components.Pixmap import MultiPixmap, Pixmap
-from Components.config import configfile , config, ConfigYesNo, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigText, ConfigClock, ConfigNumber, NoSave
+from Components.Pixmap import Pixmap
+from Components.config import configfile , config, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
 from Components.Harddisk import harddiskmanager
-from Components.Language import language
 from Components.Sources.StaticText import StaticText
 from Components.FileList import MultiFileSelectList
 from Components.ScrollLabel import ScrollLabel
@@ -20,16 +19,12 @@ from Components.Console import Console
 from Screens.Console import Console as RestoreConsole
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from Tools.Directories import pathExists, fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_PLUGIN, SCOPE_CURRENT_SKIN, SCOPE_METADIR
-from Tools.LoadPixmap import LoadPixmap
-from enigma import eTimer, quitMainloop, RT_HALIGN_LEFT, RT_VALIGN_CENTER, eListboxPythonMultiContent, eListbox, gFont, getDesktop, ePicLoad
-from ServiceReference import ServiceReference
-from os import path, system, unlink, stat, mkdir, popen, makedirs, chdir, getcwd, listdir, rename, remove, access, W_OK, R_OK, F_OK, statvfs
-import datetime
-from shutil import rmtree, move, copy
-from time import localtime, time, strftime, mktime, sleep
-from datetime import date, datetime
+from Tools.Directories import pathExists, fileExists
 from enigma import eTimer
+from os import path, stat, mkdir, listdir, rename, remove, statvfs
+from shutil import rmtree, move, copy
+from time import localtime, time, strftime, mktime
+from datetime import date, datetime
 import tarfile
 
 autoBackupManagerTimer = None
@@ -676,24 +671,12 @@ class AutoBackupManagerTimer:
 		global BackupTime
 		BackupTime = self.getBackupTime()
 		now = int(time())
-		#print '[BackupManager] BACKUP TIME',BackupTime
-		#print '[BackupManager] NOW TIME',now
-		#print '[BackupManager] ATLEAST',atLeast
-		#print '[BackupManager] NOW + ATLEAST', (now + atLeast)
-		#print '[BackupManager] BACKUP TIME - NOW', (BackupTime - now)
 		if BackupTime > 0:
 			if BackupTime < now + atLeast:
 				if config.backupmanager.repeattype.value == "daily":
 					BackupTime += 24*3600
 					while (int(BackupTime)-30) < now:
 						BackupTime += 24*3600
-					#BackupTime += 8*60
-					#print '[BackupManager] BACKUP TIME 2:',BackupTime
-					#print '[BackupManager] NOW 2:',now
-					#while (int(BackupTime)-30) < now:
-						#print '[BackupManager] YES BT is Less Now'
-						#BackupTime += 8*60
-						#print '[BackupManager] BACKUP TIME 2:',BackupTime
 				elif config.backupmanager.repeattype.value == "weekly":
 					BackupTime += 7*24*3600
 					while (int(BackupTime)-30) < now:

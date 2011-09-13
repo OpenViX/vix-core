@@ -1,31 +1,26 @@
 # for localized messages
 from . import _
+
 import Components.Task
-from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Button import Button
 from Components.MenuList import MenuList
 from Components.Sources.List import List
-from Components.Pixmap import MultiPixmap, Pixmap
-from Components.config import configfile , config, ConfigYesNo, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigText, ConfigClock, ConfigNumber, NoSave
+from Components.Pixmap import Pixmap
+from Components.config import configfile, config, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
 from Components.Harddisk import harddiskmanager
-from Components.Language import language
 from Screens.Screen import Screen
 from Components.Console import Console
 from Screens.Console import Console as RestareConsole
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from Tools.Directories import pathExists, fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_PLUGIN, SCOPE_CURRENT_SKIN, SCOPE_METADIR
-from Tools.LoadPixmap import LoadPixmap
-from enigma import eTimer, quitMainloop, RT_HALIGN_LEFT, RT_VALIGN_CENTER, eListboxPythonMultiContent, eListbox, gFont, getDesktop, ePicLoad
-from ServiceReference import ServiceReference
-from os import path, system, unlink, stat, mkdir, popen, makedirs, chdir, getcwd, listdir, rename, remove, access, W_OK, R_OK, F_OK, statvfs
-import datetime
+from Tools.Directories import pathExists, fileExists
+from enigma import eTimer, getDesktop
+from os import path, system, mkdir, popen, listdir, remove, statvfs
 from shutil import rmtree, move, copy
-from time import localtime, time, strftime, mktime, sleep
-from enigma import eTimer
+from time import localtime, time, strftime, mktime
 
 autoImageManagerTimer = None
 

@@ -13,6 +13,7 @@ from Components.Console import Console
 from Components.config import config
 from os import system, stat as mystat, path, remove, rename
 from enigma import eTimer
+import stat
 
 config.vixsettings.swapautostart = ConfigYesNo(default = False)
 

@@ -19,7 +19,6 @@ from Components.Console import Console
 from Screens.Console import Console as RestoreConsole
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from Tools.Directories import pathExists, fileExists
 from enigma import eTimer
 from os import path, stat, mkdir, listdir, rename, remove, statvfs
 from shutil import rmtree, move, copy
@@ -165,7 +164,7 @@ class VIXBackupManager(Screen):
 	def populate_List(self):
 		imparts = []
 		for p in harddiskmanager.getMountedPartitions():
-			if pathExists(p.mountpoint):
+			if path.exists(p.mountpoint):
 				d = path.normpath(p.mountpoint)
 				m = d + '/', p.mountpoint
 				if p.mountpoint != '/':
@@ -335,7 +334,7 @@ class VIXBackupManager(Screen):
 
 	def doRestorePlugins2(self, result, retval, extra_args):
 		if retval == 0:
-			if fileExists('/tmp/ExtraInstalledPlugins'):
+			if path.exists('/tmp/ExtraInstalledPlugins'):
 				pluginlist = file('/tmp/ExtraInstalledPlugins').readlines()
 				plugins = []
 				for line in result.split('\n'):
@@ -359,8 +358,7 @@ class VIXBackupManager(Screen):
 			ybox = self.session.openWithCallback(self.doRestorePlugins3, MessageBox, message, MessageBox.TYPE_YESNO)
 			ybox.setTitle(_("Re-install Plugins"))
 		else:
-			self.Console = Console()
-			self.Console.ePopen("killall -9 enigma2")
+			self.Console.ePopen("shutdown -r now")
 
 	def doRestorePlugins3(self, answer):
 		if answer is True:
@@ -381,15 +379,13 @@ class VIXBackupManager(Screen):
 			mycmd10 = "opkg update"
 			mycmd11 = "opkg install " + pluginslist
 			mycmd12 = 'rm -f /tmp/trimedExtraInstalledPlugins'
-			mycmd13 = 'killall -9 enigma2'
-			self.session.openWithCallback(self.RestoreComplete, RestoreConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
+			mycmd13 = 'shutdown -r now'
+			self.session.open(RestoreConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
 		else:
-			self.RestoreConsole = Console()
-			self.RestoreConsole.ePopen("killall -9 enigma2")
+			self.Console.ePopen("shutdown -r now")
 
 	def RestoreComplete(self):
-		self.RestoreConsole = Console()
-		self.RestoreConsole.ePopen("killall -9 enigma2")
+		self.Console.ePopen("shutdown -r now")
 
 	def myclose(self):
 		self.close()
@@ -526,7 +522,7 @@ class VIXBackupManagerMenu(ConfigListScreen, Screen):
 	def createSetup(self):
 		imparts = []
 		for p in harddiskmanager.getMountedPartitions():
-			if pathExists(p.mountpoint):
+			if path.exists(p.mountpoint):
 				d = path.normpath(p.mountpoint)
 				m = d + '/', p.mountpoint
 				if p.mountpoint != '/':
@@ -791,7 +787,7 @@ class BackupFiles(Screen):
 	def JobStart(self):
 		imparts = []
 		for p in harddiskmanager.getMountedPartitions():
-			if pathExists(p.mountpoint):
+			if path.exists(p.mountpoint):
 				d = path.normpath(p.mountpoint)
 				m = d + '/', p.mountpoint
 				if p.mountpoint != '/':
@@ -848,7 +844,7 @@ class BackupFiles(Screen):
 		self.BackupConsole = Console()
 		self.backupdirs = ' '.join(config.backupmanager.backupdirs.value)
 		print '[BackupManager] Renaming old backup'
-		if fileExists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
+		if path.exists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
 			dt = str(date.fromtimestamp(stat(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz').st_ctime))
 			self.newfilename = self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + dt + '-' + 'enigma2settingsbackup.tar.gz'
 			if path.exists(self.newfilename):
@@ -870,7 +866,7 @@ class BackupFiles(Screen):
 			output.write(result)
 			output.close()
 
-		if fileExists('/tmp/ExtraInstalledPlugins'):
+		if path.exists('/tmp/ExtraInstalledPlugins'):
 			print '[BackupManager] Listing completed.'
 			self.Stage3Completed = True
 		else:
@@ -892,7 +888,7 @@ class BackupFiles(Screen):
 		self.Stage4Complete()
 
 	def Stage4Complete(self):
-		if fileExists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
+		if path.exists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
 			print '[BackupManager] Complete.'
 			remove('/tmp/ExtraInstalledPlugins')
 			self.Stage4Completed = True

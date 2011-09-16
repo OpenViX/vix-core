@@ -5,6 +5,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
 from Components.MenuList import MenuList
 from Components.Console import Console
+from Screens.Console import Console as RestoreConsole
 from Components.config import config, ConfigBoolean
 from Components.Harddisk import harddiskmanager
 from Screens.MessageBox import MessageBox
@@ -13,9 +14,9 @@ from Screens.Wizard import WizardSummary
 from Screens.WizardLanguage import WizardLanguage
 from Screens.Wizard import wizardManager
 from Screens.Rc import Rc
-from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Components.Pixmap import Pixmap
-from os import popen, path, makedirs, listdir, access, stat, rename, remove, W_OK, R_OK
+from os import path, makedirs, listdir, access, stat, rename, remove, W_OK, R_OK
 
 config.misc.firstrun = ConfigBoolean(default = True)
 
@@ -32,7 +33,7 @@ def checkConfigBackup():
 				fullbackupfile =  x[1] + 'backup/' + backupfile
 			else:
 				fullbackupfile =  x[1] + '/backup/' + backupfile
-			if fileExists(fullbackupfile):
+			if path.exists(fullbackupfile):
 				config.backupmanager.backuplocation.value = str(x[1])
 				config.backupmanager.backuplocation.save()
 				config.backupmanager.save()
@@ -45,7 +46,7 @@ def checkBackupFile():
 		fullbackupfile =  backuplocation + 'backup/' + backupfile
 	else:
 		fullbackupfile =  backuplocation + '/backup/' + backupfile
-	if fileExists(fullbackupfile):
+	if path.exists(fullbackupfile):
 		return True
 	else:
 		return False
@@ -113,6 +114,7 @@ class RestoreSetting(Screen, ConfigListScreen):
 	def __init__(self, session, runRestore = False):
 		Screen.__init__(self, session)
 		self.session = session
+		self.setTitle(_("Restore is running..."))
 		self.runRestore = runRestore
 		self["actions"] = ActionMap(["WizardActions", "DirectionActions"],
 		{
@@ -126,31 +128,19 @@ class RestoreSetting(Screen, ConfigListScreen):
 		self.fullbackupfilename = self.backuppath + "/" + self.backupfile
 		self.list = []
 		ConfigListScreen.__init__(self, self.list)
-		self.onLayoutFinish.append(self.layoutFinished)
 		if self.runRestore:
 			self.onShown.append(self.doRestore)
 
-	def layoutFinished(self):
-		self.setWindowTitle()
-
-	def setWindowTitle(self):
-		self.setTitle(_("Restore is running..."))
-
 	def doRestore(self):
-		self.RestoreConsole = Console()
-		if path.exists("/proc/stb/vmpeg/0/dst_width"):
-			self.commands = ["tar -xzvf " + self.fullbackupfilename + " -C /", "echo 0 > /proc/stb/vmpeg/0/dst_height", "echo 0 > /proc/stb/vmpeg/0/dst_left", "echo 0 > /proc/stb/vmpeg/0/dst_top", "echo 0 > /proc/stb/vmpeg/0/dst_width"]
-		else:
-			self.commands = ["tar -xzvf " + self.fullbackupfilename + " -C /"]
-		self.RestoreConsole.eBatch(self.commands, self.doRestorePlugins1, debug=True)
+		self.Console = Console()
+		self.Console.ePopen("tar -xzvf " + self.fullbackupfilename + " -C /", self.doRestorePlugins1)
 
-	def doRestorePlugins1(self, extra_args):
-		self.RestoreConsole = Console()
-		self.RestoreConsole.ePopen('opkg list-installed', self.doRestorePlugins2)
+	def doRestorePlugins1(self, result, retval, extra_args):
+		self.Console.ePopen('opkg list-installed', self.doRestorePlugins2)
 
 	def doRestorePlugins2(self, result, retval, extra_args):
 		if retval == 0:
-			if fileExists('/tmp/ExtraInstalledPlugins'):
+			if path.exists('/tmp/ExtraInstalledPlugins'):
 				pluginlist = file('/tmp/ExtraInstalledPlugins').readlines()
 				plugins = []
 				for line in result.split('\n'):
@@ -174,22 +164,31 @@ class RestoreSetting(Screen, ConfigListScreen):
 			ybox = self.session.openWithCallback(self.doRestorePlugins3, MessageBox, message, MessageBox.TYPE_YESNO, wizard = True)
 			ybox.setTitle(_("Re-install Plugins"))
 		else:
-			self.RestoreConsole = Console()
-			self.RestoreConsole.ePopen("killall -9 enigma2")
+			self.Console.ePopen("shutdown -r now")
 
 	def doRestorePlugins3(self, answer):
 		if answer is True:
 			plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
 			pluginslist = plugintmp.replace('\n',' ')
-			self.commands = ["opkg update", "opkg install " + pluginslist, 'rm -f /tmp/ExtraInstalledPlugins', 'rm -f /tmp/trimedExtraInstalledPlugins']
-			self.RestoreConsole.eBatch(self.commands,self.doRestorePlugins4, debug=True)
+			mycmd1 = "echo '************************************************************************'"
+			if config.misc.boxtype.value.startswith('vu'):
+				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
+			elif config.misc.boxtype.value.startswith('et'):
+				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
+			mycmd3 = "echo '************************************************************************'"
+			mycmd4 = "echo ' '"
+			mycmd5 = _("echo 'Attention:'")
+			mycmd6 = "echo ' '"
+			mycmd7 = _("echo 'Enigma2 will be restarted automatically after the restore progress.'")
+			mycmd8 = "echo ' '"
+			mycmd9 = _("echo 'Installing Plugins.'")
+			mycmd10 = "opkg update"
+			mycmd11 = "opkg install " + pluginslist
+			mycmd12 = 'rm -f /tmp/trimedExtraInstalledPlugins'
+			mycmd13 = 'shutdown -r now'
+			self.session.open(RestoreConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
 		else:
-			self.RestoreConsole = Console()
-			self.RestoreConsole.ePopen("killall -9 enigma2")
-
-	def doRestorePlugins4(self, result):
-		self.RestoreConsole = Console()
-		self.RestoreConsole.ePopen("killall -9 enigma2")
+			self.Console.ePopen("shutdown -r now")
 
 	def backupFinishedCB(self,retval = None):
 		self.close(True)

@@ -16,7 +16,6 @@ from Components.Console import Console
 from Screens.Console import Console as RestareConsole
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from Tools.Directories import pathExists, fileExists
 from enigma import eTimer, getDesktop
 from os import path, system, mkdir, popen, listdir, remove, statvfs
 from shutil import rmtree, move, copy
@@ -159,7 +158,7 @@ class VIXImageManager(Screen):
 	def populate_List(self):
 		imparts = []
 		for p in harddiskmanager.getMountedPartitions():
-			if pathExists(p.mountpoint):
+			if path.exists(p.mountpoint):
 				d = path.normpath(p.mountpoint)
 				m = d + '/', p.mountpoint
 				if p.mountpoint != '/':
@@ -362,9 +361,9 @@ class VIXImageManager(Screen):
 	def doResstore(self):
 		selectedimage = self.sel
 		boxtype = config.misc.boxtype.value
-		if not fileExists(self.BackupDirectory + 'nandwrite'):
+		if not path.exists(self.BackupDirectory + 'nandwrite'):
 			copy('/usr/bin/nandwrite',self.BackupDirectory)
-		if not fileExists(self.BackupDirectory + 'flash_eraseall'):
+		if not path.exists(self.BackupDirectory + 'flash_eraseall'):
 			copy('/usr/bin/flash_eraseall',self.BackupDirectory)
 		if boxtype.startswith('vu') or boxtype.startswith('et'):
 			mycmd1 = "echo '************************************************************************'"
@@ -455,7 +454,7 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 	def createSetup(self):
 		imparts = []
 		for p in harddiskmanager.getMountedPartitions():
-			if pathExists(p.mountpoint):
+			if path.exists(p.mountpoint):
 				d = path.normpath(p.mountpoint)
 				m = d + '/', p.mountpoint
 				if p.mountpoint != '/':
@@ -689,7 +688,7 @@ class ImageBackup(Screen):
 	def JobStart(self):
 		imparts = []
 		for p in harddiskmanager.getMountedPartitions():
-			if pathExists(p.mountpoint):
+			if path.exists(p.mountpoint):
 				d = path.normpath(p.mountpoint)
 				m = d + '/', p.mountpoint
 				if p.mountpoint != '/':
@@ -896,7 +895,7 @@ class ImageBackup(Screen):
 			remove(self.WORKDIR + '/swapfile_backup')
 		if path.exists(self.WORKDIR):
 			rmtree(self.WORKDIR)
-		if (fileExists(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2') and fileExists(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin')) or (fileExists(self.MAINDEST + '/' + config.misc.boxtype.value + '/rootfs.bin') and fileExists(self.MAINDEST + '/' + config.misc.boxtype.value + '/kernel.bin')):
+		if (path.exists(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2') and path.exists(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin')) or (path.exists(self.MAINDEST + '/' + config.misc.boxtype.value + '/rootfs.bin') and path.exists(self.MAINDEST + '/' + config.misc.boxtype.value + '/kernel.bin')):
 			print '{ImageManager] Stage2: Image created in ' + self.MAINDEST
 			self.Stage2Complete()
 		else:

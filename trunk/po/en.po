@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-08 15:30+0100\n"
+"POT-Creation-Date: 2011-09-27 19:04+0100\n"
 "PO-Revision-Date: 2011-07-11 16:05+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -159,9 +159,6 @@ msgid ""
 msgstr ""
 "A configuration file (%s) was modified since Installation.\n"
 "Do you want to keep your version?"
-
-msgid "A search for available updates is currently in progress."
-msgstr "A search for available updates is currently in progress."
 
 msgid "A small overview of the available icon states and actions."
 msgstr "A small overview of the available icon states and actions."
@@ -411,6 +408,9 @@ msgstr "Do you want to reboot your Receiver?"
 msgid "Do you want to remove the package:\n"
 msgstr "Do you want to remove the package:\n"
 
+msgid "Do you want to restore your settings?"
+msgstr ""
+
 msgid "Do you want to update your Receiver?"
 msgstr "Do you want to update your Receiver?"
 
@@ -468,12 +468,6 @@ msgstr "Enough Retries, delaying till next schedule."
 
 msgid "Error"
 msgstr "Error"
-
-msgid "Extended Software"
-msgstr "Extended Software"
-
-msgid "Extended Software Plugin"
-msgstr "Extended Software Plugin"
 
 msgid "Extensions management"
 msgstr "Extensions management"
@@ -628,6 +622,9 @@ msgstr "Next Reboot: \n"
 msgid "Next Standby: \n"
 msgstr "Next Standby: \n"
 
+msgid "No"
+msgstr ""
+
 msgid ""
 "No config files found, please setup CCcam first\n"
 "in /etc/CCcam.cfg"
@@ -722,9 +719,6 @@ msgstr "Power Manager"
 msgid "Predefined"
 msgstr ""
 
-msgid "Press MENU on your remote control for additional options."
-msgstr "Press MENU on your remote control for additional options."
-
 msgid "Press OK on your remote control to continue."
 msgstr "Press OK on your remote control to continue."
 
@@ -798,9 +792,6 @@ msgstr ""
 "Restore wizard has detected that you had extra plugins installed at the time "
 "of you backup, Do you want to reinstall these plugins ?"
 
-msgid "Restoring Backup..."
-msgstr ""
-
 msgid "Retry after cancel (mins)"
 msgstr "Retry after cancel (mins)"
 
@@ -833,9 +824,6 @@ msgstr "Schedule Backups"
 
 msgid "Script Runner"
 msgstr "Script Runner"
-
-msgid "Script Running"
-msgstr "Script Running"
 
 msgid "Searching for available updates. Please wait..."
 msgstr "Searching for available updates. Please wait..."
@@ -974,6 +962,9 @@ msgstr "The backup location does not have enough freespace."
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "The chosen location does not exist, using /media/hdd"
 
+msgid "The wizard is finished now."
+msgstr ""
+
 msgid "There are at least "
 msgstr "There are at least "
 
@@ -1051,9 +1042,6 @@ msgstr "Upgrading"
 
 msgid "Use as HDD"
 msgstr "Use as HDD"
-
-msgid "VIX"
-msgstr "VIX"
 
 msgid "VIXMenu"
 msgstr "VIXMenu"
@@ -1140,6 +1128,9 @@ msgstr "What Day of month ?"
 msgid "What Day of week ?"
 msgstr "What Day of week ?"
 
+msgid "Yes"
+msgstr ""
+
 msgid "You can cancel the installation."
 msgstr "You can cancel the installation."
 
@@ -1151,6 +1142,11 @@ msgstr "You can install this plugin."
 
 msgid "You can remove this plugin."
 msgstr "You can remove this plugin."
+
+msgid ""
+"You have chosen to restore your settings. Please press OK to start the "
+"restore now."
+msgstr ""
 
 msgid "You have no backup to delete."
 msgstr "You have no backup to delete."
@@ -1258,9 +1254,6 @@ msgstr ""
 msgid "echo 'Preparing Flashprogress.'"
 msgstr ""
 
-msgid "echo 'Restoring.'"
-msgstr ""
-
 msgid "reating swapfile..."
 msgstr ""
 
@@ -1295,14 +1288,26 @@ msgstr ""
 #~ "ALL THE DATA WILL BE LOST!\n"
 #~ "Are you sure to continue?"
 
+#~ msgid "A search for available updates is currently in progress."
+#~ msgstr "A search for available updates is currently in progress."
+
 #~ msgid "Creating Image..."
 #~ msgstr "Creating Image..."
 
 #~ msgid "Error: You have to set Mountpoins for all your devices."
 #~ msgstr "Error: You have to set Mountpoins for all your devices."
 
+#~ msgid "Extended Software"
+#~ msgstr "Extended Software"
+
+#~ msgid "Extended Software Plugin"
+#~ msgstr "Extended Software Plugin"
+
 #~ msgid "Format"
 #~ msgstr "Format"
+
+#~ msgid "Press MENU on your remote control for additional options."
+#~ msgstr "Press MENU on your remote control for additional options."
 
 #~ msgid "Repartition Device"
 #~ msgstr "Repartition Device"
@@ -1310,6 +1315,9 @@ msgstr ""
 #~ msgid "Restore running"
 #~ msgstr "Restore running"
 
+#~ msgid "Script Running"
+#~ msgstr "Script Running"
+
 #~ msgid ""
 #~ "The device in now formatted to ext3\n"
 #~ "Press ok to continue"
@@ -1330,6 +1338,9 @@ msgstr ""
 #~ msgstr ""
 #~ "The screen will go blank while upgrading, be patient and wait for the "
 #~ "reboot."
+
+#~ msgid "VIX"
+#~ msgstr "VIX"
 
 #~ msgid "Warning you are going to format\n"
 #~ msgstr "Warning you are going to format\n"

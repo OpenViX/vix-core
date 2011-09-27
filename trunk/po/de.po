@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-08 15:30+0100\n"
+"POT-Creation-Date: 2011-09-27 19:04+0100\n"
 "PO-Revision-Date: 2011-08-02 14:12+0100\n"
 "Last-Translator: belierzz <belierzz@gmx.net>\n"
 "Language-Team: none\n"
@@ -161,9 +161,6 @@ msgid ""
 msgstr ""
 "Eine Konfigurationsdatei (%s) wurde seit der Installation verändert.\n"
 "Möchten Sie die aktuelle Version behalten?"
-
-msgid "A search for available updates is currently in progress."
-msgstr "Eine Suche nach verfügbaren Updates wird gerade durchgeführt."
 
 msgid "A small overview of the available icon states and actions."
 msgstr "Eine kleine Status- / Aktionen-Übersicht der Icons."
@@ -413,6 +410,9 @@ msgstr "Den Receiver neu starten?"
 msgid "Do you want to remove the package:\n"
 msgstr "Das Paket entfernen:\n"
 
+msgid "Do you want to restore your settings?"
+msgstr ""
+
 msgid "Do you want to update your Receiver?"
 msgstr "Den Receiver updaten?"
 
@@ -470,12 +470,6 @@ msgstr "Zu viele Versuche, bis zur nächsten Zeitplan-Aktion zurückgestellt. "
 
 msgid "Error"
 msgstr "Fehler"
-
-msgid "Extended Software"
-msgstr "Erweiterte Software"
-
-msgid "Extended Software Plugin"
-msgstr "Erweiterte Software-Plugins"
 
 msgid "Extensions management"
 msgstr "Erweiterungs-Management"
@@ -634,6 +628,9 @@ msgstr "Nächster Neustart: \n"
 msgid "Next Standby: \n"
 msgstr "Nächster Standby: \n"
 
+msgid "No"
+msgstr ""
+
 msgid ""
 "No config files found, please setup CCcam first\n"
 "in /etc/CCcam.cfg"
@@ -729,9 +726,6 @@ msgstr "Power-Manager"
 msgid "Predefined"
 msgstr "Vordefiniert"
 
-msgid "Press MENU on your remote control for additional options."
-msgstr "Für weitere Optionen MENU auf der Fernbedienung drücken. "
-
 msgid "Press OK on your remote control to continue."
 msgstr "Zum Fortfahren OK auf der Fernbedienung drücken"
 
@@ -806,9 +800,6 @@ msgstr ""
 "Sicherung zusätzliche Plugins installiert waren. Sollen diese Plugins neu "
 "installiert werden?"
 
-msgid "Restoring Backup..."
-msgstr ""
-
 msgid "Retry after cancel (mins)"
 msgstr "Nach Abbruch (Min) wiederholen"
 
@@ -841,9 +832,6 @@ msgstr "Zeitgeplante Backups"
 
 msgid "Script Runner"
 msgstr "Script ausführen"
-
-msgid "Script Running"
-msgstr "Script wird ausgeführt"
 
 msgid "Searching for available updates. Please wait..."
 msgstr "Verfügbare Updates werden gesucht. Bitte warten..."
@@ -987,6 +975,9 @@ msgstr "Ungenügend Speicherplatz am Sicherungsspeicherort."
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Der gewählte Speicherort existiert nicht, nutze /media/hdd"
 
+msgid "The wizard is finished now."
+msgstr ""
+
 msgid "There are at least "
 msgstr "Es gibt mindestens"
 
@@ -1064,9 +1055,6 @@ msgstr "Aktualisiert"
 
 msgid "Use as HDD"
 msgstr "Als HDD verwenden"
-
-msgid "VIX"
-msgstr "VIX"
 
 msgid "VIXMenu"
 msgstr "VIX-Menü"
@@ -1154,6 +1142,9 @@ msgstr "Welchen Tag im Monat?"
 msgid "What Day of week ?"
 msgstr "Welchen Wochentag?"
 
+msgid "Yes"
+msgstr ""
+
 msgid "You can cancel the installation."
 msgstr "Installation abbrechen."
 
@@ -1165,6 +1156,11 @@ msgstr "Plugin installieren."
 
 msgid "You can remove this plugin."
 msgstr "Plugin entfernen."
+
+msgid ""
+"You have chosen to restore your settings. Please press OK to start the "
+"restore now."
+msgstr ""
 
 msgid "You have no backup to delete."
 msgstr "Keine Backup zum Löschen."
@@ -1275,9 +1271,6 @@ msgid "echo 'Installing Plugins.'"
 msgstr ""
 
 msgid "echo 'Preparing Flashprogress.'"
-msgstr ""
-
-msgid "echo 'Restoring.'"
 msgstr ""
 
 msgid "reating swapfile..."

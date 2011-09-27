@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-08 15:30+0100\n"
+"POT-Creation-Date: 2011-09-27 19:04+0100\n"
 "PO-Revision-Date: 2011-07-11 16:05+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -125,9 +125,6 @@ msgstr ""
 msgid ""
 "A configuration file (%s) was modified since Installation.\n"
 "Do you want to keep your version?"
-msgstr ""
-
-msgid "A search for available updates is currently in progress."
 msgstr ""
 
 msgid "A small overview of the available icon states and actions."
@@ -364,6 +361,9 @@ msgstr ""
 msgid "Do you want to remove the package:\n"
 msgstr ""
 
+msgid "Do you want to restore your settings?"
+msgstr ""
+
 msgid "Do you want to update your Receiver?"
 msgstr ""
 
@@ -420,12 +420,6 @@ msgid "Enough Retries, delaying till next schedule."
 msgstr ""
 
 msgid "Error"
-msgstr ""
-
-msgid "Extended Software"
-msgstr ""
-
-msgid "Extended Software Plugin"
 msgstr ""
 
 msgid "Extensions management"
@@ -581,6 +575,9 @@ msgstr ""
 msgid "Next Standby: \n"
 msgstr ""
 
+msgid "No"
+msgstr ""
+
 msgid ""
 "No config files found, please setup CCcam first\n"
 "in /etc/CCcam.cfg"
@@ -664,9 +661,6 @@ msgstr ""
 msgid "Predefined"
 msgstr ""
 
-msgid "Press MENU on your remote control for additional options."
-msgstr ""
-
 msgid "Press OK on your remote control to continue."
 msgstr ""
 
@@ -738,9 +732,6 @@ msgid ""
 "of you backup, Do you want to reinstall these plugins ?"
 msgstr ""
 
-msgid "Restoring Backup..."
-msgstr ""
-
 msgid "Retry after cancel (mins)"
 msgstr ""
 
@@ -772,9 +763,6 @@ msgid "Schedule Backups"
 msgstr ""
 
 msgid "Script Runner"
-msgstr ""
-
-msgid "Script Running"
 msgstr ""
 
 msgid "Searching for available updates. Please wait..."
@@ -910,6 +898,9 @@ msgstr ""
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr ""
 
+msgid "The wizard is finished now."
+msgstr ""
+
 msgid "There are at least "
 msgstr ""
 
@@ -986,9 +977,6 @@ msgid "Upgrading"
 msgstr ""
 
 msgid "Use as HDD"
-msgstr ""
-
-msgid "VIX"
 msgstr ""
 
 msgid "VIXMenu"
@@ -1074,6 +1062,9 @@ msgstr ""
 msgid "What Day of week ?"
 msgstr ""
 
+msgid "Yes"
+msgstr ""
+
 msgid "You can cancel the installation."
 msgstr ""
 
@@ -1084,6 +1075,11 @@ msgid "You can install this plugin."
 msgstr ""
 
 msgid "You can remove this plugin."
+msgstr ""
+
+msgid ""
+"You have chosen to restore your settings. Please press OK to start the "
+"restore now."
 msgstr ""
 
 msgid "You have no backup to delete."
@@ -1177,9 +1173,6 @@ msgid "echo 'Installing Plugins.'"
 msgstr ""
 
 msgid "echo 'Preparing Flashprogress.'"
-msgstr ""
-
-msgid "echo 'Restoring.'"
 msgstr ""
 
 msgid "reating swapfile..."

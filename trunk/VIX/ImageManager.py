@@ -305,14 +305,17 @@ class VIXImageManager(Screen):
 			self.BackupRunning = True
 			self["key_green"].setText(_("View Progress"))
 			self["key_green"].show()
+			for job in Components.Task.job_manager.getPendingJobs():
+				jobname = str(job.name)
+			self.showJobView(job)
 
 	def keyResstore(self):
 		self.sel = self['list'].getCurrent()
 		if not self.BackupRunning:
-			if not config.crash.enabledebug.value:
+			if config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo" or config.misc.boxtype.value == "vusolo" or config.misc.boxtype.value == "vuduo":
 				if (config.misc.boxtype.value == "vuuno" and path.exists(self.BackupDirectory + self.sel + '/vuplus/uno')) or (config.misc.boxtype.value == "vuultimo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/ultimo')) or (config.misc.boxtype.value == "vusolo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/solo')) or (config.misc.boxtype.value == "vuduo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/duo')) or (config.misc.boxtype.value == "et9000" and path.exists(self.BackupDirectory + self.sel + '/et9000')) or (config.misc.boxtype.value == "et5000" and path.exists(self.BackupDirectory + self.sel + '/et5000')):
 					if self.sel:
-						message = _("Are you sure you want to restore this image:\n ") + self.sel
+						message = _("Are you sure you want to restore this image:\n ") + self.sel + ("\n\nDO NOT PRESS ANY BUTTONS\nAFTER THIS SCREEN")
 						ybox = self.session.openWithCallback(self.RestoreMemCheck, MessageBox, message, MessageBox.TYPE_YESNO)
 						ybox.setTitle(_("Restore Confirmation"))
 					else:
@@ -320,82 +323,171 @@ class VIXImageManager(Screen):
 				else:
 					self.session.open(MessageBox, _("Sorry the image " + self.sel + " is not compatible with this box."), MessageBox.TYPE_INFO, timeout = 10)
 			else:
-				self.session.open(MessageBox, _("Sorry you have Debug Logs enabed,\nPlease disable and restart GUI, before trying again"), MessageBox.TYPE_INFO, timeout = 10)
+				self.session.open(MessageBox, _("Sorry Image Restore is not supported on the" + ' ' + config.misc.boxtype.value + ', ' + _("Please copy the folder") + ' ' + self.BackupDirectory + self.sel + '/vuplus' +  ' \n' + _("to a USB stick, place in front USB port of reciver and power on")), MessageBox.TYPE_INFO, timeout = 30)
 		else:
 			self.session.open(MessageBox, _("Backup in progress,\nPlease for it to finish, before trying again"), MessageBox.TYPE_INFO, timeout = 10)
 
 	def RestoreMemCheck(self,answer):
-		if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"):
-			system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup")
-			remove(self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup")
-		if answer is True:
-			f = open('/proc/meminfo', 'r')
-			for line in f.readlines():
-				if line.find('MemFree') != -1:
-					parts = line.strip().split()
-					memfree = int(parts[1])
-				elif line.find('SwapFree') != -1:
-					parts = line.strip().split()
-					swapfree = int(parts[1])
-			f.close()
-			TotalFree = memfree + swapfree
-			print 'ToalFree',TotalFree
-			if int(TotalFree) < 4000:
-				if not config.imagemanager.backuplocation.value.startswith('/media/net/'):
-					mycmd1 = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
-					mycmd2 = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
-					mycmd3 = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
-					self.session.open(RestareConsole, title=_("reating swapfile..."), cmdlist=[mycmd1, mycmd2, mycmd3], finishedCallback=self.doResstore,closeOnSuccess = True)
-				else:
-					print '[ImageManager] Sorry, not enough free ram found, and no phyical devices attached'
-					self.session.open(MessageBox, _("Sorry, not enough free ram found, and no phyical devices attached. Can't create Swapfile on network mounts, unable to make backup"), MessageBox.TYPE_INFO, timeout = 10)
-					if config.imagemanager.schedule.value:
-						atLeast = 60
-						autoImageManagerTimer.backupupdate(atLeast)
-					else:
-						autoImageManagerTimer.backupstop()
-			else:
-				print '[ImageManager] Stage1: Found Enough Ram'
-				self.doResstore()
+		if answer:
+			config.imagemanager.restoreimage.value = self.sel 
+			self.ImageRestore = ImageRestore(self.session)
+			Components.Task.job_manager.AddJob(self.ImageRestore.createRestoreJob())
+			for job in Components.Task.job_manager.getPendingJobs():
+				jobname = str(job.name)
+			self.showJobView(job)
 
-	def doResstore(self):
-		selectedimage = self.sel
-		boxtype = config.misc.boxtype.value
+class ImageRestore(Screen):
+	def __init__(self, session):
+		Screen.__init__(self, session)
+		self.MessageRead = False
+		self.RamChecked = False
+		self.SwapCreated = False
+		self.Stage1Completed = False
+		self.Stage2Completed = False
+		self.Stage3Completed = False
+		self.Stage4Completed = False
+		self.sel = config.imagemanager.restoreimage.value
+		self.BackupDirectory = config.imagemanager.backuplocation.value + 'imagebackups/'
+
+	def createRestoreJob(self):
+		job = Components.Task.Job(_("ImageManager"))
+
+		task = Components.Task.PythonTask(job, _("Setting Up..."))
+		task.work = self.JobStart
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Checking Free RAM.."), timeoutCount=20)
+		task.check = lambda: self.RamChecked
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Creating Swap.."), timeoutCount=20)
+		task.check = lambda: self.SwapCreated
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Erasing Root..."))
+		task.work = self.doRestore1
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Erasing Root..."), timeoutCount=20)
+		task.check = lambda: self.Stage1Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Restoring Root..."))
+		task.work = self.doRestore2
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Restoring Root..."), timeoutCount=520)
+		task.check = lambda: self.Stage2Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Erasing Kernel..."))
+		task.work = self.doRestore3
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Erasing Kernel..."), timeoutCount=20)
+		task.check = lambda: self.Stage3Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Restoring Kernel..."))
+		task.work = self.doRestore4
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Restoring Kernel..."), timeoutCount=320)
+		task.check = lambda: self.Stage4Completed
+		task.weighting = 1
+
+		return job
+
+	def JobStart(self):
+		f = open('/proc/meminfo', 'r')
+		for line in f.readlines():
+			if line.find('MemFree') != -1:
+				parts = line.strip().split()
+				memfree = int(parts[1])
+			elif line.find('SwapFree') != -1:
+				parts = line.strip().split()
+				swapfree = int(parts[1])
+		f.close()
+		TotalFree = memfree + swapfree
+		print '[ImageManager] Stage1: Free Mem',TotalFree
+		if int(TotalFree) < 3000:
+			print '[ImageManager] Stage1: Creating Swapfile.'
+			self.RamChecked = True
+			self.MemCheck2()
+		else:
+			print '[ImageManager] Stage1: Found Enough Ram'
+			self.RamChecked = True
+			self.SwapCreated = True
+
+	def MemCheck2(self):
+		self.MemCheckConsole = Console()
+		cmd = "dd if=/dev/zero of=" + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440"
+		self.MemCheckConsole.ePopen(cmd, self.MemCheck3)
+
+	def MemCheck3(self, result, retval, extra_args = None):
+		if retval == 0:
+			self.MemCheckConsole = Console()
+			cmd = "mkswap " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
+			self.MemCheckConsole.ePopen(cmd, self.MemCheck4)
+
+	def MemCheck4(self, result, retval, extra_args = None):
+		if retval == 0:
+			self.MemCheckConsole = Console()
+			cmd = "swapon " + self.BackupDirectory + config.imagemanager.folderprefix.value + "-swapfile_backup"
+			self.MemCheckConsole.ePopen(cmd, self.MemCheck5)
+
+	def MemCheck5(self, result, retval, extra_args = None):
+		self.SwapCreated = True
+
+	def doRestore1(self):
+		self.BackupConsole = Console()
 		if not path.exists(self.BackupDirectory + 'nandwrite'):
 			copy('/usr/bin/nandwrite',self.BackupDirectory)
 		if not path.exists(self.BackupDirectory + 'flash_eraseall'):
 			copy('/usr/bin/flash_eraseall',self.BackupDirectory)
-		if boxtype.startswith('vu') or boxtype.startswith('et'):
-			mycmd1 = "echo '************************************************************************'"
-			if boxtype.startswith('vu'):
-				mycmd2 = "echo 'Vu+ " + boxtype +  _(" detected'")
-			elif boxtype.startswith('et'):
-				mycmd2 = "echo 'Xtrend " + boxtype +  _(" detected'")
-			mycmd3 = "echo '************************************************************************'"
-			mycmd4 = "echo ' '"
-			mycmd5 = _("echo 'Attention:'")
-			mycmd6 = "echo ' '"
-			mycmd7 = _("echo 'Preparing Flashprogress.'")
-			mycmd8 = _("echo 'Erasing Root aera.'")
-			if boxtype.startswith('vu'):
-				mycmd9 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd0'
-			elif boxtype.startswith('et'):
-				mycmd9 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd3'
-			mycmd10 = _("echo 'Flasing Root to NAND.'")
-			if boxtype.startswith('vu'):
-				mycmd11 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd0 ' + self.BackupDirectory + selectedimage + '/vuplus/' + boxtype.replace('vu','') + '/root_cfe_auto.jffs2'
-			elif boxtype.startswith('et'):
-				mycmd11 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd3 ' + self.BackupDirectory + selectedimage + '/' + boxtype + '/rootfs.bin'
-			mycmd12 = _("echo 'Erasing Kernel aera.'")
-			mycmd13 = self.BackupDirectory + 'flash_eraseall -j -q /dev/mtd1'
-			mycmd14 = _("echo 'Flasing Kernel to NAND.'")
-			if boxtype.startswith('vu'):
-				mycmd15 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/vuplus/' + boxtype.replace('vu','') + '/kernel_cfe_auto.bin'
-			elif boxtype.startswith('et'):
-				mycmd15 = self.BackupDirectory + 'nandwrite -p -q /dev/mtd1 ' + self.BackupDirectory + selectedimage + '/' + boxtype + '/kernel.bin'
-			mycmd16 = "echo ' '"
-			mycmd17 = _("echo 'Flashing Complete\nPlease power off your receiver, wait 15 seconds then power backon.'")
-			self.session.open(RestareConsole, title=_('Flashing NAND...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13, mycmd14, mycmd15, mycmd16, mycmd17],closeOnSuccess = False)
+ 		if config.misc.boxtype.value.startswith('vu'):
+			self.BackupConsole.ePopen(self.BackupDirectory + 'flash_eraseall /dev/mtd0', self.Stage1Complete)
+		elif config.misc.boxtype.value.startswith('et'):
+			self.BackupConsole.ePopen(self.BackupDirectory + 'flash_eraseall /dev/mtd3', self.Stage1Complete)
+
+	def Stage1Complete(self,result, retval, extra_args = None):
+		if retval == 0:
+			self.Stage1Completed = True
+			print '[ImageManager] Stage1: Complete.'
+
+	def doRestore2(self):
+ 		if config.misc.boxtype.value.startswith('vu'):
+			self.BackupConsole.ePopen(self.BackupDirectory + 'nandwrite -p /dev/mtd0 ' + self.BackupDirectory + self.sel + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2', self.Stage2Complete)
+		elif config.misc.boxtype.value.startswith('et'):
+			self.BackupConsole.ePopen(self.BackupDirectory + 'nandwrite -p /dev/mtd3 ' + self.BackupDirectory + self.sel + '/' + config.misc.boxtype.value + '/rootfs.bin', self.Stage2Complete)
+
+	def Stage2Complete(self,result, retval, extra_args = None):
+		if retval == 0:
+			self.Stage2Completed = True
+			print '[ImageManager] Stage2: Complete.'
+
+	def doRestore3(self):
+		if config.misc.boxtype.value.startswith('vu'):
+			self.BackupConsole.ePopen(self.BackupDirectory + 'flash_eraseall -j /dev/mtd1', self.Stage3Complete)
+		elif config.misc.boxtype.value.startswith('et'):
+			self.BackupConsole.ePopen(self.BackupDirectory + 'flash_eraseall /dev/mtd1', self.Stage3Complete)
+
+	def Stage3Complete(self,result, retval, extra_args = None):
+		if retval == 0:
+			self.Stage3Completed = True
+			print '[ImageManager] Stage3: Complete.'
+
+	def doRestore4(self):
+		if config.misc.boxtype.value.startswith('vu'):
+			self.BackupConsole.ePopen(self.BackupDirectory + 'nandwrite -p /dev/mtd1 ' + self.BackupDirectory + self.sel + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin', self.Stage4Complete)
+		elif config.misc.boxtype.value.startswith('et'):
+			self.BackupConsole.ePopen(self.BackupDirectory + 'nandwrite -p /dev/mtd1 ' + self.BackupDirectory + self.sel + '/' + config.misc.boxtype.value + '/kernel.bin', self.Stage4Complete)
+
+	def Stage4Complete(self,result, retval, extra_args = None):
+		if retval == 0:
+			self.Stage4Completed = True
+			print '[ImageManager] Stage4: Complete.'
+			self.session.open(MessageBox, _("Flashing Complete\nPlease power off your receiver, wait 15 seconds then power backon."), MessageBox.TYPE_INFO)
 
 	def myclose(self):
 		self.close()

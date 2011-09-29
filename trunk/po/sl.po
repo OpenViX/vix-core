@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-27 19:04+0100\n"
+"POT-Creation-Date: 2011-09-29 16:11+0100\n"
 "PO-Revision-Date: 2011-07-11 16:05+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -421,6 +421,12 @@ msgstr ""
 msgid "Enough Retries, delaying till next schedule."
 msgstr ""
 
+msgid "Erasing Kernel..."
+msgstr ""
+
+msgid "Erasing Root..."
+msgstr ""
+
 msgid "Error"
 msgstr ""
 
@@ -430,7 +436,9 @@ msgstr ""
 msgid "February"
 msgstr ""
 
-msgid "Flashing NAND..."
+msgid ""
+"Flashing Complete\n"
+"Please power off your receiver, wait 15 seconds then power backon."
 msgstr ""
 
 msgid "Folder prefix"
@@ -634,6 +642,9 @@ msgstr ""
 msgid "Packet manager"
 msgstr ""
 
+msgid "Please copy the folder"
+msgstr ""
+
 msgid "Please select device to use as swapfile location"
 msgstr ""
 
@@ -734,6 +745,12 @@ msgid ""
 "of you backup, Do you want to reinstall these plugins ?"
 msgstr ""
 
+msgid "Restoring Kernel..."
+msgstr ""
+
+msgid "Restoring Root..."
+msgstr ""
+
 msgid "Retry after cancel (mins)"
 msgstr ""
 
@@ -827,15 +844,13 @@ msgstr ""
 msgid "Software Update"
 msgstr ""
 
+msgid "Sorry Image Restore is not supported on the"
+msgstr ""
+
 msgid "Sorry the image "
 msgstr ""
 
 msgid "Sorry you box is not yet compatible."
-msgstr ""
-
-msgid ""
-"Sorry you have Debug Logs enabed,\n"
-"Please disable and restart GUI, before trying again"
 msgstr ""
 
 msgid "Sorry, no Details available!"
@@ -1151,33 +1166,13 @@ msgid ""
 "echo 'Enigma2 will be restarted automatically after the restore progress.'"
 msgstr ""
 
-msgid "echo 'Erasing Kernel aera.'"
-msgstr ""
-
-msgid "echo 'Erasing Root aera.'"
-msgstr ""
-
 msgid "echo 'Expanding Image.'"
-msgstr ""
-
-msgid ""
-"echo 'Flashing Complete\n"
-"Please power off your receiver, wait 15 seconds then power backon.'"
-msgstr ""
-
-msgid "echo 'Flasing Kernel to NAND.'"
-msgstr ""
-
-msgid "echo 'Flasing Root to NAND.'"
 msgstr ""
 
 msgid "echo 'Installing Plugins.'"
 msgstr ""
 
-msgid "echo 'Preparing Flashprogress.'"
-msgstr ""
-
-msgid "reating swapfile..."
+msgid "to a USB stick, place in front USB port of reciver and power on"
 msgstr ""
 
 msgid "unavailable"

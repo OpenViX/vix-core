@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-27 19:04+0100\n"
+"POT-Creation-Date: 2011-09-29 16:11+0100\n"
 "PO-Revision-Date: 2011-08-02 14:12+0100\n"
 "Last-Translator: belierzz <belierzz@gmx.net>\n"
 "Language-Team: none\n"
@@ -468,6 +468,12 @@ msgstr "Auslagerungsdatei-Autostart aktivieren"
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Zu viele Versuche, bis zur nächsten Zeitplan-Aktion zurückgestellt. "
 
+msgid "Erasing Kernel..."
+msgstr ""
+
+msgid "Erasing Root..."
+msgstr ""
+
 msgid "Error"
 msgstr "Fehler"
 
@@ -477,7 +483,9 @@ msgstr "Erweiterungs-Management"
 msgid "February"
 msgstr "Februar"
 
-msgid "Flashing NAND..."
+msgid ""
+"Flashing Complete\n"
+"Please power off your receiver, wait 15 seconds then power backon."
 msgstr ""
 
 msgid "Folder prefix"
@@ -695,6 +703,9 @@ msgstr "Paket-Manager"
 msgid "Packet manager"
 msgstr "Paket-Manager"
 
+msgid "Please copy the folder"
+msgstr ""
+
 msgid "Please select device to use as swapfile location"
 msgstr "Bitte Gerät für Auslagerungsdatei auswählen"
 
@@ -800,6 +811,12 @@ msgstr ""
 "Sicherung zusätzliche Plugins installiert waren. Sollen diese Plugins neu "
 "installiert werden?"
 
+msgid "Restoring Kernel..."
+msgstr ""
+
+msgid "Restoring Root..."
+msgstr ""
+
 msgid "Retry after cancel (mins)"
 msgstr "Nach Abbruch (Min) wiederholen"
 
@@ -893,18 +910,14 @@ msgstr "Software"
 msgid "Software Update"
 msgstr "Online-Update"
 
+msgid "Sorry Image Restore is not supported on the"
+msgstr ""
+
 msgid "Sorry the image "
 msgstr "Leider ist das Image"
 
 msgid "Sorry you box is not yet compatible."
 msgstr "Leider ist die Box noch nicht kompatibel."
-
-msgid ""
-"Sorry you have Debug Logs enabed,\n"
-"Please disable and restart GUI, before trying again"
-msgstr ""
-"Leider sind keine Debug Logs akltiviert,\n"
-"Bitte vor erneutem Versuch deaktivieren und GUI neu starten"
 
 msgid "Sorry, no Details available!"
 msgstr "Leider keine Details verfügbar!"
@@ -1247,33 +1260,13 @@ msgid ""
 "echo 'Enigma2 will be restarted automatically after the restore progress.'"
 msgstr ""
 
-msgid "echo 'Erasing Kernel aera.'"
-msgstr ""
-
-msgid "echo 'Erasing Root aera.'"
-msgstr ""
-
 msgid "echo 'Expanding Image.'"
-msgstr ""
-
-msgid ""
-"echo 'Flashing Complete\n"
-"Please power off your receiver, wait 15 seconds then power backon.'"
-msgstr ""
-
-msgid "echo 'Flasing Kernel to NAND.'"
-msgstr ""
-
-msgid "echo 'Flasing Root to NAND.'"
 msgstr ""
 
 msgid "echo 'Installing Plugins.'"
 msgstr ""
 
-msgid "echo 'Preparing Flashprogress.'"
-msgstr ""
-
-msgid "reating swapfile..."
+msgid "to a USB stick, place in front USB port of reciver and power on"
 msgstr ""
 
 msgid "unavailable"
@@ -1289,3 +1282,10 @@ msgstr ""
 "Der Receiver könnte jetzt nicht mehr verwendungsfähig sein. VOR EINEM "
 "NEUSTART unbedingt die Bedienungsanleitung für weitere Unterstützung "
 "konsultieren."
+
+#~ msgid ""
+#~ "Sorry you have Debug Logs enabed,\n"
+#~ "Please disable and restart GUI, before trying again"
+#~ msgstr ""
+#~ "Leider sind keine Debug Logs akltiviert,\n"
+#~ "Bitte vor erneutem Versuch deaktivieren und GUI neu starten"

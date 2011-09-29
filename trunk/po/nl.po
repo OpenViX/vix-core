@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-27 19:04+0100\n"
-"PO-Revision-Date: 2011-09-28 12:09+0100\n"
+"POT-Creation-Date: 2011-09-29 16:11+0100\n"
+"PO-Revision-Date: 2011-09-29 17:17+0100\n"
 "Last-Translator: R.L. van der Does\n"
 "Language-Team: Andy Blackburn/Rob van der Does\n"
 "Language: nl\n"
@@ -465,6 +465,12 @@ msgstr "Swap tijdens opstarten inschakelen"
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Vaak genoeg geprobeerd, wacht op de volgende geplande tijd."
 
+msgid "Erasing Kernel..."
+msgstr "Kernell wordt gewist..."
+
+msgid "Erasing Root..."
+msgstr "Root wordt gewist..."
+
 msgid "Error"
 msgstr "Fout"
 
@@ -474,8 +480,12 @@ msgstr "Beheer van Extensies"
 msgid "February"
 msgstr "februari"
 
-msgid "Flashing NAND..."
-msgstr "Flasht NAND..."
+msgid ""
+"Flashing Complete\n"
+"Please power off your receiver, wait 15 seconds then power backon."
+msgstr ""
+"Flashen is gereed\n"
+"Sckakel de stroom van uw ontvanger uit, wacht 15 seconden en schakel de stroom dan weer in."
 
 msgid "Folder prefix"
 msgstr "Folder prefix"
@@ -685,6 +695,9 @@ msgstr "Packet Manager"
 msgid "Packet manager"
 msgstr "Packet manager"
 
+msgid "Please copy the folder"
+msgstr "Kopieer de map"
+
 msgid "Please select device to use as swapfile location"
 msgstr "Selecteer het apparaat dat u voor de swapfile wilt gebruiken"
 
@@ -781,6 +794,12 @@ msgstr "Herstel wordt uitgevoerd...."
 msgid "Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?"
 msgstr "De herstel wizard heeft gedetecteerd dat u extra plugins had geïnstalleerd. Wilt u deze weer installeren?"
 
+msgid "Restoring Kernel..."
+msgstr "Kernel wordt hersteld..."
+
+msgid "Restoring Root..."
+msgstr "Root wordt hersteld..."
+
 msgid "Retry after cancel (mins)"
 msgstr "Probeer opnieuw of annuleer (minuten)"
 
@@ -874,18 +893,14 @@ msgstr "Software"
 msgid "Software Update"
 msgstr "Software Update"
 
+msgid "Sorry Image Restore is not supported on the"
+msgstr "Sorry Image Restore wordt niet ondersteund op de "
+
 msgid "Sorry the image "
 msgstr "Sorry het image "
 
 msgid "Sorry you box is not yet compatible."
 msgstr "Sorry, uw ontvanger is nog niet geschikt."
-
-msgid ""
-"Sorry you have Debug Logs enabed,\n"
-"Please disable and restart GUI, before trying again"
-msgstr ""
-"Sorry, u heeft Debug Logs ingeschakeld,\n"
-"Schakel deze uit en herstart de GUI, alvorens het weer te proberen"
 
 msgid "Sorry, no Details available!"
 msgstr "Sorry, geen details beschikbaar!"
@@ -1206,36 +1221,14 @@ msgstr "echo 'Download image.'"
 msgid "echo 'Enigma2 will be restarted automatically after the restore progress.'"
 msgstr "echo 'Enigma2 zal automatisch worden herstart na het terugplaats proces.'"
 
-msgid "echo 'Erasing Kernel aera.'"
-msgstr "echo Wist Kernel gebied.'"
-
-msgid "echo 'Erasing Root aera.'"
-msgstr "echo 'Wist Root gebied.'"
-
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Image wordt uitgezet.'"
-
-msgid ""
-"echo 'Flashing Complete\n"
-"Please power off your receiver, wait 15 seconds then power backon.'"
-msgstr ""
-"echo 'Flashen compleet\n"
-"Schakel uw ontvanger uit en wacht 15 seconde met het inschakelen.'"
-
-msgid "echo 'Flasing Kernel to NAND.'"
-msgstr "echo 'Flasht Kernel naar NAND.'"
-
-msgid "echo 'Flasing Root to NAND.'"
-msgstr "echo 'Flasht Root naat NAND.'"
 
 msgid "echo 'Installing Plugins.'"
 msgstr "echo 'Installeert plugins.'"
 
-msgid "echo 'Preparing Flashprogress.'"
-msgstr "echo Voorbereiden Flashvoortgang.'"
-
-msgid "reating swapfile..."
-msgstr "Creëert swapfile..."
+msgid "to a USB stick, place in front USB port of reciver and power on"
+msgstr "naar een USB stick, plaats die in de voorste USB poort van de ontvanger en schakel de stroom in"
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
@@ -1245,4 +1238,3 @@ msgstr "onbekend"
 
 msgid "your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver."
 msgstr "Uw ontvanger kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens de ontvanger opnieuw te starten."
-

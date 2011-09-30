@@ -100,6 +100,7 @@ class VIXSwap(Screen):
 		self.updateSwap()
 
 	def updateSwap(self, result = None, retval = None, extra_args = None):
+		self['actions'] = ActionMap()
 		self.swap_active = False
 		self.autos_start = False
 		self['autostart_on'].hide()
@@ -215,6 +216,7 @@ class VIXSwap(Screen):
 		scanning = _("Enable Swap at startup")
 		self['lab1'].setText(scanning)
 		self['lab1'].show()
+		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'back': self.close, 'red': self.actDeact, 'green': self.createDel, 'yellow': self.autoSsWap})
 
 	def actDeact(self):
 		if device == "":

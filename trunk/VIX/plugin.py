@@ -100,12 +100,7 @@ class VIXMenu(Screen):
 		if current:
 			currentEntry = current[0]
 			if self.menu == 0:
-				if (currentEntry == "install-extensions"):
-					from SoftwareManager import PluginManager
-					self.session.open(PluginManager, self.skin_path)
-				elif (currentEntry == "software-update"):
-					self.session.openWithCallback(self.runUpgrade, MessageBox, _("Do you want to update your Receiver?")+"\n"+_("\nAfter pressing OK, please wait!"))
-				elif (currentEntry == "backup-manager"):
+				if (currentEntry == "backup-manager"):
 					from BackupManager import VIXBackupManager
 					self.session.open(VIXBackupManager)
 				elif (currentEntry == "cron-manager"):
@@ -114,9 +109,15 @@ class VIXMenu(Screen):
 				elif (currentEntry == "image-manager"):
 					from ImageManager import VIXImageManager
 					self.session.open(VIXImageManager)
+				elif (currentEntry == "install-extensions"):
+					from SoftwareManager import PluginManager
+					self.session.open(PluginManager, self.skin_path)
 				elif (currentEntry == "ipkg-install"):
 					from IPKInstaller import VIXIPKInstaller
 					self.session.open(VIXIPKInstaller)
+				elif (currentEntry == "ipkg-manager"):
+					from SoftwareManager import PacketManager
+					self.session.open(PacketManager, self.skin_path)
 				elif (currentEntry == "mount-manager"):
 					from MountManager import VIXDevicesPanel
 					self.session.open(VIXDevicesPanel)
@@ -126,17 +127,12 @@ class VIXMenu(Screen):
 				elif (currentEntry == "script-runner"):
 					from ScriptRunner import VIXScriptRunner
 					self.session.open(VIXScriptRunner)
+				elif (currentEntry == "software-update"):
+					from SoftwareManager import UpdatePlugin
+					self.session.open(UpdatePlugin, self.skin_path)
 				elif (currentEntry == "swap-manager"):
 					from SwapManager import VIXSwap
 					self.session.open(VIXSwap)
-				elif (currentEntry == "ipkg-manager"):
-					from SoftwareManager import PacketManager
-					self.session.open(PacketManager, self.skin_path)
-
-	def runUpgrade(self, result):
-		if result:
-			from SoftwareManager import UpdatePlugin
-			self.session.open(UpdatePlugin, self.skin_path)
 
 class VIXMenuSummary(Screen):
 	def __init__(self, session, parent):

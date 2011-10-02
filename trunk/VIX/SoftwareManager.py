@@ -21,6 +21,7 @@ from . import _
 
 from Plugins.Plugin import PluginDescriptor
 from Screens.Console import Console
+from Screens.ChoiceBox import ChoiceBox
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Ipkg import Ipkg
@@ -949,6 +950,7 @@ class UpdatePlugin(Screen):
 		self.packages = 0
 		self.error = 0
 		self.processed_packages = []
+		self.total_packages = None
 
 		self.activity = 0
 		self.activityTimer = eTimer()
@@ -957,7 +959,6 @@ class UpdatePlugin(Screen):
 		self.ipkg = IpkgComponent()
 		self.ipkg.addCallback(self.ipkgCallback)
 
-		self.offline = "offline" in args
 		self.updating = False
 
 		self["actions"] = ActionMap(["WizardActions"], 
@@ -983,7 +984,7 @@ class UpdatePlugin(Screen):
 			if self.sliderPackages.has_key(param):
 				self.slider.setValue(self.sliderPackages[param])
 			self.package.setText(param)
-			self.status.setText(_("Upgrading"))
+			self.status.setText(_("Upgrading") + ": %s/%s" % (self.packages, self.total_packages))
 			if not param in self.processed_packages:
 				self.processed_packages.append(param)
 				self.packages += 1
@@ -1017,10 +1018,17 @@ class UpdatePlugin(Screen):
 		elif event == IpkgComponent.EVENT_DONE:
 			if self.updating:
 				self.updating = False
-				if self.offline:
-					quitMainloop(42)
+				self.ipkg.startCmd(IpkgComponent.CMD_UPGRADE_LIST)
+			elif self.ipkg.currentCommand == IpkgComponent.CMD_UPGRADE_LIST:
+			        self.total_packages = len(self.ipkg.getFetchedList())
+			        if self.total_packages:
+					message = _("Do you want to update your Receiver?") + "\n(%s " % self.total_packages + _("Packages") + ")"
+					choices = [(_("Unattended upgrade without GUI and reboot system"), "cold"),
+						(_("Upgrade and ask to reboot"), "hot"),
+						(_("Cancel"), "")]
+					self.session.openWithCallback(self.startActualUpgrade, ChoiceBox, title=message, list=choices)
 				else:
-					self.ipkg.startCmd(IpkgComponent.CMD_UPGRADE, args = {'test_only': False})
+				        self.session.openWithCallback(self.close, MessageBox, _("Nothing to upgrade"), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 			elif self.error == 0:
 				self.slider.setValue(4)
 				
@@ -1044,6 +1052,22 @@ class UpdatePlugin(Screen):
 				self.status.setText(_("Error") +  " - " + error)
 		#print event, "-", param
 		pass
+
+	def startActualUpgrade(self, answer):
+	        if not answer or not answer[1]:
+	                self.close()
+	                return
+		if answer[1] == "cold":
+			from enigma import gMainDC, getDesktop, eSize
+			self.session.nav.stopService()
+			desktop = getDesktop(0)
+			if desktop.size() != eSize(720,576):
+				gMainDC.getInstance().setResolution(720,576)
+				desktop.resize(eSize(720,576))
+			self.session.open(OfflineUpgradeMessageBox)
+			quitMainloop(42)
+		else:
+			self.ipkg.startCmd(IpkgComponent.CMD_UPGRADE, args = {'test_only': False})
 
 	def modificationCallback(self, res):
 		self.ipkg.write(res and "N" or "Y")

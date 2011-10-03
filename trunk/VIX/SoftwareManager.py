@@ -911,6 +911,19 @@ class PluginDetails(Screen, DreamInfoHandler):
 		print "[PluginDetails] fetch failed " + string.getErrorMessage()
 
 
+class OfflineUpgradeMessageBox(Screen):
+	skin = """
+		<screen position="110,258" size="500,150" title="Offline Upgrade">
+			<ePixmap pixmap="skin_default/icons/input_info.png" position="5,5" size="53,53" alphatest="on" />
+			<widget name="text" position="65,8" size="520,200" font="Regular;22" />
+		</screen>"""
+
+	def __init__(self, session, args = None):
+		self.skin = OfflineUpgradeMessageBox.skin
+		Screen.__init__(self, session)
+		from Components.Label import Label
+		self["text"] = Label(_("Offline upgrade in progress\nPlease wait until your box reboots\nThis may take a few minutes"))
+
 class UpdatePlugin(Screen):
 	skin = """
 		<screen name="UpdatePlugin" position="center,center" size="550,300" title="Software update" >

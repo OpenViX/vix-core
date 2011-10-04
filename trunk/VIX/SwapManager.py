@@ -132,21 +132,22 @@ class VIXSwap(Screen):
 			config.vixsettings.swapautostart.save()
 		if path.exists('/tmp/swapdevices.tmp'):
 			remove('/tmp/swapdevices.tmp')
-		self.Console.ePopen("fdisk -l /dev/sd? | grep swap", self.updateSwap2)
+		self.Console.ePopen("sfdisk -l /dev/sd? | grep swap", self.updateSwap2)
 
 	def updateSwap2(self, result = None, retval = None, extra_args = None):
 		self.swapsize = 0
 		self.swap_place = ''
 		self.swap_active = False
+		self.device = False
 		if config.vixsettings.swapautostart.value:
 			self['autostart_off'].hide()
 			self['autostart_on'].show()
 		else:
 			self['autostart_on'].hide()
 			self['autostart_off'].show()
-		if retval == 0:
+		if result:
 			self['key_green'].setText("")
-			for line in result.readlines():
+			for line in result.split('\n'):
 				if line.find('sd') > 0:
 					parts = line.strip().split()
 					self.swap_place = parts[0]
@@ -165,7 +166,6 @@ class VIXSwap(Screen):
 						self['key_green'].setText(_("Delete"))
 						info = mystat(self.swap_place)
 						self.swapsize = info[stat.ST_SIZE]
-						self.device = False
 						continue
 
 		self['labplace'].setText(self.swap_place)
@@ -219,10 +219,7 @@ class VIXSwap(Screen):
 		else:
 			if not self.device:
 				if self.swap_place != '':
-					self.commands = []
-					self.commands.append('mkswap ' + self.swap_place)
-					self.commands.append('swapon ' + self.swap_place)
-					self.Console.eBatch(self.commands, self.updateSwap, debug=True)
+					self.Console.ePopen('swapon ' + self.swap_place, self.updateSwap)
 				else:
 					mybox = self.session.open(MessageBox, _("Swap File not found. You have to create the file before to activate."), MessageBox.TYPE_INFO)
 					mybox.setTitle(_("Info"))
@@ -264,21 +261,23 @@ class VIXSwap(Screen):
 
 	def doCSsize(self, swapsize):
 		if swapsize:
-			swapsize = swapsize[1]
-			myfile = self.new_place + '/swapfile'
-			self.Console.ePopen('dd if=/dev/zero of=' + myfile + ' bs=1024 count=' + swapsize + ' 2>/dev/null', self.doCScreateCheck)
-			self['actions'] = ActionMap()
+			self["actions"].setEnabled(False)
 			scanning = _("Wait please while creating swapfile...")
 			self['lab1'].setText(scanning)
 			self['lab1'].show()
+			swapsize = swapsize[1]
+			myfile = self.new_place + '/swapfile'
+			self.commands = []
+			self.commands.append('dd if=/dev/zero of=' + myfile + ' bs=1024 count=' + swapsize + ' 2>/dev/null')
+			self.commands.append('mkswap ' + myfile)
+			self.Console.eBatch(self.commands, self.doCScreateCheck, debug=True)
 
-	def doCScreateCheck(self, result, retval, extra_args):
-		if retval == 0:
+	def doCScreateCheck(self, result = None, retval = None, extra_args = None):
+		if len(self.Console.appContainers) == 0:
 			mybox = self.session.open(MessageBox, _("Swap File successfully created."), MessageBox.TYPE_INFO, timeout = 5)
 		else:
 			mybox = self.session.open(MessageBox, _("Swap File creation Failed. Check for Available space."), MessageBox.TYPE_INFO)
 		mybox.setTitle(_("Info"))
-		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'back': self.close, 'red': self.actDeact, 'green': self.createDel, 'yellow': self.autoSsWap})
 		self.updateSwap()
 		
 	def autoSsWap(self):

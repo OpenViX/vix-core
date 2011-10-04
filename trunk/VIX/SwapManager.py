@@ -37,14 +37,14 @@ class StartSwap:
 
 	def startSwap2(self, result = None, retval = None, extra_args = None):
 		swap_place = ""
-		if retval == 0:
-			for line in result.readlines():
+		if result:
+			for line in result.split('\n'):
 				if line.find('sd') > 0:
 					parts = line.strip().split()
 					swap_place = parts[0]
-					print "[SwapManager] Found a swap partition on ", swap_place
 					file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if swap_place not in l])
 					rename('/etc/fstab.tmp','/etc/fstab')
+					print "[SwapManager] Found a swap partition:", swap_place
 		else:
 			devicelist = []
 			for p in harddiskmanager.getMountedPartitions():
@@ -59,7 +59,7 @@ class StartSwap:
 							print "[SwapManager] Found a swapfile on ", swap_place
 
 		f = file('/proc/swaps').read()
-		if f.find('swap_place') < 0:
+		if f.find(swap_place) < 0:
 			print "[SwapManager] Starting swapfile on ", swap_place
 			system('swapon ' + swap_place)
 		else:

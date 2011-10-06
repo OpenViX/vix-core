@@ -39,6 +39,7 @@ from Components.PluginComponent import plugins
 from Components.DreamInfoHandler import DreamInfoHandler
 from Components.Language import language
 from Components.AVSwitch import AVSwitch
+from Components.Harddisk import harddiskmanager, getProcMounts
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_PLUGIN, SCOPE_CURRENT_SKIN, SCOPE_METADIR
 from Tools.LoadPixmap import LoadPixmap
 from Tools.NumericalTextInput import NumericalTextInput
@@ -936,18 +937,6 @@ class UpdatePlugin(Screen):
 	def __init__(self, session, *args):
 		Screen.__init__(self, session)
 
-		try:
-			memcheck_stdout = popen('free | grep Total | tr -s " " | cut -d " " -f 4', "r")
-			memcheck = memcheck_stdout.read()
-			if int(memcheck) < 61440:
-				os_system("dd if=/dev/zero of=" + config.backupmanager.backuplocation.value + "swapfile_upgrade bs=1024 count=16440")
-				os_system("mkswap " + config.backupmanager.backuplocation.value + "swapfile_upgrade")
-				os_system("swapon " + config.backupmanager.backuplocation.value + "swapfile_upgrade")
-		except:
-			os_system("dd if=/dev/zero of=" + config.backupmanager.backuplocation.value + "swapfile_upgrade bs=1024 count=16440")
-			os_system("mkswap " + config.backupmanager.backuplocation.value + "swapfile_upgrade")
-			os_system("swapon " + config.backupmanager.backuplocation.value + "swapfile_upgrade")
-
 		self.sliderPackages = { "dreambox-dvb-modules": 1, "enigma2": 2, "tuxbox-image-info": 3 }
 
 		self.slider = Slider(0, 4)
@@ -982,6 +971,56 @@ class UpdatePlugin(Screen):
 		
 		self.updating = True
 		self.activityTimer.start(100, False)
+		f = open('/proc/meminfo', 'r')
+		for line in f.readlines():
+			if line.find('MemFree') != -1:
+				parts = line.strip().split()
+				memfree = int(parts[1])
+			elif line.find('SwapFree') != -1:
+				parts = line.strip().split()
+				swapfree = int(parts[1])
+		f.close()
+		TotalFree = memfree + swapfree
+		print '[SoftwareUpdate] Free Mem',TotalFree
+		if int(TotalFree) < 3000:
+			self.MemCheckConsole = Console()
+			self.swapdevice = False
+			supported_filesystems = frozenset(('ext4', 'ext3', 'ext2'))
+			candidates = []
+			mounts = getProcMounts() 
+			for partition in harddiskmanager.getMountedPartitions(False, mounts):
+				if partition.filesystem(mounts) in supported_filesystems:
+					candidates.append((partition.description, partition.mountpoint)) 
+			for swapdevice in candidates:
+				self.swapdevice = swapdevice[1]
+			if self.swapdevice:
+				print '[SoftwareUpdate] Creating Swapfile.'
+				self.MemCheck2()
+			else:
+				self.EnoughMem = False
+				self.ipkg.startCmd(IpkgComponent.CMD_UPDATE)
+		else:
+			print '[SoftwareUpdate] Found Enough Ram'
+			self.EnoughMem = True
+			self.ipkg.startCmd(IpkgComponent.CMD_UPDATE)
+
+	def MemCheck2(self):
+		print '[SoftwareUpdate] Creating Swapfile.'
+		self.MemCheckConsole = Console()
+		self.MemCheckConsole.ePopen("dd if=/dev/zero of=" + self.swapdevice + "swapfile_upgrade bs=1024 count=16440", self.MemCheck3)
+
+	def MemCheck3(self, result, retval, extra_args = None):
+		if retval == 0:
+			self.MemCheckConsole = Console()
+			self.MemCheckConsole.ePopen("mkswap " + self.swapdevice + "swapfile_upgrade", self.MemCheck4)
+
+	def MemCheck4(self, result, retval, extra_args = None):
+		if retval == 0:
+			self.MemCheckConsole = Console()
+			self.MemCheckConsole.ePopen("swapon " + self.swapdevice + "swapfile_upgrade", self.MemCheck5)
+
+	def MemCheck5(self, result, retval, extra_args = None):
+		self.EnoughMem = True
 		self.ipkg.startCmd(IpkgComponent.CMD_UPDATE)
 
 	def doActivityTimer(self):
@@ -1029,40 +1068,45 @@ class UpdatePlugin(Screen):
 		elif event == IpkgComponent.EVENT_ERROR:
 			self.error += 1
 		elif event == IpkgComponent.EVENT_DONE:
-			if self.updating:
-				self.updating = False
-				self.ipkg.startCmd(IpkgComponent.CMD_UPGRADE_LIST)
-			elif self.ipkg.currentCommand == IpkgComponent.CMD_UPGRADE_LIST:
-			        self.total_packages = len(self.ipkg.getFetchedList())
-			        if self.total_packages:
-					message = _("Do you want to update your Receiver?") + "\n(%s " % self.total_packages + _("Packages") + ")"
-					choices = [(_("Unattended upgrade without GUI and reboot system"), "cold"),
-						(_("Upgrade and ask to reboot"), "hot"),
-						(_("Cancel"), "")]
-					self.session.openWithCallback(self.startActualUpgrade, ChoiceBox, title=message, list=choices)
-				else:
-				        self.session.openWithCallback(self.close, MessageBox, _("Nothing to upgrade"), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
-			elif self.error == 0:
-				self.slider.setValue(4)
-				
-				self.activityTimer.stop()
-				self.activityslider.setValue(0)
-				
-				if os_path.exists(config.backupmanager.backuplocation.value + 'swapfile_upgrade'):
-					popen("swapoff " + config.backupmanager.backuplocation.value + "swapfile_upgrade")
-					remove(config.backupmanager.backuplocation.value + 'swapfile_upgrade')
-
-				self.package.setText(_("Done - Installed or upgraded %d packages") % self.packages)
-				self.status.setText(self.oktext)
-			else:
-				self.activityTimer.stop()
-				self.activityslider.setValue(0)
-				error = _("your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver.")
-				if self.packages == 0:
-					error = _("No packages were upgraded yet. So you can check your network and try again.")
+			if self.EnoughMem:
 				if self.updating:
-					error = _("Your receiver isn't connected to the internet properly. Please check it and try again.")
-				self.status.setText(_("Error") +  " - " + error)
+					self.updating = False
+					self.ipkg.startCmd(IpkgComponent.CMD_UPGRADE_LIST)
+				elif self.ipkg.currentCommand == IpkgComponent.CMD_UPGRADE_LIST:
+					self.total_packages = len(self.ipkg.getFetchedList())
+					if self.total_packages:
+						message = _("Do you want to update your Receiver?") + "\n(%s " % self.total_packages + _("Packages") + ")"
+						choices = [(_("Unattended upgrade without GUI and reboot system"), "cold"),
+							(_("Upgrade and ask to reboot"), "hot"),
+							(_("Cancel"), "")]
+						self.session.openWithCallback(self.startActualUpgrade, ChoiceBox, title=message, list=choices)
+					else:
+						self.session.openWithCallback(self.close, MessageBox, _("Nothing to upgrade"), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
+				elif self.error == 0:
+					self.slider.setValue(4)
+					
+					self.activityTimer.stop()
+					self.activityslider.setValue(0)
+					
+					self.package.setText(_("Done - Installed or upgraded %d packages") % self.packages)
+					self.status.setText(self.oktext)
+
+					if os_path.exists(self.swapdevice + "swapfile_upgrade"):
+						self.MemCheckConsole = Console()
+						self.MemCheckConsole.ePopen("swapoff" + self.swapdevice + "swapfile_upgrade")
+						remove(self.swapdevice + "swapfile_upgrade")
+				else:
+					self.activityTimer.stop()
+					self.activityslider.setValue(0)
+					error = _("your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver.")
+					if self.packages == 0:
+						error = _("No packages were upgraded yet. So you can check your network and try again.")
+					if self.updating:
+						error = _("Your receiver isn't connected to the internet properly. Please check it and try again.")
+					self.status.setText(_("Error") +  " - " + error)
+			else:
+				print '[SoftwareUpdate] Sorry, not enough free ram found, and no phyical devices that supports SWAP attached'
+				self.session.openWithCallback(self.close, MessageBox,_("Sorry, not enough free ram found, and no phyical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 		#print event, "-", param
 		pass
 

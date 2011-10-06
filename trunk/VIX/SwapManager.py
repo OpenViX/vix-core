@@ -8,7 +8,7 @@ from Components.config import ConfigYesNo
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Pixmap import Pixmap
-from Components.Harddisk import harddiskmanager
+from Components.Harddisk import harddiskmanager, getProcMounts
 from Components.Console import Console
 from Components.config import config
 from os import system, stat as mystat, path, remove, rename
@@ -145,7 +145,7 @@ class VIXSwap(Screen):
 		else:
 			self['autostart_on'].hide()
 			self['autostart_off'].show()
-		if result:
+		if result.find('sd') > 0:
 			self['key_green'].setText("")
 			for line in result.split('\n'):
 				if line.find('sd') > 0:
@@ -246,12 +246,16 @@ class VIXSwap(Screen):
 
 	def doCreateSwap(self):
 		parts = []
-		for p in harddiskmanager.getMountedPartitions():
-			d = path.normpath(p.mountpoint)
-			if path.exists(p.mountpoint) and p.mountpoint != "/"  and not p.mountpoint.startswith('/media/net'):
-				parts.append((p.description, d))
-		if len(parts):
-			self.session.openWithCallback(self.doCSplace, ChoiceBox, title = _("Please select device to use as swapfile location"), list = parts)
+		supported_filesystems = frozenset(('ext4', 'ext3', 'ext2'))
+		candidates = []
+		mounts = getProcMounts() 
+		for partition in harddiskmanager.getMountedPartitions(False, mounts):
+			if partition.filesystem(mounts) in supported_filesystems:
+				candidates.append((partition.description, partition.mountpoint)) 
+		if len(candidates):
+			self.session.openWithCallback(self.doCSplace, ChoiceBox, title = _("Please select device to use as swapfile location"), list = candidates)
+		else:
+			self.session.open(MessageBox, _("Sorry, no phyical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"), MessageBox.TYPE_INFO, timeout = 10)
 
 	def doCSplace(self, name):
 		if name:

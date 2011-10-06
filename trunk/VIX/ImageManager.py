@@ -10,7 +10,7 @@ from Components.Sources.List import List
 from Components.Pixmap import Pixmap
 from Components.config import configfile, config, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
-from Components.Harddisk import harddiskmanager
+from Components.Harddisk import harddiskmanager, getProcMounts
 from Screens.Screen import Screen
 from Components.Console import Console
 from Screens.Console import Console as RestareConsole
@@ -422,9 +422,10 @@ class ImageRestore(Screen):
 
 	def MemCheck2(self):
 		self.MemCheckConsole = Console()
+		self.swapdevice = False
 		supported_filesystems = frozenset(('ext4', 'ext3', 'ext2'))
 		candidates = []
-		mounts = Components.Harddisk.getProcMounts() 
+		mounts = getProcMounts() 
 		for partition in harddiskmanager.getMountedPartitions(False, mounts):
 			if partition.filesystem(mounts) in supported_filesystems:
 				candidates.append((partition.description, partition.mountpoint)) 
@@ -864,13 +865,22 @@ class ImageBackup(Screen):
 		TotalFree = memfree + swapfree
 		print '[ImageManager] Stage1: Free Mem',TotalFree
 		if int(TotalFree) < 3000:
-			if not config.imagemanager.backuplocation.value.startswith('/media/net/'):
+			self.MemCheckConsole = Console()
+			supported_filesystems = frozenset(('ext4', 'ext3', 'ext2'))
+			candidates = []
+			mounts = getProcMounts() 
+			for partition in harddiskmanager.getMountedPartitions(False, mounts):
+				if partition.filesystem(mounts) in supported_filesystems:
+					candidates.append((partition.description, partition.mountpoint)) 
+			for swapdevice in candidates:
+				self.swapdevice = swapdevice[1]
+			if self.swapdevice:
 				print '[ImageManager] Stage1: Creating Swapfile.'
 				self.RamChecked = True
 				self.MemCheck2()
 			else:
-				print '[ImageManager] Sorry, not enough free ram found, and no phyical devices attached'
-				self.session.open(MessageBox, _("Sorry, not enough free ram found, and no phyical devices attached. Can't create Swapfile on network mounts, unable to make backup"), MessageBox.TYPE_INFO, timeout = 10)
+				print '[ImageManager] Sorry, not enough free ram found, and no phyical devices that supports SWAP attached'
+				self.session.open(MessageBox, _("Sorry, not enough free ram found, and no phyical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"), MessageBox.TYPE_INFO, timeout = 10)
 				if config.imagemanager.schedule.value:
 					atLeast = 60
 					autoImageManagerTimer.backupupdate(atLeast)
@@ -882,15 +892,6 @@ class ImageBackup(Screen):
 			self.SwapCreated = True
 
 	def MemCheck2(self):
-		self.MemCheckConsole = Console()
-		supported_filesystems = frozenset(('ext4', 'ext3', 'ext2'))
-		candidates = []
-		mounts = Components.Harddisk.getProcMounts() 
-		for partition in harddiskmanager.getMountedPartitions(False, mounts):
-			if partition.filesystem(mounts) in supported_filesystems:
-				candidates.append((partition.description, partition.mountpoint)) 
-		for swapdevice in candidates:
-			self.swapdevice = swapdevice[1]
 		self.MemCheckConsole.ePopen("dd if=/dev/zero of=" + self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440", self.MemCheck3)
 
 	def MemCheck3(self, result, retval, extra_args = None):

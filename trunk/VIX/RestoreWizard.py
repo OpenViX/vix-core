@@ -164,7 +164,7 @@ class RestoreSetting(Screen, ConfigListScreen):
 			ybox = self.session.openWithCallback(self.doRestorePlugins3, MessageBox, message, MessageBox.TYPE_YESNO, wizard = True)
 			ybox.setTitle(_("Re-install Plugins"))
 		else:
-			self.Console.ePopen("shutdown -r now")
+			self.Console.ePopen("init 3 && reboot")
 
 	def doRestorePlugins3(self, answer):
 		if answer is True:
@@ -185,10 +185,10 @@ class RestoreSetting(Screen, ConfigListScreen):
 			mycmd10 = "opkg update"
 			mycmd11 = "opkg install " + pluginslist
 			mycmd12 = 'rm -f /tmp/trimedExtraInstalledPlugins'
-			mycmd13 = 'shutdown -r now'
+			mycmd13 = "init 3 && reboot"
 			self.session.open(RestoreConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
 		else:
-			self.Console.ePopen("shutdown -r now")
+			self.Console.ePopen("init 3 && reboot")
 
 	def backupFinishedCB(self,retval = None):
 		self.close(True)

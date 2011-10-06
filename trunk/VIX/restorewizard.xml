@@ -20,11 +20,4 @@ self.selectKey("OK")
 		<text value="You have chosen to restore your settings. Please press OK to start the restore now." />
 		<config screen="RestoreSetting" module="Plugins.SystemPlugins.ViX.RestoreWizard" type="ConfigList" />
 	</step>
-
-	<step id="end" laststep="true">
-		<condition>
-self.condition = self.isLastWizard
-		</condition>
-		<text value="The wizard is finished now." />
-	</step>
 </wizard>

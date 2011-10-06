@@ -454,7 +454,7 @@ class ImageRestore(Screen):
  		if config.misc.boxtype.value.startswith('vu'):
 			self.BackupConsole.ePopen(self.BackupDirectory + 'flash_eraseall /dev/mtd0', self.Stage1Complete)
 		elif config.misc.boxtype.value.startswith('et'):
-			self.BackupConsole.ePopen(self.BackupDirectory + 'flash_eraseall /dev/mtd3', self.Stage1Complete)
+			self.BackupConsole.ePopen(self.BackupDirectory + 'flash_eraseall /dev/mtd2', self.Stage1Complete)
 
 	def Stage1Complete(self,result, retval, extra_args = None):
 		if retval == 0:
@@ -465,7 +465,7 @@ class ImageRestore(Screen):
  		if config.misc.boxtype.value.startswith('vu'):
 			self.BackupConsole.ePopen(self.BackupDirectory + 'nandwrite -p /dev/mtd0 ' + self.BackupDirectory + self.sel + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2', self.Stage2Complete)
 		elif config.misc.boxtype.value.startswith('et'):
-			self.BackupConsole.ePopen(self.BackupDirectory + 'nandwrite -p /dev/mtd3 ' + self.BackupDirectory + self.sel + '/' + config.misc.boxtype.value + '/rootfs.bin', self.Stage2Complete)
+			self.BackupConsole.ePopen(self.BackupDirectory + 'nandwrite -p /dev/mtd2 ' + self.BackupDirectory + self.sel + '/' + config.misc.boxtype.value + '/rootfs.bin', self.Stage2Complete)
 
 	def Stage2Complete(self,result, retval, extra_args = None):
 		if retval == 0:
@@ -950,7 +950,7 @@ class ImageBackup(Screen):
 			elif config.misc.boxtype.value.startswith('et'):
 				mkdir(self.MAINDEST + '/' + config.misc.boxtype.value, 0777)
 				print '[ImageManager] Stage1: Making Image.'
-				self.commands.append('mount -t jffs2 /dev/mtdblock3 ' + self.TMPDIR + '/root')
+				self.commands.append('mount -t jffs2 /dev/mtdblock2 ' + self.TMPDIR + '/root')
 			self.commands.append(MKFS + ' --root=' + self.TMPDIR + '/root --faketime --output=' + self.WORKDIR + '/root.jffs2 ' + JFFS2OPTIONS)
 		elif self.ROOTFSTYPE == 'ubifs':
 			if config.misc.boxtype.value.startswith('et'):

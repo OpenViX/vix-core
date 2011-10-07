@@ -152,6 +152,14 @@ class VIXSwap(Screen):
 					parts = line.strip().split()
 					self.swap_place = parts[0]
 					self.device = True
+				f = open('/proc/swaps', 'r')
+				for line in f.readlines():
+					parts = line.strip().split()
+					if line.find('partition') != -1:
+						self.swap_active = True
+						self.swapsize = parts[2]
+						continue
+				f.close()
 		else:
 			self['key_green'].setText(_("Create"))
 			devicelist = []
@@ -176,20 +184,17 @@ class VIXSwap(Screen):
 			parts = line.strip().split()
 			if line.find('partition') != -1:
 				self.swap_active = True
-				self.swapsize = parts[2]
 				continue
 			elif line.find('file') != -1:
 				self.swap_active = True
-				self.swap_name = parts[1]
-				self.swapsize = parts[2]
 				continue
 		f.close()
 
 		if self.swapsize > 0:
-			if self.swapsize >= 1000:
-				self.swapsize = int(self.swapsize) / 1000
-				if self.swapsize >= 1000:
-					self.swapsize = int(self.swapsize) / 1000
+			if self.swapsize >= 1024:
+				self.swapsize = int(self.swapsize) / 1024
+				if self.swapsize >= 1024:
+					self.swapsize = int(self.swapsize) / 1024
 				self.swapsize = str(self.swapsize) + ' ' + 'MB'
 			else:
 				self.swapsize = str(self.swapsize) + ' ' + 'KB'

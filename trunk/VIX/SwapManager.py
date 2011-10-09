@@ -229,7 +229,7 @@ class VIXSwap(Screen):
 					mybox = self.session.open(MessageBox, _("Swap File not found. You have to create the file before to activate."), MessageBox.TYPE_INFO)
 					mybox.setTitle(_("Info"))
 			else:
-				self.Console.ePopen('swapon ' + device, self.updateSwap)
+				self.Console.ePopen('swapon ' + self.swap_place, self.updateSwap)
 
 	def createDel(self):
 		if not self.device:

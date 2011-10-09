@@ -49,6 +49,16 @@ def checkBackupFile():
 	if path.exists(fullbackupfile):
 		return True
 	else:
+		if config.misc.boxtype.value == 'et9x00':
+			backupfile = "et9000-enigma2settingsbackup.tar.gz"
+		elif config.misc.boxtype.value == 'et5x00':
+			backupfile = "et5000-enigma2settingsbackup.tar.gz"
+		if backuplocation.endswith('/'):
+			fullbackupfile =  backuplocation + 'backup/' + backupfile
+		else:
+			fullbackupfile =  backuplocation + '/backup/' + backupfile
+		if path.exists(fullbackupfile):
+			return True
 		return False
 
 if checkConfigBackup() is None:

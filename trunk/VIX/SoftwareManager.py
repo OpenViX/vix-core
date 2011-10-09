@@ -982,9 +982,9 @@ class UpdatePlugin(Screen):
 		f.close()
 		TotalFree = memfree + swapfree
 		print '[SoftwareUpdate] Free Mem',TotalFree
+		self.swapdevice = False
 		if int(TotalFree) < 3000:
 			self.MemCheckConsole = Console()
-			self.swapdevice = False
 			supported_filesystems = frozenset(('ext4', 'ext3', 'ext2'))
 			candidates = []
 			mounts = getProcMounts() 

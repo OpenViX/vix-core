@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-29 16:11+0100\n"
+"POT-Creation-Date: 2011-10-11 15:26+0100\n"
 "PO-Revision-Date: 2011-07-11 16:05+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -620,6 +620,9 @@ msgstr ""
 msgid "None"
 msgstr ""
 
+msgid "Nothing to upgrade"
+msgstr ""
+
 msgid "November"
 msgstr ""
 
@@ -629,10 +632,19 @@ msgstr ""
 msgid "October"
 msgstr ""
 
+msgid ""
+"Offline upgrade in progress\n"
+"Please wait until your box reboots\n"
+"This may take a few minutes"
+msgstr ""
+
 msgid "Only extensions."
 msgstr ""
 
 msgid "Package list update"
+msgstr ""
+
+msgid "Packages"
 msgstr ""
 
 msgid "Packet Manager"
@@ -856,8 +868,14 @@ msgid "Sorry, no Details available!"
 msgstr ""
 
 msgid ""
-"Sorry, not enough free ram found, and no phyical devices attached. Can't "
-"create Swapfile on network mounts, unable to make backup"
+"Sorry, no physical devices that supports SWAP attached. Can't create "
+"Swapfile on network or fat32 filesystems"
+msgstr ""
+
+msgid ""
+"Sorry, not enough free ram found, and no physical devices that supports SWAP "
+"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
+"make backup"
 msgstr ""
 
 msgid "Standby"
@@ -968,6 +986,9 @@ msgstr ""
 msgid "Type: "
 msgstr ""
 
+msgid "Unattended upgrade without GUI and reboot system"
+msgstr ""
+
 msgid "Undo install"
 msgstr ""
 
@@ -984,6 +1005,9 @@ msgid "Updatefeed not available."
 msgstr ""
 
 msgid "Updating software catalog"
+msgstr ""
+
+msgid "Upgrade and ask to reboot"
 msgstr ""
 
 msgid "Upgrade finished."

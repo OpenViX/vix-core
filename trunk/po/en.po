@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-29 16:11+0100\n"
+"POT-Creation-Date: 2011-10-11 15:26+0100\n"
 "PO-Revision-Date: 2011-07-11 16:05+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -675,6 +675,9 @@ msgstr ""
 msgid "None"
 msgstr "None"
 
+msgid "Nothing to upgrade"
+msgstr ""
+
 msgid "November"
 msgstr ""
 
@@ -684,11 +687,20 @@ msgstr "OK"
 msgid "October"
 msgstr ""
 
+msgid ""
+"Offline upgrade in progress\n"
+"Please wait until your box reboots\n"
+"This may take a few minutes"
+msgstr ""
+
 msgid "Only extensions."
 msgstr "Only extensions."
 
 msgid "Package list update"
 msgstr "Package list update"
+
+msgid "Packages"
+msgstr ""
 
 msgid "Packet Manager"
 msgstr "Packet Manager"
@@ -915,11 +927,15 @@ msgid "Sorry, no Details available!"
 msgstr "Sorry, no Details available!"
 
 msgid ""
-"Sorry, not enough free ram found, and no phyical devices attached. Can't "
-"create Swapfile on network mounts, unable to make backup"
+"Sorry, no physical devices that supports SWAP attached. Can't create "
+"Swapfile on network or fat32 filesystems"
 msgstr ""
-"Sorry, not enough free ram found, and no phyical devices attached. Can't "
-"create Swapfile on network mounts, unable to make backup"
+
+msgid ""
+"Sorry, not enough free ram found, and no physical devices that supports SWAP "
+"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
+"make backup"
+msgstr ""
 
 msgid "Standby"
 msgstr ""
@@ -1029,6 +1045,9 @@ msgstr ""
 msgid "Type: "
 msgstr "Type: "
 
+msgid "Unattended upgrade without GUI and reboot system"
+msgstr ""
+
 msgid "Undo install"
 msgstr "Undo install"
 
@@ -1046,6 +1065,9 @@ msgstr "Updatefeed not available."
 
 msgid "Updating software catalog"
 msgstr "Updating software catalog"
+
+msgid "Upgrade and ask to reboot"
+msgstr ""
 
 msgid "Upgrade finished."
 msgstr "Upgrade finished."
@@ -1317,6 +1339,13 @@ msgstr ""
 #~ msgstr ""
 #~ "Sorry you have Debug Logs enabed,\n"
 #~ "Please disable and restart GUI, before trying again"
+
+#~ msgid ""
+#~ "Sorry, not enough free ram found, and no phyical devices attached. Can't "
+#~ "create Swapfile on network mounts, unable to make backup"
+#~ msgstr ""
+#~ "Sorry, not enough free ram found, and no phyical devices attached. Can't "
+#~ "create Swapfile on network mounts, unable to make backup"
 
 #~ msgid ""
 #~ "The device in now formatted to ext3\n"

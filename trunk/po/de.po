@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-29 16:11+0100\n"
+"POT-Creation-Date: 2011-10-11 15:26+0100\n"
 "PO-Revision-Date: 2011-08-02 14:12+0100\n"
 "Last-Translator: belierzz <belierzz@gmx.net>\n"
 "Language-Team: none\n"
@@ -682,6 +682,9 @@ msgstr ""
 msgid "None"
 msgstr "Keine"
 
+msgid "Nothing to upgrade"
+msgstr ""
+
 msgid "November"
 msgstr "November"
 
@@ -691,11 +694,20 @@ msgstr "OK"
 msgid "October"
 msgstr "Oktober"
 
+msgid ""
+"Offline upgrade in progress\n"
+"Please wait until your box reboots\n"
+"This may take a few minutes"
+msgstr ""
+
 msgid "Only extensions."
 msgstr "Nur Erweiterungen."
 
 msgid "Package list update"
 msgstr "Paketliste aktualisieren"
+
+msgid "Packages"
+msgstr ""
 
 msgid "Packet Manager"
 msgstr "Paket-Manager"
@@ -923,12 +935,15 @@ msgid "Sorry, no Details available!"
 msgstr "Leider keine Details verfügbar!"
 
 msgid ""
-"Sorry, not enough free ram found, and no phyical devices attached. Can't "
-"create Swapfile on network mounts, unable to make backup"
+"Sorry, no physical devices that supports SWAP attached. Can't create "
+"Swapfile on network or fat32 filesystems"
 msgstr ""
-"Leider nicht genügend freien Arbeitsspeicher gefunden und kein "
-"physikalisches Gerät verbunden. Erstellung der Auslagerungsdatei auf "
-"Netzlaufwerken nicht möglich, Backup kann nicht erstellt werden."
+
+msgid ""
+"Sorry, not enough free ram found, and no physical devices that supports SWAP "
+"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
+"make backup"
+msgstr ""
 
 msgid "Standby"
 msgstr "Standby"
@@ -1042,6 +1057,9 @@ msgstr "Dienstag"
 msgid "Type: "
 msgstr "Typ: "
 
+msgid "Unattended upgrade without GUI and reboot system"
+msgstr ""
+
 msgid "Undo install"
 msgstr "Installation wiederrufen"
 
@@ -1059,6 +1077,9 @@ msgstr "Update-Feed nicht verfügbar"
 
 msgid "Updating software catalog"
 msgstr "Erweiterungsliste wird aktualisiert"
+
+msgid "Upgrade and ask to reboot"
+msgstr ""
 
 msgid "Upgrade finished."
 msgstr "Upgrade abgeschlossen"
@@ -1289,3 +1310,11 @@ msgstr ""
 #~ msgstr ""
 #~ "Leider sind keine Debug Logs akltiviert,\n"
 #~ "Bitte vor erneutem Versuch deaktivieren und GUI neu starten"
+
+#~ msgid ""
+#~ "Sorry, not enough free ram found, and no phyical devices attached. Can't "
+#~ "create Swapfile on network mounts, unable to make backup"
+#~ msgstr ""
+#~ "Leider nicht genügend freien Arbeitsspeicher gefunden und kein "
+#~ "physikalisches Gerät verbunden. Erstellung der Auslagerungsdatei auf "
+#~ "Netzlaufwerken nicht möglich, Backup kann nicht erstellt werden."

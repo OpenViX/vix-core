@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-29 16:11+0100\n"
-"PO-Revision-Date: 2011-09-29 17:17+0100\n"
-"Last-Translator: R.L. van der Does\n"
+"POT-Creation-Date: 2011-10-11 15:26+0100\n"
+"PO-Revision-Date: 2011-10-11 15:27+0100\n"
+"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: Andy Blackburn/Rob van der Does\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -674,6 +674,9 @@ msgstr "Er zijn nog geen pakketten geupgrade. U kunt uw netwerk controleren en h
 msgid "None"
 msgstr "Geen"
 
+msgid "Nothing to upgrade"
+msgstr ""
+
 msgid "November"
 msgstr "november"
 
@@ -683,11 +686,20 @@ msgstr "OK"
 msgid "October"
 msgstr "oktober"
 
+msgid ""
+"Offline upgrade in progress\n"
+"Please wait until your box reboots\n"
+"This may take a few minutes"
+msgstr ""
+
 msgid "Only extensions."
 msgstr "Alleen extensies"
 
 msgid "Package list update"
 msgstr "Pakketlijst update"
+
+msgid "Packages"
+msgstr ""
 
 msgid "Packet Manager"
 msgstr "Packet Manager"
@@ -905,8 +917,11 @@ msgstr "Sorry, uw ontvanger is nog niet geschikt."
 msgid "Sorry, no Details available!"
 msgstr "Sorry, geen details beschikbaar!"
 
-msgid "Sorry, not enough free ram found, and no phyical devices attached. Can't create Swapfile on network mounts, unable to make backup"
-msgstr "Sorry, er is niet genoeg vrij RAM gevonden en er zijn geen opslagmedia gevonden. Op een netwerk apparaat kan geen swapfile gemaakt worden; kan dus geen backup maken"
+msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
+msgstr ""
+
+msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
+msgstr ""
 
 msgid "Standby"
 msgstr "Standby"
@@ -1016,6 +1031,9 @@ msgstr "Dinsdag"
 msgid "Type: "
 msgstr "Type: "
 
+msgid "Unattended upgrade without GUI and reboot system"
+msgstr ""
+
 msgid "Undo install"
 msgstr "Installatie ongedaan maken"
 
@@ -1033,6 +1051,9 @@ msgstr "Updatefeed is niet beschikbaar."
 
 msgid "Updating software catalog"
 msgstr "Software catalogus wordt geupdate"
+
+msgid "Upgrade and ask to reboot"
+msgstr ""
 
 msgid "Upgrade finished."
 msgstr "Upgrade voltooid."
@@ -1238,3 +1259,11 @@ msgstr "onbekend"
 
 msgid "your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver."
 msgstr "Uw ontvanger kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens de ontvanger opnieuw te starten."
+
+#~ msgid ""
+#~ "Sorry, not enough free ram found, and no phyical devices attached. Can't "
+#~ "create Swapfile on network mounts, unable to make backup"
+#~ msgstr ""
+#~ "Sorry, er is niet genoeg vrij RAM gevonden en er zijn geen opslagmedia "
+#~ "gevonden. Op een netwerk apparaat kan geen swapfile gemaakt worden; kan "
+#~ "dus geen backup maken"

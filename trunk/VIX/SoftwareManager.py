@@ -1105,8 +1105,8 @@ class UpdatePlugin(Screen):
 						error = _("Your receiver isn't connected to the internet properly. Please check it and try again.")
 					self.status.setText(_("Error") +  " - " + error)
 			else:
-				print '[SoftwareUpdate] Sorry, not enough free ram found, and no phyical devices that supports SWAP attached'
-				self.session.openWithCallback(self.close, MessageBox,_("Sorry, not enough free ram found, and no phyical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
+				print '[SoftwareUpdate] Sorry, not enough free ram found, and no physical devices that supports SWAP attached'
+				self.session.openWithCallback(self.close, MessageBox,_("Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 		#print event, "-", param
 		pass
 

@@ -879,8 +879,8 @@ class ImageBackup(Screen):
 				self.RamChecked = True
 				self.MemCheck2()
 			else:
-				print '[ImageManager] Sorry, not enough free ram found, and no phyical devices that supports SWAP attached'
-				self.session.open(MessageBox, _("Sorry, not enough free ram found, and no phyical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"), MessageBox.TYPE_INFO, timeout = 10)
+				print '[ImageManager] Sorry, not enough free ram found, and no physical devices that supports SWAP attached'
+				self.session.open(MessageBox, _("Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"), MessageBox.TYPE_INFO, timeout = 10)
 				if config.imagemanager.schedule.value:
 					atLeast = 60
 					autoImageManagerTimer.backupupdate(atLeast)

@@ -17,7 +17,7 @@ from Screens.Console import Console as RestareConsole
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from enigma import eTimer, getDesktop
-from os import path, system, mkdir, popen, listdir, remove, statvfs
+from os import path, system, mkdir, listdir, remove, statvfs
 from shutil import rmtree, move, copy
 from time import localtime, time, strftime, mktime
 
@@ -915,12 +915,7 @@ class ImageBackup(Screen):
 			self.ROOTFSTYPE= 'jffs2'
 		self.BackupConsole = Console()
 		print '[ImageManager] Stage1: Creating tmp folders.'
-		self.BackupDate_stdout = popen('date +%Y%m%d_%H%M%S', "r")
-		self.BackupDatetmp = self.BackupDate_stdout.read()
-		self.BackupDate = self.BackupDatetmp.rstrip('\n')
-		self.ImageVersion_stdout = popen('date +%Y%m%d_%H%M%S', "r")
-		self.ImageVersiontmp = self.ImageVersion_stdout.read()
-		self.ImageVersion = self.BackupDatetmp.rstrip('\n')
+		self.BackupDate = strftime('%Y%m%d_%H%M%S', localtime())
 		self.WORKDIR=self.BackupDirectory + config.imagemanager.folderprefix.value + '-bi'
 		self.TMPDIR='/var/volatile/tmp/' + config.imagemanager.folderprefix.value + '-bi'
 		self.MAINDEST=self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + self.BackupDate
@@ -1012,7 +1007,7 @@ class ImageBackup(Screen):
 			fileout.write(line)
 			fileout.close()
 			fileout = open(self.MAINDEST + '/' + config.misc.boxtype.value + '/imageversion', 'w')
-			line = "ViX-" + self.ImageVersion
+			line = "ViX-" + self.BackupDate
 			fileout.write(line)
 			fileout.close()
 		print '[ImageManager] Stage3: Removing Swap.'

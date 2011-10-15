@@ -309,6 +309,9 @@ class VIXBackupManager(Screen):
 			self.BackupRunning = True
 			self["key_green"].setText(_("View Progress"))
 			self["key_green"].show()
+			for job in Components.Task.job_manager.getPendingJobs():
+				jobname = str(job.name)
+			self.showJobView(job)
 
 	def keyResstore(self):
 		self.sel = self['list'].getCurrent()
@@ -324,15 +327,66 @@ class VIXBackupManager(Screen):
 
 	def doRestore(self,answer):
 		if answer is True:
-			self.Console = Console()
-			self.Console.ePopen("tar -xzvf " + self.BackupDirectory + self.sel + " -C /", self.doRestorePlugins1)
+			Components.Task.job_manager.AddJob(self.createRestoreJob())
+			self.BackupRunning = True
+			self["key_green"].setText(_("View Progress"))
+			self["key_green"].show()
+			for job in Components.Task.job_manager.getPendingJobs():
+				jobname = str(job.name)
+			self.showJobView(job)
 
-	def doRestorePlugins1(self, result, retval, extra_args):
+	def myclose(self):
+		self.close()
+
+	def createRestoreJob(self):
+		self.Stage1Completed = False
+		self.Stage2Completed = False
+		self.Stage3Completed = False
+		job = Components.Task.Job(_("BackupManager"))
+
+		task = Components.Task.PythonTask(job, _("Restoring backup..."))
+		task.work = self.JobStart
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Restoring backup..."), timeoutCount=30)
+		task.check = lambda: self.Stage1Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Creating list of installed plugins..."))
+		task.work = self.Stage2
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Creating list of installed plugins..."), timeoutCount=30)
+		task.check = lambda: self.Stage2Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Comparing against backup..."))
+		task.work = self.Stage3
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Comparing against backup..."), timeoutCount=30)
+		task.check = lambda: self.Stage3Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Restoring plugins..."))
+		task.work = self.Stage4
+		task.weighting = 1
+
+		return job
+
+	def JobStart(self):
+		self.Console = Console()
+		self.Console.ePopen("tar -xzvf " + self.BackupDirectory + self.sel + " -C /", self.Stage1Complete)
+
+	def Stage1Complete(self, result, retval, extra_args):
 		if retval == 0:
-			self.Console = Console()
-			self.Console.ePopen('opkg list-installed', self.doRestorePlugins2)
+			self.Stage1Completed = True
 
-	def doRestorePlugins2(self, result, retval, extra_args):
+	def Stage2(self):
+		self.Console = Console()
+		self.Console.ePopen('opkg list-installed', self.Stage2Complete)
+
+	def Stage2Complete(self, result, retval, extra_args):
 		if retval == 0:
 			if path.exists('/tmp/ExtraInstalledPlugins'):
 				pluginlist = file('/tmp/ExtraInstalledPlugins').readlines()
@@ -348,47 +402,44 @@ class VIXBackupManager(Screen):
 						if parts[0] not in plugins:
 							output.write(parts[0] + '\n')
 				output.close()
-				self.doRestorePluginsQuestion()
+				self.Stage2Completed = True
 
-	def doRestorePluginsQuestion(self):
+	def Stage3(self, result=None, retval=None, extra_args=None):
 		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
 		pluginslist = plugintmp.replace('\n',' ')
 		if pluginslist:
 			message = _("Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?")
-			ybox = self.session.openWithCallback(self.doRestorePlugins3, MessageBox, message, MessageBox.TYPE_YESNO)
+			ybox = self.session.openWithCallback(self.Stage3Complete, MessageBox, message, MessageBox.TYPE_YESNO)
 			ybox.setTitle(_("Re-install Plugins"))
 		else:
-			self.Console.ePopen("shutdown -r now")
+			self.Console.ePopen("init 4 && reboot")
 
-	def doRestorePlugins3(self, answer):
+	def Stage3Complete(self, answer=False):
 		if answer is True:
-			plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
-			pluginslist = plugintmp.replace('\n',' ')
-			mycmd1 = "echo '************************************************************************'"
-			if config.misc.boxtype.value.startswith('vu'):
-				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
-			elif config.misc.boxtype.value.startswith('et'):
-				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
-			mycmd3 = "echo '************************************************************************'"
-			mycmd4 = "echo ' '"
-			mycmd5 = _("echo 'Attention:'")
-			mycmd6 = "echo ' '"
-			mycmd7 = _("echo 'Enigma2 will be restarted automatically after the restore progress.'")
-			mycmd8 = "echo ' '"
-			mycmd9 = _("echo 'Installing Plugins.'")
-			mycmd10 = "opkg update"
-			mycmd11 = "opkg install " + pluginslist
-			mycmd12 = 'rm -f /tmp/trimedExtraInstalledPlugins'
-			mycmd13 = 'shutdown -r now'
-			self.session.open(RestoreConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
+			self.Stage3Completed = True
 		else:
-			self.Console.ePopen("shutdown -r now")
+			self.Console.ePopen("init 4 && reboot")
 
-	def RestoreComplete(self):
-		self.Console.ePopen("shutdown -r now")
-
-	def myclose(self):
-		self.close()
+	def Stage4(self, result=None, retval=None, extra_args=None):
+		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
+		pluginslist = plugintmp.replace('\n',' ')
+		mycmd1 = "echo '************************************************************************'"
+		if config.misc.boxtype.value.startswith('vu'):
+			mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
+		elif config.misc.boxtype.value.startswith('et'):
+			mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
+		mycmd3 = "echo '************************************************************************'"
+		mycmd4 = "echo ' '"
+		mycmd5 = _("echo 'Attention:'")
+		mycmd6 = "echo ' '"
+		mycmd7 = _("echo 'Enigma2 will be restarted automatically after the restore progress.'")
+		mycmd8 = "echo ' '"
+		mycmd9 = _("echo 'Installing Plugins.'")
+		mycmd10 = "opkg update"
+		mycmd11 = "opkg install " + pluginslist
+		mycmd12 = 'rm -f /tmp/trimedExtraInstalledPlugins'
+		mycmd13 = 'init 4 && reboot'
+		self.session.open(RestoreConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
 
 class BackupSelection(Screen):
 	skin = """

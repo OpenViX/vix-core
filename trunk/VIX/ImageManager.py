@@ -315,7 +315,7 @@ class VIXImageManager(Screen):
 			if config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo" or config.misc.boxtype.value == "vusolo" or config.misc.boxtype.value == "vuduo":
 				if (config.misc.boxtype.value == "vuuno" and path.exists(self.BackupDirectory + self.sel + '/vuplus/uno')) or (config.misc.boxtype.value == "vuultimo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/ultimo')) or (config.misc.boxtype.value == "vusolo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/solo')) or (config.misc.boxtype.value == "vuduo" and path.exists(self.BackupDirectory + self.sel + '/vuplus/duo')) or (config.misc.boxtype.value == "et5x00" and path.exists(self.BackupDirectory + self.sel + '/et5x00')) or (config.misc.boxtype.value == "et6x00" and path.exists(self.BackupDirectory + self.sel + '/et6x00')) or (config.misc.boxtype.value == "et9x00" and path.exists(self.BackupDirectory + self.sel + '/et9x00')):
 					if self.sel:
-						message = _("Are you sure you want to restore this image:\n ") + self.sel + ("\n\nDO NOT PRESS ANY BUTTONS\nAFTER THIS SCREEN")
+						message = _("Are you sure you want to restore this image:\n ") + self.sel
 						ybox = self.session.openWithCallback(self.RestoreMemCheck, MessageBox, message, MessageBox.TYPE_YESNO)
 						ybox.setTitle(_("Restore Confirmation"))
 					else:

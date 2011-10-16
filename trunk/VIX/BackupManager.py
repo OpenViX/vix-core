@@ -813,11 +813,11 @@ class BackupFiles(Screen):
 		task.check = lambda: self.Stage2Completed
 		task.weighting = 1
 
-		task = Components.Task.PythonTask(job, _("Creating list of instlled plugins..."))
+		task = Components.Task.PythonTask(job, _("Creating list of installed plugins..."))
 		task.work = self.Stage3
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Creating list of instlled plugins..."), timeoutCount=30)
+		task = Components.Task.ConditionTask(job, _("Creating list of installed plugins..."), timeoutCount=30)
 		task.check = lambda: self.Stage3Completed
 		task.weighting = 1
 

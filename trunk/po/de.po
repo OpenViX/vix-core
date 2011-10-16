@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-11 15:26+0100\n"
+"POT-Creation-Date: 2011-10-16 14:24+0100\n"
 "PO-Revision-Date: 2011-08-02 14:12+0100\n"
 "Last-Translator: belierzz <belierzz@gmx.net>\n"
 "Language-Team: none\n"
@@ -328,6 +328,9 @@ msgstr "CommonInterface"
 msgid "Communication"
 msgstr "Kommunikation"
 
+msgid "Comparing against backup..."
+msgstr ""
+
 msgid "Configuring"
 msgstr "Konfigurieren"
 
@@ -343,8 +346,8 @@ msgstr "Backup-Dateien werden erstellt..."
 msgid "Creating Swap.."
 msgstr "Auslagerungsdatei wird erstellt..."
 
-msgid "Creating list of instlled plugins..."
-msgstr "Liste der installierten Plugins wird erstelllt..."
+msgid "Creating list of installed plugins..."
+msgstr ""
 
 msgid "Cron Manager"
 msgstr "Cron-Manager"
@@ -829,6 +832,12 @@ msgstr ""
 msgid "Restoring Root..."
 msgstr ""
 
+msgid "Restoring backup..."
+msgstr ""
+
+msgid "Restoring plugins..."
+msgstr ""
+
 msgid "Retry after cancel (mins)"
 msgstr "Nach Abbruch (Min) wiederholen"
 
@@ -1303,6 +1312,9 @@ msgstr ""
 "Der Receiver könnte jetzt nicht mehr verwendungsfähig sein. VOR EINEM "
 "NEUSTART unbedingt die Bedienungsanleitung für weitere Unterstützung "
 "konsultieren."
+
+#~ msgid "Creating list of instlled plugins..."
+#~ msgstr "Liste der installierten Plugins wird erstelllt..."
 
 #~ msgid ""
 #~ "Sorry you have Debug Logs enabed,\n"

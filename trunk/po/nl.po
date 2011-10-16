@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-11 15:26+0100\n"
-"PO-Revision-Date: 2011-10-12 10:09+0100\n"
+"POT-Creation-Date: 2011-10-16 14:24+0100\n"
+"PO-Revision-Date: 2011-10-16 14:30+0100\n"
 "Last-Translator: R.L. van der Does\n"
 "Language-Team: Andy Blackburn/Rob van der Does\n"
 "Language: nl\n"
@@ -325,6 +325,9 @@ msgstr "CommonInterface"
 msgid "Communication"
 msgstr "Communcatie"
 
+msgid "Comparing against backup..."
+msgstr ""
+
 msgid "Configuring"
 msgstr "Bezig met instellen"
 
@@ -340,7 +343,7 @@ msgstr "Creëer backup bestanden"
 msgid "Creating Swap.."
 msgstr "Creëert Swap"
 
-msgid "Creating list of instlled plugins..."
+msgid "Creating list of installed plugins..."
 msgstr "Maakt een lijst met beschikbare plugins..."
 
 msgid "Cron Manager"
@@ -815,6 +818,12 @@ msgstr "Kernel wordt hersteld..."
 msgid "Restoring Root..."
 msgstr "Root wordt hersteld..."
 
+msgid "Restoring backup..."
+msgstr ""
+
+msgid "Restoring plugins..."
+msgstr ""
+
 msgid "Retry after cancel (mins)"
 msgstr "Probeer opnieuw of annuleer (minuten)"
 
@@ -1262,11 +1271,3 @@ msgstr "onbekend"
 
 msgid "your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver."
 msgstr "Uw ontvanger kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens de ontvanger opnieuw te starten."
-
-#~ msgid ""
-#~ "Sorry, not enough free ram found, and no phyical devices attached. Can't "
-#~ "create Swapfile on network mounts, unable to make backup"
-#~ msgstr ""
-#~ "Sorry, er is niet genoeg vrij RAM gevonden en er zijn geen opslagmedia "
-#~ "gevonden. Op een netwerk apparaat kan geen swapfile gemaakt worden; kan "
-#~ "dus geen backup maken"

@@ -342,6 +342,9 @@ class VIXBackupManager(Screen):
 		self.Stage1Completed = False
 		self.Stage2Completed = False
 		self.Stage3Completed = False
+		self.Stage4Completed = False
+		self.Stage5Completed = False
+		self.Stage6Completed = False
 		job = Components.Task.Job(_("BackupManager"))
 
 		task = Components.Task.PythonTask(job, _("Restoring backup..."))
@@ -372,6 +375,30 @@ class VIXBackupManager(Screen):
 		task.work = self.Stage4
 		task.weighting = 1
 
+		task = Components.Task.ConditionTask(job, _("Restoring plugins..."), timeoutCount=30)
+		task.check = lambda: self.Stage4Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Restoring plugins..."))
+		task.work = self.Stage5
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Restoring plugins..."), timeoutCount=30)
+		task.check = lambda: self.Stage5Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Restoring plugins..."))
+		task.work = self.Stage6
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Restoring plugins..."), timeoutCount=240)
+		task.check = lambda: self.Stage6Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Restoring plugins..."))
+		task.work = self.Stage7
+		task.weighting = 1
+
 		return job
 
 	def JobStart(self):
@@ -400,13 +427,18 @@ class VIXBackupManager(Screen):
 					if line:
 						parts = line.strip().split()
 						if parts[0] not in plugins:
-							output.write(parts[0] + '\n')
+							output.write(parts[0] + ' ')
 				output.close()
 				self.Stage2Completed = True
 
-	def Stage3(self, result=None, retval=None, extra_args=None):
-		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
-		pluginslist = plugintmp.replace('\n',' ')
+	def Stage3(self):
+		fstabfile = file('/etc/fstab').readlines()
+		for mountfolder in fstabfile:
+			parts = mountfolder.strip().split()
+			if parts and str(parts[0]).startswith('/dev/'):
+				if not path.exists(parts[1]):
+					mkdir(parts[1], 0755)				
+		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
 		if pluginslist:
 			message = _("Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?")
 			ybox = self.session.openWithCallback(self.Stage3Complete, MessageBox, message, MessageBox.TYPE_YESNO)
@@ -420,26 +452,31 @@ class VIXBackupManager(Screen):
 		else:
 			self.Console.ePopen("init 4 && reboot")
 
-	def Stage4(self, result=None, retval=None, extra_args=None):
-		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
-		pluginslist = plugintmp.replace('\n',' ')
-		mycmd1 = "echo '************************************************************************'"
-		if config.misc.boxtype.value.startswith('vu'):
-			mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
-		elif config.misc.boxtype.value.startswith('et'):
-			mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
-		mycmd3 = "echo '************************************************************************'"
-		mycmd4 = "echo ' '"
-		mycmd5 = _("echo 'Attention:'")
-		mycmd6 = "echo ' '"
-		mycmd7 = _("echo 'Enigma2 will be restarted automatically after the restore progress.'")
-		mycmd8 = "echo ' '"
-		mycmd9 = _("echo 'Installing Plugins.'")
-		mycmd10 = "opkg update"
-		mycmd11 = "opkg install " + pluginslist
-		mycmd12 = 'rm -f /tmp/trimedExtraInstalledPlugins'
-		mycmd13 = 'init 4 && reboot'
-		self.session.open(RestoreConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
+	def Stage4(self):
+		self.Console.ePopen('opkg update', self.Stage4Complete)
+
+	def Stage4Complete(self, result, retval, extra_args):
+		if retval == 0:
+			self.Stage4Completed = True
+
+	def Stage5(self):
+		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
+		self.Console.ePopen('opkg install ' + pluginslist, self.Stage5Complete)
+
+	def Stage5Complete(self, result, retval, extra_args):
+		if retval == 0:
+			self.Stage5Completed = True
+
+	def Stage6(self):
+		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
+		self.Console.ePopen('opkg install ' + pluginslist, self.Stage6Complete)
+
+	def Stage6Complete(self, result, retval, extra_args):
+		if retval == 0:
+			self.Stage6Completed = True
+
+	def Stage7(self):
+		remove('/tmp/trimedExtraInstalledPlugins')
 
 class BackupSelection(Screen):
 	skin = """
@@ -836,6 +873,22 @@ class BackupFiles(Screen):
 		return job
 
 	def JobStart(self):
+		self.selectedFiles = config.backupmanager.backupdirs.value
+		if path.exists('/etc/CCcam.cfg') and not '/etc/CCcam.cfg' in self.selectedFiles:
+			self.selectedFiles.append('/etc/CCcam.cfg')
+		if path.exists('/etc/CCcam.channelinfo') and not '/etc/CCcam.channelinfo' in self.selectedFiles:
+			self.selectedFiles.append('/etc/CCcam.channelinfo')
+		if path.exists('/etc/CCcam.providers') and not '/etc/CCcam.providers' in self.selectedFiles:
+			self.selectedFiles.append('/etc/CCcam.providers')
+		if path.exists('/etc/wpa_supplicant.ath0.conf') and '/etc/wpa_supplicant.ath0.conf' not in self.selectedFiles:
+			self.selectedFiles.append('/etc/wpa_supplicant.ath0.conf')
+		if path.exists('/etc/wpa_supplicant.wlan0.conf') and not '/etc/wpa_supplicant.wlan0.conf' in self.selectedFiles:
+			self.selectedFiles.append('/etc/wpa_supplicant.wlan0.conf')
+		if path.exists('/usr/crossepg/crossepg.config') and not '/usr/crossepg/crossepg.config' in self.selectedFiles:
+			self.selectedFiles.append('/usr/crossepg/crossepg.config')
+		config.backupmanager.backupdirs.setValue(self.selectedFiles)
+		config.backupmanager.backupdirs.save()
+		configfile.save()
 		imparts = []
 		for p in harddiskmanager.getMountedPartitions():
 			if path.exists(p.mountpoint):
@@ -954,4 +1007,3 @@ class BackupFiles(Screen):
 			autoBackupManagerTimer.backupupdate(atLeast)
 		else:
 			autoBackupManagerTimer.backupstop()
-

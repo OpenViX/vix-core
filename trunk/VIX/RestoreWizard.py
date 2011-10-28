@@ -162,13 +162,18 @@ class RestoreSetting(Screen, ConfigListScreen):
 					if line:
 						parts = line.strip().split()
 						if parts[0] not in plugins:
-							output.write(parts[0] + '\n')
+							output.write(parts[0] + ' ')
 				output.close()
 				self.doRestorePluginsQuestion()
 
 	def doRestorePluginsQuestion(self, extra_args = None):
-		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
-		pluginslist = plugintmp.replace('\n',' ')
+		fstabfile = file('/etc/fstab').readlines()
+		for mountfolder in fstabfile:
+			parts = mountfolder.strip().split()
+			if parts and str(parts[0]).startswith('/dev/'):
+				if not path.exists(parts[1]):
+					mkdir(parts[1], 0755)				
+		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
 		if pluginslist:
 			message = _("Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?")
 			ybox = self.session.openWithCallback(self.doRestorePlugins3, MessageBox, message, MessageBox.TYPE_YESNO, wizard = True)

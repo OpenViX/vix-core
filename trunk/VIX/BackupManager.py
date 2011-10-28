@@ -456,7 +456,7 @@ class VIXBackupManager(Screen):
 		self.Console.ePopen('opkg update', self.Stage4Complete)
 
 	def Stage4Complete(self, result, retval, extra_args):
-		if retval == 0:
+		if result:
 			self.Stage4Completed = True
 
 	def Stage5(self):
@@ -464,7 +464,7 @@ class VIXBackupManager(Screen):
 		self.Console.ePopen('opkg install ' + pluginslist, self.Stage5Complete)
 
 	def Stage5Complete(self, result, retval, extra_args):
-		if retval == 0:
+		if result:
 			self.Stage5Completed = True
 
 	def Stage6(self):
@@ -472,11 +472,12 @@ class VIXBackupManager(Screen):
 		self.Console.ePopen('opkg install ' + pluginslist, self.Stage6Complete)
 
 	def Stage6Complete(self, result, retval, extra_args):
-		if retval == 0:
+		if result:
 			self.Stage6Completed = True
 
 	def Stage7(self):
 		remove('/tmp/trimedExtraInstalledPlugins')
+		self.Console.ePopen("init 4 && reboot")
 
 class BackupSelection(Screen):
 	skin = """

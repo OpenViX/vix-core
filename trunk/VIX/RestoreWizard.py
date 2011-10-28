@@ -16,7 +16,7 @@ from Screens.Wizard import wizardManager
 from Screens.Rc import Rc
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Components.Pixmap import Pixmap
-from os import path, makedirs, listdir, access, stat, rename, remove, W_OK, R_OK
+from os import path, mkdir, listdir, access, stat, rename, remove, W_OK, R_OK
 
 config.misc.firstrun = ConfigBoolean(default = True)
 

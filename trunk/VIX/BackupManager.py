@@ -344,7 +344,6 @@ class VIXBackupManager(Screen):
 		self.Stage3Completed = False
 		self.Stage4Completed = False
 		self.Stage5Completed = False
-		self.Stage6Completed = False
 		job = Components.Task.Job(_("BackupManager"))
 
 		task = Components.Task.PythonTask(job, _("Restoring backup..."))
@@ -389,14 +388,6 @@ class VIXBackupManager(Screen):
 
 		task = Components.Task.PythonTask(job, _("Restoring plugins..."))
 		task.work = self.Stage6
-		task.weighting = 1
-
-		task = Components.Task.ConditionTask(job, _("Restoring plugins..."), timeoutCount=240)
-		task.check = lambda: self.Stage6Completed
-		task.weighting = 1
-
-		task = Components.Task.PythonTask(job, _("Restoring plugins..."))
-		task.work = self.Stage7
 		task.weighting = 1
 
 		return job
@@ -468,14 +459,6 @@ class VIXBackupManager(Screen):
 			self.Stage5Completed = True
 
 	def Stage6(self):
-		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
-		self.Console.ePopen('opkg install ' + pluginslist, self.Stage6Complete)
-
-	def Stage6Complete(self, result, retval, extra_args):
-		if result:
-			self.Stage6Completed = True
-
-	def Stage7(self):
 		remove('/tmp/trimedExtraInstalledPlugins')
 		self.Console.ePopen("init 4 && reboot")
 

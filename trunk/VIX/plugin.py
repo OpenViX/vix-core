@@ -48,7 +48,6 @@ class VIXMenu(Screen):
 		
 	def __init__(self, session, args = 0):
 		Screen.__init__(self, session)
-		self.setTitle(_("ViX"))
 		self.skin_path = plugin_path
 		self.menu = args
 		self.list = []
@@ -78,7 +77,8 @@ class VIXMenu(Screen):
 		self["menu"].onSelectionChanged.append(self.selectionChanged)
 
 	def createSummary(self):
-		return VIXMenuSummary
+		from Screens.PluginBrowser import PluginBrowserSummary
+		return PluginBrowserSummary
 
 	def selectionChanged(self):
 		item = self["menu"].getCurrent()
@@ -94,6 +94,9 @@ class VIXMenu(Screen):
 	def layoutFinished(self):
 		idx = 0
 		self["menu"].index = idx
+
+	def setWindowTitle(self):
+		self.setTitle(_("ViX"))
 
 	def go(self):
 		current = self["menu"].getCurrent()

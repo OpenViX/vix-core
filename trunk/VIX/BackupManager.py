@@ -870,6 +870,8 @@ class BackupFiles(Screen):
 			self.selectedFiles.append('/etc/wpa_supplicant.wlan0.conf')
 		if path.exists('/usr/crossepg/crossepg.config') and not '/usr/crossepg/crossepg.config' in self.selectedFiles:
 			self.selectedFiles.append('/usr/crossepg/crossepg.config')
+		if path.exists('/usr/crossepg/providers') and not '/usr/crossepg/providers' in self.selectedFiles:
+			self.selectedFiles.append('/usr/crossepg/providers')
 		config.backupmanager.backupdirs.setValue(self.selectedFiles)
 		config.backupmanager.backupdirs.save()
 		configfile.save()

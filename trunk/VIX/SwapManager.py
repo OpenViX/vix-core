@@ -139,12 +139,6 @@ class VIXSwap(Screen):
 		self.swap_place = ''
 		self.swap_active = False
 		self.device = False
-		if config.vixsettings.swapautostart.value:
-			self['autostart_off'].hide()
-			self['autostart_on'].show()
-		else:
-			self['autostart_on'].hide()
-			self['autostart_off'].show()
 		if result.find('sd') > 0:
 			self['key_green'].setText("")
 			for line in result.split('\n'):
@@ -176,6 +170,14 @@ class VIXSwap(Screen):
 						self.swapsize = info[stat.ST_SIZE]
 						continue
 
+		if config.vixsettings.swapautostart.value and self.swap_place:
+			self['autostart_off'].hide()
+			self['autostart_on'].show()
+		else:
+			config.vixsettings.swapautostart.value = False
+			config.vixsettings.swapautostart.save()
+			self['autostart_on'].hide()
+			self['autostart_off'].show()
 		self['labplace'].setText(self.swap_place)
 		self['labplace'].show()
 

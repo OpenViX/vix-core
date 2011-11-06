@@ -4,13 +4,12 @@ from . import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.ChoiceBox import ChoiceBox
-from Components.config import ConfigYesNo
+from Components.config import config, configfile, ConfigYesNo
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Components.Harddisk import harddiskmanager, getProcMounts
 from Components.Console import Console
-from Components.config import config
 from os import system, stat as mystat, path, remove, rename
 from enigma import eTimer
 from glob import glob
@@ -37,9 +36,9 @@ class StartSwap:
 
 	def startSwap2(self, result = None, retval = None, extra_args = None):
 		swap_place = ""
-		if result:
+		if result and result.find('sd') != -1:
 			for line in result.split('\n'):
-				if line.find('sd') > 0:
+				if line.find('sd') != -1:
 					parts = line.strip().split()
 					swap_place = parts[0]
 					file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if swap_place not in l])
@@ -59,7 +58,7 @@ class StartSwap:
 							print "[SwapManager] Found a swapfile on ", swap_place
 
 		f = file('/proc/swaps').read()
-		if f.find(swap_place) < 0:
+		if f.find(swap_place) == -1:
 			print "[SwapManager] Starting swapfile on ", swap_place
 			system('swapon ' + swap_place)
 		else:
@@ -145,6 +144,8 @@ class VIXSwap(Screen):
 				if line.find('sd') > 0:
 					parts = line.strip().split()
 					self.swap_place = parts[0]
+					if self.swap_place == 'sfdisk:':
+						self.swap_place = ''
 					self.device = True
 				f = open('/proc/swaps', 'r')
 				for line in f.readlines():
@@ -174,8 +175,9 @@ class VIXSwap(Screen):
 			self['autostart_off'].hide()
 			self['autostart_on'].show()
 		else:
-			config.vixsettings.swapautostart.value = False
+			config.vixsettings.swapautostart.setValue(False)
 			config.vixsettings.swapautostart.save()
+			configfile.save()
 			self['autostart_on'].hide()
 			self['autostart_off'].show()
 		self['labplace'].setText(self.swap_place)
@@ -247,8 +249,9 @@ class VIXSwap(Screen):
 		if retval == 0:
 			remove(self.swap_place)
 			if config.vixsettings.swapautostart.value:
-				config.vixsettings.swapautostart.value = False
+				config.vixsettings.swapautostart.setValue(False)
 				config.vixsettings.swapautostart.save()
+				configfile.save()
 			self.updateSwap()
 
 	def doCreateSwap(self):
@@ -281,24 +284,17 @@ class VIXSwap(Screen):
 			self.commands = []
 			self.commands.append('dd if=/dev/zero of=' + myfile + ' bs=1024 count=' + swapsize + ' 2>/dev/null')
 			self.commands.append('mkswap ' + myfile)
-			self.Console.eBatch(self.commands, self.doCScreateCheck, debug=True)
-
-	def doCScreateCheck(self, result = None, retval = None, extra_args = None):
-		if len(self.Console.appContainers) == 0:
-			mybox = self.session.open(MessageBox, _("Swap File successfully created."), MessageBox.TYPE_INFO, timeout = 5)
-		else:
-			mybox = self.session.open(MessageBox, _("Swap File creation Failed. Check for Available space."), MessageBox.TYPE_INFO)
-		mybox.setTitle(_("Info"))
-		self.updateSwap()
+			self.Console.eBatch(self.commands, self.updateSwap, debug=True)
 		
 	def autoSsWap(self):
 		if self.swap_place:
 			if config.vixsettings.swapautostart.value:
-				config.vixsettings.swapautostart.value = False
+				config.vixsettings.swapautostart.setValue(False)
 				config.vixsettings.swapautostart.save()
 			else:
-				config.vixsettings.swapautostart.value = True
+				config.vixsettings.swapautostart.setValue(True)
 				config.vixsettings.swapautostart.save()
+			configfile.save()
 		else:
 			mybox = self.session.open(MessageBox, _("You have to create a Swap File before to activate the autostart."), MessageBox.TYPE_INFO)
 			mybox.setTitle(_("Info"))

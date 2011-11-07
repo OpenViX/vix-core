@@ -128,16 +128,16 @@ msgid " "
 msgstr " "
 
 msgid " detected'"
-msgstr "entdeckt"
+msgstr " entdeckt'"
 
 msgid " extensions."
-msgstr "Erweiterungen."
+msgstr " erweiterungen."
 
 msgid " packages selected."
 msgstr " Ausgewählte Pakete."
 
 msgid " updates available."
-msgstr " Updates verfügbar."
+msgstr " updates verfügbar."
 
 msgid "16 Mb"
 msgstr "16MB"
@@ -200,14 +200,11 @@ msgstr ""
 " "
 
 msgid ""
-"Are you sure you want to delete this:\n"
-" "
-msgstr " "
-
-msgid ""
 "Are you sure you want to download this image:\n"
 " "
-msgstr "Wollen Sie dieses Image herunterladen:\n"
+msgstr ""
+"Wollen Sie dieses Image herunterladen:\n"
+" "
 
 msgid ""
 "Are you sure you want to restore this backup:\n"
@@ -269,7 +266,7 @@ msgid "Backup Manager Setup"
 msgstr "Einstellungen Backup-Manager"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Backup fehlgeschlagen - z.B. falscher Sicherungsort oder zu wenig freier Speicher auf dem Sicherungslaufwerk "
+msgstr "Backup fehlgeschlagen - z.B. falscher Sicherungsort oder zu wenig freier Speicher auf dem Sicherungslaufwerk"
 
 msgid ""
 "Backup in progress,\n"
@@ -394,7 +391,7 @@ msgid "Disabled"
 msgstr "Deaktiviert"
 
 msgid "Display and Userinterface"
-msgstr "Videoeinstellungen und Darstellung "
+msgstr "Videoeinstellungen und Darstellung"
 
 msgid "Do you want to install the package:\n"
 msgstr "Paket installieren:\n"
@@ -461,7 +458,7 @@ msgid "Enable Swap at startup"
 msgstr "Auslagerungsdatei-Autostart aktivieren"
 
 msgid "Enough Retries, delaying till next schedule."
-msgstr "Zu viele Versuche, bis zur nächsten Zeitplan-Aktion zurückgestellt. "
+msgstr "Zu viele Versuche, bis zur nächsten Zeitplan-Aktion zurückgestellt."
 
 msgid "Erasing Kernel..."
 msgstr "Lösche Kernel..."
@@ -483,7 +480,7 @@ msgid ""
 "Please power off your receiver, wait 15 seconds then power backon."
 msgstr ""
 "Flashen abgeschlossen\n"
-"Schalten Sie den Receiver am Netzschalter aus und warten Sie 15s vor dem Wiedereinschalten.  "
+"Schalten Sie den Receiver am Netzschalter aus und warten Sie 15s vor dem Wiedereinschalten."
 
 msgid "Folder prefix"
 msgstr "Ordner-Präfix"
@@ -492,7 +489,7 @@ msgid "Following tasks will be done after you press OK!"
 msgstr "Folgende Aufgaben werden nach drücken von OK ausgeführt!"
 
 msgid "Found none stanadard softcam, trying to start, this may fail"
-msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl "
+msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl"
 
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl"
@@ -667,7 +664,7 @@ msgid "No network connection available."
 msgstr "Keine Netzwerkverbindung verfügbar."
 
 msgid "No packages were upgraded yet. So you can check your network and try again."
-msgstr "Es wurden noch keine Pakete aktualisiert. Das Netzwerk kann überprüft und nochmals versucht werden. "
+msgstr "Es wurden noch keine Pakete aktualisiert. Das Netzwerk kann überprüft und nochmals versucht werden."
 
 msgid "None"
 msgstr "Keine"
@@ -1267,20 +1264,3 @@ msgstr "unbekannt"
 msgid "your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver."
 msgstr "Der Receiver könnte jetzt nicht mehr verwendungsfähig sein. VOR EINEM NEUSTART unbedingt die Bedienungsanleitung für weitere Unterstützung konsultieren."
 
-#~ msgid "Creating list of instlled plugins..."
-#~ msgstr "Liste der installierten Plugins wird erstelllt..."
-
-#~ msgid ""
-#~ "Sorry you have Debug Logs enabed,\n"
-#~ "Please disable and restart GUI, before trying again"
-#~ msgstr ""
-#~ "Leider sind keine Debug Logs akltiviert,\n"
-#~ "Bitte vor erneutem Versuch deaktivieren und GUI neu starten"
-
-#~ msgid ""
-#~ "Sorry, not enough free ram found, and no phyical devices attached. Can't "
-#~ "create Swapfile on network mounts, unable to make backup"
-#~ msgstr ""
-#~ "Leider nicht genügend freien Arbeitsspeicher gefunden und kein "
-#~ "physikalisches Gerät verbunden. Erstellung der Auslagerungsdatei auf "
-#~ "Netzlaufwerken nicht möglich, Backup kann nicht erstellt werden."

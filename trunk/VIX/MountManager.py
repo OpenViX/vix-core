@@ -74,7 +74,7 @@ class VIXDevicesPanel(Screen):
 			except:
 				pass
 
-	def updateList(self):
+	def updateList(self, result = None, retval = None, extra_args = None):
 		scanning = _("Wait please while scanning for devices...")
 		self['lab1'].setText(scanning)
 		self.activityTimer.start(10)
@@ -222,8 +222,9 @@ class VIXDevicesPanel(Screen):
 			des = sel[1]
 			des = des.replace('\n', '\t')
 			parts = des.strip().split('\t')
+			mountp = parts[1].replace(_("Mount: "), '')
 			device = parts[2].replace(_("Device: "), '')
-			system ('umount ' + device)
+			system ('umount ' + mountp)
 			try:
 				mounts = open("/proc/mounts")
 			except IOError:
@@ -239,35 +240,37 @@ class VIXDevicesPanel(Screen):
 	def saveMypoints(self):
 		sel = self['list'].getCurrent()
 		if sel:
-			for x in self['list'].list:
-				try:
-					x = x[1].strip()
-					if x.find('Mount') >= 0:
-						parts = x.split()
-						device = parts[5]
-						file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if device not in l])
-						rename('/etc/fstab.tmp','/etc/fstab')
-				except:
-					pass
-			for line in self.sel:
-				try:
-					line = line.strip()
-					if line.find('Mount') >= 0:
-						if line.find('/media/hdd') < 0:
-							parts = line.split()
-							device = parts[5]
-							device = device.replace('/autofs/', '/dev/')
-							out = open('/etc/fstab', 'a')
-							line = device + '            /media/hdd           auto       defaults              0 0\n'
-							out.write(line)
-							out.close()
-							system ('mount /dev/' + device)
-							self.updateList()
-						else:
-							self.session.open(MessageBox, _("This Device is already mounted as HDD."), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-				except:
-					pass
+			parts = sel[1].split()
+			self.device = parts[5]
+			self.mountp = parts[3]
+			self.Console.ePopen('umount /media/hdd')
+			self.Console.ePopen('umount ' + self.device)
+			if self.mountp.find('/media/hdd') < 0:
+				self.Console.ePopen("/sbin/blkid | grep " + self.device, self.add_fstab, [self.device, self.mountp])
+			else:
+				self.session.open(MessageBox, _("This Device is already mounted as HDD."), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 			
+	def add_fstab(self, result = None, retval = None, extra_args = None):
+		self.device = extra_args[0]
+		self.mountp = extra_args[1]
+		self.device_uuid_tmp = result.split('UUID=')
+		self.device_uuid_tmp = self.device_uuid_tmp[1].replace('"',"")
+		self.device_uuid_tmp = self.device_uuid_tmp.replace('\n',"")
+		self.device_uuid = 'UUID=' + self.device_uuid_tmp
+		if not path.exists(self.mountp):
+			mkdir(self.mountp, 0755)
+		file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if '/media/hdd' not in l])
+		rename('/etc/fstab.tmp','/etc/fstab')
+		file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device not in l])
+		rename('/etc/fstab.tmp','/etc/fstab')
+		file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device_uuid not in l])
+		rename('/etc/fstab.tmp','/etc/fstab')
+		out = open('/etc/fstab', 'a')
+		line = self.device_uuid + '\t/media/hdd\tauto\tdefaults\t0 0\n'
+		out.write(line)
+		out.close()
+		self.Console.ePopen('mount /media/hdd', self.updateList)
+
 	def restBo(self, answer):
 		if answer is True:
 			self.session.open(TryQuitMainloop, 2)
@@ -419,25 +422,31 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		mycheck = False
 		for x in self['config'].list:
 			self.device = x[2]
-			self.Console.ePopen('umount /dev/' + self.device)
-			file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device not in l])
-			rename('/etc/fstab.tmp','/etc/fstab')
-
-		for x in self['config'].list:
-			self.device = x[2]
 			self.mountp = x[1].value
 			self.type = x[3]
-			if not path.exists(self.mountp):
-				mkdir(self.mountp, 0755)
-			out = open('/etc/fstab', 'a')
-			line = '/dev/' + self.device + '            ' + self.mountp + '           ' + self.type + '       defaults              0 0\n'
-			out.write(line)
-			out.close()
-			self.Console.ePopen('mount /dev/' + self.device)
-
+			self.Console.ePopen('umount ' + self.device)
+			self.Console.ePopen("/sbin/blkid | grep " + self.device, self.add_fstab, [self.device, self.mountp] )
 		message = _("Devices changes need a system restart to take effects.\nRestart your Box now?")
 		ybox = self.session.openWithCallback(self.restartBox, MessageBox, message, MessageBox.TYPE_YESNO)
 		ybox.setTitle(_("Restart box."))
+
+	def add_fstab(self, result = None, retval = None, extra_args = None):
+		self.device = extra_args[0]
+		self.mountp = extra_args[1]
+		self.device_uuid_tmp = result.split('UUID=')
+		self.device_uuid_tmp = self.device_uuid_tmp[1].replace('"',"")
+		self.device_uuid_tmp = self.device_uuid_tmp.replace('\n',"")
+		self.device_uuid = 'UUID=' + self.device_uuid_tmp
+		if not path.exists(self.mountp):
+			mkdir(self.mountp, 0755)
+		file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device not in l])
+		rename('/etc/fstab.tmp','/etc/fstab')
+		file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device_uuid not in l])
+		rename('/etc/fstab.tmp','/etc/fstab')
+		out = open('/etc/fstab', 'a')
+		line = self.device_uuid + '\t' + self.mountp + '\tauto\tdefaults\t0 0\n'
+		out.write(line)
+		out.close()
 
 	def restartBox(self, answer):
 		if answer is True:

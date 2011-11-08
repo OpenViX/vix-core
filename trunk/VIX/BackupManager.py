@@ -8,7 +8,7 @@ from Components.Button import Button
 from Components.MenuList import MenuList
 from Components.Sources.List import List
 from Components.Pixmap import Pixmap
-from Components.config import configfile , config, getConfigListEntry
+from Components.config import configfile, config, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
 from Components.Harddisk import harddiskmanager
 from Components.Sources.StaticText import StaticText
@@ -382,14 +382,6 @@ class VIXBackupManager(Screen):
 		task.work = self.Stage5
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Restoring plugins..."), timeoutCount=30)
-		task.check = lambda: self.Stage5Completed
-		task.weighting = 1
-
-		task = Components.Task.PythonTask(job, _("Restoring plugins..."))
-		task.work = self.Stage6
-		task.weighting = 1
-
 		return job
 
 	def JobStart(self):
@@ -401,7 +393,6 @@ class VIXBackupManager(Screen):
 			self.Stage1Completed = True
 
 	def Stage2(self):
-		self.Console = Console()
 		self.Console.ePopen('opkg list-installed', self.Stage2Complete)
 
 	def Stage2Complete(self, result, retval, extra_args):
@@ -426,7 +417,7 @@ class VIXBackupManager(Screen):
 		fstabfile = file('/etc/fstab').readlines()
 		for mountfolder in fstabfile:
 			parts = mountfolder.strip().split()
-			if parts and str(parts[0]).startswith('/dev/'):
+			if parts and str(parts[0]).startswith('/media/'):
 				if not path.exists(parts[1]):
 					mkdir(parts[1], 0755)				
 		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
@@ -451,16 +442,12 @@ class VIXBackupManager(Screen):
 			self.Stage4Completed = True
 
 	def Stage5(self):
-		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
+		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
+		pluginslist = plugintmp.replace('\n',' ')
 		self.Console.ePopen('opkg install ' + pluginslist, self.Stage5Complete)
 
 	def Stage5Complete(self, result, retval, extra_args):
-		if result:
-			self.Stage5Completed = True
-
-	def Stage6(self):
-		remove('/tmp/trimedExtraInstalledPlugins')
-		self.Console.ePopen("init 4 && reboot")
+		self.Console.ePopen('init 4 && reboot')
 
 class BackupSelection(Screen):
 	skin = """

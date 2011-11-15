@@ -1,17 +1,16 @@
 # for localized messages
 from . import _
+
 import Components.Task
-from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Button import Button
 from Components.MenuList import MenuList
 from Components.Sources.List import List
-from Components.Pixmap import MultiPixmap, Pixmap
-from Components.config import configfile , config, ConfigYesNo, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigText, ConfigClock, ConfigNumber, NoSave
+from Components.Pixmap import Pixmap
+from Components.config import configfile, config, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
 from Components.Harddisk import harddiskmanager
-from Components.Language import language
 from Components.Sources.StaticText import StaticText
 from Components.FileList import MultiFileSelectList
 from Components.ScrollLabel import ScrollLabel
@@ -20,16 +19,11 @@ from Components.Console import Console
 from Screens.Console import Console as RestoreConsole
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from Tools.Directories import pathExists, fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_PLUGIN, SCOPE_CURRENT_SKIN, SCOPE_METADIR
-from Tools.LoadPixmap import LoadPixmap
-from enigma import eTimer, quitMainloop, RT_HALIGN_LEFT, RT_VALIGN_CENTER, eListboxPythonMultiContent, eListbox, gFont, getDesktop, ePicLoad
-from ServiceReference import ServiceReference
-from os import path, system, unlink, stat, mkdir, popen, makedirs, chdir, getcwd, listdir, rename, remove, access, W_OK, R_OK, F_OK, statvfs
-import datetime
-from shutil import rmtree, move, copy
-from time import localtime, time, strftime, mktime, sleep
-from datetime import date, datetime
 from enigma import eTimer
+from os import path, stat, mkdir, listdir, rename, remove, statvfs
+from shutil import rmtree, move, copy
+from time import localtime, time, strftime, mktime
+from datetime import date, datetime
 import tarfile
 
 autoBackupManagerTimer = None
@@ -170,7 +164,7 @@ class VIXBackupManager(Screen):
 	def populate_List(self):
 		imparts = []
 		for p in harddiskmanager.getMountedPartitions():
-			if pathExists(p.mountpoint):
+			if path.exists(p.mountpoint):
 				d = path.normpath(p.mountpoint)
 				m = d + '/', p.mountpoint
 				if p.mountpoint != '/':
@@ -315,6 +309,9 @@ class VIXBackupManager(Screen):
 			self.BackupRunning = True
 			self["key_green"].setText(_("View Progress"))
 			self["key_green"].show()
+			for job in Components.Task.job_manager.getPendingJobs():
+				jobname = str(job.name)
+			self.showJobView(job)
 
 	def keyResstore(self):
 		self.sel = self['list'].getCurrent()
@@ -330,30 +327,78 @@ class VIXBackupManager(Screen):
 
 	def doRestore(self,answer):
 		if answer is True:
-			from Screens.Console import Console as RestareConsole
-			mycmd1 = "echo '************************************************************************'"
-			if config.misc.boxtype.value.startswith('vu'):
-				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
-			elif config.misc.boxtype.value.startswith('et'):
-				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
-			mycmd3 = "echo '************************************************************************'"
-			mycmd4 = "echo ' '"
-			mycmd5 = _("echo 'Attention:'")
-			mycmd6 = "echo ' '"
-			mycmd7 = _("echo 'Enigma2 will be restarted automatically after the restore progress.'")
-			mycmd8 = "echo ' '"
-			mycmd9 = _("echo 'Restoring.'")
-			mycmd10 = "tar -xzvf " + self.BackupDirectory + self.sel + " -C /"
-			self.session.open(RestareConsole, title=_('Restoring Backup...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10],closeOnSuccess = True)
-			self.doRestorePlugins1()
+			Components.Task.job_manager.AddJob(self.createRestoreJob())
+			self.BackupRunning = True
+			self["key_green"].setText(_("View Progress"))
+			self["key_green"].show()
+			for job in Components.Task.job_manager.getPendingJobs():
+				jobname = str(job.name)
+			self.showJobView(job)
 
-	def doRestorePlugins1(self):
-		self.RestoreConsole = Console()
-		self.RestoreConsole.ePopen('opkg list-installed', self.doRestorePlugins2)
+	def myclose(self):
+		self.close()
 
-	def doRestorePlugins2(self, result, retval, extra_args):
+	def createRestoreJob(self):
+		self.Stage1Completed = False
+		self.Stage2Completed = False
+		self.Stage3Completed = False
+		self.Stage4Completed = False
+		self.Stage5Completed = False
+		job = Components.Task.Job(_("BackupManager"))
+
+		task = Components.Task.PythonTask(job, _("Restoring backup..."))
+		task.work = self.JobStart
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Restoring backup..."), timeoutCount=30)
+		task.check = lambda: self.Stage1Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Creating list of installed plugins..."))
+		task.work = self.Stage2
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Creating list of installed plugins..."), timeoutCount=30)
+		task.check = lambda: self.Stage2Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Comparing against backup..."))
+		task.work = self.Stage3
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Comparing against backup..."), timeoutCount=30)
+		task.check = lambda: self.Stage3Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Restoring plugins..."))
+		task.work = self.Stage4
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Restoring plugins..."), timeoutCount=30)
+		task.check = lambda: self.Stage4Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Restoring plugins..."))
+		task.work = self.Stage5
+		task.weighting = 1
+
+		return job
+
+	def JobStart(self):
+		self.Console = Console()
+		self.Console.ePopen("tar -xzvf " + self.BackupDirectory + self.sel + " -C /", self.Stage1Complete)
+
+	def Stage1Complete(self, result, retval, extra_args):
 		if retval == 0:
-			if fileExists('/tmp/ExtraInstalledPlugins'):
+			self.Stage1Completed = True
+
+	def Stage2(self):
+		self.Console = Console()
+		self.Console.ePopen('opkg list-installed', self.Stage2Complete)
+
+	def Stage2Complete(self, result, retval, extra_args):
+		if retval == 0:
+			if path.exists('/tmp/ExtraInstalledPlugins'):
 				pluginlist = file('/tmp/ExtraInstalledPlugins').readlines()
 				plugins = []
 				for line in result.split('\n'):
@@ -365,49 +410,50 @@ class VIXBackupManager(Screen):
 					if line:
 						parts = line.strip().split()
 						if parts[0] not in plugins:
-							output.write(parts[0] + '\n')
+							output.write(parts[0] + ' ')
 				output.close()
-				self.doRestorePluginsQuestion()
+				self.Stage2Completed = True
 
-	def doRestorePluginsQuestion(self):
-		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
-		pluginslist = plugintmp.replace('\n',' ')
+	def Stage3(self):
+		self.Console = Console()
+		fstabfile = file('/etc/fstab').readlines()
+		for mountfolder in fstabfile:
+			parts = mountfolder.strip().split()
+			if parts and str(parts[0]).startswith('/media/'):
+				if not path.exists(parts[1]):
+					mkdir(parts[1], 0755)				
+		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
 		if pluginslist:
 			message = _("Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?")
-			ybox = self.session.openWithCallback(self.doRestorePlugins3, MessageBox, message, MessageBox.TYPE_YESNO)
+			ybox = self.session.openWithCallback(self.Stage3Complete, MessageBox, message, MessageBox.TYPE_YESNO)
 			ybox.setTitle(_("Re-install Plugins"))
 		else:
-			self.RestoreConsole = Console()
-			self.RestoreConsole.ePopen("killall -9 enigma2")
+			self.Console.ePopen("init 4 && reboot")
 
-	def doRestorePlugins3(self, answer):
+	def Stage3Complete(self, answer=False):
+		self.Console = Console()
 		if answer is True:
-			plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
-			pluginslist = plugintmp.replace('\n',' ')
-			from Screens.Console import Console as RestareConsole
-			mycmd1 = "echo '************************************************************************'"
-			if config.misc.boxtype.value.startswith('vu'):
-				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
-			elif config.misc.boxtype.value.startswith('et'):
-				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
-			mycmd3 = "echo '************************************************************************'"
-			mycmd4 = "echo ' '"
-			mycmd5 = _("echo 'Attention:'")
-			mycmd6 = "echo ' '"
-			mycmd7 = _("echo 'Enigma2 will be restarted automatically after the restore progress.'")
-			mycmd8 = "echo ' '"
-			mycmd9 = _("echo 'Installing Plugins.'")
-			mycmd10 = "opkg update"
-			mycmd11 = "opkg install " + pluginslist
-			mycmd12 = 'rm -f /tmp/trimedExtraInstalledPlugins'
-			mycmd13 = 'killall -9 enigma2'
-			self.session.open(RestareConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
+			self.Stage3Completed = True
 		else:
-			self.RestoreConsole = Console()
-			self.RestoreConsole.ePopen("killall -9 enigma2")
+			self.Console.ePopen("init 4 && reboot")
 
-	def myclose(self):
-		self.close()
+	def Stage4(self):
+		self.Console = Console()
+		self.Console.ePopen('opkg update', self.Stage4Complete)
+
+	def Stage4Complete(self, result, retval, extra_args):
+		if result:
+			self.Stage4Completed = True
+
+	def Stage5(self):
+		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
+		pluginslist = plugintmp.replace('\n',' ')
+		self.Console = Console()
+		self.Console.ePopen('opkg install ' + pluginslist, self.Stage5Complete)
+
+	def Stage5Complete(self, result, retval, extra_args):
+		self.Console = Console()
+		self.Console.ePopen('init 4 && reboot')
 
 class BackupSelection(Screen):
 	skin = """
@@ -541,7 +587,7 @@ class VIXBackupManagerMenu(ConfigListScreen, Screen):
 	def createSetup(self):
 		imparts = []
 		for p in harddiskmanager.getMountedPartitions():
-			if pathExists(p.mountpoint):
+			if path.exists(p.mountpoint):
 				d = path.normpath(p.mountpoint)
 				m = d + '/', p.mountpoint
 				if p.mountpoint != '/':
@@ -686,24 +732,12 @@ class AutoBackupManagerTimer:
 		global BackupTime
 		BackupTime = self.getBackupTime()
 		now = int(time())
-		#print '[BackupManager] BACKUP TIME',BackupTime
-		#print '[BackupManager] NOW TIME',now
-		#print '[BackupManager] ATLEAST',atLeast
-		#print '[BackupManager] NOW + ATLEAST', (now + atLeast)
-		#print '[BackupManager] BACKUP TIME - NOW', (BackupTime - now)
 		if BackupTime > 0:
 			if BackupTime < now + atLeast:
 				if config.backupmanager.repeattype.value == "daily":
 					BackupTime += 24*3600
 					while (int(BackupTime)-30) < now:
 						BackupTime += 24*3600
-					#BackupTime += 8*60
-					#print '[BackupManager] BACKUP TIME 2:',BackupTime
-					#print '[BackupManager] NOW 2:',now
-					#while (int(BackupTime)-30) < now:
-						#print '[BackupManager] YES BT is Less Now'
-						#BackupTime += 8*60
-						#print '[BackupManager] BACKUP TIME 2:',BackupTime
 				elif config.backupmanager.repeattype.value == "weekly":
 					BackupTime += 7*24*3600
 					while (int(BackupTime)-30) < now:
@@ -793,11 +827,11 @@ class BackupFiles(Screen):
 		task.check = lambda: self.Stage2Completed
 		task.weighting = 1
 
-		task = Components.Task.PythonTask(job, _("Creating list of instlled plugins..."))
+		task = Components.Task.PythonTask(job, _("Creating list of installed plugins..."))
 		task.work = self.Stage3
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Creating list of instlled plugins..."), timeoutCount=30)
+		task = Components.Task.ConditionTask(job, _("Creating list of installed plugins..."), timeoutCount=30)
 		task.check = lambda: self.Stage3Completed
 		task.weighting = 1
 
@@ -816,9 +850,27 @@ class BackupFiles(Screen):
 		return job
 
 	def JobStart(self):
+		self.selectedFiles = config.backupmanager.backupdirs.value
+		if path.exists('/etc/CCcam.cfg') and not '/etc/CCcam.cfg' in self.selectedFiles:
+			self.selectedFiles.append('/etc/CCcam.cfg')
+		if path.exists('/etc/CCcam.channelinfo') and not '/etc/CCcam.channelinfo' in self.selectedFiles:
+			self.selectedFiles.append('/etc/CCcam.channelinfo')
+		if path.exists('/etc/CCcam.providers') and not '/etc/CCcam.providers' in self.selectedFiles:
+			self.selectedFiles.append('/etc/CCcam.providers')
+		if path.exists('/etc/wpa_supplicant.ath0.conf') and '/etc/wpa_supplicant.ath0.conf' not in self.selectedFiles:
+			self.selectedFiles.append('/etc/wpa_supplicant.ath0.conf')
+		if path.exists('/etc/wpa_supplicant.wlan0.conf') and not '/etc/wpa_supplicant.wlan0.conf' in self.selectedFiles:
+			self.selectedFiles.append('/etc/wpa_supplicant.wlan0.conf')
+		if path.exists('/usr/crossepg/crossepg.config') and not '/usr/crossepg/crossepg.config' in self.selectedFiles:
+			self.selectedFiles.append('/usr/crossepg/crossepg.config')
+		if path.exists('/usr/crossepg/providers') and not '/usr/crossepg/providers' in self.selectedFiles:
+			self.selectedFiles.append('/usr/crossepg/providers')
+		config.backupmanager.backupdirs.setValue(self.selectedFiles)
+		config.backupmanager.backupdirs.save()
+		configfile.save()
 		imparts = []
 		for p in harddiskmanager.getMountedPartitions():
-			if pathExists(p.mountpoint):
+			if path.exists(p.mountpoint):
 				d = path.normpath(p.mountpoint)
 				m = d + '/', p.mountpoint
 				if p.mountpoint != '/':
@@ -868,7 +920,6 @@ class BackupFiles(Screen):
 		self.Stage1Completed = True
 
 	def Stage2(self):
-		print 'STAGE2'
 		output = open('/var/log/backupmanager.log','w')
 		now = datetime.now()
 		output.write(now.strftime("%Y-%m-%d %H:%M") + ": Backup Started\n")
@@ -876,7 +927,7 @@ class BackupFiles(Screen):
 		self.BackupConsole = Console()
 		self.backupdirs = ' '.join(config.backupmanager.backupdirs.value)
 		print '[BackupManager] Renaming old backup'
-		if fileExists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
+		if path.exists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
 			dt = str(date.fromtimestamp(stat(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz').st_ctime))
 			self.newfilename = self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + dt + '-' + 'enigma2settingsbackup.tar.gz'
 			if path.exists(self.newfilename):
@@ -888,18 +939,17 @@ class BackupFiles(Screen):
 		self.Stage2Completed = True
 
 	def Stage3(self):
-		print 'STAGE3'
 		self.BackupConsole = Console()
 		print '[BackupManager] Listing installed plugins'
 		self.BackupConsole.ePopen('opkg list-installed', self.Stage3Complete)
 
 	def Stage3Complete(self, result, retval, extra_args):
-		if retval == 0:
+		if result:
 			output = open('/tmp/ExtraInstalledPlugins','w')
 			output.write(result)
 			output.close()
 
-		if fileExists('/tmp/ExtraInstalledPlugins'):
+		if path.exists('/tmp/ExtraInstalledPlugins'):
 			print '[BackupManager] Listing completed.'
 			self.Stage3Completed = True
 		else:
@@ -921,7 +971,7 @@ class BackupFiles(Screen):
 		self.Stage4Complete()
 
 	def Stage4Complete(self):
-		if fileExists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
+		if path.exists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
 			print '[BackupManager] Complete.'
 			remove('/tmp/ExtraInstalledPlugins')
 			self.Stage4Completed = True
@@ -936,4 +986,3 @@ class BackupFiles(Screen):
 			autoBackupManagerTimer.backupupdate(atLeast)
 		else:
 			autoBackupManagerTimer.backupstop()
-

@@ -1,26 +1,16 @@
 # for localized messages
 from . import _
-from Components.Button import Button
-from Components.ActionMap import ActionMap, NumberActionMap
-from Components.config import getConfigListEntry, config, ConfigSubsection, ConfigYesNo, ConfigText, ConfigSelection, ConfigInteger, ConfigClock, NoSave, configfile
-from Components.ConfigList import ConfigListScreen, ConfigList
+
+from Components.ActionMap import ActionMap
+from Components.config import getConfigListEntry, config, ConfigText, ConfigSelection, ConfigInteger, ConfigClock, NoSave, configfile
+from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
 from Components.Sources.List import List
-from Components.ScrollLabel import ScrollLabel
-from Components.ServiceEventTracker import ServiceEventTracker
-from Components.Harddisk import harddiskmanager
-from Components.Language import language
-from Components.Pixmap import Pixmap,MultiPixmap
+from Components.Pixmap import Pixmap
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Components.Console import Console
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS
-from Tools.LoadPixmap import LoadPixmap
-from base64 import encodestring
-from enigma import eListboxPythonMultiContent, ePoint, eTimer, getDesktop, gFont, iPlayableService, iServiceInformation, loadPNG, RT_HALIGN_RIGHT
-from skin import parseColor
-from os import system, listdir, remove, rename, symlink, unlink, path, mkdir, access, W_OK, R_OK, F_OK
-from enigma import eTimer, ePoint
+from os import system, listdir, rename, symlink, unlink, path, mkdir
 from time import sleep
 
 config.vixsettings.cronmanager_commandtype = NoSave(ConfigSelection(choices = [ ('custom',_("Custom")),('predefined',_("Predefined")) ]))

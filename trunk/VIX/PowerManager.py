@@ -1,18 +1,16 @@
 # for localized messages
 from . import _
+
 from Components.ActionMap import NumberActionMap
 from Components.Button import Button
 from Components.config import config, getConfigListEntry, ConfigYesNo, ConfigClock, ConfigNumber, NoSave
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
-from Components.Language import language
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Standby import TryQuitMainloop, Standby
-from Tools.Directories import pathExists, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 from time import localtime, time, strftime, mktime
 from enigma import eTimer
-from os import remove
 
 config.vixsettings.powermanager = ConfigYesNo(default = False)
 config.vixsettings.powermanager_standby = ConfigYesNo(default = False)

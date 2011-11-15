@@ -1,9 +1,8 @@
 # for localized messages
 from . import _
-from Plugins.Plugin import PluginDescriptor
-from Screens.Screen import Screen
+
 import Components.Task
-from Components.ActionMap import ActionMap, HelpableActionMap
+from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Button import Button
 from Components.ScrollLabel import ScrollLabel
@@ -11,13 +10,11 @@ from Components.MenuList import MenuList
 from Components.Sources.List import List
 from Components.Pixmap import MultiPixmap
 from Components.ConfigList import ConfigListScreen
-from Components.config import config, ConfigSubsection, ConfigText, getConfigListEntry, ConfigSelection, ConfigYesNo, ConfigNumber
+from Components.config import config, getConfigListEntry
 from Components.Console import Console
 from Components.FileList import MultiFileSelectList
-from Components.Language import language
+from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
-from ServiceReference import ServiceReference
 from Components.SystemInfo import SystemInfo
 from os import path, makedirs, remove, rename, symlink, mkdir, listdir
 from shutil import rmtree
@@ -197,7 +194,9 @@ class VIXSoftcamManager(Screen):
 						self.session.open(MessageBox, _("No config files found, please setup MGcamd first\nin /var/keys"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 					else:
 						self.session.open(MessageBox, _("MGcamd can't run whilst CCcam is running"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-				elif not selectedcam.lower().startswith('cccam') or selectedcam.lower().startswith('oscam') or selectedcam.lower().startswith('mgcamd'):
+				elif selectedcam.lower().startswith('scam'):
+					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
+				else:
 					self.session.open(MessageBox, _("Found none standard softcam, trying to start, this may fail"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 			else:
@@ -259,7 +258,7 @@ class VIXSoftcamManager(Screen):
 			
 class VIXStartCam(Screen):
 	skin = """<screen name="VIXStartCam" position="center,center" size="484, 150" title="Starting Softcam" flags="wfBorder">
-		<widget name="connect" position="217, 0" size="64,64" zPosition="2" pixmaps="ViX_HD/busy/busy1.png,ViX_HD/busy/busy2.png,ViX_HD/busy/busy3.png,ViX_HD/busy/busy4.png,ViX_HD/busy/busy5.png,ViX_HD/busy/busy6.png,ViX_HD/busy/busy7.png,ViX_HD/busy/busy8.png,ViX_HD/busy/busy9.png,ViX_HD/busy/busy9.png,ViX_HD/busy/busy10.png,ViX_HD/busy/busy11.png,ViX_HD/busy/busy12.png,ViX_HD/busy/busy13.png,ViX_HD/busy/busy14.png,ViX_HD/busy/busy15.png,ViX_HD/busy/busy17.png,ViX_HD/busy/busy18.png,ViX_HD/busy/busy19.png,ViX_HD/busy/busy20.png,ViX_HD/busy/busy21.png,ViX_HD/busy/busy22.png,ViX_HD/busy/busy23.png,ViX_HD/busy/busy24.png"  transparent="1" alphatest="blend" />
+		<widget name="connect" position="217, 0" size="64,64" zPosition="2" pixmaps="ViX_Day_HD/busy/busy1.png,ViX_Day_HD/busy/busy2.png,ViX_Day_HD/busy/busy3.png,ViX_Day_HD/busy/busy4.png,ViX_Day_HD/busy/busy5.png,ViX_Day_HD/busy/busy6.png,ViX_Day_HD/busy/busy7.png,ViX_Day_HD/busy/busy8.png,ViX_Day_HD/busy/busy9.png,ViX_Day_HD/busy/busy9.png,ViX_Day_HD/busy/busy10.png,ViX_Day_HD/busy/busy11.png,ViX_Day_HD/busy/busy12.png,ViX_Day_HD/busy/busy13.png,ViX_Day_HD/busy/busy14.png,ViX_Day_HD/busy/busy15.png,ViX_Day_HD/busy/busy17.png,ViX_Day_HD/busy/busy18.png,ViX_Day_HD/busy/busy19.png,ViX_Day_HD/busy/busy20.png,ViX_Day_HD/busy/busy21.png,ViX_Day_HD/busy/busy22.png,ViX_Day_HD/busy/busy23.png,ViX_Day_HD/busy/busy24.png"  transparent="1" alphatest="blend" />
 		<widget name="lab1" position="10, 80" halign="center" size="460, 60" zPosition="1" font="Regular;20" valign="top" transparent="1" />
 	</screen>"""
 	def __init__(self, session, selectedcam):
@@ -317,15 +316,15 @@ class VIXStartCam(Screen):
 			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Starting " + startselectedcam + "\n")
 			output.close()
 			if startselectedcam.lower().startswith('hypercam'):
-				self.Console.ePopen('/usr/softcams/' + startselectedcam + ' -c /etc/hypercam.cfg')
+				self.Console.ePopen('ulimit -s 512;/usr/softcams/' + startselectedcam + ' -c /etc/hypercam.cfg')
 			elif startselectedcam.lower().startswith('oscam'):
-				self.Console.ePopen('/usr/softcams/' + startselectedcam + ' -b')
+				self.Console.ePopen('ulimit -s 512;/usr/softcams/' + startselectedcam + ' -b')
 			elif startselectedcam.lower().startswith('gbox'):
-				self.Console.ePopen('/usr/softcams/' + startselectedcam)
+				self.Console.ePopen('ulimit -s 512;/usr/softcams/' + startselectedcam)
 				sleep(3)
 				self.Console.ePopen('start-stop-daemon --start --quiet --background --exec /usr/bin/gbox')
 			else:
-				self.Console.ePopen('/usr/softcams/' + startselectedcam)
+				self.Console.ePopen('ulimit -s 512;/usr/softcams/' + startselectedcam)
 		self.activityTimer.start(1)
 
 	def updatepix(self):
@@ -360,7 +359,7 @@ class VIXStartCam(Screen):
 
 class VIXStopCam(Screen):
 	skin = """<screen name="VIXStopCam" position="center,center" size="484, 150" title="Stopping Softcam" flags="wfBorder">
-		<widget name="connect" position="217, 0" size="64,64" zPosition="2" pixmaps="ViX_HD/busy/busy1.png,ViX_HD/busy/busy2.png,ViX_HD/busy/busy3.png,ViX_HD/busy/busy4.png,ViX_HD/busy/busy5.png,ViX_HD/busy/busy6.png,ViX_HD/busy/busy7.png,ViX_HD/busy/busy8.png,ViX_HD/busy/busy9.png,ViX_HD/busy/busy9.png,ViX_HD/busy/busy10.png,ViX_HD/busy/busy11.png,ViX_HD/busy/busy12.png,ViX_HD/busy/busy13.png,ViX_HD/busy/busy14.png,ViX_HD/busy/busy15.png,ViX_HD/busy/busy17.png,ViX_HD/busy/busy18.png,ViX_HD/busy/busy19.png,ViX_HD/busy/busy20.png,ViX_HD/busy/busy21.png,ViX_HD/busy/busy22.png,ViX_HD/busy/busy23.png,ViX_HD/busy/busy24.png"  transparent="1" alphatest="blend" />
+		<widget name="connect" position="217, 0" size="64,64" zPosition="2" pixmaps="ViX_Day_HD/busy/busy1.png,ViX_Day_HD/busy/busy2.png,ViX_Day_HD/busy/busy3.png,ViX_Day_HD/busy/busy4.png,ViX_Day_HD/busy/busy5.png,ViX_Day_HD/busy/busy6.png,ViX_Day_HD/busy/busy7.png,ViX_Day_HD/busy/busy8.png,ViX_Day_HD/busy/busy9.png,ViX_Day_HD/busy/busy9.png,ViX_Day_HD/busy/busy10.png,ViX_Day_HD/busy/busy11.png,ViX_Day_HD/busy/busy12.png,ViX_Day_HD/busy/busy13.png,ViX_Day_HD/busy/busy14.png,ViX_Day_HD/busy/busy15.png,ViX_Day_HD/busy/busy17.png,ViX_Day_HD/busy/busy18.png,ViX_Day_HD/busy/busy19.png,ViX_Day_HD/busy/busy20.png,ViX_Day_HD/busy/busy21.png,ViX_Day_HD/busy/busy22.png,ViX_Day_HD/busy/busy23.png,ViX_Day_HD/busy/busy24.png"  transparent="1" alphatest="blend" />
 		<widget name="lab1" position="10, 80" halign="center" size="460, 60" zPosition="1" font="Regular;20" valign="top" transparent="1" />
 	</screen>"""
 	def __init__(self, session, selectedcam):
@@ -549,11 +548,73 @@ class VIXSoftcamMenu(ConfigListScreen, Screen):
 			x[1].cancel()
 		self.close()
 
-class SoftcamCheckTask(Components.Task.PythonTask):
-	def setup(self, autostartcams):
-		self.autostartcams = autostartcams
+class SoftcamAutoPoller:
+	"""Automatically Poll SoftCam"""
+	def __init__(self):
+		# Init Timer
+		if not path.exists('/etc/keys'):
+			mkdir('/etc/keys', 0755)
+		if not path.exists('/etc/tuxbox/config'):
+			mkdir('/etc/tuxbox/config', 0755)
+		if not path.exists('/var/tuxbox'):
+			symlink('/etc/tuxbox', '/var/tuxbox')
+		if not path.exists('/var/keys'):
+			symlink('/etc/keys', '/var/keys')
+		if not path.exists('/usr/keys'):
+			symlink('/etc/keys', '/usr/keys')
+		if not path.exists('/etc/scce'):
+			mkdir('/etc/scce', 0755)
+		if not path.exists('/var/scce'):
+			symlink('/etc/scce', '/var/scce')
+		if not path.exists('/usr/softcams'):
+			mkdir('/usr/softcams', 0755)
+		self.timer = eTimer()
 
-	def work(self):
+	def start(self):
+		if self.softcam_check not in self.timer.callback:
+			self.timer.callback.append(self.softcam_check)
+		self.timer.startLongTimer(0)
+
+	def stop(self):
+		if self.softcam_check in self.timer.callback:
+			self.timer.callback.remove(self.softcam_check)
+		self.timer.stop()
+
+	def softcam_check(self):
+		now = int(time())
+		print "[SoftcamManager] Poll occured at", strftime("%c", localtime(now))
+		if path.exists('/tmp/SoftcamRuningCheck.tmp'):
+			remove('/tmp/SoftcamRuningCheck.tmp')
+
+		if config.softcammanager.softcams_autostart:
+			Components.Task.job_manager.AddJob(self.createCheckJob())
+
+		if config.softcammanager.softcamtimerenabled.value:
+			print "[SoftcamManager] Timer Check Enabled"
+			output = open('/tmp/cam.check.log','a')
+			now = datetime.now()
+			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Timer Check Enabled\n")
+			output.close()
+			self.timer.startLongTimer(config.softcammanager.softcamtimer.value * 60)
+		else:
+			output = open('/tmp/cam.check.log','a')
+			now = datetime.now()
+			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Timer Check Disabled\n")
+			output.close()
+			print "[SoftcamManager] Timer Check Disabled"
+			softcamautopoller.stop()
+
+	def createCheckJob(self):
+		job = Components.Task.Job(_("SoftcamCheck"))
+
+		task = Components.Task.PythonTask(job, _("Checking softcams..."))
+		task.work = self.JobStart
+		task.weighting = 1
+
+		return job
+
+	def JobStart(self):
+		self.autostartcams = config.softcammanager.softcams_autostart.value
 		self.Console = Console()
 		if path.exists('/tmp/cam.check.log'):
 			if path.getsize('/tmp/cam.check.log') > 40000:
@@ -684,7 +745,7 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 								now = datetime.now()
 								output.write(now.strftime("%Y-%m-%d %H:%M") + ": AutoStarting: " + softcamcheck + "\n")
 								output.close()
-								self.Console.ePopen('/usr/softcams/' + softcamcheck + ' -b')
+								self.Console.ePopen('ulimit -s 512;/usr/softcams/' + softcamcheck + ' -b')
 								sleep(10)
 							remove('/tmp/frozen')
 
@@ -738,7 +799,7 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 									self.Console.ePopen("killall -9 " + softcamcheck)
 									sleep(1)
 									print '[SoftcamManager] Starting ' + softcamcheck
-									self.Console.ePopen('/usr/softcams/' + softcamcheck)
+									self.Console.ePopen('ulimit -s 512;/usr/softcams/' + softcamcheck)
 								remove('/tmp/frozen')
 							elif allow.find('NO') >= 0 or allow.find('no') >= 0:
 								print '[SoftcamManager] Telnet info not allowed, can not check if frozen'
@@ -773,77 +834,15 @@ class SoftcamCheckTask(Components.Task.PythonTask):
 									self.Console.ePopen("killall -9 /usr/softcams/" + str(cccamcheck_process))
 								except:
 									pass
-							self.Console.ePopen('/usr/softcams/' + softcamcheck + " -b")
+							self.Console.ePopen('ulimit -s 512;/usr/softcams/' + softcamcheck + " -b")
 							sleep(10)
 							remove('/tmp/cccamRuningCheck.tmp')
 						elif softcamcheck.lower().startswith('sbox'):
-							self.Console.ePopen('/usr/softcams/' + softcamcheck)
+							self.Console.ePopen('ulimit -s 512;/usr/softcams/' + softcamcheck)
 							sleep(7)
 						elif softcamcheck.lower().startswith('gbox'):
-							self.Console.ePopen('/usr/softcams/' + softcamcheck)
+							self.Console.ePopen('ulimit -s 512;/usr/softcams/' + softcamcheck)
 							sleep(3)
 							self.Console.ePopen('start-stop-daemon --start --quiet --background --exec /usr/bin/gbox')
 						else:
-							self.Console.ePopen('/usr/softcams/' + softcamcheck)
-
-class SoftcamAutoPoller:
-	"""Automatically Poll SoftCam"""
-	def __init__(self):
-		# Init Timer
-		if not path.exists('/etc/keys'):
-			mkdir('/etc/keys', 0755)
-		if not path.exists('/etc/tuxbox/config'):
-			mkdir('/etc/tuxbox/config', 0755)
-		if not path.exists('/var/tuxbox'):
-			symlink('/etc/tuxbox', '/var/tuxbox')
-		if not path.exists('/var/keys'):
-			symlink('/etc/keys', '/var/keys')
-		if not path.exists('/usr/keys'):
-			symlink('/etc/keys', '/usr/keys')
-		if not path.exists('/etc/scce'):
-			mkdir('/etc/scce', 0755)
-		if not path.exists('/var/scce'):
-			symlink('/etc/scce', '/var/scce')
-		if not path.exists('/usr/softcams'):
-			mkdir('/usr/softcams', 0755)
-		self.timer = eTimer()
-
-	def start(self):
-		if self.softcam_check not in self.timer.callback:
-			self.timer.callback.append(self.softcam_check)
-		self.timer.startLongTimer(0)
-
-	def stop(self):
-		if self.softcam_check in self.timer.callback:
-			self.timer.callback.remove(self.softcam_check)
-		self.timer.stop()
-
-	def softcam_check(self):
-		now = int(time())
-		print "[SoftcamManager] Poll occured at", strftime("%c", localtime(now))
-		if path.exists('/tmp/SoftcamRuningCheck.tmp'):
-			remove('/tmp/SoftcamRuningCheck.tmp')
-
-		if config.softcammanager.softcams_autostart:
-			autostartcams = config.softcammanager.softcams_autostart.value
-			name = _("SoftcamCheck")
-			job = Components.Task.Job(name)
-			task = SoftcamCheckTask(job, name)
-			task.setup(autostartcams)
-			Components.Task.job_manager.AddJob(job)
-
-		if config.softcammanager.softcamtimerenabled.value:
-			print "[SoftcamManager] Timer Check Enabled"
-			output = open('/tmp/cam.check.log','a')
-			now = datetime.now()
-			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Timer Check Enabled\n")
-			output.close()
-			self.timer.startLongTimer(config.softcammanager.softcamtimer.value * 60)
-		else:
-			output = open('/tmp/cam.check.log','a')
-			now = datetime.now()
-			output.write(now.strftime("%Y-%m-%d %H:%M") + ": Timer Check Disabled\n")
-			output.close()
-			print "[SoftcamManager] Timer Check Disabled"
-			softcamautopoller.stop()
-
+							self.Console.ePopen('ulimit -s 512;/usr/softcams/' + softcamcheck)

@@ -1,5 +1,6 @@
 # for localized messages
 from . import _
+
 from Screens.Screen import Screen
 from enigma import eTimer
 from Screens.MessageBox import MessageBox
@@ -7,17 +8,14 @@ from Screens.Standby import TryQuitMainloop
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Pixmap import Pixmap
-from Components.PluginComponent import plugins
 from Components.ConfigList import ConfigListScreen
 from Components.config import getConfigListEntry, config, ConfigSelection, NoSave, configfile
 from Components.Sources.List import List
 from Components.Console import Console
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import fileExists, pathExists, createDir, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
-from Plugins.Plugin import PluginDescriptor
-from os import system, rename, path, mkdir, remove, statvfs, listdir
-import time, datetime
-import re
+from os import system, rename, path, mkdir, remove
+from time import sleep
+from re import search
 
 class VIXDevicesPanel(Screen):
 	skin = """
@@ -76,7 +74,7 @@ class VIXDevicesPanel(Screen):
 			except:
 				pass
 
-	def updateList(self):
+	def updateList(self, result = None, retval = None, extra_args = None):
 		scanning = _("Wait please while scanning for devices...")
 		self['lab1'].setText(scanning)
 		self.activityTimer.start(10)
@@ -91,7 +89,7 @@ class VIXDevicesPanel(Screen):
 			if not parts:
 				continue
 			device = parts[3]
- 			if not re.search('sd[a-z][1-9]',device):
+ 			if not search('sd[a-z][1-9]',device):
 				continue
 			if device in list2:
 				continue
@@ -126,14 +124,22 @@ class VIXDevicesPanel(Screen):
 		devicetype = path.realpath('/sys/block/' + device2 + '/device')
 		d2 = device
 		name = 'USB: '
-		mypixmap = '/usr/share/enigma2/ViX_HD/icons/dev_usb.png'
+		mypixmap = '/usr/share/enigma2/ViX_Day_HD/icons/dev_usb.png'
 		model = file('/sys/block/' + device2 + '/device/model').read()
 		model = str(model).replace('\n', '')
 		des = ''
 		if devicetype.find('/devices/pci') != -1:
 			name = _("HARD DISK: ")
-			mypixmap = '/usr/share/enigma2/ViX_HD/icons/dev_hdd.png'
+			mypixmap = '/usr/share/enigma2/ViX_Day_HD/icons/dev_hdd.png'
 		name = name + model
+		self.Console = Console()
+		self.Console.ePopen("sfdisk -l /dev/sd? | grep swap | awk '{print $(NF-9)}' >/tmp/devices.tmp")
+		sleep(0.5)
+		f = open('/tmp/devices.tmp', 'r')
+		swapdevices = f.read()
+		f.close()
+		swapdevices = swapdevices.replace('\n','')
+		swapdevices = swapdevices.split('/')
 		f = open('/proc/mounts', 'r')
 		for line in f.readlines():
 			if line.find(device) != -1:
@@ -144,9 +150,17 @@ class VIXDevicesPanel(Screen):
 				break
 				continue
 			else:
-				d1 = _("None")
-				dtype = _("unavailable")
-				rw = _("None")
+				if device in swapdevices:
+					parts = line.strip().split()
+					d1 = _("None")
+					dtype = 'swap'
+					rw = _("None")
+					break
+					continue
+				else:
+					d1 = _("None")
+					dtype = _("unavailable")
+					rw = _("None")
 		f.close()
 		f = open('/proc/partitions', 'r')
 		for line in f.readlines():
@@ -208,8 +222,9 @@ class VIXDevicesPanel(Screen):
 			des = sel[1]
 			des = des.replace('\n', '\t')
 			parts = des.strip().split('\t')
+			mountp = parts[1].replace(_("Mount: "), '')
 			device = parts[2].replace(_("Device: "), '')
-			system ('umount ' + device)
+			system ('umount ' + mountp)
 			try:
 				mounts = open("/proc/mounts")
 			except IOError:
@@ -225,35 +240,37 @@ class VIXDevicesPanel(Screen):
 	def saveMypoints(self):
 		sel = self['list'].getCurrent()
 		if sel:
-			for x in self['list'].list:
-				try:
-					x = x[1].strip()
-					if x.find('Mount') >= 0:
-						parts = x.split()
-						device = parts[5]
-						file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if device not in l])
-						rename('/etc/fstab.tmp','/etc/fstab')
-				except:
-					pass
-			for line in self.sel:
-				try:
-					line = line.strip()
-					if line.find('Mount') >= 0:
-						if line.find('/media/hdd') < 0:
-							parts = line.split()
-							device = parts[5]
-							device = device.replace('/autofs/', '/dev/')
-							out = open('/etc/fstab', 'a')
-							line = device + '            /media/hdd           auto       defaults              0 0\n'
-							out.write(line)
-							out.close()
-							system ('mount /dev/' + device)
-							self.updateList()
-						else:
-							self.session.open(MessageBox, _("This Device is already mounted as HDD."), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-				except:
-					pass
+			parts = sel[1].split()
+			self.device = parts[5]
+			self.mountp = parts[3]
+			self.Console.ePopen('umount /media/hdd')
+			self.Console.ePopen('umount ' + self.device)
+			if self.mountp.find('/media/hdd') < 0:
+				self.Console.ePopen("/sbin/blkid | grep " + self.device, self.add_fstab, [self.device, self.mountp])
+			else:
+				self.session.open(MessageBox, _("This Device is already mounted as HDD."), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 			
+	def add_fstab(self, result = None, retval = None, extra_args = None):
+		self.device = extra_args[0]
+		self.mountp = extra_args[1]
+		self.device_uuid_tmp = result.split('UUID=')
+		self.device_uuid_tmp = self.device_uuid_tmp[1].replace('"',"")
+		self.device_uuid_tmp = self.device_uuid_tmp.replace('\n',"")
+		self.device_uuid = 'UUID=' + self.device_uuid_tmp
+		if not path.exists(self.mountp):
+			mkdir(self.mountp, 0755)
+		file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if '/media/hdd' not in l])
+		rename('/etc/fstab.tmp','/etc/fstab')
+		file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device not in l])
+		rename('/etc/fstab.tmp','/etc/fstab')
+		file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device_uuid not in l])
+		rename('/etc/fstab.tmp','/etc/fstab')
+		out = open('/etc/fstab', 'a')
+		line = self.device_uuid + '\t/media/hdd\tauto\tdefaults\t0 0\n'
+		out.write(line)
+		out.close()
+		self.Console.ePopen('mount /media/hdd', self.updateList)
+
 	def restBo(self, answer):
 		if answer is True:
 			self.session.open(TryQuitMainloop, 2)
@@ -285,15 +302,25 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 	def updateList(self):
 		self.list = []
 		list2 = []
+		self.Console = Console()
+		self.Console.ePopen("sfdisk -l /dev/sd? | grep swap | awk '{print $(NF-9)}' >/tmp/devices.tmp")
+		sleep(0.5)
+		f = open('/tmp/devices.tmp', 'r')
+		swapdevices = f.read()
+		f.close()
+		swapdevices = swapdevices.replace('\n','')
+		swapdevices = swapdevices.split('/')
 		f = open('/proc/partitions', 'r')
 		for line in f.readlines():
 			parts = line.strip().split()
 			if not parts:
 				continue
 			device = parts[3]
- 			if not re.search('sd[a-z][1-9]',device):
+ 			if not search('sd[a-z][1-9]',device):
 				continue
 			if device in list2:
+				continue
+			if device in swapdevices:
 				continue
 			self.buildMy_rec(device)
 			list2.append(device)
@@ -326,17 +353,20 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		devicetype = path.realpath('/sys/block/' + device2 + '/device')
 		d2 = device
 		name = 'USB: '
-		mypixmap = '/usr/share/enigma2/ViX_HD/icons/dev_usb.png'
+		mypixmap = '/usr/share/enigma2/ViX_Day_HD/icons/dev_usb.png'
 		model = file('/sys/block/' + device2 + '/device/model').read()
 		model = str(model).replace('\n', '')
 		des = ''
 		if devicetype.find('/devices/pci') != -1:
 			name = _("HARD DISK: ")
-			mypixmap = '/usr/share/enigma2/ViX_HD/icons/dev_hdd.png'
+			mypixmap = '/usr/share/enigma2/ViX_Day_HD/icons/dev_hdd.png'
 		name = name + model
+		if path.exists('/tmp/devices.tmp'):
+			remove('/tmp/devices.tmp')
 		f = open('/proc/mounts', 'r')
 		for line in f.readlines():
 			if line.find(device) != -1:
+				print 'device',device
 				parts = line.strip().split()
 				d1 = parts[1]
 				dtype = parts[2]
@@ -392,25 +422,31 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		mycheck = False
 		for x in self['config'].list:
 			self.device = x[2]
-			self.Console.ePopen('umount /dev/' + self.device)
-			file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device not in l])
-			rename('/etc/fstab.tmp','/etc/fstab')
-
-		for x in self['config'].list:
-			self.device = x[2]
 			self.mountp = x[1].value
 			self.type = x[3]
-			if not path.exists(self.mountp):
-				mkdir(self.mountp, 0755)
-			out = open('/etc/fstab', 'a')
-			line = '/dev/' + self.device + '            ' + self.mountp + '           ' + self.type + '       defaults              0 0\n'
-			out.write(line)
-			out.close()
-			self.Console.ePopen('mount /dev/' + self.device)
-
+			self.Console.ePopen('umount ' + self.device)
+			self.Console.ePopen("/sbin/blkid | grep " + self.device, self.add_fstab, [self.device, self.mountp] )
 		message = _("Devices changes need a system restart to take effects.\nRestart your Box now?")
 		ybox = self.session.openWithCallback(self.restartBox, MessageBox, message, MessageBox.TYPE_YESNO)
 		ybox.setTitle(_("Restart box."))
+
+	def add_fstab(self, result = None, retval = None, extra_args = None):
+		self.device = extra_args[0]
+		self.mountp = extra_args[1]
+		self.device_uuid_tmp = result.split('UUID=')
+		self.device_uuid_tmp = self.device_uuid_tmp[1].replace('"',"")
+		self.device_uuid_tmp = self.device_uuid_tmp.replace('\n',"")
+		self.device_uuid = 'UUID=' + self.device_uuid_tmp
+		if not path.exists(self.mountp):
+			mkdir(self.mountp, 0755)
+		file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device not in l])
+		rename('/etc/fstab.tmp','/etc/fstab')
+		file('/etc/fstab.tmp', 'w').writelines([l for l in file('/etc/fstab').readlines() if self.device_uuid not in l])
+		rename('/etc/fstab.tmp','/etc/fstab')
+		out = open('/etc/fstab', 'a')
+		line = self.device_uuid + '\t' + self.mountp + '\tauto\tdefaults\t0 0\n'
+		out.write(line)
+		out.close()
 
 	def restartBox(self, answer):
 		if answer is True:

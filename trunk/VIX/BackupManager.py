@@ -393,6 +393,7 @@ class VIXBackupManager(Screen):
 			self.Stage1Completed = True
 
 	def Stage2(self):
+		self.Console = Console()
 		self.Console.ePopen('opkg list-installed', self.Stage2Complete)
 
 	def Stage2Complete(self, result, retval, extra_args):
@@ -414,6 +415,7 @@ class VIXBackupManager(Screen):
 				self.Stage2Completed = True
 
 	def Stage3(self):
+		self.Console = Console()
 		fstabfile = file('/etc/fstab').readlines()
 		for mountfolder in fstabfile:
 			parts = mountfolder.strip().split()
@@ -429,12 +431,14 @@ class VIXBackupManager(Screen):
 			self.Console.ePopen("init 4 && reboot")
 
 	def Stage3Complete(self, answer=False):
+		self.Console = Console()
 		if answer is True:
 			self.Stage3Completed = True
 		else:
 			self.Console.ePopen("init 4 && reboot")
 
 	def Stage4(self):
+		self.Console = Console()
 		self.Console.ePopen('opkg update', self.Stage4Complete)
 
 	def Stage4Complete(self, result, retval, extra_args):
@@ -444,9 +448,11 @@ class VIXBackupManager(Screen):
 	def Stage5(self):
 		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
 		pluginslist = plugintmp.replace('\n',' ')
+		self.Console = Console()
 		self.Console.ePopen('opkg install ' + pluginslist, self.Stage5Complete)
 
 	def Stage5Complete(self, result, retval, extra_args):
+		self.Console = Console()
 		self.Console.ePopen('init 4 && reboot')
 
 class BackupSelection(Screen):

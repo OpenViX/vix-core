@@ -750,21 +750,22 @@ class SoftcamAutoPoller:
 							remove('/tmp/frozen')
 
 						elif softcamcheck.lower().startswith('cccam'):
-							allow = 'notset'
+							allow = 'yes'
 							port = ''
 							f = open('/etc/CCcam.cfg', 'r')
 							for line in f.readlines():
-								if line.find('ALLOW TELNETINFO') != -1:
-									parts = line.strip().split()
-									if parts[1].startswith('TELNETINFO='):
-										allow = parts[1].replace('TELNETINFO=','')
-									else:
-										allow = parts[2]
-									if allow.find(':') >=0:
-										allow = allow.replace(':','')
-									if allow == '' or allow == '=':
-										allow = parts[3]
-								if line.find('TELNETINFO LISTEN PORT') != -1:
+								if line.find('ALLOW WEBINFO') != -1:
+									if not line.startswith('#'):
+										parts = line.strip().split()
+										if parts[1].startswith('WEBINFO='):
+											allow = parts[1].replace('WEBINFO=','')
+										else:
+											allow = parts[2]
+										if allow.find(':') >=0:
+											allow = allow.replace(':','')
+										if allow == '' or allow == '=':
+											allow = parts[3]
+								if line.find('WEBINFO LISTEN PORT') != -1:
 									parts = line.strip().split()
 									if parts[2].startswith('PORT='):
 										port = parts[2].replace('PORT=','')
@@ -778,9 +779,9 @@ class SoftcamAutoPoller:
 							if allow.lower().find('yes') >= 0:
 								print '[SoftcamManager] Checking if ' + softcamcheck + ' is frozen'
 								if port == "":
-									port="16000"
+									port="16001"
 								#self.Console.ePopen("echo info|nc 127.0.0.1 " + port + " | grep Welcome | awk '{print $1}' > /tmp/frozen")
-								self.Console.ePopen("wget http://127.0.0.1:" + port + " 2> /tmp/frozen")
+								self.Console.ePopen("wget http://127.0.0.1:" + port + "/index.html 2> /tmp/frozen")
 								sleep(2)
 								frozen = file('/tmp/frozen').read()
 								if frozen.find('Unauthorized') or frozen.find('100%') >=0:

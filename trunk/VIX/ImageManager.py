@@ -493,7 +493,7 @@ class ImageRestore(Screen):
 	def Stage4Complete(self,result, retval, extra_args = None):
 		if retval == 0:
 			print '[ImageManager] Stage4: Complete.'
-			if path.exists(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup")
+			if path.exists(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup"):
 				self.MemCheckConsole = Console()
 				self.MemCheckConsole.ePopen("swapoff " + self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup", self.MemRemove1)
 			else:
@@ -502,7 +502,7 @@ class ImageRestore(Screen):
 
 	def MemRemove1(self, result, retval, extra_args = None):
 		if retval == 0:
-			if path.exists(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup")
+			if path.exists(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup"):
 				remove(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup")
 		self.Stage4Completed = True
 		self.session.open(MessageBox, _("Flashing Complete\nPlease power off your receiver, wait 15 seconds then power backon."), MessageBox.TYPE_INFO)

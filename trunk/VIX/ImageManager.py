@@ -1092,7 +1092,7 @@ class ImageManagerDownload(Screen):
 		from ftplib import FTP
 		import urllib, zipfile, base64
 		wos_user = 'vixlogs@world-of-satellite.com'
-		wos_pwd = base64.b64decode('NDJJWnojMEpldUxX')
+		wos_pwd = base64.b64decode('amh1NzQ3M2hzMzN5NHU1amZu')
 		ftp = FTP('world-of-satellite.com')
 		ftp.login(wos_user,wos_pwd)
 		fd = open('/etc/opkg/all-feed.conf', 'r')

@@ -323,7 +323,7 @@ class VIXImageManager(Screen):
 				else:
 					self.session.open(MessageBox, _("Sorry the image " + self.sel + " is not compatible with this box."), MessageBox.TYPE_INFO, timeout = 10)
 			else:
-				self.session.open(MessageBox, _("Sorry Image Restore is not supported on the" + ' ' + config.misc.boxtype.value + ', ' + _("Please copy the folder") + ' ' + self.BackupDirectory + self.sel + '/vuplus' +  ' \n' + _("to a USB stick, place in front USB port of reciver and power on")), MessageBox.TYPE_INFO, timeout = 30)
+				self.session.open(MessageBox, _("Sorry Image Restore is not supported on the" + ' ' + config.misc.boxtype.value + ', ' + _("Please copy the folder") + ' ' + self.BackupDirectory + self.sel +  ' \n' + _("to a USB stick, place in front USB port of reciver and power on")), MessageBox.TYPE_INFO, timeout = 30)
 		else:
 			self.session.open(MessageBox, _("Backup in progress,\nPlease for it to finish, before trying again"), MessageBox.TYPE_INFO, timeout = 10)
 

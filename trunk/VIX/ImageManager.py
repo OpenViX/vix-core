@@ -323,7 +323,7 @@ class VIXImageManager(Screen):
 				else:
 					self.session.open(MessageBox, _("Sorry the image " + self.sel + " is not compatible with this box."), MessageBox.TYPE_INFO, timeout = 10)
 			else:
-				self.session.open(MessageBox, _("Sorry Image Restore is not supported on the" + ' ' + config.misc.boxtype.value + ', ' + _("Please copy the folder") + ' ' + self.BackupDirectory + self.sel + '/vuplus' +  ' \n' + _("to a USB stick, place in front USB port of reciver and power on")), MessageBox.TYPE_INFO, timeout = 30)
+				self.session.open(MessageBox, _("Sorry Image Restore is not supported on the" + ' ' + config.misc.boxtype.value + ', ' + _("Please copy the folder") + ' ' + self.BackupDirectory + self.sel +  ' \n' + _("to a USB stick, place in front USB port of reciver and power on")), MessageBox.TYPE_INFO, timeout = 30)
 		else:
 			self.session.open(MessageBox, _("Backup in progress,\nPlease for it to finish, before trying again"), MessageBox.TYPE_INFO, timeout = 10)
 
@@ -493,12 +493,17 @@ class ImageRestore(Screen):
 	def Stage4Complete(self,result, retval, extra_args = None):
 		if retval == 0:
 			print '[ImageManager] Stage4: Complete.'
-			self.MemCheckConsole = Console()
-			self.MemCheckConsole.ePopen("swapoff " + self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup", self.MemRemove1)
+			if path.exists(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup"):
+				self.MemCheckConsole = Console()
+				self.MemCheckConsole.ePopen("swapoff " + self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup", self.MemRemove1)
+			else:
+				self.Stage4Completed = True
+				self.session.open(MessageBox, _("Flashing Complete\nPlease power off your receiver, wait 15 seconds then power backon."), MessageBox.TYPE_INFO)
 
 	def MemRemove1(self, result, retval, extra_args = None):
 		if retval == 0:
-			remove(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup")
+			if path.exists(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup"):
+				remove(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup")
 		self.Stage4Completed = True
 		self.session.open(MessageBox, _("Flashing Complete\nPlease power off your receiver, wait 15 seconds then power backon."), MessageBox.TYPE_INFO)
 
@@ -848,7 +853,7 @@ class ImageBackup(Screen):
 		s = statvfs(self.BackupDevice)
 		free = (s.f_bsize * s.f_bavail)/(1024*1024)
 		if int(free) < 200:
-			self.session.open(MessageBox, _("The backup location does not have enough freespace.\n" + self.BackupDevice + "only has " + str(free) + "MB free."), MessageBox.TYPE_INFO, timeout = 10)
+			self.session.open(MessageBox, _("The backup location does not have enough freespace." + "\n" + self.BackupDevice + "only has " + str(free) + "MB free."), MessageBox.TYPE_INFO, timeout = 10)
 		else:
 			self.MemCheck()
 
@@ -1087,7 +1092,7 @@ class ImageManagerDownload(Screen):
 		from ftplib import FTP
 		import urllib, zipfile, base64
 		wos_user = 'vixlogs@world-of-satellite.com'
-		wos_pwd = base64.b64decode('NDJJWnojMEpldUxX')
+		wos_pwd = base64.b64decode('amh1NzQ3M2hzMzN5NHU1amZu')
 		ftp = FTP('world-of-satellite.com')
 		ftp.login(wos_user,wos_pwd)
 		fd = open('/etc/opkg/all-feed.conf', 'r')

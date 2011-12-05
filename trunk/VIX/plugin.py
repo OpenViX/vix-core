@@ -19,7 +19,7 @@ from PowerManager import PowerManagerautostart, PowerManagerNextWakeup
 
 class VIXMenu(Screen):
 	skin = """
-		<screen name="VIXMenu" position="center,center" size="610,410" title="Software management" >
+		<screen name="VIXMenu" position="center,center" size="610,410" >
 			<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
 			<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
 			<ePixmap pixmap="skin_default/border_menu_350.png" position="5,50" zPosition="1" size="350,300" transparent="1" alphatest="on" />

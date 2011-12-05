@@ -853,7 +853,7 @@ class ImageBackup(Screen):
 		s = statvfs(self.BackupDevice)
 		free = (s.f_bsize * s.f_bavail)/(1024*1024)
 		if int(free) < 200:
-			self.session.open(MessageBox, _("The backup location does not have enough freespace.\n" + self.BackupDevice + "only has " + str(free) + "MB free."), MessageBox.TYPE_INFO, timeout = 10)
+			self.session.open(MessageBox, _("The backup location does not have enough freespace." + "\n" + self.BackupDevice + "only has " + str(free) + "MB free."), MessageBox.TYPE_INFO, timeout = 10)
 		else:
 			self.MemCheck()
 

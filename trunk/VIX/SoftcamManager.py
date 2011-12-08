@@ -827,6 +827,7 @@ class SoftcamAutoPoller:
 									sleep(1)
 									print '[SoftcamManager] Starting ' + softcamcheck
 									self.Console.ePopen('ulimit -s 512;/usr/softcams/' + softcamcheck)
+								remove('/tmp/frozen')
 								self.Console.ePopen("killall -9 wget http://127.0.0.1:" + port + " -O /tmp/index.html")
 							elif allow.lower().find('no') != -1:
 								print '[SoftcamManager] Telnet info not allowed, can not check if frozen'
@@ -840,7 +841,6 @@ class SoftcamAutoPoller:
 								now = datetime.now()
 								output.write(now.strftime("%Y-%m-%d %H:%M") + ":  Telnet info not setup, can not check if frozen,\n\tplease enable 'ALLOW WEBINFO: YES'\n")
 								output.close()
-							remove('/tmp/frozen')
 							
 					elif softcamcheck_process == "":
 						output = open('/tmp/cam.check.log','a')

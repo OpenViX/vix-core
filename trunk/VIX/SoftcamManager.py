@@ -691,6 +691,8 @@ class SoftcamAutoPoller:
 						output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " running OK\n")
 						output.close()
 						if softcamcheck.lower().startswith('oscam'):
+							if path.exists('/tmp/status.html'):
+								remove('/tmp/status.html')
 							port = ''
 							f = open('/etc/tuxbox/config/oscam.conf', 'r')
 							for line in f.readlines():
@@ -700,7 +702,7 @@ class SoftcamAutoPoller:
 							print '[SoftcamManager] Checking if ' + softcamcheck + ' is frozen'
 							if port == "":
 								port="16000"
-							self.Console.ePopen("wget http://127.0.0.1:" + port + "/status.html 2> /tmp/frozen")
+							self.Console.ePopen("wget http://127.0.0.1:" + port + "/status.html -O /tmp/status.html 2> /tmp/frozen")
 							sleep(2)
 							frozen = file('/tmp/frozen').read()
 							if frozen.find('Unauthorized') != -1:
@@ -721,6 +723,13 @@ class SoftcamAutoPoller:
 								now = datetime.now()
 								output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " is responding like it should\n")
 								output.close()
+							elif path.exists('/tmp/status.html'):
+								print '[SoftcamManager] ' + softcamcheck + ' is responding like it should'
+								output = open('/tmp/cam.check.log','a')
+								now = datetime.now()
+								output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " is responding like it should\n")
+								output.close()
+								remove('/tmp/status.html')
 							else:
 								print '[SoftcamManager] ' + softcamcheck + ' is frozen, Restarting...'
 								output = open('/tmp/cam.check.log','a')
@@ -738,7 +747,7 @@ class SoftcamAutoPoller:
 								sleep(2)
 								cccamcheck_process = file('/tmp/oscamRuningCheck.tmp').read()
 								cccamcheck_process = cccamcheck_process.replace("\n","")
-								if cccamcheck_process.find('cccam') != -1 or cccamcheck_process.find('CCcam') != -1:
+								if cccamcheck_process.lower().find('cccam') != -1:
 									try:
 										print '[SoftcamManager] Stopping ', cccamcheck_process
 										output = open('/tmp/cam.check.log','a')
@@ -758,49 +767,55 @@ class SoftcamAutoPoller:
 							remove('/tmp/frozen')
 
 						elif softcamcheck.lower().startswith('cccam'):
-							allow = 'yes'
+							if path.exists('/tmp/index.html'):
+								remove('/tmp/index.html')
+							allow = 'no'
 							port = ''
 							f = open('/etc/CCcam.cfg', 'r')
 							for line in f.readlines():
 								if line.find('ALLOW WEBINFO') != -1:
 									if not line.startswith('#'):
-										parts = line.strip().split()
-										if parts[1].startswith('WEBINFO='):
-											allow = parts[1].replace('WEBINFO=','')
-										else:
-											allow = parts[2]
-										if allow.find('=') >=0:
-											allow = allow.replace('=','')
-										if allow == '' or allow == '=':
-											allow = parts[3]
+										parts = line.replace('ALLOW WEBINFO','')
+										parts = parts.replace(':','')
+										parts = parts.replace(' ','')
+										parts = parts.strip().split()
+										if parts[0].startswith('yes'):
+											allow = parts[0]
 								if line.find('WEBINFO LISTEN PORT') != -1:
 									port = re.sub("\D", "", line)
 							f.close()
-							if allow.lower().find('yes') >= 0:
+							if allow.lower().find('yes') != -1:
 								print '[SoftcamManager] Checking if ' + softcamcheck + ' is frozen'
 								if port == "":
 									port="16001"
-								self.Console.ePopen("wget http://127.0.0.1:" + port + "/index.html 2> /tmp/frozen")
+								self.Console.ePopen("wget http://127.0.0.1:" + port + " -O /tmp/index.html 2> /tmp/frozen")
 								sleep(2)
 								frozen = file('/tmp/frozen').read()
 								if frozen.find('Unauthorized') != -1:
-									print '[SoftcamManager] ' + softcamcheck + ' is responding like it should\n\t' + frozen
+									print '[SoftcamManager] ' + softcamcheck + ' is responding like it should'
 									output = open('/tmp/cam.check.log','a')
 									now = datetime.now()
-									output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " is responding like it should\n\t' + frozen" + "\n")
+									output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " is responding like it should\n")
 									output.close()
 								elif frozen.find('Authorization Required') != -1:
-									print '[SoftcamManager] ' + softcamcheck + ' is responding like it should\n\t' + frozen
+									print '[SoftcamManager] ' + softcamcheck + ' is responding like it should'
 									output = open('/tmp/cam.check.log','a')
 									now = datetime.now()
-									output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " is responding like it should\n\t' + frozen" + "\n")
+									output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " is responding like it should\n")
 									output.close()
 								elif frozen.find('100%') != -1:
-									print '[SoftcamManager] ' + softcamcheck + ' is responding like it should\n\t' + frozen
+									print '[SoftcamManager] ' + softcamcheck + ' is responding like it should'
 									output = open('/tmp/cam.check.log','a')
 									now = datetime.now()
-									output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " is responding like it should\n\t' + frozen" + "\n")
+									output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " is responding like it should\n")
 									output.close()
+								elif path.exists('/tmp/index.html'):
+									print '[SoftcamManager] ' + softcamcheck + ' is responding like it should'
+									output = open('/tmp/cam.check.log','a')
+									now = datetime.now()
+									output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " is responding like it should\n")
+									output.close()
+									remove('/tmp/index.html')
 								else:
 									print '[SoftcamManager] ' + softcamcheck + ' is frozen, Restarting...'
 									output = open('/tmp/cam.check.log','a')
@@ -812,20 +827,20 @@ class SoftcamAutoPoller:
 									sleep(1)
 									print '[SoftcamManager] Starting ' + softcamcheck
 									self.Console.ePopen('ulimit -s 512;/usr/softcams/' + softcamcheck)
-								self.Console.ePopen("killall -9 wget http://127.0.0.1:" + port + "/index.html")
-								remove('/tmp/frozen')
-							elif allow.find('NO') != -1 or allow.find('no') != -1:
+								self.Console.ePopen("killall -9 wget http://127.0.0.1:" + port + " -O /tmp/index.html")
+							elif allow.lower().find('no') != -1:
 								print '[SoftcamManager] Telnet info not allowed, can not check if frozen'
 								output = open('/tmp/cam.check.log','a')
 								now = datetime.now()
 								output.write(now.strftime("%Y-%m-%d %H:%M") + ":  Webinfo info not allowed, can not check if frozen,\n\tplease enable 'ALLOW WEBINFO: YES'\n")
 								output.close()
 							else:
-								print "[SoftcamManager] Webinfo info not setup, please enable 'ALLOW WEBINFO: YES'"
+								print "[SoftcamManager] Webinfo info not setup, please enable 'ALLOW WEBINFO= YES'"
 								output = open('/tmp/cam.check.log','a')
 								now = datetime.now()
 								output.write(now.strftime("%Y-%m-%d %H:%M") + ":  Telnet info not setup, can not check if frozen,\n\tplease enable 'ALLOW WEBINFO: YES'\n")
 								output.close()
+							remove('/tmp/frozen')
 							
 					elif softcamcheck_process == "":
 						output = open('/tmp/cam.check.log','a')

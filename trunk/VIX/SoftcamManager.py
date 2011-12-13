@@ -717,6 +717,12 @@ class SoftcamAutoPoller:
 								now = datetime.now()
 								output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " is responding like it should\n")
 								output.close()
+							elif frozen.find('Forbidden') != -1:
+								print '[SoftcamManager] ' + softcamcheck + ' is responding like it should'
+								output = open('/tmp/cam.check.log','a')
+								now = datetime.now()
+								output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " is responding like it should\n")
+								output.close()
 							elif frozen.find('100%') != -1:
 								print '[SoftcamManager] ' + softcamcheck + ' is responding like it should'
 								output = open('/tmp/cam.check.log','a')

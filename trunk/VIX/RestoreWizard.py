@@ -1,5 +1,6 @@
 # for localized messages
 from . import _
+from Components.About import about
 from Components.ActionMap import ActionMap
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
@@ -146,25 +147,32 @@ class RestoreSetting(Screen, ConfigListScreen):
 		self.Console.ePopen("tar -xzvf " + self.fullbackupfilename + " -C /", self.doRestorePlugins1)
 
 	def doRestorePlugins1(self, result, retval, extra_args):
-		self.Console.ePopen('opkg list-installed', self.doRestorePlugins2)
+		self.Console = Console()
+		if path.exists('/tmp/backupkernelversion'):
+			kernelversion = file('/tmp/backupkernelversion').read()
+			if kernelversion == about.getKernelVersionString():
+				self.Console.ePopen('opkg list-installed', self.doRestorePlugins2)
+			else:
+				self.Console.ePopen("init 4 && reboot")
+		else:
+			self.Console.ePopen("init 4 && reboot")
 
 	def doRestorePlugins2(self, result, retval, extra_args):
-		if retval == 0:
-			if path.exists('/tmp/ExtraInstalledPlugins'):
-				pluginlist = file('/tmp/ExtraInstalledPlugins').readlines()
-				plugins = []
-				for line in result.split('\n'):
-					if line:
-						parts = line.strip().split()
-						plugins.append(parts[0])
-				output = open('/tmp/trimedExtraInstalledPlugins','a')
-				for line in pluginlist:
-					if line:
-						parts = line.strip().split()
-						if parts[0] not in plugins:
-							output.write(parts[0] + ' ')
-				output.close()
-				self.doRestorePluginsQuestion()
+		if path.exists('/tmp/ExtraInstalledPlugins'):
+			plugins = []
+			for line in result.split('\n'):
+				if line:
+					parts = line.strip().split()
+					plugins.append(parts[0])
+			output = open('/tmp/trimedExtraInstalledPlugins','w')
+			pluginlist = file('/tmp/ExtraInstalledPlugins').readlines()
+			for line in pluginlist:
+				if line:
+					parts = line.strip().split()
+					if parts[0] not in plugins:
+						output.write(parts[0] + ' ')
+			output.close()
+			self.doRestorePluginsQuestion()
 
 	def doRestorePluginsQuestion(self, extra_args = None):
 		fstabfile = file('/etc/fstab').readlines()

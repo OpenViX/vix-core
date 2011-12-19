@@ -2,6 +2,7 @@
 from . import _
 
 import Components.Task
+from Components.About import about
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Button import Button
@@ -394,25 +395,31 @@ class VIXBackupManager(Screen):
 
 	def Stage2(self):
 		self.Console = Console()
-		self.Console.ePopen('opkg list-installed', self.Stage2Complete)
+		if path.exists('/tmp/backupkernelversion'):
+			kernelversion = file('/tmp/backupkernelversion').read()
+			if kernelversion == about.getKernelVersionString():
+				self.Console.ePopen('opkg list-installed', self.Stage2Complete)
+			else:
+				self.Console.ePopen("init 4 && reboot")
+		else:
+			self.Console.ePopen("init 4 && reboot")
 
 	def Stage2Complete(self, result, retval, extra_args):
-		if retval == 0:
-			if path.exists('/tmp/ExtraInstalledPlugins'):
-				pluginlist = file('/tmp/ExtraInstalledPlugins').readlines()
-				plugins = []
-				for line in result.split('\n'):
-					if line:
-						parts = line.strip().split()
-						plugins.append(parts[0])
-				output = open('/tmp/trimedExtraInstalledPlugins','a')
-				for line in pluginlist:
-					if line:
-						parts = line.strip().split()
-						if parts[0] not in plugins:
-							output.write(parts[0] + ' ')
-				output.close()
-				self.Stage2Completed = True
+		if path.exists('/tmp/ExtraInstalledPlugins'):
+			plugins = []
+			for line in result.split('\n'):
+				if line:
+					parts = line.strip().split()
+					plugins.append(parts[0])
+			output = open('/tmp/trimedExtraInstalledPlugins','w')
+			pluginlist = file('/tmp/ExtraInstalledPlugins').readlines()
+			for line in pluginlist:
+				if line:
+					parts = line.strip().split()
+					if parts[0] not in plugins:
+						output.write(parts[0] + ' ')
+			output.close()
+			self.Stage2Completed = True
 
 	def Stage3(self):
 		self.Console = Console()
@@ -449,11 +456,7 @@ class VIXBackupManager(Screen):
 		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
 		pluginslist = plugintmp.replace('\n',' ')
 		self.Console = Console()
-		self.Console.ePopen('opkg install ' + pluginslist, self.Stage5Complete)
-
-	def Stage5Complete(self, result, retval, extra_args):
-		self.Console = Console()
-		self.Console.ePopen('init 4 && reboot')
+		self.Console.ePopen('opkg install ' + pluginslist + ' && init 4 && reboot')
 
 class BackupSelection(Screen):
 	skin = """
@@ -843,6 +846,14 @@ class BackupFiles(Screen):
 		task.check = lambda: self.Stage4Completed
 		task.weighting = 1
 
+		task = Components.Task.PythonTask(job, _("Backing up files..."))
+		task.work = self.Stage5
+		task.weighting = 1
+
+		task = Components.Task.ConditionTask(job, _("Backing up files..."), timeoutCount=600)
+		task.check = lambda: self.Stage5Completed
+		task.weighting = 1
+
 		task = Components.Task.PythonTask(job, _("Backup Complete..."))
 		task.work = self.BackupComplete
 		task.weighting = 1
@@ -958,23 +969,26 @@ class BackupFiles(Screen):
 			print "{BackupManager] Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 
 	def Stage4(self):
+		print '[BackupManager] Finding kernel version:' + about.getKernelVersionString()
+		output = open('/tmp/backupkernelversion','w')
+		output.write(about.getKernelVersionString())
+		output.close()
+		self.Stage4Completed = True
+
+	def Stage5(self):
 		self.BackupConsole = Console()
 		tmplist = config.backupmanager.backupdirs.value
 		tmplist.append('/tmp/ExtraInstalledPlugins')
+		tmplist.append('/tmp/backupkernelversion')
 		self.backupdirs = ' '.join(tmplist)
 		print '[BackupManager] Backup running'
-		tar = tarfile.open(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz', "w:gz")
-		# turn the three test files into a tar archive
-		for name in tmplist:
-			tar.add(name)
-		tar.close()
-		self.Stage4Complete()
+		self.BackupConsole.ePopen('tar -czvf ' + self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz ' + self.backupdirs, self.Stage5Complete)
 
-	def Stage4Complete(self):
+	def Stage5Complete(self, result, retval, extra_args):
 		if path.exists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
 			print '[BackupManager] Complete.'
 			remove('/tmp/ExtraInstalledPlugins')
-			self.Stage4Completed = True
+			self.Stage5Completed = True
 		else:
 			self.session.open(MessageBox, _("Backup failed - e. g. wrong backup destination or no space left on backup device"), MessageBox.TYPE_INFO, timeout = 10)
 			print '[BackupManager] Result.',result

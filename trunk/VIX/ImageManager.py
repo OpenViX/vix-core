@@ -955,11 +955,11 @@ class ImageBackup(Screen):
 			print '[ImageManager] Stage1: UBIFS Detected.'
 			if config.misc.boxtype.value.startswith('vu'):
 				print '[ImageManager] Stage1: Vu plus box detected.'
-				MKUBIFS_ARGS="-m 2048 -e 126976 -c 1024 -F"
+				MKUBIFS_ARGS="-m 2048 -e 126976 -c 4096 -F"
 				mkdir(self.MAINDEST + '/vuplus', 0777)
 				mkdir(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu',''), 0777)
 			elif config.misc.boxtype.value.startswith('et'):
-				MKUBIFS_ARGS="-m 2048 -e 126976 -c 1024"
+				MKUBIFS_ARGS="-m 2048 -e 126976 -c 4096"
 				mkdir(self.MAINDEST + '/' + config.misc.boxtype.value, 0777)
 			output = open(self.WORKDIR + '/ubinize.cfg','w')
 			output.write('[ubifs]\n')

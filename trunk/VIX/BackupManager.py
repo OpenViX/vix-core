@@ -383,6 +383,14 @@ class VIXBackupManager(Screen):
 		task.work = self.Stage5
 		task.weighting = 1
 
+		task = Components.Task.ConditionTask(job, _("Restoring plugins..."), timeoutCount=30)
+		task.check = lambda: self.Stage5Completed
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Rebooting..."))
+		task.work = self.Stage6
+		task.weighting = 1
+
 		return job
 
 	def JobStart(self):
@@ -456,7 +464,15 @@ class VIXBackupManager(Screen):
 		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
 		pluginslist = plugintmp.replace('\n',' ')
 		self.Console = Console()
-		self.Console.ePopen('opkg install ' + pluginslist + ' && init 4 && reboot')
+		self.Console.ePopen('opkg install ' + pluginslist, self.Stage5Complete)
+
+	def Stage5Complete(self, result, retval, extra_args):
+		if result:
+			self.Stage5Completed = True
+
+	def Stage6(self):
+		self.Console = Console()
+		self.Console.ePopen('init 4 && reboot')
 
 class BackupSelection(Screen):
 	skin = """

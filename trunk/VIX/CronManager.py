@@ -82,55 +82,39 @@ class VIXCronManager(Screen):
 	def autostart(self):
 		if path.exists('/etc/rc0.d/K20busybox-cron'):
 			unlink('/etc/rc0.d/K20busybox-cron')
-			mymess = _("Autostart Disabled.")
 		else:
 			symlink('/etc/init.d/busybox-cron', '/etc/rc0.d/K20busybox-cron')
-			mymess = _("Autostart Enabled.")
 
 		if path.exists('/etc/rc1.d/K20busybox-cron'):
 			unlink('/etc/rc1.d/K20busybox-cron')
-			mymess = _("Autostart Disabled.")
 		else:
 			symlink('/etc/init.d/busybox-cron', '/etc/rc1.d/K20busybox-cron')
-			mymess = _("Autostart Enabled.")
 
 		if path.exists('/etc/rc2.d/S20busybox-cron'):
 			unlink('/etc/rc2.d/S20busybox-cron')
-			mymess = _("Autostart Disabled.")
 		else:
 			symlink('/etc/init.d/busybox-cron', '/etc/rc2.d/S20busybox-cron')
-			mymess = _("Autostart Enabled.")
 
 		if path.exists('/etc/rc3.d/S20busybox-cron'):
 			unlink('/etc/rc3.d/S20busybox-cron')
-			mymess = _("Autostart Disabled.")
 		else:
 			symlink('/etc/init.d/busybox-cron', '/etc/rc3.d/S20busybox-cron')
-			mymess = _("Autostart Enabled.")
 
 		if path.exists('/etc/rc4.d/S20busybox-cron'):
 			unlink('/etc/rc4.d/S20busybox-cron')
-			mymess = _("Autostart Disabled.")
 		else:
 			symlink('/etc/init.d/busybox-cron', '/etc/rc4.d/S20busybox-cron')
-			mymess = _("Autostart Enabled.")
 
 		if path.exists('/etc/rc5.d/S20busybox-cron'):
 			unlink('/etc/rc5.d/S20busybox-cron')
-			mymess = _("Autostart Disabled.")
 		else:
 			symlink('/etc/init.d/busybox-cron', '/etc/rc5.d/S20busybox-cron')
-			mymess = _("Autostart Enabled.")
 
 		if path.exists('/etc/rc6.d/K20busybox-cron'):
 			unlink('/etc/rc6.d/K20busybox-cron')
-			mymess = _("Autostart Disabled.")
 		else:
 			symlink('/etc/init.d/busybox-cron', '/etc/rc6.d/K20busybox-cron')
-			mymess = _("Autostart Enabled.")
 
-		mybox = self.session.open(MessageBox, mymess, MessageBox.TYPE_INFO, timeout = 10)
-		mybox.setTitle(_("Info"))
 		self.updateList()
 
 	def addtocron(self):

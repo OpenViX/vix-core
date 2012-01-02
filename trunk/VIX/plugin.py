@@ -8,14 +8,45 @@ from Components.ActionMap import ActionMap
 from Components.Sources.StaticText import StaticText
 from Components.Sources.List import List
 from Components.MultiContent import MultiContentEntryText
+from Components.config import config, ConfigBoolean
+from Components.Harddisk import harddiskmanager
 from enigma import RT_HALIGN_LEFT, RT_VALIGN_CENTER, gFont
+from os import path, mkdir, listdir, access, stat, rename, remove, W_OK, R_OK
 
-from RestoreWizard import RestoreWizard
 from BackupManager import BackupManagerautostart
 from ImageManager import ImageManagerautostart
 from SwapManager import SwapAutostart
 from SoftcamManager import SoftcamAutostart
 from PowerManager import PowerManagerautostart, PowerManagerNextWakeup
+
+def checkConfigBackup():
+	devices = [ (r.description, r.mountpoint) for r in harddiskmanager.getMountedPartitions(onlyhotplug = False)]
+	list = []
+	for x in devices:
+		if x[1] == '/':
+			devices.remove(x)
+	if len(devices):
+		for x in devices:
+			print 'X:',x
+			if not x[1].endswith('/'):
+				images = listdir(x[1] + '/backup')
+			else:
+				images = listdir(x[1] + 'backup')
+			for fil in images:
+				if fil.endswith('.tar.gz') and fil.startswith(config.misc.boxtype.value):
+					if not x[1].endswith('/'):
+						list.append((x[1] + '/backup/' + fil,x[1] + '/backup/' + fil))
+					else:
+						list.append((x[1] + 'backup/' + fil,x[1] + 'backup/' + fil))
+	if len(list):
+		return True
+	else:
+		return None
+
+if checkConfigBackup() is None:
+	backupAvailable = 0
+else:
+	backupAvailable = 1
 
 class VIXMenu(Screen):
 	skin = """
@@ -164,6 +195,11 @@ def startSetup(menuid):
 		return [ ]
 	return [(_("ViX"), UpgradeMain, "vix_menu", 1010)]
 
+config.misc.restorewizardrun = ConfigBoolean(default = False)
+def RestoreWizard(*args, **kwargs):
+	from RestoreWizard import RestoreWizard
+	return RestoreWizard(*args, **kwargs)
+
 def Plugins(path, **kwargs):
 	global plugin_path
 	plugin_path = path
@@ -176,6 +212,8 @@ def Plugins(path, **kwargs):
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = PowerManagerautostart, wakeupfnc = PowerManagerNextWakeup))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = ImageManagerautostart))
 	plist.append(PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = BackupManagerautostart))
+	if config.misc.firstrun.value and not config.misc.restorewizardrun.value:
+		plist.append(PluginDescriptor(name=_("Restore Wizard"), where = PluginDescriptor.WHERE_WIZARD, needsRestart = False, fnc=(8, RestoreWizard)))
 	return plist
 
 def SoftcamSetup(menuid):

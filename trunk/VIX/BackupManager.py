@@ -17,7 +17,6 @@ from Components.FileList import MultiFileSelectList
 from Components.ScrollLabel import ScrollLabel
 from Screens.Screen import Screen
 from Components.Console import Console
-from Screens.Console import Console as RestoreConsole
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from enigma import eTimer

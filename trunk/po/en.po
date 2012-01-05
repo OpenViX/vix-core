@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-05 15:41+0000\n"
+"POT-Creation-Date: 2012-01-05 16:52+0000\n"
 "PO-Revision-Date: 2011-07-11 16:05+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -122,9 +122,6 @@ msgstr ""
 "\n"
 "there was a problem with this device, please reformat and try again."
 
-msgid " "
-msgstr " "
-
 msgid " detected'"
 msgstr ""
 
@@ -214,13 +211,6 @@ msgstr ""
 "Are you sure you want to restore this backup:\n"
 " "
 
-msgid ""
-"Are you sure you want to restore this image:\n"
-" "
-msgstr ""
-"Are you sure you want to restore this image:\n"
-" "
-
 msgid "August"
 msgstr ""
 
@@ -229,12 +219,6 @@ msgstr "Author: "
 
 msgid "Autostart"
 msgstr "Autostart"
-
-msgid "Autostart Disabled."
-msgstr "Autostart Disabled."
-
-msgid "Autostart Enabled."
-msgstr "Autostart Enabled."
 
 msgid "Autostart:"
 msgstr "Autostart:"
@@ -411,7 +395,10 @@ msgstr "Do you want to reboot your Receiver?"
 msgid "Do you want to remove the package:\n"
 msgstr "Do you want to remove the package:\n"
 
-msgid "Do you want to restore your settings?"
+msgid "Do you want to restore your Enigma2 plugins ?"
+msgstr ""
+
+msgid "Do you want to restore your Enigma2 settings ?"
 msgstr ""
 
 msgid "Do you want to update your Receiver?"
@@ -434,6 +421,9 @@ msgid "Downloading"
 msgstr "Downloading"
 
 msgid "Downloading Image..."
+msgstr ""
+
+msgid "Downloads"
 msgstr ""
 
 msgid "Electronic Program Guide"
@@ -469,24 +459,16 @@ msgstr "Enable Swap at startup"
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Enough Retries, delaying till next schedule."
 
-msgid "Erasing Kernel..."
-msgstr ""
-
-msgid "Erasing Root..."
-msgstr ""
-
 msgid "Error"
 msgstr "Error"
+
+msgid "Exit the cleanup wizard"
+msgstr ""
 
 msgid "Extensions management"
 msgstr "Extensions management"
 
 msgid "February"
-msgstr ""
-
-msgid ""
-"Flashing Complete\n"
-"Please power off your receiver, wait 15 seconds then power backon."
 msgstr ""
 
 msgid "Folder prefix"
@@ -558,9 +540,6 @@ msgstr "Installation finished."
 msgid "Installing"
 msgstr "Installing"
 
-msgid "Installing Plugins..."
-msgstr ""
-
 msgid "Installing..."
 msgstr "Installing..."
 
@@ -612,6 +591,12 @@ msgstr "Moving to Backup Location..."
 msgid "Multimedia"
 msgstr "Multimedia"
 
+msgid "NO, do not restore plugins"
+msgstr ""
+
+msgid "NO, do not restore settings"
+msgstr ""
+
 msgid "Network"
 msgstr "Network"
 
@@ -632,9 +617,6 @@ msgstr "Next Reboot: \n"
 
 msgid "Next Standby: \n"
 msgstr "Next Standby: \n"
-
-msgid "No"
-msgstr ""
 
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -675,6 +657,9 @@ msgid ""
 msgstr ""
 "No packages were upgraded yet. So you can check your network and try again."
 
+msgid "No plugins where needed to be installed"
+msgstr ""
+
 msgid "None"
 msgstr "None"
 
@@ -686,6 +671,9 @@ msgstr ""
 
 msgid "OK"
 msgstr "OK"
+
+msgid "OK, to perform a restore"
+msgstr ""
 
 msgid "October"
 msgstr ""
@@ -711,11 +699,17 @@ msgstr "Packet Manager"
 msgid "Packet manager"
 msgstr "Packet manager"
 
-msgid "Please copy the folder"
-msgstr ""
-
 msgid "Please select device to use as swapfile location"
 msgstr "Please select device to use as swapfile location"
+
+msgid "Please select the file to restore ?"
+msgstr ""
+
+msgid "Please wait while gathers infomation..."
+msgstr ""
+
+msgid "Please wait while restore completes..."
+msgstr ""
 
 msgid "Please wait while starting\n"
 msgstr "Please wait while starting\n"
@@ -763,6 +757,9 @@ msgstr ""
 msgid "Reboot Time"
 msgstr "Reboot Time"
 
+msgid "Rebooting..."
+msgstr ""
+
 msgid "Receiver software because updates are available."
 msgstr "Receiver software because updates are available."
 
@@ -808,8 +805,14 @@ msgstr "Restore"
 msgid "Restore Confirmation"
 msgstr "Restore Confirmation"
 
-msgid "Restore is running..."
-msgstr "Restore is running..."
+msgid "Restore Plugins"
+msgstr ""
+
+msgid "Restore Settings"
+msgstr ""
+
+msgid "Restore Wizard"
+msgstr ""
 
 msgid ""
 "Restore wizard has detected that you had extra plugins installed at the time "
@@ -817,12 +820,6 @@ msgid ""
 msgstr ""
 "Restore wizard has detected that you had extra plugins installed at the time "
 "of you backup, Do you want to reinstall these plugins ?"
-
-msgid "Restoring Kernel..."
-msgstr ""
-
-msgid "Restoring Root..."
-msgstr ""
 
 msgid "Restoring backup..."
 msgstr ""
@@ -923,12 +920,6 @@ msgstr "Software"
 msgid "Software Update"
 msgstr "Software Update"
 
-msgid "Sorry Image Restore is not supported on the"
-msgstr ""
-
-msgid "Sorry the image "
-msgstr "Sorry the image "
-
 msgid "Sorry you box is not yet compatible."
 msgstr "Sorry you box is not yet compatible."
 
@@ -993,6 +984,9 @@ msgstr "The backup location does not have enough freespace."
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "The chosen location does not exist, using /media/hdd"
+
+msgid "The wizard is finished now, and will reboot"
+msgstr ""
 
 msgid "The wizard is finished now."
 msgstr ""
@@ -1160,13 +1154,24 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your setting and any extra plugins that "
+"where installed when the backup was created.\n"
+msgstr ""
+
 msgid "What Day of month ?"
 msgstr "What Day of month ?"
 
 msgid "What Day of week ?"
 msgstr "What Day of week ?"
 
-msgid "Yes"
+msgid "YES, to restore plugins"
+msgstr ""
+
+msgid "YES, to restore settings"
 msgstr ""
 
 msgid "You can cancel the installation."
@@ -1181,11 +1186,6 @@ msgstr "You can install this plugin."
 msgid "You can remove this plugin."
 msgstr "You can remove this plugin."
 
-msgid ""
-"You have chosen to restore your settings. Please press OK to start the "
-"restore now."
-msgstr ""
-
 msgid "You have no backup to delete."
 msgstr "You have no backup to delete."
 
@@ -1197,9 +1197,6 @@ msgstr "You have no image to delete."
 
 msgid "You have no image to download."
 msgstr ""
-
-msgid "You have no image to restore."
-msgstr "You have no image to restore."
 
 msgid "You have no script to run."
 msgstr "You have no script to run."
@@ -1256,23 +1253,10 @@ msgstr ""
 "Your receiver isn't connected to the internet properly. Please check it and "
 "try again."
 
-msgid "echo 'Attention:'"
-msgstr ""
-
 msgid "echo 'Downloading Image.'"
 msgstr ""
 
-msgid ""
-"echo 'Enigma2 will be restarted automatically after the restore progress.'"
-msgstr ""
-
 msgid "echo 'Expanding Image.'"
-msgstr ""
-
-msgid "echo 'Installing Plugins.'"
-msgstr ""
-
-msgid "to a USB stick, place in front USB port of reciver and power on"
 msgstr ""
 
 msgid "unavailable"
@@ -1306,8 +1290,24 @@ msgstr ""
 #~ "ALL THE DATA WILL BE LOST!\n"
 #~ "Are you sure to continue?"
 
+#~ msgid " "
+#~ msgstr " "
+
 #~ msgid "A search for available updates is currently in progress."
 #~ msgstr "A search for available updates is currently in progress."
+
+#~ msgid ""
+#~ "Are you sure you want to restore this image:\n"
+#~ " "
+#~ msgstr ""
+#~ "Are you sure you want to restore this image:\n"
+#~ " "
+
+#~ msgid "Autostart Disabled."
+#~ msgstr "Autostart Disabled."
+
+#~ msgid "Autostart Enabled."
+#~ msgstr "Autostart Enabled."
 
 #~ msgid "Creating Image..."
 #~ msgstr "Creating Image..."
@@ -1333,11 +1333,17 @@ msgstr ""
 #~ msgid "Repartition Device"
 #~ msgstr "Repartition Device"
 
+#~ msgid "Restore is running..."
+#~ msgstr "Restore is running..."
+
 #~ msgid "Restore running"
 #~ msgstr "Restore running"
 
 #~ msgid "Script Running"
 #~ msgstr "Script Running"
+
+#~ msgid "Sorry the image "
+#~ msgstr "Sorry the image "
 
 #~ msgid ""
 #~ "Sorry you have Debug Logs enabed,\n"
@@ -1388,3 +1394,6 @@ msgstr ""
 
 #~ msgid "Warning you are going to format "
 #~ msgstr "Warning you are going to format "
+
+#~ msgid "You have no image to restore."
+#~ msgstr "You have no image to restore."

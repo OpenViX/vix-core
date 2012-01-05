@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-05 15:41+0000\n"
+"POT-Creation-Date: 2012-01-05 16:52+0000\n"
 "PO-Revision-Date: 2011-12-05 15:43+0100\n"
 "Last-Translator: belierzz <belierzz@gmx.net>\n"
 "Language-Team: none\n"
@@ -124,9 +124,6 @@ msgstr ""
 "\n"
 "Gerätefehler! Bitte neu formatieren und erneut versuchen."
 
-msgid " "
-msgstr " "
-
 msgid " detected'"
 msgstr " entdeckt'"
 
@@ -218,13 +215,6 @@ msgstr ""
 "Dieses Backup jetzt wiederherstellen:\n"
 " "
 
-msgid ""
-"Are you sure you want to restore this image:\n"
-" "
-msgstr ""
-"Dieses Image jetzt wiederherstellen:\n"
-" "
-
 msgid "August"
 msgstr "August"
 
@@ -233,12 +223,6 @@ msgstr "Autor: "
 
 msgid "Autostart"
 msgstr "Autostart"
-
-msgid "Autostart Disabled."
-msgstr "Autostart deaktiviert"
-
-msgid "Autostart Enabled."
-msgstr "Autostart aktiviert"
 
 msgid "Autostart:"
 msgstr "Autostart:"
@@ -270,8 +254,12 @@ msgstr "Backup-Manager Log"
 msgid "Backup Manager Setup"
 msgstr "Einstellungen Backup-Manager"
 
-msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Backup fehlgeschlagen - z.B. falscher Sicherungsort oder zu wenig freier Speicher auf dem Sicherungslaufwerk"
+msgid ""
+"Backup failed - e. g. wrong backup destination or no space left on backup "
+"device"
+msgstr ""
+"Backup fehlgeschlagen - z.B. falscher Sicherungsort oder zu wenig freier "
+"Speicher auf dem Sicherungslaufwerk"
 
 msgid ""
 "Backup in progress,\n"
@@ -286,8 +274,12 @@ msgstr "Backup-Manager"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "Während MGcamd läuft kann CCcam nicht ausgeführt werden"
 
-msgid "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Kann Partition nicht aushängen, bitte sicherstellen dass diese nicht für Auslagerungsdatei oder Aufnahme/Timeshift-Pfade genutzt wird"
+msgid ""
+"Can't unmount partiton, make sure it is not being used for swap or record/"
+"timeshift paths"
+msgstr ""
+"Kann Partition nicht aushängen, bitte sicherstellen dass diese nicht für "
+"Auslagerungsdatei oder Aufnahme/Timeshift-Pfade genutzt wird"
 
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -407,8 +399,11 @@ msgstr "Den Receiver neu starten?"
 msgid "Do you want to remove the package:\n"
 msgstr "Das Paket entfernen:\n"
 
-msgid "Do you want to restore your settings?"
-msgstr "Wollen Sie Ihre Einstellungen wiederherstellen?"
+msgid "Do you want to restore your Enigma2 plugins ?"
+msgstr ""
+
+msgid "Do you want to restore your Enigma2 settings ?"
+msgstr ""
 
 msgid "Do you want to update your Receiver?"
 msgstr "Den Receiver updaten?"
@@ -431,6 +426,9 @@ msgstr "Lädt herunter"
 
 msgid "Downloading Image..."
 msgstr "Lädt Image herunter..."
+
+msgid "Downloads"
+msgstr ""
 
 msgid "Electronic Program Guide"
 msgstr "Electronic Program Guide"
@@ -465,27 +463,17 @@ msgstr "Auslagerungsdatei-Autostart aktivieren"
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Zu viele Versuche, bis zur nächsten Zeitplan-Aktion zurückgestellt."
 
-msgid "Erasing Kernel..."
-msgstr "Lösche Kernel..."
-
-msgid "Erasing Root..."
-msgstr "Lösche Root..."
-
 msgid "Error"
 msgstr "Fehler"
+
+msgid "Exit the cleanup wizard"
+msgstr ""
 
 msgid "Extensions management"
 msgstr "Erweiterungs-Management"
 
 msgid "February"
 msgstr "Februar"
-
-msgid ""
-"Flashing Complete\n"
-"Please power off your receiver, wait 15 seconds then power backon."
-msgstr ""
-"Flashen abgeschlossen\n"
-"Schalten Sie den Receiver am Netzschalter aus und warten Sie 15s vor dem Wiedereinschalten."
 
 msgid "Folder prefix"
 msgstr "Ordner-Präfix"
@@ -494,10 +482,14 @@ msgid "Following tasks will be done after you press OK!"
 msgstr "Folgende Aufgaben werden nach drücken von OK ausgeführt!"
 
 msgid "Found none stanadard softcam, trying to start, this may fail"
-msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl"
+msgstr ""
+"Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt "
+"möglicherweise fehl"
 
 msgid "Found none standard softcam, trying to start, this may fail"
-msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl"
+msgstr ""
+"Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt "
+"möglicherweise fehl"
 
 msgid "Fri"
 msgstr "Fr."
@@ -556,9 +548,6 @@ msgstr "Installation abgeschlossen."
 msgid "Installing"
 msgstr "Installiert"
 
-msgid "Installing Plugins..."
-msgstr "Installiere Plugins..."
-
 msgid "Installing..."
 msgstr "Installiert..."
 
@@ -610,6 +599,12 @@ msgstr "An Sicherungsspeicherort verschieben..."
 msgid "Multimedia"
 msgstr "Multimedia"
 
+msgid "NO, do not restore plugins"
+msgstr ""
+
+msgid "NO, do not restore settings"
+msgstr ""
+
 msgid "Network"
 msgstr "Netzwerk"
 
@@ -630,9 +625,6 @@ msgstr "Nächster Neustart: \n"
 
 msgid "Next Standby: \n"
 msgstr "Nächster Standby: \n"
-
-msgid "No"
-msgstr "Nein"
 
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -668,8 +660,14 @@ msgstr "Keine Beschreibung verfügbar."
 msgid "No network connection available."
 msgstr "Keine Netzwerkverbindung verfügbar."
 
-msgid "No packages were upgraded yet. So you can check your network and try again."
-msgstr "Es wurden noch keine Pakete aktualisiert. Das Netzwerk kann überprüft und nochmals versucht werden."
+msgid ""
+"No packages were upgraded yet. So you can check your network and try again."
+msgstr ""
+"Es wurden noch keine Pakete aktualisiert. Das Netzwerk kann überprüft und "
+"nochmals versucht werden."
+
+msgid "No plugins where needed to be installed"
+msgstr ""
 
 msgid "None"
 msgstr "Keine"
@@ -682,6 +680,9 @@ msgstr "November"
 
 msgid "OK"
 msgstr "OK"
+
+msgid "OK, to perform a restore"
+msgstr ""
 
 msgid "October"
 msgstr "Oktober"
@@ -710,11 +711,17 @@ msgstr "Paket-Manager"
 msgid "Packet manager"
 msgstr "Paket-Manager"
 
-msgid "Please copy the folder"
-msgstr "Bitte den Ordner kopieren"
-
 msgid "Please select device to use as swapfile location"
 msgstr "Bitte Gerät für Auslagerungsdatei auswählen"
+
+msgid "Please select the file to restore ?"
+msgstr ""
+
+msgid "Please wait while gathers infomation..."
+msgstr ""
+
+msgid "Please wait while restore completes..."
+msgstr ""
 
 msgid "Please wait while starting\n"
 msgstr "Startvorgang abwarten\n"
@@ -725,8 +732,12 @@ msgstr "Bitte Stoppvorgang abwarten\n"
 msgid "Please wait..."
 msgstr "Bitte warten..."
 
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Auflistung der Plugins fehlgeschlagen - z.B. falscher Sicherungsspeicherort oder ungenügend Speicher auf dem Sicherungslaufwerk"
+msgid ""
+"Plugin Listing failed - e. g. wrong backup destination or no space left on "
+"backup device"
+msgstr ""
+"Auflistung der Plugins fehlgeschlagen - z.B. falscher Sicherungsspeicherort "
+"oder ungenügend Speicher auf dem Sicherungslaufwerk"
 
 msgid "Plugin manager activity information"
 msgstr "Aktivitäten-Information Plugin-Manager"
@@ -757,6 +768,9 @@ msgstr "Neustart"
 
 msgid "Reboot Time"
 msgstr "Dauer des Neustarts"
+
+msgid "Rebooting..."
+msgstr ""
 
 msgid "Receiver software because updates are available."
 msgstr "Receiver Software da neue Updates verfügbar"
@@ -803,17 +817,22 @@ msgstr "Wiederherstellen"
 msgid "Restore Confirmation"
 msgstr "Wiederherstellen bestätigen"
 
-msgid "Restore is running..."
-msgstr "Wiederherstellung wird ausgeführt..."
+msgid "Restore Plugins"
+msgstr ""
 
-msgid "Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?"
-msgstr "Der Wiederherstellungs-Wizard hat festgestellt, dass zum Zeitpunkt der Sicherung zusätzliche Plugins installiert waren. Sollen diese Plugins neu installiert werden?"
+msgid "Restore Settings"
+msgstr ""
 
-msgid "Restoring Kernel..."
-msgstr "Kernel wiederherstellen..."
+msgid "Restore Wizard"
+msgstr ""
 
-msgid "Restoring Root..."
-msgstr "Root wiederherstellen..."
+msgid ""
+"Restore wizard has detected that you had extra plugins installed at the time "
+"of you backup, Do you want to reinstall these plugins ?"
+msgstr ""
+"Der Wiederherstellungs-Wizard hat festgestellt, dass zum Zeitpunkt der "
+"Sicherung zusätzliche Plugins installiert waren. Sollen diese Plugins neu "
+"installiert werden?"
 
 msgid "Restoring backup..."
 msgstr "Backup wiederherstellen..."
@@ -914,23 +933,27 @@ msgstr "Software"
 msgid "Software Update"
 msgstr "Online-Update"
 
-msgid "Sorry Image Restore is not supported on the"
-msgstr "Sooy, Wiederherstellen des Image nicht unterstützt"
-
-msgid "Sorry the image "
-msgstr "Leider ist das Image"
-
 msgid "Sorry you box is not yet compatible."
 msgstr "Leider ist die Box noch nicht kompatibel."
 
 msgid "Sorry, no Details available!"
 msgstr "Leider keine Details verfügbar!"
 
-msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
-msgstr "Sorry, kein geeignetes Gerät für Auslagerungsdatei angeschlossen. Keine Auslagerungsdatei im Netzwerk oder mit FAT32 möglich"
+msgid ""
+"Sorry, no physical devices that supports SWAP attached. Can't create "
+"Swapfile on network or fat32 filesystems"
+msgstr ""
+"Sorry, kein geeignetes Gerät für Auslagerungsdatei angeschlossen. Keine "
+"Auslagerungsdatei im Netzwerk oder mit FAT32 möglich"
 
-msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
-msgstr "Sorry, nicht genügend RAM und kein Gerät für eine Auslagerungsdatei angeschlossen. Keine Auslagerungsdatei im Netzwerk oder auf FAT32 möglich. Backup kann nicht erstellt werden"
+msgid ""
+"Sorry, not enough free ram found, and no physical devices that supports SWAP "
+"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
+"make backup"
+msgstr ""
+"Sorry, nicht genügend RAM und kein Gerät für eine Auslagerungsdatei "
+"angeschlossen. Keine Auslagerungsdatei im Netzwerk oder auf FAT32 möglich. "
+"Backup kann nicht erstellt werden"
 
 msgid "Standby"
 msgstr "Standby"
@@ -960,7 +983,9 @@ msgid "Sunday"
 msgstr "Sontag"
 
 msgid "Swap File not found. You have to create the file before to activate."
-msgstr "Auslagerungsdatei nicht gefunden. Vor Aktivierung muss die Datei erstellt werden-"
+msgstr ""
+"Auslagerungsdatei nicht gefunden. Vor Aktivierung muss die Datei erstellt "
+"werden-"
 
 msgid "Swap Manager"
 msgstr "Auslagerungsdatei-Manager"
@@ -979,6 +1004,9 @@ msgstr "Ungenügend Speicherplatz am Sicherungsspeicherort."
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Der gewählte Speicherort existiert nicht, nutze /media/hdd"
+
+msgid "The wizard is finished now, and will reboot"
+msgstr ""
 
 msgid "The wizard is finished now."
 msgstr "Der Assistent ist abgeschlossen."
@@ -1092,7 +1120,8 @@ msgid "View list of available EPG extensions."
 msgstr "Anzeigen der Liste verfügbarer EPG-Erweiterungen."
 
 msgid "View list of available Satellite equipment extensions."
-msgstr "Anzeigen der Liste verfügbarer Satelliten-Empfangsausrüstungs-Erweiterungen."
+msgstr ""
+"Anzeigen der Liste verfügbarer Satelliten-Empfangsausrüstungs-Erweiterungen."
 
 msgid "View list of available communication extensions."
 msgstr "Anzeigen der Liste verfügbarer Kommunikations-Erweiterungen"
@@ -1146,14 +1175,25 @@ msgstr "Mittwoch"
 msgid "Weekly"
 msgstr "Wöchentlich"
 
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your setting and any extra plugins that "
+"where installed when the backup was created.\n"
+msgstr ""
+
 msgid "What Day of month ?"
 msgstr "Welchen Tag im Monat?"
 
 msgid "What Day of week ?"
 msgstr "Welchen Wochentag?"
 
-msgid "Yes"
-msgstr "Ja"
+msgid "YES, to restore plugins"
+msgstr ""
+
+msgid "YES, to restore settings"
+msgstr ""
 
 msgid "You can cancel the installation."
 msgstr "Installation abbrechen."
@@ -1167,9 +1207,6 @@ msgstr "Plugin installieren."
 msgid "You can remove this plugin."
 msgstr "Plugin entfernen."
 
-msgid "You have chosen to restore your settings. Please press OK to start the restore now."
-msgstr "Wiederherstellung der Einstellungen ausgewählt. Ok drücken zum Starten der Wiederherstellung."
-
 msgid "You have no backup to delete."
 msgstr "Keine Backup zum Löschen."
 
@@ -1182,27 +1219,29 @@ msgstr "Kein Image zum löschen"
 msgid "You have no image to download."
 msgstr "Kein Image zum Herunterladen."
 
-msgid "You have no image to restore."
-msgstr "Kein Image zum Wiederherstellen"
-
 msgid "You have no script to run."
 msgstr "Kein Script zur Ausführung."
 
 msgid "You have to create a Swap File before to activate the autostart."
-msgstr "Vor dem Aktivieren des Autostarts muss eine Auslagerungsdatei erstellt werden. "
+msgstr ""
+"Vor dem Aktivieren des Autostarts muss eine Auslagerungsdatei erstellt "
+"werden. "
 
 msgid ""
 "Your box is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
-"Die Box wird ein Backup der Einstellungen anlegen und die aktuellen Plugins feststellen,\n"
+"Die Box wird ein Backup der Einstellungen anlegen und die aktuellen Plugins "
+"feststellen,\n"
 "Wollen Sie das zulassen?"
 
 msgid ""
-"Your box is about to run a full image backup, this can take about 6 minutes to complete,\n"
+"Your box is about to run a full image backup, this can take about 6 minutes "
+"to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"Es wird ein komplettes Image angelegt. Die Fertigstellung kann bis zu 6 Min. dauern,\n"
+"Es wird ein komplettes Image angelegt. Die Fertigstellung kann bis zu 6 Min. "
+"dauern,\n"
 "Wollen Sie das zulassen?"
 
 msgid ""
@@ -1233,26 +1272,18 @@ msgstr ""
 "Die Box wird in der Nacht in Standby gehen,\n"
 "Wollen Sie das zulassen?"
 
-msgid "Your receiver isn't connected to the internet properly. Please check it and try again."
-msgstr "Der Receiver ist nicht korrekt mit dem Internet verbunden. Bitte prüfen und nochmals versuchen."
-
-msgid "echo 'Attention:'"
-msgstr "echo 'Achtung:'"
+msgid ""
+"Your receiver isn't connected to the internet properly. Please check it and "
+"try again."
+msgstr ""
+"Der Receiver ist nicht korrekt mit dem Internet verbunden. Bitte prüfen und "
+"nochmals versuchen."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Image herunterladen.'"
 
-msgid "echo 'Enigma2 will be restarted automatically after the restore progress.'"
-msgstr "echo 'Enigma2 wird nach Wiederherstellungsprozess automatisch neu gestartet.'"
-
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Image entpacken.'"
-
-msgid "echo 'Installing Plugins.'"
-msgstr "echo 'Plugins installieren."
-
-msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr "auf einen USB-Stick, in Port auf Gerätevorderseite einstecken und Receiver einschalten"
 
 msgid "unavailable"
 msgstr "nicht verfügbar"
@@ -1260,5 +1291,97 @@ msgstr "nicht verfügbar"
 msgid "unknown"
 msgstr "unbekannt"
 
-msgid "your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver."
-msgstr "Der Receiver könnte jetzt nicht mehr verwendungsfähig sein. VOR EINEM NEUSTART unbedingt die Bedienungsanleitung für weitere Unterstützung konsultieren."
+msgid ""
+"your receiver might be unusable now. Please consult the manual for further "
+"assistance before rebooting your receiver."
+msgstr ""
+"Der Receiver könnte jetzt nicht mehr verwendungsfähig sein. VOR EINEM "
+"NEUSTART unbedingt die Bedienungsanleitung für weitere Unterstützung "
+"konsultieren."
+
+#~ msgid " "
+#~ msgstr " "
+
+#~ msgid ""
+#~ "Are you sure you want to restore this image:\n"
+#~ " "
+#~ msgstr ""
+#~ "Dieses Image jetzt wiederherstellen:\n"
+#~ " "
+
+#~ msgid "Autostart Disabled."
+#~ msgstr "Autostart deaktiviert"
+
+#~ msgid "Autostart Enabled."
+#~ msgstr "Autostart aktiviert"
+
+#~ msgid "Do you want to restore your settings?"
+#~ msgstr "Wollen Sie Ihre Einstellungen wiederherstellen?"
+
+#~ msgid "Erasing Kernel..."
+#~ msgstr "Lösche Kernel..."
+
+#~ msgid "Erasing Root..."
+#~ msgstr "Lösche Root..."
+
+#~ msgid ""
+#~ "Flashing Complete\n"
+#~ "Please power off your receiver, wait 15 seconds then power backon."
+#~ msgstr ""
+#~ "Flashen abgeschlossen\n"
+#~ "Schalten Sie den Receiver am Netzschalter aus und warten Sie 15s vor dem "
+#~ "Wiedereinschalten."
+
+#~ msgid "Installing Plugins..."
+#~ msgstr "Installiere Plugins..."
+
+#~ msgid "No"
+#~ msgstr "Nein"
+
+#~ msgid "Please copy the folder"
+#~ msgstr "Bitte den Ordner kopieren"
+
+#~ msgid "Restore is running..."
+#~ msgstr "Wiederherstellung wird ausgeführt..."
+
+#~ msgid "Restoring Kernel..."
+#~ msgstr "Kernel wiederherstellen..."
+
+#~ msgid "Restoring Root..."
+#~ msgstr "Root wiederherstellen..."
+
+#~ msgid "Sorry Image Restore is not supported on the"
+#~ msgstr "Sooy, Wiederherstellen des Image nicht unterstützt"
+
+#~ msgid "Sorry the image "
+#~ msgstr "Leider ist das Image"
+
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgid ""
+#~ "You have chosen to restore your settings. Please press OK to start the "
+#~ "restore now."
+#~ msgstr ""
+#~ "Wiederherstellung der Einstellungen ausgewählt. Ok drücken zum Starten "
+#~ "der Wiederherstellung."
+
+#~ msgid "You have no image to restore."
+#~ msgstr "Kein Image zum Wiederherstellen"
+
+#~ msgid "echo 'Attention:'"
+#~ msgstr "echo 'Achtung:'"
+
+#~ msgid ""
+#~ "echo 'Enigma2 will be restarted automatically after the restore progress.'"
+#~ msgstr ""
+#~ "echo 'Enigma2 wird nach Wiederherstellungsprozess automatisch neu "
+#~ "gestartet.'"
+
+#~ msgid "echo 'Installing Plugins.'"
+#~ msgstr "echo 'Plugins installieren."
+
+#~ msgid "to a USB stick, place in front USB port of reciver and power on"
+#~ msgstr ""
+#~ "auf einen USB-Stick, in Port auf Gerätevorderseite einstecken und "
+#~ "Receiver einschalten"

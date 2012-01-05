@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-05 15:41+0000\n"
-"PO-Revision-Date: 2011-12-05 15:42+0100\n"
+"POT-Creation-Date: 2012-01-05 16:52+0000\n"
+"PO-Revision-Date: 2012-01-05 19:23+0100\n"
 "Last-Translator: R.L. van der Does\n"
 "Language-Team: Andy Blackburn/Rob van der Does\n"
 "Language: nl\n"
@@ -125,9 +125,6 @@ msgstr ""
 "\n"
 "er was een probleem met dit apparaat; herformatteer en probeer het opnieuw."
 
-msgid " "
-msgstr " "
-
 msgid " detected'"
 msgstr "gedetecteerd"
 
@@ -221,13 +218,6 @@ msgstr ""
 "Weet u zeker dat u deze backup wilt herstellen:\n"
 " "
 
-msgid ""
-"Are you sure you want to restore this image:\n"
-" "
-msgstr ""
-"Weet u zeker dat u dit image wilt herstellen:\n"
-" "
-
 msgid "August"
 msgstr "augustus"
 
@@ -236,12 +226,6 @@ msgstr "Auteur: "
 
 msgid "Autostart"
 msgstr "Autostart"
-
-msgid "Autostart Disabled."
-msgstr "Autostart uitgeschakeld."
-
-msgid "Autostart Enabled."
-msgstr "Autostart ingeschakeld."
 
 msgid "Autostart:"
 msgstr "Autostart:"
@@ -410,8 +394,11 @@ msgstr "Wilt u uw ontvanger opnieuw opstarten?"
 msgid "Do you want to remove the package:\n"
 msgstr "Wilt u package verwijderen:\n"
 
-msgid "Do you want to restore your settings?"
-msgstr "Wilt u uw oude settings terugzetten?"
+msgid "Do you want to restore your Enigma2 plugins ?"
+msgstr "Wilt u uw plugins weer installeren?"
+
+msgid "Do you want to restore your Enigma2 settings ?"
+msgstr "Wilt u de Enigma2 instellingen terugplaatsen?"
 
 msgid "Do you want to update your Receiver?"
 msgstr "Wilt u uw ontvanger updaten?"
@@ -434,6 +421,9 @@ msgstr "Bezig met downloaden"
 
 msgid "Downloading Image..."
 msgstr "Download Image..."
+
+msgid "Downloads"
+msgstr "Downloads"
 
 msgid "Electronic Program Guide"
 msgstr "Electronisch Programma Gids"
@@ -468,27 +458,17 @@ msgstr "Swap tijdens opstarten inschakelen"
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Vaak genoeg geprobeerd, wacht op de volgende geplande tijd."
 
-msgid "Erasing Kernel..."
-msgstr "Kernell wordt gewist..."
-
-msgid "Erasing Root..."
-msgstr "Root wordt gewist..."
-
 msgid "Error"
 msgstr "Fout"
+
+msgid "Exit the cleanup wizard"
+msgstr "Verlaat de cleanup wizard"
 
 msgid "Extensions management"
 msgstr "Beheer van Extensies"
 
 msgid "February"
 msgstr "februari"
-
-msgid ""
-"Flashing Complete\n"
-"Please power off your receiver, wait 15 seconds then power backon."
-msgstr ""
-"Flashen is gereed\n"
-"Sckakel de stroom van uw ontvanger uit, wacht 15 seconden en schakel de stroom dan weer in."
 
 msgid "Folder prefix"
 msgstr "Folder prefix"
@@ -559,9 +539,6 @@ msgstr "Installatie gereed."
 msgid "Installing"
 msgstr "Installeert"
 
-msgid "Installing Plugins..."
-msgstr "Installeert Plugins..."
-
 msgid "Installing..."
 msgstr "Installeert...."
 
@@ -613,6 +590,12 @@ msgstr "Verplaatsen naar Backup locatie"
 msgid "Multimedia"
 msgstr "Multimedia"
 
+msgid "NO, do not restore plugins"
+msgstr "NEE,  installeer de plugins niet"
+
+msgid "NO, do not restore settings"
+msgstr "Nee,  plaats de instellingen niet terug"
+
 msgid "Network"
 msgstr "Netwerk"
 
@@ -633,9 +616,6 @@ msgstr "Volgende Reboot: \n"
 
 msgid "Next Standby: \n"
 msgstr "Volgende Standby: \n"
-
-msgid "No"
-msgstr "Nee"
 
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -674,6 +654,9 @@ msgstr "Geen netwerkverbinding beschikbaar."
 msgid "No packages were upgraded yet. So you can check your network and try again."
 msgstr "Er zijn nog geen pakketten geupgrade. U kunt uw netwerk controleren en het opnieuw proberen."
 
+msgid "No plugins where needed to be installed"
+msgstr "Er hoefden geen plugins te worden geïnstalleerd"
+
 msgid "None"
 msgstr "Geen"
 
@@ -685,6 +668,9 @@ msgstr "november"
 
 msgid "OK"
 msgstr "OK"
+
+msgid "OK, to perform a restore"
+msgstr "JA, voer een herstel actie uit"
 
 msgid "October"
 msgstr "oktober"
@@ -713,11 +699,17 @@ msgstr "Packet Manager"
 msgid "Packet manager"
 msgstr "Packet manager"
 
-msgid "Please copy the folder"
-msgstr "Kopieer de map"
-
 msgid "Please select device to use as swapfile location"
 msgstr "Selecteer het apparaat dat u voor de swapfile wilt gebruiken"
+
+msgid "Please select the file to restore ?"
+msgstr "Kies bestanden die teruggeplaatst moeten worden."
+
+msgid "Please wait while gathers infomation..."
+msgstr "Bezig informatie te verzamelen..."
+
+msgid "Please wait while restore completes..."
+msgstr "Wacht tot de herstelactie gereed is...."
 
 msgid "Please wait while starting\n"
 msgstr "Wacht terwijl er gestart wordt\n"
@@ -760,6 +752,9 @@ msgstr "Start opnieuw"
 
 msgid "Reboot Time"
 msgstr "Reboot Tijd"
+
+msgid "Rebooting..."
+msgstr "Bezig met rebooten..."
 
 msgid "Receiver software because updates are available."
 msgstr "Ontvanger software want er zijn updates beschikbaar."
@@ -806,17 +801,17 @@ msgstr "Herstel"
 msgid "Restore Confirmation"
 msgstr "Bevestig herstellen"
 
-msgid "Restore is running..."
-msgstr "Herstel wordt uitgevoerd...."
+msgid "Restore Plugins"
+msgstr "Installeer plugins weer"
+
+msgid "Restore Settings"
+msgstr "Paalts installingen terug"
+
+msgid "Restore Wizard"
+msgstr "Herstel wizard"
 
 msgid "Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?"
 msgstr "De herstel wizard heeft gedetecteerd dat u extra plugins had geïnstalleerd. Wilt u deze weer installeren?"
-
-msgid "Restoring Kernel..."
-msgstr "Kernel wordt hersteld..."
-
-msgid "Restoring Root..."
-msgstr "Root wordt hersteld..."
 
 msgid "Restoring backup..."
 msgstr "Plaatst backup terug..."
@@ -917,12 +912,6 @@ msgstr "Software"
 msgid "Software Update"
 msgstr "Software Update"
 
-msgid "Sorry Image Restore is not supported on the"
-msgstr "Sorry Image Restore wordt niet ondersteund op de "
-
-msgid "Sorry the image "
-msgstr "Sorry het image "
-
 msgid "Sorry you box is not yet compatible."
 msgstr "Sorry, uw ontvanger is nog niet geschikt."
 
@@ -982,6 +971,9 @@ msgstr "De backup locatie heeft niet voldoende vrije ruimte."
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "De gekozen locatie bestaat niet, gebruik nu /media/hdd"
+
+msgid "The wizard is finished now, and will reboot"
+msgstr "De wizard is gereed; uw systeem wordt opnieuw gestart."
 
 msgid "The wizard is finished now."
 msgstr "De Wizard is ne gereed."
@@ -1149,14 +1141,28 @@ msgstr "Woensdag"
 msgid "Weekly"
 msgstr "Wekelijka"
 
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+msgstr ""
+"Welkom bij de herstel wizard.\n"
+"\n"
+"Er is een backup gevonden.\n"
+"U kunt deze wizard gebruiken om uw instellingen terug te plaatsen, evenals de plugins die ten tijde van het maken van de backup waren geïnstalleerd.\n"
+
 msgid "What Day of month ?"
 msgstr "Welke dag van de maand?"
 
 msgid "What Day of week ?"
 msgstr "Welke dag van de week?"
 
-msgid "Yes"
-msgstr "Ja"
+msgid "YES, to restore plugins"
+msgstr "JA,  installeer plugins weer"
+
+msgid "YES, to restore settings"
+msgstr "JA,  plaats de instellingen weer terug"
 
 msgid "You can cancel the installation."
 msgstr "U kunt de installatie ongedaan maken"
@@ -1170,9 +1176,6 @@ msgstr "U kunt deze plugin installeren."
 msgid "You can remove this plugin."
 msgstr "U kunt deze plugin verwijderen."
 
-msgid "You have chosen to restore your settings. Please press OK to start the restore now."
-msgstr "U heeft ervoor gekozen uw settings terug te zetten. Druk op OK om dat proces te starten."
-
 msgid "You have no backup to delete."
 msgstr "Er is geen backup die verwijderd kan worden."
 
@@ -1184,9 +1187,6 @@ msgstr "Er is geen image dat verwijderd kan worden."
 
 msgid "You have no image to download."
 msgstr "U heegt geen image om te downloaden."
-
-msgid "You have no image to restore."
-msgstr "Er is geen image dat hersteld kan worden."
 
 msgid "You have no script to run."
 msgstr "U heeft geen script dat uitgevoerd kan worden."
@@ -1239,23 +1239,11 @@ msgstr ""
 msgid "Your receiver isn't connected to the internet properly. Please check it and try again."
 msgstr "Uw ontvanger is niet goed met het Internet verbonden. Na controle kunt u het opnieuw proberen."
 
-msgid "echo 'Attention:'"
-msgstr "echo 'Attentie:'"
-
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Download image.'"
 
-msgid "echo 'Enigma2 will be restarted automatically after the restore progress.'"
-msgstr "echo 'Enigma2 zal automatisch worden herstart na het terugplaats proces.'"
-
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Image wordt uitgezet.'"
-
-msgid "echo 'Installing Plugins.'"
-msgstr "echo 'Installeert plugins.'"
-
-msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr "naar een USB stick, plaats die in de voorste USB poort van de ontvanger en schakel de stroom in"
 
 msgid "unavailable"
 msgstr "niet beschikbaar"

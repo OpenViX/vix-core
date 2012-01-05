@@ -96,9 +96,10 @@ class RestoreWizard(WizardLanguage, Rc):
 		list = []
 		if self.didSettingsRestore:
 			list.append((_("YES, to restore plugins"), "pluginrestore"))
+			list.append((_("NO, do not restore plugins"), "reboot"))
 		else:
 			list.append((_("YES, to restore plugins"), "pluginsrestoredevice"))
-		list.append((_("NO, do not restore plugins"), "end"))
+			list.append((_("NO, do not restore plugins"), "end"))
 		return list
 
 	def rebootAction(self):
@@ -143,6 +144,7 @@ class RestoreWizard(WizardLanguage, Rc):
 			
 	def settingRestore_Finished(self, result, retval, extra_args = None):
 		self.didSettingsRestore = True
+		configfile.load()
 		self.doRestorePlugins1()
 
 	def pluginsRestore_Started(self, result, retval, extra_args = None):

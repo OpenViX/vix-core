@@ -13,7 +13,7 @@ self.buildList(self.selectedAction)
 	</step>
 
 	<step id="settingsquestion">
-		<text value="Do you want to resore your Enigma2 settings ?" />
+		<text value="Do you want to restore your Enigma2 settings ?" />
 		<displaytext value="Restore Settings" />
 		<list type="dynamic" source="listAction2" evaluation="ActionSelectionMade" onselect="ActionSelectionMoved" />
 		<code>

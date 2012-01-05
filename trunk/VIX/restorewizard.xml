@@ -39,7 +39,7 @@ self.buildList(self.selectedAction)
 	</step>
 
 	<step id="pluginsquestion">
-		<text value="Do you want to resore your Enigma2 plugins ?" />
+		<text value="Do you want to restore your Enigma2 plugins ?" />
 		<displaytext value="Restore Plugins" />
 		<list type="dynamic" source="listAction3" evaluation="ActionSelectionMade" onselect="ActionSelectionMoved" />
 		<code>

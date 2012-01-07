@@ -285,7 +285,7 @@ class VIXBackupManager(Screen):
 			self.session.open(MessageBox, _("You have no backup to delete."), MessageBox.TYPE_INFO, timeout = 10)
 
 	def doDelete(self, answer):
-		if answer:
+		if answer is True:
 			self.sel = self['list'].getCurrent()
 			self["list"].instance.moveSelectionTo(0)
 			remove(self.BackupDirectory + self.sel)
@@ -308,7 +308,7 @@ class VIXBackupManager(Screen):
 		ybox.setTitle(_("Backup Confirmation"))
  
 	def doBackup(self,answer):
-		if answer:
+		if answer is True:
 			self.BackupFiles = BackupFiles(self.session)
 			Components.Task.job_manager.AddJob(self.BackupFiles.createBackupJob())
 			self.BackupRunning = True
@@ -331,7 +331,7 @@ class VIXBackupManager(Screen):
 			self.session.open(MessageBox, _("Backup in progress,\nPlease for it to finish, before trying again"), MessageBox.TYPE_INFO, timeout = 10)
 
 	def doRestore(self,answer):
-		if answer:
+		if answer is True:
 			Components.Task.job_manager.AddJob(self.createRestoreJob())
 			self.BackupRunning = True
 			self["key_green"].setText(_("View Progress"))
@@ -415,9 +415,9 @@ class VIXBackupManager(Screen):
 	def Stage1(self, answer=None):
 		if not self.Console:
 			self.Console = Console()
-		if answer:
+		if answer is True:
 			self.Console.ePopen("tar -xzvf " + self.BackupDirectory + self.sel + " -C /", self.Stage1SettingsComplete)
-		elif:
+		elif answer is False:
 			self.Console.ePopen("tar -xzvf " + self.BackupDirectory + self.sel + " tmp/ExtraInstalledPlugins tmp/backupkernelversion -C /", self.Stage1PluginsComplete)
 
 	def Stage1SettingsComplete(self, result, retval, extra_args):
@@ -498,10 +498,10 @@ class VIXBackupManager(Screen):
 	def Stage3Complete(self, answer=None):
 		if not self.Console:
 			self.Console = Console()
-		if answer:
+		if answer is True:
 			self.doPluginsRestore = True
 			self.Stage3Completed = True
-		elif:
+		elif answer is False:
 			AddPopupWithCallback(self.Stage6,
 				_("Now skipping restore process"),
 				MessageBox.TYPE_INFO,

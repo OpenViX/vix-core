@@ -132,7 +132,7 @@ class RestoreWizard(WizardLanguage, Rc):
 		elif self.NextStep is 'plugindetection':
 			if not self.Console:
  				self.Console = Console()
- 			self.Console.ePopen("tar -xzvf " + self.fullbackupfilename + " tmp/  -C /", self.pluginsRestore_Started)
+ 			self.Console.ePopen("tar -xzvf " + self.fullbackupfilename + " tmp/ExtraInstalledPlugins tmp/backupkernelversion -C /", self.pluginsRestore_Started)
  			self.buildListRef = self.session.openWithCallback(self.buildListfinishedCB, MessageBox, _("Please wait while gathers infomation..."), type = MessageBox.TYPE_INFO, enable_input = False)
 		elif self.NextStep is 'pluginrestore':
   			if not self.Console:

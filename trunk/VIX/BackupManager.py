@@ -19,6 +19,7 @@ from Screens.Screen import Screen
 from Components.Console import Console
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
+from Tools.Notifications import AddPopupWithCallback
 from enigma import eTimer
 from os import path, stat, mkdir, listdir, rename, remove, statvfs
 from shutil import rmtree, move, copy
@@ -27,6 +28,9 @@ from datetime import date, datetime
 import tarfile
 
 autoBackupManagerTimer = None
+SETTINGSRESTOREQUESTIONID = 'RestoreSettingsNotification'
+PLUGINRESTOREQUESTIONID = 'RestorePluginsNotification'
+NOPLUGINS = 'NoPluginsNotification'
 
 MONTHS = (_("January"),
           _("February"),
@@ -98,6 +102,7 @@ class VIXBackupManager(Screen):
 		self.activityTimer = eTimer()
 		self.activityTimer.timeout.get().append(self.backupRunning)
 		self.activityTimer.start(10)
+		self.Console = Console()
 
 		if BackupTime > 0:
 			t = localtime(BackupTime)
@@ -280,7 +285,7 @@ class VIXBackupManager(Screen):
 			self.session.open(MessageBox, _("You have no backup to delete."), MessageBox.TYPE_INFO, timeout = 10)
 
 	def doDelete(self, answer):
-		if answer is True:
+		if answer:
 			self.sel = self['list'].getCurrent()
 			self["list"].instance.moveSelectionTo(0)
 			remove(self.BackupDirectory + self.sel)
@@ -303,7 +308,7 @@ class VIXBackupManager(Screen):
 		ybox.setTitle(_("Backup Confirmation"))
  
 	def doBackup(self,answer):
-		if answer is True:
+		if answer:
 			self.BackupFiles = BackupFiles(self.session)
 			Components.Task.job_manager.AddJob(self.BackupFiles.createBackupJob())
 			self.BackupRunning = True
@@ -326,7 +331,7 @@ class VIXBackupManager(Screen):
 			self.session.open(MessageBox, _("Backup in progress,\nPlease for it to finish, before trying again"), MessageBox.TYPE_INFO, timeout = 10)
 
 	def doRestore(self,answer):
-		if answer is True:
+		if answer:
 			Components.Task.job_manager.AddJob(self.createRestoreJob())
 			self.BackupRunning = True
 			self["key_green"].setText(_("View Progress"))
@@ -339,6 +344,9 @@ class VIXBackupManager(Screen):
 		self.close()
 
 	def createRestoreJob(self):
+		self.didSettingsRestore = False
+		self.doPluginsRestore = False
+		self.didPluginsRestore = False
 		self.Stage1Completed = False
 		self.Stage2Completed = False
 		self.Stage3Completed = False
@@ -348,6 +356,10 @@ class VIXBackupManager(Screen):
 
 		task = Components.Task.PythonTask(job, _("Restoring backup..."))
 		task.work = self.JobStart
+		task.weighting = 1
+
+		task = Components.Task.PythonTask(job, _("Restoring backup..."))
+		task.work = self.Stage1
 		task.weighting = 1
 
 		task = Components.Task.ConditionTask(job, _("Restoring backup..."), timeoutCount=30)
@@ -393,23 +405,41 @@ class VIXBackupManager(Screen):
 		return job
 
 	def JobStart(self):
-		self.Console = Console()
-		self.Console.ePopen("tar -xzvf " + self.BackupDirectory + self.sel + " -C /", self.Stage1Complete)
+		AddPopupWithCallback(self.Stage1,
+			_("Do you want to restore your Enigma2 settings ?"),
+			MessageBox.TYPE_YESNO,
+			10,
+			SETTINGSRESTOREQUESTIONID
+		)
 
-	def Stage1Complete(self, result, retval, extra_args):
+	def Stage1(self, answer=None):
+		if not self.Console:
+			self.Console = Console()
+		if answer:
+			self.Console.ePopen("tar -xzvf " + self.BackupDirectory + self.sel + " -C /", self.Stage1SettingsComplete)
+		elif:
+			self.Console.ePopen("tar -xzvf " + self.BackupDirectory + self.sel + " tmp/ExtraInstalledPlugins tmp/backupkernelversion -C /", self.Stage1PluginsComplete)
+
+	def Stage1SettingsComplete(self, result, retval, extra_args):
+		if retval == 0:
+			self.didSettingsRestore = True
+			self.Stage1Completed = True
+
+	def Stage1PluginsComplete(self, result, retval, extra_args):
 		if retval == 0:
 			self.Stage1Completed = True
 
 	def Stage2(self):
-		self.Console = Console()
+		if not self.Console:
+			self.Console = Console()
 		if path.exists('/tmp/backupkernelversion'):
 			kernelversion = file('/tmp/backupkernelversion').read()
 			if kernelversion == about.getKernelVersionString():
 				self.Console.ePopen('opkg list-installed', self.Stage2Complete)
 			else:
-				self.Console.ePopen("init 4 && reboot")
+				self.Stage6()
 		else:
-			self.Console.ePopen("init 4 && reboot")
+			self.Stage6()
 
 	def Stage2Complete(self, result, retval, extra_args):
 		if path.exists('/tmp/ExtraInstalledPlugins'):
@@ -427,51 +457,99 @@ class VIXBackupManager(Screen):
 						output.write(parts[0] + ' ')
 			output.close()
 			self.Stage2Completed = True
+		else:
+			self.Stage6()
 
 	def Stage3(self):
-		self.Console = Console()
+		if not self.Console:
+			self.Console = Console()
 		fstabfile = file('/etc/fstab').readlines()
 		for mountfolder in fstabfile:
 			parts = mountfolder.strip().split()
 			if parts and str(parts[0]).startswith('/media/'):
 				if not path.exists(parts[1]):
 					mkdir(parts[1], 0755)				
-		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
-		if pluginslist:
-			message = _("Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?")
-			ybox = self.session.openWithCallback(self.Stage3Complete, MessageBox, message, MessageBox.TYPE_YESNO)
-			ybox.setTitle(_("Re-install Plugins"))
+		if path.exists('/tmp/trimedExtraInstalledPlugins'):
+			print 'trimedExtraInstalledPlugins= TRUE'
+			pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
+			print 'pluginslist\n',pluginslist
+			if pluginslist:
+				AddPopupWithCallback(self.Stage3Complete,
+					_("Do you want to restore your Enigma2 plugins ?"),
+					MessageBox.TYPE_YESNO,
+					5,
+					PLUGINRESTOREQUESTIONID
+				)
+			else:
+				AddPopupWithCallback(self.Stage6,
+					_("No plugins where needed to be installed"),
+					MessageBox.TYPE_INFO,
+					5,
+					NOPLUGINS
+				)
 		else:
-			self.Console.ePopen("init 4 && reboot")
+			AddPopupWithCallback(self.Stage6,
+				_("No plugins where needed to be installed"),
+				MessageBox.TYPE_INFO,
+				5,
+				NOPLUGINS
+			)
 
-	def Stage3Complete(self, answer=False):
-		self.Console = Console()
-		if answer is True:
+	def Stage3Complete(self, answer=None):
+		if not self.Console:
+			self.Console = Console()
+		if answer:
+			self.doPluginsRestore = True
 			self.Stage3Completed = True
-		else:
-			self.Console.ePopen("init 4 && reboot")
+		elif:
+			AddPopupWithCallback(self.Stage6,
+				_("Now skipping restore process"),
+				MessageBox.TYPE_INFO,
+				5,
+				NOPLUGINS
+			)
 
 	def Stage4(self):
-		self.Console = Console()
-		self.Console.ePopen('opkg update', self.Stage4Complete)
+		if not self.Console:
+			self.Console = Console()
+		if self.doPluginsRestore:
+			self.Console.ePopen('opkg update', self.Stage4Complete)
+		else:
+			self.Stage6()
 
 	def Stage4Complete(self, result, retval, extra_args):
 		if result:
 			self.Stage4Completed = True
 
 	def Stage5(self):
-		plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
-		pluginslist = plugintmp.replace('\n',' ')
-		self.Console = Console()
-		self.Console.ePopen('opkg install ' + pluginslist, self.Stage5Complete)
+		if not self.Console:
+			self.Console = Console()
+		if self.doPluginsRestore:
+			if path.exists('/tmp/trimedExtraInstalledPlugins'):
+				plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
+				pluginslist = plugintmp.replace('\n',' ')
+				self.Console.ePopen('opkg install ' + pluginslist, self.Stage5Complete)
+			else:
+				self.Stage6()
+		else:
+			self.Stage6()
 
 	def Stage5Complete(self, result, retval, extra_args):
 		if result:
+			self.didPluginsRestore = True
 			self.Stage5Completed = True
 
-	def Stage6(self):
-		self.Console = Console()
-		self.Console.ePopen('init 4 && reboot')
+	def Stage6(self, result=None, retval=None, extra_args=None):
+		if not self.Console:
+			self.Console = Console()
+		if self.didPluginsRestore or self.didSettingsRestore:
+			self.Console.ePopen('init 4 && reboot')
+		else:
+			self.Stage2Completed = True
+			self.Stage3Completed = True
+			self.Stage4Completed = True
+			self.Stage5Completed = True
+			self.close()
 
 class BackupSelection(Screen):
 	skin = """

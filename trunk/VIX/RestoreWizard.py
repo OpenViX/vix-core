@@ -39,17 +39,20 @@ class RestoreWizard(WizardLanguage, Rc):
 				devices.remove(x)
 		if len(devices):
 			for x in devices:
-				print 'X:',x
+				print '[RestoreWizard] Seraching devices:',x
 				if not x[1].endswith('/'):
-					images = listdir(x[1] + '/backup')
+					if path.exists(x[1] + '/backup'):
+						images = listdir(x[1] + '/backup')
 				else:
-					images = listdir(x[1] + 'backup')
-				for fil in images:
-					if fil.endswith('.tar.gz') and fil.startswith(config.misc.boxtype.value):
-						if not x[1].endswith('/'):
-							list.append((x[1] + '/backup/' + fil,x[1] + '/backup/' + fil))
-						else:
-							list.append((x[1] + 'backup/' + fil,x[1] + 'backup/' + fil))
+					if path.exists(x[1] + 'backup'):
+						images = listdir(x[1] + 'backup')
+				if len(images):
+					for fil in images:
+						if fil.endswith('.tar.gz') and fil.startswith(config.misc.boxtype.value):
+							if not x[1].endswith('/'):
+								list.append((x[1] + '/backup/' + fil,x[1] + '/backup/' + fil))
+							else:
+								list.append((x[1] + 'backup/' + fil,x[1] + 'backup/' + fil))
 				list.sort()
 		return list
 

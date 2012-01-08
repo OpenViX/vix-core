@@ -53,7 +53,8 @@ class RestoreWizard(WizardLanguage, Rc):
 								list.append((x[1] + '/backup/' + fil,x[1] + '/backup/' + fil))
 							else:
 								list.append((x[1] + 'backup/' + fil,x[1] + 'backup/' + fil))
-				list.sort()
+		if len(list):
+			list.sort()
 		return list
 
 	def settingsdeviceSelectionMade(self, index):

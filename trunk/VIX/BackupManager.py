@@ -394,7 +394,7 @@ class VIXBackupManager(Screen):
 		task.work = self.Stage5
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Restoring plugins..."), timeoutCount=30)
+		task = Components.Task.ConditionTask(job, _("Restoring plugins..."), timeoutCount=300)
 		task.check = lambda: self.Stage5Completed
 		task.weighting = 1
 

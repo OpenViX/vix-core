@@ -9,7 +9,7 @@ from Screens.Wizard import wizardManager, WizardSummary
 from Screens.WizardLanguage import WizardLanguage
 from Screens.Rc import Rc
 from Screens.MessageBox import MessageBox
-from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS
+from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS
 from os import mkdir, listdir
 
 class RestoreWizard(WizardLanguage, Rc):
@@ -41,10 +41,10 @@ class RestoreWizard(WizardLanguage, Rc):
 			for x in devices:
 				print '[RestoreWizard] Seraching devices:',x
 				if not x[1].endswith('/'):
-					if path.exists(x[1] + '/backup'):
+					if pathExists(x[1] + '/backup'):
 						images = listdir(x[1] + '/backup')
 				else:
-					if path.exists(x[1] + 'backup'):
+					if pathExists(x[1] + 'backup'):
 						images = listdir(x[1] + 'backup')
 				if len(images):
 					for fil in images:

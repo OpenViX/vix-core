@@ -1080,33 +1080,41 @@ class ImageManagerDownload(Screen):
 			x()
 		
 	def populate_List(self):
-		self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions'],
-			{
-				'cancel': self.close,
-				'red': self.close,
-				'green': self.keyDownload,
-			}, -1)
-
-		if not path.exists(self.BackupDirectory):
-			mkdir(self.BackupDirectory, 0755)
-		from ftplib import FTP
-		import urllib, zipfile, base64
-		wos_user = 'vixlogs@world-of-satellite.com'
-		wos_pwd = base64.b64decode('NDJJWnojMEpldUxX')
-		ftp = FTP('world-of-satellite.com')
-		ftp.login(wos_user,wos_pwd)
-		fd = open('/etc/opkg/all-feed.conf', 'r')
-		fileurl = fd.read()
-		fd.close()
-		if fileurl.find('release') != -1:
-	 		ftp.cwd('/release')
-		else:
-	 		ftp.cwd('/experimental')
-		del self.emlist[:]
-		for fil in ftp.nlst():
-			if not fil.endswith('.') and fil.find(config.imagemanager.folderprefix.value) != -1:
-				self.emlist.append(fil)
-		self.emlist.sort()
+		try:
+			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions'],
+				{
+					'cancel': self.close,
+					'red': self.close,
+					'green': self.keyDownload,
+				}, -1)
+	
+			if not path.exists(self.BackupDirectory):
+				mkdir(self.BackupDirectory, 0755)
+			from ftplib import FTP
+			import urllib, zipfile, base64
+			wos_user = 'vixlogs@world-of-satellite.com'
+			wos_pwd = base64.b64decode('NDJJWnojMEpldUxX')
+			ftp = FTP('world-of-satellite.com')
+			ftp.login(wos_user,wos_pwd)
+			fd = open('/etc/opkg/all-feed.conf', 'r')
+			fileurl = fd.read()
+			fd.close()
+			if fileurl.find('release') != -1:
+				ftp.cwd('/release')
+			else:
+				ftp.cwd('/experimental')
+			del self.emlist[:]
+			for fil in ftp.nlst():
+				if not fil.endswith('.') and fil.find(config.imagemanager.folderprefix.value) != -1:
+					self.emlist.append(fil)
+			self.emlist.sort()
+		except:
+			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions'],
+				{
+					'cancel': self.close,
+					'red': self.close,
+				}, -1)
+			self.emlist.append(" ")
 		self["list"].setList(self.emlist)
 		self["list"].show()
 

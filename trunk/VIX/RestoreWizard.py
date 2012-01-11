@@ -87,7 +87,7 @@ class RestoreWizard(WizardLanguage, Rc):
 	def listAction(self):
 		list = []
 		list.append((_("OK, to perform a restore"), "settingsquestion"))
-		list.append((_("Exit the cleanup wizard"), "end"))
+		list.append((_("Exit the restore wizard"), "end"))
 		return list
 
 	def listAction2(self):

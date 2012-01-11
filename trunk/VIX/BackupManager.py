@@ -114,6 +114,7 @@ class VIXBackupManager(Screen):
 			self["list"].onSelectionChanged.append(self.selectionChanged)
 
 	def backupRunning(self):
+		self.populate_List()
 		self.BackupRunning = False
 		for job in Components.Task.job_manager.getPendingJobs():
 			jobname = str(job.name)
@@ -194,8 +195,6 @@ class VIXBackupManager(Screen):
 						'yellow': self.keyResstore,
 						'blue': self.keyDelete,
 						"menu": self.createSetup,
-						"up": self.refreshUp,
-						"down": self.refreshDown,
 						'log': self.showLog,
 					}, -1)
 
@@ -221,8 +220,6 @@ class VIXBackupManager(Screen):
 					'yellow': self.keyResstore,
 					'blue': self.keyDelete,
 					"menu": self.createSetup,
-					"up": self.refreshUp,
-					"down": self.refreshDown,
 					'log': self.showLog,
 				}, -1)
 
@@ -378,7 +375,7 @@ class VIXBackupManager(Screen):
 		task.work = self.Stage3
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Comparing against backup..."), timeoutCount=30)
+		task = Components.Task.ConditionTask(job, _("Comparing against backup..."), timeoutCount=60)
 		task.check = lambda: self.Stage3Completed
 		task.weighting = 1
 
@@ -477,23 +474,13 @@ class VIXBackupManager(Screen):
 				AddPopupWithCallback(self.Stage3Complete,
 					_("Do you want to restore your Enigma2 plugins ?"),
 					MessageBox.TYPE_YESNO,
-					5,
+					15,
 					PLUGINRESTOREQUESTIONID
 				)
 			else:
-				AddPopupWithCallback(self.Stage6,
-					_("No plugins where needed to be installed"),
-					MessageBox.TYPE_INFO,
-					5,
-					NOPLUGINS
-				)
+				self.Stage6()
 		else:
-			AddPopupWithCallback(self.Stage6,
-				_("No plugins where needed to be installed"),
-				MessageBox.TYPE_INFO,
-				5,
-				NOPLUGINS
-			)
+			self.Stage6()
 
 	def Stage3Complete(self, answer=None):
 		if not self.Console:
@@ -505,7 +492,7 @@ class VIXBackupManager(Screen):
 			AddPopupWithCallback(self.Stage6,
 				_("Now skipping restore process"),
 				MessageBox.TYPE_INFO,
-				5,
+				15,
 				NOPLUGINS
 			)
 

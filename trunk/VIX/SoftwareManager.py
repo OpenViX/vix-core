@@ -911,19 +911,17 @@ class PluginDetails(Screen, DreamInfoHandler):
 		self.setThumbnail(noScreenshot = True)
 		print "[PluginDetails] fetch failed " + string.getErrorMessage()
 
-
-class OfflineUpgradeMessageBox(Screen):
-	skin = """
-		<screen position="110,258" size="500,150" title="Offline Upgrade">
-			<ePixmap pixmap="skin_default/icons/input_info.png" position="5,5" size="53,53" alphatest="on" />
-			<widget name="text" position="65,8" size="520,200" font="Regular;22" />
-		</screen>"""
+class UnattendedUpgradeMessageBox(Screen):
 
 	def __init__(self, session, args = None):
-		self.skin = OfflineUpgradeMessageBox.skin
+		self.skin = """
+			<screen position="center,center" size="600,150" title="Unattended Upgrade">
+				<ePixmap pixmap="skin_default/icons/input_info.png" position="5,5" size="53,53" alphatest="on" />
+				<widget name="text" position="65,8" size="520,200" font="Regular;22" />
+			</screen>"""
 		Screen.__init__(self, session)
 		from Components.Label import Label
-		self["text"] = Label(_("Offline upgrade in progress\nPlease wait until your box reboots\nThis may take a few minutes"))
+		self["text"] = Label(_("Unattended upgrade in progress\nPlease wait until your receiver reboots\nThis may take a few minutes"))
 
 class UpdatePlugin(Screen):
 	skin = """
@@ -953,7 +951,21 @@ class UpdatePlugin(Screen):
 		self.error = 0
 		self.processed_packages = []
 		self.total_packages = None
+		self.checkNetworkState()
 
+	def checkNetworkState(self):
+		self.NetworkState = 0
+		cmd1 = "ping -c 5 www.world-of-satellite.com"
+		self.PingConsole = Console()
+		self.PingConsole.ePopen(cmd1, self.checkNetworkStateFinished)
+		
+	def checkNetworkStateFinished(self, result, retval,extra_args=None):
+		if result.find('bad address') == -1:
+			self.MemCheck1()
+		else:
+			self.session.openWithCallback(self.close, MessageBox, _("Your receiver isn't connected to the internet properly. Please check it and try again."), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
+
+	def MemCheck1(self):
 		self.activity = 0
 		self.activityTimer = eTimer()
 		self.activityTimer.callback.append(self.doActivityTimer)
@@ -1121,7 +1133,7 @@ class UpdatePlugin(Screen):
 			if desktop.size() != eSize(720,576):
 				gMainDC.getInstance().setResolution(720,576)
 				desktop.resize(eSize(720,576))
-			self.session.open(OfflineUpgradeMessageBox)
+			self.session.open(UnattendedUpgradeMessageBox)
 			quitMainloop(42)
 		else:
 			self.ipkg.startCmd(IpkgComponent.CMD_UPGRADE, args = {'test_only': False})

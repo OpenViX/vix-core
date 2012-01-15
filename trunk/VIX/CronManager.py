@@ -66,7 +66,7 @@ class VIXCronManager(Screen):
 		self['key_blue'] = Label(_("Autostart"))
 		self.list = []
 		self['list'] = List(self.list)
-		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'ok': self.info, 'back': self.close, 'red': self.addtocron, 'green': self.delcron, 'yellow': self.CrondStart, 'blue': self.autostart})
+		self['actions'] = ActionMap(['WizardActions', 'ColorActions', "MenuActions"], {'ok': self.info, 'back': self.close, 'red': self.addtocron, 'green': self.delcron, 'yellow': self.CrondStart, 'blue': self.autostart, "menu": self.closeRecursive})
 		self.onLayoutFinish.append(self.updateList)
 
 	def CrondStart(self):
@@ -262,6 +262,9 @@ class VIXCronManager(Screen):
 			myline = mysel[1]
 			self.session.open(MessageBox, _(myline), MessageBox.TYPE_INFO)
 
+	def closeRecursive(self):
+		self.close(True)
+
 class VIXSetupCronConf(Screen, ConfigListScreen):
 	skin = """
 		<screen position="center,center" size="560,400" title="Cron Manager">
@@ -279,7 +282,7 @@ class VIXSetupCronConf(Screen, ConfigListScreen):
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
 		self['key_red'] = Label(_("Save"))
-		self['actions'] = ActionMap(['WizardActions', 'ColorActions', 'VirtualKeyboardActions'], {'red': self.checkentry, 'back': self.close, 'showVirtualKeyboard': self.KeyText})
+		self['actions'] = ActionMap(['WizardActions', 'ColorActions', 'VirtualKeyboardActions', "MenuActions"], {'red': self.checkentry, 'back': self.close, 'showVirtualKeyboard': self.KeyText, "menu": self.closeRecursive})
 		self["HelpWindow"] = Pixmap()
 		self["HelpWindow"].hide()
 		self.createSetup()

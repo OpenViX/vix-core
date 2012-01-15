@@ -129,7 +129,7 @@ class PluginManager(Screen, DreamInfoHandler):
 		if self.skin_path == None:
 			self.skin_path = resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX")
 
-		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions", "InfobarEPGActions", "HelpActions" ],
+		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions", "InfobarEPGActions", "HelpActions", "MenuActions" ],
 		{
 			"ok": self.handleCurrent,
 			"back": self.exit,
@@ -138,6 +138,7 @@ class PluginManager(Screen, DreamInfoHandler):
 			"yellow": self.handleSelected,
 			"showEventInfo": self.handleSelected,
 			"displayHelp": self.handleHelp,
+			"menu": self.exit,
 		}, -1)
 
 		self.list = []
@@ -1186,8 +1187,9 @@ class PacketManager(Screen, NumericalTextInput):
 
 		self.setUseableChars(u'1234567890abcdefghijklmnopqrstuvwxyz')
 
-		self["shortcuts"] = NumberActionMap(["ShortcutActions", "WizardActions", "NumberActions", "InputActions", "InputAsciiActions", "KeyboardInputActions" ],
+		self["shortcuts"] = NumberActionMap(["ShortcutActions", "WizardActions", "NumberActions", "InputActions", "InputAsciiActions", "KeyboardInputActions", "MenuActions" ],
 		{
+			"menu": self.exit,
 			"ok": self.go,
 			"back": self.exit,
 			"red": self.exit,

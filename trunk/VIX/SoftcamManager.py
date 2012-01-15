@@ -497,10 +497,11 @@ class VIXSoftcamMenu(ConfigListScreen, Screen):
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
 		self.createSetup()
 		
-		self["actions"] = ActionMap(["SetupActions"],
+		self["actions"] = ActionMap(["SetupActions", "MenuActions"],
 		{
 		  "cancel": self.keyCancel,
-		  "save": self.keySaveNew
+		  "save": self.keySaveNew,
+		  "menu": self.closeRecursive,
 		}, -2)
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))

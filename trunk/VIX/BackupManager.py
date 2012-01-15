@@ -561,7 +561,7 @@ class BackupSelection(Screen):
 		self.filelist = MultiFileSelectList(self.selectedFiles, defaultDir )
 		self["checkList"] = self.filelist
 		
-		self["actions"] = ActionMap(["DirectionActions", "OkCancelActions", "ShortcutActions"],
+		self["actions"] = ActionMap(["DirectionActions", "OkCancelActions", "ShortcutActions", "MenuActions"],
 		{
 			"cancel": self.exit,
 			"red": self.exit,
@@ -571,7 +571,8 @@ class BackupSelection(Screen):
 			"left": self.left,
 			"right": self.right,
 			"down": self.down,
-			"up": self.up
+			"up": self.up,
+			"menu": self.exit,
 		}, -1)
 		if not self.selectionChanged in self["checkList"].onSelectionChanged:
 			self["checkList"].onSelectionChanged.append(self.selectionChanged)
@@ -624,6 +625,8 @@ class BackupSelection(Screen):
 		if self.filelist.canDescent():
 			self.filelist.descent()
 
+	def closeRecursive(self):
+		self.close(True)
 
 class VIXBackupManagerMenu(ConfigListScreen, Screen):
 	skin = """
@@ -653,14 +656,15 @@ class VIXBackupManagerMenu(ConfigListScreen, Screen):
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
 		self.createSetup()
 		
-		self["actions"] = ActionMap(["SetupActions", 'ColorActions', 'VirtualKeyboardActions'],
+		self["actions"] = ActionMap(["SetupActions", 'ColorActions', 'VirtualKeyboardActions', "MenuActions"],
 		{
 			"ok": self.keySave,
 			"cancel": self.keyCancel,
 			"red": self.keyCancel,
 			"green": self.keySave,
 			"yellow": self.chooseFiles,
-			'showVirtualKeyboard': self.KeyText
+			'showVirtualKeyboard': self.KeyText,
+			"menu": self.keyCancel,
 		}, -2)
 
 		self["key_red"] = Button(_("Cancel"))
@@ -767,16 +771,20 @@ class VIXBackupManagerLogView(Screen):
 		backuplog = backuplog + contents
 
 		self["list"] = ScrollLabel(str(backuplog))
-		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "DirectionActions"],
+		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "DirectionActions", "MenuActions"],
 		{
 			"cancel": self.cancel,
 			"ok": self.cancel,
 			"up": self["list"].pageUp,
-			"down": self["list"].pageDown
+			"down": self["list"].pageDown,
+			"menu": self.closeRecursive,
 		}, -2)
 
 	def cancel(self):
 		self.close()
+
+	def closeRecursive(self):
+		self.close(True)
 
 class AutoBackupManagerTimer:
 	def __init__(self, session):

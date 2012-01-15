@@ -106,6 +106,7 @@ class VIXMenu(Screen):
 			"ok": self.go,
 			"back": self.close,
 			"red": self.close,
+			"menu": self.closeRecursive,
 		}, -1)
 		self.onLayoutFinish.append(self.layoutFinished)
 		self.onChangedEntry = []
@@ -171,6 +172,9 @@ class VIXMenu(Screen):
 				elif (currentEntry == "swap-manager"):
 					from SwapManager import VIXSwap
 					self.session.open(VIXSwap)
+
+	def closeRecursive(self):
+		self.close(True)
 
 class VIXMenuSummary(Screen):
 	def __init__(self, session, parent):

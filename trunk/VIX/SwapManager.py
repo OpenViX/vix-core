@@ -105,7 +105,7 @@ class VIXSwap(Screen):
 		self.swap_place = ''
 		self.new_place = ''
 		self.creatingswap = False
-		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'back': self.close, 'red': self.actDeact, 'green': self.createDel, 'yellow': self.autoSsWap})
+		self['actions'] = ActionMap(['WizardActions', 'ColorActions', "MenuActions"], {'back': self.close, 'red': self.actDeact, 'green': self.createDel, 'yellow': self.autoSsWap, "menu": self.close})
 		self.activityTimer = eTimer()
 		self.activityTimer.timeout.get().append(self.getSwapDevice)
 		self.updateSwap()

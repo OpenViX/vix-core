@@ -37,12 +37,13 @@ class VIXScriptRunner(Screen):
 		self.list = []
 		self.populate_List()
 		self['list'] = MenuList(self.list)
-		self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions'],
+		self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
 			{
 				'cancel': self.close,
 				'red': self.close,
 				'green': self.runscript,
 				'ok': self.runscript,
+				"menu": self.close,
 			}, -1)
 
 		self["key_red"] = Button(_("Close"))

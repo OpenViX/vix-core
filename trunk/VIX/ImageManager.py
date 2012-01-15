@@ -549,13 +549,14 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
 		self.createSetup()
 		
-		self["actions"] = ActionMap(['SetupActions', 'ColorActions', 'VirtualKeyboardActions'],
+		self["actions"] = ActionMap(['SetupActions', 'ColorActions', 'VirtualKeyboardActions', "MenuActions"],
 		{
 			"ok": self.keySave,
 			"cancel": self.keyCancel,
 			"red": self.keyCancel,
 			"green": self.keySave,
-			'showVirtualKeyboard': self.KeyText
+			'showVirtualKeyboard': self.KeyText,
+			"menu": self.keyCancel,
 		}, -2)
 
 		self["key_red"] = Button(_("Cancel"))
@@ -579,8 +580,6 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 		if config.imagemanager.schedule.value:
 			self.list.append(getConfigListEntry(_("Time of Backup to start"), config.imagemanager.scheduletime))
 			self.list.append(getConfigListEntry(_("Repeat how often"), config.imagemanager.repeattype))
-		self.list.append(getConfigListEntry(_("Enable Debug log"), config.crash.enabledebug))
-
 		self["config"].list = self.list
 		self["config"].setList(self.list)
 

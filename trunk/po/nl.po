@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-05 16:52+0000\n"
-"PO-Revision-Date: 2012-01-05 19:23+0100\n"
+"POT-Creation-Date: 2012-01-13 22:31+0000\n"
+"PO-Revision-Date: 2012-01-15 12:00+0100\n"
 "Last-Translator: R.L. van der Does\n"
 "Language-Team: Andy Blackburn/Rob van der Does\n"
 "Language: nl\n"
@@ -461,8 +461,8 @@ msgstr "Vaak genoeg geprobeerd, wacht op de volgende geplande tijd."
 msgid "Error"
 msgstr "Fout"
 
-msgid "Exit the cleanup wizard"
-msgstr "Verlaat de cleanup wizard"
+msgid "Exit the restore wizard"
+msgstr "Beeindig de herstel wizard"
 
 msgid "Extensions management"
 msgstr "Beheer van Extensies"
@@ -666,6 +666,9 @@ msgstr "Geen upgrade beschikbaar"
 msgid "November"
 msgstr "november"
 
+msgid "Now skipping restore process"
+msgstr "Slaat het herstel proces over"
+
 msgid "OK"
 msgstr "OK"
 
@@ -674,15 +677,6 @@ msgstr "JA, voer een herstel actie uit"
 
 msgid "October"
 msgstr "oktober"
-
-msgid ""
-"Offline upgrade in progress\n"
-"Please wait until your box reboots\n"
-"This may take a few minutes"
-msgstr ""
-"Offline upgrade is bezig.\n"
-"Wacht tot uw box opnieuw opstart.\n"
-"Dit kan een aantal minuten duren."
 
 msgid "Only extensions."
 msgstr "Alleen extensies"
@@ -740,9 +734,6 @@ msgstr "Druk op OK om door te gaan."
 
 msgid "Process"
 msgstr "Verwerk"
-
-msgid "Re-install Plugins"
-msgstr "Herinstalleer Plugins"
 
 msgid "Really close without saving settings?"
 msgstr "Echt afsluiten zonder op te slaan?"
@@ -809,9 +800,6 @@ msgstr "Paalts installingen terug"
 
 msgid "Restore Wizard"
 msgstr "Herstel wizard"
-
-msgid "Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?"
-msgstr "De herstel wizard heeft gedetecteerd dat u extra plugins had geïnstalleerd. Wilt u deze weer installeren?"
 
 msgid "Restoring backup..."
 msgstr "Plaatst backup terug..."
@@ -1028,6 +1016,15 @@ msgstr "Dinsdag"
 
 msgid "Type: "
 msgstr "Type: "
+
+msgid ""
+"Unattended upgrade in progress\n"
+"Please wait until your receiver reboots\n"
+"This may take a few minutes"
+msgstr ""
+"Onbewaakte upgrade in uitvoering.\n"
+"Wacht tot uw ontvangeropnieuw is gestart.\n"
+"Dat kan een paar minuten duren."
 
 msgid "Unattended upgrade without GUI and reboot system"
 msgstr "Onbewaakte upgrade met automatische reboot zonder GUI"

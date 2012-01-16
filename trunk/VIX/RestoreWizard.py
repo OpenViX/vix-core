@@ -214,7 +214,7 @@ class RestoreWizard(WizardLanguage, Rc):
 		fstabfile = file('/etc/fstab').readlines()
 		for mountfolder in fstabfile:
 			parts = mountfolder.strip().split()
-			if parts and str(parts[0]).startswith('/dev/'):
+			if parts and str(parts[0]).startswith('UUID'):
 				if not fileExists(parts[1]):
 					mkdir(parts[1], 0755)				
 		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()

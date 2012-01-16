@@ -463,7 +463,7 @@ class VIXBackupManager(Screen):
 		fstabfile = file('/etc/fstab').readlines()
 		for mountfolder in fstabfile:
 			parts = mountfolder.strip().split()
-			if parts and str(parts[0]).startswith('/media/'):
+			if parts and str(parts[0]).startswith('UUID'):
 				if not path.exists(parts[1]):
 					mkdir(parts[1], 0755)				
 		if path.exists('/tmp/trimedExtraInstalledPlugins'):

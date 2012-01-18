@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-13 22:31+0000\n"
-"PO-Revision-Date: 2012-01-15 12:00+0100\n"
+"POT-Creation-Date: 2012-01-17 17:08+0000\n"
+"PO-Revision-Date: 2012-01-18 06:51+0100\n"
 "Last-Translator: R.L. van der Does\n"
 "Language-Team: Andy Blackburn/Rob van der Does\n"
 "Language: nl\n"
@@ -431,9 +431,6 @@ msgstr "Electronisch Programma Gids"
 msgid "Enable Auto Timer Check ?"
 msgstr "Auto Timer Check inschakelen?"
 
-msgid "Enable Debug log"
-msgstr "Debug log inschakelen"
-
 msgid "Enable Deep Standby"
 msgstr "Schakel Deep Standby in"
 
@@ -659,6 +656,9 @@ msgstr "Er hoefden geen plugins te worden geïnstalleerd"
 
 msgid "None"
 msgstr "Geen"
+
+msgid "Normal"
+msgstr "Normaal"
 
 msgid "Nothing to upgrade"
 msgstr "Geen upgrade beschikbaar"
@@ -1017,6 +1017,9 @@ msgstr "Dinsdag"
 msgid "Type: "
 msgstr "Type: "
 
+msgid "Unattended"
+msgstr "Onbewaakt"
+
 msgid ""
 "Unattended upgrade in progress\n"
 "Please wait until your receiver reboots\n"
@@ -1065,6 +1068,9 @@ msgstr "VIXMenu"
 msgid "ViX"
 msgstr "ViX"
 
+msgid "View Changes"
+msgstr "Bekijk veranderingen"
+
 msgid "View Progress"
 msgstr "Bekijk voortgang"
 
@@ -1109,6 +1115,9 @@ msgstr "Toon lijst met beschikbare software extensies"
 
 msgid "View list of available system extensions"
 msgstr "Toon lijst met beschikbare systeem extensies"
+
+msgid "View the changes"
+msgstr "Bekijk de veranderingen"
 
 msgid "Wait please while creating swapfile..."
 msgstr "Een ogenblik geduld terwijl de swapfile gemaakt wordt...."

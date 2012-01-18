@@ -37,12 +37,13 @@ class VIXIPKInstaller(Screen):
 		self.list = []
 		self.populate_List()
 		self['list'] = MenuList(self.list)
-		self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions'],
+		self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
 			{
 				'cancel': self.close,
 				'red': self.close,
 				'green': self.keyInstall,
 				'ok': self.keyInstall,
+				"menu": self.close,
 			}, -1)
 
 		self["key_red"] = Button(_("Close"))

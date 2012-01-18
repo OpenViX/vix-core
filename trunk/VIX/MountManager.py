@@ -53,7 +53,7 @@ class VIXDevicesPanel(Screen):
 		self.list = []
 		self['list'] = List(self.list)
 		self["list"].onSelectionChanged.append(self.selectionChanged)
-		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'back': self.close, 'green': self.SetupMounts, 'red': self.saveMypoints, 'yellow': self.Unmount, 'blue': self.Mount})
+		self['actions'] = ActionMap(['WizardActions', 'ColorActions', "MenuActions"], {'back': self.close, 'green': self.SetupMounts, 'red': self.saveMypoints, 'yellow': self.Unmount, 'blue': self.Mount, "menu": self.close})
 		self.activityTimer = eTimer()
 		self.activityTimer.timeout.get().append(self.updateList2)
 		self.updateList()

@@ -1,164 +1,194 @@
 # for localized messages
 from . import _
 from Components.About import about
-from Components.ActionMap import ActionMap
-from Components.ConfigList import ConfigListScreen
-from Components.Label import Label
-from Components.MenuList import MenuList
 from Components.Console import Console
-from Screens.Console import Console as RestoreConsole
-from Components.config import config, ConfigBoolean
+from Components.config import config, configfile
+from Components.Pixmap import Pixmap, MovingPixmap, MultiPixmap
 from Components.Harddisk import harddiskmanager
-from Screens.MessageBox import MessageBox
-from Screens.Screen import Screen
-from Screens.Wizard import WizardSummary
+from Screens.Wizard import wizardManager, WizardSummary
 from Screens.WizardLanguage import WizardLanguage
-from Screens.Wizard import wizardManager
 from Screens.Rc import Rc
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS
-from Components.Pixmap import Pixmap
-from os import path, mkdir, listdir, access, stat, rename, remove, W_OK, R_OK
-
-config.misc.firstrun = ConfigBoolean(default = True)
-
-backupfile = config.misc.boxtype.value + '-' + "enigma2settingsbackup.tar.gz"
-
-def checkConfigBackup():
-	parts = [ (r.description, r.mountpoint) for r in harddiskmanager.getMountedPartitions(onlyhotplug = False)]
-	for x in parts:
-		if x[1] == '/':
-			parts.remove(x)
-	if len(parts):
-		for x in parts:
-			if x[1].endswith('/'):
-				fullbackupfile =  x[1] + 'backup/' + backupfile
-			else:
-				fullbackupfile =  x[1] + '/backup/' + backupfile
-			if path.exists(fullbackupfile):
-				config.backupmanager.backuplocation.value = str(x[1])
-				config.backupmanager.backuplocation.save()
-				config.backupmanager.save()
-				return x
-		return None		
-
-def checkBackupFile():
-	backuplocation = config.backupmanager.backuplocation.value
-	if backuplocation.endswith('/'):
-		fullbackupfile =  backuplocation + 'backup/' + backupfile
-	else:
-		fullbackupfile =  backuplocation + '/backup/' + backupfile
-	if path.exists(fullbackupfile):
-		return True
-	else:
-		if config.misc.boxtype.value == 'et9x00':
-			backupfile = "et9000-enigma2settingsbackup.tar.gz"
-		elif config.misc.boxtype.value == 'et5x00':
-			backupfile = "et5000-enigma2settingsbackup.tar.gz"
-		if backuplocation.endswith('/'):
-			fullbackupfile =  backuplocation + 'backup/' + backupfile
-		else:
-			fullbackupfile =  backuplocation + '/backup/' + backupfile
-		if path.exists(fullbackupfile):
-			return True
-		return False
-
-if checkConfigBackup() is None:
-	backupAvailable = 0
-else:
-	backupAvailable = 1
+from Screens.MessageBox import MessageBox
+from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS
+from os import mkdir, listdir
 
 class RestoreWizard(WizardLanguage, Rc):
 	def __init__(self, session):
 		self.xmlfile = resolveFilename(SCOPE_PLUGINS, "SystemPlugins/ViX/restorewizard.xml")
-		WizardLanguage.__init__(self, session, showSteps = True, showStepSlider = True)
+		WizardLanguage.__init__(self, session, showSteps = False, showStepSlider = False)
 		Rc.__init__(self)
-		self.skinName = "ImageWizard"
-		self.skin = "ImageWizard.skin"
 		self.session = session
+		self.skinName = "StartWizard"
+		self.skin = "StartWizard.skin"
 		self["wizard"] = Pixmap()
-		self.selectedDevice = None
+		self.selectedAction = None
+		self.NextStep = None
+		self.Text = None
+		self.buildListRef = None
+		self.didSettingsRestore = False
+		self.didPluginRestore = False
+		self.PluginsRestore = False
+		self.fullbackupfilename = None
+		self.Console = Console()
+
+	def listDevices(self):
+		devices = [ (r.description, r.mountpoint) for r in harddiskmanager.getMountedPartitions(onlyhotplug = False)]
+		list = []
+		for x in devices:
+			if x[1] == '/':
+				devices.remove(x)
+		if len(devices):
+			for x in devices:
+				print '[RestoreWizard] Seraching devices:',x
+				if not x[1].endswith('/'):
+					if pathExists(x[1] + '/backup'):
+						images = listdir(x[1] + '/backup')
+				else:
+					if pathExists(x[1] + 'backup'):
+						images = listdir(x[1] + 'backup')
+				if len(images):
+					for fil in images:
+						if fil.endswith('.tar.gz') and fil.startswith(config.misc.boxtype.value):
+							if not x[1].endswith('/'):
+								list.append((x[1] + '/backup/' + fil,x[1] + '/backup/' + fil))
+							else:
+								list.append((x[1] + 'backup/' + fil,x[1] + 'backup/' + fil))
+		if len(list):
+			list.sort()
+		return list
+
+	def settingsdeviceSelectionMade(self, index):
+		self.selectedAction = index
+		self.settingsdeviceSelect(index)
 		
+	def settingsdeviceSelect(self, index):
+		self.selectedDevice = index
+		self.fullbackupfilename = index
+ 		self.NextStep = 'settingrestorestarted'
+
+	def settingsdeviceSelectionMoved(self):
+		self.settingsdeviceSelect(self.selection)
+
+	def pluginsdeviceSelectionMade(self, index):
+		self.selectedAction = index
+		self.pluginsdeviceSelect(index)
+		
+	def pluginsdeviceSelect(self, index):
+		self.selectedDevice = index
+		self.fullbackupfilename = index
+ 		self.NextStep = 'plugindetection'
+
+	def pluginsdeviceSelectionMoved(self):
+		self.pluginsdeviceSelect(self.selection)
+
 	def markDone(self):
 		pass
 
-	def listDevices(self):
-		list = [ (r.description, r.mountpoint) for r in harddiskmanager.getMountedPartitions(onlyhotplug = False)]
-		for x in list:
-			result = access(x[1], W_OK) and access(x[1], R_OK)
-			if result is False or x[1] == '/':
-				list.remove(x)
-		for x in list:
-			if x[1].startswith('/autofs/'):
-				list.remove(x)	
+	def listAction(self):
+		list = []
+		list.append((_("OK, to perform a restore"), "settingsquestion"))
+		list.append((_("Exit the restore wizard"), "end"))
 		return list
 
-	def deviceSelectionMade(self, index):
-		self.deviceSelect(index)
-		
-	def deviceSelectionMoved(self):
-		self.deviceSelect(self.selection)
-		
-	def deviceSelect(self, device):
-		self.selectedDevice = device
-		config.backupmanager.backuplocation.value = self.selectedDevice
-		config.backupmanager.backuplocation.save()
-		config.backupmanager.save()
+	def listAction2(self):
+		list = []
+		list.append((_("YES, to restore settings"), "settingsrestore"))
+		list.append((_("NO, do not restore settings"), "pluginsquestion"))
+		return list
 
-def getBackupPath():
-	backuppath = config.backupmanager.backuplocation.value
-	if backuppath.endswith('/'):
-		return backuppath + 'backup'
-	else:
-		return backuppath + '/backup'
+	def listAction3(self):
+		list = []
+		if self.didSettingsRestore:
+			list.append((_("YES, to restore plugins"), "pluginrestore"))
+			list.append((_("NO, do not restore plugins"), "reboot"))
+		else:
+			list.append((_("YES, to restore plugins"), "pluginsrestoredevice"))
+			list.append((_("NO, do not restore plugins"), "end"))
+		return list
 
-def getBackupFilename():
-	backupfile = config.misc.boxtype.value + '-' + "enigma2settingsbackup.tar.gz"
-	return str(backupfile)
-		
+	def rebootAction(self):
+		list = []
+		list.append((_("OK"), "reboot"))
+		return list
 
-class RestoreSetting(Screen, ConfigListScreen):
-	skin = """
-		<screen position="135,144" size="350,310" title="Restore is running..." >
-		<widget name="config" position="10,10" size="330,250" transparent="1" scrollbarMode="showOnDemand" />
-		</screen>"""
-		
-	def __init__(self, session, runRestore = False):
-		Screen.__init__(self, session)
-		self.session = session
-		self.setTitle(_("Restore is running..."))
-		self.runRestore = runRestore
-		self["actions"] = ActionMap(["WizardActions", "DirectionActions"],
-		{
-			"ok": self.close,
-			"back": self.close,
-			"cancel": self.close,
-		}, -1)
-		self.finished_cb = None
-		self.backuppath = getBackupPath()
-		self.backupfile = getBackupFilename()
-		self.fullbackupfilename = self.backuppath + "/" + self.backupfile
-		self.list = []
-		ConfigListScreen.__init__(self, self.list)
-		if self.runRestore:
-			self.onShown.append(self.doRestore)
+	def ActionSelectionMade(self, index):
+		self.selectedAction = index
+		self.ActionSelect(index)
 
-	def doRestore(self):
-		self.Console = Console()
-		self.Console.ePopen("tar -xzvf " + self.fullbackupfilename + " -C /", self.doRestorePlugins1)
+	def ActionSelect(self, index):
+		self.NextStep = index
 
-	def doRestorePlugins1(self, result, retval, extra_args):
-		self.Console = Console()
-		if path.exists('/tmp/backupkernelversion'):
+	def ActionSelectionMoved(self):
+		self.ActionSelect(self.selection)
+
+	def buildList(self,action):
+		if self.NextStep is 'reboot':
+			if not self.Console:
+				self.Console = Console()
+			self.Console.ePopen("init 4 && reboot")
+ 		elif self.NextStep is 'settingsquestion' or self.NextStep is 'settingsrestore' or self.NextStep is 'pluginsquestion' or self.NextStep is 'pluginsrestoredevice' or self.NextStep is 'end' or self.NextStep is 'noplugins':
+			self.buildListfinishedCB(False)
+ 		elif self.NextStep is 'settingrestorestarted':
+  			if not self.Console:
+ 				self.Console = Console()
+ 			self.Console.ePopen("tar -xzvf " + self.fullbackupfilename + " -C /", self.settingRestore_Finished)
+ 			self.buildListRef = self.session.openWithCallback(self.buildListfinishedCB, MessageBox, _("Please wait while restore completes..."), type = MessageBox.TYPE_INFO, enable_input = False)
+		elif self.NextStep is 'plugindetection':
+			if not self.Console:
+ 				self.Console = Console()
+ 			self.Console.ePopen("tar -xzvf " + self.fullbackupfilename + " tmp/ExtraInstalledPlugins tmp/backupkernelversion -C /", self.pluginsRestore_Started)
+ 			self.buildListRef = self.session.openWithCallback(self.buildListfinishedCB, MessageBox, _("Please wait while gathers infomation..."), type = MessageBox.TYPE_INFO, enable_input = False)
+		elif self.NextStep is 'pluginrestore':
+  			if not self.Console:
+ 				self.Console = Console()
+			plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
+			pluginslist = plugintmp.replace('\n',' ')
+			self.Console.ePopen("opkg update && opkg install " + pluginslist, self.pluginsRestore_Finished)
+ 			self.buildListRef = self.session.openWithCallback(self.buildListfinishedCB, MessageBox, _("Please wait while restore completes..."), type = MessageBox.TYPE_INFO, enable_input = False)
+			
+	def settingRestore_Finished(self, result, retval, extra_args = None):
+		self.didSettingsRestore = True
+		configfile.load()
+		self.doRestorePlugins1()
+
+	def pluginsRestore_Started(self, result, retval, extra_args = None):
+		self.doRestorePlugins1()
+
+	def pluginsRestore_Finished(self, result, retval, extra_args = None):
+		config.misc.restorewizardrun.setValue(True)
+		config.misc.restorewizardrun.save()
+		configfile.save()
+		self.didPluginRestore = True
+		self.NextStep = 'reboot'
+		self.buildListRef.close(True)
+
+	def buildListfinishedCB(self,data):
+		self.buildListRef = None
+		if data is True:
+			self.currStep = self.getStepWithID(self.NextStep)
+			self.afterAsyncCode()
+		else:
+			self.currStep = self.getStepWithID(self.NextStep)
+			self.afterAsyncCode()
+
+	def doRestorePlugins1(self, result = None, retval = None, extra_args = None):
+		if not self.Console:
+			self.Console = Console()
+		if fileExists('/tmp/backupkernelversion'):
 			kernelversion = file('/tmp/backupkernelversion').read()
+			print kernelversion
+			print about.getKernelVersionString()
 			if kernelversion == about.getKernelVersionString():
 				self.Console.ePopen('opkg list-installed', self.doRestorePlugins2)
-			else:
-				self.Console.ePopen("init 4 && reboot")
 		else:
-			self.Console.ePopen("init 4 && reboot")
+			if self.didSettingsRestore:
+				self.NextStep = 'reboot'
+			else:
+				self.NextStep = 'noplugins'
+			self.buildListRef.close(True)
 
 	def doRestorePlugins2(self, result, retval, extra_args):
-		if path.exists('/tmp/ExtraInstalledPlugins'):
+		if fileExists('/tmp/ExtraInstalledPlugins'):
 			plugins = []
 			for line in result.split('\n'):
 				if line:
@@ -173,55 +203,31 @@ class RestoreSetting(Screen, ConfigListScreen):
 						output.write(parts[0] + ' ')
 			output.close()
 			self.doRestorePluginsQuestion()
+		else:
+			if self.didSettingsRestore:
+				self.NextStep = 'reboot'
+			else:
+				self.NextStep = 'noplugins'
+			self.buildListRef.close(True)
 
 	def doRestorePluginsQuestion(self, extra_args = None):
 		fstabfile = file('/etc/fstab').readlines()
 		for mountfolder in fstabfile:
 			parts = mountfolder.strip().split()
-			if parts and str(parts[0]).startswith('/dev/'):
-				if not path.exists(parts[1]):
+			if parts and str(parts[0]).startswith('UUID'):
+				if not fileExists(parts[1]):
 					mkdir(parts[1], 0755)				
 		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
 		if pluginslist:
-			message = _("Restore wizard has detected that you had extra plugins installed at the time of you backup, Do you want to reinstall these plugins ?")
-			ybox = self.session.openWithCallback(self.doRestorePlugins3, MessageBox, message, MessageBox.TYPE_YESNO, wizard = True)
-			ybox.setTitle(_("Re-install Plugins"))
+			if self.didSettingsRestore:
+				self.NextStep = 'pluginsquestion'
+				self.buildListRef.close(True)
+			else:
+				self.NextStep = 'pluginrestore'
+				self.buildListRef.close(True)
 		else:
-			self.Console.ePopen("init 3 && reboot")
-
-	def doRestorePlugins3(self, answer):
-		if answer is True:
-			plugintmp = file('/tmp/trimedExtraInstalledPlugins').read()
-			pluginslist = plugintmp.replace('\n',' ')
-			mycmd1 = "echo '************************************************************************'"
-			if config.misc.boxtype.value.startswith('vu'):
-				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
-			elif config.misc.boxtype.value.startswith('et'):
-				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
-			mycmd3 = "echo '************************************************************************'"
-			mycmd4 = "echo ' '"
-			mycmd5 = _("echo 'Attention:'")
-			mycmd6 = "echo ' '"
-			mycmd7 = _("echo 'Enigma2 will be restarted automatically after the restore progress.'")
-			mycmd8 = "echo ' '"
-			mycmd9 = _("echo 'Installing Plugins.'")
-			mycmd10 = "opkg update"
-			mycmd11 = "opkg install " + pluginslist
-			mycmd12 = 'rm -f /tmp/trimedExtraInstalledPlugins'
-			mycmd13 = "init 3 && reboot"
-			self.session.open(RestoreConsole, title=_('Installing Plugins...'), cmdlist=[mycmd1, mycmd2, mycmd3, mycmd4, mycmd5, mycmd6, mycmd7, mycmd8, mycmd9, mycmd10, mycmd11, mycmd12, mycmd13],closeOnSuccess = True)
-		else:
-			self.Console.ePopen("init 3 && reboot")
-
-	def backupFinishedCB(self,retval = None):
-		self.close(True)
-
-	def backupErrorCB(self,retval = None):
-		self.close(False)
-
-	def runAsync(self, finished_cb):
-		self.finished_cb = finished_cb
-		self.doRestore()
-
-if config.misc.firstrun.value:
-	wizardManager.registerWizard(RestoreWizard, backupAvailable, priority = 8)
+			if self.didSettingsRestore:
+				self.NextStep = 'reboot'
+			else:
+				self.NextStep = 'noplugins'
+		self.buildListRef.close(True)

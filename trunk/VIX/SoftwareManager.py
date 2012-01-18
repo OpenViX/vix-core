@@ -26,6 +26,7 @@ from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Ipkg import Ipkg
 from Components.ActionMap import ActionMap, NumberActionMap
+from Components.Button import Button
 from Components.Ipkg import IpkgComponent
 from Components.Sources.StaticText import StaticText
 from Components.ScrollLabel import ScrollLabel
@@ -129,7 +130,7 @@ class PluginManager(Screen, DreamInfoHandler):
 		if self.skin_path == None:
 			self.skin_path = resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX")
 
-		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions", "InfobarEPGActions", "HelpActions" ],
+		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions", "InfobarEPGActions", "HelpActions", "MenuActions" ],
 		{
 			"ok": self.handleCurrent,
 			"back": self.exit,
@@ -138,6 +139,7 @@ class PluginManager(Screen, DreamInfoHandler):
 			"yellow": self.handleSelected,
 			"showEventInfo": self.handleSelected,
 			"displayHelp": self.handleHelp,
+			"menu": self.exit,
 		}, -1)
 
 		self.list = []
@@ -911,19 +913,77 @@ class PluginDetails(Screen, DreamInfoHandler):
 		self.setThumbnail(noScreenshot = True)
 		print "[PluginDetails] fetch failed " + string.getErrorMessage()
 
-
-class OfflineUpgradeMessageBox(Screen):
-	skin = """
-		<screen position="110,258" size="500,150" title="Offline Upgrade">
-			<ePixmap pixmap="skin_default/icons/input_info.png" position="5,5" size="53,53" alphatest="on" />
-			<widget name="text" position="65,8" size="520,200" font="Regular;22" />
-		</screen>"""
-
+class UnattendedUpgradeMessageBox(Screen):
 	def __init__(self, session, args = None):
-		self.skin = OfflineUpgradeMessageBox.skin
+		self.skin = """
+			<screen position="center,center" size="600,150" title="Unattended Upgrade">
+				<ePixmap pixmap="skin_default/icons/input_info.png" position="5,5" size="53,53" alphatest="on" />
+				<widget name="text" position="65,8" size="520,200" font="Regular;22" />
+			</screen>"""
 		Screen.__init__(self, session)
 		from Components.Label import Label
-		self["text"] = Label(_("Offline upgrade in progress\nPlease wait until your box reboots\nThis may take a few minutes"))
+		self["text"] = Label(_("Unattended upgrade in progress\nPlease wait until your receiver reboots\nThis may take a few minutes"))
+
+class SoftwareUpdateChanges(Screen):
+	def __init__(self, session, args = None):
+		self.skin = """
+			<screen position="center,center" size="720,540" >
+				<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
+				<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
+				<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" alphatest="on" />
+				<widget name="key_red" position="0,2" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
+				<widget name="key_green" position="140,2" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
+				<widget name="key_yellow" position="280,2" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />
+				<widget name="text" position="0,50" size="720,500" font="Regular;21" />
+			</screen>"""
+		Screen.__init__(self, session)
+		self.setTitle(_("View Changes"))
+		self["text"] = ScrollLabel()
+		self["key_red"] = Button(_("Close"))
+		self["key_green"] = Button(_("Unattended"))
+		self["key_yellow"] = Button(_("Normal"))
+		self["myactions"] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions'],
+		{
+			'cancel': self.closeRecursive,
+			"red": self.closeRecursive,
+			"green": self.unattendedupdate,
+			"yellow": self.update,
+		    "left": self.pageUp,
+		    "right": self.pageDown,
+			"down": self.pageDown,
+			"up": self.pageUp
+		},-1)
+		self.onLayoutFinish.append(self.getlog)
+
+	def pageUp(self):
+		self["text"].pageUp()
+
+	def pageDown(self):
+		self["text"].pageDown()
+
+	def getlog(self):
+		import urllib
+		fd = open('/etc/opkg/all-feed.conf', 'r')
+		fileurl = fd.read()
+		fd.close()
+		if fileurl.find('experimental') != -1:
+			sourcefile='http://enigma2.world-of-satellite.com/feeds/2.3/experimental/' + config.misc.boxtype.value + '/releasenotes'
+		else:
+			sourcefile='http://enigma2.world-of-satellite.com/feeds/2.3/release/' + config.misc.boxtype.value + '/releasenotes'
+		sourcefile,headers = urllib.urlretrieve(sourcefile)
+		rename(sourcefile,'/tmp/online-releasenotes')
+		fd = open('/tmp/online-releasenotes', 'r')
+		releasenotes = fd.read()
+		fd.close()
+		releasenotes = releasenotes.split('\n\n')			
+		self["text"].setText(releasenotes[0])
+
+	def unattendedupdate(self):
+		self.close((_("Unattended upgrade without GUI and reboot system"), "cold"))
+	def update(self):
+		self.close((_("Upgrade and ask to reboot"), "hot"))
+	def closeRecursive(self):
+		self.close((_("Cancel"), ""))
 
 class UpdatePlugin(Screen):
 	skin = """
@@ -953,7 +1013,21 @@ class UpdatePlugin(Screen):
 		self.error = 0
 		self.processed_packages = []
 		self.total_packages = None
+		self.checkNetworkState()
 
+	def checkNetworkState(self):
+		self.NetworkState = 0
+		cmd1 = "ping -c 5 www.world-of-satellite.com"
+		self.PingConsole = Console()
+		self.PingConsole.ePopen(cmd1, self.checkNetworkStateFinished)
+		
+	def checkNetworkStateFinished(self, result, retval,extra_args=None):
+		if result.find('bad address') == -1:
+			self.MemCheck1()
+		else:
+			self.session.openWithCallback(self.close, MessageBox, _("Your receiver isn't connected to the internet properly. Please check it and try again."), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
+
+	def MemCheck1(self):
 		self.activity = 0
 		self.activityTimer = eTimer()
 		self.activityTimer.callback.append(self.doActivityTimer)
@@ -1076,7 +1150,8 @@ class UpdatePlugin(Screen):
 					self.total_packages = len(self.ipkg.getFetchedList())
 					if self.total_packages:
 						message = _("Do you want to update your Receiver?") + "\n(%s " % self.total_packages + _("Packages") + ")"
-						choices = [(_("Unattended upgrade without GUI and reboot system"), "cold"),
+						choices = [(_("View the changes"), "changes"),
+							(_("Unattended upgrade without GUI and reboot system"), "cold"),
 							(_("Upgrade and ask to reboot"), "hot"),
 							(_("Cancel"), "")]
 						self.session.openWithCallback(self.startActualUpgrade, ChoiceBox, title=message, list=choices)
@@ -1111,19 +1186,22 @@ class UpdatePlugin(Screen):
 		pass
 
 	def startActualUpgrade(self, answer):
-	        if not answer or not answer[1]:
-	                self.close()
-	                return
-		if answer[1] == "cold":
+		if not answer or not answer[1]:
+				self.close()
+				return
+
+		if answer[1] == "changes":
+			self.session.openWithCallback(self.startActualUpgrade,SoftwareUpdateChanges)
+		elif answer[1] == "cold":
 			from enigma import gMainDC, getDesktop, eSize
 			self.session.nav.stopService()
 			desktop = getDesktop(0)
 			if desktop.size() != eSize(720,576):
 				gMainDC.getInstance().setResolution(720,576)
 				desktop.resize(eSize(720,576))
-			self.session.open(OfflineUpgradeMessageBox)
+			self.session.open(UnattendedUpgradeMessageBox)
 			quitMainloop(42)
-		else:
+		elif answer[1] == "hot":
 			self.ipkg.startCmd(IpkgComponent.CMD_UPGRADE, args = {'test_only': False})
 
 	def modificationCallback(self, res):
@@ -1174,8 +1252,9 @@ class PacketManager(Screen, NumericalTextInput):
 
 		self.setUseableChars(u'1234567890abcdefghijklmnopqrstuvwxyz')
 
-		self["shortcuts"] = NumberActionMap(["ShortcutActions", "WizardActions", "NumberActions", "InputActions", "InputAsciiActions", "KeyboardInputActions" ],
+		self["shortcuts"] = NumberActionMap(["ShortcutActions", "WizardActions", "NumberActions", "InputActions", "InputAsciiActions", "KeyboardInputActions", "MenuActions" ],
 		{
+			"menu": self.exit,
 			"ok": self.go,
 			"back": self.exit,
 			"red": self.exit,

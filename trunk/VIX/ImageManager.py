@@ -1104,7 +1104,7 @@ class ImageManagerDownload(Screen):
 				ftp.cwd('/experimental')
 			del self.emlist[:]
 			for fil in ftp.nlst():
-				if not fil.endswith('.') and fil.find(config.imagemanager.folderprefix.value) != -1:
+				if not fil.endswith('.') and fil.find(config.misc.boxtype.value) != -1:
 					self.emlist.append(fil)
 			self.emlist.sort()
 		except:

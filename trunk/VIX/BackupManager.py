@@ -21,7 +21,7 @@ from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Tools.Notifications import AddPopupWithCallback
 from enigma import eTimer
-from os import path, stat, mkdir, listdir, rename, remove, statvfs
+from os import path, stat, mkdir, listdir, rename, remove, statvfs, chmod
 from shutil import rmtree, move, copy
 from time import localtime, time, strftime, mktime
 from datetime import date, datetime
@@ -1074,6 +1074,7 @@ class BackupFiles(Screen):
 
 	def Stage5Complete(self, result, retval, extra_args):
 		if path.exists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
+			chmod(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz' ,0644)
 			print '[BackupManager] Complete.'
 			remove('/tmp/ExtraInstalledPlugins')
 			self.Stage5Completed = True

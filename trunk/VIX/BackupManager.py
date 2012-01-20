@@ -133,7 +133,7 @@ class VIXBackupManager(Screen):
 		for fil in images:
 			if fil.endswith('.tar.gz'):
 				self.emlist.append(fil)
-		self.emlist.sort()
+		self.emlist.reverse()
 		self["list"].setList(self.emlist)
 		self["list"].show()
 		if self['list'].getCurrent():
@@ -146,7 +146,7 @@ class VIXBackupManager(Screen):
 		for fil in images:
 			if fil.endswith('.tar.gz'):
 				self.emlist.append(fil)
-		self.emlist.sort()
+		self.emlist.reverse()
 		self["list"].setList(self.emlist)
 		self["list"].show()
 		if self['list'].getCurrent():
@@ -234,7 +234,7 @@ class VIXBackupManager(Screen):
 			for fil in images:
 				if fil.endswith('.tar.gz'):
 					self.emlist.append(fil)
-			self.emlist.sort()
+			self.emlist.reverse()
 			self["list"].setList(self.emlist)
 			self["list"].show()
 		except:
@@ -1070,11 +1070,13 @@ class BackupFiles(Screen):
 		tmplist.append('/tmp/backupkernelversion')
 		self.backupdirs = ' '.join(tmplist)
 		print '[BackupManager] Backup running'
-		self.BackupConsole.ePopen('tar -czvf ' + self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz ' + self.backupdirs, self.Stage5Complete)
+		backupdate = datetime.now()
+		self.Backupfile = self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + backupdate.strftime("%Y-%m-%d_%H:%M") + '-' + 'enigma2settingsbackup.tar.gz'
+		self.BackupConsole.ePopen('tar -czvf ' + self.Backupfile + ' ' + self.backupdirs, self.Stage5Complete)
 
 	def Stage5Complete(self, result, retval, extra_args):
-		if path.exists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
-			chmod(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz' ,0644)
+		if path.exists(self.Backupfile):
+			chmod(self.Backupfile ,0644)
 			print '[BackupManager] Complete.'
 			remove('/tmp/ExtraInstalledPlugins')
 			self.Stage5Completed = True

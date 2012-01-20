@@ -39,6 +39,7 @@ class RestoreWizard(WizardLanguage, Rc):
 				devices.remove(x)
 		if len(devices):
 			for x in devices:
+				images = ""
 				print '[RestoreWizard] Seraching devices:',x
 				if not x[1].endswith('/'):
 					if pathExists(x[1] + '/backup'):
@@ -54,7 +55,7 @@ class RestoreWizard(WizardLanguage, Rc):
 							else:
 								list.append((x[1] + 'backup/' + fil,x[1] + 'backup/' + fil))
 		if len(list):
-			list.sort()
+			list.reverse()
 		return list
 
 	def settingsdeviceSelectionMade(self, index):

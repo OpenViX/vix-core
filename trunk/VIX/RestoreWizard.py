@@ -55,6 +55,7 @@ class RestoreWizard(WizardLanguage, Rc):
 							else:
 								list.append((x[1] + 'backup/' + fil,x[1] + 'backup/' + fil))
 		if len(list):
+			list.sort()
 			list.reverse()
 		return list
 

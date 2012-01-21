@@ -126,32 +126,6 @@ class VIXBackupManager(Screen):
 			self["key_green"].setText(_("New Backup"))
 		self.activityTimer.startLongTimer(5)
 
-	def refreshUp(self):
-		images = listdir(self.BackupDirectory)
-		self.oldlist = images
-		del self.emlist[:]
-		for fil in images:
-			if fil.endswith('.tar.gz'):
-				self.emlist.append(fil)
-		self.emlist.reverse()
-		self["list"].setList(self.emlist)
-		self["list"].show()
-		if self['list'].getCurrent():
-			self["list"].instance.moveSelection(self["list"].instance.moveUp)
-
-	def refreshDown(self):
-		images = listdir(self.BackupDirectory)
-		self.oldlist = images
-		del self.emlist[:]
-		for fil in images:
-			if fil.endswith('.tar.gz'):
-				self.emlist.append(fil)
-		self.emlist.reverse()
-		self["list"].setList(self.emlist)
-		self["list"].show()
-		if self['list'].getCurrent():
-			self["list"].instance.moveSelection(self["list"].instance.moveDown)
-
 	def selectionChanged(self):
 		for x in self.onChangedEntry:
 			x()
@@ -234,6 +208,7 @@ class VIXBackupManager(Screen):
 			for fil in images:
 				if fil.endswith('.tar.gz'):
 					self.emlist.append(fil)
+			self.emlist.sort()
 			self.emlist.reverse()
 			self["list"].setList(self.emlist)
 			self["list"].show()

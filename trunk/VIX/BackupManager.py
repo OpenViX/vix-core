@@ -1071,7 +1071,7 @@ class BackupFiles(Screen):
 		self.backupdirs = ' '.join(tmplist)
 		print '[BackupManager] Backup running'
 		backupdate = datetime.now()
-		self.Backupfile = self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + backupdate.strftime("%Y-%m-%d_%H:%M") + '-' + 'enigma2settingsbackup.tar.gz'
+		self.Backupfile = self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + backupdate.strftime("%Y-%m-%d_%H-%M") + '-' + 'enigma2settingsbackup.tar.gz'
 		self.BackupConsole.ePopen('tar -czvf ' + self.Backupfile + ' ' + self.backupdirs, self.Stage5Complete)
 
 	def Stage5Complete(self, result, retval, extra_args):

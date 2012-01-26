@@ -21,7 +21,7 @@ from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Tools.Notifications import AddPopupWithCallback
 from enigma import eTimer
-from os import path, stat, mkdir, listdir, rename, remove, statvfs
+from os import path, stat, mkdir, listdir, rename, remove, statvfs, chmod
 from shutil import rmtree, move, copy
 from time import localtime, time, strftime, mktime
 from datetime import date, datetime
@@ -126,32 +126,6 @@ class VIXBackupManager(Screen):
 			self["key_green"].setText(_("New Backup"))
 		self.activityTimer.startLongTimer(5)
 
-	def refreshUp(self):
-		images = listdir(self.BackupDirectory)
-		self.oldlist = images
-		del self.emlist[:]
-		for fil in images:
-			if fil.endswith('.tar.gz'):
-				self.emlist.append(fil)
-		self.emlist.sort()
-		self["list"].setList(self.emlist)
-		self["list"].show()
-		if self['list'].getCurrent():
-			self["list"].instance.moveSelection(self["list"].instance.moveUp)
-
-	def refreshDown(self):
-		images = listdir(self.BackupDirectory)
-		self.oldlist = images
-		del self.emlist[:]
-		for fil in images:
-			if fil.endswith('.tar.gz'):
-				self.emlist.append(fil)
-		self.emlist.sort()
-		self["list"].setList(self.emlist)
-		self["list"].show()
-		if self['list'].getCurrent():
-			self["list"].instance.moveSelection(self["list"].instance.moveDown)
-
 	def selectionChanged(self):
 		for x in self.onChangedEntry:
 			x()
@@ -235,6 +209,7 @@ class VIXBackupManager(Screen):
 				if fil.endswith('.tar.gz'):
 					self.emlist.append(fil)
 			self.emlist.sort()
+			self.emlist.reverse()
 			self["list"].setList(self.emlist)
 			self["list"].show()
 		except:
@@ -1070,10 +1045,13 @@ class BackupFiles(Screen):
 		tmplist.append('/tmp/backupkernelversion')
 		self.backupdirs = ' '.join(tmplist)
 		print '[BackupManager] Backup running'
-		self.BackupConsole.ePopen('tar -czvf ' + self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz ' + self.backupdirs, self.Stage5Complete)
+		backupdate = datetime.now()
+		self.Backupfile = self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + backupdate.strftime("%Y-%m-%d_%H-%M") + '-' + 'enigma2settingsbackup.tar.gz'
+		self.BackupConsole.ePopen('tar -czvf ' + self.Backupfile + ' ' + self.backupdirs, self.Stage5Complete)
 
 	def Stage5Complete(self, result, retval, extra_args):
-		if path.exists(self.BackupDirectory + config.backupmanager.folderprefix.value + '-' + 'enigma2settingsbackup.tar.gz'):
+		if path.exists(self.Backupfile):
+			chmod(self.Backupfile ,0644)
 			print '[BackupManager] Complete.'
 			remove('/tmp/ExtraInstalledPlugins')
 			self.Stage5Completed = True

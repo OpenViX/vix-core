@@ -25,6 +25,7 @@ from Screens.ChoiceBox import ChoiceBox
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Ipkg import Ipkg
+from Components.About import about
 from Components.ActionMap import ActionMap, NumberActionMap
 from Components.Button import Button
 from Components.Ipkg import IpkgComponent
@@ -975,8 +976,19 @@ class SoftwareUpdateChanges(Screen):
 		fd = open('/tmp/online-releasenotes', 'r')
 		releasenotes = fd.read()
 		fd.close()
-		releasenotes = releasenotes.split('\n\n')			
-		self["text"].setText(releasenotes[0])
+		releasenotes = releasenotes.split('\n\n')
+		ver=0
+		releasever = releasenotes[int(ver)].split('\n')
+		releasever = releasever[0].split(' ')
+		releasever = releasever[2].replace(':',"")
+		viewrelease=""
+		while int(releasever) > int(about.getBuildVersionString()):
+			viewrelease += releasenotes[int(ver)]+'\n\n'
+			ver += 1
+			releasever = releasenotes[int(ver)].split('\n')
+			releasever = releasever[0].split(' ')
+			releasever = releasever[2].replace(':',"")
+		self["text"].setText(viewrelease)
 
 	def unattendedupdate(self):
 		self.close((_("Unattended upgrade without GUI and reboot system"), "cold"))
@@ -1168,8 +1180,7 @@ class UpdatePlugin(Screen):
 
 					if os_path.exists(self.swapdevice + "swapfile_upgrade"):
 						self.MemCheckConsole = Console()
-						self.MemCheckConsole.ePopen("swapoff" + self.swapdevice + "swapfile_upgrade")
-						remove(self.swapdevice + "swapfile_upgrade")
+						self.MemCheckConsole.ePopen("swapoff " + self.swapdevice + "swapfile_upgrade && rm " + self.swapdevice + "swapfile_upgrade")
 				else:
 					self.activityTimer.stop()
 					self.activityslider.setValue(0)

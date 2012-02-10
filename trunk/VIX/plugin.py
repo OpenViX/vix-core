@@ -20,31 +20,34 @@ from SoftcamManager import SoftcamAutostart
 from PowerManager import PowerManagerautostart, PowerManagerNextWakeup
 
 def checkConfigBackup():
-	devices = [ (r.description, r.mountpoint) for r in harddiskmanager.getMountedPartitions(onlyhotplug = False)]
-	list = []
-	images = ""
-	for x in devices:
-		if x[1] == '/':
-			devices.remove(x)
-	if len(devices):
+	try:
+		devices = [ (r.description, r.mountpoint) for r in harddiskmanager.getMountedPartitions(onlyhotplug = False)]
+		list = []
+		images = ""
 		for x in devices:
-			print '[RestoreWizard] Seraching devices:',x
-			if not x[1].endswith('/'):
-				if path.exists(x[1] + '/backup'):
-					images = listdir(x[1] + '/backup')
-			else:
-				if path.exists(x[1] + 'backup'):
-					images = listdir(x[1] + 'backup')
-			if len(images):
-				for fil in images:
-					if fil.endswith('.tar.gz') and fil.startswith(config.misc.boxtype.value):
-						if not x[1].endswith('/'):
-							list.append((x[1] + '/backup/' + fil,x[1] + '/backup/' + fil))
-						else:
-							list.append((x[1] + 'backup/' + fil,x[1] + 'backup/' + fil))
-	if len(list):
-		return True
-	else:
+			if x[1] == '/':
+				devices.remove(x)
+		if len(devices):
+			for x in devices:
+				print '[RestoreWizard] Seraching devices:',x
+				if not x[1].endswith('/'):
+					if path.exists(x[1] + '/backup'):
+						images = listdir(x[1] + '/backup')
+				else:
+					if path.exists(x[1] + 'backup'):
+						images = listdir(x[1] + 'backup')
+				if len(images):
+					for fil in images:
+						if fil.endswith('.tar.gz') and fil.startswith(config.misc.boxtype.value):
+							if not x[1].endswith('/'):
+								list.append((x[1] + '/backup/' + fil,x[1] + '/backup/' + fil))
+							else:
+								list.append((x[1] + 'backup/' + fil,x[1] + 'backup/' + fil))
+		if len(list):
+			return True
+		else:
+			return None
+	except:
 		return None
 
 if checkConfigBackup() is None:

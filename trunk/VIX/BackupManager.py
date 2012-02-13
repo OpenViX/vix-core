@@ -32,20 +32,20 @@ SETTINGSRESTOREQUESTIONID = 'RestoreSettingsNotification'
 PLUGINRESTOREQUESTIONID = 'RestorePluginsNotification'
 NOPLUGINS = 'NoPluginsNotification'
 
-MONTHS = (_("January"),
-          _("February"),
-          _("March"),
-          _("April"),
+MONTHS = (_("Jan"),
+          _("Feb"),
+          _("Mar"),
+          _("Apr"),
           _("May"),
-          _("June"),
-          _("July"),
-          _("August"),
-          _("September"),
-          _("October"),
-          _("November"),
-          _("December"))
+          _("Jun"),
+          _("Jul"),
+          _("Aug"),
+          _("Sep"),
+          _("Oct"),
+          _("Nov"),
+          _("Dec"))
 
-dayOfWeek = (_("Mon"), _("Tue"), _("Wed"), _("Thu"), _("Fri"), _("Sat"), _("Sun"))
+dayOfWeek = (_("Monday"), _("Tuesday"), _("Wednesday"), _("Thursday"), _("Friday"), _("Saturday"), _("Sunday"))
 
 def BackupManagerautostart(reason, session=None, **kwargs):
 	"called with reason=1 to during /sbin/shutdown.sysvinit, with reason=0 at startup?"

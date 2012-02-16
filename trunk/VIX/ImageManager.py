@@ -17,7 +17,7 @@ from Screens.Console import Console as RestareConsole
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from enigma import eTimer, getDesktop
-from os import path, system, mkdir, listdir, remove, statvfs
+from os import path, system, mkdir, listdir, remove, statvfs, chmod
 from shutil import rmtree, move, copy
 from time import localtime, time, strftime, mktime
 
@@ -1021,6 +1021,20 @@ class ImageBackup(Screen):
 		if path.exists(self.WORKDIR):
 			rmtree(self.WORKDIR)
 		if (path.exists(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2') and path.exists(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin')) or (path.exists(self.MAINDEST + '/' + config.misc.boxtype.value + '/rootfs.bin') and path.exists(self.MAINDEST + '/' + config.misc.boxtype.value + '/kernel.bin')):
+			chmod(self.MAINDEST, 0644)
+			if path.exists(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','')):
+				chmod(self.MAINDEST + '/vuplus/', 0644)
+				chmod(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu',''), 0644)
+				chmod(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2', 0644)
+				chmod(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin', 0644)
+				chmod(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/splash_cfe_auto.bin', 0644)
+			elif self.MAINDEST + '/' + config.misc.boxtype.value:
+				chmod(self.MAINDEST + '/' + config.misc.boxtype.value, 0644)
+				chmod(self.MAINDEST + '/' + config.misc.boxtype.value + '/rootfs.bin', 0644)
+				chmod(self.MAINDEST + '/' + config.misc.boxtype.value + '/kernel.bin', 0644)
+				chmod(self.MAINDEST + '/' + config.misc.boxtype.value + '/splash.bin', 0644)
+				chmod(self.MAINDEST + '/' + config.misc.boxtype.value + '/noforce', 0644)
+				chmod(self.MAINDEST + '/' + config.misc.boxtype.value + '/imageversion', 0644)
 			print '{ImageManager] Stage3: Image created in ' + self.MAINDEST
 			self.Stage3Complete()
 		else:

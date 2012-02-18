@@ -65,6 +65,7 @@ class VIXSoftcamManager(Screen):
 		self['lab1'] = Label(_('Select:'))
 		self['lab2'] = Label(_('Active:'))
 		self['activecam'] = Label()
+		self.onChangedEntry = [ ]
 
 		self.sentsingle = ""
 		self.selectedFiles = config.softcammanager.softcams_autostart.value
@@ -97,6 +98,10 @@ class VIXSoftcamManager(Screen):
 		if not self.selectionChanged in self["list"].onSelectionChanged:
 			self["list"].onSelectionChanged.append(self.selectionChanged)
 
+	def createSummary(self):
+		from Screens.PluginBrowser import PluginBrowserSummary
+		return PluginBrowserSummary
+
 	def createSetup(self):
 		self.session.open(VIXSoftcamMenu)
 
@@ -127,6 +132,9 @@ class VIXSoftcamManager(Screen):
 			else:
 				self["key_blue"].setText(_("Enable Startup"))
 			self.saveSelection()
+		desc = _('Active:') + ' ' + self['activecam'].text
+		for cb in self.onChangedEntry:
+			cb(selcam, desc)
 
 	def changeSelectionState(self):
 		cams = listdir('/usr/softcams')

@@ -10,6 +10,7 @@ from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Components.Harddisk import harddiskmanager, getProcMounts
 from Components.Console import Console
+from Components.Sources.StaticText import StaticText
 from os import system, stat as mystat, path, remove, rename
 from enigma import eTimer
 from glob import glob
@@ -101,6 +102,8 @@ class VIXSwap(Screen):
 		self['key_red'] = Label(_("Activate"))
 		self['key_green'] = Label(_("Create"))
 		self['key_yellow'] = Label(_("Autostart"))
+		self['swapname_summary'] = StaticText()
+		self['swapactive_summary'] = StaticText()
 		self.Console = Console()
 		self.swap_place = ''
 		self.new_place = ''
@@ -119,6 +122,7 @@ class VIXSwap(Screen):
 		self['inactive'].show()
 		self['labplace'].hide()
 		self['labsize'].hide()
+		self['swapactive_summary'].setText(_("Current Status:"))
 		scanning = _("Wait please while scanning...")
 		self['lab1'].setText(scanning)
 		self.activityTimer.start(10)
@@ -212,15 +216,20 @@ class VIXSwap(Screen):
 			self['inactive'].hide()
 			self['active'].show()
 			self['key_red'].setText(_("Deactivate"))
+			self['swapactive_summary'].setText(_("Current Status:") + ' ' + _("Active"))
 		else:
 			self['inactive'].show()
 			self['active'].hide()
 			self['key_red'].setText(_("Activate"))
+			self['swapactive_summary'].setText(_("Current Status:") + ' ' + _("Inactive"))
 
 		scanning = _("Enable Swap at startup")
 		self['lab1'].setText(scanning)
 		self['lab1'].show()
 		self["actions"].setEnabled(True)
+
+		name = self['labplace'].text
+		self['swapname_summary'].setText(name)
 
 	def actDeact(self):
 		if self.swap_active == True:

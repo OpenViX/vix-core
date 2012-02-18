@@ -10,8 +10,9 @@ from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Components.ConfigList import ConfigListScreen
 from Components.config import getConfigListEntry, config, ConfigSelection, NoSave, configfile
-from Components.Sources.List import List
 from Components.Console import Console
+from Components.Sources.List import List
+from Components.Sources.StaticText import StaticText
 from Tools.LoadPixmap import LoadPixmap
 from os import system, rename, path, mkdir, remove
 from time import sleep
@@ -50,6 +51,7 @@ class VIXDevicesPanel(Screen):
 		self['key_yellow'] = Label("Unmount")
 		self['key_blue'] = Label("Mount")
 		self['lab1'] = Label()
+		self.onChangedEntry = [ ]
 		self.list = []
 		self['list'] = List(self.list)
 		self["list"].onSelectionChanged.append(self.selectionChanged)
@@ -57,6 +59,9 @@ class VIXDevicesPanel(Screen):
 		self.activityTimer = eTimer()
 		self.activityTimer.timeout.get().append(self.updateList2)
 		self.updateList()
+
+	def createSummary(self):
+		return VIXDevicesPanelSummary
 
 	def selectionChanged(self):
 		if len(self.list) == 0:
@@ -73,6 +78,19 @@ class VIXDevicesPanel(Screen):
 					self["key_red"].setText(" ")
 			except:
 				pass
+		if self.sel:
+			print 'll:',self.sel
+			try:
+				name = str(self.sel[0])
+				desc = str(self.sel[1].replace('\t','  '))
+			except:
+				name = ""
+				desc = ""
+		else:
+			name = ""
+			desc = ""
+		for cb in self.onChangedEntry:
+			cb(name, desc)
 
 	def updateList(self, result = None, retval = None, extra_args = None):
 		scanning = _("Wait please while scanning for devices...")
@@ -453,3 +471,24 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 			self.session.open(TryQuitMainloop, 2)
 		else:
 			self.close()
+
+class VIXDevicesPanelSummary(Screen):
+	def __init__(self, session, parent):
+		Screen.__init__(self, session, parent = parent)
+		self["entry"] = StaticText("")
+		self["desc"] = StaticText("")
+		self.onShow.append(self.addWatcher)
+		self.onHide.append(self.removeWatcher)
+
+	def addWatcher(self):
+		self.parent.onChangedEntry.append(self.selectionChanged)
+		self.parent.selectionChanged()
+
+	def removeWatcher(self):
+		self.parent.onChangedEntry.remove(self.selectionChanged)
+
+	def selectionChanged(self, name, desc):
+		self["entry"].text = name
+		self["desc"].text = desc
+
+

@@ -96,7 +96,7 @@ class VIXPowerManager(ConfigListScreen, Screen):
 		self.skin = VIXPowerManager.skin
 		self.onChangedEntry = [ ]
 		self.list = []
-		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
+		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.selectionChanged)
 		self.createSetup()
 		
 		self["actions"] = NumberActionMap(["SetupActions", "MenuActions"],
@@ -107,6 +107,22 @@ class VIXPowerManager(ConfigListScreen, Screen):
 		}, -2)
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
+		self["config"].onSelectionChanged.append(self.selectionChanged)
+
+	def createSummary(self):
+		from Screens.PluginBrowser import PluginBrowserSummary
+		return PluginBrowserSummary
+
+	def selectionChanged(self):
+		item = self["config"].getCurrent()
+		if item:
+			name = self["config"].getCurrent()[0]
+			desc = str(self["config"].getCurrent()[1].getText())
+		else:
+			name = ""
+			desc = ""
+		for cb in self.onChangedEntry:
+			cb(name, desc)
 
 	def createSetup(self):
 		self.editListEntry = None
@@ -168,16 +184,6 @@ class VIXPowerManager(ConfigListScreen, Screen):
 		ConfigListScreen.keyRight(self)
 		print "current selection:", self["config"].l.getCurrentSelection()
 		self.createSetup()
-
-	def changedEntry(self):
-		for x in self.onChangedEntry:
-			x()
-
-	def getCurrentEntry(self):
-		return self["config"].getCurrent()[0]
-
-	def getCurrentValue(self):
-		return str(self["config"].getCurrent()[1].getText())
 
 	def doneConfiguring(self):
 		now = int(time())

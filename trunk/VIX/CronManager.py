@@ -4,13 +4,14 @@ from . import _
 from Components.ActionMap import ActionMap
 from Components.config import getConfigListEntry, config, ConfigText, ConfigSelection, ConfigInteger, ConfigClock, NoSave, configfile
 from Components.ConfigList import ConfigListScreen
+from Components.Console import Console
 from Components.Label import Label
 from Components.Sources.List import List
 from Components.Pixmap import Pixmap
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
-from Components.Console import Console
-from os import system, listdir, rename, symlink, unlink, path, mkdir
+from Tools.Directories import fileExists
+from os import system, listdir, rename, path, mkdir
 from time import sleep
 
 config.vixsettings.cronmanager_commandtype = NoSave(ConfigSelection(choices = [ ('custom',_("Custom")),('predefined',_("Predefined")) ]))
@@ -49,12 +50,14 @@ class VIXCronManager(Screen):
 		if not path.exists('/usr/scripts'):
 			mkdir('/usr/scripts', 0755)
 		Screen.setTitle(self, _("Cron Manager"))
+		self.onChangedEntry = [ ]
 		self['lab1'] = Label(_("Autostart:"))
 		self['labactive'] = Label(_(_("Active")))
 		self['labdisabled'] = Label(_(_("Disabled")))
 		self['lab2'] = Label(_("Current Status:"))
 		self['labstop'] = Label(_("Stopped"))
 		self['labrun'] = Label(_("Running"))
+		self.summary_running = ''
 		self['key'] = Label(_("H: = Hourly / D: = Daily / W: = Weekly / M: = Monthly"))
 		self.Console = Console()
 		self.my_crond_active = False
@@ -67,7 +70,25 @@ class VIXCronManager(Screen):
 		self.list = []
 		self['list'] = List(self.list)
 		self['actions'] = ActionMap(['WizardActions', 'ColorActions', "MenuActions"], {'ok': self.info, 'back': self.close, 'red': self.addtocron, 'green': self.delcron, 'yellow': self.CrondStart, 'blue': self.autostart, "menu": self.closeRecursive})
+		if not self.selectionChanged in self["list"].onSelectionChanged:
+			self["list"].onSelectionChanged.append(self.selectionChanged)
 		self.onLayoutFinish.append(self.updateList)
+
+	def createSummary(self):
+		from Screens.PluginBrowser import PluginBrowserSummary
+		return PluginBrowserSummary
+
+	def selectionChanged(self):
+		try:
+			if self["list"].getCurrent():
+				name = str(self["list"].getCurrent()[0])
+			else:
+				name = ""
+		except:
+				name = ""
+		desc = _("Current Status:") + ' ' +self.summary_running
+		for cb in self.onChangedEntry:
+			cb(name, desc)
 
 	def CrondStart(self):
 		if self.my_crond_run == False:
@@ -80,41 +101,11 @@ class VIXCronManager(Screen):
 			self.updateList()
 
 	def autostart(self):
-		if path.exists('/etc/rc0.d/K20busybox-cron'):
-			unlink('/etc/rc0.d/K20busybox-cron')
+		if fileExists('/etc/rc2.d/S20busybox-cron'):
+			self.Console.ePopen('update-rc.d -f busybox-cron remove')
 		else:
-			symlink('/etc/init.d/busybox-cron', '/etc/rc0.d/K20busybox-cron')
-
-		if path.exists('/etc/rc1.d/K20busybox-cron'):
-			unlink('/etc/rc1.d/K20busybox-cron')
-		else:
-			symlink('/etc/init.d/busybox-cron', '/etc/rc1.d/K20busybox-cron')
-
-		if path.exists('/etc/rc2.d/S20busybox-cron'):
-			unlink('/etc/rc2.d/S20busybox-cron')
-		else:
-			symlink('/etc/init.d/busybox-cron', '/etc/rc2.d/S20busybox-cron')
-
-		if path.exists('/etc/rc3.d/S20busybox-cron'):
-			unlink('/etc/rc3.d/S20busybox-cron')
-		else:
-			symlink('/etc/init.d/busybox-cron', '/etc/rc3.d/S20busybox-cron')
-
-		if path.exists('/etc/rc4.d/S20busybox-cron'):
-			unlink('/etc/rc4.d/S20busybox-cron')
-		else:
-			symlink('/etc/init.d/busybox-cron', '/etc/rc4.d/S20busybox-cron')
-
-		if path.exists('/etc/rc5.d/S20busybox-cron'):
-			unlink('/etc/rc5.d/S20busybox-cron')
-		else:
-			symlink('/etc/init.d/busybox-cron', '/etc/rc5.d/S20busybox-cron')
-
-		if path.exists('/etc/rc6.d/K20busybox-cron'):
-			unlink('/etc/rc6.d/K20busybox-cron')
-		else:
-			symlink('/etc/init.d/busybox-cron', '/etc/rc6.d/K20busybox-cron')
-
+			self.Console.ePopen('update-rc.d -f busybox-cron defaults')
+		sleep(3)
 		self.updateList()
 
 	def addtocron(self):
@@ -143,10 +134,12 @@ class VIXCronManager(Screen):
 			self['labstop'].hide()
 			self['labrun'].show()
 			self['key_yellow'].setText(_("Stop"))
+			self.summary_running = _("Running")
 		else:
 			self['labstop'].show()
 			self['labrun'].hide()
 			self['key_yellow'].setText(_("Start"))
+			self.summary_running = _("Stopped")
 
 		self.list = []
 		if path.exists('/etc/cron/crontabs/root'):

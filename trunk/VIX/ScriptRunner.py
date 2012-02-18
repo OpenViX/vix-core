@@ -34,6 +34,7 @@ class VIXScriptRunner(Screen):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("Script Runner"))
 		self['lab1'] = Label()
+		self.onChangedEntry = [ ]
 		self.list = []
 		self.populate_List()
 		self['list'] = MenuList(self.list)
@@ -48,6 +49,23 @@ class VIXScriptRunner(Screen):
 
 		self["key_red"] = Button(_("Close"))
 		self["key_green"] = Button(_("Run"))
+		if not self.selectionChanged in self["list"].onSelectionChanged:
+			self["list"].onSelectionChanged.append(self.selectionChanged)
+
+	def createSummary(self):
+		from Screens.PluginBrowser import PluginBrowserSummary
+		return PluginBrowserSummary
+
+	def selectionChanged(self):
+		item = self["list"].getCurrent()
+		if item:
+			name = item
+			desc = ""
+		else:
+			name = ""
+			desc = ""
+		for cb in self.onChangedEntry:
+			cb(name, desc)
 		
 	def populate_List(self):
 		if not path.exists('/usr/scripts'):

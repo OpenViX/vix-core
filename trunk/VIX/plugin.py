@@ -90,17 +90,17 @@ class VIXMenu(Screen):
 		self.menu = args
 		self.list = []
 		if self.menu == 0:
-			self.list.append(("backup-manager", _("Backup Manager"), _("\nManage your backups of your settings." ), None))
-			self.list.append(("cron-manager", _("Cron Manager"), _("\nManage your cron jobs." ), None))
-			self.list.append(("image-manager", _("Image Manager"), _("\nCreate and Restore complete images of the system." ), None))
-			self.list.append(("ipkg-install", _("Install local extension"),  _("\nInstall IPK's from your tmp folder." ), None))
-			self.list.append(("install-extensions", _("Manage Extensions"), _("\nManage extensions or plugins for your receiver" ), None))
-			self.list.append(("mount-manager",_("Mount Manager"), _("\nManage you devices mountpoints." ), None))
-			self.list.append(("ipkg-manager", _("Packet Manager"),  _("\nView, install and remove available or installed packages." ), None))
-			self.list.append(("power-manager",_("Power Manager"), _("\nCreate schedules for Standby, Restart GUI, DeepStandby and Reboot."), None))
-			self.list.append(("script-runner",_("Script Runner"), _("\nRun your shell scripts." ), None))
-			self.list.append(("software-update", _("Software Update"), _("\nOnline update of your Receiver software." ), None))
-			self.list.append(("swap-manager",_("Swap Manager"), _("\nCreate and Manage your swapfiles." ), None))
+			self.list.append(("backup-manager", _("Backup Manager"), _("Manage your backups of your settings." ), None))
+			self.list.append(("cron-manager", _("Cron Manager"), _("Manage your cron jobs." ), None))
+			self.list.append(("image-manager", _("Image Manager"), _("Create and Restore complete images of the system." ), None))
+			self.list.append(("ipkg-install", _("Install local extension"),  _("Install IPK's from your tmp folder." ), None))
+			self.list.append(("install-extensions", _("Manage Extensions"), _("Manage extensions or plugins for your receiver" ), None))
+			self.list.append(("mount-manager",_("Mount Manager"), _("Manage you devices mountpoints." ), None))
+			self.list.append(("ipkg-manager", _("Packet Manager"),  _("View, install and remove available or installed packages." ), None))
+			self.list.append(("power-manager",_("Power Manager"), _("Create schedules for Standby, Restart GUI, DeepStandby and Reboot."), None))
+			self.list.append(("script-runner",_("Script Runner"), _("Run your shell scripts." ), None))
+			self.list.append(("software-update", _("Software Update"), _("Online update of your Receiver software." ), None))
+			self.list.append(("swap-manager",_("Swap Manager"), _("Create and Manage your swapfiles." ), None))
 		self["menu"] = List(self.list)
 		self["key_red"] = StaticText(_("Close"))
 
@@ -178,25 +178,6 @@ class VIXMenu(Screen):
 
 	def closeRecursive(self):
 		self.close(True)
-
-class VIXMenuSummary(Screen):
-	def __init__(self, session, parent):
-		Screen.__init__(self, session, parent = parent)
-		self["entry"] = StaticText("")
-		self["desc"] = StaticText("")
-		self.onShow.append(self.addWatcher)
-		self.onHide.append(self.removeWatcher)
-
-	def addWatcher(self):
-		self.parent.onChangedEntry.append(self.selectionChanged)
-		self.parent.selectionChanged()
-
-	def removeWatcher(self):
-		self.parent.onChangedEntry.remove(self.selectionChanged)
-
-	def selectionChanged(self, name, desc):
-		self["entry"].text = name
-		self["desc"].text = desc
 
 def UpgradeMain(session, **kwargs):
 	session.open(VIXMenu)

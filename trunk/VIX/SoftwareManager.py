@@ -940,6 +940,8 @@ class SoftwareUpdateChanges(Screen):
 		Screen.__init__(self, session)
 		self.setTitle(_("View Changes"))
 		self["text"] = ScrollLabel()
+		self['title_summary'] = StaticText()
+		self['text_summary'] = StaticText()
 		self["key_red"] = Button(_("Close"))
 		self["key_green"] = Button(_("Unattended"))
 		self["key_yellow"] = Button(_("Normal"))
@@ -989,6 +991,9 @@ class SoftwareUpdateChanges(Screen):
 			releasever = releasever[0].split(' ')
 			releasever = releasever[2].replace(':',"")
 		self["text"].setText(viewrelease)
+		summarytext = viewrelease.split(':\n')
+		self['title_summary'].setText(summarytext[0]+':')
+		self['text_summary'].setText(summarytext[1])
 
 	def unattendedupdate(self):
 		self.close((_("Unattended upgrade without GUI and reboot system"), "cold"))

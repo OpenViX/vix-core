@@ -102,6 +102,21 @@ class VIXImageManager(Screen):
 		if not self.selectionChanged in self["list"].onSelectionChanged:
 			self["list"].onSelectionChanged.append(self.selectionChanged)
 
+	def createSummary(self):
+		from Screens.PluginBrowser import PluginBrowserSummary
+		return PluginBrowserSummary
+
+	def selectionChanged(self):
+		item = self["list"].getCurrent()
+		if item:
+			name = item
+			desc = self["backupstatus"].text
+		else:
+			name = ""
+			desc = ""
+		for cb in self.onChangedEntry:
+			cb(name, desc)
+		
 	def backupRunning(self):
 		self.BackupRunning = False
 		for job in Components.Task.job_manager.getPendingJobs():
@@ -140,10 +155,6 @@ class VIXImageManager(Screen):
 		if self['list'].getCurrent():
 			self["list"].instance.moveSelection(self["list"].instance.moveDown)
 
-	def selectionChanged(self):
-		for x in self.onChangedEntry:
-			x()
-		
 	def getJobName(self, job):
 		return "%s: %s (%d%%)" % (job.getStatustext(), job.name, int(100*job.progress/float(job.end)))
 

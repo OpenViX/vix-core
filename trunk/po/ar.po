@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-05 16:52+0000\n"
+"POT-Creation-Date: 2012-02-18 11:55+0000\n"
 "PO-Revision-Date: 2011-07-11 16:05+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,67 +23,12 @@ msgstr ""
 
 msgid ""
 "\n"
-"Create and Manage your swapfiles."
-msgstr ""
-
-msgid ""
-"\n"
-"Create and Restore complete images of the system."
-msgstr ""
-
-msgid ""
-"\n"
-"Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-msgstr ""
-
-msgid ""
-"\n"
-"Install IPK's from your tmp folder."
-msgstr ""
-
-msgid ""
-"\n"
-"Manage extensions or plugins for your receiver"
-msgstr ""
-
-msgid ""
-"\n"
-"Manage you devices mountpoints."
-msgstr ""
-
-msgid ""
-"\n"
-"Manage your backups of your settings."
-msgstr ""
-
-msgid ""
-"\n"
-"Manage your cron jobs."
-msgstr ""
-
-msgid ""
-"\n"
-"Online update of your Receiver software."
-msgstr ""
-
-msgid ""
-"\n"
-"Run your shell scripts."
-msgstr ""
-
-msgid ""
-"\n"
 "Select a backup to Restore / Delete:"
 msgstr ""
 
 msgid ""
 "\n"
 "Select an image to Restore / Delete:"
-msgstr ""
-
-msgid ""
-"\n"
-"View, install and remove available or installed packages."
 msgstr ""
 
 msgid ""
@@ -139,6 +84,9 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+msgid "Apr"
+msgstr ""
+
 msgid "April"
 msgstr ""
 
@@ -172,6 +120,9 @@ msgstr ""
 msgid ""
 "Are you sure you want to restore this backup:\n"
 " "
+msgstr ""
+
+msgid "Aug"
 msgstr ""
 
 msgid "August"
@@ -279,6 +230,15 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
+msgid "Create and Manage your swapfiles."
+msgstr ""
+
+msgid "Create and Restore complete images of the system."
+msgstr ""
+
+msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
+msgstr ""
+
 msgid "Creating Backup Files..."
 msgstr ""
 
@@ -301,6 +261,9 @@ msgid "Daily"
 msgstr ""
 
 msgid "Deactivate"
+msgstr ""
+
+msgid "Dec"
 msgstr ""
 
 msgid "December"
@@ -387,9 +350,6 @@ msgstr ""
 msgid "Enable Auto Timer Check ?"
 msgstr ""
 
-msgid "Enable Debug log"
-msgstr ""
-
 msgid "Enable Deep Standby"
 msgstr ""
 
@@ -417,10 +377,13 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-msgid "Exit the cleanup wizard"
+msgid "Exit the restore wizard"
 msgstr ""
 
 msgid "Extensions management"
+msgstr ""
+
+msgid "Feb"
 msgstr ""
 
 msgid "February"
@@ -483,6 +446,9 @@ msgstr ""
 msgid "Install Confirmation"
 msgstr ""
 
+msgid "Install IPK's from your tmp folder."
+msgstr ""
+
 msgid "Install local extension"
 msgstr ""
 
@@ -498,10 +464,19 @@ msgstr ""
 msgid "Installing..."
 msgstr ""
 
+msgid "Jan"
+msgstr ""
+
 msgid "January"
 msgstr ""
 
+msgid "Jul"
+msgstr ""
+
 msgid "July"
+msgstr ""
+
+msgid "Jun"
 msgstr ""
 
 msgid "June"
@@ -514,6 +489,21 @@ msgid "MGcamd can't run whilst CCcam is running"
 msgstr ""
 
 msgid "Manage Extensions"
+msgstr ""
+
+msgid "Manage extensions or plugins for your receiver"
+msgstr ""
+
+msgid "Manage you devices mountpoints."
+msgstr ""
+
+msgid "Manage your backups of your settings."
+msgstr ""
+
+msgid "Manage your cron jobs."
+msgstr ""
+
+msgid "Mar"
 msgstr ""
 
 msgid "March"
@@ -609,10 +599,19 @@ msgstr ""
 msgid "None"
 msgstr ""
 
+msgid "Normal"
+msgstr ""
+
 msgid "Nothing to upgrade"
 msgstr ""
 
+msgid "Nov"
+msgstr ""
+
 msgid "November"
+msgstr ""
+
+msgid "Now skipping restore process"
 msgstr ""
 
 msgid "OK"
@@ -621,13 +620,13 @@ msgstr ""
 msgid "OK, to perform a restore"
 msgstr ""
 
+msgid "Oct"
+msgstr ""
+
 msgid "October"
 msgstr ""
 
-msgid ""
-"Offline upgrade in progress\n"
-"Please wait until your box reboots\n"
-"This may take a few minutes"
+msgid "Online update of your Receiver software."
 msgstr ""
 
 msgid "Only extensions."
@@ -687,9 +686,6 @@ msgid "Press OK on your remote control to continue."
 msgstr ""
 
 msgid "Process"
-msgstr ""
-
-msgid "Re-install Plugins"
 msgstr ""
 
 msgid "Really close without saving settings?"
@@ -758,11 +754,6 @@ msgstr ""
 msgid "Restore Wizard"
 msgstr ""
 
-msgid ""
-"Restore wizard has detected that you had extra plugins installed at the time "
-"of you backup, Do you want to reinstall these plugins ?"
-msgstr ""
-
 msgid "Restoring backup..."
 msgstr ""
 
@@ -779,6 +770,9 @@ msgid "Run Confirmation"
 msgstr ""
 
 msgid "Run how often ?"
+msgstr ""
+
+msgid "Run your shell scripts."
 msgstr ""
 
 msgid "Running"
@@ -827,6 +821,9 @@ msgid "Select the Swap File Size:"
 msgstr ""
 
 msgid "Select:"
+msgstr ""
+
+msgid "Sep"
 msgstr ""
 
 msgid "September"
@@ -984,6 +981,15 @@ msgstr ""
 msgid "Type: "
 msgstr ""
 
+msgid "Unattended"
+msgstr ""
+
+msgid ""
+"Unattended upgrade in progress\n"
+"Please wait until your receiver reboots\n"
+"This may take a few minutes"
+msgstr ""
+
 msgid "Unattended upgrade without GUI and reboot system"
 msgstr ""
 
@@ -1021,6 +1027,9 @@ msgid "VIXMenu"
 msgstr ""
 
 msgid "ViX"
+msgstr ""
+
+msgid "View Changes"
 msgstr ""
 
 msgid "View Progress"
@@ -1066,6 +1075,12 @@ msgid "View list of available software extensions"
 msgstr ""
 
 msgid "View list of available system extensions"
+msgstr ""
+
+msgid "View the changes"
+msgstr ""
+
+msgid "View, install and remove available or installed packages."
 msgstr ""
 
 msgid "Wait please while creating swapfile..."

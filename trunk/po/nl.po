@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-17 17:08+0000\n"
-"PO-Revision-Date: 2012-01-18 06:51+0100\n"
+"POT-Creation-Date: 2012-02-18 11:55+0000\n"
+"PO-Revision-Date: 2012-02-18 13:26+0100\n"
 "Last-Translator: R.L. van der Does\n"
 "Language-Team: Andy Blackburn/Rob van der Does\n"
 "Language: nl\n"
@@ -29,76 +29,6 @@ msgstr ""
 
 msgid ""
 "\n"
-"Create and Manage your swapfiles."
-msgstr ""
-"\n"
-"Creëer en beheer uw swapfiles."
-
-msgid ""
-"\n"
-"Create and Restore complete images of the system."
-msgstr ""
-"\n"
-"Creëer en herstel complete images van het systeem."
-
-msgid ""
-"\n"
-"Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-msgstr ""
-"\n"
-"Creëer schema's voor Standby, Herstarten GUI, DeepStandby en Reboot."
-
-msgid ""
-"\n"
-"Install IPK's from your tmp folder."
-msgstr ""
-"\n"
-"Installeer IPK's van uw tmp map."
-
-msgid ""
-"\n"
-"Manage extensions or plugins for your receiver"
-msgstr ""
-"\n"
-"Beheer extensies of plugins voor uw ontvanger"
-
-msgid ""
-"\n"
-"Manage you devices mountpoints."
-msgstr ""
-"\n"
-"Beheer de mountpoints van uw apparaten."
-
-msgid ""
-"\n"
-"Manage your backups of your settings."
-msgstr ""
-"\n"
-"Beheer de backups van uw instellingen."
-
-msgid ""
-"\n"
-"Manage your cron jobs."
-msgstr ""
-"\n"
-"Beheer uw cron jobs."
-
-msgid ""
-"\n"
-"Online update of your Receiver software."
-msgstr ""
-"\n"
-"Online update van uw ontvanger."
-
-msgid ""
-"\n"
-"Run your shell scripts."
-msgstr ""
-"\n"
-"Voer uw shell scripts uit."
-
-msgid ""
-"\n"
 "Select a backup to Restore / Delete:"
 msgstr ""
 "\n"
@@ -110,13 +40,6 @@ msgid ""
 msgstr ""
 "\n"
 "Selecteer een image om te herstellen/verwijderen:"
-
-msgid ""
-"\n"
-"View, install and remove available or installed packages."
-msgstr ""
-"\n"
-"Toon, installeer en verwijder beschikbare of geïnstalleerde packages."
 
 msgid ""
 "\n"
@@ -175,6 +98,9 @@ msgstr "Actief:"
 msgid "Add"
 msgstr "Voeg toe"
 
+msgid "Apr"
+msgstr "apr"
+
 msgid "April"
 msgstr "april"
 
@@ -217,6 +143,9 @@ msgid ""
 msgstr ""
 "Weet u zeker dat u deze backup wilt herstellen:\n"
 " "
+
+msgid "Aug"
+msgstr "aug"
 
 msgid "August"
 msgstr "augustus"
@@ -321,6 +250,15 @@ msgstr "Ga door"
 msgid "Create"
 msgstr "Creëer"
 
+msgid "Create and Manage your swapfiles."
+msgstr "Creëer en beheer uw swapfiles."
+
+msgid "Create and Restore complete images of the system."
+msgstr "Creëer en herstel complete images van het systeem."
+
+msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
+msgstr "Creëer schema's voor Standby, Herstarten GUI, DeepStandby en Reboot."
+
 msgid "Creating Backup Files..."
 msgstr "Creëer backup bestanden"
 
@@ -344,6 +282,9 @@ msgstr "Dagelijks"
 
 msgid "Deactivate"
 msgstr "De-activeer"
+
+msgid "Dec"
+msgstr "dec"
 
 msgid "December"
 msgstr "december"
@@ -464,6 +405,9 @@ msgstr "Beeindig de herstel wizard"
 msgid "Extensions management"
 msgstr "Beheer van Extensies"
 
+msgid "Feb"
+msgstr "feb"
+
 msgid "February"
 msgstr "februari"
 
@@ -524,6 +468,9 @@ msgstr "Installeer"
 msgid "Install Confirmation"
 msgstr "Installatie bevestiging"
 
+msgid "Install IPK's from your tmp folder."
+msgstr "Installeer IPK's van uw tmp map."
+
 msgid "Install local extension"
 msgstr "Installeer lokale extensie"
 
@@ -539,11 +486,20 @@ msgstr "Installeert"
 msgid "Installing..."
 msgstr "Installeert...."
 
+msgid "Jan"
+msgstr "jan"
+
 msgid "January"
 msgstr "januari"
 
+msgid "Jul"
+msgstr "jul"
+
 msgid "July"
 msgstr "juli"
+
+msgid "Jun"
+msgstr "jun"
 
 msgid "June"
 msgstr "juni"
@@ -556,6 +512,21 @@ msgstr "MGcamd en CCcam kunnen niet beide actief zijn"
 
 msgid "Manage Extensions"
 msgstr "Beheer extensies"
+
+msgid "Manage extensions or plugins for your receiver"
+msgstr "Beheer extensies of plugins voor uw ontvanger"
+
+msgid "Manage you devices mountpoints."
+msgstr "Beheer de mountpoints van uw apparaten."
+
+msgid "Manage your backups of your settings."
+msgstr "Beheer de backups van uw instellingen."
+
+msgid "Manage your cron jobs."
+msgstr "Beheer uw cron jobs."
+
+msgid "Mar"
+msgstr "mar"
 
 msgid "March"
 msgstr "maart"
@@ -663,6 +634,9 @@ msgstr "Normaal"
 msgid "Nothing to upgrade"
 msgstr "Geen upgrade beschikbaar"
 
+msgid "Nov"
+msgstr "nov"
+
 msgid "November"
 msgstr "november"
 
@@ -675,8 +649,14 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "JA, voer een herstel actie uit"
 
+msgid "Oct"
+msgstr "okt"
+
 msgid "October"
 msgstr "oktober"
+
+msgid "Online update of your Receiver software."
+msgstr "Online update van uw ontvanger."
 
 msgid "Only extensions."
 msgstr "Alleen extensies"
@@ -819,6 +799,9 @@ msgstr "Bevestig uitvoeren"
 msgid "Run how often ?"
 msgstr "Hoe vaak uitvoeren?"
 
+msgid "Run your shell scripts."
+msgstr "Voer uw shell scripts uit."
+
 msgid "Running"
 msgstr "Loopt"
 
@@ -866,6 +849,9 @@ msgstr "Selecteer de Swap File grootte:"
 
 msgid "Select:"
 msgstr "Selecteer:"
+
+msgid "Sep"
+msgstr "sep"
 
 msgid "September"
 msgstr "september"
@@ -1119,6 +1105,9 @@ msgstr "Toon lijst met beschikbare systeem extensies"
 msgid "View the changes"
 msgstr "Bekijk de veranderingen"
 
+msgid "View, install and remove available or installed packages."
+msgstr "Toon, installeer en verwijder beschikbare of geïnstalleerde packages."
+
 msgid "Wait please while creating swapfile..."
 msgstr "Een ogenblik geduld terwijl de swapfile gemaakt wordt...."
 
@@ -1259,3 +1248,4 @@ msgstr "onbekend"
 
 msgid "your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver."
 msgstr "Uw ontvanger kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens de ontvanger opnieuw te starten."
+

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-05 16:52+0000\n"
+"POT-Creation-Date: 2012-02-18 11:55+0000\n"
 "PO-Revision-Date: 2011-12-05 15:43+0100\n"
 "Last-Translator: belierzz <belierzz@gmx.net>\n"
 "Language-Team: none\n"
@@ -28,76 +28,6 @@ msgstr ""
 
 msgid ""
 "\n"
-"Create and Manage your swapfiles."
-msgstr ""
-"\n"
-"Erstellen und Verwalten von Auslagerungsdateien."
-
-msgid ""
-"\n"
-"Create and Restore complete images of the system."
-msgstr ""
-"\n"
-"Erstellen und Wiederherstellen kompletter System-Abbilder."
-
-msgid ""
-"\n"
-"Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-msgstr ""
-"\n"
-"Zeitpläne für Standby, Neustart GUI, Deep-Standby und Neustart erstellen."
-
-msgid ""
-"\n"
-"Install IPK's from your tmp folder."
-msgstr ""
-"\n"
-"IPK-Dateien aus tmp-Verzeichnis installieren."
-
-msgid ""
-"\n"
-"Manage extensions or plugins for your receiver"
-msgstr ""
-"\n"
-"Erweiterungen / Plugins für den Receiver verwalten."
-
-msgid ""
-"\n"
-"Manage you devices mountpoints."
-msgstr ""
-"\n"
-"Geräte-Mountpoints verwalten."
-
-msgid ""
-"\n"
-"Manage your backups of your settings."
-msgstr ""
-"\n"
-"Einstellungs-Backups verwalten."
-
-msgid ""
-"\n"
-"Manage your cron jobs."
-msgstr ""
-"\n"
-"Cron-Jobs verwalten."
-
-msgid ""
-"\n"
-"Online update of your Receiver software."
-msgstr ""
-"\n"
-"Online-Update der Receiver-Software."
-
-msgid ""
-"\n"
-"Run your shell scripts."
-msgstr ""
-"\n"
-" Shell-Scripts ausführen."
-
-msgid ""
-"\n"
 "Select a backup to Restore / Delete:"
 msgstr ""
 "\n"
@@ -109,13 +39,6 @@ msgid ""
 msgstr ""
 "\n"
 "Image zum Wiederherstellen / Löschen auswählen:"
-
-msgid ""
-"\n"
-"View, install and remove available or installed packages."
-msgstr ""
-"\n"
-"Verfügbare oder installierte Pakete betrachten, installieren oder entfernen. "
 
 msgid ""
 "\n"
@@ -174,6 +97,9 @@ msgstr "Active:"
 msgid "Add"
 msgstr "Hinzufügen"
 
+msgid "Apr"
+msgstr ""
+
 msgid "April"
 msgstr "April"
 
@@ -214,6 +140,9 @@ msgid ""
 msgstr ""
 "Dieses Backup jetzt wiederherstellen:\n"
 " "
+
+msgid "Aug"
+msgstr ""
 
 msgid "August"
 msgstr "August"
@@ -326,6 +255,15 @@ msgstr "Fortfahren"
 msgid "Create"
 msgstr "Erstellen"
 
+msgid "Create and Manage your swapfiles."
+msgstr ""
+
+msgid "Create and Restore complete images of the system."
+msgstr ""
+
+msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
+msgstr ""
+
 msgid "Creating Backup Files..."
 msgstr "Backup-Dateien werden erstellt..."
 
@@ -349,6 +287,9 @@ msgstr "Täglich"
 
 msgid "Deactivate"
 msgstr "Deaktivieren"
+
+msgid "Dec"
+msgstr ""
 
 msgid "December"
 msgstr "Dezember"
@@ -436,9 +377,6 @@ msgstr "Electronic Program Guide"
 msgid "Enable Auto Timer Check ?"
 msgstr "Autotimer-Prüfung aktivieren?"
 
-msgid "Enable Debug log"
-msgstr "Debug Log aktivieren"
-
 msgid "Enable Deep Standby"
 msgstr "Deep-Standby aktivieren"
 
@@ -466,11 +404,14 @@ msgstr "Zu viele Versuche, bis zur nächsten Zeitplan-Aktion zurückgestellt."
 msgid "Error"
 msgstr "Fehler"
 
-msgid "Exit the cleanup wizard"
+msgid "Exit the restore wizard"
 msgstr ""
 
 msgid "Extensions management"
 msgstr "Erweiterungs-Management"
+
+msgid "Feb"
+msgstr ""
 
 msgid "February"
 msgstr "Februar"
@@ -536,6 +477,9 @@ msgstr "Installieren"
 msgid "Install Confirmation"
 msgstr "Bestätigung der Installation"
 
+msgid "Install IPK's from your tmp folder."
+msgstr ""
+
 msgid "Install local extension"
 msgstr "IPK-Dateien installieren"
 
@@ -551,11 +495,20 @@ msgstr "Installiert"
 msgid "Installing..."
 msgstr "Installiert..."
 
+msgid "Jan"
+msgstr ""
+
 msgid "January"
 msgstr "Januar"
 
+msgid "Jul"
+msgstr ""
+
 msgid "July"
 msgstr "Juli"
+
+msgid "Jun"
+msgstr ""
 
 msgid "June"
 msgstr "Juni"
@@ -568,6 +521,21 @@ msgstr "Während CCcam läuft kann MGcamd nicht ausgeführt werden"
 
 msgid "Manage Extensions"
 msgstr "Erweiterungs-Manager"
+
+msgid "Manage extensions or plugins for your receiver"
+msgstr ""
+
+msgid "Manage you devices mountpoints."
+msgstr ""
+
+msgid "Manage your backups of your settings."
+msgstr ""
+
+msgid "Manage your cron jobs."
+msgstr ""
+
+msgid "Mar"
+msgstr ""
 
 msgid "March"
 msgstr "März"
@@ -672,11 +640,20 @@ msgstr ""
 msgid "None"
 msgstr "Keine"
 
+msgid "Normal"
+msgstr ""
+
 msgid "Nothing to upgrade"
 msgstr "Keine Upgrades verfügbar"
 
+msgid "Nov"
+msgstr ""
+
 msgid "November"
 msgstr "November"
+
+msgid "Now skipping restore process"
+msgstr ""
 
 msgid "OK"
 msgstr "OK"
@@ -684,17 +661,14 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr ""
 
+msgid "Oct"
+msgstr ""
+
 msgid "October"
 msgstr "Oktober"
 
-msgid ""
-"Offline upgrade in progress\n"
-"Please wait until your box reboots\n"
-"This may take a few minutes"
+msgid "Online update of your Receiver software."
 msgstr ""
-"Upgrade wird im Hintergrund ausgeführt\n"
-"Bitte warten bis die Box neu startet\n"
-"Das kann ein paar Minuten dauern"
 
 msgid "Only extensions."
 msgstr "Nur Erweiterungen."
@@ -756,9 +730,6 @@ msgstr "Zum Fortfahren OK auf der Fernbedienung drücken"
 
 msgid "Process"
 msgstr "Verarbeiten"
-
-msgid "Re-install Plugins"
-msgstr "Plugins neu installieren"
 
 msgid "Really close without saving settings?"
 msgstr "Wirklich ohne speichern der Einstellungen beenden?"
@@ -826,14 +797,6 @@ msgstr ""
 msgid "Restore Wizard"
 msgstr ""
 
-msgid ""
-"Restore wizard has detected that you had extra plugins installed at the time "
-"of you backup, Do you want to reinstall these plugins ?"
-msgstr ""
-"Der Wiederherstellungs-Wizard hat festgestellt, dass zum Zeitpunkt der "
-"Sicherung zusätzliche Plugins installiert waren. Sollen diese Plugins neu "
-"installiert werden?"
-
 msgid "Restoring backup..."
 msgstr "Backup wiederherstellen..."
 
@@ -851,6 +814,9 @@ msgstr "Ausführung bestätigen"
 
 msgid "Run how often ?"
 msgstr "Wie oft ausführen?"
+
+msgid "Run your shell scripts."
+msgstr ""
 
 msgid "Running"
 msgstr "Läuft"
@@ -899,6 +865,9 @@ msgstr "Größe der Auslagerungsdatei auswählen:"
 
 msgid "Select:"
 msgstr "Auswählen:"
+
+msgid "Sep"
+msgstr ""
 
 msgid "September"
 msgstr "September"
@@ -1062,6 +1031,15 @@ msgstr "Dienstag"
 msgid "Type: "
 msgstr "Typ: "
 
+msgid "Unattended"
+msgstr ""
+
+msgid ""
+"Unattended upgrade in progress\n"
+"Please wait until your receiver reboots\n"
+"This may take a few minutes"
+msgstr ""
+
 msgid "Unattended upgrade without GUI and reboot system"
 msgstr "Upgrade im Hintergrund ohne Benutzerführung und Systemneustart"
 
@@ -1100,6 +1078,9 @@ msgstr "VIX-Menü"
 
 msgid "ViX"
 msgstr "ViX"
+
+msgid "View Changes"
+msgstr ""
 
 msgid "View Progress"
 msgstr "Fortschritt anzeigen"
@@ -1146,6 +1127,12 @@ msgstr "Anzeigen der Liste verfügbarer Software-Erweiterungen"
 
 msgid "View list of available system extensions"
 msgstr "Anzeigen der Liste verfügbarer System-Erweiterungen"
+
+msgid "View the changes"
+msgstr ""
+
+msgid "View, install and remove available or installed packages."
+msgstr ""
 
 msgid "Wait please while creating swapfile..."
 msgstr "WÄhrend der Erstellung derAUslagerungsdatei bitte warten..."
@@ -1299,6 +1286,84 @@ msgstr ""
 "NEUSTART unbedingt die Bedienungsanleitung für weitere Unterstützung "
 "konsultieren."
 
+#~ msgid ""
+#~ "\n"
+#~ "Create and Manage your swapfiles."
+#~ msgstr ""
+#~ "\n"
+#~ "Erstellen und Verwalten von Auslagerungsdateien."
+
+#~ msgid ""
+#~ "\n"
+#~ "Create and Restore complete images of the system."
+#~ msgstr ""
+#~ "\n"
+#~ "Erstellen und Wiederherstellen kompletter System-Abbilder."
+
+#~ msgid ""
+#~ "\n"
+#~ "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
+#~ msgstr ""
+#~ "\n"
+#~ "Zeitpläne für Standby, Neustart GUI, Deep-Standby und Neustart erstellen."
+
+#~ msgid ""
+#~ "\n"
+#~ "Install IPK's from your tmp folder."
+#~ msgstr ""
+#~ "\n"
+#~ "IPK-Dateien aus tmp-Verzeichnis installieren."
+
+#~ msgid ""
+#~ "\n"
+#~ "Manage extensions or plugins for your receiver"
+#~ msgstr ""
+#~ "\n"
+#~ "Erweiterungen / Plugins für den Receiver verwalten."
+
+#~ msgid ""
+#~ "\n"
+#~ "Manage you devices mountpoints."
+#~ msgstr ""
+#~ "\n"
+#~ "Geräte-Mountpoints verwalten."
+
+#~ msgid ""
+#~ "\n"
+#~ "Manage your backups of your settings."
+#~ msgstr ""
+#~ "\n"
+#~ "Einstellungs-Backups verwalten."
+
+#~ msgid ""
+#~ "\n"
+#~ "Manage your cron jobs."
+#~ msgstr ""
+#~ "\n"
+#~ "Cron-Jobs verwalten."
+
+#~ msgid ""
+#~ "\n"
+#~ "Online update of your Receiver software."
+#~ msgstr ""
+#~ "\n"
+#~ "Online-Update der Receiver-Software."
+
+#~ msgid ""
+#~ "\n"
+#~ "Run your shell scripts."
+#~ msgstr ""
+#~ "\n"
+#~ " Shell-Scripts ausführen."
+
+#~ msgid ""
+#~ "\n"
+#~ "View, install and remove available or installed packages."
+#~ msgstr ""
+#~ "\n"
+#~ "Verfügbare oder installierte Pakete betrachten, installieren oder "
+#~ "entfernen. "
+
 #~ msgid " "
 #~ msgstr " "
 
@@ -1317,6 +1382,9 @@ msgstr ""
 
 #~ msgid "Do you want to restore your settings?"
 #~ msgstr "Wollen Sie Ihre Einstellungen wiederherstellen?"
+
+#~ msgid "Enable Debug log"
+#~ msgstr "Debug Log aktivieren"
 
 #~ msgid "Erasing Kernel..."
 #~ msgstr "Lösche Kernel..."
@@ -1338,11 +1406,31 @@ msgstr ""
 #~ msgid "No"
 #~ msgstr "Nein"
 
+#~ msgid ""
+#~ "Offline upgrade in progress\n"
+#~ "Please wait until your box reboots\n"
+#~ "This may take a few minutes"
+#~ msgstr ""
+#~ "Upgrade wird im Hintergrund ausgeführt\n"
+#~ "Bitte warten bis die Box neu startet\n"
+#~ "Das kann ein paar Minuten dauern"
+
 #~ msgid "Please copy the folder"
 #~ msgstr "Bitte den Ordner kopieren"
 
+#~ msgid "Re-install Plugins"
+#~ msgstr "Plugins neu installieren"
+
 #~ msgid "Restore is running..."
 #~ msgstr "Wiederherstellung wird ausgeführt..."
+
+#~ msgid ""
+#~ "Restore wizard has detected that you had extra plugins installed at the "
+#~ "time of you backup, Do you want to reinstall these plugins ?"
+#~ msgstr ""
+#~ "Der Wiederherstellungs-Wizard hat festgestellt, dass zum Zeitpunkt der "
+#~ "Sicherung zusätzliche Plugins installiert waren. Sollen diese Plugins neu "
+#~ "installiert werden?"
 
 #~ msgid "Restoring Kernel..."
 #~ msgstr "Kernel wiederherstellen..."

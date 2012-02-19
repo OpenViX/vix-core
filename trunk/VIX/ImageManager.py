@@ -108,12 +108,11 @@ class VIXImageManager(Screen):
 
 	def selectionChanged(self):
 		item = self["list"].getCurrent()
+		desc = self["backupstatus"].text
 		if item:
 			name = item
-			desc = self["backupstatus"].text
 		else:
 			name = ""
-			desc = ""
 		for cb in self.onChangedEntry:
 			cb(name, desc)
 		

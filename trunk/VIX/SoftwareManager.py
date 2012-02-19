@@ -992,8 +992,12 @@ class SoftwareUpdateChanges(Screen):
 			releasever = releasever[2].replace(':',"")
 		self["text"].setText(viewrelease)
 		summarytext = viewrelease.split(':\n')
-		self['title_summary'].setText(summarytext[0]+':')
-		self['text_summary'].setText(summarytext[1])
+		try:
+			self['title_summary'].setText(summarytext[0]+':')
+			self['text_summary'].setText(summarytext[1])
+		except:
+			self['title_summary'].setText("")
+			self['text_summary'].setText("")
 
 	def unattendedupdate(self):
 		self.close((_("Unattended upgrade without GUI and reboot system"), "cold"))

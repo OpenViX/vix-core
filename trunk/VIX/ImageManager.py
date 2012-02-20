@@ -1158,12 +1158,12 @@ class ImageManagerDownload(Screen):
 			if not path.exists(dir):
 				mkdir(dir, 0777)
 			from Screens.Console import Console as RestareConsole
-			mycmd1 = "echo '************************************************************************'"
+			mycmd1 = "echo '****************************************************************'"
 			if config.misc.boxtype.value.startswith('vu'):
-				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value +  _(" detected'")
+				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value + " " + _("detected") + "'"
 			elif config.misc.boxtype.value.startswith('et'):
-				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value +  _(" detected'")
-			mycmd3 = "echo '************************************************************************'"
+				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value + " " _("detected'") + "'"
+			mycmd3 = "echo '****************************************************************'"
 			mycmd4 = "echo ' '"
 			mycmd5 = _("echo 'Downloading Image.'")
 			fd = open('/etc/opkg/all-feed.conf', 'r')

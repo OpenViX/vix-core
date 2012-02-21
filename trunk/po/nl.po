@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-18 11:55+0000\n"
-"PO-Revision-Date: 2012-02-18 13:26+0100\n"
+"POT-Creation-Date: 2012-02-21 12:33+0000\n"
+"PO-Revision-Date: 2012-02-21 13:40+0100\n"
 "Last-Translator: R.L. van der Does\n"
 "Language-Team: Andy Blackburn/Rob van der Does\n"
 "Language: nl\n"
@@ -19,37 +19,6 @@ msgstr ""
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: NEDERLAND\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-
-msgid ""
-"\n"
-"After pressing OK, please wait!"
-msgstr ""
-"\n"
-"Na op OK te drukken, even wachten aub!"
-
-msgid ""
-"\n"
-"Select a backup to Restore / Delete:"
-msgstr ""
-"\n"
-"Selecteer een backup om te herstellen/verwijderen:"
-
-msgid ""
-"\n"
-"Select an image to Restore / Delete:"
-msgstr ""
-"\n"
-"Selecteer een image om te herstellen/verwijderen:"
-
-msgid ""
-"\n"
-"there was a problem with this device, please reformat and try again."
-msgstr ""
-"\n"
-"er was een probleem met dit apparaat; herformatteer en probeer het opnieuw."
-
-msgid " detected'"
-msgstr "gedetecteerd"
 
 msgid " extensions."
 msgstr "Extensies"
@@ -97,6 +66,9 @@ msgstr "Actief:"
 
 msgid "Add"
 msgstr "Voeg toe"
+
+msgid "After pressing OK, please wait!"
+msgstr "Nadat u op OK gedrukt heeft, even wachten!"
 
 msgid "Apr"
 msgstr "apr"
@@ -427,7 +399,7 @@ msgid "Fri"
 msgstr "vr"
 
 msgid "Friday"
-msgstr "Vrijdag"
+msgstr "vrijdag"
 
 msgid "GB"
 msgstr "GB"
@@ -538,7 +510,7 @@ msgid "Mon"
 msgstr "ma"
 
 msgid "Monday"
-msgstr "Maandag"
+msgstr "maandag"
 
 msgid "Monthly"
 msgstr "Maandelijks"
@@ -812,7 +784,7 @@ msgid "Satellite equipment"
 msgstr "Satelliet apparatuur"
 
 msgid "Saturday"
-msgstr "Zaterdag"
+msgstr "zaterdag"
 
 msgid "Save"
 msgstr "Bewaar"
@@ -832,6 +804,9 @@ msgstr "Zoekt naar nieuw geïnstalleerde of verwijderde pakketten. Even wachten.
 msgid "Select"
 msgstr "Selecteer"
 
+msgid "Select a backup to Restore / Delete:"
+msgstr "Selecteer een backup om te herstellen/verwijderen:"
+
 msgid "Select a package to install:"
 msgstr "Selecteer een pakket om te installeren:"
 
@@ -840,6 +815,9 @@ msgstr "Selecteer eenscript om uit te voeren:"
 
 msgid "Select an image to Download:"
 msgstr "Selecteer een image om te downloaden:"
+
+msgid "Select an image to Restore / Delete:"
+msgstr "Selecteer een image om te herstellen/verwijderen:"
 
 msgid "Select files/folders to backup"
 msgstr "Selecteer bestanden/mappen om te backuppen"
@@ -923,7 +901,7 @@ msgid "Sun"
 msgstr "zo"
 
 msgid "Sunday"
-msgstr "Zondag"
+msgstr "zondag"
 
 msgid "Swap File not found. You have to create the file before to activate."
 msgstr "Er is geen swapfile gevonden. U moet een swapfile maken alvorens u die actief kunt maken."
@@ -956,7 +934,7 @@ msgid "There are at least "
 msgstr "Er zijn minstens"
 
 msgid "There are currently no outstanding actions."
-msgstr "Er staan een acties uit."
+msgstr "Er staan momenteel geen acties uit."
 
 msgid "There are no updates available."
 msgstr "Er zijn geen updates beschikbaar"
@@ -983,7 +961,7 @@ msgid "Thu"
 msgstr "do"
 
 msgid "Thursday"
-msgstr "Donderdag"
+msgstr "donderdag"
 
 msgid "Time of Backup to start"
 msgstr "Tijd waarop de Backup wordt uitgevoerd"
@@ -998,7 +976,7 @@ msgid "Tue"
 msgstr "di"
 
 msgid "Tuesday"
-msgstr "Dinsdag"
+msgstr "dinsdag"
 
 msgid "Type: "
 msgstr "Type: "
@@ -1131,10 +1109,10 @@ msgid "Wed"
 msgstr "wo"
 
 msgid "Wednesday"
-msgstr "Woensdag"
+msgstr "woensdag"
 
 msgid "Weekly"
-msgstr "Wekelijka"
+msgstr "Wekelijks"
 
 msgid ""
 "Welcome to the restore wizard.\n"
@@ -1234,11 +1212,17 @@ msgstr ""
 msgid "Your receiver isn't connected to the internet properly. Please check it and try again."
 msgstr "Uw ontvanger is niet goed met het Internet verbonden. Na controle kunt u het opnieuw proberen."
 
+msgid "detected"
+msgstr "gedetecteerd"
+
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Download image.'"
 
 msgid "echo 'Expanding Image.'"
-msgstr "echo 'Image wordt uitgezet.'"
+msgstr "echo 'Expanding Image.'"
+
+msgid "there was a problem with this device, please reformat and try again."
+msgstr "er was een probleem met dit apparaat; herformatteer en probeer het opnieuw."
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
@@ -1248,4 +1232,3 @@ msgstr "onbekend"
 
 msgid "your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver."
 msgstr "Uw ontvanger kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens de ontvanger opnieuw te starten."
-

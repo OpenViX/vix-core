@@ -201,7 +201,7 @@ class VIXImageManager(Screen):
 				self.BackupDirectory = '/media/hdd/imagebackups/'
 				config.imagemanager.backuplocation.value = '/media/hdd/'
 				config.imagemanager.backuplocation.save
-				self['lab1'].setText(_("The chosen location does not exist, using /media/hdd") + _("\nSelect an image to Restore / Delete:"))
+				self['lab1'].setText(_("The chosen location does not exist, using /media/hdd") + "\n" + _("Select an image to Restore / Delete:"))
 			else:
 				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
 					{
@@ -209,7 +209,7 @@ class VIXImageManager(Screen):
 						"menu": self.createSetup,
 					}, -1)
 
-				self['lab1'].setText(_("Device: None available") + _("\nSelect an image to Restore / Delete:"))
+				self['lab1'].setText(_("Device: None available") + "\n" + _("Select an image to Restore / Delete:"))
 		else:
 			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "HelpActions"],
 				{
@@ -225,7 +225,7 @@ class VIXImageManager(Screen):
 				}, -1)
 
 			self.BackupDirectory = config.imagemanager.backuplocation.value + 'imagebackups/'
-			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + _("\nSelect an image to Restore / Delete:"))
+			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + "\n" + _("Select an image to Restore / Delete:"))
 
 		try:
 			if not path.exists(self.BackupDirectory):
@@ -242,7 +242,7 @@ class VIXImageManager(Screen):
 			self["list"].setList(self.emlist)
 			self["list"].show()
 		except:
- 			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + _("\nthere was a problem with this device, please reformat and try again."))
+ 			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + "\n" + _("there was a problem with this device, please reformat and try again."))
 
 	def createSetup(self):
 		self.session.openWithCallback(self.setupDone, ImageManagerMenu)
@@ -1162,7 +1162,7 @@ class ImageManagerDownload(Screen):
 			if config.misc.boxtype.value.startswith('vu'):
 				mycmd2 = "echo 'Vu+ " + config.misc.boxtype.value + " " + _("detected") + "'"
 			elif config.misc.boxtype.value.startswith('et'):
-				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value + " " _("detected'") + "'"
+				mycmd2 = "echo 'Xtrend " + config.misc.boxtype.value + " " _("detected") + "'"
 			mycmd3 = "echo '****************************************************************'"
 			mycmd4 = "echo ' '"
 			mycmd5 = _("echo 'Downloading Image.'")

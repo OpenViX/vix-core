@@ -185,7 +185,7 @@ class VIXBackupManager(Screen):
 				self.BackupDirectory = '/media/hdd/backup/'
 				config.backupmanager.backuplocation.value = '/media/hdd/'
 				config.backupmanager.backuplocation.save
-				self['lab1'].setText(_("The chosen location does not exist, using /media/hdd") + _("\nSelect a backup to Restore / Delete:"))
+				self['lab1'].setText(_("The chosen location does not exist, using /media/hdd") + "\n" + _("Select a backup to Restore / Delete:"))
 			else:
 				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "TimerEditActions"],
 					{
@@ -194,7 +194,7 @@ class VIXBackupManager(Screen):
 						'log': self.showLog,
 					}, -1)
 
-				self['lab1'].setText(_("Device: None available") + _("\nSelect a backup to Restore / Delete:"))
+				self['lab1'].setText(_("Device: None available") + "\n" + _("Select a backup to Restore / Delete:"))
 		else:
 			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "TimerEditActions"],
 				{
@@ -208,7 +208,7 @@ class VIXBackupManager(Screen):
 				}, -1)
 
 			self.BackupDirectory = config.backupmanager.backuplocation.value + 'backup/'
-			self['lab1'].setText(_("Device: ") + config.backupmanager.backuplocation.value + _("\nSelect a backup to Restore / Delete:"))
+			self['lab1'].setText(_("Device: ") + config.backupmanager.backuplocation.value + "\n" + _("Select a backup to Restore / Delete:"))
 
 		try:
 			if not path.exists(self.BackupDirectory):
@@ -223,7 +223,7 @@ class VIXBackupManager(Screen):
 			self["list"].setList(self.emlist)
 			self["list"].show()
 		except:
-			self['lab1'].setText(_("Device: ") + config.backupmanager.backuplocation.value + _("\nthere was a problem with this device, please reformat and try again."))
+			self['lab1'].setText(_("Device: ") + config.backupmanager.backuplocation.value + "\n" + _("there was a problem with this device, please reformat and try again."))
 
 	def createSetup(self):
 		self.session.openWithCallback(self.setupDone, VIXBackupManagerMenu)

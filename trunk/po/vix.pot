@@ -1,22 +1,21 @@
-# Latvian translations for plugins package.
-# Copyright (C) 2011 THE plugins'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the plugins package.
-# Automatically generated, 2011.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2-vix-core\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-21 12:33+0000\n"
-"PO-Revision-Date: 2011-07-11 16:05+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
-"Language: lv\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
-"2);\n"
 
 msgid " extensions."
 msgstr ""
@@ -575,9 +574,6 @@ msgid ""
 "No packages were upgraded yet. So you can check your network and try again."
 msgstr ""
 
-msgid "No plugins where needed to be installed"
-msgstr ""
-
 msgid "None"
 msgstr ""
 
@@ -627,9 +623,6 @@ msgid "Packet manager"
 msgstr ""
 
 msgid "Please select device to use as swapfile location"
-msgstr ""
-
-msgid "Please select the file to restore ?"
 msgstr ""
 
 msgid "Please wait while gathers infomation..."
@@ -725,12 +718,6 @@ msgid "Restore"
 msgstr ""
 
 msgid "Restore Confirmation"
-msgstr ""
-
-msgid "Restore Plugins"
-msgstr ""
-
-msgid "Restore Settings"
 msgstr ""
 
 msgid "Restore Wizard"
@@ -912,12 +899,6 @@ msgstr ""
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr ""
 
-msgid "The wizard is finished now, and will reboot"
-msgstr ""
-
-msgid "The wizard is finished now."
-msgstr ""
-
 msgid "There are at least "
 msgstr ""
 
@@ -1097,14 +1078,6 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-msgid ""
-"Welcome to the restore wizard.\n"
-"\n"
-"A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that "
-"where installed when the backup was created.\n"
-msgstr ""
-
 msgid "What Day of month ?"
 msgstr ""
 
@@ -1204,4 +1177,30 @@ msgstr ""
 msgid ""
 "your receiver might be unusable now. Please consult the manual for further "
 "assistance before rebooting your receiver."
+msgstr ""
+
+msgid "No plugins where needed to be installed"
+msgstr ""
+
+msgid "Please select the file to restore ?"
+msgstr ""
+
+msgid "Restore Plugins"
+msgstr ""
+
+msgid "Restore Settings"
+msgstr ""
+
+msgid "The wizard is finished now, and will reboot"
+msgstr ""
+
+msgid "The wizard is finished now."
+msgstr ""
+
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your setting and any extra plugins that "
+"where installed when the backup was created.\n"
 msgstr ""

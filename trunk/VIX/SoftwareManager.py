@@ -156,7 +156,7 @@ class PluginManager(Screen, DreamInfoHandler):
 		self["status"] = StaticText("")
 
 		self.cmdList = []
-		self.oktext = _("\nAfter pressing OK, please wait!")
+		self.oktext = "\n" + _("After pressing OK, please wait!")
 		if not self.selectionChanged in self["list"].onSelectionChanged:
 			self["list"].onSelectionChanged.append(self.selectionChanged)
 
@@ -772,7 +772,7 @@ class PluginDetails(Screen, DreamInfoHandler):
 			self.attributes = self.package[0]["attributes"]
 
 		self.cmdList = []
-		self.oktext = _("\nAfter pressing OK, please wait!")
+		self.oktext = "\n" + _("After pressing OK, please wait!")
 		self.picload = ePicLoad()
 		self.picload.PictureData.get().append(self.paintScreenshotPixmapCB)
 		self.onShown.append(self.setWindowTitle)
@@ -1307,7 +1307,7 @@ class PacketManager(Screen, NumericalTextInput):
 		self.cachelist = []
 		self.cache_ttl = 86400  #600 is default, 0 disables, Seconds cache is considered valid (24h should be ok for caching ipkgs)
 		self.cache_file = eEnv.resolve('${libdir}/enigma2/python/Plugins/SystemPlugins/ViX/packetmanager.cache') #Path to cache directory
-		self.oktext = _("\nAfter pressing OK, please wait!")
+		self.oktext = "\n" + _("After pressing OK, please wait!")
 		self.unwanted_extensions = ('-dbg', '-dev', '-doc', 'busybox')
 
 		self.ipkg = IpkgComponent()

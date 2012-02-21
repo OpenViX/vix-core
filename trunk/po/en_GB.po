@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plugins 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-18 11:55+0000\n"
+"POT-Creation-Date: 2012-02-21 12:33+0000\n"
 "PO-Revision-Date: 2012-02-18 11:55+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,37 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid ""
-"\n"
-"After pressing OK, please wait!"
-msgstr ""
-"\n"
-"After pressing OK, please wait!"
-
-msgid ""
-"\n"
-"Select a backup to Restore / Delete:"
-msgstr ""
-"\n"
-"Select a backup to Restore / Delete:"
-
-msgid ""
-"\n"
-"Select an image to Restore / Delete:"
-msgstr ""
-"\n"
-"Select an image to Restore / Delete:"
-
-msgid ""
-"\n"
-"there was a problem with this device, please reformat and try again."
-msgstr ""
-"\n"
-"there was a problem with this device, please reformat and try again."
-
-msgid " detected'"
-msgstr " detected'"
 
 msgid " extensions."
 msgstr " extensions."
@@ -94,6 +63,9 @@ msgstr "Active:"
 
 msgid "Add"
 msgstr "Add"
+
+msgid "After pressing OK, please wait!"
+msgstr ""
 
 msgid "Apr"
 msgstr "Apr"
@@ -629,6 +601,9 @@ msgid ""
 msgstr ""
 "No packages were upgraded yet. So you can check your network and try again."
 
+msgid "No plugins where needed to be installed"
+msgstr "No plugins where needed to be installed"
+
 msgid "None"
 msgstr "None"
 
@@ -679,6 +654,9 @@ msgstr "Packet manager"
 
 msgid "Please select device to use as swapfile location"
 msgstr "Please select device to use as swapfile location"
+
+msgid "Please select the file to restore ?"
+msgstr "Please select the file to restore ?"
 
 msgid "Please wait while gathers infomation..."
 msgstr "Please wait while gathers infomation..."
@@ -777,6 +755,12 @@ msgstr "Restore"
 msgid "Restore Confirmation"
 msgstr "Restore Confirmation"
 
+msgid "Restore Plugins"
+msgstr "Restore Plugins"
+
+msgid "Restore Settings"
+msgstr "Restore Settings"
+
 msgid "Restore Wizard"
 msgstr "Restore Wizard"
 
@@ -831,6 +815,9 @@ msgstr "Searching for new installed or removed packages. Please wait..."
 msgid "Select"
 msgstr "Select"
 
+msgid "Select a backup to Restore / Delete:"
+msgstr "Select a backup to Restore / Delete:"
+
 msgid "Select a package to install:"
 msgstr "Select a package to install:"
 
@@ -839,6 +826,9 @@ msgstr "Select a script to run:"
 
 msgid "Select an image to Download:"
 msgstr "Select an image to Download:"
+
+msgid "Select an image to Restore / Delete:"
+msgstr "Select an image to Restore / Delete:"
 
 msgid "Select files/folders to backup"
 msgstr "Select files/folders to backup"
@@ -954,6 +944,12 @@ msgstr "The backup location does not have enough freespace."
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "The chosen location does not exist, using /media/hdd"
+
+msgid "The wizard is finished now, and will reboot"
+msgstr "The wizard is finished now, and will reboot"
+
+msgid "The wizard is finished now."
+msgstr "The wizard is finished now."
 
 msgid "There are at least "
 msgstr "There are at least "
@@ -1139,6 +1135,19 @@ msgstr "Wednesday"
 msgid "Weekly"
 msgstr "Weekly"
 
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your setting and any extra plugins that "
+"where installed when the backup was created.\n"
+msgstr ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your setting and any extra plugins that "
+"where installed when the backup was created.\n"
+
 msgid "What Day of month ?"
 msgstr "What Day of month ?"
 
@@ -1232,11 +1241,17 @@ msgstr ""
 "Your receiver isn't connected to the internet properly. Please check it and "
 "try again."
 
+msgid "detected"
+msgstr ""
+
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Downloading Image.'"
 
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Expanding Image.'"
+
+msgid "there was a problem with this device, please reformat and try again."
+msgstr "there was a problem with this device, please reformat and try again."
 
 msgid "unavailable"
 msgstr "unavailable"
@@ -1251,33 +1266,9 @@ msgstr ""
 "your receiver might be unusable now. Please consult the manual for further "
 "assistance before rebooting your receiver."
 
-msgid "No plugins where needed to be installed"
-msgstr "No plugins where needed to be installed"
-
-msgid "Please select the file to restore ?"
-msgstr "Please select the file to restore ?"
-
-msgid "Restore Plugins"
-msgstr "Restore Plugins"
-
-msgid "Restore Settings"
-msgstr "Restore Settings"
-
-msgid "The wizard is finished now, and will reboot"
-msgstr "The wizard is finished now, and will reboot"
-
-msgid "The wizard is finished now."
-msgstr "The wizard is finished now."
-
-msgid ""
-"Welcome to the restore wizard.\n"
-"\n"
-"A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that "
-"where installed when the backup was created.\n"
-msgstr ""
-"Welcome to the restore wizard.\n"
-"\n"
-"A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that "
-"where installed when the backup was created.\n"
+#~ msgid ""
+#~ "\n"
+#~ "After pressing OK, please wait!"
+#~ msgstr ""
+#~ "\n"
+#~ "After pressing OK, please wait!"

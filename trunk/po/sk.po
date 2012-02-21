@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-18 11:55+0000\n"
+"POT-Creation-Date: 2012-02-21 12:33+0000\n"
 "PO-Revision-Date: 2011-07-11 16:05+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,29 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-
-msgid ""
-"\n"
-"After pressing OK, please wait!"
-msgstr ""
-
-msgid ""
-"\n"
-"Select a backup to Restore / Delete:"
-msgstr ""
-
-msgid ""
-"\n"
-"Select an image to Restore / Delete:"
-msgstr ""
-
-msgid ""
-"\n"
-"there was a problem with this device, please reformat and try again."
-msgstr ""
-
-msgid " detected'"
-msgstr ""
 
 msgid " extensions."
 msgstr ""
@@ -83,6 +60,9 @@ msgid "Active:"
 msgstr ""
 
 msgid "Add"
+msgstr ""
+
+msgid "After pressing OK, please wait!"
 msgstr ""
 
 msgid "Apr"
@@ -806,6 +786,9 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
+msgid "Select a backup to Restore / Delete:"
+msgstr ""
+
 msgid "Select a package to install:"
 msgstr ""
 
@@ -813,6 +796,9 @@ msgid "Select a script to run:"
 msgstr ""
 
 msgid "Select an image to Download:"
+msgstr ""
+
+msgid "Select an image to Restore / Delete:"
 msgstr ""
 
 msgid "Select files/folders to backup"
@@ -1196,10 +1182,16 @@ msgid ""
 "try again."
 msgstr ""
 
+msgid "detected"
+msgstr ""
+
 msgid "echo 'Downloading Image.'"
 msgstr ""
 
 msgid "echo 'Expanding Image.'"
+msgstr ""
+
+msgid "there was a problem with this device, please reformat and try again."
 msgstr ""
 
 msgid "unavailable"

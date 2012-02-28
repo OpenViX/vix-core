@@ -86,6 +86,7 @@ class VIXMenu(Screen):
 		
 	def __init__(self, session, args = 0):
 		Screen.__init__(self, session)
+		Screen.setTitle(self, _("ViX"))
 		self.skin_path = plugin_path
 		self.menu = args
 		self.list = []

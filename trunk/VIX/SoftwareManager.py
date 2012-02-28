@@ -126,6 +126,7 @@ class PluginManager(Screen, DreamInfoHandler):
 
 	def __init__(self, session, plugin_path = None, args = None):
 		Screen.__init__(self, session)
+		Screen.setTitle(self, _("Manage Extensions"))
 		self.session = session
 		self.skin_path = plugin_path
 		if self.skin_path == None:
@@ -564,6 +565,7 @@ class PluginManagerInfo(Screen):
 
 	def __init__(self, session, plugin_path, cmdlist = None):
 		Screen.__init__(self, session)
+		Screen.setTitle(self, _("Manage Extensions"))
 		self.session = session
 		self.skin_path = plugin_path
 		self.cmdlist = cmdlist
@@ -729,6 +731,7 @@ class PluginDetails(Screen, DreamInfoHandler):
 		</screen>"""
 	def __init__(self, session, plugin_path, packagedata = None):
 		Screen.__init__(self, session)
+		Screen.setTitle(self, _("Plugin Details"))
 		self.skin_path = plugin_path
 		self.language = language.getLanguage()[:2] # getLanguage returns e.g. "fi_FI" for "language_country"
 		self.attributes = None
@@ -1017,6 +1020,7 @@ class UpdatePlugin(Screen):
 
 	def __init__(self, session, *args):
 		Screen.__init__(self, session)
+		Screen.setTitle(self, _("Software Manager"))
 
 		self.sliderPackages = { "dreambox-dvb-modules": 1, "enigma2": 2, "tuxbox-image-info": 3 }
 
@@ -1267,6 +1271,7 @@ class PacketManager(Screen, NumericalTextInput):
 	def __init__(self, session, plugin_path, args = None):
 		Screen.__init__(self, session)
 		NumericalTextInput.__init__(self)
+		Screen.setTitle(self, _("Packet Manager"))
 		self.session = session
 		self.skin_path = plugin_path
 

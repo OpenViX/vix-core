@@ -466,6 +466,7 @@ class VIXSoftcamLog(Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		Screen.setTitle(self, _("Softcam Log"))
 		self.skinName = "VIXSoftcamLog"
 		if path.exists('/var/volatile/tmp/cam.check.log'):
 			softcamlog = file('/var/volatile/tmp/cam.check.log').read()

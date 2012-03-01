@@ -272,7 +272,7 @@ class VIXStartCam(Screen):
 	</screen>"""
 	def __init__(self, session, selectedcam):
 		Screen.__init__(self, session)
-		Screen.setTitle(self, _("Softcam Setup"))
+		Screen.setTitle(self, _("Softcam Starting..."))
 		self['connect'] = MultiPixmap()
 		self['lab1'] = Label(_("Please wait while starting\n") + selectedcam + '...')
 		global startselectedcam
@@ -375,7 +375,7 @@ class VIXStopCam(Screen):
 		Screen.__init__(self, session)
 		global stopselectedcam
 		stopselectedcam = selectedcam
-		Screen.setTitle(self, _("Softcam Setup"))
+		Screen.setTitle(self, _("Softcam Sopping..."))
 		self['connect'] = MultiPixmap()
 		self['lab1'] = Label(_("Please wait while stopping\n") + selectedcam + '...')
 		self.Console = Console()
@@ -460,14 +460,13 @@ class VIXStopCam(Screen):
 
 class VIXSoftcamLog(Screen):
 	skin = """
-<screen name="VIXSoftcamLog" position="center,center" size="560,400" title="Softcam Manager Log" >
+<screen name="VIXSoftcamLog" position="center,center" size="560,400" >
 	<widget name="list" position="0,0" size="560,400" font="Regular;14" />
 </screen>"""
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		Screen.setTitle(self, _("Softcam Log"))
-		self.skinName = "VIXSoftcamLog"
+		Screen.setTitle(self, _("Softcam Manager Log"))
 		if path.exists('/var/volatile/tmp/cam.check.log'):
 			softcamlog = file('/var/volatile/tmp/cam.check.log').read()
 		else:
@@ -498,7 +497,6 @@ class VIXSoftcamMenu(ConfigListScreen, Screen):
 		Screen.__init__(self, session)
 		self.session = session
 		self.skin = VIXSoftcamMenu.skin
-		self.skinName = "VIXSoftcamMenu"
 		Screen.setTitle(self, _("Softcam Setup"))
 		self.onChangedEntry = [ ]
 

@@ -1037,7 +1037,8 @@ class ImageBackup(Screen):
 				chmod(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu',''), 0644)
 				chmod(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2', 0644)
 				chmod(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin', 0644)
-				chmod(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/splash_cfe_auto.bin', 0644)
+				if config.misc.boxtype.value == "vuuno" or config.misc.boxtype.value == "vuultimo":
+					chmod(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/splash_cfe_auto.bin', 0644)
 			elif self.MAINDEST + '/' + config.misc.boxtype.value:
 				chmod(self.MAINDEST + '/' + config.misc.boxtype.value, 0644)
 				chmod(self.MAINDEST + '/' + config.misc.boxtype.value + '/rootfs.bin', 0644)

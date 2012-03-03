@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-21 12:33+0000\n"
-"PO-Revision-Date: 2012-02-21 13:40+0100\n"
+"POT-Creation-Date: 2012-03-03 12:19+0000\n"
+"PO-Revision-Date: 2012-03-03 14:20+0100\n"
 "Last-Translator: R.L. van der Does\n"
 "Language-Team: Andy Blackburn/Rob van der Does\n"
 "Language: nl\n"
@@ -666,6 +666,9 @@ msgstr "Wacht terwijl er gestopt wordt\n"
 msgid "Please wait..."
 msgstr "Wacht aub..."
 
+msgid "Plugin Details"
+msgstr "Plugin Details"
+
 msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Maken van een lijst met plugins is mislukt - of een verkeerde backup locatie of onvoldoende vrije ruimte"
 
@@ -852,14 +855,26 @@ msgstr "Skins"
 msgid "Softcam Manager"
 msgstr "Softcam Manager"
 
+msgid "Softcam Manager Log"
+msgstr "Softcam Manager Log"
+
 msgid "Softcam Setup"
 msgstr "Softcam instellingen"
+
+msgid "Softcam Sopping..."
+msgstr "Softcam bezig te stoppen..."
+
+msgid "Softcam Starting..."
+msgstr "Softcam bezig te starten..."
 
 msgid "SoftcamCheck"
 msgstr "SoftcamCheck"
 
 msgid "Software"
 msgstr "Software"
+
+msgid "Software Manager"
+msgstr "Software Manager"
 
 msgid "Software Update"
 msgstr "Software Update"
@@ -1232,3 +1247,4 @@ msgstr "onbekend"
 
 msgid "your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver."
 msgstr "Uw ontvanger kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens de ontvanger opnieuw te starten."
+

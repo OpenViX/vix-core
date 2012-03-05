@@ -776,11 +776,11 @@ class ImageBackup(Screen):
 		task.work = self.JobStart
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Checking Free RAM.."), timeoutCount=1)
+		task = Components.Task.ConditionTask(job, _("Checking Free RAM.."), timeoutCount=10)
 		task.check = lambda: self.RamChecked
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Creating Swap.."), timeoutCount=20)
+		task = Components.Task.ConditionTask(job, _("Creating Swap.."), timeoutCount=120)
 		task.check = lambda: self.SwapCreated
 		task.weighting = 1
 
@@ -788,7 +788,7 @@ class ImageBackup(Screen):
 		task.work = self.doBackup1
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Creating Backup Files..."), timeoutCount=560)
+		task = Components.Task.ConditionTask(job, _("Creating Backup Files..."), timeoutCount=900)
 		task.check = lambda: self.Stage1Completed
 		task.weighting = 1
 
@@ -796,7 +796,7 @@ class ImageBackup(Screen):
 		task.work = self.doBackup2
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Creating Backup Files..."), timeoutCount=560)
+		task = Components.Task.ConditionTask(job, _("Creating Backup Files..."), timeoutCount=900)
 		task.check = lambda: self.Stage2Completed
 		task.weighting = 1
 
@@ -804,7 +804,7 @@ class ImageBackup(Screen):
 		task.work = self.doBackup3
 		task.weighting = 1
 
-		task = Components.Task.ConditionTask(job, _("Moving to Backup Location..."), timeoutCount=600)
+		task = Components.Task.ConditionTask(job, _("Moving to Backup Location..."), timeoutCount=900)
 		task.check = lambda: self.Stage3Completed
 		task.weighting = 1
 

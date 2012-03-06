@@ -79,7 +79,6 @@ class VIXDevicesPanel(Screen):
 			except:
 				pass
 		if self.sel:
-			print 'll:',self.sel
 			try:
 				name = str(self.sel[0])
 				desc = str(self.sel[1].replace('\t','  '))

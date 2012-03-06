@@ -626,10 +626,10 @@ msgstr ""
 "asukohas /var/keys/newcamd.list"
 
 msgid ""
-"No config files found, please setup Oscam first\n"
+"No config files found, please setup Hypercam first\n"
 "in /etc/hypercam.cfg"
 msgstr ""
-"Seadistusfaile ei leitud. Seadista kõigepealt OScam\n"
+"Seadistusfaile ei leitud. Seadista kõigepealt Hypercam\n"
 "asukohas /etc/hypercam.cfg"
 
 msgid ""

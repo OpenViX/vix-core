@@ -191,7 +191,7 @@ class VIXSoftcamManager(Screen):
 				elif selectedcam.lower().startswith('hypercam') and path.exists('/etc/hypercam.cfg') == True:
 					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 				elif selectedcam.lower().startswith('hypercam') and path.exists('/etc/hypercam.cfg') == False:
-					self.session.open(MessageBox, _("No config files found, please setup Oscam first\nin /etc/hypercam.cfg"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
+					self.session.open(MessageBox, _("No config files found, please setup Hypercam first\nin /etc/hypercam.cfg"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 				elif selectedcam.lower().startswith('oscam') and path.exists('/etc/tuxbox/config/oscam.conf') == True:
 					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 				elif selectedcam.lower().startswith('oscam') and path.exists('/etc/tuxbox/config/oscam.conf') == False:

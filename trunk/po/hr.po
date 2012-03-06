@@ -556,7 +556,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"No config files found, please setup Oscam first\n"
+"No config files found, please setup Hypercam first\n"
 "in /etc/hypercam.cfg"
 msgstr ""
 

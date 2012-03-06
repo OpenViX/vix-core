@@ -577,10 +577,10 @@ msgstr ""
 "in /var/keys"
 
 msgid ""
-"No config files found, please setup Oscam first\n"
+"No config files found, please setup Hypercam first\n"
 "in /etc/hypercam.cfg"
 msgstr ""
-"No config files found, please setup Oscam first\n"
+"No config files found, please setup Hypercam first\n"
 "in /etc/hypercam.cfg"
 
 msgid ""

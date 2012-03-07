@@ -109,13 +109,13 @@ class VIXMenu(Screen):
 					self.session.open(VIXImageManager)
 				elif (currentEntry == "install-extensions"):
 					from SoftwareManager import PluginManager
-					self.session.open(PluginManager, self.skin_path)
+					self.session.open(PluginManager)
 				elif (currentEntry == "ipkg-install"):
 					from IPKInstaller import VIXIPKInstaller
 					self.session.open(VIXIPKInstaller)
 				elif (currentEntry == "ipkg-manager"):
 					from SoftwareManager import PacketManager
-					self.session.open(PacketManager, self.skin_path)
+					self.session.open(PacketManager)
 				elif (currentEntry == "mount-manager"):
 					from MountManager import VIXDevicesPanel
 					self.session.open(VIXDevicesPanel)
@@ -127,7 +127,7 @@ class VIXMenu(Screen):
 					self.session.open(VIXScriptRunner)
 				elif (currentEntry == "software-update"):
 					from SoftwareManager import UpdatePlugin
-					self.session.open(UpdatePlugin, self.skin_path)
+					self.session.open(UpdatePlugin)
 				elif (currentEntry == "swap-manager"):
 					from SwapManager import VIXSwap
 					self.session.open(VIXSwap)

@@ -128,9 +128,7 @@ class PluginManager(Screen, DreamInfoHandler):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("Manage Extensions"))
 		self.session = session
-		self.skin_path = plugin_path
-		if self.skin_path == None:
-			self.skin_path = resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX")
+		self.skin_path = resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX")
 
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions", "InfobarEPGActions", "HelpActions", "MenuActions" ],
 		{
@@ -567,7 +565,7 @@ class PluginManagerInfo(Screen):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("Manage Extensions"))
 		self.session = session
-		self.skin_path = plugin_path
+		self.skin_path = resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX")
 		self.cmdlist = cmdlist
 
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
@@ -668,7 +666,7 @@ class PluginManagerHelp(Screen):
 	def __init__(self, session, plugin_path):
 		Screen.__init__(self, session)
 		self.session = session
-		self.skin_path = plugin_path
+		self.skin_path = resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX")
 
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
 		{
@@ -732,7 +730,7 @@ class PluginDetails(Screen, DreamInfoHandler):
 	def __init__(self, session, plugin_path, packagedata = None):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("Plugin Details"))
-		self.skin_path = plugin_path
+		self.skin_path = resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX")
 		self.language = language.getLanguage()[:2] # getLanguage returns e.g. "fi_FI" for "language_country"
 		self.attributes = None
 		DreamInfoHandler.__init__(self, self.statusCallback, blocking = False)
@@ -1273,7 +1271,7 @@ class PacketManager(Screen, NumericalTextInput):
 		NumericalTextInput.__init__(self)
 		Screen.setTitle(self, _("Packet Manager"))
 		self.session = session
-		self.skin_path = plugin_path
+		self.skin_path = resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX")
 
 		self.setUseableChars(u'1234567890abcdefghijklmnopqrstuvwxyz')
 

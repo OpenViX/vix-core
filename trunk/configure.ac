@@ -33,5 +33,5 @@ etc/Makefile
 etc/cron/Makefile
 etc/cron/crontabs/Makefile
 po/Makefile
-VIX/Makefile
+src/Makefile
 ])

@@ -306,7 +306,7 @@ class VIXImageManager(Screen):
 			ybox = self.session.openWithCallback(self.doBackup, MessageBox, message, MessageBox.TYPE_YESNO)
 			ybox.setTitle(_("Backup Confirmation"))
 		else:
-			self.session.open(MessageBox, _("Sorry you box is not yet compatible."), MessageBox.TYPE_INFO, timeout = 10)
+			self.session.open(MessageBox, _("Sorry you STB_BOX is not yet compatible."), MessageBox.TYPE_INFO, timeout = 10)
  
 	def doBackup(self,answer):
 		if answer is True:
@@ -331,7 +331,7 @@ class VIXImageManager(Screen):
 # 					else:
 # 						self.session.open(MessageBox, _("You have no image to restore."), MessageBox.TYPE_INFO, timeout = 10)
 # 				else:
-# 					self.session.open(MessageBox, _("Sorry the image " + self.sel + " is not compatible with this box."), MessageBox.TYPE_INFO, timeout = 10)
+# 					self.session.open(MessageBox, _("Sorry the image " + self.sel + " is not compatible with this STB_BOX."), MessageBox.TYPE_INFO, timeout = 10)
 # 			else:
 # 				self.session.open(MessageBox, _("Sorry Image Restore is not supported on the" + ' ' + config.misc.boxtype.value + ', ' + _("Please copy the folder") + ' ' + self.BackupDirectory + self.sel +  ' \n' + _("to a USB stick, place in front USB port of reciver and power on")), MessageBox.TYPE_INFO, timeout = 30)
 # 		else:
@@ -508,14 +508,14 @@ class VIXImageManager(Screen):
 # 				self.MemCheckConsole.ePopen("swapoff " + self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup", self.MemRemove1)
 # 			else:
 # 				self.Stage4Completed = True
-# 				self.session.open(MessageBox, _("Flashing Complete\nPlease power off your receiver, wait 15 seconds then power backon."), MessageBox.TYPE_INFO)
+# 				self.session.open(MessageBox, _("Flashing Complete\nPlease power off your STB_BOX, wait 15 seconds then power backon."), MessageBox.TYPE_INFO)
 # 
 # 	def MemRemove1(self, result, retval, extra_args = None):
 # 		if retval == 0:
 # 			if path.exists(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup"):
 # 				remove(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup")
 # 		self.Stage4Completed = True
-# 		self.session.open(MessageBox, _("Flashing Complete\nPlease power off your receiver, wait 15 seconds then power backon."), MessageBox.TYPE_INFO)
+# 		self.session.open(MessageBox, _("Flashing Complete\nPlease power off your STB_BOX, wait 15 seconds then power backon."), MessageBox.TYPE_INFO)
 # 
 # 	def myclose(self):
 # 		self.close()
@@ -725,7 +725,7 @@ class AutoImageManagerTimer:
 			print "[ImageManager] Backup onTimer occured at", strftime("%c", localtime(now))
 			from Screens.Standby import inStandby
 			if not inStandby:
-				message = _("Your box is about to run a full image backup, this can take about 6 minutes to complete,\ndo you want to allow this?")
+				message = _("Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\ndo you want to allow this?")
 				ybox = self.session.openWithCallback(self.doBackup, MessageBox, message, MessageBox.TYPE_YESNO, timeout = 30)
 				ybox.setTitle('Scheduled Backup.')
 			else:
@@ -963,7 +963,7 @@ class ImageBackup(Screen):
 		elif self.ROOTFSTYPE == 'ubifs':
 			print '[ImageManager] Stage1: UBIFS Detected.'
 			if config.misc.boxtype.value.startswith('vu'):
-				print '[ImageManager] Stage1: Vu plus box detected.'
+				print '[ImageManager] Stage1: Vu plus STB_BOX detected.'
 				MKUBIFS_ARGS="-m 2048 -e 126976 -c 4096 -F"
 				mkdir(self.MAINDEST + '/vuplus', 0777)
 				mkdir(self.MAINDEST + '/vuplus/' + config.misc.boxtype.value.replace('vu',''), 0777)

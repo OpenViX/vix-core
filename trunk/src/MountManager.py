@@ -312,7 +312,7 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		Screen.setTitle(self, _("Choose where to mount your devices to:"))
 		self['key_green'] = Label(_("Save"))
 		self['key_red'] = Label(_("Cancel"))
-		self['Linconn'] = Label(_("Wait please while scanning your box devices..."))
+		self['Linconn'] = Label(_("Wait please while scanning your STB_BOX devices..."))
 		self['actions'] = ActionMap(['WizardActions', 'ColorActions'], {'green': self.saveMypoints, 'red': self.close, 'back': self.close})
 		self.updateList()
 
@@ -443,9 +443,9 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 			self.type = x[3]
 			self.Console.ePopen('umount ' + self.device)
 			self.Console.ePopen("/sbin/blkid | grep " + self.device, self.add_fstab, [self.device, self.mountp] )
-		message = _("Devices changes need a system restart to take effects.\nRestart your Box now?")
+		message = _("Devices changes need a system restart to take effects.\nRestart your STB_BOX now?")
 		ybox = self.session.openWithCallback(self.restartBox, MessageBox, message, MessageBox.TYPE_YESNO)
-		ybox.setTitle(_("Restart box."))
+		ybox.setTitle(_("Restart STB_BOX."))
 
 	def add_fstab(self, result = None, retval = None, extra_args = None):
 		self.device = extra_args[0]

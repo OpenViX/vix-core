@@ -522,7 +522,7 @@ class PluginManager(Screen, DreamInfoHandler):
 		self.reloadPluginlist()
 		restartRequired = plugins.restartRequired
 		if restartRequired:
-			self.session.openWithCallback(self.ExecuteReboot, MessageBox, _("Install or remove finished.") +" "+_("Do you want to reboot your Receiver?"), MessageBox.TYPE_YESNO)
+			self.session.openWithCallback(self.ExecuteReboot, MessageBox, _("Install or remove finished.") +" "+_("Do you want to reboot your STB_BOX?"), MessageBox.TYPE_YESNO)
 		else:
 			self.selectedFiles = []
 			self.detailsClosed(True)
@@ -608,7 +608,7 @@ class PluginManagerInfo(Screen):
 				elif cmd == 2:
 					info = args['package']
 				else:
-					info = _("Receiver software because updates are available.")
+					info = _("STB_BOX software because updates are available.")
 
 				self.list.append(self.buildEntryComponent(action,info))
 			self['list'].setList(self.list)
@@ -893,7 +893,7 @@ class PluginDetails(Screen, DreamInfoHandler):
 		self.reloadPluginlist()
 		restartRequired = plugins.restartRequired
 		if restartRequired:
-			self.session.openWithCallback(self.UpgradeReboot, MessageBox, _("Installation finished.") +" "+_("Do you want to reboot your Receiver?"), MessageBox.TYPE_YESNO)
+			self.session.openWithCallback(self.UpgradeReboot, MessageBox, _("Installation finished.") +" "+_("Do you want to reboot your STB_BOX?"), MessageBox.TYPE_YESNO)
 		else:
 			self.close(True)
 	def UpgradeReboot(self, result):
@@ -1037,7 +1037,7 @@ class UpdatePlugin(Screen):
 		if result.find('bad address') == -1:
 			self.MemCheck1()
 		else:
-			self.session.openWithCallback(self.close, MessageBox, _("Your receiver isn't connected to the internet properly. Please check it and try again."), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
+			self.session.openWithCallback(self.close, MessageBox, _("Your STB_BOX isn't connected to the internet properly. Please check it and try again."), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 
 	def MemCheck1(self):
 		self.activity = 0
@@ -1161,7 +1161,7 @@ class UpdatePlugin(Screen):
 				elif self.ipkg.currentCommand == IpkgComponent.CMD_UPGRADE_LIST:
 					self.total_packages = len(self.ipkg.getFetchedList())
 					if self.total_packages:
-						message = _("Do you want to update your Receiver?") + "\n(%s " % self.total_packages + _("Packages") + ")"
+						message = _("Do you want to update your STB_BOX?") + "\n(%s " % self.total_packages + _("Packages") + ")"
 						choices = [(_("View the changes"), "changes"),
 							(_("Unattended upgrade without GUI and reboot system"), "cold"),
 							(_("Upgrade and ask to reboot"), "hot"),
@@ -1184,11 +1184,11 @@ class UpdatePlugin(Screen):
 				else:
 					self.activityTimer.stop()
 					self.activityslider.setValue(0)
-					error = _("your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver.")
+					error = _("your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX.")
 					if self.packages == 0:
 						error = _("No packages were upgraded yet. So you can check your network and try again.")
 					if self.updating:
-						error = _("Your receiver isn't connected to the internet properly. Please check it and try again.")
+						error = _("Your STB_BOX isn't connected to the internet properly. Please check it and try again.")
 					self.status.setText(_("Error") +  " - " + error)
 			else:
 				print '[SoftwareUpdate] Sorry, not enough free ram found, and no physical devices that supports SWAP attached'
@@ -1215,7 +1215,7 @@ class UpdatePlugin(Screen):
 	def exit(self):
 		if not self.ipkg.isRunning():
 			if self.packages != 0 and self.error == 0:
-				self.session.openWithCallback(self.exitAnswer, MessageBox, _("Upgrade finished.") +" "+_("Do you want to reboot your Receiver?"))
+				self.session.openWithCallback(self.exitAnswer, MessageBox, _("Upgrade finished.") +" "+_("Do you want to reboot your STB_BOX?"))
 			else:
 				self.close()
 		else:
@@ -1398,7 +1398,7 @@ class PacketManager(Screen, NumericalTextInput):
 			self.session.openWithCallback(self.runRemoveFinished, Ipkg, cmdList = self.cmdList)
 
 	def runRemoveFinished(self):
-		self.session.openWithCallback(self.RemoveReboot, MessageBox, _("Remove finished.") +" "+_("Do you want to reboot your Receiver?"), MessageBox.TYPE_YESNO)
+		self.session.openWithCallback(self.RemoveReboot, MessageBox, _("Remove finished.") +" "+_("Do you want to reboot your STB_BOX?"), MessageBox.TYPE_YESNO)
 
 	def RemoveReboot(self, result):
 		if result is None:
@@ -1420,7 +1420,7 @@ class PacketManager(Screen, NumericalTextInput):
 			self.session.openWithCallback(self.runUpgradeFinished, Ipkg, cmdList = self.cmdList)
 
 	def runUpgradeFinished(self):
-		self.session.openWithCallback(self.UpgradeReboot, MessageBox, _("Upgrade finished.") +" "+_("Do you want to reboot your Receiver?"), MessageBox.TYPE_YESNO)
+		self.session.openWithCallback(self.UpgradeReboot, MessageBox, _("Upgrade finished.") +" "+_("Do you want to reboot your STB_BOX?"), MessageBox.TYPE_YESNO)
 		
 	def UpgradeReboot(self, result):
 		if result is None:

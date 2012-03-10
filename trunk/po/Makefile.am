@@ -8,10 +8,10 @@ EXTRA_DIST = $(LANGPO)
 
 if UPDATE_PO
 # the TRANSLATORS: allows putting translation comments before the to-be-translated line.
-vix-py.pot: $(top_srcdir)/VIX/*.py
+vix-py.pot: $(top_srcdir)/src/*.py
 	$(XGETTEXT) -L Python --from-code=UTF-8 --add-comments="TRANSLATORS:" -d @PACKAGE_NAME@ -s -o $@ $^
 
-vix-xml.pot: $(srcdir)/xml2po.py $(top_srcdir)/VIX/*.xml
+vix-xml.pot: $(srcdir)/xml2po.py $(top_srcdir)/src/*.xml
 	$(PYTHON) $^ > $@
 
 vix.pot: vix-py.pot vix-xml.pot
@@ -39,8 +39,6 @@ install-data-local: $(LANGMO)
 	for lang in $(LANGS); do \
 		$(mkinstalldirs) $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/po/$$lang/LC_MESSAGES; \
 		$(INSTALL_DATA) $$lang.mo $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/po/$$lang/LC_MESSAGES/ViX.mo; \
-		$(mkinstalldirs) $(DESTDIR)$(datadir)/enigma2/po; \
-		$(INSTALL_DATA) $$lang.po $(DESTDIR)$(datadir)/enigma2/po/ViX-Core-$$lang.po; \
 	done
 
 uninstall-local:

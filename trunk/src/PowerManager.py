@@ -375,7 +375,7 @@ class AutoPowerManagerTimer:
 		print "[PowerManager] Standby onTimer occured at", strftime("%c", localtime(now))
 		from Screens.Standby import inStandby
 		if not inStandby:
-			message = _("Your box is going for nightly standby,\ndo you want to allow this?")
+			message = _("Your STB_BOX is going for nightly standby,\ndo you want to allow this?")
 			ybox = self.session.openWithCallback(self.doStandby, MessageBox, message, MessageBox.TYPE_YESNO, timeout = 30)
 			ybox.setTitle(_("Standby"))
 		else:
@@ -443,7 +443,7 @@ class AutoPowerManagerTimer:
 		else:
 			from Screens.Standby import inStandby
 			if not inStandby:
-				message = _("Your box is going for nightly shut-down,\ndo you want to allow this?")
+				message = _("Your STB_BOX is going for nightly shut-down,\ndo you want to allow this?")
 				ybox = self.session.openWithCallback(self.doDeepStandby, MessageBox, message, MessageBox.TYPE_YESNO, timeout = 30)
 				ybox.setTitle(_("Shut-down."))
 			else:
@@ -508,7 +508,7 @@ class AutoPowerManagerTimer:
 		else:
 			from Screens.Standby import inStandby
 			if not inStandby:
-				message = _("Your box is going for nightly GUI Restart,\ndo you want to allow this?")
+				message = _("Your STB_BOX is going for nightly GUI Restart,\ndo you want to allow this?")
 				ybox = self.session.openWithCallback(self.doGuiRestart, MessageBox, message, MessageBox.TYPE_YESNO, timeout = 30)
 				ybox.setTitle(_("Restart Enigma2."))
 			else:
@@ -574,7 +574,7 @@ class AutoPowerManagerTimer:
 		else:
 			from Screens.Standby import inStandby
 			if not inStandby:
-				message = _("Your box is going for a nightly Reboot,\ndo you want to allow this?")
+				message = _("Your STB_BOX is going for a nightly Reboot,\ndo you want to allow this?")
 				ybox = self.session.openWithCallback(self.doReboot, MessageBox, message, MessageBox.TYPE_YESNO, timeout = 30)
 				ybox.setTitle(_("Reboot"))
 			else:

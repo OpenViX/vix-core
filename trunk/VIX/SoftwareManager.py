@@ -28,6 +28,7 @@ from Screens.Ipkg import Ipkg
 from Components.About import about
 from Components.ActionMap import ActionMap, NumberActionMap
 from Components.Button import Button
+from Screens.Standby import TryQuitMainloop 
 from Components.Ipkg import IpkgComponent
 from Components.Sources.StaticText import StaticText
 from Components.ScrollLabel import ScrollLabel
@@ -45,7 +46,7 @@ from Components.Harddisk import harddiskmanager, getProcMounts
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_PLUGIN, SCOPE_CURRENT_SKIN, SCOPE_METADIR
 from Tools.LoadPixmap import LoadPixmap
 from Tools.NumericalTextInput import NumericalTextInput
-from enigma import eTimer, quitMainloop, RT_HALIGN_LEFT, RT_VALIGN_CENTER, eListboxPythonMultiContent, eListbox, gFont, getDesktop, ePicLoad, eRCInput, getPrevAsciiCode, eEnv
+from enigma import eTimer, RT_HALIGN_LEFT, RT_VALIGN_CENTER, eListboxPythonMultiContent, eListbox, gFont, getDesktop, ePicLoad, eRCInput, getPrevAsciiCode, eEnv
 from cPickle import dump, load
 from os import path as os_path, system as os_system, unlink, stat, mkdir, popen, makedirs, listdir, access, rename, remove, W_OK, R_OK, F_OK
 from time import time
@@ -124,7 +125,7 @@ class PluginManager(Screen, DreamInfoHandler):
 			<widget source="status" render="Label" position="5,410" zPosition="10" size="540,30" halign="center" valign="center" font="Regular;22" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
 		</screen>"""
 
-	def __init__(self, session, plugin_path = None, args = None):
+	def __init__(self, session, args = None):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("Manage Extensions"))
 		self.session = session
@@ -528,7 +529,7 @@ class PluginManager(Screen, DreamInfoHandler):
 
 	def ExecuteReboot(self, result):
 		if result:
-			quitMainloop(3)
+			self.session.open(TryQuitMainloop,retvalue=3)
 		else:
 			self.selectedFiles = []
 			self.detailsClosed(True)
@@ -561,7 +562,7 @@ class PluginManagerInfo(Screen):
 			<widget source="status" render="Label" position="5,408" zPosition="10" size="550,44" halign="center" valign="center" font="Regular;22" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
 		</screen>"""
 
-	def __init__(self, session, plugin_path, cmdlist = None):
+	def __init__(self, session, cmdlist = None):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("Manage Extensions"))
 		self.session = session
@@ -663,7 +664,7 @@ class PluginManagerHelp(Screen):
 			<widget source="status" render="Label" position="5,408" zPosition="10" size="550,44" halign="center" valign="center" font="Regular;22" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
 		</screen>"""
 
-	def __init__(self, session, plugin_path):
+	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.session = session
 		self.skin_path = resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX")
@@ -727,7 +728,7 @@ class PluginDetails(Screen, DreamInfoHandler):
 			<widget name="detailtext" position="10,90" size="270,330" zPosition="10" font="Regular;21" transparent="1" halign="left" valign="top"/>
 			<widget name="screenshot" position="290,90" size="300,330" alphatest="on"/>
 		</screen>"""
-	def __init__(self, session, plugin_path, packagedata = None):
+	def __init__(self, session, packagedata = None):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("Plugin Details"))
 		self.skin_path = resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX")
@@ -897,9 +898,8 @@ class PluginDetails(Screen, DreamInfoHandler):
 			self.close(True)
 	def UpgradeReboot(self, result):
 		if result:
-			quitMainloop(3)
-		else:
-			self.close(True)
+			self.session.open(TryQuitMainloop,retvalue=3)
+		self.close(True)
 
 	def runRemove(self, result):
 		if result:
@@ -914,17 +914,6 @@ class PluginDetails(Screen, DreamInfoHandler):
 	def fetchFailed(self,string):
 		self.setThumbnail(noScreenshot = True)
 		print "[PluginDetails] fetch failed " + string.getErrorMessage()
-
-class UnattendedUpgradeMessageBox(Screen):
-	def __init__(self, session, args = None):
-		self.skin = """
-			<screen position="center,center" size="600,150" title="Unattended Upgrade">
-				<ePixmap pixmap="skin_default/icons/input_info.png" position="5,5" size="53,53" alphatest="on" />
-				<widget name="text" position="65,8" size="520,200" font="Regular;22" />
-			</screen>"""
-		Screen.__init__(self, session)
-		from Components.Label import Label
-		self["text"] = Label(_("Unattended upgrade in progress\nPlease wait until your receiver reboots\nThis may take a few minutes"))
 
 class SoftwareUpdateChanges(Screen):
 	def __init__(self, session, args = None):
@@ -1215,14 +1204,8 @@ class UpdatePlugin(Screen):
 		if answer[1] == "changes":
 			self.session.openWithCallback(self.startActualUpgrade,SoftwareUpdateChanges)
 		elif answer[1] == "cold":
-			from enigma import gMainDC, getDesktop, eSize
-			self.session.nav.stopService()
-			desktop = getDesktop(0)
-			if desktop.size() != eSize(720,576):
-				gMainDC.getInstance().setResolution(720,576)
-				desktop.resize(eSize(720,576))
-			self.session.open(UnattendedUpgradeMessageBox)
-			quitMainloop(42)
+			self.session.open(TryQuitMainloop,retvalue=42)
+			self.close()
 		elif answer[1] == "hot":
 			self.ipkg.startCmd(IpkgComponent.CMD_UPGRADE, args = {'test_only': False})
 
@@ -1241,7 +1224,7 @@ class UpdatePlugin(Screen):
 
 	def exitAnswer(self, result):
 		if result is not None and result:
-			quitMainloop(2)
+			self.session.open(TryQuitMainloop,retvalue=2)
 		self.close()
 
 class PacketManager(Screen, NumericalTextInput):
@@ -1266,7 +1249,7 @@ class PacketManager(Screen, NumericalTextInput):
 			</widget>
 		</screen>"""
 		
-	def __init__(self, session, plugin_path, args = None):
+	def __init__(self, session, args = None):
 		Screen.__init__(self, session)
 		NumericalTextInput.__init__(self)
 		Screen.setTitle(self, _("Packet Manager"))
@@ -1430,7 +1413,7 @@ class PacketManager(Screen, NumericalTextInput):
 				write_cache(self.cache_file, self.cachelist)
 				self.reloadPluginlist()
 		if result:
-			quitMainloop(3)
+			self.session.open(TryQuitMainloop,retvalue=3)
 
 	def runUpgrade(self, result):
 		if result:
@@ -1452,7 +1435,7 @@ class PacketManager(Screen, NumericalTextInput):
 				write_cache(self.cache_file, self.cachelist)
 				self.reloadPluginlist()
 		if result:
-			quitMainloop(3)
+			self.session.open(TryQuitMainloop,retvalue=3)
 
 	def ipkgCallback(self, event, param):
 		if event == IpkgComponent.EVENT_ERROR:

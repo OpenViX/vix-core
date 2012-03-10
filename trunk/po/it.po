@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-21 12:33+0000\n"
+"POT-Creation-Date: 2012-03-10 17:11+0000\n"
 "PO-Revision-Date: 2011-07-11 16:05+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -273,7 +273,7 @@ msgstr ""
 
 msgid ""
 "Devices changes need a system restart to take effects.\n"
-"Restart your Box now?"
+"Restart your STB_BOX now?"
 msgstr ""
 
 msgid "Disable Startup"
@@ -288,7 +288,7 @@ msgstr ""
 msgid "Do you want to install the package:\n"
 msgstr ""
 
-msgid "Do you want to reboot your Receiver?"
+msgid "Do you want to reboot your STB_BOX?"
 msgstr ""
 
 msgid "Do you want to remove the package:\n"
@@ -300,7 +300,7 @@ msgstr ""
 msgid "Do you want to restore your Enigma2 settings ?"
 msgstr ""
 
-msgid "Do you want to update your Receiver?"
+msgid "Do you want to update your STB_BOX?"
 msgstr ""
 
 msgid "Do you want to upgrade the package:\n"
@@ -472,7 +472,7 @@ msgstr ""
 msgid "Manage Extensions"
 msgstr ""
 
-msgid "Manage extensions or plugins for your receiver"
+msgid "Manage extensions or plugins for your STB_BOX"
 msgstr ""
 
 msgid "Manage you devices mountpoints."
@@ -550,13 +550,13 @@ msgid ""
 msgstr ""
 
 msgid ""
-"No config files found, please setup MGcamd first\n"
-"in /var/keys"
+"No config files found, please setup Hypercam first\n"
+"in /etc/hypercam.cfg"
 msgstr ""
 
 msgid ""
-"No config files found, please setup Hypercam first\n"
-"in /etc/hypercam.cfg"
+"No config files found, please setup MGcamd first\n"
+"in /var/keys"
 msgstr ""
 
 msgid ""
@@ -607,7 +607,7 @@ msgstr ""
 msgid "October"
 msgstr ""
 
-msgid "Online update of your Receiver software."
+msgid "Online update of your STB_BOX software."
 msgstr ""
 
 msgid "Only extensions."
@@ -646,6 +646,9 @@ msgstr ""
 msgid "Please wait..."
 msgstr ""
 
+msgid "Plugin Details"
+msgstr ""
+
 msgid ""
 "Plugin Listing failed - e. g. wrong backup destination or no space left on "
 "backup device"
@@ -681,9 +684,6 @@ msgstr ""
 msgid "Rebooting..."
 msgstr ""
 
-msgid "Receiver software because updates are available."
-msgstr ""
-
 msgid "Recordings"
 msgstr ""
 
@@ -717,7 +717,7 @@ msgstr ""
 msgid "Restart Enigma2."
 msgstr ""
 
-msgid "Restart box."
+msgid "Restart STB_BOX."
 msgstr ""
 
 msgid "Restore"
@@ -834,7 +834,16 @@ msgstr ""
 msgid "Softcam Manager"
 msgstr ""
 
+msgid "Softcam Manager Log"
+msgstr ""
+
 msgid "Softcam Setup"
+msgstr ""
+
+msgid "Softcam Sopping..."
+msgstr ""
+
+msgid "Softcam Starting..."
 msgstr ""
 
 msgid "SoftcamCheck"
@@ -843,10 +852,13 @@ msgstr ""
 msgid "Software"
 msgstr ""
 
+msgid "Software Manager"
+msgstr ""
+
 msgid "Software Update"
 msgstr ""
 
-msgid "Sorry you box is not yet compatible."
+msgid "Sorry you STB_BOX is not yet compatible."
 msgstr ""
 
 msgid "Sorry, no Details available!"
@@ -971,12 +983,6 @@ msgstr ""
 msgid "Unattended"
 msgstr ""
 
-msgid ""
-"Unattended upgrade in progress\n"
-"Please wait until your receiver reboots\n"
-"This may take a few minutes"
-msgstr ""
-
 msgid "Unattended upgrade without GUI and reboot system"
 msgstr ""
 
@@ -1008,9 +1014,6 @@ msgid "Upgrading"
 msgstr ""
 
 msgid "Use as HDD"
-msgstr ""
-
-msgid "VIXMenu"
 msgstr ""
 
 msgid "ViX"
@@ -1070,6 +1073,9 @@ msgstr ""
 msgid "View, install and remove available or installed packages."
 msgstr ""
 
+msgid "STB_BOX software because updates are available."
+msgstr ""
+
 msgid "Wait please while creating swapfile..."
 msgstr ""
 
@@ -1081,7 +1087,7 @@ msgstr ""
 msgid "Wait please while scanning for devices..."
 msgstr ""
 
-msgid "Wait please while scanning your box devices..."
+msgid "Wait please while scanning your STB_BOX devices..."
 msgstr ""
 
 msgid "Wait please while scanning..."
@@ -1147,38 +1153,39 @@ msgid "You have to create a Swap File before to activate the autostart."
 msgstr ""
 
 msgid ""
-"Your box is about to run a backup of your settings and detect your plugins,\n"
+"Your STB_BOX is about to run a backup of your settings and detect your "
+"plugins,\n"
 "Do you want to allow this?"
 msgstr ""
 
 msgid ""
-"Your box is about to run a full image backup, this can take about 6 minutes "
-"to complete,\n"
+"Your STB_BOX is about to run a full image backup, this can take about 6 "
+"minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
 
 msgid ""
-"Your box is going for a nightly Reboot,\n"
+"Your STB_BOX is going for a nightly Reboot,\n"
 "do you want to allow this?"
 msgstr ""
 
 msgid ""
-"Your box is going for nightly GUI Restart,\n"
+"Your STB_BOX is going for nightly GUI Restart,\n"
 "do you want to allow this?"
 msgstr ""
 
 msgid ""
-"Your box is going for nightly shut-down,\n"
+"Your STB_BOX is going for nightly shut-down,\n"
 "do you want to allow this?"
 msgstr ""
 
 msgid ""
-"Your box is going for nightly standby,\n"
+"Your STB_BOX is going for nightly standby,\n"
 "do you want to allow this?"
 msgstr ""
 
 msgid ""
-"Your receiver isn't connected to the internet properly. Please check it and "
+"Your STB_BOX isn't connected to the internet properly. Please check it and "
 "try again."
 msgstr ""
 
@@ -1201,6 +1208,6 @@ msgid "unknown"
 msgstr ""
 
 msgid ""
-"your receiver might be unusable now. Please consult the manual for further "
-"assistance before rebooting your receiver."
+"your STB_BOX might be unusable now. Please consult the manual for further "
+"assistance before rebooting your STB_BOX."
 msgstr ""

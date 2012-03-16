@@ -185,13 +185,13 @@ class PluginManager(Screen, DreamInfoHandler):
 			iSoftwareTools.cleanupSoftwareTools()
 			self.prepareInstall()
 			if len(self.cmdList):
-				self.session.openWithCallback(self.runExecute, PluginManagerInfo, self.skin_path, self.cmdList)
+				self.session.openWithCallback(self.runExecute, PluginManagerInfo, self.cmdList)
 			else:
 				self.close()
 
 	def handleHelp(self):
 		if self.currList != "status":
-			self.session.open(PluginManagerHelp, self.skin_path)
+			self.session.open(PluginManagerHelp)
 
 	def setState(self,status = None):
 		if status:
@@ -349,13 +349,13 @@ class PluginManager(Screen, DreamInfoHandler):
 					detailsfile = iSoftwareTools.directory[0] + "/" + current[1]
 					if (os_path.exists(detailsfile) == True):
 						self.saved_currentSelectedPackage = self.currentSelectedPackage
-						self.session.openWithCallback(self.detailsClosed, PluginDetails, self.skin_path, current)
+						self.session.openWithCallback(self.detailsClosed, PluginDetails, current)
 					else:
 						self.session.open(MessageBox, _("Sorry, no Details available!"), MessageBox.TYPE_INFO, timeout = 10)
 			elif self.currList == "category":
 				self.prepareInstall()
 				if len(self.cmdList):
-					self.session.openWithCallback(self.runExecute, PluginManagerInfo, self.skin_path, self.cmdList)
+					self.session.openWithCallback(self.runExecute, PluginManagerInfo, self.cmdList)
 
 	def detailsClosed(self, result = None):
 		if result is not None:

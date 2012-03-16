@@ -57,6 +57,8 @@ class VIXCronManager(Screen):
 		self['lab2'] = Label(_("Current Status:"))
 		self['labstop'] = Label(_("Stopped"))
 		self['labrun'] = Label(_("Running"))
+		self['labrun'].hide()
+		self['labactive'].hide()
 		self.summary_running = ''
 		self['key'] = Label(_("H: = Hourly / D: = Daily / W: = Weekly / M: = Monthly"))
 		self.Console = Console()
@@ -72,7 +74,24 @@ class VIXCronManager(Screen):
 		self['actions'] = ActionMap(['WizardActions', 'ColorActions', "MenuActions"], {'ok': self.info, 'back': self.close, 'red': self.addtocron, 'green': self.delcron, 'yellow': self.CrondStart, 'blue': self.autostart, "menu": self.closeRecursive})
 		if not self.selectionChanged in self["list"].onSelectionChanged:
 			self["list"].onSelectionChanged.append(self.selectionChanged)
-		self.onLayoutFinish.append(self.updateList)
+		self.service_name = 'busybox-cron'
+		self.onLayoutFinish.append(self.InstallCheck)
+
+	def InstallCheck(self):
+		self.Console.ePopen('/usr/bin/opkg list_installed ' + self.service_name, self.dataAvail)
+
+	def dataAvail(self, str, retval, extra_args):
+		if not str:
+			self.session.openWithCallback(self.InstallPackage, MessageBox, _('Would you like to install "%s"?') % self.service_name)
+		else:
+			self.updateService()
+
+	def InstallPackage(self, val):
+		if val:
+			self.doInstall(self.updateService, self.service_name)
+
+	def doInstall(self, callback, pkgname):
+		self.Console.ePopen('/usr/bin/opkg install ' + pkgname + ' sync', callback)
 
 	def createSummary(self):
 		from Screens.PluginBrowser import PluginBrowserSummary

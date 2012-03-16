@@ -84,11 +84,11 @@ class VIXCronManager(Screen):
 		if not str:
 			self.session.openWithCallback(self.InstallPackage, MessageBox, _('Would you like to install "%s"?') % self.service_name)
 		else:
-			self.updateService()
+			self.updateList()
 
 	def InstallPackage(self, val):
 		if val:
-			self.doInstall(self.updateService, self.service_name)
+			self.doInstall(self.updateList, self.service_name)
 
 	def doInstall(self, callback, pkgname):
 		self.Console.ePopen('/usr/bin/opkg install ' + pkgname + ' sync', callback)

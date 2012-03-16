@@ -1,15 +1,12 @@
 # for localized messages
 from . import _
 
-from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Components.ActionMap import ActionMap
 from Components.Sources.StaticText import StaticText
 from Components.Sources.List import List
 from Components.MultiContent import MultiContentEntryText
-from Components.config import config, ConfigBoolean
 from enigma import RT_HALIGN_LEFT, RT_VALIGN_CENTER, gFont
-from os import path, mkdir, listdir, access, stat, rename, remove, W_OK, R_OK
 
 class VIXMenu(Screen):
 	skin = """

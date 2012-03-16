@@ -9,6 +9,7 @@ from ImageManager import ImageManagerautostart
 from SwapManager import SwapAutostart
 from SoftcamManager import SoftcamAutostart
 from PowerManager import PowerManagerautostart, PowerManagerNextWakeup
+from os import path, listdir
 
 def checkConfigBackup():
 	try:
@@ -20,7 +21,7 @@ def checkConfigBackup():
 				devices.remove(x)
 		if len(devices):
 			for x in devices:
-				print '[RestoreWizard] Seraching devices:',x
+				print '[RestoreWizard] Seraching devices:',x[1]
 				if not x[1].endswith('/'):
 					if path.exists(x[1] + '/backup'):
 						images = listdir(x[1] + '/backup')

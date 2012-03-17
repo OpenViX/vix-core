@@ -91,6 +91,7 @@ class VIXCronManager(Screen):
 			self.doInstall(self.updateList, self.service_name)
 
 	def doInstall(self, callback, pkgname):
+		self["actions"].setEnabled(False)
 		self.Console.ePopen('/usr/bin/opkg install ' + pkgname + ' sync', callback)
 
 	def createSummary(self):
@@ -130,7 +131,7 @@ class VIXCronManager(Screen):
 	def addtocron(self):
 		self.session.openWithCallback(self.updateList, VIXSetupCronConf)
 
-	def updateList(self):
+	def updateList(self,result = None, retval = None, extra_args = None):
 		import process
 		p = process.ProcessList()
 		crond_process = str(p.named('crond')).strip('[]')
@@ -248,6 +249,7 @@ class VIXCronManager(Screen):
 						self.list.append(res)
 			f.close()
 		self['list'].list = self.list
+		self["actions"].setEnabled(True)
 
 	def delcron(self):
 		self.sel = self['list'].getCurrent()

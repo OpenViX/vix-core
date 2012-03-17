@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-10 17:11+0000\n"
-"PO-Revision-Date: 2012-03-02 15:59+0300\n"
+"PO-Revision-Date: 2012-03-17 13:22+0300\n"
 "Last-Translator: rimas\n"
 "Language-Team: Henkka, Raivo, eesatfan and rimas\n"
 "Language: et\n"
@@ -50,7 +50,7 @@ msgstr ""
 "Kas säilitad oma versiooni?"
 
 msgid "A small overview of the available icon states and actions."
-msgstr "A small overview of the available icon states and actions."
+msgstr "Kasutatavate ikoonide seisundite ja tegevuste lühiülevaade."
 
 msgid "Activate"
 msgstr "Aktiveeri"
@@ -65,10 +65,10 @@ msgid "Add"
 msgstr "Lisa"
 
 msgid "After pressing OK, please wait!"
-msgstr ""
+msgstr "Vajuta OK ja oota!"
 
 msgid "Apr"
-msgstr ""
+msgstr "Apr"
 
 msgid "April"
 msgstr "Aprill"
@@ -77,7 +77,7 @@ msgid "Are you ready to create a backup ?"
 msgstr "Kas lood varukoopia?"
 
 msgid "Are you ready to create a backup image ?"
-msgstr "Kas lood image koopia? "
+msgstr "Kas lood 1:1 tarvaratõmmise? "
 
 msgid "Are you ready to install ?"
 msgstr "Kas paigaldad?"
@@ -114,7 +114,7 @@ msgstr ""
 " "
 
 msgid "Aug"
-msgstr ""
+msgstr "Aug"
 
 msgid "August"
 msgstr "August"
@@ -135,7 +135,7 @@ msgid "Backing up files..."
 msgstr "Varundamine..."
 
 msgid "Backup Complete..."
-msgstr "Varunkoopia on tehtud..."
+msgstr "Varukoopia on tehtud..."
 
 msgid "Backup Confirmation"
 msgstr "Varundamise kinnitamine"
@@ -155,11 +155,8 @@ msgstr "Varundamise logi"
 msgid "Backup Manager Setup"
 msgstr "Varundamise seadistamine"
 
-msgid ""
-"Backup failed - e. g. wrong backup destination or no space left on backup "
-"device"
-msgstr ""
-"Varundamine nurjus - n.t.  vale asukoht või ruumi puudus varundamise asukohas"
+msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Varundamine nurjus - n.t.  vale asukoht või ruumi puudus varundamise asukohas"
 
 msgid ""
 "Backup in progress,\n"
@@ -174,12 +171,8 @@ msgstr "Varundamine"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "MGcamd töötamisel ei saa CCcam käivituda"
 
-msgid ""
-"Can't unmount partiton, make sure it is not being used for swap or record/"
-"timeshift paths"
-msgstr ""
-"Partitsiooni lahti haakimine nurjus. Vaata, et seda ei kasutata saale või "
-"salvestamise/ajanihke jaoks"
+msgid "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths"
+msgstr "Partitsiooni lahti haakimine nurjus. Veendu, et seda ei kasutata saale või salvestamise/ajanihke jaoks"
 
 msgid "Cancel"
 msgstr "Tühista"
@@ -197,7 +190,7 @@ msgid "Choose Files"
 msgstr "Vali failid"
 
 msgid "Choose where to mount your devices to:"
-msgstr "Vali seadmetele haakepunktid:"
+msgstr "Määra seadmetele haakepunktid:"
 
 msgid "Close"
 msgstr "Sulge"
@@ -227,13 +220,13 @@ msgid "Create"
 msgstr "Loo"
 
 msgid "Create and Manage your swapfiles."
-msgstr ""
+msgstr "Loo ja halda saalefaile"
 
 msgid "Create and Restore complete images of the system."
-msgstr ""
+msgstr "Loo ja taasta täielikke süsteemi varukoopiaid."
 
 msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-msgstr ""
+msgstr "Loo ajakavad ooterežiimi, kasutajaliidese ja vastuvõtja taaskäivitamise jaoks."
 
 msgid "Creating Backup Files..."
 msgstr "Varukoopia loomine..."
@@ -260,7 +253,7 @@ msgid "Deactivate"
 msgstr "Lülita välja"
 
 msgid "Dec"
-msgstr ""
+msgstr "Dets"
 
 msgid "December"
 msgstr "Detsember"
@@ -367,7 +360,7 @@ msgid "Enable Startup"
 msgstr "Luba autostart"
 
 msgid "Enable Swap at startup"
-msgstr "Luba saale käivitumisel"
+msgstr "Luba käivitumisel saale"
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Enough Retries, delaying till next schedule."
@@ -382,7 +375,7 @@ msgid "Extensions management"
 msgstr "Laienduste haldamine"
 
 msgid "Feb"
-msgstr ""
+msgstr "Veebr"
 
 msgid "February"
 msgstr "Veebruar"
@@ -391,13 +384,13 @@ msgid "Folder prefix"
 msgstr "Kataloogi nimi"
 
 msgid "Following tasks will be done after you press OK!"
-msgstr "OK vajutades täidetakse järgmised ülesanded!"
+msgstr "Vajutades OK, täidetakse järgmised ülesanded!"
 
 msgid "Found none stanadard softcam, trying to start, this may fail"
-msgstr "Leiti ebastandardne  SoftCam. Käivitamine võib nurjuda"
+msgstr "Leiti ebastandardne EMU. Käivitamine võib nurjuda"
 
 msgid "Found none standard softcam, trying to start, this may fail"
-msgstr "Leiti ebastandardne  SoftCam. Käivitamine võib nurjuda"
+msgstr "Leiti ebastandardne EMU. Käivitamine võib nurjuda"
 
 msgid "Fri"
 msgstr "R"
@@ -427,10 +420,10 @@ msgid "Image Manager"
 msgstr "1:1 varukoopia"
 
 msgid "Image Manager Setup"
-msgstr "Image halduri seaded"
+msgstr "Seadistamine"
 
 msgid "ImageManager"
-msgstr "Image haldur"
+msgstr "1:1 varukoopia"
 
 msgid "Inactive"
 msgstr "Väljas"
@@ -445,7 +438,7 @@ msgid "Install Confirmation"
 msgstr "Paigaldamise kinnitus"
 
 msgid "Install IPK's from your tmp folder."
-msgstr ""
+msgstr "Paigalda IPK 'tmp' kaustast."
 
 msgid "Install local extension"
 msgstr "IPK-paigaldamine"
@@ -463,19 +456,19 @@ msgid "Installing..."
 msgstr "Paigaldamine..."
 
 msgid "Jan"
-msgstr ""
+msgstr "Jan"
 
 msgid "January"
 msgstr "Jaanuar"
 
 msgid "Jul"
-msgstr ""
+msgstr "Jul"
 
 msgid "July"
 msgstr "Juuli"
 
 msgid "Jun"
-msgstr ""
+msgstr "Jun"
 
 msgid "June"
 msgstr "Juuni"
@@ -490,19 +483,19 @@ msgid "Manage Extensions"
 msgstr "Laienduste haldamine"
 
 msgid "Manage extensions or plugins for your STB_BOX"
-msgstr ""
+msgstr "Halda vastuvõtja laiendusi"
 
 msgid "Manage you devices mountpoints."
-msgstr ""
+msgstr "Halda andmekandjate haakepunkte."
 
 msgid "Manage your backups of your settings."
-msgstr ""
+msgstr "Halda varukoopiaid seadistustest."
 
 msgid "Manage your cron jobs."
-msgstr ""
+msgstr "Halda cron tööd."
 
 msgid "Mar"
-msgstr ""
+msgstr "Märts"
 
 msgid "March"
 msgstr "Märts"
@@ -595,8 +588,7 @@ msgstr "Kirjeldus puudub."
 msgid "No network connection available."
 msgstr "Võrguühendus puudub."
 
-msgid ""
-"No packages were upgraded yet. So you can check your network and try again."
+msgid "No packages were upgraded yet. So you can check your network and try again."
 msgstr "Uuendamist ei toimunud. Kontrolli oma võrguühendus ja proovi uuesti. "
 
 msgid "No plugins where needed to be installed"
@@ -612,7 +604,7 @@ msgid "Nothing to upgrade"
 msgstr "Uuendusi ei ole"
 
 msgid "Nov"
-msgstr ""
+msgstr "Nov"
 
 msgid "November"
 msgstr "November"
@@ -627,13 +619,13 @@ msgid "OK, to perform a restore"
 msgstr "Jah, taasta"
 
 msgid "Oct"
-msgstr ""
+msgstr "Okt"
 
 msgid "October"
 msgstr "Oktoober"
 
 msgid "Online update of your STB_BOX software."
-msgstr ""
+msgstr "Vastuvõtja uuendamine üle võrgu."
 
 msgid "Only extensions."
 msgstr "Ainult laiendused."
@@ -672,14 +664,10 @@ msgid "Please wait..."
 msgstr "Oota..."
 
 msgid "Plugin Details"
-msgstr ""
+msgstr "Laienduse üksikasjad"
 
-msgid ""
-"Plugin Listing failed - e. g. wrong backup destination or no space left on "
-"backup device"
-msgstr ""
-"Laienduste laadimine nurjus - n.t.  vale asukoht või ruumipuudus varundamise "
-"asukohas"
+msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Laienduste laadimine nurjus - n.t.  vale asukoht või ruumipuudus varundamise asukohas"
 
 msgid "Plugin manager activity information"
 msgstr "Laienduste halduri tegevuse info"
@@ -697,7 +685,7 @@ msgid "Press OK on your remote control to continue."
 msgstr "Jätkamiseks vajuta OK."
 
 msgid "Process"
-msgstr "Töös"
+msgstr "Protsess"
 
 msgid "Really close without saving settings?"
 msgstr "Väljud muudatusi salvetamata?"
@@ -781,7 +769,7 @@ msgid "Run how often ?"
 msgstr "Käivitamise sagedus?"
 
 msgid "Run your shell scripts."
-msgstr ""
+msgstr "Käivita skripte"
 
 msgid "Running"
 msgstr "Töös"
@@ -814,7 +802,7 @@ msgid "Select"
 msgstr "Vali"
 
 msgid "Select a backup to Restore / Delete:"
-msgstr ""
+msgstr "Vali taastamiseks või kustutamiseks varukoopia:"
 
 msgid "Select a package to install:"
 msgstr "Vali paigaldamiseks pakett:"
@@ -826,7 +814,7 @@ msgid "Select an image to Download:"
 msgstr "Vali allalaadimiseks image:"
 
 msgid "Select an image to Restore / Delete:"
-msgstr ""
+msgstr "Vali taastamiseks ja kustutamiseks image:"
 
 msgid "Select files/folders to backup"
 msgstr "Vali varundamiseks failid/kataloogid"
@@ -838,13 +826,13 @@ msgid "Select:"
 msgstr "Vali:"
 
 msgid "Sep"
-msgstr ""
+msgstr "Sep"
 
 msgid "September"
 msgstr "September"
 
 msgid "Setting Up..."
-msgstr "Setting Up..."
+msgstr "Seadistamine..."
 
 msgid "Setup Mounts"
 msgstr "Haakepuktid"
@@ -862,16 +850,16 @@ msgid "Softcam Manager"
 msgstr "EMU haldamine"
 
 msgid "Softcam Manager Log"
-msgstr ""
+msgstr "EMU halduri logi"
 
 msgid "Softcam Setup"
 msgstr "EMU seadistamine"
 
 msgid "Softcam Sopping..."
-msgstr ""
+msgstr "EMU peatamine..."
 
 msgid "Softcam Starting..."
-msgstr ""
+msgstr "EMU käivitamine..."
 
 msgid "SoftcamCheck"
 msgstr "EMU kontroll"
@@ -880,7 +868,7 @@ msgid "Software"
 msgstr "Tarkvara"
 
 msgid "Software Manager"
-msgstr ""
+msgstr "Tarkvara haldur"
 
 msgid "Software Update"
 msgstr "Tarkvara uuendamine"
@@ -891,20 +879,11 @@ msgstr "Vastuvõtja ei ole veel ühilduv."
 msgid "Sorry, no Details available!"
 msgstr "Üksikasjad puuduvad!"
 
-msgid ""
-"Sorry, no physical devices that supports SWAP attached. Can't create "
-"Swapfile on network or fat32 filesystems"
-msgstr ""
-"Andmekandjat, mis toetaks saalet, ei ole ühendatud. Saalefaili loomine "
-"võrgus või fat32 süsteemis ei ole võimalik"
+msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
+msgstr "Andmekandjat, mis toetaks saalet, ei ole ühendatud. Saalefaili loomine võrgus või fat32 süsteemis ei ole võimalik"
 
-msgid ""
-"Sorry, not enough free ram found, and no physical devices that supports SWAP "
-"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
-"make backup"
-msgstr ""
-"Ei ole piisavalt vaba mälu ega andmekandjat, mis toetaks saalet. Saalefaili "
-"loomine võrgus või fat32 süsteemis ei ole võimalik. Varukoopiat ei saa luua"
+msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
+msgstr "Ei ole piisavalt vaba mälu ega andmekandjat, mis toetaks saalet. Saalefaili loomine võrgus või fat32 süsteemis ei ole võimalik. Varukoopiat ei saa luua"
 
 msgid "Standby"
 msgstr "Ooterežiim"
@@ -1102,7 +1081,7 @@ msgid "View the changes"
 msgstr "Vaata muudatusi"
 
 msgid "View, install and remove available or installed packages."
-msgstr ""
+msgstr "Vaata, paigalda ja eemalda tarkvara."
 
 msgid "STB_BOX software because updates are available."
 msgstr "vastuvõtja tarkvara, sest uuendused on saadaval."
@@ -1139,14 +1118,12 @@ msgid ""
 "Welcome to the restore wizard.\n"
 "\n"
 "A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that "
-"where installed when the backup was created.\n"
+"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
 msgstr ""
 "Tere tulemast taastamisabilisse.\n"
 "\n"
 "Leiti varukoopia.\n"
-"Saad kasutada seda abilist, et taastada oma seadistused ja laiendused, mis "
-"olid paigaldatud ajal, kui varukoopia loodi.\n"
+"Saad kasutada seda abilist, et taastada oma seadistused ja laiendused, mis olid paigaldatud ajal, kui varukoopia loodi.\n"
 
 msgid "What Day of month ?"
 msgstr "Kuupäev?"
@@ -1182,7 +1159,7 @@ msgid "You have no image to delete."
 msgstr "Pole midagi kustutada."
 
 msgid "You have no image to download."
-msgstr "Pole imaget, mida alla laadida."
+msgstr "Pole midagi alla laadida."
 
 msgid "You have no script to run."
 msgstr "Pole skripti."
@@ -1191,20 +1168,17 @@ msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Enne autostardi lubamist tuleb luua saalefail. "
 
 msgid ""
-"Your STB_BOX is about to run a backup of your settings and detect your "
-"plugins,\n"
+"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
 "Vastuvõtja varundab seadistused ja tuvastab laiendused.\n"
 "Kas lubad seda?"
 
 msgid ""
-"Your STB_BOX is about to run a full image backup, this can take about 6 "
-"minutes to complete,\n"
+"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"Vastuvõtja alustab imagest 1:1 varukoopia loomist. See võib kesta umbes 6 "
-"minutit.,\n"
+"Vastuvõtja alustab imagest 1:1 varukoopia loomist. See võib kesta umbes 6 minutit.,\n"
 "Kas lubad seda?"
 
 msgid ""
@@ -1218,7 +1192,7 @@ msgid ""
 "Your STB_BOX is going for nightly GUI Restart,\n"
 "do you want to allow this?"
 msgstr ""
-"Vastuvõtja teeb igaöise GUI taaskäivituse,\n"
+"Vastuvõtja teeb igaöise kasutajaliidese taaskäivituse,\n"
 "Kas lubad seda?"
 
 msgid ""
@@ -1235,15 +1209,11 @@ msgstr ""
 "Vastuvõtja läheb igaöisesse ooteseisundisse,\n"
 "Kas lubad seda?"
 
-msgid ""
-"Your STB_BOX isn't connected to the internet properly. Please check it and "
-"try again."
-msgstr ""
-"Vastuvõtja ei ole korralikult internetti ühendatud. Kontrolli ja proovi "
-"uuesti"
+msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
+msgstr "Vastuvõtja ei ole korralikult internetti ühendatud. Kontrolli ja proovi uuesti"
 
 msgid "detected"
-msgstr ""
+msgstr "tuvastatud"
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Image allalaadimine.'"
@@ -1252,7 +1222,7 @@ msgid "echo 'Expanding Image.'"
 msgstr "echo 'Image laiendamine.'"
 
 msgid "there was a problem with this device, please reformat and try again."
-msgstr ""
+msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."
 
 msgid "unavailable"
 msgstr "pole saadaval"
@@ -1260,224 +1230,6 @@ msgstr "pole saadaval"
 msgid "unknown"
 msgstr "tundmatu"
 
-msgid ""
-"your STB_BOX might be unusable now. Please consult the manual for further "
-"assistance before rebooting your STB_BOX."
-msgstr ""
-"Vastuvõtja võib nüüd olla kasutuskõlbmatu. Uuri enne taaskäivitamist "
-"käsiraamatut lisaabi saamiseks ."
+msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
+msgstr "Vastuvõtja võib nüüd olla kasutuskõlbmatu. Uuri enne taaskäivitamist käsiraamatut lisaabi saamiseks ."
 
-#~ msgid ""
-#~ "\n"
-#~ "After pressing OK, please wait!"
-#~ msgstr ""
-#~ "\n"
-#~ "Vajuta OK ja oota!"
-
-#~ msgid ""
-#~ "\n"
-#~ "Create and Manage your swapfiles."
-#~ msgstr ""
-#~ "\n"
-#~ "Loo ja halda saalefaile."
-
-#~ msgid ""
-#~ "\n"
-#~ "Create and Restore complete images of the system."
-#~ msgstr ""
-#~ "\n"
-#~ "Täieliku varukoopia loomine ja taastamine."
-
-#~ msgid ""
-#~ "\n"
-#~ "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-#~ msgstr ""
-#~ "\n"
-#~ "Välja lülitamise, taaskäivitamise ja sügavootele mineku ajastamine."
-
-#~ msgid ""
-#~ "\n"
-#~ "Install IPK's from your tmp folder."
-#~ msgstr ""
-#~ "\n"
-#~ "IPK-failide paigaldamine."
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage extensions or plugins for your STB_BOX"
-#~ msgstr ""
-#~ "\n"
-#~ "Laienduste haldamine."
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage you devices mountpoints."
-#~ msgstr ""
-#~ "\n"
-#~ "Halda andmekandjate haakepunkte."
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage your backups of your settings."
-#~ msgstr ""
-#~ "\n"
-#~ "Varukoopiad seadistustest."
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage your cron jobs."
-#~ msgstr ""
-#~ "\n"
-#~ "Cron haldamine"
-
-#~ msgid ""
-#~ "\n"
-#~ "Online update of your STB_BOX software."
-#~ msgstr ""
-#~ "\n"
-#~ "Uuenda vastuvõtja tarkvara."
-
-#~ msgid ""
-#~ "\n"
-#~ "Run your shell scripts."
-#~ msgstr ""
-#~ "\n"
-#~ "Skriptide käivitamine."
-
-#~ msgid ""
-#~ "\n"
-#~ "Select a backup to Restore / Delete:"
-#~ msgstr ""
-#~ "\n"
-#~ "Taasta või kustuta varukoopia:"
-
-#~ msgid ""
-#~ "\n"
-#~ "Select an image to Restore / Delete:"
-#~ msgstr ""
-#~ "\n"
-#~ "Taasta või kustuta image:"
-
-#~ msgid ""
-#~ "\n"
-#~ "View, install and remove available or installed packages."
-#~ msgstr ""
-#~ "\n"
-#~ "Vaata, paigalda ja eemalda sobivaid või paigaldatud pakette. "
-
-#~ msgid ""
-#~ "\n"
-#~ "there was a problem with this device, please reformat and try again."
-#~ msgstr ""
-#~ "\n"
-#~ "andmekandjaga tekkis probleem. Vorminda ja proovi uuesti."
-
-#~ msgid " "
-#~ msgstr " "
-
-#~ msgid " detected'"
-#~ msgstr " leitud'"
-
-#~ msgid "A search for available updates is currently in progress."
-#~ msgstr "Toimub uuenduste otsimine."
-
-#~ msgid "Auto Language Selection"
-#~ msgstr "Keele automaatne valik"
-
-#~ msgid "Autostart Disabled."
-#~ msgstr "Autostart keelatud"
-
-#~ msgid "Autostart Enabled."
-#~ msgstr "Autostart lubatud"
-
-#~ msgid "Button Setup"
-#~ msgstr "Nuppude seadistus"
-
-#~ msgid "Error: You have to set Mountpoins for all your devices."
-#~ msgstr "Viga: Määra haakepunktid kogu riistvarale."
-
-#~ msgid "Extended Software"
-#~ msgstr "Lisatarkvara"
-
-#~ msgid "Extended Software Plugin"
-#~ msgstr "Lisatarkvara"
-
-#~ msgid "Logs"
-#~ msgstr "Logid"
-
-#~ msgid "Press MENU on your remote control for additional options."
-#~ msgstr "Lisavõimaluste nägemiseks vajuta MENU. "
-
-#~ msgid "Recording Paths"
-#~ msgstr "Salvestuskaustad"
-
-#~ msgid ""
-#~ "Restore wizard has detected that you had extra plugins installed at the "
-#~ "time of you backup, Do you want to reinstall these plugins ?"
-#~ msgstr ""
-#~ "Taastamise abiline tuvastas, et oled paigaldanud täiendavaid laiendusi. "
-#~ "Kas soovid nei uuesti paigaldada?"
-
-#~ msgid "Script Running"
-#~ msgstr "Skriptid"
-
-#~ msgid "Service Information"
-#~ msgstr "Kanaliinfo"
-
-#~ msgid "Skin Setup"
-#~ msgstr "Teema valik"
-
-#~ msgid "Sorry the image "
-#~ msgstr "Vabandage, image"
-
-#~ msgid ""
-#~ "Sorry you have Debug Logs enabed,\n"
-#~ "Please disable and restart GUI, before trying again"
-#~ msgstr ""
-#~ "Silumislogid on lubatud,\n"
-#~ "Keela ja taakäivita GUI enne uuesti proovimist"
-
-#~ msgid "Swap File creation Failed. Check for Available space."
-#~ msgstr "Saalefaili loomine nurjus. Kontrolli saadaolevat ruumi."
-
-#~ msgid "Swap File successfully created."
-#~ msgstr "Saalefaili loomine õnnestus."
-
-#~ msgid "System Information"
-#~ msgstr "Süsteemiinfo"
-
-#~ msgid ""
-#~ "The screen will go blank while upgrading, be patient and wait for the "
-#~ "reboot."
-#~ msgstr ""
-#~ "Uuendamise ajal pilt ekraanil kaob. Ole kannalik ja oota taaskäivitumist."
-
-#~ msgid "Timers"
-#~ msgstr "Taimerid"
-
-#~ msgid "Timeshift Settings"
-#~ msgstr "Ajanihke sätted"
-
-#~ msgid ""
-#~ "Unattended upgrade in progress\n"
-#~ "Please wait until your STB_BOX reboots\n"
-#~ "This may take a few minutes"
-#~ msgstr ""
-#~ "Toimub automatiseeritud uuendamine\n"
-#~ "Oota vastuvõtja taaskäivitamist\n"
-#~ "Selleks võib kuluda mõni minut"
-
-#~ msgid "VIX"
-#~ msgstr "VIX"
-
-#~ msgid "VIXMenu"
-#~ msgstr "VIX menüü"
-
-#~ msgid "Video Enchancement Settings"
-#~ msgstr "Pildi paranduse sätted"
-
-#~ msgid "You have no image to restore."
-#~ msgstr "Pole midagi taastada."
-
-#~ msgid "backup-manager"
-#~ msgstr "Varundamine"

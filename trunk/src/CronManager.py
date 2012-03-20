@@ -71,28 +71,61 @@ class VIXCronManager(Screen):
 		self['key_blue'] = Label(_("Autostart"))
 		self.list = []
 		self['list'] = List(self.list)
-		self['actions'] = ActionMap(['WizardActions', 'ColorActions', "MenuActions"], {'ok': self.info, 'back': self.close, 'red': self.addtocron, 'green': self.delcron, 'yellow': self.CrondStart, 'blue': self.autostart, "menu": self.closeRecursive})
+		self['actions'] = ActionMap(['WizardActions', 'ColorActions', "MenuActions"], {'ok': self.info, 'back': self.UninstallCheck, 'red': self.addtocron, 'green': self.delcron, 'yellow': self.CrondStart, 'blue': self.autostart, "menu": self.closeRecursive})
 		if not self.selectionChanged in self["list"].onSelectionChanged:
 			self["list"].onSelectionChanged.append(self.selectionChanged)
 		self.service_name = 'busybox-cron'
 		self.onLayoutFinish.append(self.InstallCheck)
 
 	def InstallCheck(self):
-		self.Console.ePopen('/usr/bin/opkg list_installed ' + self.service_name, self.dataAvail)
+		self.Console.ePopen('/usr/bin/opkg list_installed ' + self.service_name, self.InstalldataAvail)
 
-	def dataAvail(self, str, retval, extra_args):
+	def InstalldataAvail(self, str, retval, extra_args):
 		if not str:
-			self.session.openWithCallback(self.InstallPackage, MessageBox, _('Would you like to install "%s"?') % self.service_name)
+			self.session.openWithCallback(self.InstallPackage, MessageBox, _('Ready to install "%s" ?') % self.service_name)
 		else:
 			self.updateList()
 
 	def InstallPackage(self, val):
 		if val:
-			self.doInstall(self.updateList, self.service_name)
+			self.doInstall(self.installComplete, self.service_name)
 
 	def doInstall(self, callback, pkgname):
 		self["actions"].setEnabled(False)
+		self.message = self.session.open(MessageBox,_("please wait..."), MessageBox.TYPE_INFO)
+		self.message.setTitle(_("Now installing service"))
 		self.Console.ePopen('/usr/bin/opkg install ' + pkgname + ' sync', callback)
+
+	def installComplete(self,result = None, retval = None, extra_args = None):
+		self["actions"].setEnabled(True)
+		self.message.close()
+		self.updateList()
+
+	def UninstallCheck(self):
+		if self.my_crond_run == False:
+			self.Console.ePopen('/usr/bin/opkg list_installed ' + self.service_name, self.RemovedataAvail)
+
+	def RemovedataAvail(self, str, retval, extra_args):
+		if str:
+			self.message1 = self.session.openWithCallback(self.RemovePackage, MessageBox, _('Service is not currently in use do you want to remove the service ?'))
+			self.message1.setTitle(_('Ready to remove "%s" ?') % self.service_name)
+		else:
+			self.close()
+
+	def RemovePackage(self, val):
+		if val:
+			self.doRemove(self.removeComplete, self.service_name)
+
+	def doRemove(self, callback, pkgname):
+		self["actions"].setEnabled(False)
+		self.message = self.session.open(MessageBox,_("please wait..."), MessageBox.TYPE_INFO)
+		self.message.setTitle(_("Now installing service"))
+		self.Console.ePopen('/usr/bin/opkg remove ' + pkgname + ' --force-remove --force-depends --autoremove sync', callback)
+
+	def removeComplete(self,result = None, retval = None, extra_args = None):
+		self["actions"].setEnabled(True)
+		self.message.close()
+		self.close()
 
 	def createSummary(self):
 		from Screens.PluginBrowser import PluginBrowserSummary

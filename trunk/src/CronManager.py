@@ -119,7 +119,7 @@ class VIXCronManager(Screen):
 	def doRemove(self, callback, pkgname):
 		self["actions"].setEnabled(False)
 		self.message = self.session.open(MessageBox,_("please wait..."), MessageBox.TYPE_INFO)
-		self.message.setTitle(_("Now installing service"))
+		self.message.setTitle(_("Now removing service"))
 		self.Console.ePopen('/usr/bin/opkg remove ' + pkgname + ' --force-remove --force-depends --autoremove sync', callback)
 
 	def removeComplete(self,result = None, retval = None, extra_args = None):

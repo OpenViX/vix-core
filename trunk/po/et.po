@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-10 17:11+0000\n"
-"PO-Revision-Date: 2012-03-17 13:22+0300\n"
-"Last-Translator: rimas\n"
+"POT-Creation-Date: 2012-03-26 17:06+0100\n"
+"PO-Revision-Date: 2012-03-26 17:14+0100\n"
+"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: Henkka, Raivo, eesatfan and rimas\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
@@ -609,6 +609,12 @@ msgstr "Nov"
 msgid "November"
 msgstr "November"
 
+msgid "Now installing service"
+msgstr ""
+
+msgid "Now removing service"
+msgstr ""
+
 msgid "Now skipping restore process"
 msgstr "Jätame taastamise vahele"
 
@@ -686,6 +692,14 @@ msgstr "Jätkamiseks vajuta OK."
 
 msgid "Process"
 msgstr "Protsess"
+
+#, python-format
+msgid "Ready to install \"%s\" ?"
+msgstr ""
+
+#, python-format
+msgid "Ready to remove \"%s\" ?"
+msgstr ""
 
 msgid "Really close without saving settings?"
 msgstr "Väljud muudatusi salvetamata?"
@@ -830,6 +844,9 @@ msgstr "Sep"
 
 msgid "September"
 msgstr "September"
+
+msgid "Service is not currently in use do you want to remove the service ?"
+msgstr ""
 
 msgid "Setting Up..."
 msgstr "Seadistamine..."
@@ -1220,6 +1237,9 @@ msgstr "echo 'Image allalaadimine.'"
 
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Image laiendamine.'"
+
+msgid "please wait..."
+msgstr ""
 
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."

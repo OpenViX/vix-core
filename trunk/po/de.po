@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-10 17:11+0000\n"
-"PO-Revision-Date: 2012-03-16 21:33+0100\n"
-"Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
+"POT-Creation-Date: 2012-03-26 17:06+0100\n"
+"PO-Revision-Date: 2012-03-26 17:13+0100\n"
+"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -611,6 +611,12 @@ msgstr ""
 msgid "November"
 msgstr "November"
 
+msgid "Now installing service"
+msgstr ""
+
+msgid "Now removing service"
+msgstr ""
+
 msgid "Now skipping restore process"
 msgstr "Überspinge die Wiederherstellung"
 
@@ -688,6 +694,14 @@ msgstr "Zum Fortfahren OK auf der Fernbedienung drücken"
 
 msgid "Process"
 msgstr "Verarbeiten"
+
+#, python-format
+msgid "Ready to install \"%s\" ?"
+msgstr ""
+
+#, python-format
+msgid "Ready to remove \"%s\" ?"
+msgstr ""
 
 msgid "Really close without saving settings?"
 msgstr "Wirklich ohne speichern der Einstellungen beenden?"
@@ -832,6 +846,9 @@ msgstr ""
 
 msgid "September"
 msgstr "September"
+
+msgid "Service is not currently in use do you want to remove the service ?"
+msgstr ""
 
 msgid "Setting Up..."
 msgstr "Stellt ein..."
@@ -1222,6 +1239,9 @@ msgstr "echo 'Image herunterladen.'"
 
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Image entpacken.'"
+
+msgid "please wait..."
+msgstr ""
 
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "Es gibt ein Problem mit dem Gerät, bitte formatieren und erneut versuchen."

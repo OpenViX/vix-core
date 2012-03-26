@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-10 17:11+0000\n"
-"PO-Revision-Date: 2011-07-11 16:05+0100\n"
-"Last-Translator: Automatically generated\n"
+"POT-Creation-Date: 2012-03-26 17:06+0100\n"
+"PO-Revision-Date: 2012-03-26 17:14+0100\n"
+"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -145,9 +145,7 @@ msgstr ""
 msgid "Backup Manager Setup"
 msgstr ""
 
-msgid ""
-"Backup failed - e. g. wrong backup destination or no space left on backup "
-"device"
+msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr ""
 
 msgid ""
@@ -161,9 +159,7 @@ msgstr ""
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr ""
 
-msgid ""
-"Can't unmount partiton, make sure it is not being used for swap or record/"
-"timeshift paths"
+msgid "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths"
 msgstr ""
 
 msgid "Cancel"
@@ -570,8 +566,7 @@ msgstr ""
 msgid "No network connection available."
 msgstr ""
 
-msgid ""
-"No packages were upgraded yet. So you can check your network and try again."
+msgid "No packages were upgraded yet. So you can check your network and try again."
 msgstr ""
 
 msgid "No plugins where needed to be installed"
@@ -590,6 +585,12 @@ msgid "Nov"
 msgstr ""
 
 msgid "November"
+msgstr ""
+
+msgid "Now installing service"
+msgstr ""
+
+msgid "Now removing service"
 msgstr ""
 
 msgid "Now skipping restore process"
@@ -649,9 +650,7 @@ msgstr ""
 msgid "Plugin Details"
 msgstr ""
 
-msgid ""
-"Plugin Listing failed - e. g. wrong backup destination or no space left on "
-"backup device"
+msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 msgstr ""
 
 msgid "Plugin manager activity information"
@@ -670,6 +669,14 @@ msgid "Press OK on your remote control to continue."
 msgstr ""
 
 msgid "Process"
+msgstr ""
+
+#, python-format
+msgid "Ready to install \"%s\" ?"
+msgstr ""
+
+#, python-format
+msgid "Ready to remove \"%s\" ?"
 msgstr ""
 
 msgid "Really close without saving settings?"
@@ -816,6 +823,9 @@ msgstr ""
 msgid "September"
 msgstr ""
 
+msgid "Service is not currently in use do you want to remove the service ?"
+msgstr ""
+
 msgid "Setting Up..."
 msgstr ""
 
@@ -864,15 +874,10 @@ msgstr ""
 msgid "Sorry, no Details available!"
 msgstr ""
 
-msgid ""
-"Sorry, no physical devices that supports SWAP attached. Can't create "
-"Swapfile on network or fat32 filesystems"
+msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
 msgstr ""
 
-msgid ""
-"Sorry, not enough free ram found, and no physical devices that supports SWAP "
-"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
-"make backup"
+msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
 msgstr ""
 
 msgid "Standby"
@@ -1106,8 +1111,7 @@ msgid ""
 "Welcome to the restore wizard.\n"
 "\n"
 "A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that "
-"where installed when the backup was created.\n"
+"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
 msgstr ""
 
 msgid "What Day of month ?"
@@ -1153,14 +1157,12 @@ msgid "You have to create a Swap File before to activate the autostart."
 msgstr ""
 
 msgid ""
-"Your STB_BOX is about to run a backup of your settings and detect your "
-"plugins,\n"
+"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
 
 msgid ""
-"Your STB_BOX is about to run a full image backup, this can take about 6 "
-"minutes to complete,\n"
+"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
 
@@ -1184,9 +1186,7 @@ msgid ""
 "do you want to allow this?"
 msgstr ""
 
-msgid ""
-"Your STB_BOX isn't connected to the internet properly. Please check it and "
-"try again."
+msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
 msgstr ""
 
 msgid "detected"
@@ -1198,6 +1198,9 @@ msgstr ""
 msgid "echo 'Expanding Image.'"
 msgstr ""
 
+msgid "please wait..."
+msgstr ""
+
 msgid "there was a problem with this device, please reformat and try again."
 msgstr ""
 
@@ -1207,7 +1210,6 @@ msgstr ""
 msgid "unknown"
 msgstr ""
 
-msgid ""
-"your STB_BOX might be unusable now. Please consult the manual for further "
-"assistance before rebooting your STB_BOX."
+msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
 msgstr ""
+

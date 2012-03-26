@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-10 16:53+0000\n"
+"POT-Creation-Date: 2012-03-26 17:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -589,6 +589,12 @@ msgstr ""
 msgid "November"
 msgstr ""
 
+msgid "Now installing service"
+msgstr ""
+
+msgid "Now removing service"
+msgstr ""
+
 msgid "Now skipping restore process"
 msgstr ""
 
@@ -664,6 +670,14 @@ msgid "Press OK on your remote control to continue."
 msgstr ""
 
 msgid "Process"
+msgstr ""
+
+#, python-format
+msgid "Ready to install \"%s\" ?"
+msgstr ""
+
+#, python-format
+msgid "Ready to remove \"%s\" ?"
 msgstr ""
 
 msgid "Really close without saving settings?"
@@ -805,6 +819,9 @@ msgid "Sep"
 msgstr ""
 
 msgid "September"
+msgstr ""
+
+msgid "Service is not currently in use do you want to remove the service ?"
 msgstr ""
 
 msgid "Setting Up..."
@@ -1170,6 +1187,9 @@ msgid "echo 'Downloading Image.'"
 msgstr ""
 
 msgid "echo 'Expanding Image.'"
+msgstr ""
+
+msgid "please wait..."
 msgstr ""
 
 msgid "there was a problem with this device, please reformat and try again."

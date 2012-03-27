@@ -1,16 +1,16 @@
-# This plugin is licensed under the Creative Commons 
-# Attribution-NonCommercial-ShareAlike 3.0 Unported 
+# This plugin is licensed under the Creative Commons
+# Attribution-NonCommercial-ShareAlike 3.0 Unported
 # License. To view a copy of this license, visit
 # http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative
 # Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
-# 
+#
 # Alternatively, this plugin may be distributed and executed on hardware which
 # is licensed by Dream Multimedia GmbH.
-# 
+#
 # This plugin is NOT free software. It is open source, you are allowed to
-# modify it (if you keep the license), but it may not be commercially 
+# modify it (if you keep the license), but it may not be commercially
 # distributed other than under the conditions noted above.
-# 
+#
 # Some Icons used are taken from NX10 icons by Mazenl77
 # (http://www.iconspedia.com/pack/nx10-1-6/)
 # licensed under Creative Commons Attribution 3.0 Unported
@@ -28,7 +28,7 @@ from Screens.Ipkg import Ipkg
 from Components.About import about
 from Components.ActionMap import ActionMap, NumberActionMap
 from Components.Button import Button
-from Screens.Standby import TryQuitMainloop 
+from Screens.Standby import TryQuitMainloop
 from Components.Ipkg import IpkgComponent
 from Components.Sources.StaticText import StaticText
 from Components.ScrollLabel import ScrollLabel
@@ -165,7 +165,7 @@ class PluginManager(Screen, DreamInfoHandler):
 		self.currentSelectedIndex = None
 		self.currentSelectedPackage = None
 		self.saved_currentSelectedPackage = None
-		
+
 		self.onShown.append(self.setWindowTitle)
 		self.onLayoutFinish.append(self.getUpdateInfos)
 
@@ -226,7 +226,7 @@ class PluginManager(Screen, DreamInfoHandler):
 		if retval is not None:
 			if retval is True:
 				if iSoftwareTools.available_updates is not 0:
-					self["status"].setText(_("There are at least ") + str(iSoftwareTools.available_updates) + _(" updates available."))
+					self["status"].setText(_("There are at least ") + str(iSoftwareTools.available_updates) + ' ' + _("updates available."))
 				else:
 					self["status"].setText(_("There are no updates available."))
 				self.rebuildList()
@@ -234,14 +234,14 @@ class PluginManager(Screen, DreamInfoHandler):
 				if iSoftwareTools.lastDownloadDate is None:
 					self.setState('error')
 					if iSoftwareTools.NetworkConnectionAvailable:
-						self["status"].setText(_("Updatefeed not available."))
+						self["status"].setText(_("Update feed not available."))
 					else:
 						self["status"].setText(_("No network connection available."))
 				else:
 					iSoftwareTools.lastDownloadDate = time()
 					iSoftwareTools.list_updating = True
 					self.setState('update')
-					iSoftwareTools.getUpdates(self.getUpdateInfosCB)					
+					iSoftwareTools.getUpdates(self.getUpdateInfosCB)
 
 	def rebuildList(self, retval = None):
 		if self.currentSelectedTag is None:
@@ -270,9 +270,9 @@ class PluginManager(Screen, DreamInfoHandler):
 				self["key_yellow"].setText(_("View details"))
 				self["key_blue"].setText("")
 				if len(self.selectedFiles) == 0 and iSoftwareTools.available_updates is not 0:
-					self["status"].setText(_("There are at least ") + str(iSoftwareTools.available_updates) + _(" updates available."))
+					self["status"].setText(_("There are at least ") + str(iSoftwareTools.available_updates) + ' ' + _("updates available."))
 				elif len(self.selectedFiles) is not 0:
-					self["status"].setText(str(len(self.selectedFiles)) + _(" packages selected."))
+					self["status"].setText(str(len(self.selectedFiles)) + ' ' + _("packages selected."))
 				else:
 					self["status"].setText(_("There are currently no outstanding actions."))
 			elif self.currList == "category":
@@ -281,10 +281,10 @@ class PluginManager(Screen, DreamInfoHandler):
 				self["key_yellow"].setText("")
 				self["key_blue"].setText("")
 				if len(self.selectedFiles) == 0 and iSoftwareTools.available_updates is not 0:
-					self["status"].setText(_("There are at least ") + str(iSoftwareTools.available_updates) + _(" updates available."))
+					self["status"].setText(_("There are at least ") + str(iSoftwareTools.available_updates) + ' ' + _("updates available."))
 					self["key_yellow"].setText(_("Update"))
 				elif len(self.selectedFiles) is not 0:
-					self["status"].setText(str(len(self.selectedFiles)) + _(" packages selected."))
+					self["status"].setText(str(len(self.selectedFiles)) + ' ' + _("packages selected."))
 					self["key_yellow"].setText(_("Process"))
 				else:
 					self["status"].setText(_("There are currently no outstanding actions."))
@@ -340,7 +340,7 @@ class PluginManager(Screen, DreamInfoHandler):
 				iSoftwareTools.list_updating = True
 				self.setState('update')
 				iSoftwareTools.getUpdates(self.getUpdateInfosCB)
-				
+
 	def handleSelected(self):
 		current = self["list"].getCurrent()
 		if current:
@@ -474,7 +474,7 @@ class PluginManager(Screen, DreamInfoHandler):
 			elif tag == 'Communication':
 				return(( _("Communication"), _("View list of available communication extensions." ), tag, divpng ))
 			else: # dynamically generate non existent tags
-				return(( str(tag), _("View list of available ") + str(tag) + _(" extensions." ), tag, divpng ))
+				return(( str(tag), _("View list of available ") + str(tag) + ' ' + _("extensions." ), tag, divpng ))
 
 	def prepareInstall(self):
 		self.cmdList = []
@@ -1032,7 +1032,7 @@ class UpdatePlugin(Screen):
 		cmd1 = "ping -c 5 www.world-of-satellite.com"
 		self.PingConsole = Console()
 		self.PingConsole.ePopen(cmd1, self.checkNetworkStateFinished)
-		
+
 	def checkNetworkStateFinished(self, result, retval,extra_args=None):
 		if result.find('bad address') == -1:
 			self.MemCheck1()
@@ -1049,12 +1049,12 @@ class UpdatePlugin(Screen):
 
 		self.updating = False
 
-		self["actions"] = ActionMap(["WizardActions"], 
+		self["actions"] = ActionMap(["WizardActions"],
 		{
 			"ok": self.exit,
 			"back": self.exit
 		}, -1)
-		
+
 		self.updating = True
 		self.activityTimer.start(100, False)
 		f = open('/proc/meminfo', 'r')
@@ -1073,10 +1073,10 @@ class UpdatePlugin(Screen):
 			self.MemCheckConsole = Console()
 			supported_filesystems = frozenset(('ext4', 'ext3', 'ext2'))
 			candidates = []
-			mounts = getProcMounts() 
+			mounts = getProcMounts()
 			for partition in harddiskmanager.getMountedPartitions(False, mounts):
 				if partition.filesystem(mounts) in supported_filesystems:
-					candidates.append((partition.description, partition.mountpoint)) 
+					candidates.append((partition.description, partition.mountpoint))
 			for swapdevice in candidates:
 				self.swapdevice = swapdevice[1]
 			if self.swapdevice:
@@ -1141,7 +1141,7 @@ class UpdatePlugin(Screen):
 		elif event == IpkgComponent.EVENT_CONFIGURING:
 			self.package.setText(param)
 			self.status.setText(_("Configuring"))
-			
+
 		elif event == IpkgComponent.EVENT_MODIFIED:
 			if config.plugins.SoftwareManager.overwriteConfigFiles.value in ("N", "Y"):
 				self.ipkg.write(True and config.plugins.SoftwareManager.overwriteConfigFiles.value)
@@ -1171,10 +1171,10 @@ class UpdatePlugin(Screen):
 						self.session.openWithCallback(self.close, MessageBox, _("Nothing to upgrade"), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 				elif self.error == 0:
 					self.slider.setValue(4)
-					
+
 					self.activityTimer.stop()
 					self.activityslider.setValue(0)
-					
+
 					self.package.setText(_("Done - Installed or upgraded %d packages") % self.packages)
 					self.status.setText(self.oktext)
 
@@ -1248,7 +1248,7 @@ class PacketManager(Screen, NumericalTextInput):
 				</convert>
 			</widget>
 		</screen>"""
-		
+
 	def __init__(self, session, args = None):
 		Screen.__init__(self, session)
 		NumericalTextInput.__init__(self)
@@ -1277,7 +1277,7 @@ class PacketManager(Screen, NumericalTextInput):
 			"9": self.keyNumberGlobal,
 			"0": self.keyNumberGlobal
 		}, -1)
-		
+
 		self.list = []
 		self.statuslist = []
 		self["list"] = List(self.list)
@@ -1302,7 +1302,7 @@ class PacketManager(Screen, NumericalTextInput):
 		self.onLayoutFinish.append(self.rebuildList)
 
 		rcinput = eRCInput.getInstance()
-		rcinput.setKeyboardMode(rcinput.kmAscii)		
+		rcinput.setKeyboardMode(rcinput.kmAscii)
 
 	def keyNumberGlobal(self, val):
 		key = self.getKey(val)
@@ -1310,12 +1310,12 @@ class PacketManager(Screen, NumericalTextInput):
 			keyvalue = key.encode("utf-8")
 			if len(keyvalue) == 1:
 				self.setNextIdx(keyvalue[0])
-		
+
 	def keyGotAscii(self):
 		keyvalue = unichr(getPrevAsciiCode()).encode("utf-8")
 		if len(keyvalue) == 1:
 			self.setNextIdx(keyvalue[0])
-		
+
 	def setNextIdx(self,char):
 		if char in ("0", "1", "a"):
 			self["list"].setIndex(0)
@@ -1344,7 +1344,7 @@ class PacketManager(Screen, NumericalTextInput):
 			remove(self.cache_file)
 			self.list_updating = True
 			self.rebuildList()
-			
+
 	def setWindowTitle(self):
 		self.setTitle(_("Packet manager"))
 
@@ -1355,11 +1355,11 @@ class PacketManager(Screen, NumericalTextInput):
 			if status == 'update':
 				statuspng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX/upgrade.png"))
 				self.statuslist.append(( _("Package list update"), '', _("Trying to download a new packetlist. Please wait..." ),'',statuspng, divpng ))
-				self['list'].setList(self.statuslist)	
+				self['list'].setList(self.statuslist)
 			elif status == 'error':
 				statuspng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX/remove.png"))
 				self.statuslist.append(( _("Error"), '', _("There was an error downloading the packetlist. Please try again." ),'',statuspng, divpng ))
-				self['list'].setList(self.statuslist)				
+				self['list'].setList(self.statuslist)
 
 	def rebuildList(self):
 		self.setStatus('update')
@@ -1421,7 +1421,7 @@ class PacketManager(Screen, NumericalTextInput):
 
 	def runUpgradeFinished(self):
 		self.session.openWithCallback(self.UpgradeReboot, MessageBox, _("Upgrade finished.") +" "+_("Do you want to reboot your STB_BOX?"), MessageBox.TYPE_YESNO)
-		
+
 	def UpgradeReboot(self, result):
 		if result is None:
 			return
@@ -1456,7 +1456,7 @@ class PacketManager(Screen, NumericalTextInput):
 			self.packetlist = []
 			last_name = ""
 			for x in result.splitlines():
-				tokens = x.split(' - ') 
+				tokens = x.split(' - ')
 				name = tokens[0].strip()
 				if not any(name.endswith(x) for x in self.unwanted_extensions):
 					l = len(tokens)
@@ -1464,7 +1464,7 @@ class PacketManager(Screen, NumericalTextInput):
 					descr = l > 2 and tokens[2].strip() or ""
 					if name == last_name:
 						continue
-					last_name = name 
+					last_name = name
 					self.packetlist.append([name, version, descr])
 
 		if not self.Console:
@@ -1498,17 +1498,17 @@ class PacketManager(Screen, NumericalTextInput):
 					version = l > 2 and tokens[2].strip() or ""
 					self.upgradeable_packages[name] = version
 		self.buildPacketList()
-	
+
 	def buildEntryComponent(self, name, version, description, state):
 		divpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "skin_default/div-h.png"))
 		if not description:
 			description = "No description available."
 		if state == 'installed':
 			installedpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX/installed.png"))
-			return((name, version, _(description), state, installedpng, divpng))	
+			return((name, version, _(description), state, installedpng, divpng))
 		elif state == 'upgradeable':
 			upgradeablepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX/upgradeable.png"))
-			return((name, version, _(description), state, upgradeablepng, divpng))	
+			return((name, version, _(description), state, upgradeablepng, divpng))
 		else:
 			installablepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, "SystemPlugins/ViX/installable.png"))
 			return((name, version, _(description), state, installablepng, divpng))
@@ -1538,7 +1538,7 @@ class PacketManager(Screen, NumericalTextInput):
 						status = "installed"
 				else:
 					status = "installable"
-				self.list.append(self.buildEntryComponent(x[0], x[1], x[2], status))	
+				self.list.append(self.buildEntryComponent(x[0], x[1], x[2], status))
 				self.cachelist.append([x[0], x[1], x[2], status])
 			write_cache(self.cache_file, self.cachelist)
 			self['list'].setList(self.list)

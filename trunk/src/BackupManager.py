@@ -60,7 +60,7 @@ def BackupManagerautostart(reason, session=None, **kwargs):
 				autoBackupManagerTimer = AutoBackupManagerTimer(session)
 	else:
 		print "[BackupManager] Stop"
-		autoBackupManagerTimer.stop()        
+		autoBackupManagerTimer.stop()
 
 class VIXBackupManager(Screen):
 	skin = """<screen name="VIXBackupManager" position="center,center" size="560,400" title="Backup Manager" flags="wfBorder" >
@@ -126,7 +126,7 @@ class VIXBackupManager(Screen):
 			name = ""
 		for cb in self.onChangedEntry:
 			cb(name, desc)
-		
+
 	def backupRunning(self):
 		self.populate_List()
 		self.BackupRunning = False
@@ -147,7 +147,7 @@ class VIXBackupManager(Screen):
 		from Screens.TaskView import JobView
 		Components.Task.job_manager.in_background = False
 		self.session.openWithCallback(self.JobViewCB, JobView, job)
-	
+
 	def JobViewCB(self, in_background):
 		Components.Task.job_manager.in_background = in_background
 
@@ -237,7 +237,7 @@ class VIXBackupManager(Screen):
 	def setupDone(self):
 		self.populate_List()
 		self.doneConfiguring()
-		
+
 	def doneConfiguring(self):
 		now = int(time())
 		if config.backupmanager.schedule.value:
@@ -288,7 +288,7 @@ class VIXBackupManager(Screen):
 		message = _("Are you ready to create a backup ?")
 		ybox = self.session.openWithCallback(self.doBackup, MessageBox, message, MessageBox.TYPE_YESNO)
 		ybox.setTitle(_("Backup Confirmation"))
- 
+
 	def doBackup(self,answer):
 		if answer is True:
 			self.BackupFiles = BackupFiles(self.session)
@@ -450,7 +450,7 @@ class VIXBackupManager(Screen):
 			parts = mountfolder.strip().split()
 			if parts and str(parts[0]).startswith('UUID'):
 				if not path.exists(parts[1]):
-					mkdir(parts[1], 0755)				
+					mkdir(parts[1], 0755)
 		if path.exists('/tmp/trimedExtraInstalledPlugins'):
 			print 'trimedExtraInstalledPlugins= TRUE'
 			pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
@@ -540,12 +540,12 @@ class BackupSelection(Screen):
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("Save"))
 		self["key_yellow"] = StaticText()
-		
+
 		self.selectedFiles = config.backupmanager.backupdirs.value
 		defaultDir = '/'
 		self.filelist = MultiFileSelectList(self.selectedFiles, defaultDir )
 		self["checkList"] = self.filelist
-		
+
 		self["actions"] = ActionMap(["DirectionActions", "OkCancelActions", "ShortcutActions", "MenuActions"],
 		{
 			"cancel": self.exit,
@@ -578,7 +578,7 @@ class BackupSelection(Screen):
 			self["key_yellow"].setText(_("Deselect"))
 		else:
 			self["key_yellow"].setText(_("Select"))
-		
+
 	def up(self):
 		self["checkList"].up()
 
@@ -640,7 +640,7 @@ class VIXBackupManagerMenu(ConfigListScreen, Screen):
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
 		self.createSetup()
-		
+
 		self["actions"] = ActionMap(["SetupActions", 'ColorActions', 'VirtualKeyboardActions', "MenuActions"],
 		{
 			"ok": self.keySave,
@@ -711,7 +711,7 @@ class VIXBackupManagerMenu(ConfigListScreen, Screen):
 	def keySave(self):
 		self.saveAll()
 		self.close()
-	
+
 	def cancelConfirm(self, result):
 		if not result:
 			return
@@ -774,7 +774,7 @@ class VIXBackupManagerLogView(Screen):
 class AutoBackupManagerTimer:
 	def __init__(self, session):
 		self.session = session
-		self.backuptimer = eTimer() 
+		self.backuptimer = eTimer()
 		self.backuptimer.callback.append(self.BackuponTimer)
 		self.backupactivityTimer = eTimer()
 		self.backupactivityTimer.timeout.get().append(self.backupupdatedelay)
@@ -851,7 +851,7 @@ class AutoBackupManagerTimer:
 		else:
 			print '[BackupManager] Where are not close enough', strftime("%c", localtime(now))
 			self.backupupdate(60)
-					
+
 	def doBackup(self, answer):
 		now = int(time())
 		if answer is False:

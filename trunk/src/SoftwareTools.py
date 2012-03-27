@@ -1,16 +1,16 @@
-# This plugin is licensed under the Creative Commons 
-# Attribution-NonCommercial-ShareAlike 3.0 Unported 
+# This plugin is licensed under the Creative Commons
+# Attribution-NonCommercial-ShareAlike 3.0 Unported
 # License. To view a copy of this license, visit
 # http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative
 # Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
-# 
+#
 # Alternatively, this plugin may be distributed and executed on hardware which
 # is licensed by Dream Multimedia GmbH.
-# 
+#
 # This plugin is NOT free software. It is open source, you are allowed to
-# modify it (if you keep the license), but it may not be commercially 
+# modify it (if you keep the license), but it may not be commercially
 # distributed other than under the conditions noted above.
-# 
+#
 # Some Icons used are taken from NX10 icons by Mazenl77
 # (http://www.iconspedia.com/pack/nx10-1-6/)
 # licensed under Creative Commons Attribution 3.0 Unported
@@ -41,21 +41,21 @@ def long2bin(l):
 
 def rsa_pub1024(src, mod):
 	return long2bin(pow(bin2long(src), 65537, bin2long(mod)))
-	
+
 def decrypt_block(src, mod):
 	if len(src) != 128 and len(src) != 202:
 		return None
 	dest = rsa_pub1024(src[:128], mod)
 	hash = hashlib.new(dest[1:107])
 	if len(src) == 202:
-		hash.update(src[131:192])	
+		hash.update(src[131:192])
 	result = hash.digest()
 	if result == dest[107:127]:
 		return dest
 	return None
 
 def validate_cert(cert, key):
-	buf = decrypt_block(cert[8:], key) 
+	buf = decrypt_block(cert[8:], key)
 	if buf is None:
 		return None
 	return buf[36:107] + cert[139:196]
@@ -78,7 +78,7 @@ class SoftwareTools(DreamInfoHandler):
 	available_packetlist  = []
 	installed_packetlist = {}
 
-	
+
 	def __init__(self):
 		aboutInfo = about.getImageVersionString()
 		if aboutInfo.startswith("dev-"):
@@ -96,16 +96,16 @@ class SoftwareTools(DreamInfoHandler):
 		self.cmdList = []
 		self.unwanted_extensions = ('-dbg', '-dev', '-doc')
 		self.ipkg = IpkgComponent()
-		self.ipkg.addCallback(self.ipkgCallback)		
+		self.ipkg.addCallback(self.ipkgCallback)
 
 	def statusCallback(self, status, progress):
-		pass		
+		pass
 
 	def startSoftwareTools(self, callback = None):
 		if callback is not None:
 			self.NotifierCallback = callback
 		iNetwork.checkNetworkState(self.checkNetworkCB)
-		
+
 	def checkNetworkCB(self,data):
 		if data is not None:
 			if data <= 2:
@@ -150,7 +150,7 @@ class SoftwareTools(DreamInfoHandler):
 				if self.list_updating and callback is not None:
 						self.NotifierCallback = callback
 						self.startIpkgListAvailable()
-				else:	
+				else:
 					self.list_updating = False
 					if callback is not None:
 						callback(False)
@@ -165,7 +165,7 @@ class SoftwareTools(DreamInfoHandler):
 		elif event == IpkgComponent.EVENT_DONE:
 			if self.list_updating:
 				self.startIpkgListAvailable()
-		#print event, "-", param		
+		#print event, "-", param
 		pass
 
 	def startIpkgListAvailable(self, callback = None):

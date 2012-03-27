@@ -55,7 +55,7 @@ def UpgradeMain(session, **kwargs):
 	session.open(VIXMenu)
 
 def startSetup(menuid):
-	if menuid != "setup": 
+	if menuid != "setup":
 		return [ ]
 	return [(_("ViX"), UpgradeMain, "vix_menu", 1010)]
 

@@ -51,7 +51,7 @@ def ImageManagerautostart(reason, session=None, **kwargs):
 				autoImageManagerTimer = AutoImageManagerTimer(session)
 	else:
 		print "[ImageManager] Stop"
-		autoImageManagerTimer.stop()        
+		autoImageManagerTimer.stop()
 
 class VIXImageManager(Screen):
 	skin = """<screen name="VIXImageManager" position="center,center" size="560,400" title="Image Manager" flags="wfBorder" >
@@ -115,7 +115,7 @@ class VIXImageManager(Screen):
 			name = ""
 		for cb in self.onChangedEntry:
 			cb(name, desc)
-		
+
 	def backupRunning(self):
 		self.BackupRunning = False
 		for job in Components.Task.job_manager.getPendingJobs():
@@ -161,7 +161,7 @@ class VIXImageManager(Screen):
 		from Screens.TaskView import JobView
 		Components.Task.job_manager.in_background = False
 		self.session.openWithCallback(self.JobViewCB, JobView, job)
-	
+
 	def JobViewCB(self, in_background):
 		Components.Task.job_manager.in_background = in_background
 
@@ -253,7 +253,7 @@ class VIXImageManager(Screen):
 	def setupDone(self):
 		self.populate_List()
 		self.doneConfiguring()
-		
+
 	def doneConfiguring(self):
 		now = int(time())
 		if config.imagemanager.schedule.value:
@@ -307,7 +307,7 @@ class VIXImageManager(Screen):
 			ybox.setTitle(_("Backup Confirmation"))
 		else:
 			self.session.open(MessageBox, _("Sorry you STB_BOX is not yet compatible."), MessageBox.TYPE_INFO, timeout = 10)
- 
+
 	def doBackup(self,answer):
 		if answer is True:
 			self.ImageBackup = ImageBackup(self.session)
@@ -336,16 +336,16 @@ class VIXImageManager(Screen):
 # 				self.session.open(MessageBox, _("Sorry Image Restore is not supported on the" + ' ' + config.misc.boxtype.value + ', ' + _("Please copy the folder") + ' ' + self.BackupDirectory + self.sel +  ' \n' + _("to a USB stick, place in front USB port of reciver and power on")), MessageBox.TYPE_INFO, timeout = 30)
 # 		else:
 # 			self.session.open(MessageBox, _("Backup in progress,\nPlease for it to finish, before trying again"), MessageBox.TYPE_INFO, timeout = 10)
-# 
+#
 # 	def RestoreMemCheck(self,answer):
 # 		if answer:
-# 			config.imagemanager.restoreimage.value = self.sel 
+# 			config.imagemanager.restoreimage.value = self.sel
 # 			self.ImageRestore = ImageRestore(self.session)
 # 			Components.Task.job_manager.AddJob(self.ImageRestore.createRestoreJob())
 # 			for job in Components.Task.job_manager.getPendingJobs():
 # 				jobname = str(job.name)
 # 			self.showJobView(job)
-# 
+#
 # class ImageRestore(Screen):
 # 	def __init__(self, session):
 # 		Screen.__init__(self, session)
@@ -359,56 +359,56 @@ class VIXImageManager(Screen):
 # 		self.swapdevice = ""
 # 		self.sel = config.imagemanager.restoreimage.value
 # 		self.BackupDirectory = config.imagemanager.backuplocation.value + 'imagebackups/'
-# 
+#
 # 	def createRestoreJob(self):
 # 		job = Components.Task.Job(_("ImageManager"))
-# 
+#
 # 		task = Components.Task.PythonTask(job, _("Setting Up..."))
 # 		task.work = self.JobStart
 # 		task.weighting = 1
-# 
+#
 # 		task = Components.Task.ConditionTask(job, _("Checking Free RAM.."), timeoutCount=20)
 # 		task.check = lambda: self.RamChecked
 # 		task.weighting = 1
-# 
+#
 # 		task = Components.Task.ConditionTask(job, _("Creating Swap.."), timeoutCount=20)
 # 		task.check = lambda: self.SwapCreated
 # 		task.weighting = 1
-# 
+#
 # 		task = Components.Task.PythonTask(job, _("Erasing Root..."))
 # 		task.work = self.doRestore1
 # 		task.weighting = 1
-# 
+#
 # 		task = Components.Task.ConditionTask(job, _("Erasing Root..."), timeoutCount=20)
 # 		task.check = lambda: self.Stage1Completed
 # 		task.weighting = 1
-# 
+#
 # 		task = Components.Task.PythonTask(job, _("Restoring Root..."))
 # 		task.work = self.doRestore2
 # 		task.weighting = 1
-# 
+#
 # 		task = Components.Task.ConditionTask(job, _("Restoring Root..."), timeoutCount=520)
 # 		task.check = lambda: self.Stage2Completed
 # 		task.weighting = 1
-# 
+#
 # 		task = Components.Task.PythonTask(job, _("Erasing Kernel..."))
 # 		task.work = self.doRestore3
 # 		task.weighting = 1
-# 
+#
 # 		task = Components.Task.ConditionTask(job, _("Erasing Kernel..."), timeoutCount=20)
 # 		task.check = lambda: self.Stage3Completed
 # 		task.weighting = 1
-# 
+#
 # 		task = Components.Task.PythonTask(job, _("Restoring Kernel..."))
 # 		task.work = self.doRestore4
 # 		task.weighting = 1
-# 
+#
 # 		task = Components.Task.ConditionTask(job, _("Restoring Kernel..."), timeoutCount=320)
 # 		task.check = lambda: self.Stage4Completed
 # 		task.weighting = 1
-# 
+#
 # 		return job
-# 
+#
 # 	def JobStart(self):
 # 		f = open('/proc/meminfo', 'r')
 # 		for line in f.readlines():
@@ -429,33 +429,33 @@ class VIXImageManager(Screen):
 # 			print '[ImageManager] Stage1: Found Enough Ram'
 # 			self.RamChecked = True
 # 			self.SwapCreated = True
-# 
+#
 # 	def MemCheck2(self):
 # 		self.MemCheckConsole = Console()
 # 		self.swapdevice = False
 # 		supported_filesystems = frozenset(('ext4', 'ext3', 'ext2'))
 # 		candidates = []
-# 		mounts = getProcMounts() 
+# 		mounts = getProcMounts()
 # 		for partition in harddiskmanager.getMountedPartitions(False, mounts):
 # 			if partition.filesystem(mounts) in supported_filesystems:
-# 				candidates.append((partition.description, partition.mountpoint)) 
+# 				candidates.append((partition.description, partition.mountpoint))
 # 		for swapdevice in candidates:
 # 			self.swapdevice = swapdevice[1]
 # 		self.MemCheckConsole.ePopen("dd if=/dev/zero of=" + self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup bs=1024 count=61440", self.MemCheck3)
-# 
+#
 # 	def MemCheck3(self, result, retval, extra_args = None):
 # 		if retval == 0:
 # 			self.MemCheckConsole = Console()
 # 			self.MemCheckConsole.ePopen("mkswap " + self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup", self.MemCheck4)
-# 
+#
 # 	def MemCheck4(self, result, retval, extra_args = None):
 # 		if retval == 0:
 # 			self.MemCheckConsole = Console()
 # 			self.MemCheckConsole.ePopen("swapon " + self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup", self.MemCheck5)
-# 
+#
 # 	def MemCheck5(self, result, retval, extra_args = None):
 # 		self.SwapCreated = True
-# 
+#
 # 	def doRestore1(self):
 # 		self.BackupConsole = Console()
 # 		if not path.exists(self.BackupDirectory + 'nandwrite'):
@@ -466,40 +466,40 @@ class VIXImageManager(Screen):
 # 			self.BackupConsole.ePopen(self.BackupDirectory + 'flash_eraseall /dev/mtd0', self.Stage1Complete)
 # 		elif config.misc.boxtype.value.startswith('et'):
 # 			self.BackupConsole.ePopen(self.BackupDirectory + 'flash_eraseall /dev/mtd2', self.Stage1Complete)
-# 
+#
 # 	def Stage1Complete(self,result, retval, extra_args = None):
 # 		if retval == 0:
 # 			self.Stage1Completed = True
 # 			print '[ImageManager] Stage1: Complete.'
-# 
+#
 # 	def doRestore2(self):
 #  		if config.misc.boxtype.value.startswith('vu'):
 # 			self.BackupConsole.ePopen(self.BackupDirectory + 'nandwrite -p /dev/mtd0 ' + self.BackupDirectory + self.sel + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/root_cfe_auto.jffs2', self.Stage2Complete)
 # 		elif config.misc.boxtype.value.startswith('et'):
 # 			self.BackupConsole.ePopen(self.BackupDirectory + 'nandwrite -p /dev/mtd2 ' + self.BackupDirectory + self.sel + '/' + config.misc.boxtype.value + '/rootfs.bin', self.Stage2Complete)
-# 
+#
 # 	def Stage2Complete(self,result, retval, extra_args = None):
 # 		if retval == 0:
 # 			self.Stage2Completed = True
 # 			print '[ImageManager] Stage2: Complete.'
-# 
+#
 # 	def doRestore3(self):
 # 		if config.misc.boxtype.value.startswith('vu'):
 # 			self.BackupConsole.ePopen(self.BackupDirectory + 'flash_eraseall -j /dev/mtd1', self.Stage3Complete)
 # 		elif config.misc.boxtype.value.startswith('et'):
 # 			self.BackupConsole.ePopen(self.BackupDirectory + 'flash_eraseall /dev/mtd1', self.Stage3Complete)
-# 
+#
 # 	def Stage3Complete(self,result, retval, extra_args = None):
 # 		if retval == 0:
 # 			self.Stage3Completed = True
 # 			print '[ImageManager] Stage3: Complete.'
-# 
+#
 # 	def doRestore4(self):
 # 		if config.misc.boxtype.value.startswith('vu'):
 # 			self.BackupConsole.ePopen(self.BackupDirectory + 'nandwrite -p /dev/mtd1 ' + self.BackupDirectory + self.sel + '/vuplus/' + config.misc.boxtype.value.replace('vu','') + '/kernel_cfe_auto.bin', self.Stage4Complete)
 # 		elif config.misc.boxtype.value.startswith('et'):
 # 			self.BackupConsole.ePopen(self.BackupDirectory + 'nandwrite -p /dev/mtd1 ' + self.BackupDirectory + self.sel + '/' + config.misc.boxtype.value + '/kernel.bin', self.Stage4Complete)
-# 
+#
 # 	def Stage4Complete(self,result, retval, extra_args = None):
 # 		if retval == 0:
 # 			print '[ImageManager] Stage4: Complete.'
@@ -509,14 +509,14 @@ class VIXImageManager(Screen):
 # 			else:
 # 				self.Stage4Completed = True
 # 				self.session.open(MessageBox, _("Flashing Complete\nPlease power off your STB_BOX, wait 15 seconds then power backon."), MessageBox.TYPE_INFO)
-# 
+#
 # 	def MemRemove1(self, result, retval, extra_args = None):
 # 		if retval == 0:
 # 			if path.exists(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup"):
 # 				remove(self.swapdevice + config.imagemanager.folderprefix.value + "-swapfile_backup")
 # 		self.Stage4Completed = True
 # 		self.session.open(MessageBox, _("Flashing Complete\nPlease power off your STB_BOX, wait 15 seconds then power backon."), MessageBox.TYPE_INFO)
-# 
+#
 # 	def myclose(self):
 # 		self.close()
 
@@ -558,7 +558,7 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
 		self.createSetup()
-		
+
 		self["actions"] = ActionMap(['SetupActions', 'ColorActions', 'VirtualKeyboardActions', "MenuActions"],
 		{
 			"ok": self.keySave,
@@ -627,7 +627,7 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 	def keySave(self):
 		self.saveAll()
 		self.close()
-	
+
 	def cancelConfirm(self, result):
 		if not result:
 			return
@@ -645,7 +645,7 @@ class ImageManagerMenu(ConfigListScreen, Screen):
 class AutoImageManagerTimer:
 	def __init__(self, session):
 		self.session = session
-		self.backuptimer = eTimer() 
+		self.backuptimer = eTimer()
 		self.backuptimer.callback.append(self.BackuponTimer)
 		self.backupactivityTimer = eTimer()
 		self.backupactivityTimer.timeout.get().append(self.backupupdatedelay)
@@ -734,7 +734,7 @@ class AutoImageManagerTimer:
 		else:
 			print '[ImageManager] Where are not close enough', strftime("%c", localtime(now))
 			self.backupupdate(60)
-					
+
 	def doBackup(self, answer):
 		now = int(time())
 		if answer is False:
@@ -882,10 +882,10 @@ class ImageBackup(Screen):
 			self.MemCheckConsole = Console()
 			supported_filesystems = frozenset(('ext4', 'ext3', 'ext2'))
 			candidates = []
-			mounts = getProcMounts() 
+			mounts = getProcMounts()
 			for partition in harddiskmanager.getMountedPartitions(False, mounts):
 				if partition.filesystem(mounts) in supported_filesystems:
-					candidates.append((partition.description, partition.mountpoint)) 
+					candidates.append((partition.description, partition.mountpoint))
 			for swapdevice in candidates:
 				self.swapdevice = swapdevice[1]
 			if self.swapdevice:
@@ -999,7 +999,7 @@ class ImageBackup(Screen):
 		if retval == 0:
 			self.Stage2Completed = True
 			print '[ImageManager] Stage2: Complete.'
-	
+
 	def doBackup3(self):
 		print '[ImageManager] Stage3: Unmounting tmp system'
 		if path.exists(self.TMPDIR + '/root'):
@@ -1055,7 +1055,7 @@ class ImageBackup(Screen):
 	def Stage3Complete(self):
 		self.Stage3Completed = True
 		print '[ImageManager] Stage3: Complete.'
-	
+
 	def BackupComplete(self):
 		if config.imagemanager.schedule.value:
 			atLeast = 60
@@ -1102,7 +1102,7 @@ class ImageManagerDownload(Screen):
 	def selectionChanged(self):
 		for x in self.onChangedEntry:
 			x()
-		
+
 	def populate_List(self):
 		try:
 			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions'],
@@ -1111,7 +1111,7 @@ class ImageManagerDownload(Screen):
 					'red': self.close,
 					'green': self.keyDownload,
 				}, -1)
-	
+
 			if not path.exists(self.BackupDirectory):
 				mkdir(self.BackupDirectory, 0755)
 			from ftplib import FTP

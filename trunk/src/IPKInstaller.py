@@ -66,7 +66,7 @@ class VIXIPKInstaller(Screen):
 			desc = ""
 		for cb in self.onChangedEntry:
 			cb(name, desc)
-		
+
 	def populate_List(self):
 		self['lab1'].setText(_("Select a package to install:"))
 		del self.list[:]
@@ -76,7 +76,7 @@ class VIXIPKInstaller(Screen):
 			pkg = parts[0]
 			if pkg.find('.ipk') >= 0:
 				self.list.append(pkg)
-		self.list.sort()	
+		self.list.sort()
 
 	def keyInstall(self):
 		message = _("Are you ready to install ?")
@@ -88,13 +88,13 @@ class VIXIPKInstaller(Screen):
 			sel = self['list'].getCurrent()
 			if sel:
 				cmd1 = "/usr/bin/opkg install /tmp/" + sel
-				self.session.openWithCallback(self.installFinished(sel), Console, title=_("Installing..."), cmdlist = [cmd1], closeOnSuccess = True)	
+				self.session.openWithCallback(self.installFinished(sel), Console, title=_("Installing..."), cmdlist = [cmd1], closeOnSuccess = True)
 
 	def installFinished(self,sel):
 		message = ("Do you want to restart GUI now ?")
 		ybox = self.session.openWithCallback(self.restBox, MessageBox, message, MessageBox.TYPE_YESNO)
 		ybox.setTitle(_("Restart Enigma2."))
-					
+
 	def restBox(self, answer):
 		if answer is True:
 			self.session.open(TryQuitMainloop, 3)
@@ -104,4 +104,3 @@ class VIXIPKInstaller(Screen):
 
 	def myclose(self):
 		self.close()
-		

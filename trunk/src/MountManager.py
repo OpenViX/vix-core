@@ -206,7 +206,7 @@ class VIXDevicesPanel(Screen):
 			elif rw.startswith('ro'):
 				rw = ' R/O'
 			else:
-				rw = ""			
+				rw = ""
 			des += '\t' + _("Mount: ") + d1 + '\n' + _("Device: ") + '/dev/' + device + '\t' + _("Type: ") + dtype + rw
 			png = LoadPixmap(mypixmap)
 			res = (name, des, png)
@@ -266,7 +266,7 @@ class VIXDevicesPanel(Screen):
 				self.Console.ePopen("/sbin/blkid | grep " + self.device, self.add_fstab, [self.device, self.mountp])
 			else:
 				self.session.open(MessageBox, _("This Device is already mounted as HDD."), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
-			
+
 	def add_fstab(self, result = None, retval = None, extra_args = None):
 		self.device = extra_args[0]
 		self.mountp = extra_args[1]

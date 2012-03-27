@@ -31,7 +31,7 @@ def SoftcamAutostart(reason, session=None, **kwargs):
 	if reason == 0:
 		print "[SoftcamManager] AutoStart Enabled"
 		if path.exists('/tmp/SoftcamsDisableCheck'):
-			remove('/tmp/SoftcamsDisableCheck')	
+			remove('/tmp/SoftcamsDisableCheck')
 		softcamautopoller = SoftcamAutoPoller()
 		softcamautopoller.start()
 	elif reason == 1:
@@ -258,13 +258,13 @@ class VIXSoftcamManager(Screen):
 			elif not selectedcam.lower().startswith('cccam') or selectedcam.lower().startswith('oscam') or selectedcam.lower().startswith('mgcamd'):
 				self.session.open(MessageBox, _("Found none stanadard softcam, trying to start, this may fail"), MessageBox.TYPE_INFO, timeout = 10, close_on_any_key = True)
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
-		
+
 	def showLog(self):
 		self.session.open(VIXSoftcamLog)
 
 	def myclose(self):
 		self.close()
-			
+
 class VIXStartCam(Screen):
 	skin = """<screen name="VIXStartCam" position="center,center" size="484, 150" title="Starting Softcam" flags="wfBorder">
 		<widget name="connect" position="217, 0" size="64,64" zPosition="2" pixmaps="ViX_HD_Common/busy/busy1.png,ViX_HD_Common/busy/busy2.png,ViX_HD_Common/busy/busy3.png,ViX_HD_Common/busy/busy4.png,ViX_HD_Common/busy/busy5.png,ViX_HD_Common/busy/busy6.png,ViX_HD_Common/busy/busy7.png,ViX_HD_Common/busy/busy8.png,ViX_HD_Common/busy/busy9.png,ViX_HD_Common/busy/busy9.png,ViX_HD_Common/busy/busy10.png,ViX_HD_Common/busy/busy11.png,ViX_HD_Common/busy/busy12.png,ViX_HD_Common/busy/busy13.png,ViX_HD_Common/busy/busy14.png,ViX_HD_Common/busy/busy15.png,ViX_HD_Common/busy/busy17.png,ViX_HD_Common/busy/busy18.png,ViX_HD_Common/busy/busy19.png,ViX_HD_Common/busy/busy20.png,ViX_HD_Common/busy/busy21.png,ViX_HD_Common/busy/busy22.png,ViX_HD_Common/busy/busy23.png,ViX_HD_Common/busy/busy24.png"  transparent="1" alphatest="blend" />
@@ -383,7 +383,7 @@ class VIXStopCam(Screen):
 		self.activityTimer.timeout.get().append(self.updatepix)
 		self.onShow.append(self.getStopPID)
 		self.onClose.append(self.delTimer)
-		
+
 	def getStopPID(self):
 		if stopselectedcam.endswith('.sh'):
 			self.curpix = 0
@@ -503,7 +503,7 @@ class VIXSoftcamMenu(ConfigListScreen, Screen):
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
 		self.createSetup()
-		
+
 		self["actions"] = ActionMap(["SetupActions", "MenuActions"],
 		{
 		  "cancel": self.keyCancel,
@@ -855,7 +855,7 @@ class SoftcamAutoPoller:
 								now = datetime.now()
 								output.write(now.strftime("%Y-%m-%d %H:%M") + ":  Telnet info not setup, can not check if frozen,\n\tplease enable 'ALLOW WEBINFO: YES'\n")
 								output.close()
-							
+
 					elif softcamcheck_process == "":
 						output = open('/tmp/cam.check.log','a')
 						now = datetime.now()

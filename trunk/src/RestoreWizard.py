@@ -62,7 +62,7 @@ class RestoreWizard(WizardLanguage, Rc):
 	def settingsdeviceSelectionMade(self, index):
 		self.selectedAction = index
 		self.settingsdeviceSelect(index)
-		
+
 	def settingsdeviceSelect(self, index):
 		self.selectedDevice = index
 		self.fullbackupfilename = index
@@ -74,7 +74,7 @@ class RestoreWizard(WizardLanguage, Rc):
 	def pluginsdeviceSelectionMade(self, index):
 		self.selectedAction = index
 		self.pluginsdeviceSelect(index)
-		
+
 	def pluginsdeviceSelect(self, index):
 		self.selectedDevice = index
 		self.fullbackupfilename = index
@@ -147,7 +147,7 @@ class RestoreWizard(WizardLanguage, Rc):
 			pluginslist = plugintmp.replace('\n',' ')
 			self.Console.ePopen("opkg update && opkg install " + pluginslist, self.pluginsRestore_Finished)
  			self.buildListRef = self.session.openWithCallback(self.buildListfinishedCB, MessageBox, _("Please wait while restore completes..."), type = MessageBox.TYPE_INFO, enable_input = False)
-			
+
 	def settingRestore_Finished(self, result, retval, extra_args = None):
 		self.didSettingsRestore = True
 		configfile.load()
@@ -218,7 +218,7 @@ class RestoreWizard(WizardLanguage, Rc):
 			parts = mountfolder.strip().split()
 			if parts and str(parts[0]).startswith('UUID'):
 				if not fileExists(parts[1]):
-					mkdir(parts[1], 0755)				
+					mkdir(parts[1], 0755)
 		pluginslist = file('/tmp/trimedExtraInstalledPlugins').read()
 		if pluginslist:
 			if self.didSettingsRestore:

@@ -60,7 +60,7 @@ def PowerManagerautostart(reason, session=None, **kwargs):
 				autoPowerManagerTimer = AutoPowerManagerTimer(session)
 	else:
 		print "[PowerManager] Stop"
-		autoPowerManagerTimer.stop()        
+		autoPowerManagerTimer.stop()
 
 def PowerManagerNextWakeup():
 	"returns timestamp of next time when autostart should be called"
@@ -98,7 +98,7 @@ class VIXPowerManager(ConfigListScreen, Screen):
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.selectionChanged)
 		self.createSetup()
-		
+
 		self["actions"] = NumberActionMap(["SetupActions", "MenuActions"],
 		{
 		  "cancel": self.keyCancel,
@@ -262,19 +262,19 @@ class VIXPowerManager(ConfigListScreen, Screen):
 class AutoPowerManagerTimer:
 	def __init__(self, session):
 		self.session = session
-		self.standbytimer = eTimer() 
+		self.standbytimer = eTimer()
 		self.standbytimer.callback.append(self.StandbyonTimer)
 		self.standbyactivityTimer = eTimer()
 		self.standbyactivityTimer.timeout.get().append(self.standbyupdatedelay)
-		self.deepstandbytimer = eTimer() 
+		self.deepstandbytimer = eTimer()
 		self.deepstandbytimer.callback.append(self.DeepStandbyonTimer)
 		self.deepstandbyactivityTimer = eTimer()
 		self.deepstandbyactivityTimer.timeout.get().append(self.deepstandbyupdatedelay)
-		self.guirestarttimer = eTimer() 
+		self.guirestarttimer = eTimer()
 		self.guirestarttimer.callback.append(self.GuiRestartonTimer)
 		self.guirestartactivityTimer = eTimer()
 		self.guirestartactivityTimer.timeout.get().append(self.guirestartupdatedelay)
-		self.reboottimer = eTimer() 
+		self.reboottimer = eTimer()
 		self.reboottimer.callback.append(self.RebootonTimer)
 		self.rebootactivityTimer = eTimer()
 		self.rebootactivityTimer.timeout.get().append(self.rebootupdatedelay)
@@ -382,7 +382,7 @@ class AutoPowerManagerTimer:
 			print "[PowerManager] Already in Standby", strftime("%c", localtime(now))
 			atLeast = 60
 			self.standbyupdate(atLeast)
-					
+
 	def doStandby(self, answer):
 		now = int(time())
 		if answer is False:

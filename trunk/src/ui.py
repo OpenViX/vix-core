@@ -36,7 +36,7 @@ class VIXMenu(Screen):
 			</widget>
 			<widget source="status" render="Label" position="5,360" zPosition="10" size="600,50" halign="center" valign="center" font="Regular;22" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
 		</screen>"""
-		
+
 	def __init__(self, session, args = 0):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("ViX"))

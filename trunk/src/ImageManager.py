@@ -23,21 +23,6 @@ from time import localtime, time, strftime, mktime
 
 autoImageManagerTimer = None
 
-MONTHS = (_("January"),
-          _("February"),
-          _("March"),
-          _("April"),
-          _("May"),
-          _("June"),
-          _("July"),
-          _("August"),
-          _("September"),
-          _("October"),
-          _("November"),
-          _("December"))
-
-dayOfWeek = (_("Mon"), _("Tue"), _("Wed"), _("Thu"), _("Fri"), _("Sat"), _("Sun"))
-
 def ImageManagerautostart(reason, session=None, **kwargs):
 	"called with reason=1 to during /sbin/shutdown.sysvinit, with reason=0 at startup?"
 	global autoImageManagerTimer
@@ -95,7 +80,7 @@ class VIXImageManager(Screen):
 
 		if BackupTime > 0:
 			t = localtime(BackupTime)
-			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " "  + str(t[2]) +  ", " + MONTHS[t[1]-1] + "  %02d:%02d" % (t.tm_hour, t.tm_min)
+			backuptext = _("Next Backup: ") + strftime(_("%a %e %b  %-H:%M"), t)
 		else:
 			backuptext = _("Next Backup: ")
 		self["backupstatus"].setText(str(backuptext))
@@ -268,7 +253,7 @@ class VIXImageManager(Screen):
 				autoImageManagerTimer.backupstop()
 		if BackupTime > 0:
 			t = localtime(BackupTime)
-			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " "  + str(t[2]) +  ", " + MONTHS[t[1]-1] + "  %02d:%02d" % (t.tm_hour, t.tm_min)
+			backuptext = _("Next Backup: ") + strftime(_("%a %e %b  %-H:%M"), t)
 		else:
 			backuptext = _("Next Backup: ")
 		self["backupstatus"].setText(str(backuptext))

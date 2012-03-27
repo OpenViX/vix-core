@@ -32,21 +32,6 @@ SETTINGSRESTOREQUESTIONID = 'RestoreSettingsNotification'
 PLUGINRESTOREQUESTIONID = 'RestorePluginsNotification'
 NOPLUGINS = 'NoPluginsNotification'
 
-MONTHS = (_("Jan"),
-          _("Feb"),
-          _("Mar"),
-          _("Apr"),
-          _("May"),
-          _("Jun"),
-          _("Jul"),
-          _("Aug"),
-          _("Sep"),
-          _("Oct"),
-          _("Nov"),
-          _("Dec"))
-
-dayOfWeek = (_("Monday"), _("Tuesday"), _("Wednesday"), _("Thursday"), _("Friday"), _("Saturday"), _("Sunday"))
-
 def BackupManagerautostart(reason, session=None, **kwargs):
 	"called with reason=1 to during /sbin/shutdown.sysvinit, with reason=0 at startup?"
 	global autoBackupManagerTimer
@@ -106,7 +91,7 @@ class VIXBackupManager(Screen):
 
 		if BackupTime > 0:
 			t = localtime(BackupTime)
-			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " "  + str(t[2]) +  ", " + MONTHS[t[1]-1] + "  %02d:%02d" % (t.tm_hour, t.tm_min)
+			backuptext = _("Next Backup: ") + strftime(_("%a %e %b  %-H:%M"), t)
 		else:
 			backuptext = _("Next Backup: ")
 		self["backupstatus"].setText(str(backuptext))
@@ -252,7 +237,7 @@ class VIXBackupManager(Screen):
 				autoBackupManagerTimer.backupstop()
 		if BackupTime > 0:
 			t = localtime(BackupTime)
-			backuptext = _("Next Backup: ") + dayOfWeek[t[6]] + " "  + str(t[2]) +  ", " + MONTHS[t[1]-1] + "  %02d:%02d" % (t.tm_hour, t.tm_min)
+			backuptext = _("Next Backup: ") + strftime(_("%a %e %b  %-H:%M"), t)
 		else:
 			backuptext = _("Next Backup: ")
 		self["backupstatus"].setText(str(backuptext))

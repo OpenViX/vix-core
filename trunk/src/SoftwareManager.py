@@ -921,10 +921,8 @@ class SoftwareUpdateChanges(Screen):
 			<screen position="center,center" size="720,540" >
 				<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
 				<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
-				<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" alphatest="on" />
 				<widget name="key_red" position="0,2" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
 				<widget name="key_green" position="140,2" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
-				<widget name="key_yellow" position="280,2" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />
 				<widget name="text" position="0,50" size="720,500" font="Regular;21" />
 			</screen>"""
 		Screen.__init__(self, session)
@@ -933,14 +931,12 @@ class SoftwareUpdateChanges(Screen):
 		self['title_summary'] = StaticText()
 		self['text_summary'] = StaticText()
 		self["key_red"] = Button(_("Close"))
-		self["key_green"] = Button(_("Unattended"))
-		self["key_yellow"] = Button(_("Normal"))
+		self["key_green"] = Button(_("Update"))
 		self["myactions"] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions'],
 		{
 			'cancel': self.closeRecursive,
 			"red": self.closeRecursive,
 			"green": self.unattendedupdate,
-			"yellow": self.update,
 		    "left": self.pageUp,
 		    "right": self.pageDown,
 			"down": self.pageDown,
@@ -991,8 +987,7 @@ class SoftwareUpdateChanges(Screen):
 
 	def unattendedupdate(self):
 		self.close((_("Unattended upgrade without GUI and reboot system"), "cold"))
-	def update(self):
-		self.close((_("Upgrade and ask to reboot"), "hot"))
+
 	def closeRecursive(self):
 		self.close((_("Cancel"), ""))
 
@@ -1035,11 +1030,11 @@ class UpdatePlugin(Screen):
 
 	def checkNetworkStateFinished(self, result, retval,extra_args=None):
 		if result.find('bad address') == -1:
-			self.MemCheck1()
+			self.startCheck()
 		else:
 			self.session.openWithCallback(self.close, MessageBox, _("Your STB_BOX isn't connected to the internet properly. Please check it and try again."), type=MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 
-	def MemCheck1(self):
+	def startCheck(self):
 		self.activity = 0
 		self.activityTimer = eTimer()
 		self.activityTimer.callback.append(self.doActivityTimer)
@@ -1057,56 +1052,6 @@ class UpdatePlugin(Screen):
 
 		self.updating = True
 		self.activityTimer.start(100, False)
-		f = open('/proc/meminfo', 'r')
-		for line in f.readlines():
-			if line.find('MemFree') != -1:
-				parts = line.strip().split()
-				memfree = int(parts[1])
-			elif line.find('SwapFree') != -1:
-				parts = line.strip().split()
-				swapfree = int(parts[1])
-		f.close()
-		TotalFree = memfree + swapfree
-		print '[SoftwareUpdate] Free Mem',TotalFree
-		self.swapdevice = ""
-		if int(TotalFree) < 3000:
-			self.MemCheckConsole = Console()
-			supported_filesystems = frozenset(('ext4', 'ext3', 'ext2'))
-			candidates = []
-			mounts = getProcMounts()
-			for partition in harddiskmanager.getMountedPartitions(False, mounts):
-				if partition.filesystem(mounts) in supported_filesystems:
-					candidates.append((partition.description, partition.mountpoint))
-			for swapdevice in candidates:
-				self.swapdevice = swapdevice[1]
-			if self.swapdevice:
-				print '[SoftwareUpdate] Creating Swapfile.'
-				self.MemCheck2()
-			else:
-				self.EnoughMem = False
-				self.ipkg.startCmd(IpkgComponent.CMD_UPDATE)
-		else:
-			print '[SoftwareUpdate] Found Enough Ram'
-			self.EnoughMem = True
-			self.ipkg.startCmd(IpkgComponent.CMD_UPDATE)
-
-	def MemCheck2(self):
-		print '[SoftwareUpdate] Creating Swapfile.'
-		self.MemCheckConsole = Console()
-		self.MemCheckConsole.ePopen("dd if=/dev/zero of=" + self.swapdevice + "swapfile_upgrade bs=1024 count=16440", self.MemCheck3)
-
-	def MemCheck3(self, result, retval, extra_args = None):
-		if retval == 0:
-			self.MemCheckConsole = Console()
-			self.MemCheckConsole.ePopen("mkswap " + self.swapdevice + "swapfile_upgrade", self.MemCheck4)
-
-	def MemCheck4(self, result, retval, extra_args = None):
-		if retval == 0:
-			self.MemCheckConsole = Console()
-			self.MemCheckConsole.ePopen("swapon " + self.swapdevice + "swapfile_upgrade", self.MemCheck5)
-
-	def MemCheck5(self, result, retval, extra_args = None):
-		self.EnoughMem = True
 		self.ipkg.startCmd(IpkgComponent.CMD_UPDATE)
 
 	def doActivityTimer(self):
@@ -1164,7 +1109,6 @@ class UpdatePlugin(Screen):
 						message = _("Do you want to update your STB_BOX?") + "\n(%s " % self.total_packages + _("Packages") + ")"
 						choices = [(_("View the changes"), "changes"),
 							(_("Unattended upgrade without GUI and reboot system"), "cold"),
-							(_("Upgrade and ask to reboot"), "hot"),
 							(_("Cancel"), "")]
 						self.session.openWithCallback(self.startActualUpgrade, ChoiceBox, title=message, list=choices)
 					else:
@@ -1178,9 +1122,6 @@ class UpdatePlugin(Screen):
 					self.package.setText(_("Done - Installed or upgraded %d packages") % self.packages)
 					self.status.setText(self.oktext)
 
-					if os_path.exists(self.swapdevice + "swapfile_upgrade"):
-						self.MemCheckConsole = Console()
-						self.MemCheckConsole.ePopen("swapoff " + self.swapdevice + "swapfile_upgrade && rm " + self.swapdevice + "swapfile_upgrade")
 				else:
 					self.activityTimer.stop()
 					self.activityslider.setValue(0)
@@ -1206,8 +1147,6 @@ class UpdatePlugin(Screen):
 		elif answer[1] == "cold":
 			self.session.open(TryQuitMainloop,retvalue=42)
 			self.close()
-		elif answer[1] == "hot":
-			self.ipkg.startCmd(IpkgComponent.CMD_UPGRADE, args = {'test_only': False})
 
 	def modificationCallback(self, res):
 		self.ipkg.write(res and "N" or "Y")

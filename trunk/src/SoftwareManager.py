@@ -960,9 +960,9 @@ class SoftwareUpdateChanges(Screen):
 		fileurl = fd.read()
 		fd.close()
 		if fileurl.find('experimental') != -1:
-			sourcefile='http://enigma2.world-of-satellite.com/feeds/2.3/experimental/' + config.misc.boxtype.value + '/releasenotes'
+			sourcefile='http://enigma2.world-of-satellite.com/feeds/2.3/experimental/releasenotes'
 		else:
-			sourcefile='http://enigma2.world-of-satellite.com/feeds/2.3/release/' + config.misc.boxtype.value + '/releasenotes'
+			sourcefile='http://enigma2.world-of-satellite.com/feeds/2.3/release/releasenotes'
 		sourcefile,headers = urllib.urlretrieve(sourcefile)
 		rename(sourcefile,'/tmp/online-releasenotes')
 		fd = open('/tmp/online-releasenotes', 'r')

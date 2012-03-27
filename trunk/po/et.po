@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-26 17:06+0100\n"
-"PO-Revision-Date: 2012-03-26 17:14+0100\n"
+"POT-Creation-Date: 2012-03-27 02:58+0100\n"
+"PO-Revision-Date: 2012-03-27 03:42+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: Henkka, Raivo, eesatfan and rimas\n"
 "Language: et\n"
@@ -16,15 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid " extensions."
-msgstr "laiendused."
-
-msgid " packages selected."
-msgstr " paketti valitud."
-
-msgid " updates available."
-msgstr " uuendust saadaval."
 
 msgid "16 Mb"
 msgstr "16MB"
@@ -1025,8 +1016,8 @@ msgstr "Eemalda"
 msgid "Update"
 msgstr "Uuenda"
 
-msgid "Updatefeed not available."
-msgstr "Uuendamisaadress ei ole saadaval"
+msgid "Update feed not available."
+msgstr ""
 
 msgid "Updating software catalog"
 msgstr "Tarkvara kataloogi uuendamine"
@@ -1238,6 +1229,12 @@ msgstr "echo 'Image allalaadimine.'"
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Image laiendamine.'"
 
+msgid "extensions."
+msgstr ""
+
+msgid "packages selected."
+msgstr ""
+
 msgid "please wait..."
 msgstr ""
 
@@ -1249,6 +1246,9 @@ msgstr "pole saadaval"
 
 msgid "unknown"
 msgstr "tundmatu"
+
+msgid "updates available."
+msgstr ""
 
 msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
 msgstr "Vastuvõtja võib nüüd olla kasutuskõlbmatu. Uuri enne taaskäivitamist käsiraamatut lisaabi saamiseks ."

@@ -1,21 +1,20 @@
-# Norwegian translations for plugins package.
-# Copyright (C) 2011 THE plugins'S COPYRIGHT HOLDER
+# Persian translations for plugins package.
+# Copyright (C) 2012 THE plugins'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the plugins package.
-# Automatically generated, 2011.
+# Automatically generated, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2-vix-core\n"
+"Project-Id-Version: plugins 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-27 02:58+0100\n"
 "PO-Revision-Date: 2012-03-27 03:42+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
-"Language: no\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "16 Mb"
 msgstr ""
@@ -560,9 +559,6 @@ msgstr ""
 msgid "No packages were upgraded yet. So you can check your network and try again."
 msgstr ""
 
-msgid "No plugins where needed to be installed"
-msgstr ""
-
 msgid "None"
 msgstr ""
 
@@ -618,9 +614,6 @@ msgid "Packet manager"
 msgstr ""
 
 msgid "Please select device to use as swapfile location"
-msgstr ""
-
-msgid "Please select the file to restore ?"
 msgstr ""
 
 msgid "Please wait while gathers infomation..."
@@ -722,12 +715,6 @@ msgid "Restore"
 msgstr ""
 
 msgid "Restore Confirmation"
-msgstr ""
-
-msgid "Restore Plugins"
-msgstr ""
-
-msgid "Restore Settings"
 msgstr ""
 
 msgid "Restore Wizard"
@@ -919,12 +906,6 @@ msgstr ""
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr ""
 
-msgid "The wizard is finished now, and will reboot"
-msgstr ""
-
-msgid "The wizard is finished now."
-msgstr ""
-
 msgid "There are at least "
 msgstr ""
 
@@ -1098,13 +1079,6 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-msgid ""
-"Welcome to the restore wizard.\n"
-"\n"
-"A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
-msgstr ""
-
 msgid "What Day of month ?"
 msgstr ""
 
@@ -1211,5 +1185,30 @@ msgid "updates available."
 msgstr ""
 
 msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
+msgstr ""
+
+msgid "No plugins where needed to be installed"
+msgstr ""
+
+msgid "Please select the file to restore ?"
+msgstr ""
+
+msgid "Restore Plugins"
+msgstr ""
+
+msgid "Restore Settings"
+msgstr ""
+
+msgid "The wizard is finished now, and will reboot"
+msgstr ""
+
+msgid "The wizard is finished now."
+msgstr ""
+
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
 msgstr ""
 

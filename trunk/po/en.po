@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-26 17:06+0100\n"
-"PO-Revision-Date: 2012-03-26 17:18+0100\n"
+"POT-Creation-Date: 2012-03-27 02:58+0100\n"
+"PO-Revision-Date: 2012-03-27 03:43+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -16,15 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid " extensions."
-msgstr " extensions."
-
-msgid " packages selected."
-msgstr " packages selected."
-
-msgid " updates available."
-msgstr " updates available."
 
 msgid "16 Mb"
 msgstr "16 Mb"
@@ -1023,8 +1014,8 @@ msgstr "Uninstall"
 msgid "Update"
 msgstr "Update"
 
-msgid "Updatefeed not available."
-msgstr "Updatefeed not available."
+msgid "Update feed not available."
+msgstr "Update feed not available."
 
 msgid "Updating software catalog"
 msgstr "Updating software catalog"
@@ -1236,6 +1227,12 @@ msgstr "echo 'Downloading Image.'"
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Expanding Image.'"
 
+msgid "extensions."
+msgstr "extensions."
+
+msgid "packages selected."
+msgstr "packages selected."
+
 msgid "please wait..."
 msgstr "please wait..."
 
@@ -1248,249 +1245,9 @@ msgstr "unavailable"
 msgid "unknown"
 msgstr "unknown"
 
+msgid "updates available."
+msgstr "updates available."
+
 msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
 msgstr "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
 
-#~ msgid ""
-#~ "\n"
-#~ "ALL THE DATA ON THIS PARTITION WILL BE LOST!\n"
-#~ " Are you sure to continue?"
-#~ msgstr ""
-#~ "\n"
-#~ "ALL THE DATA ON THIS PARTITION WILL BE LOST!\n"
-#~ " Are you sure to continue?"
-
-#~ msgid ""
-#~ "\n"
-#~ "ALL THE DATA WILL BE LOST!\n"
-#~ "Are you sure to continue?"
-#~ msgstr ""
-#~ "\n"
-#~ "ALL THE DATA WILL BE LOST!\n"
-#~ "Are you sure to continue?"
-
-#~ msgid ""
-#~ "\n"
-#~ "After pressing OK, please wait!"
-#~ msgstr ""
-#~ "\n"
-#~ "After pressing OK, please wait!"
-
-#~ msgid ""
-#~ "\n"
-#~ "Create and Manage your swapfiles."
-#~ msgstr ""
-#~ "\n"
-#~ "Create and Manage your swapfiles."
-
-#~ msgid ""
-#~ "\n"
-#~ "Create and Restore complete images of the system."
-#~ msgstr ""
-#~ "\n"
-#~ "Create and Restore complete images of the system."
-
-#~ msgid ""
-#~ "\n"
-#~ "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-#~ msgstr ""
-#~ "\n"
-#~ "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-
-#~ msgid ""
-#~ "\n"
-#~ "Install IPK's from your tmp folder."
-#~ msgstr ""
-#~ "\n"
-#~ "Install IPK's from your tmp folder."
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage extensions or plugins for your STB_BOX"
-#~ msgstr ""
-#~ "\n"
-#~ "Manage extensions or plugins for your STB_BOX"
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage you devices mountpoints."
-#~ msgstr ""
-#~ "\n"
-#~ "Manage you devices mountpoints."
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage your backups of your settings."
-#~ msgstr ""
-#~ "\n"
-#~ "Manage your backups of your settings."
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage your cron jobs."
-#~ msgstr ""
-#~ "\n"
-#~ "Manage your cron jobs."
-
-#~ msgid ""
-#~ "\n"
-#~ "Online update of your STB_BOX software."
-#~ msgstr ""
-#~ "\n"
-#~ "Online update of your STB_BOX software."
-
-#~ msgid ""
-#~ "\n"
-#~ "Run your shell scripts."
-#~ msgstr ""
-#~ "\n"
-#~ "Run your shell scripts."
-
-#~ msgid ""
-#~ "\n"
-#~ "Select a backup to Restore / Delete:"
-#~ msgstr ""
-#~ "\n"
-#~ "Select a backup to Restore / Delete:"
-
-#~ msgid ""
-#~ "\n"
-#~ "Select an image to Restore / Delete:"
-#~ msgstr ""
-#~ "\n"
-#~ "Select an image to Restore / Delete:"
-
-#~ msgid ""
-#~ "\n"
-#~ "View, install and remove available or installed packages."
-#~ msgstr ""
-#~ "\n"
-#~ "View, install and remove available or installed packages."
-
-#~ msgid ""
-#~ "\n"
-#~ "there was a problem with this device, please reformat and try again."
-#~ msgstr ""
-#~ "\n"
-#~ "there was a problem with this device, please reformat and try again."
-
-#~ msgid " "
-#~ msgstr " "
-
-#~ msgid "A search for available updates is currently in progress."
-#~ msgstr "A search for available updates is currently in progress."
-
-#~ msgid ""
-#~ "Are you sure you want to restore this image:\n"
-#~ " "
-#~ msgstr ""
-#~ "Are you sure you want to restore this image:\n"
-#~ " "
-
-#~ msgid "Autostart Disabled."
-#~ msgstr "Autostart Disabled."
-
-#~ msgid "Autostart Enabled."
-#~ msgstr "Autostart Enabled."
-
-#~ msgid "Creating Image..."
-#~ msgstr "Creating Image..."
-
-#~ msgid "Creating list of instlled plugins..."
-#~ msgstr "Creating list of instlled plugins..."
-
-#~ msgid "Error: You have to set Mountpoins for all your devices."
-#~ msgstr "Error: You have to set Mountpoins for all your devices."
-
-#~ msgid "Extended Software"
-#~ msgstr "Extended Software"
-
-#~ msgid "Extended Software Plugin"
-#~ msgstr "Extended Software Plugin"
-
-#~ msgid "Format"
-#~ msgstr "Format"
-
-#~ msgid "Press MENU on your remote control for additional options."
-#~ msgstr "Press MENU on your remote control for additional options."
-
-#~ msgid "Re-install Plugins"
-#~ msgstr "Re-install Plugins"
-
-#~ msgid "Repartition Device"
-#~ msgstr "Repartition Device"
-
-#~ msgid "Restore is running..."
-#~ msgstr "Restore is running..."
-
-#~ msgid "Restore running"
-#~ msgstr "Restore running"
-
-#~ msgid ""
-#~ "Restore wizard has detected that you had extra plugins installed at the "
-#~ "time of you backup, Do you want to reinstall these plugins ?"
-#~ msgstr ""
-#~ "Restore wizard has detected that you had extra plugins installed at the "
-#~ "time of you backup, Do you want to reinstall these plugins ?"
-
-#~ msgid "Script Running"
-#~ msgstr "Script Running"
-
-#~ msgid "Sorry the image "
-#~ msgstr "Sorry the image "
-
-#~ msgid ""
-#~ "Sorry you have Debug Logs enabed,\n"
-#~ "Please disable and restart GUI, before trying again"
-#~ msgstr ""
-#~ "Sorry you have Debug Logs enabed,\n"
-#~ "Please disable and restart GUI, before trying again"
-
-#~ msgid ""
-#~ "Sorry, not enough free ram found, and no phyical devices attached. Can't "
-#~ "create Swapfile on network mounts, unable to make backup"
-#~ msgstr ""
-#~ "Sorry, not enough free ram found, and no phyical devices attached. Can't "
-#~ "create Swapfile on network mounts, unable to make backup"
-
-#~ msgid "Swap File creation Failed. Check for Available space."
-#~ msgstr "Swap File creation Failed. Check for Available space."
-
-#~ msgid "Swap File successfully created."
-#~ msgstr "Swap File successfully created."
-
-#~ msgid ""
-#~ "The device in now formatted to ext3\n"
-#~ "Press ok to continue"
-#~ msgstr ""
-#~ "The device in now formatted to ext3\n"
-#~ "Press ok to continue"
-
-#~ msgid ""
-#~ "The device in now formatted.\n"
-#~ "Press ok to continue"
-#~ msgstr ""
-#~ "The device in now formatted.\n"
-#~ "Press ok to continue"
-
-#~ msgid ""
-#~ "The screen will go blank while upgrading, be patient and wait for the "
-#~ "reboot."
-#~ msgstr ""
-#~ "The screen will go blank while upgrading, be patient and wait for the "
-#~ "reboot."
-
-#~ msgid "VIX"
-#~ msgstr "VIX"
-
-#~ msgid "VIXMenu"
-#~ msgstr "VIXMenu"
-
-#~ msgid "Warning you are going to format\n"
-#~ msgstr "Warning you are going to format\n"
-
-#~ msgid "Warning you are going to format "
-#~ msgstr "Warning you are going to format "
-
-#~ msgid "You have no image to restore."
-#~ msgstr "You have no image to restore."

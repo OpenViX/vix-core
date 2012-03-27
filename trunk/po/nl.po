@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-21 17:59+0000\n"
-"PO-Revision-Date: 2012-03-26 17:13+0100\n"
+"POT-Creation-Date: 2012-03-27 02:58+0100\n"
+"PO-Revision-Date: 2012-03-27 03:42+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: Andy Blackburn, Rob van der Does, Delagroov\n"
 "Language: nl\n"
@@ -19,15 +19,6 @@ msgstr ""
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: NEDERLAND\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-
-msgid " extensions."
-msgstr " extensies."
-
-msgid " packages selected."
-msgstr " pakketten geselecteerd."
-
-msgid " updates available."
-msgstr " updates beschikbaar."
 
 msgid "16 Mb"
 msgstr "16 Mb"
@@ -1028,8 +1019,8 @@ msgstr "De-installeer"
 msgid "Update"
 msgstr "Update"
 
-msgid "Updatefeed not available."
-msgstr "Updatefeed is niet beschikbaar."
+msgid "Update feed not available."
+msgstr ""
 
 msgid "Updating software catalog"
 msgstr "Software catalogus wordt geupdate"
@@ -1241,6 +1232,12 @@ msgstr "echo 'Download image.'"
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Expanding Image.'"
 
+msgid "extensions."
+msgstr ""
+
+msgid "packages selected."
+msgstr ""
+
 msgid "please wait..."
 msgstr "even wachten..."
 
@@ -1253,17 +1250,9 @@ msgstr "niet beschikbaar"
 msgid "unknown"
 msgstr "onbekend"
 
+msgid "updates available."
+msgstr ""
+
 msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
 msgstr "Uw ontvanger kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens de ontvanger opnieuw te starten."
 
-#~ msgid ""
-#~ "Unattended upgrade in progress\n"
-#~ "Please wait until your STB_BOX reboots\n"
-#~ "This may take a few minutes"
-#~ msgstr ""
-#~ "Onbewaakte upgrade in uitvoering.\n"
-#~ "Wacht tot uw ontvangeropnieuw is gestart.\n"
-#~ "Dat kan een paar minuten duren."
-
-#~ msgid "VIXMenu"
-#~ msgstr "VIXMenu"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-26 17:06+0100\n"
-"PO-Revision-Date: 2012-03-26 17:13+0100\n"
+"POT-Creation-Date: 2012-03-27 02:58+0100\n"
+"PO-Revision-Date: 2012-03-27 03:43+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -18,15 +18,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
-
-msgid " extensions."
-msgstr " erweiterungen."
-
-msgid " packages selected."
-msgstr " Ausgewählte Pakete."
-
-msgid " updates available."
-msgstr " updates verfügbar."
 
 msgid "16 Mb"
 msgstr "16MB"
@@ -1027,8 +1018,8 @@ msgstr "Deinstallation"
 msgid "Update"
 msgstr "Update"
 
-msgid "Updatefeed not available."
-msgstr "Update-Feed nicht verfügbar"
+msgid "Update feed not available."
+msgstr ""
 
 msgid "Updating software catalog"
 msgstr "Erweiterungsliste wird aktualisiert"
@@ -1240,6 +1231,12 @@ msgstr "echo 'Image herunterladen.'"
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Image entpacken.'"
 
+msgid "extensions."
+msgstr ""
+
+msgid "packages selected."
+msgstr ""
+
 msgid "please wait..."
 msgstr ""
 
@@ -1252,227 +1249,9 @@ msgstr "nicht verfügbar"
 msgid "unknown"
 msgstr "unbekannt"
 
+msgid "updates available."
+msgstr ""
+
 msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
 msgstr "Der STB_BOX könnte jetzt nicht mehr verwendungsfähig sein. VOR EINEM NEUSTART unbedingt die Bedienungsanleitung für weitere Unterstützung konsultieren."
 
-#~ msgid ""
-#~ "\n"
-#~ "After pressing OK, please wait!"
-#~ msgstr ""
-#~ "\n"
-#~ "Nach OK drücken bitte warten!"
-
-#~ msgid ""
-#~ "\n"
-#~ "Create and Manage your swapfiles."
-#~ msgstr ""
-#~ "\n"
-#~ "Erstellen und Verwalten von Auslagerungsdateien."
-
-#~ msgid ""
-#~ "\n"
-#~ "Create and Restore complete images of the system."
-#~ msgstr ""
-#~ "\n"
-#~ "Erstellen und Wiederherstellen kompletter System-Abbilder."
-
-#~ msgid ""
-#~ "\n"
-#~ "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-#~ msgstr ""
-#~ "\n"
-#~ "Zeitpläne für Standby, Neustart GUI, Deep-Standby und Neustart erstellen."
-
-#~ msgid ""
-#~ "\n"
-#~ "Install IPK's from your tmp folder."
-#~ msgstr ""
-#~ "\n"
-#~ "IPK-Dateien aus tmp-Verzeichnis installieren."
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage extensions or plugins for your STB_BOX"
-#~ msgstr ""
-#~ "\n"
-#~ "Erweiterungen / Plugins für den STB_BOX verwalten."
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage you devices mountpoints."
-#~ msgstr ""
-#~ "\n"
-#~ "Geräte-Mountpoints verwalten."
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage your backups of your settings."
-#~ msgstr ""
-#~ "\n"
-#~ "Einstellungs-Backups verwalten."
-
-#~ msgid ""
-#~ "\n"
-#~ "Manage your cron jobs."
-#~ msgstr ""
-#~ "\n"
-#~ "Cron-Jobs verwalten."
-
-#~ msgid ""
-#~ "\n"
-#~ "Online update of your STB_BOX software."
-#~ msgstr ""
-#~ "\n"
-#~ "Online-Update der STB_BOX-Software."
-
-#~ msgid ""
-#~ "\n"
-#~ "Run your shell scripts."
-#~ msgstr ""
-#~ "\n"
-#~ " Shell-Scripts ausführen."
-
-#~ msgid ""
-#~ "\n"
-#~ "Select a backup to Restore / Delete:"
-#~ msgstr ""
-#~ "\n"
-#~ "Sicherung zum Wiederherstellen / Löschen auswählen:"
-
-#~ msgid ""
-#~ "\n"
-#~ "Select an image to Restore / Delete:"
-#~ msgstr ""
-#~ "\n"
-#~ "Image zum Wiederherstellen / Löschen auswählen:"
-
-#~ msgid ""
-#~ "\n"
-#~ "View, install and remove available or installed packages."
-#~ msgstr ""
-#~ "\n"
-#~ "Verfügbare oder installierte Pakete betrachten, installieren oder "
-#~ "entfernen. "
-
-#~ msgid ""
-#~ "\n"
-#~ "there was a problem with this device, please reformat and try again."
-#~ msgstr ""
-#~ "\n"
-#~ "Gerätefehler! Bitte neu formatieren und erneut versuchen."
-
-#~ msgid " "
-#~ msgstr " "
-
-#~ msgid " detected'"
-#~ msgstr " entdeckt'"
-
-#~ msgid ""
-#~ "Are you sure you want to restore this image:\n"
-#~ " "
-#~ msgstr ""
-#~ "Dieses Image jetzt wiederherstellen:\n"
-#~ " "
-
-#~ msgid "Autostart Disabled."
-#~ msgstr "Autostart deaktiviert"
-
-#~ msgid "Autostart Enabled."
-#~ msgstr "Autostart aktiviert"
-
-#~ msgid "Do you want to restore your settings?"
-#~ msgstr "Wollen Sie Ihre Einstellungen wiederherstellen?"
-
-#~ msgid "Enable Debug log"
-#~ msgstr "Debug Log aktivieren"
-
-#~ msgid "Erasing Kernel..."
-#~ msgstr "Lösche Kernel..."
-
-#~ msgid "Erasing Root..."
-#~ msgstr "Lösche Root..."
-
-#~ msgid ""
-#~ "Flashing Complete\n"
-#~ "Please power off your STB_BOX, wait 15 seconds then power backon."
-#~ msgstr ""
-#~ "Flashen abgeschlossen\n"
-#~ "Schalten Sie den STB_BOX am Netzschalter aus und warten Sie 15s vor dem "
-#~ "Wiedereinschalten."
-
-#~ msgid "Installing Plugins..."
-#~ msgstr "Installiere Plugins..."
-
-#~ msgid "No"
-#~ msgstr "Nein"
-
-#~ msgid ""
-#~ "Offline upgrade in progress\n"
-#~ "Please wait until your STB_BOX reboots\n"
-#~ "This may take a few minutes"
-#~ msgstr ""
-#~ "Upgrade wird im Hintergrund ausgeführt\n"
-#~ "Bitte warten bis die STB_BOX neu startet\n"
-#~ "Das kann ein paar Minuten dauern"
-
-#~ msgid "Please copy the folder"
-#~ msgstr "Bitte den Ordner kopieren"
-
-#~ msgid "Re-install Plugins"
-#~ msgstr "Plugins neu installieren"
-
-#~ msgid "Restore is running..."
-#~ msgstr "Wiederherstellung wird ausgeführt..."
-
-#~ msgid ""
-#~ "Restore wizard has detected that you had extra plugins installed at the "
-#~ "time of you backup, Do you want to reinstall these plugins ?"
-#~ msgstr ""
-#~ "Der Wiederherstellungs-Wizard hat festgestellt, dass zum Zeitpunkt der "
-#~ "Sicherung zusätzliche Plugins installiert waren. Sollen diese Plugins neu "
-#~ "installiert werden?"
-
-#~ msgid "Restoring Kernel..."
-#~ msgstr "Kernel wiederherstellen..."
-
-#~ msgid "Restoring Root..."
-#~ msgstr "Root wiederherstellen..."
-
-#~ msgid "Sorry Image Restore is not supported on the"
-#~ msgstr "Sooy, Wiederherstellen des Image nicht unterstützt"
-
-#~ msgid "Sorry the image "
-#~ msgstr "Leider ist das Image"
-
-#~ msgid "VIXMenu"
-#~ msgstr "VIX-Menü"
-
-#~ msgid "Yes"
-#~ msgstr "Ja"
-
-#~ msgid ""
-#~ "You have chosen to restore your settings. Please press OK to start the "
-#~ "restore now."
-#~ msgstr ""
-#~ "Wiederherstellung der Einstellungen ausgewählt. Ok drücken zum Starten "
-#~ "der Wiederherstellung."
-
-#~ msgid "You have no image to restore."
-#~ msgstr "Kein Image zum Wiederherstellen"
-
-#~ msgid "echo 'Attention:'"
-#~ msgstr "echo 'Achtung:'"
-
-#~ msgid ""
-#~ "echo 'Enigma2 will be restarted automatically after the restore progress.'"
-#~ msgstr ""
-#~ "echo 'Enigma2 wird nach Wiederherstellungsprozess automatisch neu "
-#~ "gestartet.'"
-
-#~ msgid "echo 'Installing Plugins.'"
-#~ msgstr "echo 'Plugins installieren."
-
-#~ msgid "to a USB stick, place in front USB port of reciver and power on"
-#~ msgstr ""
-#~ "auf einen USB-Stick, in Port auf Gerätevorderseite einstecken und STB_BOX "
-#~ "einschalten"

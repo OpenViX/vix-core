@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-26 17:06+0100\n"
-"PO-Revision-Date: 2012-03-26 17:14+0100\n"
+"POT-Creation-Date: 2012-03-27 02:58+0100\n"
+"PO-Revision-Date: 2012-03-27 03:42+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: sl\n"
@@ -16,15 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
-
-msgid " extensions."
-msgstr ""
-
-msgid " packages selected."
-msgstr ""
-
-msgid " updates available."
-msgstr ""
 
 msgid "16 Mb"
 msgstr ""
@@ -1003,7 +994,7 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-msgid "Updatefeed not available."
+msgid "Update feed not available."
 msgstr ""
 
 msgid "Updating software catalog"
@@ -1198,6 +1189,12 @@ msgstr ""
 msgid "echo 'Expanding Image.'"
 msgstr ""
 
+msgid "extensions."
+msgstr ""
+
+msgid "packages selected."
+msgstr ""
+
 msgid "please wait..."
 msgstr ""
 
@@ -1208,6 +1205,9 @@ msgid "unavailable"
 msgstr ""
 
 msgid "unknown"
+msgstr ""
+
+msgid "updates available."
 msgstr ""
 
 msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."

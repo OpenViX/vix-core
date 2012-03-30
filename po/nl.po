@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-27 02:58+0100\n"
-"PO-Revision-Date: 2012-03-27 11:35+0100\n"
-"Last-Translator: R.L. van der Does\n"
+"POT-Creation-Date: 2012-03-29 15:55+0100\n"
+"PO-Revision-Date: 2012-03-30 06:50+0100\n"
+"Last-Translator: \n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,9 @@ msgstr ""
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: NEDERLAND\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
+
+msgid "%a %e %b  %-H:%M"
+msgstr "%a %e %b  %-H:%M"
 
 msgid "16 Mb"
 msgstr "16 Mb"
@@ -64,9 +67,6 @@ msgstr "Nadat u op OK gedrukt heeft, even wachten!"
 msgid "Apr"
 msgstr "apr"
 
-msgid "April"
-msgstr "april"
-
 msgid "Are you ready to create a backup ?"
 msgstr "Bent u gereed een backup van uw instellingen te maken?"
 
@@ -109,9 +109,6 @@ msgstr ""
 
 msgid "Aug"
 msgstr "aug"
-
-msgid "August"
-msgstr "augustus"
 
 msgid "Author: "
 msgstr "Auteur: "
@@ -249,9 +246,6 @@ msgstr "De-activeer"
 msgid "Dec"
 msgstr "dec"
 
-msgid "December"
-msgstr "december"
-
 msgid "Deep Standby Time"
 msgstr "Deep Sleep"
 
@@ -371,9 +365,6 @@ msgstr "Beheer van Extensies"
 msgid "Feb"
 msgstr "feb"
 
-msgid "February"
-msgstr "februari"
-
 msgid "Folder prefix"
 msgstr "Folder prefix"
 
@@ -385,9 +376,6 @@ msgstr "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, 
 
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, maar dat kan mislukken"
-
-msgid "Fri"
-msgstr "vr"
 
 msgid "Friday"
 msgstr "vrijdag"
@@ -452,20 +440,11 @@ msgstr "Installeert...."
 msgid "Jan"
 msgstr "jan"
 
-msgid "January"
-msgstr "januari"
-
 msgid "Jul"
 msgstr "jul"
 
-msgid "July"
-msgstr "juli"
-
 msgid "Jun"
 msgstr "jun"
-
-msgid "June"
-msgstr "juni"
 
 msgid "MB"
 msgstr "MB"
@@ -491,14 +470,8 @@ msgstr "Beheer uw cron jobs."
 msgid "Mar"
 msgstr "mar"
 
-msgid "March"
-msgstr "maart"
-
 msgid "May"
 msgstr "mei"
-
-msgid "Mon"
-msgstr "ma"
 
 msgid "Monday"
 msgstr "maandag"
@@ -591,17 +564,11 @@ msgstr "Er hoefden geen plugins te worden geïnstalleerd"
 msgid "None"
 msgstr "Geen"
 
-msgid "Normal"
-msgstr "Normaal"
-
 msgid "Nothing to upgrade"
 msgstr "Geen upgrade beschikbaar"
 
 msgid "Nov"
 msgstr "nov"
-
-msgid "November"
-msgstr "november"
 
 msgid "Now installing service"
 msgstr "Bezig met het installeren van de service."
@@ -620,9 +587,6 @@ msgstr "JA, voer een herstel actie uit"
 
 msgid "Oct"
 msgstr "okt"
-
-msgid "October"
-msgstr "oktober"
 
 msgid "Online update of your STB_BOX software."
 msgstr "Online update van uw ontvanger."
@@ -651,8 +615,11 @@ msgstr "Kies bestanden die teruggeplaatst moeten worden."
 msgid "Please wait while gathers infomation..."
 msgstr "Bezig informatie te verzamelen..."
 
-msgid "Please wait while restore completes..."
-msgstr "Wacht tot de herstelactie gereed is...."
+msgid "Please wait while plugins restore completes..."
+msgstr "Even wachten tot het installeren van plugins gereed is..."
+
+msgid "Please wait while settings restore completes..."
+msgstr "Even wachten tot het herstellen van de instellingen gereed is..."
 
 msgid "Please wait while starting\n"
 msgstr "Wacht terwijl er gestart wordt\n"
@@ -782,9 +749,6 @@ msgstr "Voer uw shell scripts uit."
 msgid "Running"
 msgstr "Loopt"
 
-msgid "Sat"
-msgstr "za"
-
 msgid "Satellite equipment"
 msgstr "Satelliet apparatuur"
 
@@ -836,9 +800,6 @@ msgstr "Selecteer:"
 msgid "Sep"
 msgstr "sep"
 
-msgid "September"
-msgstr "september"
-
 msgid "Service is not currently in use do you want to remove the service ?"
 msgstr "Service is momenteel niet in gebruik. Wilt u de service verwijderen?"
 
@@ -884,6 +845,15 @@ msgstr "Software Manager"
 msgid "Software Update"
 msgstr "Software Update"
 
+msgid "Sorry feeds are down for maintenance, Please try again later."
+msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
+
+msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer later opnieuw de plugins te installeren via de Backup Manager."
+
+msgid "Sorry feeds are down for maintenance, please try again later."
+msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
+
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "Sorry, uw ontvanger is nog niet geschikt."
 
@@ -916,9 +886,6 @@ msgstr "Stop"
 
 msgid "Stopped"
 msgstr "Gestopt"
-
-msgid "Sun"
-msgstr "zo"
 
 msgid "Sunday"
 msgstr "zondag"
@@ -977,9 +944,6 @@ msgstr "Deze plugin zal worden geïnstalleerd"
 msgid "This plugin will be removed."
 msgstr "Deze plugin zal worden verwijderd"
 
-msgid "Thu"
-msgstr "do"
-
 msgid "Thursday"
 msgstr "donderdag"
 
@@ -992,17 +956,11 @@ msgstr "Tijd om het script uit te voeren"
 msgid "Trying to download a new packetlist. Please wait..."
 msgstr "Probeert een nieuwe pakketlijst te downloaden. Even wachten...."
 
-msgid "Tue"
-msgstr "di"
-
 msgid "Tuesday"
 msgstr "dinsdag"
 
 msgid "Type: "
 msgstr "Type: "
-
-msgid "Unattended"
-msgstr "Onbewaakt"
 
 msgid "Unattended upgrade without GUI and reboot system"
 msgstr "Onbewaakte upgrade met automatische reboot zonder GUI"
@@ -1024,9 +982,6 @@ msgstr "Update feeds niet beschikbaar."
 
 msgid "Updating software catalog"
 msgstr "Software catalogus wordt geupdate"
-
-msgid "Upgrade and ask to reboot"
-msgstr "Voer upgrade uit en vraag toestemming voor reboot"
 
 msgid "Upgrade finished."
 msgstr "Upgrade voltooid."
@@ -1115,9 +1070,6 @@ msgstr "Even wachten op het scannen van de media...."
 
 msgid "Wait please while scanning..."
 msgstr "Een ogenblikje geduld, zoeken is bezig..."
-
-msgid "Wed"
-msgstr "wo"
 
 msgid "Wednesday"
 msgstr "woensdag"
@@ -1256,3 +1208,68 @@ msgstr "updates beschikbaar.."
 msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
 msgstr "Uw ontvanger kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens de ontvanger opnieuw te starten."
 
+#~ msgid "April"
+#~ msgstr "april"
+
+#~ msgid "August"
+#~ msgstr "augustus"
+
+#~ msgid "December"
+#~ msgstr "december"
+
+#~ msgid "February"
+#~ msgstr "februari"
+
+#~ msgid "Fri"
+#~ msgstr "vr"
+
+#~ msgid "January"
+#~ msgstr "januari"
+
+#~ msgid "July"
+#~ msgstr "juli"
+
+#~ msgid "June"
+#~ msgstr "juni"
+
+#~ msgid "March"
+#~ msgstr "maart"
+
+#~ msgid "Mon"
+#~ msgstr "ma"
+
+#~ msgid "Normal"
+#~ msgstr "Normaal"
+
+#~ msgid "November"
+#~ msgstr "november"
+
+#~ msgid "October"
+#~ msgstr "oktober"
+
+#~ msgid "Please wait while restore completes..."
+#~ msgstr "Wacht tot de herstelactie gereed is...."
+
+#~ msgid "Sat"
+#~ msgstr "za"
+
+#~ msgid "September"
+#~ msgstr "september"
+
+#~ msgid "Sun"
+#~ msgstr "zo"
+
+#~ msgid "Thu"
+#~ msgstr "do"
+
+#~ msgid "Tue"
+#~ msgstr "di"
+
+#~ msgid "Unattended"
+#~ msgstr "Onbewaakt"
+
+#~ msgid "Upgrade and ask to reboot"
+#~ msgstr "Voer upgrade uit en vraag toestemming voor reboot"
+
+#~ msgid "Wed"
+#~ msgstr "wo"

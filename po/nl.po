@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-29 15:55+0100\n"
-"PO-Revision-Date: 2012-03-30 06:50+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2012-03-31 13:21+0100\n"
+"PO-Revision-Date: 2012-03-31 13:33+0100\n"
+"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -358,6 +358,9 @@ msgstr "Fout"
 
 msgid "Exit the restore wizard"
 msgstr "Beeindig de herstel wizard"
+
+msgid "Experimental"
+msgstr ""
 
 msgid "Extensions management"
 msgstr "Beheer van Extensies"
@@ -1174,6 +1177,9 @@ msgstr ""
 
 msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
 msgstr "Uw ontvanger is niet goed met het Internet verbonden. Na controle kunt u het opnieuw proberen."
+
+msgid "Your box is not connected to the internet, please check your network settings and try again."
+msgstr ""
 
 msgid "detected"
 msgstr "gedetecteerd"

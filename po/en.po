@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-27 02:58+0100\n"
-"PO-Revision-Date: 2012-03-27 03:43+0100\n"
+"POT-Creation-Date: 2012-03-31 13:21+0100\n"
+"PO-Revision-Date: 2012-03-31 13:34+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -16,6 +16,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "%a %e %b  %-H:%M"
+msgstr "%a %e %b  %-H:%M"
 
 msgid "16 Mb"
 msgstr "16 Mb"
@@ -61,9 +64,6 @@ msgstr "After pressing OK, please wait!"
 msgid "Apr"
 msgstr "Apr"
 
-msgid "April"
-msgstr "April"
-
 msgid "Are you ready to create a backup ?"
 msgstr "Are you ready to create a backup ?"
 
@@ -104,9 +104,6 @@ msgstr ""
 
 msgid "Aug"
 msgstr "Aug"
-
-msgid "August"
-msgstr "August"
 
 msgid "Author: "
 msgstr "Author: "
@@ -244,9 +241,6 @@ msgstr "Deactivate"
 msgid "Dec"
 msgstr "Dec"
 
-msgid "December"
-msgstr "December"
-
 msgid "Deep Standby Time"
 msgstr "Deep Standby Time"
 
@@ -360,14 +354,14 @@ msgstr "Error"
 msgid "Exit the restore wizard"
 msgstr "Exit the restore wizard"
 
+msgid "Experimental"
+msgstr "Experimental"
+
 msgid "Extensions management"
 msgstr "Extensions management"
 
 msgid "Feb"
 msgstr "Feb"
-
-msgid "February"
-msgstr "February"
 
 msgid "Folder prefix"
 msgstr "Folder prefix"
@@ -380,9 +374,6 @@ msgstr "Found none stanadard softcam, trying to start, this may fail"
 
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "Found none standard softcam, trying to start, this may fail"
-
-msgid "Fri"
-msgstr "Fri"
 
 msgid "Friday"
 msgstr "Friday"
@@ -447,20 +438,11 @@ msgstr "Installing..."
 msgid "Jan"
 msgstr "Jan"
 
-msgid "January"
-msgstr "January"
-
 msgid "Jul"
 msgstr "Jul"
 
-msgid "July"
-msgstr "July"
-
 msgid "Jun"
 msgstr "Jun"
-
-msgid "June"
-msgstr "June"
 
 msgid "MB"
 msgstr "MB"
@@ -486,14 +468,8 @@ msgstr "Manage your cron jobs."
 msgid "Mar"
 msgstr "Mar"
 
-msgid "March"
-msgstr "March"
-
 msgid "May"
 msgstr "May"
-
-msgid "Mon"
-msgstr "Mon"
 
 msgid "Monday"
 msgstr "Monday"
@@ -586,17 +562,11 @@ msgstr "No plugins where needed to be installed"
 msgid "None"
 msgstr "None"
 
-msgid "Normal"
-msgstr "Normal"
-
 msgid "Nothing to upgrade"
 msgstr "Nothing to upgrade"
 
 msgid "Nov"
 msgstr "Nov"
-
-msgid "November"
-msgstr "November"
 
 msgid "Now installing service"
 msgstr "Now installing service"
@@ -615,9 +585,6 @@ msgstr "OK, to perform a restore"
 
 msgid "Oct"
 msgstr "Oct"
-
-msgid "October"
-msgstr "October"
 
 msgid "Online update of your STB_BOX software."
 msgstr "Online update of your STB_BOX software."
@@ -646,8 +613,11 @@ msgstr "Please select the file to restore ?"
 msgid "Please wait while gathers infomation..."
 msgstr "Please wait while gathers infomation..."
 
-msgid "Please wait while restore completes..."
-msgstr "Please wait while restore completes..."
+msgid "Please wait while plugins restore completes..."
+msgstr "Please wait while plugins restore completes..."
+
+msgid "Please wait while settings restore completes..."
+msgstr "Please wait while settings restore completes..."
 
 msgid "Please wait while starting\n"
 msgstr "Please wait while starting\n"
@@ -777,9 +747,6 @@ msgstr "Run your shell scripts."
 msgid "Running"
 msgstr "Running"
 
-msgid "Sat"
-msgstr "Sat"
-
 msgid "Satellite equipment"
 msgstr "Satellite equipment"
 
@@ -831,9 +798,6 @@ msgstr "Select:"
 msgid "Sep"
 msgstr "Sep"
 
-msgid "September"
-msgstr "September"
-
 msgid "Service is not currently in use do you want to remove the service ?"
 msgstr "Service is not currently in use do you want to remove the service ?"
 
@@ -879,6 +843,15 @@ msgstr "Software Manager"
 msgid "Software Update"
 msgstr "Software Update"
 
+msgid "Sorry feeds are down for maintenance, Please try again later."
+msgstr "Sorry feeds are down for maintenance, Please try again later."
+
+msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgstr "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+
+msgid "Sorry feeds are down for maintenance, please try again later."
+msgstr "Sorry feeds are down for maintenance, please try again later."
+
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "Sorry you STB_BOX is not yet compatible."
 
@@ -911,9 +884,6 @@ msgstr "Stop"
 
 msgid "Stopped"
 msgstr "Stopped"
-
-msgid "Sun"
-msgstr "Sun"
 
 msgid "Sunday"
 msgstr "Sunday"
@@ -972,9 +942,6 @@ msgstr "This plugin will be installed."
 msgid "This plugin will be removed."
 msgstr "This plugin will be removed."
 
-msgid "Thu"
-msgstr "Thu"
-
 msgid "Thursday"
 msgstr "Thursday"
 
@@ -987,17 +954,11 @@ msgstr "Time to execute command or script"
 msgid "Trying to download a new packetlist. Please wait..."
 msgstr "Trying to download a new packetlist. Please wait..."
 
-msgid "Tue"
-msgstr "Tue"
-
 msgid "Tuesday"
 msgstr "Tuesday"
 
 msgid "Type: "
 msgstr "Type: "
-
-msgid "Unattended"
-msgstr "Unattended"
 
 msgid "Unattended upgrade without GUI and reboot system"
 msgstr "Unattended upgrade without GUI and reboot system"
@@ -1019,9 +980,6 @@ msgstr "Update feed not available."
 
 msgid "Updating software catalog"
 msgstr "Updating software catalog"
-
-msgid "Upgrade and ask to reboot"
-msgstr "Upgrade and ask to reboot"
 
 msgid "Upgrade finished."
 msgstr "Upgrade finished."
@@ -1110,9 +1068,6 @@ msgstr "Wait please while scanning your STB_BOX devices..."
 
 msgid "Wait please while scanning..."
 msgstr "Wait please while scanning..."
-
-msgid "Wed"
-msgstr "Wed"
 
 msgid "Wednesday"
 msgstr "Wednesday"
@@ -1217,6 +1172,9 @@ msgstr ""
 
 msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
 msgstr "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
+
+msgid "Your box is not connected to the internet, please check your network settings and try again."
+msgstr "Your box is not connected to the internet, please check your network settings and try again."
 
 msgid "detected"
 msgstr "detected"

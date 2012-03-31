@@ -7,14 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plugins 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-27 02:58+0100\n"
-"PO-Revision-Date: 2012-03-27 03:42+0100\n"
+"POT-Creation-Date: 2012-03-31 13:21+0100\n"
+"PO-Revision-Date: 2012-03-31 13:37+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+msgid "%a %e %b  %-H:%M"
+msgstr ""
 
 msgid "16 Mb"
 msgstr ""
@@ -58,9 +61,6 @@ msgstr ""
 msgid "Apr"
 msgstr ""
 
-msgid "April"
-msgstr ""
-
 msgid "Are you ready to create a backup ?"
 msgstr ""
 
@@ -94,9 +94,6 @@ msgid ""
 msgstr ""
 
 msgid "Aug"
-msgstr ""
-
-msgid "August"
 msgstr ""
 
 msgid "Author: "
@@ -233,9 +230,6 @@ msgstr ""
 msgid "Dec"
 msgstr ""
 
-msgid "December"
-msgstr ""
-
 msgid "Deep Standby Time"
 msgstr ""
 
@@ -347,13 +341,13 @@ msgstr ""
 msgid "Exit the restore wizard"
 msgstr ""
 
+msgid "Experimental"
+msgstr ""
+
 msgid "Extensions management"
 msgstr ""
 
 msgid "Feb"
-msgstr ""
-
-msgid "February"
 msgstr ""
 
 msgid "Folder prefix"
@@ -366,9 +360,6 @@ msgid "Found none stanadard softcam, trying to start, this may fail"
 msgstr ""
 
 msgid "Found none standard softcam, trying to start, this may fail"
-msgstr ""
-
-msgid "Fri"
 msgstr ""
 
 msgid "Friday"
@@ -434,19 +425,10 @@ msgstr ""
 msgid "Jan"
 msgstr ""
 
-msgid "January"
-msgstr ""
-
 msgid "Jul"
 msgstr ""
 
-msgid "July"
-msgstr ""
-
 msgid "Jun"
-msgstr ""
-
-msgid "June"
 msgstr ""
 
 msgid "MB"
@@ -473,13 +455,7 @@ msgstr ""
 msgid "Mar"
 msgstr ""
 
-msgid "March"
-msgstr ""
-
 msgid "May"
-msgstr ""
-
-msgid "Mon"
 msgstr ""
 
 msgid "Monday"
@@ -559,19 +535,16 @@ msgstr ""
 msgid "No packages were upgraded yet. So you can check your network and try again."
 msgstr ""
 
-msgid "None"
+msgid "No plugins where needed to be installed"
 msgstr ""
 
-msgid "Normal"
+msgid "None"
 msgstr ""
 
 msgid "Nothing to upgrade"
 msgstr ""
 
 msgid "Nov"
-msgstr ""
-
-msgid "November"
 msgstr ""
 
 msgid "Now installing service"
@@ -590,9 +563,6 @@ msgid "OK, to perform a restore"
 msgstr ""
 
 msgid "Oct"
-msgstr ""
-
-msgid "October"
 msgstr ""
 
 msgid "Online update of your STB_BOX software."
@@ -616,10 +586,16 @@ msgstr ""
 msgid "Please select device to use as swapfile location"
 msgstr ""
 
+msgid "Please select the file to restore ?"
+msgstr ""
+
 msgid "Please wait while gathers infomation..."
 msgstr ""
 
-msgid "Please wait while restore completes..."
+msgid "Please wait while plugins restore completes..."
+msgstr ""
+
+msgid "Please wait while settings restore completes..."
 msgstr ""
 
 msgid "Please wait while starting\n"
@@ -717,6 +693,12 @@ msgstr ""
 msgid "Restore Confirmation"
 msgstr ""
 
+msgid "Restore Plugins"
+msgstr ""
+
+msgid "Restore Settings"
+msgstr ""
+
 msgid "Restore Wizard"
 msgstr ""
 
@@ -742,9 +724,6 @@ msgid "Run your shell scripts."
 msgstr ""
 
 msgid "Running"
-msgstr ""
-
-msgid "Sat"
 msgstr ""
 
 msgid "Satellite equipment"
@@ -798,9 +777,6 @@ msgstr ""
 msgid "Sep"
 msgstr ""
 
-msgid "September"
-msgstr ""
-
 msgid "Service is not currently in use do you want to remove the service ?"
 msgstr ""
 
@@ -846,6 +822,15 @@ msgstr ""
 msgid "Software Update"
 msgstr ""
 
+msgid "Sorry feeds are down for maintenance, Please try again later."
+msgstr ""
+
+msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgstr ""
+
+msgid "Sorry feeds are down for maintenance, please try again later."
+msgstr ""
+
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr ""
 
@@ -879,9 +864,6 @@ msgstr ""
 msgid "Stopped"
 msgstr ""
 
-msgid "Sun"
-msgstr ""
-
 msgid "Sunday"
 msgstr ""
 
@@ -904,6 +886,12 @@ msgid "The backup location does not have enough freespace."
 msgstr ""
 
 msgid "The chosen location does not exist, using /media/hdd"
+msgstr ""
+
+msgid "The wizard is finished now, and will reboot"
+msgstr ""
+
+msgid "The wizard is finished now."
 msgstr ""
 
 msgid "There are at least "
@@ -933,9 +921,6 @@ msgstr ""
 msgid "This plugin will be removed."
 msgstr ""
 
-msgid "Thu"
-msgstr ""
-
 msgid "Thursday"
 msgstr ""
 
@@ -948,16 +933,10 @@ msgstr ""
 msgid "Trying to download a new packetlist. Please wait..."
 msgstr ""
 
-msgid "Tue"
-msgstr ""
-
 msgid "Tuesday"
 msgstr ""
 
 msgid "Type: "
-msgstr ""
-
-msgid "Unattended"
 msgstr ""
 
 msgid "Unattended upgrade without GUI and reboot system"
@@ -979,9 +958,6 @@ msgid "Update feed not available."
 msgstr ""
 
 msgid "Updating software catalog"
-msgstr ""
-
-msgid "Upgrade and ask to reboot"
 msgstr ""
 
 msgid "Upgrade finished."
@@ -1070,13 +1046,17 @@ msgstr ""
 msgid "Wait please while scanning..."
 msgstr ""
 
-msgid "Wed"
-msgstr ""
-
 msgid "Wednesday"
 msgstr ""
 
 msgid "Weekly"
+msgstr ""
+
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
 msgstr ""
 
 msgid "What Day of month ?"
@@ -1154,6 +1134,9 @@ msgstr ""
 msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
 msgstr ""
 
+msgid "Your box is not connected to the internet, please check your network settings and try again."
+msgstr ""
+
 msgid "detected"
 msgstr ""
 
@@ -1185,30 +1168,5 @@ msgid "updates available."
 msgstr ""
 
 msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
-msgstr ""
-
-msgid "No plugins where needed to be installed"
-msgstr ""
-
-msgid "Please select the file to restore ?"
-msgstr ""
-
-msgid "Restore Plugins"
-msgstr ""
-
-msgid "Restore Settings"
-msgstr ""
-
-msgid "The wizard is finished now, and will reboot"
-msgstr ""
-
-msgid "The wizard is finished now."
-msgstr ""
-
-msgid ""
-"Welcome to the restore wizard.\n"
-"\n"
-"A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
 msgstr ""
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-27 02:58+0100\n"
-"PO-Revision-Date: 2012-03-27 03:43+0100\n"
+"POT-Creation-Date: 2012-03-31 13:21+0100\n"
+"PO-Revision-Date: 2012-03-31 13:33+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -18,6 +18,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
+
+msgid "%a %e %b  %-H:%M"
+msgstr ""
 
 msgid "16 Mb"
 msgstr "16MB"
@@ -63,9 +66,6 @@ msgstr "Nachdem Du OK gedrückt hast bitte warten!"
 msgid "Apr"
 msgstr ""
 
-msgid "April"
-msgstr "April"
-
 msgid "Are you ready to create a backup ?"
 msgstr "Backup jetzt erstellen?"
 
@@ -108,9 +108,6 @@ msgstr ""
 
 msgid "Aug"
 msgstr ""
-
-msgid "August"
-msgstr "August"
 
 msgid "Author: "
 msgstr "Autor: "
@@ -248,9 +245,6 @@ msgstr "Deaktivieren"
 msgid "Dec"
 msgstr "Dez"
 
-msgid "December"
-msgstr "Dezember"
-
 msgid "Deep Standby Time"
 msgstr "Deep-Standby"
 
@@ -364,14 +358,14 @@ msgstr "Fehler"
 msgid "Exit the restore wizard"
 msgstr "Wiederherstellungsassistenten beenden"
 
+msgid "Experimental"
+msgstr ""
+
 msgid "Extensions management"
 msgstr "Erweiterungs-Management"
 
 msgid "Feb"
 msgstr ""
-
-msgid "February"
-msgstr "Februar"
 
 msgid "Folder prefix"
 msgstr "Ordner-Präfix"
@@ -384,9 +378,6 @@ msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglic
 
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl"
-
-msgid "Fri"
-msgstr "Fr."
 
 msgid "Friday"
 msgstr "Freitag"
@@ -451,20 +442,11 @@ msgstr "Installiert..."
 msgid "Jan"
 msgstr ""
 
-msgid "January"
-msgstr "Januar"
-
 msgid "Jul"
 msgstr ""
 
-msgid "July"
-msgstr "Juli"
-
 msgid "Jun"
 msgstr ""
-
-msgid "June"
-msgstr "Juni"
 
 msgid "MB"
 msgstr "MB"
@@ -490,14 +472,8 @@ msgstr "Verwalte deine Cron Jobs."
 msgid "Mar"
 msgstr ""
 
-msgid "March"
-msgstr "März"
-
 msgid "May"
 msgstr "Mai"
-
-msgid "Mon"
-msgstr "Mo."
 
 msgid "Monday"
 msgstr "Montag"
@@ -590,17 +566,11 @@ msgstr "Es müssen keine Plugins installiert werden"
 msgid "None"
 msgstr "Keine"
 
-msgid "Normal"
-msgstr ""
-
 msgid "Nothing to upgrade"
 msgstr "Keine Upgrades verfügbar"
 
 msgid "Nov"
 msgstr ""
-
-msgid "November"
-msgstr "November"
 
 msgid "Now installing service"
 msgstr ""
@@ -619,9 +589,6 @@ msgstr "OK, zum Wiederherstellen"
 
 msgid "Oct"
 msgstr "Okt"
-
-msgid "October"
-msgstr "Oktober"
 
 msgid "Online update of your STB_BOX software."
 msgstr "Online Update der Receiver Software."
@@ -650,8 +617,11 @@ msgstr "Bitte wähle Datei die wieder hergestellt werden soll."
 msgid "Please wait while gathers infomation..."
 msgstr "Bitte warten während informationen gesammelt werden..."
 
-msgid "Please wait while restore completes..."
-msgstr "Bitte warten bis Wiederherstellung beendet ist..."
+msgid "Please wait while plugins restore completes..."
+msgstr ""
+
+msgid "Please wait while settings restore completes..."
+msgstr ""
 
 msgid "Please wait while starting\n"
 msgstr "Startvorgang abwarten\n"
@@ -781,9 +751,6 @@ msgstr "Führe dein Script aus."
 msgid "Running"
 msgstr "Läuft"
 
-msgid "Sat"
-msgstr "Sa."
-
 msgid "Satellite equipment"
 msgstr "Satellitenempfangs-Ausrüstung"
 
@@ -835,9 +802,6 @@ msgstr "Auswählen:"
 msgid "Sep"
 msgstr ""
 
-msgid "September"
-msgstr "September"
-
 msgid "Service is not currently in use do you want to remove the service ?"
 msgstr ""
 
@@ -883,6 +847,15 @@ msgstr ""
 msgid "Software Update"
 msgstr "Online-Update"
 
+msgid "Sorry feeds are down for maintenance, Please try again later."
+msgstr ""
+
+msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgstr ""
+
+msgid "Sorry feeds are down for maintenance, please try again later."
+msgstr ""
+
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "Leider ist die STB_BOX noch nicht kompatibel."
 
@@ -915,9 +888,6 @@ msgstr "Stopp"
 
 msgid "Stopped"
 msgstr "Gestoppt"
-
-msgid "Sun"
-msgstr "So."
 
 msgid "Sunday"
 msgstr "Sontag"
@@ -976,9 +946,6 @@ msgstr "Dieses Plugin wird installiert."
 msgid "This plugin will be removed."
 msgstr "Dieses Plugin wird entfernt."
 
-msgid "Thu"
-msgstr "Do."
-
 msgid "Thursday"
 msgstr "Donnerstag"
 
@@ -991,17 +958,11 @@ msgstr "Startzeit für Befehls- / Script-Ausführung"
 msgid "Trying to download a new packetlist. Please wait..."
 msgstr "Es wird versucht eine neue Paketliste herunterzuladen. Bitte warten..."
 
-msgid "Tue"
-msgstr "Die."
-
 msgid "Tuesday"
 msgstr "Dienstag"
 
 msgid "Type: "
 msgstr "Typ: "
-
-msgid "Unattended"
-msgstr "Unbeaufsichtigt"
 
 msgid "Unattended upgrade without GUI and reboot system"
 msgstr "Upgrade im Hintergrund ohne Benutzerführung und Systemneustart"
@@ -1023,9 +984,6 @@ msgstr ""
 
 msgid "Updating software catalog"
 msgstr "Erweiterungsliste wird aktualisiert"
-
-msgid "Upgrade and ask to reboot"
-msgstr "Upgrade durchführen mit Bestätigung des Systemneustarts"
 
 msgid "Upgrade finished."
 msgstr "Upgrade abgeschlossen"
@@ -1114,9 +1072,6 @@ msgstr "Bitte warten während Suchlauf nach angeschlossenen Geräten..."
 
 msgid "Wait please while scanning..."
 msgstr "Während Suchlauf bitte warten..."
-
-msgid "Wed"
-msgstr "Mi."
 
 msgid "Wednesday"
 msgstr "Mittwoch"
@@ -1221,6 +1176,9 @@ msgstr ""
 
 msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
 msgstr "Der STB_BOX ist nicht korrekt mit dem Internet verbunden. Bitte prüfen und nochmals versuchen."
+
+msgid "Your box is not connected to the internet, please check your network settings and try again."
+msgstr ""
 
 msgid "detected"
 msgstr "erkannt"

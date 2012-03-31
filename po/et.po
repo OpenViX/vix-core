@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-27 02:58+0100\n"
-"PO-Revision-Date: 2012-03-27 03:42+0100\n"
+"POT-Creation-Date: 2012-03-31 13:21+0100\n"
+"PO-Revision-Date: 2012-03-31 13:33+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: Henkka, Raivo, eesatfan and rimas\n"
 "Language: et\n"
@@ -16,6 +16,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "%a %e %b  %-H:%M"
+msgstr ""
 
 msgid "16 Mb"
 msgstr "16MB"
@@ -61,9 +64,6 @@ msgstr "Vajuta OK ja oota!"
 msgid "Apr"
 msgstr "Apr"
 
-msgid "April"
-msgstr "Aprill"
-
 msgid "Are you ready to create a backup ?"
 msgstr "Kas lood varukoopia?"
 
@@ -106,9 +106,6 @@ msgstr ""
 
 msgid "Aug"
 msgstr "Aug"
-
-msgid "August"
-msgstr "August"
 
 msgid "Author: "
 msgstr "Autor: "
@@ -246,9 +243,6 @@ msgstr "Lülita välja"
 msgid "Dec"
 msgstr "Dets"
 
-msgid "December"
-msgstr "Detsember"
-
 msgid "Deep Standby Time"
 msgstr "Sügavoote aeg"
 
@@ -362,14 +356,14 @@ msgstr "Viga"
 msgid "Exit the restore wizard"
 msgstr "Välju taastamisabilisest"
 
+msgid "Experimental"
+msgstr ""
+
 msgid "Extensions management"
 msgstr "Laienduste haldamine"
 
 msgid "Feb"
 msgstr "Veebr"
-
-msgid "February"
-msgstr "Veebruar"
 
 msgid "Folder prefix"
 msgstr "Kataloogi nimi"
@@ -382,9 +376,6 @@ msgstr "Leiti ebastandardne EMU. Käivitamine võib nurjuda"
 
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "Leiti ebastandardne EMU. Käivitamine võib nurjuda"
-
-msgid "Fri"
-msgstr "R"
 
 msgid "Friday"
 msgstr "Reede"
@@ -449,20 +440,11 @@ msgstr "Paigaldamine..."
 msgid "Jan"
 msgstr "Jan"
 
-msgid "January"
-msgstr "Jaanuar"
-
 msgid "Jul"
 msgstr "Jul"
 
-msgid "July"
-msgstr "Juuli"
-
 msgid "Jun"
 msgstr "Jun"
-
-msgid "June"
-msgstr "Juuni"
 
 msgid "MB"
 msgstr "MB"
@@ -488,14 +470,8 @@ msgstr "Halda cron tööd."
 msgid "Mar"
 msgstr "Märts"
 
-msgid "March"
-msgstr "Märts"
-
 msgid "May"
 msgstr "Mai"
-
-msgid "Mon"
-msgstr "E"
 
 msgid "Monday"
 msgstr "Esmaspäev"
@@ -588,17 +564,11 @@ msgstr "Laiendusi ei olnud vaja paigaldada"
 msgid "None"
 msgstr "Pole"
 
-msgid "Normal"
-msgstr "Tavaline"
-
 msgid "Nothing to upgrade"
 msgstr "Uuendusi ei ole"
 
 msgid "Nov"
 msgstr "Nov"
-
-msgid "November"
-msgstr "November"
 
 msgid "Now installing service"
 msgstr ""
@@ -617,9 +587,6 @@ msgstr "Jah, taasta"
 
 msgid "Oct"
 msgstr "Okt"
-
-msgid "October"
-msgstr "Oktoober"
 
 msgid "Online update of your STB_BOX software."
 msgstr "Vastuvõtja uuendamine üle võrgu."
@@ -648,8 +615,11 @@ msgstr "Vali fail, mida taastada"
 msgid "Please wait while gathers infomation..."
 msgstr "Oota andmete kogumist..."
 
-msgid "Please wait while restore completes..."
-msgstr "Oota taastamise lõppemist"
+msgid "Please wait while plugins restore completes..."
+msgstr ""
+
+msgid "Please wait while settings restore completes..."
+msgstr ""
 
 msgid "Please wait while starting\n"
 msgstr "Oota käivitamist\n"
@@ -779,9 +749,6 @@ msgstr "Käivita skripte"
 msgid "Running"
 msgstr "Töös"
 
-msgid "Sat"
-msgstr "L"
-
 msgid "Satellite equipment"
 msgstr "Satelliidiseadmed"
 
@@ -833,9 +800,6 @@ msgstr "Vali:"
 msgid "Sep"
 msgstr "Sep"
 
-msgid "September"
-msgstr "September"
-
 msgid "Service is not currently in use do you want to remove the service ?"
 msgstr ""
 
@@ -881,6 +845,15 @@ msgstr "Tarkvara haldur"
 msgid "Software Update"
 msgstr "Tarkvara uuendamine"
 
+msgid "Sorry feeds are down for maintenance, Please try again later."
+msgstr ""
+
+msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgstr ""
+
+msgid "Sorry feeds are down for maintenance, please try again later."
+msgstr ""
+
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "Vastuvõtja ei ole veel ühilduv."
 
@@ -913,9 +886,6 @@ msgstr "Peata"
 
 msgid "Stopped"
 msgstr "Peatunud"
-
-msgid "Sun"
-msgstr "P"
 
 msgid "Sunday"
 msgstr "Pühapäev"
@@ -974,9 +944,6 @@ msgstr "See laiendus paigaldatakse."
 msgid "This plugin will be removed."
 msgstr "See laiendus eemaldatakse."
 
-msgid "Thu"
-msgstr "N"
-
 msgid "Thursday"
 msgstr "Neljapäev"
 
@@ -989,17 +956,11 @@ msgstr "Käsu või skripti käivitamise aeg"
 msgid "Trying to download a new packetlist. Please wait..."
 msgstr "Üritame laadida uut paketinimekirja. Oota..."
 
-msgid "Tue"
-msgstr "T"
-
 msgid "Tuesday"
 msgstr "Teisipäev"
 
 msgid "Type: "
 msgstr "Tüüp: "
-
-msgid "Unattended"
-msgstr "Automatiseeritud"
 
 msgid "Unattended upgrade without GUI and reboot system"
 msgstr "Automatiseeritud uuendamine ja taaskäivitus"
@@ -1021,9 +982,6 @@ msgstr ""
 
 msgid "Updating software catalog"
 msgstr "Tarkvara kataloogi uuendamine"
-
-msgid "Upgrade and ask to reboot"
-msgstr "Uuenda ja küsi luba taaskäivitamiseks"
 
 msgid "Upgrade finished."
 msgstr "Uuendamine tehtud"
@@ -1112,9 +1070,6 @@ msgstr "Oota, vastuvõtja riistvara uurimine..."
 
 msgid "Wait please while scanning..."
 msgstr "Oota, toimub otsing..."
-
-msgid "Wed"
-msgstr "K"
 
 msgid "Wednesday"
 msgstr "Kolmapäev"
@@ -1219,6 +1174,9 @@ msgstr ""
 
 msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
 msgstr "Vastuvõtja ei ole korralikult internetti ühendatud. Kontrolli ja proovi uuesti"
+
+msgid "Your box is not connected to the internet, please check your network settings and try again."
+msgstr ""
 
 msgid "detected"
 msgstr "tuvastatud"

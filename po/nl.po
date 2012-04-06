@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-31 13:21+0100\n"
-"PO-Revision-Date: 2012-04-01 07:52+0100\n"
+"PO-Revision-Date: 2012-04-06 07:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -223,13 +223,13 @@ msgid "Creating Backup Files..."
 msgstr "Creëer backup bestanden"
 
 msgid "Creating Swap.."
-msgstr "Creëert Swap"
+msgstr "Creëert swap"
 
 msgid "Creating list of installed plugins..."
 msgstr "Maakt een lijst met beschikbare plugins..."
 
 msgid "Cron Manager"
-msgstr "Cron Manager"
+msgstr "Cronmanager"
 
 msgid "Current Status:"
 msgstr "Actuele status"
@@ -330,13 +330,13 @@ msgid "Enable Auto Timer Check ?"
 msgstr "Auto Timer Check inschakelen?"
 
 msgid "Enable Deep Standby"
-msgstr "Schakel Deep Standby in"
+msgstr "Schakel Deep Sleep in"
 
 msgid "Enable GUI Restart"
-msgstr "GUI herstarte toestaan"
+msgstr "GUI herstarten toestaan"
 
 msgid "Enable Power Manager"
-msgstr "Power Manager inschakelen"
+msgstr "Powermanager inschakelen"
 
 msgid "Enable Reboot"
 msgstr "Reboot toestaan"
@@ -363,7 +363,7 @@ msgid "Experimental"
 msgstr "Experimenteel"
 
 msgid "Extensions management"
-msgstr "Beheer van Extensies"
+msgstr "Beheer van extensies"
 
 msgid "Feb"
 msgstr "feb"
@@ -483,7 +483,7 @@ msgid "Monthly"
 msgstr "Maandelijks"
 
 msgid "Mount Manager"
-msgstr "Mount Manager"
+msgstr "Mountmanager"
 
 msgid "Mount failed"
 msgstr "Mounten mislukt"
@@ -492,7 +492,7 @@ msgid "Mount: "
 msgstr "Mount: "
 
 msgid "Moving to Backup Location..."
-msgstr "Verplaatsen naar Backup locatie"
+msgstr "Verplaatsen naar backup locatie"
 
 msgid "Multimedia"
 msgstr "Multimedia"
@@ -507,22 +507,22 @@ msgid "Network"
 msgstr "Netwerk"
 
 msgid "New Backup"
-msgstr "Nieuwe Backup"
+msgstr "Nieuwe backup"
 
 msgid "Next Backup: "
-msgstr "Volgende Backup: "
+msgstr "Volgende backup: "
 
 msgid "Next Deep Standby: \n"
-msgstr "Volgende Deep Standby: \n"
+msgstr "Volgende Deep Sleep: \n"
 
 msgid "Next GUI Restart: \n"
-msgstr "Volgende GUI Herstart: \n"
+msgstr "Volgende GUI-herstart: \n"
 
 msgid "Next Reboot: \n"
-msgstr "Volgende Reboot: \n"
+msgstr "Volgende reboot: \n"
 
 msgid "Next Standby: \n"
-msgstr "Volgende Standby: \n"
+msgstr "Volgende standby: \n"
 
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -586,7 +586,7 @@ msgid "OK"
 msgstr "OK"
 
 msgid "OK, to perform a restore"
-msgstr "JA, voer een herstel actie uit"
+msgstr "JA, voer een herstelactie uit"
 
 msgid "Oct"
 msgstr "okt"
@@ -604,10 +604,10 @@ msgid "Packages"
 msgstr "Pakketten"
 
 msgid "Packet Manager"
-msgstr "Packet Manager"
+msgstr "Pakketmanager"
 
 msgid "Packet manager"
-msgstr "Packet manager"
+msgstr "Packetmanager"
 
 msgid "Please select device to use as swapfile location"
 msgstr "Selecteer het apparaat dat u voor de swapfile wilt gebruiken"
@@ -634,19 +634,19 @@ msgid "Please wait..."
 msgstr "Wacht aub..."
 
 msgid "Plugin Details"
-msgstr "Plugin Details"
+msgstr "Plugin details"
 
 msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Maken van een lijst met plugins is mislukt - of een verkeerde backup locatie of onvoldoende vrije ruimte"
 
 msgid "Plugin manager activity information"
-msgstr "Plugin manager activity informatie"
+msgstr "Pluginmanager activiteitsinformatie"
 
 msgid "Plugin manager help"
-msgstr "Plugin manager help"
+msgstr "Pluginmanager help"
 
 msgid "Power Manager"
-msgstr "Power Manager"
+msgstr "Powermanager"
 
 msgid "Predefined"
 msgstr "Vastgesteld"
@@ -672,7 +672,7 @@ msgid "Reboot"
 msgstr "Start opnieuw"
 
 msgid "Reboot Time"
-msgstr "Reboot Tijd"
+msgstr "Reboot tijdstip"
 
 msgid "Rebooting..."
 msgstr "Bezig met rebooten..."
@@ -753,7 +753,7 @@ msgid "Running"
 msgstr "Loopt"
 
 msgid "Satellite equipment"
-msgstr "Satelliet apparatuur"
+msgstr "Satellietapparatuur"
 
 msgid "Saturday"
 msgstr "zaterdag"
@@ -762,7 +762,7 @@ msgid "Save"
 msgstr "Bewaar"
 
 msgid "Schedule Backups"
-msgstr "Plan Backups"
+msgstr "Plan backups"
 
 msgid "Script Runner"
 msgstr "Script uitvoeren"
@@ -822,10 +822,10 @@ msgid "Skins"
 msgstr "Skins"
 
 msgid "Softcam Manager"
-msgstr "Softcam Manager"
+msgstr "Softcammanager"
 
 msgid "Softcam Manager Log"
-msgstr "Softcam Manager Log"
+msgstr "Softcammanager log"
 
 msgid "Softcam Setup"
 msgstr "Softcam instellingen"
@@ -837,16 +837,16 @@ msgid "Softcam Starting..."
 msgstr "Softcam bezig te starten..."
 
 msgid "SoftcamCheck"
-msgstr "SoftcamCheck"
+msgstr "Softcam controle"
 
 msgid "Software"
 msgstr "Software"
 
 msgid "Software Manager"
-msgstr "Software Manager"
+msgstr "Softwaremanager"
 
 msgid "Software Update"
-msgstr "Software Update"
+msgstr "Software update"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
@@ -897,7 +897,7 @@ msgid "Swap File not found. You have to create the file before to activate."
 msgstr "Er is geen swapfile gevonden. U moet een swapfile maken alvorens u die actief kunt maken."
 
 msgid "Swap Manager"
-msgstr "Swap Manager"
+msgstr "Swapmanager"
 
 msgid "Swap Place:"
 msgstr "Swap locatie:"
@@ -918,7 +918,7 @@ msgid "The wizard is finished now, and will reboot"
 msgstr "De wizard is gereed; uw systeem wordt opnieuw gestart."
 
 msgid "The wizard is finished now."
-msgstr "De Wizard is ne gereed."
+msgstr "De wizard is nu gereed."
 
 msgid "There are at least "
 msgstr "Er zijn minstens"
@@ -1011,16 +1011,16 @@ msgid "View list of available "
 msgstr "Toon lijst van beschikbare"
 
 msgid "View list of available CommonInterface extensions"
-msgstr "Toon lijst met beschikbare CommonInterface extensies"
+msgstr "Toon lijst met beschikbare commoninterface extensies"
 
 msgid "View list of available Display and Userinterface extensions."
-msgstr "Toon lijst met beschikbareView list of available Display and Userinterface extensions."
+msgstr "Toon lijst met beschikbare scherm en Userinterface extensies."
 
 msgid "View list of available EPG extensions."
 msgstr "Toon lijst met beschikbare EPG extensies."
 
 msgid "View list of available Satellite equipment extensions."
-msgstr "Toon lijst met beschikbare Satelliet apparatuur extensies"
+msgstr "Toon lijst met beschikbare satellietapparatuur extensies"
 
 msgid "View list of available communication extensions."
 msgstr "Toon lijst met beschikbare communicatie extensies"
@@ -1188,7 +1188,7 @@ msgid "echo 'Downloading Image.'"
 msgstr "echo 'Download image.'"
 
 msgid "echo 'Expanding Image.'"
-msgstr "echo 'Expanding Image.'"
+msgstr "echo 'Expanding image.'"
 
 msgid "extensions."
 msgstr "extensies."

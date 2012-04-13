@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-10 17:11+0000\n"
-"PO-Revision-Date: 2012-04-07 22:12+0200\n"
+"PO-Revision-Date: 2012-04-09 15:34+0200\n"
 "Last-Translator: CÜNEYT OCAKLILAR <ocaklilar@gmail.com>\n"
 "Language-Team: CÜNEYT OCAKLILAR <ocaklilar@gmail.com>\n"
 "Language: tr\n"
@@ -164,7 +164,7 @@ msgid ""
 "Please for it to finish, before trying again"
 msgstr ""
 "Yedekleniyor,\n"
-"Tekrar denemeden bitmesini bekleyin"
+"Lütfen tekrar denemeden bitmesini bekleyin"
 
 msgid "BackupManager"
 msgstr "YedeklemeYöneticisi"
@@ -932,7 +932,7 @@ msgid "The backup location does not have enough freespace."
 msgstr "Yedek konumunda yeterli boş yer yok."
 
 msgid "The chosen location does not exist, using /media/hdd"
-msgstr "Seçilen konum mevcut değil. /media/hdd kullanılıyor"
+msgstr "Seçilen konum yok, /media/hdd kullanılıyor"
 
 msgid "The wizard is finished now, and will reboot"
 msgstr "Sihirbaz şimdi bitti, alıcı yeniden başlatılacak"
@@ -1043,53 +1043,53 @@ msgid "View list of available "
 msgstr "Listesini izle"
 
 msgid "View list of available CommonInterface extensions"
-msgstr "Mevcut OrtakArayüz genişletmelerinin listesini izle."
+msgstr "Kullanılabilir OrtakArayüz genişletmelerinin listesini izle."
 
 msgid "View list of available Display and Userinterface extensions."
-msgstr "Mevcut Görüntü ve Kullanıcı Arayüzü genişletmeler listesi"
+msgstr "Kullanılabilir Görüntü ve Kullanıcı Arayüzü genişletmeler listesi"
 
 msgid "View list of available EPG extensions."
-msgstr "Mevcut EPG genişletmelerinin listesini izle."
+msgstr "Kullanılabilir EPG genişletmelerinin listesini izle."
 
 msgid "View list of available Satellite equipment extensions."
-msgstr "Mevcut Uydu Aygıt genişletmelerinin listesini izle."
+msgstr "Kullanılabilir Uydu aygıt genişletmelerinin listesini izle."
 
 msgid "View list of available communication extensions."
-msgstr "Mevcut iletişim genişletmelerinin listesini izle."
+msgstr "Kullanılabilir iletişim genişletmelerinin listesini izle."
 
 msgid "View list of available default settings"
-msgstr "Mevcut varsayılan ayarların listesini izle."
+msgstr "Kullanılabilir varsayılan ayarların listesini izle."
 
 msgid "View list of available multimedia extensions."
-msgstr "Mevcut çoklu ortam genişletmelerinin listesini izle."
+msgstr "Kullanılabilir çoklu ortam genişletmelerinin listesini izle."
 
 msgid "View list of available networking extensions"
-msgstr "Mevcut ağ genişletmelerinin listesini izle."
+msgstr "Kullanılabilir ağ genişletmelerinin listesini izle."
 
 msgid "View list of available recording extensions"
-msgstr "Mevcut kayıt genişletmelerinin listesini izle."
+msgstr "Kullanılabilir kayıt genişletmelerinin listesini izle."
 
 msgid "View list of available skins"
-msgstr "Mevcut görsel-arayüzlerin listesini izle."
+msgstr "Kullanılabilir görsel-arayüzlerin listesini izle."
 
 msgid "View list of available software extensions"
-msgstr "Mevcut yazılım genişletmelerinin listesini izle."
+msgstr "Kullanılabilir yazılım genişletmelerinin listesini izle."
 
 msgid "View list of available system extensions"
-msgstr "Mevcut sistem genişletmelerinin listesini izle."
+msgstr "Kullanılabilir sistem genişletmelerinin listesini izle."
 
 msgid "View the changes"
 msgstr "Değişiklikleri izle"
 
 msgid "View, install and remove available or installed packages."
-msgstr "Mevcut veya yüklenmiş paketleti izle, yükle veya kaldır."
+msgstr "Kullanılabilir veya yüklenmiş paketleti izle, yükle veya kaldır."
 
 #, fuzzy
 msgid "STB_BOX software because updates are available."
 msgstr "STB_BOX yazılım güncellemeleri var."
 
 msgid "Wait please while creating swapfile..."
-msgstr "Swap dosyası yaratılırken lütfen bekleyin..."
+msgstr "Lütfen Swap dosyası yaratılırken bekleyin..."
 
 msgid ""
 "Wait please while scanning\n"
@@ -1099,13 +1099,13 @@ msgstr ""
 "softcams inceleniyor..."
 
 msgid "Wait please while scanning for devices..."
-msgstr "Aygıtlar incelenirken lütfen bekleyin..."
+msgstr "Lütfen aygıtlar incelenirken bekleyin..."
 
 msgid "Wait please while scanning your STB_BOX devices..."
-msgstr "STB_BOX aygıtlarınız incelenirken lütfen bekleyin..."
+msgstr "Lütfen STB_BOX aygıtlarınız incelenirken bekleyin..."
 
 msgid "Wait please while scanning..."
-msgstr "İncelenirken lütfen bekleyin..."
+msgstr "Lütfen incelenirken bekleyin..."
 
 msgid "Wed"
 msgstr "Çar"
@@ -1212,7 +1212,7 @@ msgstr ""
 "Buna izin veriyor musunuz?"
 
 msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
-msgstr "STB_BOX internete bağlı değil. Kontrol edin ve tekrar deneyin."
+msgstr "STB_BOX internete bağlı değil. Lütfen kontrol edin ve tekrar deneyin."
 
 msgid "detected"
 msgstr "bulundu"
@@ -1233,5 +1233,5 @@ msgid "unknown"
 msgstr "bilinmeyen"
 
 msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
-msgstr "STB_BOX şimdi kullanılamıyor. Yeniden başlatmadan önce lütfen yardım almak için kullanıcı kılavuzuna başvurun."
+msgstr "STB_BOX şimdi kullanılamıyor. Lütfen yeniden başlatmadan önce yardım almak için kullanıcı kılavuzuna başvurun."
 

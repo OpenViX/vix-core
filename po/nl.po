@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-31 13:21+0100\n"
-"PO-Revision-Date: 2012-04-06 07:19+0100\n"
+"POT-Creation-Date: 2012-04-15 14:43+0100\n"
+"PO-Revision-Date: 2012-04-15 21:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -287,7 +287,7 @@ msgid "Do you want to install the package:\n"
 msgstr "Wilt u package installeren:\n"
 
 msgid "Do you want to reboot your STB_BOX?"
-msgstr "Wilt u uw ontvanger opnieuw opstarten?"
+msgstr "Wilt u uw STB_BOX opnieuw opstarten?"
 
 msgid "Do you want to remove the package:\n"
 msgstr "Wilt u package verwijderen:\n"
@@ -299,7 +299,7 @@ msgid "Do you want to restore your Enigma2 settings ?"
 msgstr "Wilt u de Enigma2 instellingen terugplaatsen?"
 
 msgid "Do you want to update your STB_BOX?"
-msgstr "Wilt u uw ontvanger updaten?"
+msgstr "Wilt u uw STB_BOX updaten?"
 
 msgid "Do you want to upgrade the package:\n"
 msgstr "Wilt u het pakket upgraden:\n"
@@ -459,7 +459,7 @@ msgid "Manage Extensions"
 msgstr "Beheer extensies"
 
 msgid "Manage extensions or plugins for your STB_BOX"
-msgstr "Beheer extensies of plugins voor uw ontvanger"
+msgstr "Beheer extensies of plugins voor uw STB_BOX"
 
 msgid "Manage you devices mountpoints."
 msgstr "Beheer de mountpoints van uw apparaten."
@@ -592,7 +592,7 @@ msgid "Oct"
 msgstr "okt"
 
 msgid "Online update of your STB_BOX software."
-msgstr "Online update van uw ontvanger."
+msgstr "Online update van uw STB_BOX."
 
 msgid "Only extensions."
 msgstr "Alleen extensies"
@@ -858,7 +858,7 @@ msgid "Sorry feeds are down for maintenance, please try again later."
 msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
 
 msgid "Sorry you STB_BOX is not yet compatible."
-msgstr "Sorry, uw ontvanger is nog niet geschikt."
+msgstr "Sorry, uw STB_BOX is nog niet geschikt."
 
 msgid "Sorry, no Details available!"
 msgstr "Sorry, geen details beschikbaar!"
@@ -1052,9 +1052,6 @@ msgstr "Bekijk de veranderingen"
 msgid "View, install and remove available or installed packages."
 msgstr "Toon, installeer en verwijder beschikbare of geïnstalleerde packages."
 
-msgid "STB_BOX software because updates are available."
-msgstr "Ontvanger software want er zijn updates beschikbaar."
-
 msgid "Wait please while creating swapfile..."
 msgstr "Een ogenblik geduld terwijl de swapfile gemaakt wordt...."
 
@@ -1096,6 +1093,9 @@ msgstr "Welke dag van de maand?"
 
 msgid "What Day of week ?"
 msgstr "Welke dag van de week?"
+
+msgid "STB_BOX software because updates are available."
+msgstr "STB_BOX software want er zijn updates beschikbaar."
 
 msgid "YES, to restore plugins"
 msgstr "JA,  installeer plugins weer"
@@ -1176,7 +1176,7 @@ msgstr ""
 "wilt u dat toestaan?"
 
 msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
-msgstr "Uw ontvanger is niet goed met het Internet verbonden. Na controle kunt u het opnieuw proberen."
+msgstr "Uw STB_BOX is niet goed met het Internet verbonden. Na controle kunt u het opnieuw proberen."
 
 msgid "Your box is not connected to the internet, please check your network settings and try again."
 msgstr "Uw  STB_BOX is niet met het internet verbonden. Controleer uw netwerk instellingen en probeer het opnieuw."
@@ -1212,7 +1212,7 @@ msgid "updates available."
 msgstr "updates beschikbaar.."
 
 msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
-msgstr "Uw ontvanger kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens de ontvanger opnieuw te starten."
+msgstr "Uw STB_BOX kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens uw STB_BOX opnieuw te starten."
 
 #~ msgid "April"
 #~ msgstr "april"

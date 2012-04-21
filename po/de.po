@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-31 13:21+0100\n"
-"PO-Revision-Date: 2012-04-05 19:30+0100\n"
+"PO-Revision-Date: 2012-04-21 10:39+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -137,13 +137,13 @@ msgid "Backup Location"
 msgstr "Speicherort für Backup"
 
 msgid "Backup Manager"
-msgstr "Backup-Manager"
+msgstr "Backup Verwaltung"
 
 msgid "Backup Manager Log"
-msgstr "Backup-Manager Log"
+msgstr "Backup Verwaltung Log"
 
 msgid "Backup Manager Setup"
-msgstr "Einstellungen Backup-Manager"
+msgstr "Einstellungen Backup Verwaltung"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Backup fehlgeschlagen - z.B. falscher Sicherungsort oder zu wenig freier Speicher auf dem Sicherungslaufwerk"
@@ -156,7 +156,7 @@ msgstr ""
 "Bitte vor neuem Versuch Beendigung abwarten"
 
 msgid "BackupManager"
-msgstr "Backup-Manager"
+msgstr "Backup Verwaltung"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "Während MGcamd läuft kann CCcam nicht ausgeführt werden"
@@ -228,7 +228,7 @@ msgid "Creating list of installed plugins..."
 msgstr "Erstelle Liste der installierten Plugins..."
 
 msgid "Cron Manager"
-msgstr "Cron-Manager"
+msgstr "Cron Verwaltung"
 
 msgid "Current Status:"
 msgstr "Status:"
@@ -289,7 +289,7 @@ msgid "Do you want to reboot your STB_BOX?"
 msgstr "Den STB_BOX neu starten?"
 
 msgid "Do you want to remove the package:\n"
-msgstr "Das Paket entfernen:\n"
+msgstr "Das Paket deinstallieren:\n"
 
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Willst Du deine Enigma2 Plugins wieder herstellen?"
@@ -335,7 +335,7 @@ msgid "Enable GUI Restart"
 msgstr "GUI-Neustart aktivieren"
 
 msgid "Enable Power Manager"
-msgstr "Power-Manager aktivieren"
+msgstr "Energie Verwaltung aktivieren"
 
 msgid "Enable Reboot"
 msgstr "Neustart aktivieren"
@@ -401,13 +401,13 @@ msgid "IPK Installer"
 msgstr "IPK-Installer"
 
 msgid "Image Manager"
-msgstr "Image-Manager"
+msgstr "Image Verwaltung"
 
 msgid "Image Manager Setup"
-msgstr "Einstellungen Image-Manager"
+msgstr "Einstellungen Image Verwaltung"
 
 msgid "ImageManager"
-msgstr "Image-Manager"
+msgstr "Image Verwaltung"
 
 msgid "Inactive"
 msgstr "Inaktiv"
@@ -428,7 +428,7 @@ msgid "Install local extension"
 msgstr "IPK-Dateien installieren"
 
 msgid "Install or remove finished."
-msgstr "Installation oder Entfernung abgeschlossen."
+msgstr "Installation oder Deinstallation beendet."
 
 msgid "Installation finished."
 msgstr "Installation abgeschlossen."
@@ -455,7 +455,7 @@ msgid "MGcamd can't run whilst CCcam is running"
 msgstr "Während CCcam läuft kann MGcamd nicht ausgeführt werden"
 
 msgid "Manage Extensions"
-msgstr "Erweiterungs-Manager"
+msgstr "Erweiterungs Verwaltung"
 
 msgid "Manage extensions or plugins for your STB_BOX"
 msgstr "Verwalte Erweiterungen und Plugins deiner Box"
@@ -482,7 +482,7 @@ msgid "Monthly"
 msgstr "Monatlich"
 
 msgid "Mount Manager"
-msgstr "Mount-Manager"
+msgstr "Mount Verwaltung"
 
 msgid "Mount failed"
 msgstr "Einhängen fehlgeschlagen"
@@ -576,7 +576,7 @@ msgid "Now installing service"
 msgstr "Installiere Service"
 
 msgid "Now removing service"
-msgstr "Entferne Service"
+msgstr "Lösche Service"
 
 msgid "Now skipping restore process"
 msgstr "Überspinge die Wiederherstellung"
@@ -603,10 +603,10 @@ msgid "Packages"
 msgstr "Pakete"
 
 msgid "Packet Manager"
-msgstr "Paket-Manager"
+msgstr "Paket Verwaltung"
 
 msgid "Packet manager"
-msgstr "Paket-Manager"
+msgstr "Paket Verwaltung"
 
 msgid "Please select device to use as swapfile location"
 msgstr "Bitte Gerät für Auslagerungsdatei auswählen"
@@ -639,13 +639,13 @@ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left o
 msgstr "Auflistung der Plugins fehlgeschlagen - z.B. falscher Sicherungsspeicherort oder ungenügend Speicher auf dem Sicherungslaufwerk"
 
 msgid "Plugin manager activity information"
-msgstr "Aktivitäten-Information Plugin-Manager"
+msgstr "Aktivitäten Plugin Verwaltung"
 
 msgid "Plugin manager help"
-msgstr "Hilfe Plugin-Manager"
+msgstr "Hilfe Plugin Verwaltung"
 
 msgid "Power Manager"
-msgstr "Power-Manager"
+msgstr "Energie Verwaltung"
 
 msgid "Predefined"
 msgstr "Vordefiniert"
@@ -686,16 +686,16 @@ msgid "Reload"
 msgstr "Neu laden"
 
 msgid "Remove"
-msgstr "Entfernen"
+msgstr "Löschen"
 
 msgid "Remove Confirmation"
-msgstr "Entfernen bestätigen"
+msgstr "Löschen bestätigen"
 
 msgid "Remove finished."
-msgstr "Entfernen beendet."
+msgstr "Löschen beendet."
 
 msgid "Removing"
-msgstr "Entfernt"
+msgstr "Wird gelöscht"
 
 msgid "Renaming old backup..."
 msgstr "Altes Backup wird umbenannt..."
@@ -770,7 +770,7 @@ msgid "Searching for available updates. Please wait..."
 msgstr "Verfügbare Updates werden gesucht. Bitte warten..."
 
 msgid "Searching for new installed or removed packages. Please wait..."
-msgstr "Suche nach neu installierten oder entfernten Paketen. Bitte warten..."
+msgstr "Suche nach neu installierten oder deinstallierten Paketen. Bitte warten..."
 
 msgid "Select"
 msgstr "Auswählen"
@@ -821,10 +821,10 @@ msgid "Skins"
 msgstr "Skins"
 
 msgid "Softcam Manager"
-msgstr "Softcam-Manager"
+msgstr "Softcam Verwaltung"
 
 msgid "Softcam Manager Log"
-msgstr ""
+msgstr "Softcam Verwaltung Log"
 
 msgid "Softcam Setup"
 msgstr "Softcam-Einstellungen"
@@ -842,7 +842,7 @@ msgid "Software"
 msgstr "Software"
 
 msgid "Software Manager"
-msgstr ""
+msgstr "Software Verwaltung"
 
 msgid "Software Update"
 msgstr "Online-Update"
@@ -851,7 +851,7 @@ msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Tut uns leid. Feeds sind wegen Wartung nicht erreichbar. Bitte später erneut versuchen."
 
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr "Tut uns leid. Feeds sind wegen Wartung nicht erreichbar. Bitte Plugins mit Backup Manager später wiederherstellen."
+msgstr "Tut uns leid. Feeds sind wegen Wartung nicht erreichbar. Bitte Plugins mit Backup Verwaltung später wiederherstellen."
 
 msgid "Sorry feeds are down for maintenance, please try again later."
 msgstr "Tut uns leid. Feeds sind wegen Wartung nicht erreichbar. Bitte später erneut versuchen."
@@ -896,7 +896,7 @@ msgid "Swap File not found. You have to create the file before to activate."
 msgstr "Auslagerungsdatei nicht gefunden. Vor Aktivierung muss die Datei erstellt werden-"
 
 msgid "Swap Manager"
-msgstr "Auslagerungsdatei-Manager"
+msgstr "Auslagerungsdatei Verwaltung"
 
 msgid "Swap Place:"
 msgstr "Speicherort:"
@@ -944,7 +944,7 @@ msgid "This plugin will be installed."
 msgstr "Dieses Plugin wird installiert."
 
 msgid "This plugin will be removed."
-msgstr "Dieses Plugin wird entfernt."
+msgstr "Dieses Plugin wird deinstalliert."
 
 msgid "Thursday"
 msgstr "Donnerstag"
@@ -1106,13 +1106,13 @@ msgid "You can cancel the installation."
 msgstr "Installation abbrechen."
 
 msgid "You can cancel the removal."
-msgstr "Entfernen abbrechen."
+msgstr "Löschen abbrechen."
 
 msgid "You can install this plugin."
 msgstr "Plugin installieren."
 
 msgid "You can remove this plugin."
-msgstr "Plugin entfernen."
+msgstr "Plugin deinstallieren."
 
 msgid "You have no backup to delete."
 msgstr "Keine Backup zum Löschen."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-15 14:43+0100\n"
-"PO-Revision-Date: 2012-04-15 21:25+0100\n"
+"POT-Creation-Date: 2012-04-29 12:11+0100\n"
+"PO-Revision-Date: 2012-05-01 19:17+0100\n"
 "Last-Translator: \n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -106,6 +106,9 @@ msgid ""
 msgstr ""
 "Weet u zeker dat u deze backup wilt herstellen:\n"
 " "
+
+msgid "Are you sure you want to update your STB_BOX?"
+msgstr "Weet u zeker dat u uw STB_BOX wilt updaten?"
 
 msgid "Aug"
 msgstr "aug"
@@ -358,9 +361,6 @@ msgstr "Fout"
 
 msgid "Exit the restore wizard"
 msgstr "Beeindig de herstel wizard"
-
-msgid "Experimental"
-msgstr "Experimenteel"
 
 msgid "Extensions management"
 msgstr "Beheer van extensies"
@@ -914,6 +914,9 @@ msgstr "De backup locatie heeft niet voldoende vrije ruimte."
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "De gekozen locatie bestaat niet, gebruik nu /media/hdd"
 
+msgid "The current update maybe unstable"
+msgstr "De huidige update kan onstabiel zijn"
+
 msgid "The wizard is finished now, and will reboot"
 msgstr "De wizard is gereed; uw systeem wordt opnieuw gestart."
 
@@ -1052,6 +1055,9 @@ msgstr "Bekijk de veranderingen"
 msgid "View, install and remove available or installed packages."
 msgstr "Toon, installeer en verwijder beschikbare of geïnstalleerde packages."
 
+msgid "STB_BOX software because updates are available."
+msgstr "STB_BOX software want er zijn updates beschikbaar."
+
 msgid "Wait please while creating swapfile..."
 msgstr "Een ogenblik geduld terwijl de swapfile gemaakt wordt...."
 
@@ -1093,9 +1099,6 @@ msgstr "Welke dag van de maand?"
 
 msgid "What Day of week ?"
 msgstr "Welke dag van de week?"
-
-msgid "STB_BOX software because updates are available."
-msgstr "STB_BOX software want er zijn updates beschikbaar."
 
 msgid "YES, to restore plugins"
 msgstr "JA,  installeer plugins weer"
@@ -1222,6 +1225,9 @@ msgstr "Uw STB_BOX kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assist
 
 #~ msgid "December"
 #~ msgstr "december"
+
+#~ msgid "Experimental"
+#~ msgstr "Experimenteel"
 
 #~ msgid "February"
 #~ msgstr "februari"

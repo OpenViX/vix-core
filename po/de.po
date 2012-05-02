@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-31 13:21+0100\n"
-"PO-Revision-Date: 2012-04-21 10:39+0100\n"
+"POT-Creation-Date: 2012-05-01 18:42+0100\n"
+"PO-Revision-Date: 2012-05-01 21:16+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -105,6 +105,9 @@ msgid ""
 msgstr ""
 "Dieses Backup jetzt wiederherstellen:\n"
 " "
+
+msgid "Are you sure you want to update your STB_BOX?"
+msgstr "Sicher das die STB_BOX aktualisiert werden soll?"
 
 msgid "Aug"
 msgstr ""
@@ -357,9 +360,6 @@ msgstr "Fehler"
 
 msgid "Exit the restore wizard"
 msgstr "Wiederherstellungsassistenten beenden"
-
-msgid "Experimental"
-msgstr ""
 
 msgid "Extensions management"
 msgstr "Erweiterungs-Management"
@@ -912,6 +912,9 @@ msgstr "Ungenügend Speicherplatz am Sicherungsspeicherort."
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Der gewählte Speicherort existiert nicht, nutze /media/hdd"
+
+msgid "The current update maybe unstable"
+msgstr "Das aktuelle Update könnte instabil sein"
 
 msgid "The wizard is finished now, and will reboot"
 msgstr "Der Assistent wurde beendet jetzt folgt ein Neustart"

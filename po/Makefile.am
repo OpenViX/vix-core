@@ -11,7 +11,7 @@ if UPDATE_PO
 vix-py.pot: $(top_srcdir)/src/*.py
 	$(XGETTEXT) -L Python --from-code=UTF-8 --add-comments="TRANSLATORS:" -d @PACKAGE_NAME@ -s -o $@ $^
 
-vix-xml.pot: $(srcdir)/xml2po.py $(top_srcdir)/src/*.xml
+vix-xml.pot: $(srcdir)/xml2po.py $(top_srcdir)/src/*.xml $(top_srcdir)/src/data/*.xml
 	$(PYTHON) $^ > $@
 
 vix.pot: vix-py.pot vix-xml.pot

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-29 12:11+0100\n"
-"PO-Revision-Date: 2012-05-01 19:17+0100\n"
+"POT-Creation-Date: 2012-05-17 12:36+0100\n"
+"PO-Revision-Date: 2012-05-18 13:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -63,6 +63,36 @@ msgstr "Voeg toe"
 
 msgid "After pressing OK, please wait!"
 msgstr "Nadat u op OK gedrukt heeft, even wachten!"
+
+msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+msgstr "Controleert of de softcam nog werkt en herstart als dat niet het geval is."
+
+msgid "Allows you schedule your boackups."
+msgstr "Plan backups."
+
+msgid "Allows you schedule your image backups."
+msgstr "Plan image backups."
+
+msgid "Allows you to control the power state of your STB_BOX."
+msgstr "Bepaal de status van uw STB_BOX."
+
+msgid "Allows you to put your STB_BOX in standby at a set time."
+msgstr "Laat uw STB_BOX op een bepaalde tijd in standby gaan."
+
+msgid "Allows you to put your STB_BOX into deepstandby at a set time."
+msgstr "Laat uw STB_BOX op een bepaalde tijd uitzetten."
+
+msgid "Allows you to reboot your STB_BOX at a set time."
+msgstr "Laat uw STB_BOX op een bepaalde tijd rebooten."
+
+msgid "Allows you to restart your STB_BOX interface at a set time."
+msgstr "Laat de GUI van uw STB_BOX op een bepaalde tijd herstarten."
+
+msgid "Allows you to tag your backups to a box. (default is box name/type)"
+msgstr "U kunt labels aan backups van uw STB_BOX hangen (default is box naam/type)."
+
+msgid "Allows you to tag your image backup to a box. (default is box name/type)"
+msgstr "U kunt labels aan image backups van uw STB_BOX hangen (default is box naam/type)."
 
 msgid "Apr"
 msgstr "apr"
@@ -159,6 +189,9 @@ msgstr ""
 "Backup in uitvoering,\n"
 "Laat dit doorlopen alvorens opnieuw te proberen"
 
+msgid "Backup prefix"
+msgstr "Backup prefix"
+
 msgid "BackupManager"
 msgstr "BackupManager"
 
@@ -171,8 +204,8 @@ msgstr "Kan de partitie niet unmounten; stel zeker dat deze niet in gebruik is v
 msgid "Cancel"
 msgstr "Annuleer"
 
-msgid "Check every (mins)"
-msgstr "Controleer elke (minuten)"
+msgid "Checking Feeds"
+msgstr "Controleert feeds"
 
 msgid "Checking Free RAM.."
 msgstr "Controleert vrije RAM..."
@@ -252,6 +285,9 @@ msgstr "dec"
 msgid "Deep Standby Time"
 msgstr "Deep Sleep"
 
+msgid "DeepStandby Time"
+msgstr "DeepStandby tijd"
+
 msgid "Default Settings"
 msgstr "Standaard instellingen"
 
@@ -329,14 +365,17 @@ msgstr "Downloads"
 msgid "Electronic Program Guide"
 msgstr "Electronisch Programma Gids"
 
-msgid "Enable Auto Timer Check ?"
-msgstr "Auto Timer Check inschakelen?"
-
 msgid "Enable Deep Standby"
 msgstr "Schakel Deep Sleep in"
 
+msgid "Enable DeepStandby"
+msgstr "DeepStandby inschakelen"
+
 msgid "Enable GUI Restart"
 msgstr "GUI herstarten toestaan"
+
+msgid "Enable GUI restart"
+msgstr "GUI herstart inschakelen"
 
 msgid "Enable Power Manager"
 msgstr "Powermanager inschakelen"
@@ -352,6 +391,9 @@ msgstr "Startup inschakelen"
 
 msgid "Enable Swap at startup"
 msgstr "Swap tijdens opstarten inschakelen"
+
+msgid "Enable frozen check ?"
+msgstr "Controleer op vastgelopen?"
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Vaak genoeg geprobeerd, wacht op de volgende geplande tijd."
@@ -382,6 +424,9 @@ msgstr "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, 
 
 msgid "Friday"
 msgstr "vrijdag"
+
+msgid "Frozen check interval"
+msgstr "Vastloop-controle interval"
 
 msgid "GB"
 msgstr "GB"
@@ -437,6 +482,9 @@ msgstr "Installatie gereed."
 msgid "Installing"
 msgstr "Installeert"
 
+msgid "Installing Service"
+msgstr "Installeert service"
+
 msgid "Installing..."
 msgstr "Installeert...."
 
@@ -448,6 +496,12 @@ msgstr "jul"
 
 msgid "Jun"
 msgstr "jun"
+
+msgid "Location of where backup should be saved."
+msgstr "Locatie voor uw backups."
+
+msgid "Location of where image backup should lbe saved."
+msgstr "Locatie voor uw image backups."
 
 msgid "MB"
 msgstr "MB"
@@ -573,12 +627,6 @@ msgstr "Geen upgrade beschikbaar"
 msgid "Nov"
 msgstr "nov"
 
-msgid "Now installing service"
-msgstr "Bezig met het installeren van de service."
-
-msgid "Now removing service"
-msgstr "Service wordt verwijderd"
-
 msgid "Now skipping restore process"
 msgstr "Slaat het herstel proces over"
 
@@ -630,6 +678,9 @@ msgstr "Wacht terwijl er gestart wordt\n"
 msgid "Please wait while stopping\n"
 msgstr "Wacht terwijl er gestopt wordt\n"
 
+msgid "Please wait whilst feeds state is checked."
+msgstr "Even wachten: de status van de feeds wordt gecontroleerd."
+
 msgid "Please wait..."
 msgstr "Wacht aub..."
 
@@ -647,6 +698,9 @@ msgstr "Pluginmanager help"
 
 msgid "Power Manager"
 msgstr "Powermanager"
+
+msgid "Power Manager Setup"
+msgstr "Power Manager instellingen"
 
 msgid "Predefined"
 msgstr "Vastgesteld"
@@ -697,6 +751,9 @@ msgstr "Verwijderen gereed."
 
 msgid "Removing"
 msgstr "Verwijdert"
+
+msgid "Removing Service"
+msgstr "Verwijdert service"
 
 msgid "Renaming old backup..."
 msgstr "Oude backup wordt hernoemd"
@@ -803,8 +860,29 @@ msgstr "Selecteer:"
 msgid "Sep"
 msgstr "sep"
 
-msgid "Service is not currently in use do you want to remove the service ?"
-msgstr "Service is momenteel niet in gebruik. Wilt u de service verwijderen?"
+msgid "Set the delay time to wait before asking again."
+msgstr "Stel de tijd tijd in waarna het weer gevraagd wordt."
+
+msgid "Set the invterval to be checked in mins."
+msgstr "Stel het controle interval in (min)."
+
+msgid "Set the repeat interval of backup schedule."
+msgstr "Stel het backup interval in."
+
+msgid "Set the time of backup to start."
+msgstr "Stel de tijd in waarop een backup wordt gemaakt."
+
+msgid "Set the time to enter deepstandby mode."
+msgstr "Stel de tijd in waarop uw STB_BOX wordt uitgeschakeld."
+
+msgid "Set the time to enter standby mode."
+msgstr "Stel de tijd in waarop naar standby gegaan moet worden."
+
+msgid "Set the time to reboot."
+msgstr "Stel de reboottijd in."
+
+msgid "Set the time to restart the interface."
+msgstr "Stel de interface herstarttijd in."
 
 msgid "Setting Up..."
 msgstr "Bezig met instellen...."
@@ -1184,9 +1262,6 @@ msgstr "Uw STB_BOX is niet goed met het Internet verbonden. Na controle kunt u h
 msgid "Your box is not connected to the internet, please check your network settings and try again."
 msgstr "Uw  STB_BOX is niet met het internet verbonden. Controleer uw netwerk instellingen en probeer het opnieuw."
 
-msgid "detected"
-msgstr "gedetecteerd"
-
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Download image.'"
 
@@ -1223,8 +1298,14 @@ msgstr "Uw STB_BOX kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assist
 #~ msgid "August"
 #~ msgstr "augustus"
 
+#~ msgid "Check every (mins)"
+#~ msgstr "Controleer elke (minuten)"
+
 #~ msgid "December"
 #~ msgstr "december"
+
+#~ msgid "Enable Auto Timer Check ?"
+#~ msgstr "Auto Timer Check inschakelen?"
 
 #~ msgid "Experimental"
 #~ msgstr "Experimenteel"
@@ -1256,6 +1337,12 @@ msgstr "Uw STB_BOX kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assist
 #~ msgid "November"
 #~ msgstr "november"
 
+#~ msgid "Now installing service"
+#~ msgstr "Bezig met het installeren van de service."
+
+#~ msgid "Now removing service"
+#~ msgstr "Service wordt verwijderd"
+
 #~ msgid "October"
 #~ msgstr "oktober"
 
@@ -1267,6 +1354,10 @@ msgstr "Uw STB_BOX kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assist
 
 #~ msgid "September"
 #~ msgstr "september"
+
+#~ msgid "Service is not currently in use do you want to remove the service ?"
+#~ msgstr ""
+#~ "Service is momenteel niet in gebruik. Wilt u de service verwijderen?"
 
 #~ msgid "Sun"
 #~ msgstr "zo"
@@ -1285,3 +1376,6 @@ msgstr "Uw STB_BOX kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assist
 
 #~ msgid "Wed"
 #~ msgstr "wo"
+
+#~ msgid "detected"
+#~ msgstr "gedetecteerd"

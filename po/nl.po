@@ -307,7 +307,7 @@ msgid "Device: None available"
 msgstr "Apparaat: niet beschikbaar"
 
 msgid ""
-"Devices changes need a system restart to take effects.\n"
+"Changes need a system restart to take effect.\n"
 "Restart your STB_BOX now?"
 msgstr ""
 "Apparaat aanpassingen vereisen een systeem herstart om te worden doorgevoerd.\n"

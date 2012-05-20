@@ -253,9 +253,11 @@ msgid "Device: None available"
 msgstr ""
 
 msgid ""
-"Devices changes need a system restart to take effects.\n"
+"Changes need a system restart to take effect.\n"
 "Restart your STB_BOX now?"
 msgstr ""
+"Změny zařízení vyžadují restart systému.\n"
+"Restartovat STB_BOX nyní?"
 
 msgid "Disable Startup"
 msgstr ""

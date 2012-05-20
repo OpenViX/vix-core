@@ -252,7 +252,7 @@ msgid "Device: None available"
 msgstr ""
 
 msgid ""
-"Devices changes need a system restart to take effects.\n"
+"Changes need a system restart to take effect.\n"
 "Restart your STB_BOX now?"
 msgstr ""
 

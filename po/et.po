@@ -1175,7 +1175,7 @@ msgstr ""
 msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
 msgstr "Vastuvõtja ei ole korralikult internetti ühendatud. Kontrolli ja proovi uuesti"
 
-msgid "Your box is not connected to the internet, please check your network settings and try again."
+msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
 msgstr ""
 
 msgid "detected"
@@ -1208,6 +1208,6 @@ msgstr "tundmatu"
 msgid "updates available."
 msgstr ""
 
-msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
+msgid "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
 msgstr "Vastuvõtja võib nüüd olla kasutuskõlbmatu. Uuri enne taaskäivitamist käsiraamatut lisaabi saamiseks ."
 

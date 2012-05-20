@@ -1202,7 +1202,7 @@ msgid "unknown"
 msgstr ""
 
 msgid ""
-"your STB_BOX might be unusable now. Please consult the manual for further "
+"Your STB_BOX might be unusable now. Please consult the manual for further "
 "assistance before rebooting your STB_BOX."
 msgstr ""
 

@@ -1232,6 +1232,6 @@ msgstr "bulunamıyor"
 msgid "unknown"
 msgstr "bilinmeyen"
 
-msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
+msgid "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
 msgstr "STB_BOX şimdi kullanılamıyor. Lütfen yeniden başlatmadan önce yardım almak için kullanıcı kılavuzuna başvurun."
 

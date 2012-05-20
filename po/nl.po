@@ -552,10 +552,10 @@ msgid "Multimedia"
 msgstr "Multimedia"
 
 msgid "NO, do not restore plugins"
-msgstr "NEE,  installeer de plugins niet"
+msgstr "NEE, installeer de plugins niet"
 
 msgid "NO, do not restore settings"
-msgstr "Nee,  plaats de instellingen niet terug"
+msgstr "Nee, plaats de instellingen niet terug"
 
 msgid "Network"
 msgstr "Netwerk"
@@ -713,11 +713,11 @@ msgstr "Verwerk"
 
 #, python-format
 msgid "Ready to install \"%s\" ?"
-msgstr "Gereed om  \"%s\" te installeren?"
+msgstr "Gereed om \"%s\" te installeren?"
 
 #, python-format
 msgid "Ready to remove \"%s\" ?"
-msgstr "Gereed om  \"%s\" te verwijderen?"
+msgstr "Gereed om \"%s\" te verwijderen?"
 
 msgid "Really close without saving settings?"
 msgstr "Echt afsluiten zonder op te slaan?"
@@ -1179,10 +1179,10 @@ msgid "What Day of week ?"
 msgstr "Welke dag van de week?"
 
 msgid "YES, to restore plugins"
-msgstr "JA,  installeer plugins weer"
+msgstr "JA, installeer plugins weer"
 
 msgid "YES, to restore settings"
-msgstr "JA,  plaats de instellingen weer terug"
+msgstr "JA, plaats de instellingen weer terug"
 
 msgid "You can cancel the installation."
 msgstr "U kunt de installatie ongedaan maken"
@@ -1259,8 +1259,8 @@ msgstr ""
 msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
 msgstr "Uw STB_BOX is niet goed met het Internet verbonden. Na controle kunt u het opnieuw proberen."
 
-msgid "Your box is not connected to the internet, please check your network settings and try again."
-msgstr "Uw  STB_BOX is niet met het internet verbonden. Controleer uw netwerk instellingen en probeer het opnieuw."
+msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
+msgstr "Uw STB_BOX is niet met het internet verbonden. Controleer uw netwerk instellingen en probeer het opnieuw."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Download image.'"
@@ -1289,7 +1289,7 @@ msgstr "onbekend"
 msgid "updates available."
 msgstr "updates beschikbaar.."
 
-msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
+msgid "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
 msgstr "Uw STB_BOX kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens uw STB_BOX opnieuw te starten."
 
 #~ msgid "April"

@@ -1175,8 +1175,8 @@ msgstr ""
 msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
 msgstr "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
 
-msgid "Your box is not connected to the internet, please check your network settings and try again."
-msgstr "Your box is not connected to the internet, please check your network settings and try again."
+msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
+msgstr "Your STB_BOX is not connected to the internet, please check your network settings and try again."
 
 msgid "detected"
 msgstr "detected"
@@ -1208,6 +1208,6 @@ msgstr "unknown"
 msgid "updates available."
 msgstr "updates available."
 
-msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
-msgstr "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
+msgid "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
+msgstr "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
 

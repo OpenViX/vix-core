@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-01 18:42+0100\n"
-"PO-Revision-Date: 2012-05-01 21:16+0100\n"
+"POT-Creation-Date: 2012-05-20 15:48+0100\n"
+"PO-Revision-Date: 2012-05-20 22:05+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -63,8 +63,35 @@ msgstr "Hinzufügen"
 msgid "After pressing OK, please wait!"
 msgstr "Nachdem Du OK gedrückt hast bitte warten!"
 
-msgid "Apr"
-msgstr ""
+msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+msgstr "Erlaubt es zu prüfen ob Softcams noch laufen. Softcams werden, wenn nötig, erneut gestartet."
+
+msgid "Allows you schedule your boackups."
+msgstr "Erlaubt es Zeiten für automatische Backups anzugeben."
+
+msgid "Allows you schedule your image backups."
+msgstr "Erlaubt es Zeiten für automatische Image-Backups anzugeben."
+
+msgid "Allows you to control the power state of your STB_BOX."
+msgstr "Erlaubt es den Ein-/Aus-Zustand der STB_BOX zu kontrollieren."
+
+msgid "Allows you to put your STB_BOX in standby at a set time."
+msgstr "Erlaubt es die STB_BOX zu bestimmten Zeiten in den StandBy zu versetzen."
+
+msgid "Allows you to put your STB_BOX into deepstandby at a set time."
+msgstr "Erlaubt es die STB_BOX zu bestimmten Zeiten in den DeepStandBy zu versetzen."
+
+msgid "Allows you to reboot your STB_BOX at a set time."
+msgstr "Erlaubt es die STB_BOX zu bestimmten Zeiten neu zu starten."
+
+msgid "Allows you to restart your STB_BOX interface at a set time."
+msgstr "Erlaubt es die STB_BOX zu bestimmten Zeiten die Benutzeroberfläche neu zu starten."
+
+msgid "Allows you to tag your backups to a box. (default is box name/type)"
+msgstr "Erlaubt es Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
+
+msgid "Allows you to tag your image backup to a box. (default is box name/type)"
+msgstr "Erlaubt es Image-Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
 
 msgid "Are you ready to create a backup ?"
 msgstr "Backup jetzt erstellen?"
@@ -108,9 +135,6 @@ msgstr ""
 
 msgid "Are you sure you want to update your STB_BOX?"
 msgstr "Sicher das die STB_BOX aktualisiert werden soll?"
-
-msgid "Aug"
-msgstr ""
 
 msgid "Author: "
 msgstr "Autor: "
@@ -158,6 +182,9 @@ msgstr ""
 "Backup wird durchgeführt,\n"
 "Bitte vor neuem Versuch Beendigung abwarten"
 
+msgid "Backup prefix"
+msgstr "Backup Namensanfang"
+
 msgid "BackupManager"
 msgstr "Backup Verwaltung"
 
@@ -170,8 +197,15 @@ msgstr "Kann Partition nicht aushängen, bitte sicherstellen dass diese nicht f�
 msgid "Cancel"
 msgstr "Abbrechen"
 
-msgid "Check every (mins)"
-msgstr "Prüfintervall (Min.)"
+msgid ""
+"Changes need a system restart to take effect.\n"
+"Restart your STB_BOX now?"
+msgstr ""
+"Änderungen verlangen einen Neustart der STB_BOX.\n"
+"STB_BOX jetzt neu starten?"
+
+msgid "Checking Feeds"
+msgstr "Feeds prüfen"
 
 msgid "Checking Free RAM.."
 msgstr "Prüfe freien Arbeitsspeicher.."
@@ -245,11 +279,11 @@ msgstr "Täglich"
 msgid "Deactivate"
 msgstr "Deaktivieren"
 
-msgid "Dec"
-msgstr "Dez"
-
 msgid "Deep Standby Time"
 msgstr "Deep-Standby"
+
+msgid "DeepStandby Time"
+msgstr "DeepStandBy Zeit"
 
 msgid "Default Settings"
 msgstr "Standardeinstellungen"
@@ -268,13 +302,6 @@ msgstr "Gerät: "
 
 msgid "Device: None available"
 msgstr "Gerät: Nicht verfügbar"
-
-msgid ""
-"Devices changes need a system restart to take effects.\n"
-"Restart your STB_BOX now?"
-msgstr ""
-"Geräteänderungen benötigen einen Neustart\n"
-"Box jetzt neu starten?"
 
 msgid "Disable Startup"
 msgstr "Autostart deaktivieren"
@@ -328,14 +355,17 @@ msgstr ""
 msgid "Electronic Program Guide"
 msgstr "Electronic Program Guide"
 
-msgid "Enable Auto Timer Check ?"
-msgstr "Autotimer-Prüfung aktivieren?"
-
 msgid "Enable Deep Standby"
 msgstr "Deep-Standby aktivieren"
 
+msgid "Enable DeepStandby"
+msgstr "Aktiviere DeepStandby"
+
 msgid "Enable GUI Restart"
 msgstr "GUI-Neustart aktivieren"
+
+msgid "Enable GUI restart"
+msgstr "Aktiviere GUI Neustart"
 
 msgid "Enable Power Manager"
 msgstr "Energie Verwaltung aktivieren"
@@ -352,6 +382,9 @@ msgstr "Autostart aktivieren"
 msgid "Enable Swap at startup"
 msgstr "Auslagerungsdatei-Autostart aktivieren"
 
+msgid "Enable frozen check ?"
+msgstr "Aktivieren Freeze-Prüfung ?"
+
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Zu viele Versuche, bis zur nächsten Zeitplan-Aktion zurückgestellt."
 
@@ -363,9 +396,6 @@ msgstr "Wiederherstellungsassistenten beenden"
 
 msgid "Extensions management"
 msgstr "Erweiterungs-Management"
-
-msgid "Feb"
-msgstr ""
 
 msgid "Folder prefix"
 msgstr "Ordner-Präfix"
@@ -381,6 +411,9 @@ msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglic
 
 msgid "Friday"
 msgstr "Freitag"
+
+msgid "Frozen check interval"
+msgstr "Freeze-Prüfung Intervall"
 
 msgid "GB"
 msgstr "GB"
@@ -436,17 +469,17 @@ msgstr "Installation abgeschlossen."
 msgid "Installing"
 msgstr "Installiert"
 
+msgid "Installing Service"
+msgstr "Installiere Service"
+
 msgid "Installing..."
 msgstr "Installiert..."
 
-msgid "Jan"
-msgstr ""
+msgid "Location of where backup should be saved."
+msgstr "Pfad wo Backups gespeichert werden sollen."
 
-msgid "Jul"
-msgstr ""
-
-msgid "Jun"
-msgstr ""
+msgid "Location of where image backup should lbe saved."
+msgstr "Pfad wo Image-Backups gespeichert werden sollen."
 
 msgid "MB"
 msgstr "MB"
@@ -468,12 +501,6 @@ msgstr "Verwalte Backups deiner Einstellungen."
 
 msgid "Manage your cron jobs."
 msgstr "Verwalte deine Cron Jobs."
-
-msgid "Mar"
-msgstr "Mär"
-
-msgid "May"
-msgstr "Mai"
 
 msgid "Monday"
 msgstr "Montag"
@@ -569,15 +596,6 @@ msgstr "Keine"
 msgid "Nothing to upgrade"
 msgstr "Keine Upgrades verfügbar"
 
-msgid "Nov"
-msgstr ""
-
-msgid "Now installing service"
-msgstr "Installiere Service"
-
-msgid "Now removing service"
-msgstr "Lösche Service"
-
 msgid "Now skipping restore process"
 msgstr "Überspinge die Wiederherstellung"
 
@@ -586,9 +604,6 @@ msgstr "OK"
 
 msgid "OK, to perform a restore"
 msgstr "OK, zum Wiederherstellen"
-
-msgid "Oct"
-msgstr "Okt"
 
 msgid "Online update of your STB_BOX software."
 msgstr "Online Update der Receiver Software."
@@ -629,6 +644,9 @@ msgstr "Startvorgang abwarten\n"
 msgid "Please wait while stopping\n"
 msgstr "Bitte Stoppvorgang abwarten\n"
 
+msgid "Please wait whilst feeds state is checked."
+msgstr "Bitte warten während Feeds geprüft werden."
+
 msgid "Please wait..."
 msgstr "Bitte warten..."
 
@@ -646,6 +664,9 @@ msgstr "Hilfe Plugin Verwaltung"
 
 msgid "Power Manager"
 msgstr "Energie Verwaltung"
+
+msgid "Power Manager Setup"
+msgstr "Energieverwaltung Einstellungen"
 
 msgid "Predefined"
 msgstr "Vordefiniert"
@@ -696,6 +717,9 @@ msgstr "Löschen beendet."
 
 msgid "Removing"
 msgstr "Wird gelöscht"
+
+msgid "Removing Service"
+msgstr "Deinstalliere Service"
 
 msgid "Renaming old backup..."
 msgstr "Altes Backup wird umbenannt..."
@@ -799,11 +823,29 @@ msgstr "Größe der Auslagerungsdatei auswählen:"
 msgid "Select:"
 msgstr "Auswählen:"
 
-msgid "Sep"
-msgstr ""
+msgid "Set the delay time to wait before asking again."
+msgstr "Zeit bis zur erneuten Nachfrage."
 
-msgid "Service is not currently in use do you want to remove the service ?"
-msgstr "Service zur Zeit nicht in Benutzung. Soll Service gelöscht werden?"
+msgid "Set the invterval to be checked in mins."
+msgstr "Gebe das Zeitintervall für Prüfungen in Minuten an."
+
+msgid "Set the repeat interval of backup schedule."
+msgstr "Gebe das Zeitintervall für automatische Backups an."
+
+msgid "Set the time of backup to start."
+msgstr "Gebe das Zeitintervall für automatische Image-Backups an."
+
+msgid "Set the time to enter deepstandby mode."
+msgstr "Gebe die Zeit für DeepStandBy an."
+
+msgid "Set the time to enter standby mode."
+msgstr "Gebe die Zeit für StandBy an."
+
+msgid "Set the time to reboot."
+msgstr "Gebe die Zeit für Neustart an."
+
+msgid "Set the time to restart the interface."
+msgstr "Gebe die Zeit für Neustart der Benutzeroberfläche an."
 
 msgid "Setting Up..."
 msgstr "Stellt ein..."
@@ -1177,14 +1219,14 @@ msgstr ""
 "Die STB_BOX wird in der Nacht in Standby gehen,\n"
 "Wollen Sie das zulassen?"
 
+msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
+msgstr "Die STB_BOX ist nicht mit dem Internet verbunden. Bitte Netzwerkeinstellungen prüfen und erneut versuchen."
+
 msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
 msgstr "Der STB_BOX ist nicht korrekt mit dem Internet verbunden. Bitte prüfen und nochmals versuchen."
 
-msgid "Your box is not connected to the internet, please check your network settings and try again."
-msgstr "Deine STB_BOX ist nicht mit dem Internet verbunden. Bitte überprüfe die Netzwerkeinstellungen und versuche es erneut."
-
-msgid "detected"
-msgstr "erkannt"
+msgid "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
+msgstr "Die STB_BOX könnte jetzt unbenutzbar sein. Bitte Handbuch für weitere Hilfe lesen bevor die STB_BOX neu gestartet wird."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Image herunterladen.'"
@@ -1212,7 +1254,3 @@ msgstr "unbekannt"
 
 msgid "updates available."
 msgstr "Updates verfügbar."
-
-msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
-msgstr "Der STB_BOX könnte jetzt nicht mehr verwendungsfähig sein. VOR EINEM NEUSTART unbedingt die Bedienungsanleitung für weitere Unterstützung konsultieren."
-

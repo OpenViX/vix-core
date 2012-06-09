@@ -115,19 +115,13 @@ msgstr ""
 "Er du sikker på at du vil slette denne sikkerhetskopien:\n"
 " "
 
-msgid ""
-"Are you sure you want to delete this:\n"
-" "
+msgid "Are you sure you want to delete this:\n"
 msgstr "Er du sikker på at du vil slette dette:\n"
 
-msgid ""
-"Are you sure you want to download this image:\n"
-" "
+msgid "Are you sure you want to download this image:\n"
 msgstr "Er du sikker på at du vil laste ned dette imaget:\n"
 
-msgid ""
-"Are you sure you want to restore this backup:\n"
-" "
+msgid "Are you sure you want to restore this backup:\n"
 msgstr "Er du sikker på at du vil gjennopprette denne sikkerhetskopien:\n"
 
 msgid "Are you sure you want to update your STB_BOX?"
@@ -672,7 +666,7 @@ msgid "Please wait while stopping\n"
 msgstr "Vennligst vent mens avslutting pågår\n"
 
 msgid "Please wait whilst feeds state is checked."
-msgstr "Vennligst vent mens kontroll av oppkoblingsstatus pågår\n"
+msgstr "Vennligst vent mens kontroll av oppkoblingsstatus pågår."
 
 msgid "Please wait..."
 msgstr "Vennligst vent..."

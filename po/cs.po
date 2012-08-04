@@ -1,0 +1,1318 @@
+# Czech translations for plugins package.
+# Copyright (C) 2011 THE plugins'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the plugins package.
+# Automatically generated, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2-vix-core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-10 17:11+0000\n"
+"PO-Revision-Date: 2012-05-16 16:05+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: jerry\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid " extensions."
+msgstr "rozšíření"
+
+msgid " packages selected."
+msgstr "balíčků vybráno"
+
+msgid " updates available."
+msgstr "akt. dostupných"
+
+msgid "16 Mb"
+msgstr ""
+
+msgid "32 Mb"
+msgstr ""
+
+msgid "64 Mb"
+msgstr ""
+
+msgid "8 Mb"
+msgstr ""
+
+msgid "96 Mb"
+msgstr ""
+
+#, python-format
+msgid ""
+"A configuration file (%s) was modified since Installation.\n"
+"Do you want to keep your version?"
+msgstr ""
+"Konfigurační soubor (%s) byl při instalaci změněn.\n"
+"Chcete zachovat vaši verzi?"
+
+msgid "A small overview of the available icon states and actions."
+msgstr "Malý přehled dostupných ikon stavů a akcí."
+
+msgid "Activate"
+msgstr "Aktivovat"
+
+msgid "Active"
+msgstr "Aktivní"
+
+msgid "Active:"
+msgstr "Aktivní:"
+
+msgid "Add"
+msgstr "Přidat"
+
+msgid "After pressing OK, please wait!"
+msgstr "Po stisknutí OK počkejte!"
+
+msgid "Apr"
+msgstr "Dub"
+
+msgid "April"
+msgstr "Duben"
+
+msgid "Are you ready to create a backup ?"
+msgstr "Jste připraveni vytvořit zálohu ?"
+
+msgid "Are you ready to create a backup image ?"
+msgstr "Jste připraveni vytvořit zálohu image ?"
+
+msgid "Are you ready to install ?"
+msgstr "Jste připraveni instalovat ?"
+
+#, python-format
+msgid "Ready to install \"%s\" ?"
+msgstr "Můžu instalovat \"%s\" ?"
+
+msgid "Are you ready to run the script ?"
+msgstr "Jste připraveni spustit skript ?"
+
+msgid ""
+"Are you sure you want to delete this backup:\n"
+" "
+msgstr ""
+"Opravdu chcete smazat tuto zálohu:\n"
+" "
+
+msgid ""
+"Are you sure you want to delete this:\n"
+" "
+msgstr ""
+"Opravdu chcete smazat tuto:\n"
+" "
+
+msgid ""
+"Are you sure you want to download this image:\n"
+" "
+msgstr ""
+"Opravdu chcete stáhnout tento image:\n"
+" "
+
+msgid ""
+"Are you sure you want to restore this backup:\n"
+" "
+msgstr ""
+
+msgid "Aug"
+msgstr "Srp"
+
+msgid "August"
+msgstr "Srpen"
+
+msgid "Author: "
+msgstr "Autor:"
+
+msgid "Autostart"
+msgstr ""
+
+msgid "Autostart:"
+msgstr ""
+
+msgid "Back"
+msgstr "Zpět"
+
+msgid "Backing up files..."
+msgstr "Zálohuji soubory..."
+
+msgid "Backup Complete..."
+msgstr "Záloha dokončena..."
+
+msgid "Backup Confirmation"
+msgstr "Ověření zálohy"
+
+msgid "Backup Created"
+msgstr "Záloha vytvořena"
+
+msgid "Backup Location"
+msgstr "Umístění zálohy"
+
+msgid "Backup Manager"
+msgstr "Správce zálohy"
+
+msgid "Backup Manager Log"
+msgstr "Zpráva Správce zálohy"
+
+msgid "Backup Manager Setup"
+msgstr "Nastavení Správce zálohy"
+
+msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Záloha selhala - třeba nesprávné umístění nebo zbývá málo místa na cílové jednotce"
+
+msgid ""
+"Backup in progress,\n"
+"Please for it to finish, before trying again"
+msgstr ""
+"Probíhá záloha,\n"
+"Počkejte na její dokončení, a zkuste to znovu"
+
+msgid "BackupManager"
+msgstr "SprávceZáloh"
+
+msgid "CCcam can't run whilst MGcamd is running"
+msgstr "CCcam nelze provozovat zároveň s MGcamdem"
+
+msgid "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths"
+msgstr "Pártyšnu nelze odpojit, možná je používána pro odkládání nebo záznam/timeshiftu"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Check every (mins)"
+msgstr "Kontrola každé (min)"
+
+msgid "Checking Free RAM.."
+msgstr "Kontrola volné RAM."
+
+msgid "Checking softcams..."
+msgstr "Kontrola softcamu..."
+
+msgid "Choose Files"
+msgstr "Vyberte soubor"
+
+msgid "Choose where to mount your devices to:"
+msgstr "Vyberte, kam chcete připojit své zařízení:"
+
+msgid "Close"
+msgstr "Zavřít"
+
+msgid "Command To Run"
+msgstr "Příkaz ke spuštění"
+
+msgid "Command type"
+msgstr "Typ příkazu"
+
+msgid "CommonInterface"
+msgstr ""
+
+msgid "Communication"
+msgstr "Komunikace"
+
+msgid "Comparing against backup..."
+msgstr "Srovnávání zálohy..."
+
+msgid "Configuring"
+msgstr "Nastavování"
+
+msgid "Continue"
+msgstr "Pokračovat"
+
+msgid "Create"
+msgstr "Vytvořit"
+
+msgid "Create and Manage your swapfiles."
+msgstr "Vytvoří a spravuje odkládací soubory."
+
+msgid "Create and Restore complete images of the system."
+msgstr "Vytvoří a obnoví kompletní image systému."
+
+msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
+msgstr "Vytvoří plán uspání,restartu Enigmy, vypnutí a Restartu stb."
+
+msgid "Creating Backup Files..."
+msgstr "Vytváření souboru zálohy..."
+
+msgid "Creating Swap.."
+msgstr "Vytvářím swap.."
+
+msgid "Creating list of installed plugins..."
+msgstr "Vytvářím seznam nainstalovaných pluginů..."
+
+msgid "Cron Manager"
+msgstr "Správce Cronu"
+
+msgid "Current Status:"
+msgstr "Nynější stav:"
+
+msgid "Custom"
+msgstr "Vlastní"
+
+msgid "Daily"
+msgstr "Denně"
+
+msgid "Deactivate"
+msgstr "Deaktivovat"
+
+msgid "Dec"
+msgstr "Pro"
+
+msgid "December"
+msgstr "Prosinec"
+
+msgid "Deep Standby Time"
+msgstr "Čas vypnutí"
+
+msgid "Default Settings"
+msgstr "Výchozí nastavení"
+
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "Deselect"
+msgstr "Odznačit"
+
+msgid "Details for plugin: "
+msgstr "Popis pluginu: "
+
+msgid "Device: "
+msgstr "Zařízení: "
+
+msgid "Device: None available"
+msgstr "Zařízení: Nedostupné"
+
+msgid ""
+"Changes need a system restart to take effect.\n"
+"Restart your STB_BOX now?"
+msgstr ""
+"Změny zařízení vyžadují restart systému.\n"
+"Restartovat STB_BOX nyní?"
+
+msgid "Disable Startup"
+msgstr "Nespouštět"
+
+msgid "Disabled"
+msgstr "Vypnuto"
+
+msgid "Display and Userinterface"
+msgstr "Displej a rozhraní"
+
+msgid "Do you want to install the package:\n"
+msgstr "Chcete nainstalovat balíček:\n"
+
+msgid "Do you want to reboot your STB_BOX?"
+msgstr "Chcete restartovat váš STB_BOX?"
+
+msgid "Do you want to remove the package:\n"
+msgstr "Chcete odinstalovat balíček:\n"
+
+msgid "Do you want to restore your Enigma2 plugins ?"
+msgstr "Chcete obnovit vaše pluginy v Enigmy2 ?"
+
+msgid "Do you want to restore your Enigma2 settings ?"
+msgstr "Chcete obnovit vaše nastavení Enigmy2 ?"
+
+msgid "Do you want to update your STB_BOX?"
+msgstr "Chcete aktualizovat váš STB_BOX?"
+
+msgid "Do you want to upgrade the package:\n"
+msgstr "Chcete aktualizovat balíček:\n"
+
+#, python-format
+msgid "Done - Installed or upgraded %d packages"
+msgstr "Hotovo - Instalováno nebo aktualizováno %d balíčků"
+
+msgid "Download"
+msgstr "Stáhnout"
+
+msgid "Download Confirmation"
+msgstr "Potvrzení stažení"
+
+msgid "Downloading"
+msgstr "Stahování"
+
+msgid "Downloading Image..."
+msgstr "Stahuji image..."
+
+msgid "Downloads"
+msgstr "Stažení"
+
+msgid "Electronic Program Guide"
+msgstr "EPG"
+
+msgid "Enable Auto Timer Check ?"
+msgstr "Povolit kontrolu AutoČasovače ?"
+
+msgid "Enable Deep Standby"
+msgstr "Povolit vypnutí"
+
+msgid "Enable GUI Restart"
+msgstr "Povolit restart GUI"
+
+msgid "Enable Power Manager"
+msgstr "Povolit Správu napájení"
+
+msgid "Enable Reboot"
+msgstr "Povolit reboot"
+
+msgid "Enable Standby"
+msgstr "Povolit Uspání"
+
+msgid "Enable Startup"
+msgstr "Povolit spuštění"
+
+msgid "Enable Swap at startup"
+msgstr "Povolit swap po startu"
+
+msgid "Enough Retries, delaying till next schedule."
+msgstr "Opakování, zpoždění do dalšího plánu."
+
+msgid "Error"
+msgstr "Chyba"
+
+msgid "Exit the restore wizard"
+msgstr "Ukončit průvodce obnovou"
+
+msgid "Extensions management"
+msgstr "Správa rozšíření"
+
+msgid "Feb"
+msgstr "Úno"
+
+msgid "February"
+msgstr "Únor"
+
+msgid "Folder prefix"
+msgstr "Prefix složky"
+
+msgid "Following tasks will be done after you press OK!"
+msgstr "Následující úlohy se provedou po stisknutí OK!"
+
+msgid "Found none stanadard softcam, trying to start, this may fail"
+msgstr "Nalezen nestandardní softcam, snažící se spustit, může to selhat"
+
+msgid "Found none standard softcam, trying to start, this may fail"
+msgstr "Nalezen nestandardní softcam, snažící se spustit, může to selhat"
+
+msgid "Fri"
+msgstr "Pá"
+
+msgid "Friday"
+msgstr "Pátek"
+
+msgid "GB"
+msgstr ""
+
+msgid "GUI Restart Time"
+msgstr "Čas restartu GUI"
+
+msgid "H: = Hourly / D: = Daily / W: = Weekly / M: = Monthly"
+msgstr "H: = Hodina / D: = Denně / W: = Týdně / M: = Měsíčně"
+
+msgid "HARD DISK: "
+msgstr "HDD: "
+
+msgid "Hourly"
+msgstr "Hodina"
+
+msgid "IPK Installer"
+msgstr "Instalátor IPK"
+
+msgid "Image Manager"
+msgstr "Správce image"
+
+msgid "Image Manager Setup"
+msgstr "Nastavení Správce image"
+
+msgid "ImageManager"
+msgstr "Správce Image"
+
+msgid "Inactive"
+msgstr "Neaktivní"
+
+msgid "Info"
+msgstr ""
+
+msgid "Install"
+msgstr "Instalovat"
+
+msgid "Install Confirmation"
+msgstr "Potvrzení instalace"
+
+msgid "Install IPK's from your tmp folder."
+msgstr "Instalace IPK ze složky tmp."
+
+msgid "Install local extension"
+msgstr "Instalovat místní balíčky"
+
+msgid "Install or remove finished."
+msgstr "Instalace nebo odebrání dokončeno."
+
+msgid "Installation finished."
+msgstr "Instalace dokončena."
+
+msgid "Installing"
+msgstr "Instalace"
+
+msgid "Installing..."
+msgstr "Instaluji..."
+
+msgid "Jan"
+msgstr "Led"
+
+msgid "January"
+msgstr "Leden"
+
+msgid "Jul"
+msgstr "Čer"
+
+msgid "July"
+msgstr "Črv"
+
+msgid "Jun"
+msgstr "Čer"
+
+msgid "June"
+msgstr "Črv"
+
+msgid "MB"
+msgstr ""
+
+msgid "MGcamd can't run whilst CCcam is running"
+msgstr "MGcamd nelze provozovat zároveň s CCcamem"
+
+msgid "Manage Extensions"
+msgstr "Správa rozšíření"
+
+#
+msgid "Manage extensions or plugins for your STB_BOX"
+msgstr "Správa rozšíření nebo pluginů pro váš STB_BOX"
+
+#
+msgid "Manage extensions or plugins for your STB_BOX."
+msgstr "Správa rozšíření nebo pluginů pro váš STB_BOX"
+
+msgid "Manage you devices mountpoints."
+msgstr "Správa přípojných bodů zařízení."
+
+msgid "Manage your backups of your settings."
+msgstr "Správa záloh vašeho nastavení."
+
+msgid "Manage your cron jobs."
+msgstr "Správa úkolů Cronu."
+
+msgid "Mar"
+msgstr "Bře"
+
+msgid "March"
+msgstr "Březen"
+
+msgid "May"
+msgstr "Květen"
+
+msgid "Mon"
+msgstr "Pon"
+
+msgid "Monday"
+msgstr "pondělí"
+
+msgid "Monthly"
+msgstr "Měsíčně"
+
+msgid "Mount Manager"
+msgstr "Správce připojení"
+
+msgid "Mount failed"
+msgstr "Připojení selhalo"
+
+msgid "Mount: "
+msgstr "Připojeno: "
+
+msgid "Mount"
+msgstr "Připojit"
+
+msgid "Unmount"
+msgstr "Vysunout"
+
+msgid "Moving to Backup Location..."
+msgstr "Přesun do místa zálohy..."
+
+msgid "Multimedia"
+msgstr "Multimédia"
+
+msgid "NO, do not restore plugins"
+msgstr "NE, neobnovovat pluginy"
+
+msgid "NO, do not restore settings"
+msgstr "NE, neobnovovat nastavení "
+
+msgid "Network"
+msgstr "Síť"
+
+msgid "New Backup"
+msgstr "Nová záloha"
+
+msgid "Next Backup: "
+msgstr "Další záloha: "
+
+msgid "Next Deep Standby: \n"
+msgstr "Další vypnutí: \n"
+
+msgid "Next GUI Restart: \n"
+msgstr "Další restart GUI: \n"
+
+msgid "Next Reboot: \n"
+msgstr "Další Reboot: \n"
+
+msgid "Next Standby: \n"
+msgstr "Další Standby: \n"
+
+msgid ""
+"No config files found, please setup CCcam first\n"
+"in /etc/CCcam.cfg"
+msgstr ""
+"Nenalezen config, nastavte nejdříve CCcam\n"
+"v /etc/CCcam.cfg"
+
+msgid ""
+"No config files found, please setup Hypercam first\n"
+"in /etc/hypercam.cfg"
+msgstr ""
+"Nenalezen config, nastavte nejdříve Hypercam\n"
+"v /etc/hypercam.cfg"
+
+msgid ""
+"No config files found, please setup MGcamd first\n"
+"in /var/keys"
+msgstr ""
+"Nenalezen config, nastavte nejdříve MGcamd\n"
+"v /var/keys"
+
+msgid ""
+"No config files found, please setup Oscam first\n"
+"in /etc/tuxbox/config"
+msgstr ""
+"Nenalezen config, nastavte nejdříve Oscam\n"
+"v /etc/tuxbox/config"
+
+msgid "No description available."
+msgstr "Popis není k dispozici."
+
+msgid "No network connection available."
+msgstr "Žádné síťové připojení není k dispozici."
+
+msgid "No packages were upgraded yet. So you can check your network and try again."
+msgstr "Žádné balíčky se nedají aktualizovat.Zkontrolujte síť a zkuste to znovu."
+
+msgid "No plugins where needed to be installed"
+msgstr "Žádné pluginy není třeba instalovat"
+
+msgid "None"
+msgstr "Nic"
+
+msgid "Normal"
+msgstr "Normální"
+
+msgid "New Search"
+msgstr "Nově hledat"
+
+msgid "IMDb Search"
+msgstr "Hledat v IMDb"
+
+msgid "Add AutoTimer"
+msgstr "+ AutoČasovač"
+
+msgid "Enter text to search for"
+msgstr "Zadejte hledaný text"
+
+msgid "EPG Search"
+msgstr "EPG hledání"
+
+msgid "Nothing to upgrade"
+msgstr "Nic k aktualizaci!"
+
+msgid "Nov"
+msgstr "Lis"
+
+msgid "November"
+msgstr "Listopad"
+
+msgid "Now skipping restore process"
+msgstr "Vynechání procesu obnovy"
+
+msgid "OK"
+msgstr ""
+
+msgid "OK, to perform a restore"
+msgstr "OK, provedete obnovu"
+
+msgid "Oct"
+msgstr "Říj"
+
+msgid "October"
+msgstr "Říjen"
+
+#
+msgid "Online update of your STB_BOX software."
+msgstr "Oline aktualizace softu vašeho STB_BOX ."
+
+msgid "Only extensions."
+msgstr "Pouze rozšíření."
+
+msgid "Package list update"
+msgstr "Aktualizace seznamu balíčků"
+
+msgid "Packages"
+msgstr "Balíčky"
+
+msgid "Packet Manager"
+msgstr "Správce paketů"
+
+msgid "Packet manager"
+msgstr "Správce paketů"
+
+msgid "Please select device to use as swapfile location"
+msgstr "Vyberte zařízení pro odkládání"
+
+msgid "Please select the file to restore ?"
+msgstr "Vybrat soubor k obnově ?"
+
+msgid "Please wait while gathers infomation..."
+msgstr "Čekejte při shromažďování informací..."
+
+msgid "Please wait while restore completes..."
+msgstr "Počkejte na dokončení zálohy..."
+
+msgid "Please wait while starting\n"
+msgstr "Čekejte, spouští se\n"
+
+msgid "Please wait while stopping\n"
+msgstr "Čekejte, zastavuje se\n"
+
+msgid "Please wait..."
+msgstr "Čekejte prosím..."
+
+msgid "Plugin Details"
+msgstr "Popis pluginu"
+
+msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Seznam pluginů selhal - možná je nesprávná destinace, nebo je málo místa na zálohovacím zařízení"
+
+msgid "Plugin manager activity information"
+msgstr "Info o aktivitě Správce pluginů"
+
+msgid "Plugin manager help"
+msgstr "Pomoc správce pluginů"
+
+msgid "Power Manager"
+msgstr "Správce napájení"
+
+msgid "Predefined"
+msgstr "Přednastaveno"
+
+msgid "Press OK on your remote control to continue."
+msgstr "Stiskněte OK na DO a pokračujte."
+
+msgid "Process"
+msgstr "Průběh"
+
+msgid "Really close without saving settings?"
+msgstr "Opravdu zavřít bez uložení nastavení?"
+
+msgid "Reboot"
+msgstr "Restart"
+
+msgid "Reboot Time"
+msgstr "Čas restartu"
+
+msgid "Rebooting..."
+msgstr "Restartuje se..."
+
+msgid "Recordings"
+msgstr "Nahrávání"
+
+msgid "Refresh List"
+msgstr "Seznam"
+
+msgid "Reload"
+msgstr "Znovu"
+
+msgid "Remove"
+msgstr "Odebrat"
+
+msgid "Remove Confirmation"
+msgstr "Odebrat konfiguraci"
+
+msgid "Remove finished."
+msgstr "Odebrání dokončeno."
+
+msgid "Removing"
+msgstr "Odebírání"
+
+msgid "Renaming old backup..."
+msgstr "Přejmenování staré zálohy..."
+
+msgid "Repeat how often"
+msgstr "Jak často opakovat"
+
+msgid "Restart"
+msgstr ""
+
+msgid "Restart Enigma2."
+msgstr ""
+
+msgid "Restart STB_BOX."
+msgstr ""
+
+msgid "Restore"
+msgstr "Obnova"
+
+msgid "Restore Confirmation"
+msgstr "Obnova konfigurace"
+
+msgid "Restore Plugins"
+msgstr "Obnova pluginů"
+
+msgid "Restore Settings"
+msgstr "Obnova nastavení"
+
+msgid "Restore Wizard"
+msgstr "Průvodce obnovou"
+
+msgid "Restoring backup..."
+msgstr "Obnova zálohy..."
+
+msgid "Restoring plugins..."
+msgstr "Obnova pluginů..."
+
+msgid "Retry after cancel (mins)"
+msgstr "Opakovat po zrušení (min)"
+
+msgid "Run"
+msgstr "Spustit"
+
+msgid "Run Confirmation"
+msgstr "Spustit konfiguraci"
+
+msgid "Run how often ?"
+msgstr "Jak často ?"
+
+msgid "Run your shell scripts."
+msgstr "Spustit shell skripty."
+
+msgid "Running"
+msgstr "Spuštěno"
+
+msgid "Sat"
+msgstr ""
+
+msgid "Satellite equipment"
+msgstr "Satelitní zařízení"
+
+msgid "Saturday"
+msgstr "Sobota"
+
+msgid "Save"
+msgstr "Ulož"
+
+msgid "Schedule Backups"
+msgstr "Plán záloh"
+
+msgid "Script Runner"
+msgstr "Spouštěč skriptu"
+
+msgid "Searching for available updates. Please wait..."
+msgstr "Hledám dostupné aktualizace. Čekejte prosím..."
+
+msgid "Searching for new installed or removed packages. Please wait..."
+msgstr "Hledám nově nainstalované/odebrané balíčky. Čekejte prosím..."
+
+msgid "Select"
+msgstr "Vybrat"
+
+msgid "Select a backup to Restore / Delete:"
+msgstr "Vyberte zálohu k Obnově/Smazání:"
+
+msgid "Select a package to install:"
+msgstr "Vyberte balíček k instalaci:"
+
+msgid "Select a script to run:"
+msgstr "Vyberte skript ke spuštění:"
+
+msgid "Select an image to Download:"
+msgstr "Vyberte image ke stažení:"
+
+msgid "Select an image to Restore / Delete:"
+msgstr "Vyberte image k Obnově /Smazání:"
+
+msgid "Select files/folders to backup"
+msgstr "Vyberte soubory/složky na zálohování"
+
+msgid "Select the Swap File Size:"
+msgstr "Velikost odkl. souboru:"
+
+msgid "Select:"
+msgstr "Vybrat:"
+
+msgid "Sep"
+msgstr "Zář"
+
+msgid "September"
+msgstr "Září"
+
+msgid "Setting Up..."
+msgstr "Nastavuji..."
+
+msgid "Setup Mounts"
+msgstr "Připojování"
+
+msgid "Shut-down."
+msgstr "Vypnout."
+
+msgid "Size: "
+msgstr "Vel.: "
+
+msgid "Skins"
+msgstr "Skiny"
+
+msgid "Softcam Manager"
+msgstr "Správce Softcamu"
+
+msgid "Softcam Manager Log"
+msgstr "Zpráva Správce Softcamu"
+
+msgid "Softcam Setup"
+msgstr "Nastavení Softcamu"
+
+msgid "Softcam Sopping..."
+msgstr "Zastavuji Softcam..."
+
+msgid "Softcam Starting..."
+msgstr "Spouštím Softcam..."
+
+msgid "SoftcamCheck"
+msgstr "KontrolaSoftcamu"
+
+msgid "Software"
+msgstr ""
+
+msgid "Software Manager"
+msgstr "Správce softu"
+
+msgid "Software Update"
+msgstr "Aktualizace softu"
+
+msgid "Sorry you STB_BOX is not yet compatible."
+msgstr "Soráč váš STB_BOX není kompatibilní."
+
+msgid "Sorry, no Details available!"
+msgstr "Soráč, podrobnosti nedostupné!"
+
+msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
+msgstr "Soráč, nepřipojeno zařízení,podporující odkládání. Nelze vytvořit odkládací soubor na síti nebo fat32 jednotce"
+
+msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
+msgstr "Soráč,nedostatek volné RAM, a není připojeno žádné zařízení, podporující "
+
+msgid "Standby"
+msgstr ""
+
+msgid "Standby Time"
+msgstr "Čas uspání"
+
+msgid "Start"
+msgstr ""
+
+msgid "Starting..."
+msgstr "Spouštím..."
+
+msgid "Status:"
+msgstr "Stav:"
+
+msgid "Stop"
+msgstr ""
+
+msgid "Stopped"
+msgstr "Zastaven"
+
+msgid "Sun"
+msgstr "Ne"
+
+msgid "Sunday"
+msgstr "Neděle"
+
+msgid "Swap File not found. You have to create the file before to activate."
+msgstr "Odkládací soubor nebyl nalezen. Musíte soubor před aktivací vytvořit."
+
+msgid "Swap Manager"
+msgstr "Správce odkládání"
+
+msgid "Swap Place:"
+msgstr "Místo Swapu:"
+
+msgid "Swap Size:"
+msgstr "Vel.Swapu:"
+
+msgid "System"
+msgstr ""
+
+msgid "The backup location does not have enough freespace."
+msgstr "Vybrané umístění zálohy nemá dostatek volného místa."
+
+msgid "The chosen location does not exist, using /media/hdd"
+msgstr "Vybrané umístění neexistuje, použijte /media/hdd"
+
+msgid "The wizard is finished now, and will reboot"
+msgstr "Průvodce je nyní dokončen a stb se restartuje."
+
+msgid "The wizard is finished now."
+msgstr "Průvodce je dokončen."
+
+msgid "There are at least "
+msgstr "Je zde nejméně "
+
+msgid "There are currently no outstanding actions."
+msgstr "Nyní nejsou žádné nedokončené akce."
+
+msgid "There are no updates available."
+msgstr "Žádné aktualizace ke stažení."
+
+msgid "There was an error downloading the packetlist. Please try again."
+msgstr "Nastala chyba při stahování seznamu paketů. Zkuste to znovu."
+
+msgid "This Device is already mounted as HDD."
+msgstr "Toto zařízení je již připojeno jako HDD."
+
+msgid "This plugin is installed."
+msgstr "Tento plugin je nainstalován."
+
+msgid "This plugin is not installed."
+msgstr "Tento plugin není nainstalován."
+
+msgid "This plugin will be installed."
+msgstr "Tento plugin bude nainstalován."
+
+msgid "This plugin will be removed."
+msgstr "Tento plugin bude odstraněn."
+
+msgid "Thu"
+msgstr "Čtv"
+
+msgid "Thursday"
+msgstr "Čtvrtek"
+
+msgid "Time of Backup to start"
+msgstr "Čas spuštění zálohy"
+
+msgid "Time to execute command or script"
+msgstr "Čas provedení příkazu nebo skriptu"
+
+msgid "Trying to download a new packetlist. Please wait..."
+msgstr "Pokouším se stáhnout seznam paketů. Čekejte prosím..."
+
+msgid "Tue"
+msgstr "Út"
+
+msgid "Tuesday"
+msgstr "Úterý"
+
+msgid "Type: "
+msgstr "Typ: "
+
+msgid "Unattended"
+msgstr "Bezobslužná"
+
+msgid "Unattended upgrade without GUI and reboot system"
+msgstr "Bezobslužná aktualizace bez restartu GUI a systému"
+
+msgid "Undo install"
+msgstr "Zpět instalace"
+
+msgid "Undo uninstall"
+msgstr "Zpět odinstalace"
+
+msgid "Uninstall"
+msgstr "Odinstalace"
+
+msgid "Update"
+msgstr "Aktualizace"
+
+msgid "Updatefeed not available."
+msgstr "Zdroje nejsou dostupné."
+
+msgid "Updating software catalog"
+msgstr "Aktualizace katalogu software"
+
+msgid "Upgrade and ask to reboot"
+msgstr "Aktualizovat a požádat o restart"
+
+msgid "Upgrade finished."
+msgstr "Aktualizace dokončena."
+
+msgid "Upgrading"
+msgstr "Aktualizace"
+
+msgid "Use as HDD"
+msgstr "Užít jako HDD"
+
+msgid "ViX"
+msgstr ""
+
+msgid "View Changes"
+msgstr "Změny"
+
+msgid "View Progress"
+msgstr "Průběh"
+
+msgid "View details"
+msgstr "Podrobnosti"
+
+msgid "View list of available "
+msgstr "Zobrazit seznam dostupných "
+
+msgid "View list of available CommonInterface extensions"
+msgstr "Zobrazit seznam dostupných CI rozšíření."
+
+msgid "View list of available Display and Userinterface extensions."
+msgstr "Zobrazit seznam dostupných rozšíření displeje a UI."
+
+msgid "View list of available EPG extensions."
+msgstr "Zobrazit seznam dostupných EPG rozšíření."
+
+msgid "View list of available Satellite equipment extensions."
+msgstr "Zobrazit seznam dostupných rozšíření satelitů."
+
+msgid "View list of available communication extensions."
+msgstr "Zobrazit seznam dostupných komunikačních rozšíření."
+
+msgid "View list of available default settings"
+msgstr "Zobrazit seznam dostupných předdefinovaných nastavení."
+
+msgid "View list of available multimedia extensions."
+msgstr "Zobrazit seznam dostupných multimediálních rozšíření."
+
+msgid "View list of available networking extensions"
+msgstr "Zobrazit seznam dostupných síťových rozšíření"
+
+msgid "View list of available recording extensions"
+msgstr "Zobrazit seznam dostupných nahraných rozšíření"
+
+msgid "View list of available skins"
+msgstr "Zobrazit seznam dostupných skinů"
+
+msgid "View list of available software extensions"
+msgstr "Zobrazit seznam dostupných softwarových rozšíření"
+
+msgid "View list of available system extensions"
+msgstr "Zobrazit seznam dostupných sys. rozšíření"
+
+msgid "View the changes"
+msgstr "Zobrazit změny"
+
+msgid "View, install and remove available or installed packages."
+msgstr "Zobrazit, instalovat a odebrat dostupné/instalované balíčky."
+
+msgid "STB_BOX software because updates are available."
+msgstr "STB_BOX software, protože jsou k dispozici aktualizace."
+
+msgid "Wait please while creating swapfile..."
+msgstr "Čekejte při vytváření odkl. souboru..."
+
+msgid ""
+"Wait please while scanning\n"
+"softcam's..."
+msgstr ""
+"Čekejte během skenování\n"
+"softcamu..."
+
+msgid "Wait please while scanning for devices..."
+msgstr "Čekejte při skenování zařízení..."
+
+msgid "Wait please while scanning your STB_BOX devices..."
+msgstr "Čekejte při skenování zařízení na vašem STB_BOX..."
+
+msgid "Wait please while scanning..."
+msgstr "Během skenování čekejte..."
+
+msgid "Wed"
+msgstr "Stř"
+
+msgid "Wednesday"
+msgstr "Středa"
+
+msgid "Weekly"
+msgstr "Týdně"
+
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+msgstr ""
+"Vítejte v průvodci obnovou.\n"
+"\n"
+"Byla nalezena záloha.\n"
+"Můžete použít tohoto průvodce pro obnovení nastavení a extra pluginů, které byly nainstalovány při vytvoření zálohy.\n"
+
+msgid "What Day of month ?"
+msgstr "Jaký den v měsíci ?"
+
+msgid "What Day of week ?"
+msgstr "Jaký den v týdnu ?"
+
+msgid "YES, to restore plugins"
+msgstr "ANO, obnovíte pluginy"
+
+msgid "YES, to restore settings"
+msgstr "ANO, obnovíte nastavení"
+
+msgid "You can cancel the installation."
+msgstr "Můžete zrušit instalaci."
+
+msgid "You can cancel the removal."
+msgstr "Můžete zrušit odstranění."
+
+msgid "You can install this plugin."
+msgstr "Můžete instalovat tento plugin."
+
+msgid "You can remove this plugin."
+msgstr "Můžete odebrat tento plugin."
+
+msgid "You have no backup to delete."
+msgstr "Nemáte žádnou zálohu ke smazání."
+
+msgid "You have no backups to restore."
+msgstr "Nemáte žádnou zálohu k obnovení."
+
+msgid "You have no image to delete."
+msgstr "Nemáte žádný image ke smazání."
+
+msgid "You have no image to download."
+msgstr "Nemáte žádný image ke stažení."
+
+msgid "You have no script to run."
+msgstr "Ke spuštění není žádný skript."
+
+msgid "You have to create a Swap File before to activate the autostart."
+msgstr "Musíte vytvořit odkládací soubor, než se aktivuje automatické spuštění."
+
+msgid ""
+"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
+"Do you want to allow this?"
+msgstr ""
+"Váš STB_BOX se chystá spustit zálohování nastavení, a zjišťuje vaše pluginy,\n"
+"chcete to povolit?"
+
+msgid ""
+"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
+"do you want to allow this?"
+msgstr ""
+"Váš STB_BOX se chystá spustit úplné zálohování image, zabere to okolo 6 minut,\n"
+"chcete to povolit?"
+
+msgid ""
+"Your STB_BOX is going for a nightly Reboot,\n"
+"do you want to allow this?"
+msgstr ""
+"Váš STB_BOX se chystá na reboot,\n"
+"chcete to povolit?"
+
+msgid ""
+"Your STB_BOX is going for nightly GUI Restart,\n"
+"do you want to allow this?"
+msgstr ""
+"Váš STB_BOX se chystá restartovat GUI,\n"
+"chcete to povolit?"
+
+msgid ""
+"Your STB_BOX is going for nightly shut-down,\n"
+"do you want to allow this?"
+msgstr ""
+"Váš STB_BOX se chystá vypnout,\n"
+"chcete to povolit?"
+
+msgid ""
+"Your STB_BOX is going for nightly standby,\n"
+"do you want to allow this?"
+msgstr ""
+"Váš STB_BOX se chystá uspat,\n"
+"chcete to povolit?"
+
+msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
+msgstr "Váš STB_BOX není správně připojen k internetu. Zkontrolujte ho a zkuste to znovu."
+
+msgid "detected"
+msgstr "zjištěno"
+
+msgid "echo 'Downloading Image.'"
+msgstr "echo Stažení image."
+
+msgid "echo 'Expanding Image.'"
+msgstr "echo Rozbalení image."
+
+msgid "there was a problem with this device, please reformat and try again."
+msgstr "nastal problém se zařízením, přeformátujte ho a zkuste to znovu."
+
+msgid "unavailable"
+msgstr "nedostupné"
+
+msgid "unknown"
+msgstr "neznámé"
+
+msgid "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
+msgstr "váš STB_BOX je možná nepoužitelný. Prohlédněte si manuál kde naleznete pomoc, před rebootem STB_BOX."
+
+#
+msgid "Your STB_BOX will be restarted after the installation of serviceassistance before rebooting your STB_BOX."
+msgstr "váš STB_BOX je možná nepoužitelný. Prohlédněte si manuál kde naleznete pomoc, před rebootem STB_BOX."
+
+#
+msgid ""
+"Your STB_BOX will be restarted after the installation of service.\n"
+"\n"
+"Do you want to install now ?"
+msgstr ""
+"Vaše STB_BOX se po nainstalování služby restartuje.\n"
+"\n"
+"Chcete instalovat nyní ?"
+
+#
+msgid ""
+"Your STB_BOX will be restarted after the installation of service\n"
+"Do you want to install now ?"
+msgstr ""
+"Vaše STB_BOX se po nainstalování služby restartuje\n"
+"Chcete instalovat nyní ?"
+
+#
+msgid "Play back media files"
+msgstr "Přehrává multimédia"
+
+#
+msgid "OpenWebif Configuration"
+msgstr "Nastavení OpenWebif"
+
+#
+msgid "manage local Files"
+msgstr "spravuje místní soubory"
+
+#
+msgid "Upgrade Firmware.."
+msgstr "Nový firmware.."
+
+#
+msgid "Upgrade Firmware..."
+msgstr "Nový firmware..."
+
+#
+msgid "Press the Green/OK button"
+msgstr "Stiskněte Zelené/OK"
+
+#
+msgid "Select to press OK,Exit to press Cencel."
+msgstr "Potvrďte OK. Exitem ukončete."
+
+#
+msgid "FPGA File Browser"
+msgstr "Soubory FPGA"
+

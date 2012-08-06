@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-17 12:36+0100\n"
-"PO-Revision-Date: 2012-05-18 13:02+0100\n"
+"POT-Creation-Date: 2012-08-05 20:05+0100\n"
+"PO-Revision-Date: 2012-08-06 14:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -38,16 +38,11 @@ msgstr "8 Mb"
 msgid "96 Mb"
 msgstr "96 Mb"
 
-#, python-format
-msgid ""
-"A configuration file (%s) was modified since Installation.\n"
-"Do you want to keep your version?"
-msgstr ""
-"Een configuratiebestand (%s) is sinds de installatie gewijzigd.\n"
-"Wilt u uw versie behouden?"
+msgid "A background update check is is progress, Please try using Backup Manager to restore plugins later."
+msgstr "De feeds worden gecontroleerd; probeer later nog een keer de plugins te installeren."
 
-msgid "A small overview of the available icon states and actions."
-msgstr "Een klein overzicht van gebruikte icon-statussen en acties."
+msgid "A background update check is is progress, please wait for retry."
+msgstr "De feeds worden gecontroleerd; even wachten."
 
 msgid "Activate"
 msgstr "Aktiveer"
@@ -60,9 +55,6 @@ msgstr "Actief:"
 
 msgid "Add"
 msgstr "Voeg toe"
-
-msgid "After pressing OK, please wait!"
-msgstr "Nadat u op OK gedrukt heeft, even wachten!"
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Controleert of de softcam nog werkt en herstart als dat niet het geval is."
@@ -93,9 +85,6 @@ msgstr "U kunt labels aan backups van uw STB_BOX hangen (default is box naam/typ
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr "U kunt labels aan image backups van uw STB_BOX hangen (default is box naam/type)."
-
-msgid "Apr"
-msgstr "apr"
 
 msgid "Are you ready to create a backup ?"
 msgstr "Bent u gereed een backup van uw instellingen te maken?"
@@ -137,23 +126,11 @@ msgstr ""
 "Weet u zeker dat u deze backup wilt herstellen:\n"
 " "
 
-msgid "Are you sure you want to update your STB_BOX?"
-msgstr "Weet u zeker dat u uw STB_BOX wilt updaten?"
-
-msgid "Aug"
-msgstr "aug"
-
-msgid "Author: "
-msgstr "Auteur: "
-
 msgid "Autostart"
 msgstr "Autostart"
 
 msgid "Autostart:"
 msgstr "Autostart:"
-
-msgid "Back"
-msgstr "Terug"
 
 msgid "Backing up files..."
 msgstr "Bestanden worden gebackupped"
@@ -204,6 +181,13 @@ msgstr "Kan de partitie niet unmounten; stel zeker dat deze niet in gebruik is v
 msgid "Cancel"
 msgstr "Annuleer"
 
+msgid ""
+"Changes need a system restart to take effect.\n"
+"Restart your STB_BOX now?"
+msgstr ""
+"Apparaat aanpassingen vereisen een systeem herstart om te worden doorgevoerd.\n"
+"Uw STB_BOX nu opnieuw starten?"
+
 msgid "Checking Feeds"
 msgstr "Controleert feeds"
 
@@ -228,20 +212,8 @@ msgstr "Opdracht uit te voeren"
 msgid "Command type"
 msgstr "Command type"
 
-msgid "CommonInterface"
-msgstr "CommonInterface"
-
-msgid "Communication"
-msgstr "Communcatie"
-
 msgid "Comparing against backup..."
 msgstr "Vergelijkt met backup..."
-
-msgid "Configuring"
-msgstr "Bezig met instellen"
-
-msgid "Continue"
-msgstr "Ga door"
 
 msgid "Create"
 msgstr "Creëer"
@@ -279,17 +251,11 @@ msgstr "Dagelijks"
 msgid "Deactivate"
 msgstr "De-activeer"
 
-msgid "Dec"
-msgstr "dec"
-
 msgid "Deep Standby Time"
 msgstr "Deep Sleep"
 
 msgid "DeepStandby Time"
 msgstr "DeepStandby tijd"
-
-msgid "Default Settings"
-msgstr "Standaard instellingen"
 
 msgid "Delete"
 msgstr "Verwijder"
@@ -297,21 +263,11 @@ msgstr "Verwijder"
 msgid "Deselect"
 msgstr "Deselecteer"
 
-msgid "Details for plugin: "
-msgstr "Details over plugin: "
-
 msgid "Device: "
 msgstr "Device: "
 
 msgid "Device: None available"
 msgstr "Apparaat: niet beschikbaar"
-
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your STB_BOX now?"
-msgstr ""
-"Apparaat aanpassingen vereisen een systeem herstart om te worden doorgevoerd.\n"
-"Uw STB_BOX nu opnieuw starten?"
 
 msgid "Disable Startup"
 msgstr "Startup uitschakelen"
@@ -319,33 +275,11 @@ msgstr "Startup uitschakelen"
 msgid "Disabled"
 msgstr "Uitgeschakeld"
 
-msgid "Display and Userinterface"
-msgstr "Scherm en gebruikers interface"
-
-msgid "Do you want to install the package:\n"
-msgstr "Wilt u package installeren:\n"
-
-msgid "Do you want to reboot your STB_BOX?"
-msgstr "Wilt u uw STB_BOX opnieuw opstarten?"
-
-msgid "Do you want to remove the package:\n"
-msgstr "Wilt u package verwijderen:\n"
-
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Wilt u uw plugins weer installeren?"
 
 msgid "Do you want to restore your Enigma2 settings ?"
 msgstr "Wilt u de Enigma2 instellingen terugplaatsen?"
-
-msgid "Do you want to update your STB_BOX?"
-msgstr "Wilt u uw STB_BOX updaten?"
-
-msgid "Do you want to upgrade the package:\n"
-msgstr "Wilt u het pakket upgraden:\n"
-
-#, python-format
-msgid "Done - Installed or upgraded %d packages"
-msgstr "Gereed - %d pakketten geïnstalleerd of geupgrade"
 
 msgid "Download"
 msgstr "Download"
@@ -353,17 +287,11 @@ msgstr "Download"
 msgid "Download Confirmation"
 msgstr "Download confirmatie"
 
-msgid "Downloading"
-msgstr "Bezig met downloaden"
-
 msgid "Downloading Image..."
 msgstr "Download Image..."
 
 msgid "Downloads"
 msgstr "Downloads"
-
-msgid "Electronic Program Guide"
-msgstr "Electronisch Programma Gids"
 
 msgid "Enable Deep Standby"
 msgstr "Schakel Deep Sleep in"
@@ -398,23 +326,11 @@ msgstr "Controleer op vastgelopen?"
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Vaak genoeg geprobeerd, wacht op de volgende geplande tijd."
 
-msgid "Error"
-msgstr "Fout"
-
 msgid "Exit the restore wizard"
 msgstr "Beeindig de herstel wizard"
 
-msgid "Extensions management"
-msgstr "Beheer van extensies"
-
-msgid "Feb"
-msgstr "feb"
-
 msgid "Folder prefix"
 msgstr "Folder prefix"
-
-msgid "Following tasks will be done after you press OK!"
-msgstr "De volgende taken worden uitgevoerd als u op OK drukt!"
 
 msgid "Found none stanadard softcam, trying to start, this may fail"
 msgstr "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, maar dat kan mislukken"
@@ -473,29 +389,11 @@ msgstr "Installeer IPK's van uw tmp map."
 msgid "Install local extension"
 msgstr "Installeer lokale extensie"
 
-msgid "Install or remove finished."
-msgstr "Installatie of verwijderen gereed."
-
-msgid "Installation finished."
-msgstr "Installatie gereed."
-
-msgid "Installing"
-msgstr "Installeert"
-
 msgid "Installing Service"
 msgstr "Installeert service"
 
 msgid "Installing..."
 msgstr "Installeert...."
-
-msgid "Jan"
-msgstr "jan"
-
-msgid "Jul"
-msgstr "jul"
-
-msgid "Jun"
-msgstr "jun"
 
 msgid "Location of where backup should be saved."
 msgstr "Locatie voor uw backups."
@@ -509,12 +407,6 @@ msgstr "MB"
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr "MGcamd en CCcam kunnen niet beide actief zijn"
 
-msgid "Manage Extensions"
-msgstr "Beheer extensies"
-
-msgid "Manage extensions or plugins for your STB_BOX"
-msgstr "Beheer extensies of plugins voor uw STB_BOX"
-
 msgid "Manage you devices mountpoints."
 msgstr "Beheer de mountpoints van uw apparaten."
 
@@ -523,12 +415,6 @@ msgstr "Beheer de backups van uw instellingen."
 
 msgid "Manage your cron jobs."
 msgstr "Beheer uw cron jobs."
-
-msgid "Mar"
-msgstr "mar"
-
-msgid "May"
-msgstr "mei"
 
 msgid "Monday"
 msgstr "maandag"
@@ -548,17 +434,11 @@ msgstr "Mount: "
 msgid "Moving to Backup Location..."
 msgstr "Verplaatsen naar backup locatie"
 
-msgid "Multimedia"
-msgstr "Multimedia"
-
 msgid "NO, do not restore plugins"
 msgstr "NEE, installeer de plugins niet"
 
 msgid "NO, do not restore settings"
 msgstr "Nee, plaats de instellingen niet terug"
-
-msgid "Network"
-msgstr "Netwerk"
 
 msgid "New Backup"
 msgstr "Nieuwe backup"
@@ -606,26 +486,11 @@ msgstr ""
 "Geen configuratiebestand gevonden; maak eerst de Oscam instellingen\n"
 "in /etc/tuxbox/config"
 
-msgid "No description available."
-msgstr "Geen beschrijving beschikbaar"
-
-msgid "No network connection available."
-msgstr "Geen netwerkverbinding beschikbaar."
-
-msgid "No packages were upgraded yet. So you can check your network and try again."
-msgstr "Er zijn nog geen pakketten geupgrade. U kunt uw netwerk controleren en het opnieuw proberen."
-
 msgid "No plugins where needed to be installed"
 msgstr "Er hoefden geen plugins te worden geïnstalleerd"
 
 msgid "None"
 msgstr "Geen"
-
-msgid "Nothing to upgrade"
-msgstr "Geen upgrade beschikbaar"
-
-msgid "Nov"
-msgstr "nov"
 
 msgid "Now skipping restore process"
 msgstr "Slaat het herstel proces over"
@@ -635,27 +500,6 @@ msgstr "OK"
 
 msgid "OK, to perform a restore"
 msgstr "JA, voer een herstelactie uit"
-
-msgid "Oct"
-msgstr "okt"
-
-msgid "Online update of your STB_BOX software."
-msgstr "Online update van uw STB_BOX."
-
-msgid "Only extensions."
-msgstr "Alleen extensies"
-
-msgid "Package list update"
-msgstr "Pakketlijst update"
-
-msgid "Packages"
-msgstr "Pakketten"
-
-msgid "Packet Manager"
-msgstr "Pakketmanager"
-
-msgid "Packet manager"
-msgstr "Packetmanager"
 
 msgid "Please select device to use as swapfile location"
 msgstr "Selecteer het apparaat dat u voor de swapfile wilt gebruiken"
@@ -681,20 +525,11 @@ msgstr "Wacht terwijl er gestopt wordt\n"
 msgid "Please wait whilst feeds state is checked."
 msgstr "Even wachten: de status van de feeds wordt gecontroleerd."
 
-msgid "Please wait..."
-msgstr "Wacht aub..."
-
-msgid "Plugin Details"
-msgstr "Plugin details"
+msgid "Please wait."
+msgstr "Even wachten."
 
 msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Maken van een lijst met plugins is mislukt - of een verkeerde backup locatie of onvoldoende vrije ruimte"
-
-msgid "Plugin manager activity information"
-msgstr "Pluginmanager activiteitsinformatie"
-
-msgid "Plugin manager help"
-msgstr "Pluginmanager help"
 
 msgid "Power Manager"
 msgstr "Powermanager"
@@ -704,12 +539,6 @@ msgstr "Power Manager instellingen"
 
 msgid "Predefined"
 msgstr "Vastgesteld"
-
-msgid "Press OK on your remote control to continue."
-msgstr "Druk op OK om door te gaan."
-
-msgid "Process"
-msgstr "Verwerk"
 
 #, python-format
 msgid "Ready to install \"%s\" ?"
@@ -731,26 +560,11 @@ msgstr "Reboot tijdstip"
 msgid "Rebooting..."
 msgstr "Bezig met rebooten..."
 
-msgid "Recordings"
-msgstr "Opnames"
-
 msgid "Refresh List"
 msgstr "Ververs lijst"
 
-msgid "Reload"
-msgstr "Herlaad"
-
-msgid "Remove"
-msgstr "Verwijder"
-
 msgid "Remove Confirmation"
 msgstr "Bevestig verwijderen"
-
-msgid "Remove finished."
-msgstr "Verwijderen gereed."
-
-msgid "Removing"
-msgstr "Verwijdert"
 
 msgid "Removing Service"
 msgstr "Verwijdert service"
@@ -788,6 +602,9 @@ msgstr "Herstel wizard"
 msgid "Restoring backup..."
 msgstr "Plaatst backup terug..."
 
+msgid "Restoring plugins, this can take a long time..."
+msgstr "Bezig plugins te installeren; dit kan lang duren..."
+
 msgid "Restoring plugins..."
 msgstr "Plaatst plugins terug..."
 
@@ -809,9 +626,6 @@ msgstr "Voer uw shell scripts uit."
 msgid "Running"
 msgstr "Loopt"
 
-msgid "Satellite equipment"
-msgstr "Satellietapparatuur"
-
 msgid "Saturday"
 msgstr "zaterdag"
 
@@ -823,12 +637,6 @@ msgstr "Plan backups"
 
 msgid "Script Runner"
 msgstr "Script uitvoeren"
-
-msgid "Searching for available updates. Please wait..."
-msgstr "Zoekt beschikbare updates; even wachten..."
-
-msgid "Searching for new installed or removed packages. Please wait..."
-msgstr "Zoekt naar nieuw geïnstalleerde of verwijderde pakketten. Even wachten....."
 
 msgid "Select"
 msgstr "Selecteer"
@@ -856,9 +664,6 @@ msgstr "Selecteer de Swap File grootte:"
 
 msgid "Select:"
 msgstr "Selecteer:"
-
-msgid "Sep"
-msgstr "sep"
 
 msgid "Set the delay time to wait before asking again."
 msgstr "Stel de tijd tijd in waarna het weer gevraagd wordt."
@@ -896,9 +701,6 @@ msgstr "Afskuiten."
 msgid "Size: "
 msgstr "Afmetingen: "
 
-msgid "Skins"
-msgstr "Skins"
-
 msgid "Softcam Manager"
 msgstr "Softcammanager"
 
@@ -917,15 +719,6 @@ msgstr "Softcam bezig te starten..."
 msgid "SoftcamCheck"
 msgstr "Softcam controle"
 
-msgid "Software"
-msgstr "Software"
-
-msgid "Software Manager"
-msgstr "Softwaremanager"
-
-msgid "Software Update"
-msgstr "Software update"
-
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
 
@@ -937,9 +730,6 @@ msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
 
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "Sorry, uw STB_BOX is nog niet geschikt."
-
-msgid "Sorry, no Details available!"
-msgstr "Sorry, geen details beschikbaar!"
 
 msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
 msgstr "Sorry, geen opslagmedia gevonden die een Swapfile ondersteunen. Kan geen Swapfile op een netwerk of een fat32 filesysteem maken."
@@ -983,8 +773,8 @@ msgstr "Swap locatie:"
 msgid "Swap Size:"
 msgstr "Swap grootte:"
 
-msgid "System"
-msgstr "Systeem"
+msgid "TB"
+msgstr "TB"
 
 msgid "The backup location does not have enough freespace."
 msgstr "De backup locatie heeft niet voldoende vrije ruimte."
@@ -992,41 +782,14 @@ msgstr "De backup locatie heeft niet voldoende vrije ruimte."
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "De gekozen locatie bestaat niet, gebruik nu /media/hdd"
 
-msgid "The current update maybe unstable"
-msgstr "De huidige update kan onstabiel zijn"
-
 msgid "The wizard is finished now, and will reboot"
 msgstr "De wizard is gereed; uw systeem wordt opnieuw gestart."
 
 msgid "The wizard is finished now."
 msgstr "De wizard is nu gereed."
 
-msgid "There are at least "
-msgstr "Er zijn minstens"
-
-msgid "There are currently no outstanding actions."
-msgstr "Er staan momenteel geen acties uit."
-
-msgid "There are no updates available."
-msgstr "Er zijn geen updates beschikbaar"
-
-msgid "There was an error downloading the packetlist. Please try again."
-msgstr "Er was een fout tijdens het downloaden van de pakketlijst. Probeer het opnieuw."
-
 msgid "This Device is already mounted as HDD."
 msgstr "Dit medium is al gemount als HDD."
-
-msgid "This plugin is installed."
-msgstr "Deze plugin is geïnstalleerd"
-
-msgid "This plugin is not installed."
-msgstr "Deze plugin is niet geïnstalleerd"
-
-msgid "This plugin will be installed."
-msgstr "Deze plugin zal worden geïnstalleerd"
-
-msgid "This plugin will be removed."
-msgstr "Deze plugin zal worden verwijderd"
 
 msgid "Thursday"
 msgstr "donderdag"
@@ -1037,41 +800,14 @@ msgstr "Tijd waarop de Backup wordt uitgevoerd"
 msgid "Time to execute command or script"
 msgstr "Tijd om het script uit te voeren"
 
-msgid "Trying to download a new packetlist. Please wait..."
-msgstr "Probeert een nieuwe pakketlijst te downloaden. Even wachten...."
-
 msgid "Tuesday"
 msgstr "dinsdag"
 
 msgid "Type: "
 msgstr "Type: "
 
-msgid "Unattended upgrade without GUI and reboot system"
-msgstr "Onbewaakte upgrade met automatische reboot zonder GUI"
-
-msgid "Undo install"
-msgstr "Installatie ongedaan maken"
-
-msgid "Undo uninstall"
-msgstr "De-installatie ongedaan makenUndo uninstall"
-
-msgid "Uninstall"
-msgstr "De-installeer"
-
-msgid "Update"
-msgstr "Update"
-
-msgid "Update feed not available."
-msgstr "Update feeds niet beschikbaar."
-
-msgid "Updating software catalog"
-msgstr "Software catalogus wordt geupdate"
-
-msgid "Upgrade finished."
-msgstr "Upgrade voltooid."
-
-msgid "Upgrading"
-msgstr "Bezig met upgraden"
+msgid "Updating mount locations."
+msgstr "Mounts worden geupdate."
 
 msgid "Use as HDD"
 msgstr "Gebruik als HDD"
@@ -1079,62 +815,8 @@ msgstr "Gebruik als HDD"
 msgid "ViX"
 msgstr "ViX"
 
-msgid "View Changes"
-msgstr "Bekijk veranderingen"
-
 msgid "View Progress"
 msgstr "Bekijk voortgang"
-
-msgid "View details"
-msgstr "Bekijk details"
-
-msgid "View list of available "
-msgstr "Toon lijst van beschikbare"
-
-msgid "View list of available CommonInterface extensions"
-msgstr "Toon lijst met beschikbare commoninterface extensies"
-
-msgid "View list of available Display and Userinterface extensions."
-msgstr "Toon lijst met beschikbare scherm en Userinterface extensies."
-
-msgid "View list of available EPG extensions."
-msgstr "Toon lijst met beschikbare EPG extensies."
-
-msgid "View list of available Satellite equipment extensions."
-msgstr "Toon lijst met beschikbare satellietapparatuur extensies"
-
-msgid "View list of available communication extensions."
-msgstr "Toon lijst met beschikbare communicatie extensies"
-
-msgid "View list of available default settings"
-msgstr "Toon lijst met beschikbare standaard settings"
-
-msgid "View list of available multimedia extensions."
-msgstr "Toon lijst met beschikbare multimedia extensies."
-
-msgid "View list of available networking extensions"
-msgstr "Toon lijst met beschikbare netwerk extensies"
-
-msgid "View list of available recording extensions"
-msgstr "Toon lijst met beschikbare opname extensies"
-
-msgid "View list of available skins"
-msgstr "Toon lijst met beschikbare skins"
-
-msgid "View list of available software extensions"
-msgstr "Toon lijst met beschikbare software extensies"
-
-msgid "View list of available system extensions"
-msgstr "Toon lijst met beschikbare systeem extensies"
-
-msgid "View the changes"
-msgstr "Bekijk de veranderingen"
-
-msgid "View, install and remove available or installed packages."
-msgstr "Toon, installeer en verwijder beschikbare of geïnstalleerde packages."
-
-msgid "STB_BOX software because updates are available."
-msgstr "STB_BOX software want er zijn updates beschikbaar."
 
 msgid "Wait please while creating swapfile..."
 msgstr "Een ogenblik geduld terwijl de swapfile gemaakt wordt...."
@@ -1183,18 +865,6 @@ msgstr "JA, installeer plugins weer"
 
 msgid "YES, to restore settings"
 msgstr "JA, plaats de instellingen weer terug"
-
-msgid "You can cancel the installation."
-msgstr "U kunt de installatie ongedaan maken"
-
-msgid "You can cancel the removal."
-msgstr "U kunt het verwijderen ongedaan maken"
-
-msgid "You can install this plugin."
-msgstr "U kunt deze plugin installeren."
-
-msgid "You can remove this plugin."
-msgstr "U kunt deze plugin verwijderen."
 
 msgid "You have no backup to delete."
 msgstr "Er is geen backup die verwijderd kan worden."
@@ -1256,8 +926,8 @@ msgstr ""
 "Uw STB_BOX is ingsteld om 's nachts in standby te gaan,\n"
 "wilt u dat toestaan?"
 
-msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
-msgstr "Uw STB_BOX is niet goed met het Internet verbonden. Na controle kunt u het opnieuw proberen."
+msgid "Your STB_BOX is not connected to the internet, Please try using Backup Manager to restore plugins later."
+msgstr "Uw STB_BOX heeft geen internetverbinding; probeer later nog eens de plugins te installeren."
 
 msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
 msgstr "Uw STB_BOX is niet met het internet verbonden. Controleer uw netwerk instellingen en probeer het opnieuw."
@@ -1268,12 +938,6 @@ msgstr "echo 'Download image.'"
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Expanding image.'"
 
-msgid "extensions."
-msgstr "extensies."
-
-msgid "packages selected."
-msgstr "paketten geselecteerd."
-
 msgid "please wait..."
 msgstr "even wachten..."
 
@@ -1282,100 +946,3 @@ msgstr "er was een probleem met dit apparaat; formatteer opnieuw en probeer het 
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
-
-msgid "unknown"
-msgstr "onbekend"
-
-msgid "updates available."
-msgstr "updates beschikbaar.."
-
-msgid "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
-msgstr "Uw STB_BOX kan nu onbruikbaar zijn. Raadpleeg de handleiding voor assistentie alvorens uw STB_BOX opnieuw te starten."
-
-#~ msgid "April"
-#~ msgstr "april"
-
-#~ msgid "August"
-#~ msgstr "augustus"
-
-#~ msgid "Check every (mins)"
-#~ msgstr "Controleer elke (minuten)"
-
-#~ msgid "December"
-#~ msgstr "december"
-
-#~ msgid "Enable Auto Timer Check ?"
-#~ msgstr "Auto Timer Check inschakelen?"
-
-#~ msgid "Experimental"
-#~ msgstr "Experimenteel"
-
-#~ msgid "February"
-#~ msgstr "februari"
-
-#~ msgid "Fri"
-#~ msgstr "vr"
-
-#~ msgid "January"
-#~ msgstr "januari"
-
-#~ msgid "July"
-#~ msgstr "juli"
-
-#~ msgid "June"
-#~ msgstr "juni"
-
-#~ msgid "March"
-#~ msgstr "maart"
-
-#~ msgid "Mon"
-#~ msgstr "ma"
-
-#~ msgid "Normal"
-#~ msgstr "Normaal"
-
-#~ msgid "November"
-#~ msgstr "november"
-
-#~ msgid "Now installing service"
-#~ msgstr "Bezig met het installeren van de service."
-
-#~ msgid "Now removing service"
-#~ msgstr "Service wordt verwijderd"
-
-#~ msgid "October"
-#~ msgstr "oktober"
-
-#~ msgid "Please wait while restore completes..."
-#~ msgstr "Wacht tot de herstelactie gereed is...."
-
-#~ msgid "Sat"
-#~ msgstr "za"
-
-#~ msgid "September"
-#~ msgstr "september"
-
-#~ msgid "Service is not currently in use do you want to remove the service ?"
-#~ msgstr ""
-#~ "Service is momenteel niet in gebruik. Wilt u de service verwijderen?"
-
-#~ msgid "Sun"
-#~ msgstr "zo"
-
-#~ msgid "Thu"
-#~ msgstr "do"
-
-#~ msgid "Tue"
-#~ msgstr "di"
-
-#~ msgid "Unattended"
-#~ msgstr "Onbewaakt"
-
-#~ msgid "Upgrade and ask to reboot"
-#~ msgstr "Voer upgrade uit en vraag toestemming voor reboot"
-
-#~ msgid "Wed"
-#~ msgstr "wo"
-
-#~ msgid "detected"
-#~ msgstr "gedetecteerd"

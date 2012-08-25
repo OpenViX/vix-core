@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-14 08:39+0100\n"
-"PO-Revision-Date: 2012-08-16 17:15+0200\n"
-"Last-Translator: WadimArt <WadimArt@mail.ru>\n"
+"POT-Creation-Date: 2012-08-25 13:41+0100\n"
+"PO-Revision-Date: 2012-08-25 16:44+0200\n"
+"Last-Translator: WadimArt <WadimArt@GiClub.tv>\n"
 "Language-Team: none\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,16 @@ msgstr "8 МБайт"
 msgid "96 Mb"
 msgstr "96 МБайт"
 
+msgid ""
+"A background update check is is progress, Please try using Backup Manager to "
+"restore plugins later."
+msgstr ""
+"Выполняется фоновая проверка обновлений, пожалуйста, попробуйте использовать "
+"функции резервного копирования для восстановления плагинов позже."
+
+msgid "A background update check is is progress, please wait for retry."
+msgstr "Выполняется фоновая проверка обновлений, пожалуйста, ждите"
+
 msgid "Activate"
 msgstr "Активировать"
 
@@ -46,6 +56,46 @@ msgstr "Активный:"
 
 msgid "Add"
 msgstr "Добавить"
+
+msgid ""
+"Allows the softcam to be checked if it stopped working, and restarted "
+"automatically if needed."
+msgstr ""
+"Позволяет проверять работу эмулятора и автоматически перезапускать его при "
+"необходимости."
+
+msgid "Allows you schedule your boackups."
+msgstr "Позволяет планировать создание резервных копий."
+
+msgid "Allows you schedule your image backups."
+msgstr "Позволяет планировать создание резервных копий прошивки."
+
+msgid "Allows you to control the power state of your STB_BOX."
+msgstr "Позволяет контролировать питание ресивера"
+
+msgid "Allows you to put your STB_BOX in standby at a set time."
+msgstr ""
+"Позволяет перевести ресивер в полный режим ожидания установленное время."
+
+msgid "Allows you to put your STB_BOX into deepstandby at a set time."
+msgstr ""
+"Позволяет перевести ресивер в полный режим ожидания установленное время."
+
+msgid "Allows you to reboot your STB_BOX at a set time."
+msgstr "Позволяет перезагрузить ресивер в установленное время."
+
+msgid "Allows you to restart your STB_BOX interface at a set time."
+msgstr "Позволяет перезапустить интерфейс в установленное время."
+
+msgid "Allows you to tag your backups to a box. (default is box name/type)"
+msgstr ""
+"Указывает принадлежность резервной копии ресиверу (по умолчанию имя/тип)"
+
+msgid ""
+"Allows you to tag your image backup to a box. (default is box name/type)"
+msgstr ""
+"Указывает принадлежность резервной копии прошивки ресиверу (по умолчанию имя/"
+"тип)"
 
 msgid "Are you ready to create a backup ?"
 msgstr "Вы готовы к созданию резервной копии?"
@@ -129,6 +179,9 @@ msgstr ""
 "Копия создаётся...\n"
 "Дождитесь окончания перед следующим действием"
 
+msgid "Backup prefix"
+msgstr "Добавить к имени резервной копии"
+
 msgid "BackupManager"
 msgstr "Резервное копирование"
 
@@ -147,10 +200,13 @@ msgstr "Отмена"
 
 msgid ""
 "Changes need a system restart to take effect.\n"
-"Restart your Vu+ Uno now?"
+"Restart your STB_BOX now?"
 msgstr ""
 "Изменения настроек требуют перезагруки!\n"
 "Сделать это сейчас?"
+
+msgid "Checking Feeds"
+msgstr "Проверка данных на сервере"
 
 msgid "Checking Free RAM.."
 msgstr "Проверка свободной памяти.."
@@ -215,6 +271,9 @@ msgstr "Деактивировать"
 msgid "Deep Standby Time"
 msgstr "Время перехода в полный режим ожидания:"
 
+msgid "DeepStandby Time"
+msgstr "Время перехода в полный режим ожидания:"
+
 msgid "Delete"
 msgstr "Удалить"
 
@@ -254,7 +313,13 @@ msgstr "Скачать"
 msgid "Enable Deep Standby"
 msgstr "Включить полный режим ожидания"
 
+msgid "Enable DeepStandby"
+msgstr "Включить полный режим ожидания"
+
 msgid "Enable GUI Restart"
+msgstr "Включить перезагрузку GUI"
+
+msgid "Enable GUI restart"
 msgstr "Включить перезагрузку GUI"
 
 msgid "Enable Power Manager"
@@ -272,8 +337,11 @@ msgstr "Включить автостарт"
 msgid "Enable Swap at startup"
 msgstr "Включить автостарт файла подкачки"
 
+msgid "Enable frozen check ?"
+msgstr "Включить проверку работы эмулятора?"
+
 msgid "Enough Retries, delaying till next schedule."
-msgstr "Enough Retries, delaying till next schedule."
+msgstr "Достаточно повторов, задержка до следующего пункта планировщика."
 
 msgid "Exit the restore wizard"
 msgstr "Выход из Мастера восстановления"
@@ -289,6 +357,9 @@ msgstr "Найден нестандартный эмулятор, возможн
 
 msgid "Friday"
 msgstr "Пятница"
+
+msgid "Frozen check interval"
+msgstr "Интервал проверки "
 
 msgid "GB"
 msgstr "ГБайт"
@@ -335,8 +406,17 @@ msgstr "Установка IPK пакетов из папки /tmp"
 msgid "Install local extension"
 msgstr "Установка дополнений"
 
+msgid "Installing Service"
+msgstr "Установка службы"
+
 msgid "Installing..."
 msgstr "Устанавливается..."
+
+msgid "Location of where backup should be saved."
+msgstr "Место расположения резервных копий"
+
+msgid "Location of where image backup should lbe saved."
+msgstr "Место расположения резервных копий прошивок"
 
 msgid "MB"
 msgstr "МБайт"
@@ -459,6 +539,12 @@ msgstr "Ожидайте запуска\n"
 msgid "Please wait while stopping\n"
 msgstr "Ожидайте остановки\n"
 
+msgid "Please wait whilst feeds state is checked."
+msgstr "Пожалуйста, ждите, идёт проверка данных на сервере"
+
+msgid "Please wait."
+msgstr "Пожалуйста, ждите..."
+
 msgid ""
 "Plugin Listing failed - e. g. wrong backup destination or no space left on "
 "backup device"
@@ -469,12 +555,17 @@ msgstr ""
 msgid "Power Manager"
 msgstr "Управление питанием"
 
+msgid "Power Manager Setup"
+msgstr "Настройка управления питанием"
+
 msgid "Predefined"
 msgstr "Существующий"
 
+#, python-format
 msgid "Ready to install \"%s\" ?"
 msgstr "Вы готовы установить \"%s\" ?"
 
+#, python-format
 msgid "Ready to remove \"%s\" ?"
 msgstr "Вы готовы удалить \"%s\" ?"
 
@@ -496,8 +587,8 @@ msgstr "Обновить список"
 msgid "Remove Confirmation"
 msgstr "Подтверждение удаления"
 
-msgid "Renaming old backup..."
-msgstr "Переименование старой резервной копии..."
+msgid "Removing Service"
+msgstr "Удаление службы"
 
 msgid "Repeat how often"
 msgstr "Как часто повторять"
@@ -508,7 +599,7 @@ msgstr "Перезапуск"
 msgid "Restart Enigma2."
 msgstr "Перезагрузка Энигмы"
 
-msgid "Restart Vu+ Uno."
+msgid "Restart STB_BOX."
 msgstr "Перезагрузка ресивера"
 
 msgid "Restore"
@@ -528,6 +619,9 @@ msgstr "Мастер восстановления"
 
 msgid "Restoring backup..."
 msgstr "Восстановление резервных копий..."
+
+msgid "Restoring plugins, this can take a long time..."
+msgstr "Восстановление плагинов, это может занять много времени..."
 
 msgid "Restoring plugins..."
 msgstr "Восстановление плагинов..."
@@ -589,6 +683,31 @@ msgstr "Задайте размер файла подкачки:"
 msgid "Select:"
 msgstr "Выбор:"
 
+msgid "Set the delay time to wait before asking again."
+msgstr "Установите задержку перед повторным запросом."
+
+msgid "Set the invterval to be checked in mins."
+msgstr "Установите интервал проверки в минутах"
+
+msgid "Set the repeat interval of backup schedule."
+msgstr ""
+"Установите интервал повторения автоматического создания резервных копий"
+
+msgid "Set the time of backup to start."
+msgstr "Установите время старта создания резервной копии."
+
+msgid "Set the time to enter deepstandby mode."
+msgstr "Установите время перехода в полный режим ожидания."
+
+msgid "Set the time to enter standby mode."
+msgstr "Установите время перехода в режим ожидания."
+
+msgid "Set the time to reboot."
+msgstr "Установите время перезагрузки."
+
+msgid "Set the time to restart the interface."
+msgstr "Установите время перезапуска интерфейса."
+
 msgid "Setting Up..."
 msgstr "Настройка..."
 
@@ -636,7 +755,7 @@ msgstr ""
 "Извините, ресурс закрыт на техническое обслуживание, пожалуйста, повторите "
 "попытку позже!"
 
-msgid "Sorry you Vu+ Uno is not yet compatible."
+msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "Несовместимо с данным ресивером!"
 
 msgid ""
@@ -692,6 +811,9 @@ msgstr "Расположение:"
 msgid "Swap Size:"
 msgstr "Размер:"
 
+msgid "TB"
+msgstr "ТВ"
+
 msgid "The backup location does not have enough freespace."
 msgstr "Выбранный путь не имеет достаточно свободного места"
 
@@ -722,6 +844,9 @@ msgstr "Вторник"
 msgid "Type: "
 msgstr "Тип: "
 
+msgid "Updating mount locations."
+msgstr "Обновление точек монтирования"
+
 msgid "Use as HDD"
 msgstr "Использовать как HDD"
 
@@ -744,7 +869,7 @@ msgstr ""
 msgid "Wait please while scanning for devices..."
 msgstr "Подождите, сканируются накопители..."
 
-msgid "Wait please while scanning your Vu+ Uno devices..."
+msgid "Wait please while scanning your STB_BOX devices..."
 msgstr "Подождите, сканируются подключённые накопители..."
 
 msgid "Wait please while scanning..."
@@ -800,7 +925,7 @@ msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Вы должны создать файл подкачки прежде, чем активировать автозапуск."
 
 msgid ""
-"Your Vu+ Uno is about to run a backup of your settings and detect your "
+"Your STB_BOX is about to run a backup of your settings and detect your "
 "plugins,\n"
 "Do you want to allow this?"
 msgstr ""
@@ -808,7 +933,7 @@ msgstr ""
 "Вы желаете продолжить?"
 
 msgid ""
-"Your Vu+ Uno is about to run a full image backup, this can take about 6 "
+"Your STB_BOX is about to run a full image backup, this can take about 6 "
 "minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
@@ -816,35 +941,42 @@ msgstr ""
 "Вы желаете продолжить?"
 
 msgid ""
-"Your Vu+ Uno is going for a nightly Reboot,\n"
+"Your STB_BOX is going for a nightly Reboot,\n"
 "do you want to allow this?"
 msgstr ""
 "Ресивер уходит в полную перезагрузку\n"
 "Вы желаете продолжить?"
 
 msgid ""
-"Your Vu+ Uno is going for nightly GUI Restart,\n"
+"Your STB_BOX is going for nightly GUI Restart,\n"
 "do you want to allow this?"
 msgstr ""
 "Ресивер уходит в перезагрузку GUI\n"
 "Вы желаете продолжить?"
 
 msgid ""
-"Your Vu+ Uno is going for nightly shut-down,\n"
+"Your STB_BOX is going for nightly shut-down,\n"
 "do you want to allow this?"
 msgstr ""
 "Ресивер уходит в полный режим ожидания\n"
 "Вы желаете продолжить?"
 
 msgid ""
-"Your Vu+ Uno is going for nightly standby,\n"
+"Your STB_BOX is going for nightly standby,\n"
 "do you want to allow this?"
 msgstr ""
 "Ресивер уходит в режим ожидания,\n"
 "Вы желаете продолжить?"
 
 msgid ""
-"Your Vu+ Uno is not connected to the internet, please check your network "
+"Your STB_BOX is not connected to the internet, Please try using Backup "
+"Manager to restore plugins later."
+msgstr ""
+"Ресивер не подключен к Интернету, попробуйте использовать функции резервного "
+"копирования для восстановления плагинов позже."
+
+msgid ""
+"Your STB_BOX is not connected to the internet, please check your network "
 "settings and try again."
 msgstr ""
 "Ресивер не подключен к Интернету, проверьте настройки сети и повторите "
@@ -866,3 +998,6 @@ msgstr ""
 
 msgid "unavailable"
 msgstr "недоступно"
+
+#~ msgid "Renaming old backup..."
+#~ msgstr "Переименование старой резервной копии..."

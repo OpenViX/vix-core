@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-14 08:39+0100\n"
+"POT-Creation-Date: 2012-09-08 18:12+0100\n"
 "PO-Revision-Date: 2012-08-17 13:33+0300\n"
 "Last-Translator: rimas\n"
 "Language-Team: rimas\n"
@@ -23,6 +23,9 @@ msgstr ""
 msgid "16 Mb"
 msgstr "16MB"
 
+msgid "30 Days"
+msgstr ""
+
 msgid "32 Mb"
 msgstr "32MB"
 
@@ -34,9 +37,6 @@ msgstr "8MB"
 
 msgid "96 Mb"
 msgstr "96MB"
-
-msgid "A background update check is is progress, Please try using Backup Manager to restore plugins later."
-msgstr "Uuenduste kontroll toimub taustal. Proovi laiendusi taastada hiljem uuesti."
 
 msgid "A background update check is is progress, please wait for retry."
 msgstr "Uuenduste kontroll toimub taustal. Oota ja proovi uuesti"
@@ -53,8 +53,12 @@ msgstr "Aktiivne:"
 msgid "Add"
 msgstr "Lisa"
 
-msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
-msgstr "Võimaldab kontrollida, kas EMU ei ole ȟangunud ja vajadusel selle automaatselt taaskäivitada."
+msgid ""
+"Allows the softcam to be checked if it stopped working, and restarted "
+"automatically if needed."
+msgstr ""
+"Võimaldab kontrollida, kas EMU ei ole ȟangunud ja vajadusel selle "
+"automaatselt taaskäivitada."
 
 msgid "Allows you schedule your boackups."
 msgstr "Võimaldab planeerida varukoopiate loomist."
@@ -78,10 +82,13 @@ msgid "Allows you to restart your STB_BOX interface at a set time."
 msgstr "Võimaldab määratud ajal taaskäivitada STB_BOX kasutajaliidese."
 
 msgid "Allows you to tag your backups to a box. (default is box name/type)"
-msgstr "Võimaldab siduda varukoopia nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
+msgstr ""
+"Võimaldab siduda varukoopia nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
 
-msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr "Võimaldab siduda tarkvarakoopia nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
+msgid ""
+"Allows you to tag your image backup to a box. (default is box name/type)"
+msgstr ""
+"Võimaldab siduda tarkvarakoopia nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
 
 msgid "Are you ready to create a backup ?"
 msgstr "Kas lood varukoopia?"
@@ -153,8 +160,11 @@ msgstr "Varundamise logi"
 msgid "Backup Manager Setup"
 msgstr "Varundamise seadistamine"
 
-msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Varundamine nurjus - n.t.  vale asukoht või ruumi puudus varundamise asukohas"
+msgid ""
+"Backup failed - e. g. wrong backup destination or no space left on backup "
+"device"
+msgstr ""
+"Varundamine nurjus - n.t.  vale asukoht või ruumi puudus varundamise asukohas"
 
 msgid ""
 "Backup in progress,\n"
@@ -172,8 +182,12 @@ msgstr "Varukoopia haldur"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "MGcamd töötamisel ei saa CCcam käivituda"
 
-msgid "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Partitsiooni lahti haakimine nurjus. Veendu, et seda ei kasutata saale või salvestamise/ajanihke jaoks"
+msgid ""
+"Can't unmount partiton, make sure it is not being used for swap or record/"
+"timeshift paths"
+msgstr ""
+"Partitsiooni lahti haakimine nurjus. Veendu, et seda ei kasutata saale või "
+"salvestamise/ajanihke jaoks"
 
 msgid "Cancel"
 msgstr "Tühista"
@@ -222,7 +236,9 @@ msgid "Create and Restore complete images of the system."
 msgstr "Loo ja taasta täielikke süsteemi varukoopiaid."
 
 msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-msgstr "Loo ajakavad ooterežiimi, kasutajaliidese ja vastuvõtja taaskäivitamise jaoks."
+msgstr ""
+"Loo ajakavad ooterežiimi, kasutajaliidese ja vastuvõtja taaskäivitamise "
+"jaoks."
 
 msgid "Creating Backup Files..."
 msgstr "Varukoopia loomine..."
@@ -498,6 +514,9 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "Jah, taasta"
 
+msgid "Please choose a folder that contains some packages."
+msgstr ""
+
 msgid "Please select device to use as swapfile location"
 msgstr "Vali andmekandja saalefaili asukohaks"
 
@@ -525,8 +544,12 @@ msgstr "Oota uuenduste serveri kontrolli."
 msgid "Please wait."
 msgstr "Oota."
 
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Laienduste laadimine nurjus - n.t.  vale asukoht või ruumipuudus varundamise asukohas"
+msgid ""
+"Plugin Listing failed - e. g. wrong backup destination or no space left on "
+"backup device"
+msgstr ""
+"Laienduste laadimine nurjus - n.t.  vale asukoht või ruumipuudus varundamise "
+"asukohas"
 
 msgid "Power Manager"
 msgstr "Toite haldur"
@@ -536,6 +559,9 @@ msgstr "Toite haldur"
 
 msgid "Predefined"
 msgstr "Eelmääratud"
+
+msgid "Preparing extra plugins..."
+msgstr ""
 
 #, python-format
 msgid "Ready to install \"%s\" ?"
@@ -565,9 +591,6 @@ msgstr "Eemaldamise kinnitamine"
 
 msgid "Removing Service"
 msgstr "Teenuse eemaldamine"
-
-msgid "Renaming old backup..."
-msgstr "Vana varukoopia ümber nimetamine..."
 
 msgid "Repeat how often"
 msgstr "Kordamise sagedus"
@@ -656,6 +679,9 @@ msgstr "Taasta või kustuta tarkvaratõmmis:"
 msgid "Select files/folders to backup"
 msgstr "Vali varundamiseks failid/kataloogid"
 
+msgid "Select folder that contains plugins"
+msgstr ""
+
 msgid "Select the Swap File Size:"
 msgstr "Vali saalefaili suurus:"
 
@@ -719,7 +745,9 @@ msgstr "EMU kontroll"
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti."
 
-msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgid ""
+"Sorry feeds are down for maintenance, Please try using Backup Manager to "
+"restore plugins later."
 msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti"
 
 msgid "Sorry feeds are down for maintenance, please try again later."
@@ -728,11 +756,20 @@ msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti."
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "STB_BOX ei ole veel ühilduv."
 
-msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
-msgstr "Andmekandjat, mis toetaks saalet, ei ole ühendatud. Saalefaili loomine võrgus või fat32 süsteemis ei ole võimalik"
+msgid ""
+"Sorry, no physical devices that supports SWAP attached. Can't create "
+"Swapfile on network or fat32 filesystems"
+msgstr ""
+"Andmekandjat, mis toetaks saalet, ei ole ühendatud. Saalefaili loomine "
+"võrgus või fat32 süsteemis ei ole võimalik"
 
-msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
-msgstr "Ei ole piisavalt vaba mälu ega andmekandjat, mis toetaks saalet. Saalefaili loomine võrgus või fat32 süsteemis ei ole võimalik. Varukoopiat ei saa luua"
+msgid ""
+"Sorry, not enough free ram found, and no physical devices that supports SWAP "
+"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
+"make backup"
+msgstr ""
+"Ei ole piisavalt vaba mälu ega andmekandjat, mis toetaks saalet. Saalefaili "
+"loomine võrgus või fat32 süsteemis ei ole võimalik. Varukoopiat ei saa luua"
 
 msgid "Standby"
 msgstr "Ooterežiim"
@@ -844,12 +881,14 @@ msgid ""
 "Welcome to the restore wizard.\n"
 "\n"
 "A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+"You can use this wizard to restore your setting and any extra plugins that "
+"where installed when the backup was created.\n"
 msgstr ""
 "Tere tulemast taastamisabilisse.\n"
 "\n"
 "Leiti varukoopia.\n"
-"Saad kasutada seda abilist, et taastada oma seadistused ja laiendused, mis olid paigaldatud ajal, kui varukoopia loodi.\n"
+"Saad kasutada seda abilist, et taastada oma seadistused ja laiendused, mis "
+"olid paigaldatud ajal, kui varukoopia loodi.\n"
 
 msgid "What Day of month ?"
 msgstr "Kuupäev?"
@@ -882,17 +921,20 @@ msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Enne autostardi lubamist tuleb luua saalefail. "
 
 msgid ""
-"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
+"Your STB_BOX is about to run a backup of your settings and detect your "
+"plugins,\n"
 "Do you want to allow this?"
 msgstr ""
 "STB_BOX varundab seadistused ja tuvastab laiendused.\n"
 "Kas lubad seda?"
 
 msgid ""
-"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
+"Your STB_BOX is about to run a full image backup, this can take about 6 "
+"minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"STB_BOX alustab tarkvarast 1:1 tarkvarakoopia loomist. See võib kesta umbes 6 minutit.\n"
+"STB_BOX alustab tarkvarast 1:1 tarkvarakoopia loomist. See võib kesta umbes "
+"6 minutit.\n"
 "Kas lubad seda?"
 
 msgid ""
@@ -923,11 +965,18 @@ msgstr ""
 "Vastuvõtja läheb igaöisesse ooterežiimi.\n"
 "Kas lubad seda?"
 
-msgid "Your STB_BOX is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr "STB_BOX ei ole interńetiga ühendatud. Proovi laiendusi taastada hiljem."
+msgid ""
+"Your STB_BOX is not connected to the internet, Please try using Backup "
+"Manager to restore plugins later."
+msgstr ""
+"STB_BOX ei ole interńetiga ühendatud. Proovi laiendusi taastada hiljem."
 
-msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
-msgstr "STB_BOX ei ole ühendastud internetti. Kontrolli võrguseadistust ja proovi uuesti."
+msgid ""
+"Your STB_BOX is not connected to the internet, please check your network "
+"settings and try again."
+msgstr ""
+"STB_BOX ei ole ühendastud internetti. Kontrolli võrguseadistust ja proovi "
+"uuesti."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Image allalaadimine.'"
@@ -944,237 +993,25 @@ msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."
 msgid "unavailable"
 msgstr "pole saadaval"
 
-msgid ""
-"A configuration file (%s) was modified since Installation.\n"
-"Do you want to keep your version?"
-msgstr ""
-"Seadistusfaili (%s) on muudetud.\n"
-"Kas säilitad oma versiooni?"
-
-msgid "A small overview of the available icon states and actions."
-msgstr "Kasutatavate ikoonide seisundite ja tegevuste lühiülevaade."
-
-msgid "After pressing OK, please wait!"
-msgstr "Vajuta OK ja oota!"
-
-msgid "Author: "
-msgstr "Autor: "
-
-msgid "Back"
-msgstr "Tagasi"
-
-msgid "CommonInterface"
-msgstr "CommonInterface"
-
-msgid "Configuring"
-msgstr "Seadistamine"
-
-msgid "Continue"
-msgstr "Jätka"
-
-msgid "Details for plugin: "
-msgstr "Laienduse üksikasjad: "
-
-msgid "Display and Userinterface"
-msgstr "Esipaneel ja kasutajaliides"
-
-msgid "Done - Installed or upgraded %d packages"
-msgstr "Tehtud! - %d paketti paigaldatud või uuendatud"
-
-msgid "Electronic Program Guide"
-msgstr "Saatekava (EPG)"
-
-msgid "Error"
-msgstr "Viga"
-
-msgid "Extensions management"
-msgstr "Laienduste haldamine"
-
-msgid "Following tasks will be done after you press OK!"
-msgstr "Vajutades OK, täidetakse järgmised ülesanded!"
-
-msgid "Install or remove finished."
-msgstr "Paigaldamine või eemaldamine tehtud."
-
-msgid "Manage Extensions"
-msgstr "Laienduste haldamine"
-
-msgid "Manage extensions or plugins for your STB_BOX"
-msgstr "Halda STB_BOX laiendusi"
-
-msgid "Multimedia"
-msgstr "Multimeedia"
-
-msgid "Network"
-msgstr "Võrk"
-
-msgid "No description available."
-msgstr "Kirjeldus puudub."
-
-msgid "No network connection available."
-msgstr "Võrguühendus puudub."
-
-msgid "No packages were upgraded yet. So you can check your network and try again."
-msgstr "Uuendamist ei toimunud. Kontrolli oma võrguühendus ja proovi uuesti. "
-
-msgid "Nothing to upgrade"
-msgstr "Uuendusi ei ole"
-
-msgid "Online update of your STB_BOX software."
-msgstr " STB_BOXuuendamine üle võrgu."
-
-msgid "Package list update"
-msgstr "Paketinimekirja uuendamime"
-
-msgid "Packages"
-msgstr "Paketid"
-
-msgid "Plugin Details"
-msgstr "Laienduse üksikasjad"
-
-msgid "Plugin manager activity information"
-msgstr "Laienduste halduri tegevuse info"
-
-msgid "Plugin manager help"
-msgstr "Laienduste halduri abi"
-
-msgid "Press OK on your remote control to continue."
-msgstr "Jätkamiseks vajuta OK."
-
-msgid "Process"
-msgstr "Protsess"
-
-msgid "Reload"
-msgstr "Väskenda"
-
-msgid "Remove"
-msgstr "Eemalda"
-
-msgid "Remove finished."
-msgstr "Eemaldatud."
-
-msgid "Satellite equipment"
-msgstr "Satelliidiseadmed"
-
-msgid "Searching for available updates. Please wait..."
-msgstr "Uuenduste otsimine. Oota..."
-
-msgid "Searching for new installed or removed packages. Please wait..."
-msgstr "Paigaldatud või eemaldatud pakettide otsimine. Oota..."
-
-msgid "Skins"
-msgstr "Teema valik"
-
-msgid "Software Update"
-msgstr "Tarkvara uuendamine"
-
-msgid "Sorry, no Details available!"
-msgstr "Üksikasjad puuduvad!"
-
-msgid "System"
-msgstr "Süsteem"
-
-msgid "There are at least "
-msgstr "Leiti vähemalt "
-
-msgid "There are currently no outstanding actions."
-msgstr "Lõpetamata tegevusi ei ole."
-
-msgid "There are no updates available."
-msgstr "Uuendusi ei leitud."
-
-msgid "This plugin is installed."
-msgstr "See laiendus on paigaldatud."
-
-msgid "This plugin will be removed."
-msgstr "See laiendus eemaldatakse."
-
-msgid "Trying to download a new packetlist. Please wait..."
-msgstr "Üritame laadida uut paketinimekirja. Oota..."
-
-msgid "Unattended upgrade without GUI and reboot system"
-msgstr "Automatiseeritud uuendamine ja taaskäivitus"
-
-msgid "Undo uninstall"
-msgstr "Tühista eemaldamine"
-
-msgid "Update"
-msgstr "Uuenda"
-
-msgid "Updating software catalog"
-msgstr "Tarkvara kataloogi uuendamine"
-
-msgid "Upgrade finished."
-msgstr "Uuendamine tehtud."
-
-msgid "Upgrading"
-msgstr "Uuendamine"
-
-msgid "View details"
-msgstr "Vaata üksikasju"
-
-msgid "View list of available CommonInterface extensions"
-msgstr "Vaata CI laienduste nimekirja"
-
-msgid "View list of available Display and Userinterface extensions."
-msgstr "Vaata esipaaneli ja kasutajaliidese laienduste nimekirja."
-
-msgid "View list of available EPG extensions."
-msgstr "Vaata EPG laienduste nimekirja."
-
-msgid "View list of available Satellite equipment extensions."
-msgstr "Vaata satelliidiseadmete laienduste nimekirja."
-
-msgid "View list of available communication extensions."
-msgstr "Vaata side laienduste nimekirja."
-
-msgid "View list of available default settings"
-msgstr "Vaata vaikeseväärtuste nimekirja."
-
-msgid "View list of available multimedia extensions."
-msgstr "Vaata multimeedia laienduste nimekirja."
-
-msgid "View list of available networking extensions"
-msgstr "Vaata võrgu laienduste nimekirja."
-
-msgid "View list of available recording extensions"
-msgstr "Vaata salvestuse laienduste nimekirja."
-
-msgid "View list of available skins"
-msgstr "Vaata teemade nimekirja."
-
-msgid "View list of available software extensions"
-msgstr "Vaata tarkvara laienduste nimekirja."
-
-msgid "View list of available system extensions"
-msgstr "Vaata süsteemi laienduste nimekirja."
-
-msgid "View the changes"
-msgstr "Vaata muudatusi"
-
-msgid "View, install and remove available or installed packages."
-msgstr "Vaata, paigalda ja eemalda tarkvara."
-
-msgid "STB_BOX software because updates are available."
-msgstr "STB_BOX tarkvara, sest uuendused on saadaval."
-
-msgid "You can cancel the installation."
-msgstr "Katkesta paigaldamine."
-
-msgid "You can cancel the removal."
-msgstr "Katkesta eemaldamine."
-
-msgid "You can install this plugin."
-msgstr "Paigalda laiendus."
-
-msgid "You can remove this plugin."
-msgstr "Eemalda laiendus."
-
-msgid "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
-msgstr "STB_BOX võib nüüd olla kasutuskõlbmatu. Uuri enne taaskäivitamist käsiraamatut lisaabi saamiseks ."
-
-msgid "unknown"
-msgstr "tundmatu"
+#~ msgid ""
+#~ "A background update check is is progress, Please try using Backup Manager "
+#~ "to restore plugins later."
+#~ msgstr ""
+#~ "Uuenduste kontroll toimub taustal. Proovi laiendusi taastada hiljem "
+#~ "uuesti."
+
+#~ msgid ""
+#~ "A configuration file (%s) was modified since Installation.\n"
+#~ "Do you want to keep your version?"
+#~ msgstr ""
+#~ "Seadistusfaili (%s) on muudetud.\n"
+#~ "Kas säilitad oma versiooni?"
+
+#~ msgid "A small overview of the available icon states and actions."
+#~ msgstr "Kasutatavate ikoonide seisundite ja tegevuste lühiülevaade."
+
+#~ msgid "After pressing OK, please wait!"
+#~ msgstr "Vajuta OK ja oota!"
 
 #~ msgid "Apr"
 #~ msgstr "Apr"
@@ -1182,12 +1019,27 @@ msgstr "tundmatu"
 #~ msgid "Aug"
 #~ msgstr "Aug"
 
+#~ msgid "Author: "
+#~ msgstr "Autor: "
+
+#~ msgid "Back"
+#~ msgstr "Tagasi"
+
 #~ msgid "Check every (mins)"
 #~ msgstr "Uuri iga (min)"
+
+#~ msgid "CommonInterface"
+#~ msgstr "CommonInterface"
 
 #, fuzzy
 #~ msgid "Communication"
 #~ msgstr "Käivitamise kinnitamine"
+
+#~ msgid "Configuring"
+#~ msgstr "Seadistamine"
+
+#~ msgid "Continue"
+#~ msgstr "Jätka"
 
 #~ msgid "Dec"
 #~ msgstr "Dets"
@@ -1195,6 +1047,12 @@ msgstr "tundmatu"
 #, fuzzy
 #~ msgid "Default Settings"
 #~ msgstr "Taastamise sätted"
+
+#~ msgid "Details for plugin: "
+#~ msgstr "Laienduse üksikasjad: "
+
+#~ msgid "Display and Userinterface"
+#~ msgstr "Esipaneel ja kasutajaliides"
 
 #, fuzzy
 #~ msgid "Do you want to install the package:\n"
@@ -1222,16 +1080,34 @@ msgstr "tundmatu"
 #~ "Kas kustutad varukoopia:\n"
 #~ " "
 
+#~ msgid "Done - Installed or upgraded %d packages"
+#~ msgstr "Tehtud! - %d paketti paigaldatud või uuendatud"
+
 #, fuzzy
 #~ msgid "Downloading"
 #~ msgstr "Allalaadimine"
+
+#~ msgid "Electronic Program Guide"
+#~ msgstr "Saatekava (EPG)"
 
 #, fuzzy
 #~ msgid "Enable Auto Timer Check ?"
 #~ msgstr "Lubada hangumise kontroll?"
 
+#~ msgid "Error"
+#~ msgstr "Viga"
+
+#~ msgid "Extensions management"
+#~ msgstr "Laienduste haldamine"
+
 #~ msgid "Feb"
 #~ msgstr "Veebr"
+
+#~ msgid "Following tasks will be done after you press OK!"
+#~ msgstr "Vajutades OK, täidetakse järgmised ülesanded!"
+
+#~ msgid "Install or remove finished."
+#~ msgstr "Paigaldamine või eemaldamine tehtud."
 
 #, fuzzy
 #~ msgid "Installation finished."
@@ -1251,6 +1127,12 @@ msgstr "tundmatu"
 #~ msgid "Jun"
 #~ msgstr "Käivita"
 
+#~ msgid "Manage Extensions"
+#~ msgstr "Laienduste haldamine"
+
+#~ msgid "Manage extensions or plugins for your STB_BOX"
+#~ msgstr "Halda STB_BOX laiendusi"
+
 #~ msgid "Mar"
 #~ msgstr "Märts"
 
@@ -1258,15 +1140,45 @@ msgstr "tundmatu"
 #~ msgid "May"
 #~ msgstr "Märts"
 
+#~ msgid "Multimedia"
+#~ msgstr "Multimeedia"
+
+#~ msgid "Network"
+#~ msgstr "Võrk"
+
+#~ msgid "No description available."
+#~ msgstr "Kirjeldus puudub."
+
+#~ msgid "No network connection available."
+#~ msgstr "Võrguühendus puudub."
+
+#~ msgid ""
+#~ "No packages were upgraded yet. So you can check your network and try "
+#~ "again."
+#~ msgstr ""
+#~ "Uuendamist ei toimunud. Kontrolli oma võrguühendus ja proovi uuesti. "
+
+#~ msgid "Nothing to upgrade"
+#~ msgstr "Uuendusi ei ole"
+
 #~ msgid "Nov"
 #~ msgstr "Nov"
 
 #~ msgid "Oct"
 #~ msgstr "Okt"
 
+#~ msgid "Online update of your STB_BOX software."
+#~ msgstr " STB_BOXuuendamine üle võrgu."
+
 #, fuzzy
 #~ msgid "Only extensions."
 #~ msgstr "IPK-paigaldamine"
+
+#~ msgid "Package list update"
+#~ msgstr "Paketinimekirja uuendamime"
+
+#~ msgid "Packages"
+#~ msgstr "Paketid"
 
 #, fuzzy
 #~ msgid "Packet Manager"
@@ -1280,16 +1192,55 @@ msgstr "tundmatu"
 #~ msgid "Please wait..."
 #~ msgstr "oota..."
 
+#~ msgid "Plugin Details"
+#~ msgstr "Laienduse üksikasjad"
+
+#~ msgid "Plugin manager activity information"
+#~ msgstr "Laienduste halduri tegevuse info"
+
+#~ msgid "Plugin manager help"
+#~ msgstr "Laienduste halduri abi"
+
+#~ msgid "Press OK on your remote control to continue."
+#~ msgstr "Jätkamiseks vajuta OK."
+
+#~ msgid "Process"
+#~ msgstr "Protsess"
+
 #, fuzzy
 #~ msgid "Recordings"
 #~ msgstr "Taastamise sätted"
+
+#~ msgid "Reload"
+#~ msgstr "Väskenda"
+
+#~ msgid "Remove"
+#~ msgstr "Eemalda"
+
+#~ msgid "Remove finished."
+#~ msgstr "Eemaldatud."
 
 #, fuzzy
 #~ msgid "Removing"
 #~ msgstr "Teenuse eemaldamine"
 
+#~ msgid "Renaming old backup..."
+#~ msgstr "Vana varukoopia ümber nimetamine..."
+
+#~ msgid "Satellite equipment"
+#~ msgstr "Satelliidiseadmed"
+
+#~ msgid "Searching for available updates. Please wait..."
+#~ msgstr "Uuenduste otsimine. Oota..."
+
+#~ msgid "Searching for new installed or removed packages. Please wait..."
+#~ msgstr "Paigaldatud või eemaldatud pakettide otsimine. Oota..."
+
 #~ msgid "Sep"
 #~ msgstr "Sep"
+
+#~ msgid "Skins"
+#~ msgstr "Teema valik"
 
 #, fuzzy
 #~ msgid "Software"
@@ -1299,9 +1250,30 @@ msgstr "tundmatu"
 #~ msgid "Software Manager"
 #~ msgstr "EMU haldamine"
 
+#~ msgid "Software Update"
+#~ msgstr "Tarkvara uuendamine"
+
+#~ msgid "Sorry, no Details available!"
+#~ msgstr "Üksikasjad puuduvad!"
+
+#~ msgid "System"
+#~ msgstr "Süsteem"
+
+#~ msgid "There are at least "
+#~ msgstr "Leiti vähemalt "
+
+#~ msgid "There are currently no outstanding actions."
+#~ msgstr "Lõpetamata tegevusi ei ole."
+
+#~ msgid "There are no updates available."
+#~ msgstr "Uuendusi ei leitud."
+
 #, fuzzy
 #~ msgid "There was an error downloading the packetlist. Please try again."
 #~ msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti."
+
+#~ msgid "This plugin is installed."
+#~ msgstr "See laiendus on paigaldatud."
 
 #, fuzzy
 #~ msgid "This plugin is not installed."
@@ -1311,21 +1283,105 @@ msgstr "tundmatu"
 #~ msgid "This plugin will be installed."
 #~ msgstr "Laiendusi ei olnud vaja paigaldada"
 
+#~ msgid "This plugin will be removed."
+#~ msgstr "See laiendus eemaldatakse."
+
+#~ msgid "Trying to download a new packetlist. Please wait..."
+#~ msgstr "Üritame laadida uut paketinimekirja. Oota..."
+
+#~ msgid "Unattended upgrade without GUI and reboot system"
+#~ msgstr "Automatiseeritud uuendamine ja taaskäivitus"
+
 #, fuzzy
 #~ msgid "Undo install"
 #~ msgstr "Paigalda"
+
+#~ msgid "Undo uninstall"
+#~ msgstr "Tühista eemaldamine"
 
 #, fuzzy
 #~ msgid "Uninstall"
 #~ msgstr "Paigalda"
 
+#~ msgid "Update"
+#~ msgstr "Uuenda"
+
+#~ msgid "Updating software catalog"
+#~ msgstr "Tarkvara kataloogi uuendamine"
+
+#~ msgid "Upgrade finished."
+#~ msgstr "Uuendamine tehtud."
+
+#~ msgid "Upgrading"
+#~ msgstr "Uuendamine"
+
 #, fuzzy
 #~ msgid "View Changes"
 #~ msgstr "Näita edenemist"
 
+#~ msgid "View details"
+#~ msgstr "Vaata üksikasju"
+
 #, fuzzy
 #~ msgid "View list of available "
 #~ msgstr "Andmekandja ei ole saadaval"
+
+#~ msgid "View list of available CommonInterface extensions"
+#~ msgstr "Vaata CI laienduste nimekirja"
+
+#~ msgid "View list of available Display and Userinterface extensions."
+#~ msgstr "Vaata esipaaneli ja kasutajaliidese laienduste nimekirja."
+
+#~ msgid "View list of available EPG extensions."
+#~ msgstr "Vaata EPG laienduste nimekirja."
+
+#~ msgid "View list of available Satellite equipment extensions."
+#~ msgstr "Vaata satelliidiseadmete laienduste nimekirja."
+
+#~ msgid "View list of available communication extensions."
+#~ msgstr "Vaata side laienduste nimekirja."
+
+#~ msgid "View list of available default settings"
+#~ msgstr "Vaata vaikeseväärtuste nimekirja."
+
+#~ msgid "View list of available multimedia extensions."
+#~ msgstr "Vaata multimeedia laienduste nimekirja."
+
+#~ msgid "View list of available networking extensions"
+#~ msgstr "Vaata võrgu laienduste nimekirja."
+
+#~ msgid "View list of available recording extensions"
+#~ msgstr "Vaata salvestuse laienduste nimekirja."
+
+#~ msgid "View list of available skins"
+#~ msgstr "Vaata teemade nimekirja."
+
+#~ msgid "View list of available software extensions"
+#~ msgstr "Vaata tarkvara laienduste nimekirja."
+
+#~ msgid "View list of available system extensions"
+#~ msgstr "Vaata süsteemi laienduste nimekirja."
+
+#~ msgid "View the changes"
+#~ msgstr "Vaata muudatusi"
+
+#~ msgid "View, install and remove available or installed packages."
+#~ msgstr "Vaata, paigalda ja eemalda tarkvara."
+
+#~ msgid "STB_BOX software because updates are available."
+#~ msgstr "STB_BOX tarkvara, sest uuendused on saadaval."
+
+#~ msgid "You can cancel the installation."
+#~ msgstr "Katkesta paigaldamine."
+
+#~ msgid "You can cancel the removal."
+#~ msgstr "Katkesta eemaldamine."
+
+#~ msgid "You can install this plugin."
+#~ msgstr "Paigalda laiendus."
+
+#~ msgid "You can remove this plugin."
+#~ msgstr "Eemalda laiendus."
 
 #, fuzzy
 #~ msgid ""
@@ -1335,5 +1391,15 @@ msgstr "tundmatu"
 #~ "STB_BOX ei ole ühendastud internetti. Kontrolli võrguseadistust ja proovi "
 #~ "uuesti."
 
+#~ msgid ""
+#~ "Your STB_BOX might be unusable now. Please consult the manual for further "
+#~ "assistance before rebooting your STB_BOX."
+#~ msgstr ""
+#~ "STB_BOX võib nüüd olla kasutuskõlbmatu. Uuri enne taaskäivitamist "
+#~ "käsiraamatut lisaabi saamiseks ."
+
 #~ msgid "detected"
 #~ msgstr "tuvastatud"
+
+#~ msgid "unknown"
+#~ msgstr "tundmatu"

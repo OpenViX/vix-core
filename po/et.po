@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-08 18:12+0100\n"
-"PO-Revision-Date: 2012-08-17 13:33+0300\n"
-"Last-Translator: rimas\n"
+"POT-Creation-Date: 2012-09-14 18:04+0100\n"
+"PO-Revision-Date: 2012-09-14 19:42-0000\n"
+"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: rimas\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
@@ -192,6 +192,9 @@ msgstr ""
 msgid "Cancel"
 msgstr "Tühista"
 
+msgid "Change Location"
+msgstr ""
+
 msgid ""
 "Changes need a system restart to take effect.\n"
 "Restart your STB_BOX now?"
@@ -210,6 +213,9 @@ msgstr "EMU kontroll..."
 
 msgid "Choose Files"
 msgstr "Vali failid"
+
+msgid "Choose local ipk's folder"
+msgstr ""
 
 msgid "Choose where to mount your devices to:"
 msgstr "Määra seadmetele haakepunktid:"
@@ -341,6 +347,12 @@ msgstr ", delaying till next schedule."
 
 msgid "Exit the restore wizard"
 msgstr "Välju taastamisabilisest"
+
+msgid "Extra IPK's"
+msgstr ""
+
+msgid "Extra Package's Location"
+msgstr ""
 
 msgid "Folder prefix"
 msgstr "Kataloogi nimi"
@@ -514,7 +526,7 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "Jah, taasta"
 
-msgid "Please choose a folder that contains some packages."
+msgid "Please enter a folder that contains some packages."
 msgstr ""
 
 msgid "Please select device to use as swapfile location"
@@ -742,6 +754,10 @@ msgstr "EMU käivitamine..."
 msgid "SoftcamCheck"
 msgstr "EMU kontroll"
 
+msgid ""
+"Sorry but location does exist or not setup, please setup in Backup Manager ?"
+msgstr ""
+
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti."
 
@@ -808,6 +824,9 @@ msgid "Swap Size:"
 msgstr "Saale suurus:"
 
 msgid "TB"
+msgstr ""
+
+msgid "Temp Folder"
 msgstr ""
 
 msgid "The backup location does not have enough freespace."

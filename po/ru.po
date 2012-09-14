@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-25 13:41+0100\n"
-"PO-Revision-Date: 2012-08-25 16:44+0200\n"
-"Last-Translator: WadimArt <WadimArt@GiClub.tv>\n"
+"POT-Creation-Date: 2012-09-14 18:04+0100\n"
+"PO-Revision-Date: 2012-09-14 19:42-0000\n"
+"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr "%a %e %b  %-H:%M"
 msgid "16 Mb"
 msgstr "16 МБайт"
 
+msgid "30 Days"
+msgstr ""
+
 msgid "32 Mb"
 msgstr "32 МБайта"
 
@@ -34,13 +37,6 @@ msgstr "8 МБайт"
 
 msgid "96 Mb"
 msgstr "96 МБайт"
-
-msgid ""
-"A background update check is is progress, Please try using Backup Manager to "
-"restore plugins later."
-msgstr ""
-"Выполняется фоновая проверка обновлений, пожалуйста, попробуйте использовать "
-"функции резервного копирования для восстановления плагинов позже."
 
 msgid "A background update check is is progress, please wait for retry."
 msgstr "Выполняется фоновая проверка обновлений, пожалуйста, ждите"
@@ -198,6 +194,9 @@ msgstr ""
 msgid "Cancel"
 msgstr "Отмена"
 
+msgid "Change Location"
+msgstr ""
+
 msgid ""
 "Changes need a system restart to take effect.\n"
 "Restart your STB_BOX now?"
@@ -216,6 +215,9 @@ msgstr "Проверка эмуляторов..."
 
 msgid "Choose Files"
 msgstr "Выбор файлов"
+
+msgid "Choose local ipk's folder"
+msgstr ""
 
 msgid "Choose where to mount your devices to:"
 msgstr "Выбор точки монтирования:"
@@ -345,6 +347,12 @@ msgstr "Достаточно повторов, задержка до следу�
 
 msgid "Exit the restore wizard"
 msgstr "Выход из Мастера восстановления"
+
+msgid "Extra IPK's"
+msgstr ""
+
+msgid "Extra Package's Location"
+msgstr ""
 
 msgid "Folder prefix"
 msgstr "Добавить к имени папки:"
@@ -518,6 +526,9 @@ msgstr "ОК"
 msgid "OK, to perform a restore"
 msgstr "Нажмите ОК для восстановления"
 
+msgid "Please enter a folder that contains some packages."
+msgstr ""
+
 msgid "Please select device to use as swapfile location"
 msgstr "Пожалуйста, выберите место расположения файла подкачки"
 
@@ -560,6 +571,9 @@ msgstr "Настройка управления питанием"
 
 msgid "Predefined"
 msgstr "Существующий"
+
+msgid "Preparing extra plugins..."
+msgstr ""
 
 #, python-format
 msgid "Ready to install \"%s\" ?"
@@ -677,6 +691,9 @@ msgstr "Выбор имиджа для восстановления/удален
 msgid "Select files/folders to backup"
 msgstr "Выбор файлов/папок для создания резервной копии"
 
+msgid "Select folder that contains plugins"
+msgstr ""
+
 msgid "Select the Swap File Size:"
 msgstr "Задайте размер файла подкачки:"
 
@@ -737,6 +754,10 @@ msgstr "Запуск эмулятора..."
 
 msgid "SoftcamCheck"
 msgstr "Проверка эмулятора"
+
+msgid ""
+"Sorry but location does exist or not setup, please setup in Backup Manager ?"
+msgstr ""
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr ""
@@ -813,6 +834,9 @@ msgstr "Размер:"
 
 msgid "TB"
 msgstr "ТВ"
+
+msgid "Temp Folder"
+msgstr ""
 
 msgid "The backup location does not have enough freespace."
 msgstr "Выбранный путь не имеет достаточно свободного места"
@@ -998,6 +1022,14 @@ msgstr ""
 
 msgid "unavailable"
 msgstr "недоступно"
+
+#~ msgid ""
+#~ "A background update check is is progress, Please try using Backup Manager "
+#~ "to restore plugins later."
+#~ msgstr ""
+#~ "Выполняется фоновая проверка обновлений, пожалуйста, попробуйте "
+#~ "использовать функции резервного копирования для восстановления плагинов "
+#~ "позже."
 
 #~ msgid "Renaming old backup..."
 #~ msgstr "Переименование старой резервной копии..."

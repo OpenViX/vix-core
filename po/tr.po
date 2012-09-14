@@ -7,28 +7,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-10 17:11+0000\n"
-"PO-Revision-Date: 2012-04-09 15:34+0200\n"
-"Last-Translator: CÜNEYT OCAKLILAR <ocaklilar@gmail.com>\n"
+"POT-Creation-Date: 2012-09-14 18:04+0100\n"
+"PO-Revision-Date: 2012-09-14 19:41-0000\n"
+"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: CÜNEYT OCAKLILAR <ocaklilar@gmail.com>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Country: TURKEY\n"
 
-msgid " extensions."
-msgstr "genişletmeler."
-
-msgid " packages selected."
-msgstr "paket seçildi."
-
-msgid " updates available."
-msgstr " güncelleme var."
+msgid "%a %e %b  %-H:%M"
+msgstr ""
 
 msgid "16 Mb"
 msgstr "16 Mb"
+
+msgid "30 Days"
+msgstr ""
 
 msgid "32 Mb"
 msgstr "32 Mb"
@@ -42,16 +38,8 @@ msgstr "8 Mb"
 msgid "96 Mb"
 msgstr "96 Mb"
 
-#, python-format
-msgid ""
-"A configuration file (%s) was modified since Installation.\n"
-"Do you want to keep your version?"
+msgid "A background update check is is progress, please wait for retry."
 msgstr ""
-"Yapılandırma dosyası (%s) yüklemeden sonra değişti.\n"
-"Kendi sürümünüzü saklamak ister misiniz?"
-
-msgid "A small overview of the available icon states and actions."
-msgstr "İkon durum ve eylemleri hakkında küçük bir açıklama."
 
 msgid "Activate"
 msgstr "Etkinleştir"
@@ -65,14 +53,38 @@ msgstr "Etkin:"
 msgid "Add"
 msgstr "Ekle"
 
-msgid "After pressing OK, please wait!"
-msgstr "OK'a bastıktan sonra lütfen bekleyin!"
+msgid ""
+"Allows the softcam to be checked if it stopped working, and restarted "
+"automatically if needed."
+msgstr ""
 
-msgid "Apr"
-msgstr "Nis"
+msgid "Allows you schedule your boackups."
+msgstr ""
 
-msgid "April"
-msgstr "Nisan"
+msgid "Allows you schedule your image backups."
+msgstr ""
+
+msgid "Allows you to control the power state of your STB_BOX."
+msgstr ""
+
+msgid "Allows you to put your STB_BOX in standby at a set time."
+msgstr ""
+
+msgid "Allows you to put your STB_BOX into deepstandby at a set time."
+msgstr ""
+
+msgid "Allows you to reboot your STB_BOX at a set time."
+msgstr ""
+
+msgid "Allows you to restart your STB_BOX interface at a set time."
+msgstr ""
+
+msgid "Allows you to tag your backups to a box. (default is box name/type)"
+msgstr ""
+
+msgid ""
+"Allows you to tag your image backup to a box. (default is box name/type)"
+msgstr ""
 
 msgid "Are you ready to create a backup ?"
 msgstr "Yedek almaya hazır mısınız?"
@@ -114,23 +126,11 @@ msgstr ""
 "Bu yedeği geri yüklemek istediğinizden emin misiniz:\n"
 " "
 
-msgid "Aug"
-msgstr "Ağu"
-
-msgid "August"
-msgstr "Ağustos"
-
-msgid "Author: "
-msgstr "Yazar:"
-
 msgid "Autostart"
 msgstr "Oto-başlama"
 
 msgid "Autostart:"
 msgstr "Oto-başlama:"
-
-msgid "Back"
-msgstr "Geri"
 
 msgid "Backing up files..."
 msgstr "Dosyalar yedekleniyor..."
@@ -156,8 +156,12 @@ msgstr "Yedekleme Yönetici Günlüğü"
 msgid "Backup Manager Setup"
 msgstr "Yedekleme Yöneticisi Kurulumu"
 
-msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Yedekleme başarısız - yanlış yedek konumu veya yedekleme ünitesinde yer kalmadı"
+msgid ""
+"Backup failed - e. g. wrong backup destination or no space left on backup "
+"device"
+msgstr ""
+"Yedekleme başarısız - yanlış yedek konumu veya yedekleme ünitesinde yer "
+"kalmadı"
 
 msgid ""
 "Backup in progress,\n"
@@ -166,20 +170,37 @@ msgstr ""
 "Yedekleniyor,\n"
 "Lütfen tekrar denemeden bitmesini bekleyin"
 
+msgid "Backup prefix"
+msgstr ""
+
 msgid "BackupManager"
 msgstr "YedeklemeYöneticisi"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "MGcamd çalışırken CCcam çalışamaz"
 
-msgid "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Bölüntü çıkarılamıyor, swap veya kayıt/zaman-kaydırma yolu olarak kullanılmadığına emin olun"
+msgid ""
+"Can't unmount partiton, make sure it is not being used for swap or record/"
+"timeshift paths"
+msgstr ""
+"Bölüntü çıkarılamıyor, swap veya kayıt/zaman-kaydırma yolu olarak "
+"kullanılmadığına emin olun"
 
 msgid "Cancel"
 msgstr "İptal"
 
-msgid "Check every (mins)"
-msgstr "Denetle (dakika)"
+msgid "Change Location"
+msgstr ""
+
+msgid ""
+"Changes need a system restart to take effect.\n"
+"Restart your STB_BOX now?"
+msgstr ""
+"Aygıt değişikliği yeniden başlatmayı gerektiriyor.\n"
+"STB_BOX şimdi yeniden başlatılsın mı?"
+
+msgid "Checking Feeds"
+msgstr ""
 
 msgid "Checking Free RAM.."
 msgstr "Boş RAM denetleniyor..."
@@ -189,6 +210,9 @@ msgstr "Softcams denetleniyor..."
 
 msgid "Choose Files"
 msgstr "Dosyaları Seçin"
+
+msgid "Choose local ipk's folder"
+msgstr ""
 
 msgid "Choose where to mount your devices to:"
 msgstr "Aygıtlarınızın bağlanacağını konumu seçin:"
@@ -202,20 +226,8 @@ msgstr "Çalıştırılacak Komut"
 msgid "Command type"
 msgstr "Komut tipi"
 
-msgid "CommonInterface"
-msgstr "OrtakArayüz"
-
-msgid "Communication"
-msgstr "İletişim"
-
 msgid "Comparing against backup..."
 msgstr "Yedek ile karşılaştırılıyor..."
-
-msgid "Configuring"
-msgstr "Yapılandırılıyor"
-
-msgid "Continue"
-msgstr "Devam"
 
 msgid "Create"
 msgstr "Yarat"
@@ -227,7 +239,9 @@ msgid "Create and Restore complete images of the system."
 msgstr "Sistemin tüm imajlarını Yarat ve Yükle."
 
 msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-msgstr "Bekleme, Kullanıcı arayüzü Yeniden Başlatma, DerinBekleme ve Yeniden Başlatma için planlayın."
+msgstr ""
+"Bekleme, Kullanıcı arayüzü Yeniden Başlatma, DerinBekleme ve Yeniden "
+"Başlatma için planlayın."
 
 msgid "Creating Backup Files..."
 msgstr "Yedek Dosyaları Yaratılıyor..."
@@ -253,17 +267,11 @@ msgstr "Günlük"
 msgid "Deactivate"
 msgstr "Kapat"
 
-msgid "Dec"
-msgstr "Ara"
-
-msgid "December"
-msgstr "Aralık"
-
 msgid "Deep Standby Time"
 msgstr "Derin Bekleme Zamanı"
 
-msgid "Default Settings"
-msgstr "Varsayılan Ayarlar"
+msgid "DeepStandby Time"
+msgstr ""
 
 msgid "Delete"
 msgstr "Sil"
@@ -271,21 +279,11 @@ msgstr "Sil"
 msgid "Deselect"
 msgstr "Seçme"
 
-msgid "Details for plugin: "
-msgstr "Eklenti detayları:"
-
 msgid "Device: "
 msgstr "Aygıt:"
 
 msgid "Device: None available"
 msgstr "Aygıt: Yok"
-
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your STB_BOX now?"
-msgstr ""
-"Aygıt değişikliği yeniden başlatmayı gerektiriyor.\n"
-"STB_BOX şimdi yeniden başlatılsın mı?"
 
 msgid "Disable Startup"
 msgstr "Başlamayı Engelle"
@@ -293,33 +291,11 @@ msgstr "Başlamayı Engelle"
 msgid "Disabled"
 msgstr "Engellendi"
 
-msgid "Display and Userinterface"
-msgstr "Görüntü ve Kullanıcı arayüzü"
-
-msgid "Do you want to install the package:\n"
-msgstr "Paketi yüklemek istiyor musunuz:\n"
-
-msgid "Do you want to reboot your STB_BOX?"
-msgstr "STB_BOX'yu yeniden başlatmayı istiyor musunuz?"
-
-msgid "Do you want to remove the package:\n"
-msgstr "Paketi kaldırmak istiyor musunuz:\n"
-
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Enigma2 eklentilerinizi geri yüklemek istiyor musunuz?"
 
 msgid "Do you want to restore your Enigma2 settings ?"
 msgstr "Enigma2 ayarlarınızı geri yüklemek istiyor musunuz?"
-
-msgid "Do you want to update your STB_BOX?"
-msgstr "STB_BOX'yu güncellemek istiyor musunuz?"
-
-msgid "Do you want to upgrade the package:\n"
-msgstr "Paketi yükseltmeyi istiyor musunuz:\n"
-
-#, python-format
-msgid "Done - Installed or upgraded %d packages"
-msgstr "Bitti - %d paket yüklendi veya yükseltildi"
 
 msgid "Download"
 msgstr "İndir"
@@ -327,26 +303,23 @@ msgstr "İndir"
 msgid "Download Confirmation"
 msgstr "İndirme Onayı"
 
-msgid "Downloading"
-msgstr "İndiriliyor"
-
 msgid "Downloading Image..."
 msgstr "İmaj İndiriliyor..."
 
 msgid "Downloads"
 msgstr "İndirilenler"
 
-msgid "Electronic Program Guide"
-msgstr "Elektronik Program Kılavuzu"
-
-msgid "Enable Auto Timer Check ?"
-msgstr "Otomatik Zaman Kontrolu Etkinleştir"
-
 msgid "Enable Deep Standby"
 msgstr "Derin Beklemeyi Etkinleştir"
 
+msgid "Enable DeepStandby"
+msgstr ""
+
 msgid "Enable GUI Restart"
 msgstr "Kullanıcı arayüzü Yeniden Başlatmayı Etkinleştir"
+
+msgid "Enable GUI restart"
+msgstr ""
 
 msgid "Enable Power Manager"
 msgstr "Güç Yönetimini Etkinleştir"
@@ -363,41 +336,37 @@ msgstr "Başlamayı Etkinleştir"
 msgid "Enable Swap at startup"
 msgstr "Başlangıçta Swapı Etkinleştir"
 
+msgid "Enable frozen check ?"
+msgstr ""
+
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Yeterli yeniden deneme, sonraki zamanlamaya kadar erteleniyor."
-
-msgid "Error"
-msgstr "Hata"
 
 msgid "Exit the restore wizard"
 msgstr "Yeniden yükleme sihirbazından çık"
 
-msgid "Extensions management"
-msgstr "Genişletme yönetimi"
+msgid "Extra IPK's"
+msgstr ""
 
-msgid "Feb"
-msgstr "Şub"
-
-msgid "February"
-msgstr "Şubat"
+msgid "Extra Package's Location"
+msgstr ""
 
 msgid "Folder prefix"
 msgstr "Klasör öneki"
 
-msgid "Following tasks will be done after you press OK!"
-msgstr "OK'a basıldıktan sonra aşağıdaki işlemler yapılacak!"
-
 msgid "Found none stanadard softcam, trying to start, this may fail"
-msgstr "Standart dışı softcam bulundu, başlatılmaya çalışılıyor, başarısız olabilir"
+msgstr ""
+"Standart dışı softcam bulundu, başlatılmaya çalışılıyor, başarısız olabilir"
 
 msgid "Found none standard softcam, trying to start, this may fail"
-msgstr "Standart dışı softcam bulundu, başlatılmaya çalışılıyor, başarısız olabilir"
-
-msgid "Fri"
-msgstr "Cum"
+msgstr ""
+"Standart dışı softcam bulundu, başlatılmaya çalışılıyor, başarısız olabilir"
 
 msgid "Friday"
 msgstr "Cuma"
+
+msgid "Frozen check interval"
+msgstr ""
 
 msgid "GB"
 msgstr "GB"
@@ -444,47 +413,23 @@ msgstr "tmp klasöründen IPK'leri yükle."
 msgid "Install local extension"
 msgstr "Yerel genişletmeleri yükle"
 
-msgid "Install or remove finished."
-msgstr "Yükleme veya kaldırma bitti."
-
-msgid "Installation finished."
-msgstr "Yükleme bitti."
-
-msgid "Installing"
-msgstr "Yüklüyor"
+msgid "Installing Service"
+msgstr ""
 
 msgid "Installing..."
 msgstr "Yüklüyor..."
 
-msgid "Jan"
-msgstr "Oca"
+msgid "Location of where backup should be saved."
+msgstr ""
 
-msgid "January"
-msgstr "Ocak"
-
-msgid "Jul"
-msgstr "Tem"
-
-msgid "July"
-msgstr "Temmuz"
-
-msgid "Jun"
-msgstr "Haz"
-
-msgid "June"
-msgstr "Haziran"
+msgid "Location of where image backup should lbe saved."
+msgstr ""
 
 msgid "MB"
 msgstr "MB"
 
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr "CCcam çalışırken MGcamd çalışamaz"
-
-msgid "Manage Extensions"
-msgstr "Genişletmeleri Yönet"
-
-msgid "Manage extensions or plugins for your STB_BOX"
-msgstr "STB_BOX'nun genişletmelerini veya eklentilerini yönetin"
 
 msgid "Manage you devices mountpoints."
 msgstr "Aygıtlarınızın bağlantılarını yönetin."
@@ -494,18 +439,6 @@ msgstr "Ayarlarınızın yedeklerini yönetin."
 
 msgid "Manage your cron jobs."
 msgstr "Zamanlanan işlerinizi yönetin."
-
-msgid "Mar"
-msgstr "Mar"
-
-msgid "March"
-msgstr "Mart"
-
-msgid "May"
-msgstr "May"
-
-msgid "Mon"
-msgstr "Pts"
 
 msgid "Monday"
 msgstr "Pazartesi"
@@ -525,17 +458,11 @@ msgstr "Bağlantı:"
 msgid "Moving to Backup Location..."
 msgstr "Yedekleme Konumuna taşıyor..."
 
-msgid "Multimedia"
-msgstr "Çoklu Ortam"
-
 msgid "NO, do not restore plugins"
 msgstr "HAYIR, eklentileri geri yükleme"
 
 msgid "NO, do not restore settings"
 msgstr "HAYIR, ayarları geri yükleme"
-
-msgid "Network"
-msgstr "Ağ"
 
 msgid "New Backup"
 msgstr "Yeni Yedek"
@@ -583,32 +510,11 @@ msgstr ""
 "Yapılandırma dosyası bulunamadı, lütfen önce Oscam kurun\n"
 " konum: /etc/tuxbox/config"
 
-msgid "No description available."
-msgstr "Tanımlama yok."
-
-msgid "No network connection available."
-msgstr "Ağ bağlantısı yok."
-
-msgid "No packages were upgraded yet. So you can check your network and try again."
-msgstr "Paket(ler) henüz yükseltilmedi. Ağınızı kontrol edip tekrar deneyebilirsiniz."
-
 msgid "No plugins where needed to be installed"
 msgstr "Yüklenmesi gereken eklenti yok"
 
 msgid "None"
 msgstr "Hiç"
-
-msgid "Normal"
-msgstr "Normal"
-
-msgid "Nothing to upgrade"
-msgstr "Yükseltilecek bir şey yok."
-
-msgid "Nov"
-msgstr "Kas"
-
-msgid "November"
-msgstr "Kasım"
 
 msgid "Now skipping restore process"
 msgstr "Geri yükleme işlemi atlanıyor"
@@ -619,29 +525,8 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "Geri yükleme için OK"
 
-msgid "Oct"
-msgstr "Eki"
-
-msgid "October"
-msgstr "Ekim"
-
-msgid "Online update of your STB_BOX software."
-msgstr "STB_BOX yazılımı için çevrimiçi güncelleme."
-
-msgid "Only extensions."
-msgstr "Sadece genişletmeler."
-
-msgid "Package list update"
-msgstr "Paket liste güncelleme"
-
-msgid "Packages"
-msgstr "Paketler"
-
-msgid "Packet Manager"
-msgstr "Paket Yöneticisi"
-
-msgid "Packet manager"
-msgstr "Paket yöneticisi"
+msgid "Please enter a folder that contains some packages."
+msgstr ""
 
 msgid "Please select device to use as swapfile location"
 msgstr "Lütfen swap dosyası konumu için kullanılacak aygıtı seçin"
@@ -652,8 +537,11 @@ msgstr "Lütfen geri yüklenecek dosyayı seçin."
 msgid "Please wait while gathers infomation..."
 msgstr "Lütfen bilgi toplanırken bekleyin..."
 
-msgid "Please wait while restore completes..."
-msgstr "Lütfen geri yüklemenin bitmesini bekleyin..."
+msgid "Please wait while plugins restore completes..."
+msgstr ""
+
+msgid "Please wait while settings restore completes..."
+msgstr ""
 
 msgid "Please wait while starting\n"
 msgstr "Lütfen başlarken bekleyin\n"
@@ -661,32 +549,38 @@ msgstr "Lütfen başlarken bekleyin\n"
 msgid "Please wait while stopping\n"
 msgstr "Lütfen dururken bekleyin\n"
 
-msgid "Please wait..."
-msgstr "Lütfen bekleyin..."
+msgid "Please wait whilst feeds state is checked."
+msgstr ""
 
-msgid "Plugin Details"
-msgstr "Eklenti Detayları"
+msgid "Please wait."
+msgstr ""
 
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Eklenti Listeleme başarısız - yanlış yedek konumu veya yedekleme ünitesinde yer kalmadı"
-
-msgid "Plugin manager activity information"
-msgstr "Eklenti yöneticisi etkinlik bilgisi"
-
-msgid "Plugin manager help"
-msgstr "Eklenti yöneticisi yardım"
+msgid ""
+"Plugin Listing failed - e. g. wrong backup destination or no space left on "
+"backup device"
+msgstr ""
+"Eklenti Listeleme başarısız - yanlış yedek konumu veya yedekleme ünitesinde "
+"yer kalmadı"
 
 msgid "Power Manager"
 msgstr "Güç Yöneticisi"
 
+msgid "Power Manager Setup"
+msgstr ""
+
 msgid "Predefined"
 msgstr "Tanımlanmış"
 
-msgid "Press OK on your remote control to continue."
-msgstr "Devam etmek için kumandanızda OK'a basın."
+msgid "Preparing extra plugins..."
+msgstr ""
 
-msgid "Process"
-msgstr "İşlem"
+#, python-format
+msgid "Ready to install \"%s\" ?"
+msgstr ""
+
+#, python-format
+msgid "Ready to remove \"%s\" ?"
+msgstr ""
 
 msgid "Really close without saving settings?"
 msgstr "Ayarları saklamadan kapatmak mı?"
@@ -700,29 +594,14 @@ msgstr "Yeniden başlatma zamanı"
 msgid "Rebooting..."
 msgstr "Yeniden başlıyor..."
 
-msgid "Recordings"
-msgstr "Kayıtlar"
-
 msgid "Refresh List"
 msgstr "Listeyi Yenile"
-
-msgid "Reload"
-msgstr "Yenile"
-
-msgid "Remove"
-msgstr "Kaldır"
 
 msgid "Remove Confirmation"
 msgstr "Kaldırma Onayı"
 
-msgid "Remove finished."
-msgstr "Kaldırma bitti."
-
-msgid "Removing"
-msgstr "Kaldırıyor"
-
-msgid "Renaming old backup..."
-msgstr "Eski yedek yeniden adlandırılıyor..."
+msgid "Removing Service"
+msgstr ""
 
 msgid "Repeat how often"
 msgstr "Tekrar sıklığı"
@@ -754,6 +633,9 @@ msgstr "Geri Yükleme Sihirbazı"
 msgid "Restoring backup..."
 msgstr "Yedek geri yükleniyor..."
 
+msgid "Restoring plugins, this can take a long time..."
+msgstr ""
+
 msgid "Restoring plugins..."
 msgstr "Eklentiler geri yükleniyor..."
 
@@ -775,12 +657,6 @@ msgstr "Shell betiklerinizi çalıştırın."
 msgid "Running"
 msgstr "Çalışıyor"
 
-msgid "Sat"
-msgstr "Cti"
-
-msgid "Satellite equipment"
-msgstr "Uydu aygıtı"
-
 msgid "Saturday"
 msgstr "Cumartesi"
 
@@ -792,12 +668,6 @@ msgstr "Yedekleri Zamanla"
 
 msgid "Script Runner"
 msgstr "Betik Çalıştırıcı"
-
-msgid "Searching for available updates. Please wait..."
-msgstr "Güncelleştirmeler aranıyor. Lütfen bekleyin..."
-
-msgid "Searching for new installed or removed packages. Please wait..."
-msgstr "Yeni yüklenmiş veya kaldırılmış paketler aranıyor. Lütfen bekleyin..."
 
 msgid "Select"
 msgstr "Seç"
@@ -820,17 +690,38 @@ msgstr "Geri Yüklemek / Silmek için bir imaj seçin:"
 msgid "Select files/folders to backup"
 msgstr "Yedeklenecek dosyaları/klasörleri seçin"
 
+msgid "Select folder that contains plugins"
+msgstr ""
+
 msgid "Select the Swap File Size:"
 msgstr "Swap Dosya Boyutunu seçin:"
 
 msgid "Select:"
 msgstr "Seç:"
 
-msgid "Sep"
-msgstr "Eyl"
+msgid "Set the delay time to wait before asking again."
+msgstr ""
 
-msgid "September"
-msgstr "Eylül"
+msgid "Set the invterval to be checked in mins."
+msgstr ""
+
+msgid "Set the repeat interval of backup schedule."
+msgstr ""
+
+msgid "Set the time of backup to start."
+msgstr ""
+
+msgid "Set the time to enter deepstandby mode."
+msgstr ""
+
+msgid "Set the time to enter standby mode."
+msgstr ""
+
+msgid "Set the time to reboot."
+msgstr ""
+
+msgid "Set the time to restart the interface."
+msgstr ""
 
 msgid "Setting Up..."
 msgstr "Kuruluyor..."
@@ -843,9 +734,6 @@ msgstr "Kapat."
 
 msgid "Size: "
 msgstr "Boyut:"
-
-msgid "Skins"
-msgstr "Görsel-arayüzler"
 
 msgid "Softcam Manager"
 msgstr "Softcam Yöneticisi"
@@ -865,26 +753,39 @@ msgstr "Softcam Başlıyor..."
 msgid "SoftcamCheck"
 msgstr "SoftcamKontrol"
 
-msgid "Software"
-msgstr "Yazılım"
+msgid ""
+"Sorry but location does exist or not setup, please setup in Backup Manager ?"
+msgstr ""
 
-msgid "Software Manager"
-msgstr "Yazılım Yöneticisi"
+msgid "Sorry feeds are down for maintenance, Please try again later."
+msgstr ""
 
-msgid "Software Update"
-msgstr "Yazılım Güncelleme"
+msgid ""
+"Sorry feeds are down for maintenance, Please try using Backup Manager to "
+"restore plugins later."
+msgstr ""
+
+msgid "Sorry feeds are down for maintenance, please try again later."
+msgstr ""
 
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "Üzgünüm STB_BOX henüz uyumlu değil."
 
-msgid "Sorry, no Details available!"
-msgstr "Üzgünüm, detay yok!"
+msgid ""
+"Sorry, no physical devices that supports SWAP attached. Can't create "
+"Swapfile on network or fat32 filesystems"
+msgstr ""
+"Üzgünüm, SWAP destekleyen cihaz bağlı değil. Ağ veya fat32 dosya sistemi "
+"üzerinde Swap dosyası yaratılamaz"
 
-msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
-msgstr "Üzgünüm, SWAP destekleyen cihaz bağlı değil. Ağ veya fat32 dosya sistemi üzerinde Swap dosyası yaratılamaz"
-
-msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
-msgstr "Üzgünüm, yeterli boş bellek yok ve SWAP destekleyen cihaz bağlı değil. Ağ veya fat32 dosya sistemi üzerinde Swap dosyası yaratılamaz, yedekleme yapılamıyor"
+msgid ""
+"Sorry, not enough free ram found, and no physical devices that supports SWAP "
+"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
+"make backup"
+msgstr ""
+"Üzgünüm, yeterli boş bellek yok ve SWAP destekleyen cihaz bağlı değil. Ağ "
+"veya fat32 dosya sistemi üzerinde Swap dosyası yaratılamaz, yedekleme "
+"yapılamıyor"
 
 msgid "Standby"
 msgstr "Bekleme"
@@ -907,14 +808,12 @@ msgstr "Durdur"
 msgid "Stopped"
 msgstr "Durduruldu"
 
-msgid "Sun"
-msgstr "Paz"
-
 msgid "Sunday"
 msgstr "Pazar"
 
 msgid "Swap File not found. You have to create the file before to activate."
-msgstr "Swap dosyası bulunamadı. Etkinleştirmek için önce dosyayı yaratmalısınız."
+msgstr ""
+"Swap dosyası bulunamadı. Etkinleştirmek için önce dosyayı yaratmalısınız."
 
 msgid "Swap Manager"
 msgstr "Swap Yöneticisi"
@@ -925,8 +824,11 @@ msgstr "Swap Konumu:"
 msgid "Swap Size:"
 msgstr "Swap Boyutu:"
 
-msgid "System"
-msgstr "Sistem"
+msgid "TB"
+msgstr ""
+
+msgid "Temp Folder"
+msgstr ""
 
 msgid "The backup location does not have enough freespace."
 msgstr "Yedek konumunda yeterli boş yer yok."
@@ -940,35 +842,8 @@ msgstr "Sihirbaz şimdi bitti, alıcı yeniden başlatılacak"
 msgid "The wizard is finished now."
 msgstr "Sihirbaz şimdi bitti."
 
-msgid "There are at least "
-msgstr "En az"
-
-msgid "There are currently no outstanding actions."
-msgstr "Bekleyen işlem yok."
-
-msgid "There are no updates available."
-msgstr "Güncelleme yok."
-
-msgid "There was an error downloading the packetlist. Please try again."
-msgstr "Paket listesini indirirken hata oluştu. Lütfen yeniden deneyin."
-
 msgid "This Device is already mounted as HDD."
 msgstr "Bu aygıt zaten HDD olarak bağlanmış."
-
-msgid "This plugin is installed."
-msgstr "Bu eklenti yüklendi."
-
-msgid "This plugin is not installed."
-msgstr "Bu eklenti yüklenmedi."
-
-msgid "This plugin will be installed."
-msgstr "Bu eklenti yüklenecek."
-
-msgid "This plugin will be removed."
-msgstr "Bu eklenti kaldırılacak."
-
-msgid "Thu"
-msgstr "Per"
 
 msgid "Thursday"
 msgstr "Perşembe"
@@ -979,50 +854,14 @@ msgstr "Yedeğin başlayacağı zaman"
 msgid "Time to execute command or script"
 msgstr "Komutun vaya betiğin çalışacağı zaman"
 
-msgid "Trying to download a new packetlist. Please wait..."
-msgstr "Yeni bir paket listesi indiriliyor. Lütfen bekleyin..."
-
-msgid "Tue"
-msgstr "Sal"
-
 msgid "Tuesday"
 msgstr "Salı"
 
 msgid "Type: "
 msgstr "Tip:"
 
-msgid "Unattended"
-msgstr "Gözetimsiz"
-
-msgid "Unattended upgrade without GUI and reboot system"
-msgstr "Kullanıcı arayüzsüz gözetimsiz yükselt ve sistemi yeniden başlat"
-
-msgid "Undo install"
-msgstr "Yükleme iptali"
-
-msgid "Undo uninstall"
-msgstr "Kaldırma iptali"
-
-msgid "Uninstall"
-msgstr "Kaldır"
-
-msgid "Update"
-msgstr "Güncelle"
-
-msgid "Updatefeed not available."
-msgstr "Güncelleme beslemesi yok."
-
-msgid "Updating software catalog"
-msgstr "Yazılım kataloğu güncelleniyor"
-
-msgid "Upgrade and ask to reboot"
-msgstr "Yükselt ve yeniden başlatma için sor"
-
-msgid "Upgrade finished."
-msgstr "Yükseltme bitti."
-
-msgid "Upgrading"
-msgstr "Yükseltiliyor"
+msgid "Updating mount locations."
+msgstr ""
 
 msgid "Use as HDD"
 msgstr "HDD olarak kullan"
@@ -1030,63 +869,8 @@ msgstr "HDD olarak kullan"
 msgid "ViX"
 msgstr "ViX"
 
-msgid "View Changes"
-msgstr "Değişiklikleri izle"
-
 msgid "View Progress"
 msgstr "İşlemi izle"
-
-msgid "View details"
-msgstr "Detayları izle"
-
-msgid "View list of available "
-msgstr "Listesini izle"
-
-msgid "View list of available CommonInterface extensions"
-msgstr "Kullanılabilir OrtakArayüz genişletmelerinin listesini izle."
-
-msgid "View list of available Display and Userinterface extensions."
-msgstr "Kullanılabilir Görüntü ve Kullanıcı Arayüzü genişletmeler listesi"
-
-msgid "View list of available EPG extensions."
-msgstr "Kullanılabilir EPG genişletmelerinin listesini izle."
-
-msgid "View list of available Satellite equipment extensions."
-msgstr "Kullanılabilir Uydu aygıt genişletmelerinin listesini izle."
-
-msgid "View list of available communication extensions."
-msgstr "Kullanılabilir iletişim genişletmelerinin listesini izle."
-
-msgid "View list of available default settings"
-msgstr "Kullanılabilir varsayılan ayarların listesini izle."
-
-msgid "View list of available multimedia extensions."
-msgstr "Kullanılabilir çoklu ortam genişletmelerinin listesini izle."
-
-msgid "View list of available networking extensions"
-msgstr "Kullanılabilir ağ genişletmelerinin listesini izle."
-
-msgid "View list of available recording extensions"
-msgstr "Kullanılabilir kayıt genişletmelerinin listesini izle."
-
-msgid "View list of available skins"
-msgstr "Kullanılabilir görsel-arayüzlerin listesini izle."
-
-msgid "View list of available software extensions"
-msgstr "Kullanılabilir yazılım genişletmelerinin listesini izle."
-
-msgid "View list of available system extensions"
-msgstr "Kullanılabilir sistem genişletmelerinin listesini izle."
-
-msgid "View the changes"
-msgstr "Değişiklikleri izle"
-
-msgid "View, install and remove available or installed packages."
-msgstr "Kullanılabilir veya yüklenmiş paketleti izle, yükle veya kaldır."
-
-#, fuzzy
-msgid "STB_BOX software because updates are available."
-msgstr "STB_BOX yazılım güncellemeleri var."
 
 msgid "Wait please while creating swapfile..."
 msgstr "Lütfen Swap dosyası yaratılırken bekleyin..."
@@ -1107,9 +891,6 @@ msgstr "Lütfen STB_BOX aygıtlarınız incelenirken bekleyin..."
 msgid "Wait please while scanning..."
 msgstr "Lütfen incelenirken bekleyin..."
 
-msgid "Wed"
-msgstr "Çar"
-
 msgid "Wednesday"
 msgstr "Çarşamba"
 
@@ -1120,12 +901,14 @@ msgid ""
 "Welcome to the restore wizard.\n"
 "\n"
 "A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+"You can use this wizard to restore your setting and any extra plugins that "
+"where installed when the backup was created.\n"
 msgstr ""
 "Geri yükleme sihirbazına hoşgeldiniz.\n"
 "\n"
 "Bir yedek bulundu.\n"
-"Ayarlarınızı ve eklentilerinizi geri yüklemek için bu sihirbazı kullanabilirsiniz.\n"
+"Ayarlarınızı ve eklentilerinizi geri yüklemek için bu sihirbazı "
+"kullanabilirsiniz.\n"
 
 msgid "What Day of month ?"
 msgstr "Ayın hangi Günü?"
@@ -1138,18 +921,6 @@ msgstr "Eklentileri geri yüklemek için EVET"
 
 msgid "YES, to restore settings"
 msgstr "Ayarları geri yüklemek için EVET"
-
-msgid "You can cancel the installation."
-msgstr "Yüklemeyi iptal edebilirsiniz."
-
-msgid "You can cancel the removal."
-msgstr "Kaldırmayı iptal edebilirsiniz."
-
-msgid "You can install this plugin."
-msgstr "Bu eklentiyi yükleyebilirsiniz."
-
-msgid "You can remove this plugin."
-msgstr "Bu eklentiyi kaldırabilirsiniz."
 
 msgid "You have no backup to delete."
 msgstr "Silinecek yedeğiniz yok."
@@ -1167,20 +938,24 @@ msgid "You have no script to run."
 msgstr "Çalıştırılacak betiğiniz yok."
 
 msgid "You have to create a Swap File before to activate the autostart."
-msgstr "Otomatik başlamayı etkinleştirmek için önce bir Swap dosyası yaratmalısınız."
+msgstr ""
+"Otomatik başlamayı etkinleştirmek için önce bir Swap dosyası yaratmalısınız."
 
 msgid ""
-"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
+"Your STB_BOX is about to run a backup of your settings and detect your "
+"plugins,\n"
 "Do you want to allow this?"
 msgstr ""
 "STB_BOX, ayarlarınızın ve eklentilerinizin bir yedeğini almak üzere,\n"
 "Buna izin veriyor musunuz?"
 
 msgid ""
-"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
+"Your STB_BOX is about to run a full image backup, this can take about 6 "
+"minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"STB_BOX, tüm imajın bir yedeğini almak üzere, bu işlem 6 dakika kadar sürebilir\n"
+"STB_BOX, tüm imajın bir yedeğini almak üzere, bu işlem 6 dakika kadar "
+"sürebilir\n"
 "Buna izin veriyor musunuz?"
 
 msgid ""
@@ -1211,11 +986,15 @@ msgstr ""
 "STB_BOX gecelik beklemek üzere,\n"
 "Buna izin veriyor musunuz?"
 
-msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
-msgstr "STB_BOX internete bağlı değil. Lütfen kontrol edin ve tekrar deneyin."
+msgid ""
+"Your STB_BOX is not connected to the internet, Please try using Backup "
+"Manager to restore plugins later."
+msgstr ""
 
-msgid "detected"
-msgstr "bulundu"
+msgid ""
+"Your STB_BOX is not connected to the internet, please check your network "
+"settings and try again."
+msgstr ""
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'İmaj İndiriliyor.'"
@@ -1223,15 +1002,461 @@ msgstr "echo 'İmaj İndiriliyor.'"
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'İmaj Açılıyor.'"
 
+msgid "please wait..."
+msgstr ""
+
 msgid "there was a problem with this device, please reformat and try again."
-msgstr "Bu aygıtta bir problem var, lütfen tekrar biçimleyin ve yeniden deneyin."
+msgstr ""
+"Bu aygıtta bir problem var, lütfen tekrar biçimleyin ve yeniden deneyin."
 
 msgid "unavailable"
 msgstr "bulunamıyor"
 
-msgid "unknown"
-msgstr "bilinmeyen"
+#~ msgid " extensions."
+#~ msgstr "genişletmeler."
 
-msgid "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
-msgstr "STB_BOX şimdi kullanılamıyor. Lütfen yeniden başlatmadan önce yardım almak için kullanıcı kılavuzuna başvurun."
+#~ msgid " packages selected."
+#~ msgstr "paket seçildi."
 
+#~ msgid " updates available."
+#~ msgstr " güncelleme var."
+
+#~ msgid ""
+#~ "A configuration file (%s) was modified since Installation.\n"
+#~ "Do you want to keep your version?"
+#~ msgstr ""
+#~ "Yapılandırma dosyası (%s) yüklemeden sonra değişti.\n"
+#~ "Kendi sürümünüzü saklamak ister misiniz?"
+
+#~ msgid "A small overview of the available icon states and actions."
+#~ msgstr "İkon durum ve eylemleri hakkında küçük bir açıklama."
+
+#~ msgid "After pressing OK, please wait!"
+#~ msgstr "OK'a bastıktan sonra lütfen bekleyin!"
+
+#~ msgid "Apr"
+#~ msgstr "Nis"
+
+#~ msgid "April"
+#~ msgstr "Nisan"
+
+#~ msgid "Aug"
+#~ msgstr "Ağu"
+
+#~ msgid "August"
+#~ msgstr "Ağustos"
+
+#~ msgid "Author: "
+#~ msgstr "Yazar:"
+
+#~ msgid "Back"
+#~ msgstr "Geri"
+
+#~ msgid "Check every (mins)"
+#~ msgstr "Denetle (dakika)"
+
+#~ msgid "CommonInterface"
+#~ msgstr "OrtakArayüz"
+
+#~ msgid "Communication"
+#~ msgstr "İletişim"
+
+#~ msgid "Configuring"
+#~ msgstr "Yapılandırılıyor"
+
+#~ msgid "Continue"
+#~ msgstr "Devam"
+
+#~ msgid "Dec"
+#~ msgstr "Ara"
+
+#~ msgid "December"
+#~ msgstr "Aralık"
+
+#~ msgid "Default Settings"
+#~ msgstr "Varsayılan Ayarlar"
+
+#~ msgid "Details for plugin: "
+#~ msgstr "Eklenti detayları:"
+
+#~ msgid "Display and Userinterface"
+#~ msgstr "Görüntü ve Kullanıcı arayüzü"
+
+#~ msgid "Do you want to install the package:\n"
+#~ msgstr "Paketi yüklemek istiyor musunuz:\n"
+
+#~ msgid "Do you want to reboot your STB_BOX?"
+#~ msgstr "STB_BOX'yu yeniden başlatmayı istiyor musunuz?"
+
+#~ msgid "Do you want to remove the package:\n"
+#~ msgstr "Paketi kaldırmak istiyor musunuz:\n"
+
+#~ msgid "Do you want to update your STB_BOX?"
+#~ msgstr "STB_BOX'yu güncellemek istiyor musunuz?"
+
+#~ msgid "Do you want to upgrade the package:\n"
+#~ msgstr "Paketi yükseltmeyi istiyor musunuz:\n"
+
+#~ msgid "Done - Installed or upgraded %d packages"
+#~ msgstr "Bitti - %d paket yüklendi veya yükseltildi"
+
+#~ msgid "Downloading"
+#~ msgstr "İndiriliyor"
+
+#~ msgid "Electronic Program Guide"
+#~ msgstr "Elektronik Program Kılavuzu"
+
+#~ msgid "Enable Auto Timer Check ?"
+#~ msgstr "Otomatik Zaman Kontrolu Etkinleştir"
+
+#~ msgid "Error"
+#~ msgstr "Hata"
+
+#~ msgid "Extensions management"
+#~ msgstr "Genişletme yönetimi"
+
+#~ msgid "Feb"
+#~ msgstr "Şub"
+
+#~ msgid "February"
+#~ msgstr "Şubat"
+
+#~ msgid "Following tasks will be done after you press OK!"
+#~ msgstr "OK'a basıldıktan sonra aşağıdaki işlemler yapılacak!"
+
+#~ msgid "Fri"
+#~ msgstr "Cum"
+
+#~ msgid "Install or remove finished."
+#~ msgstr "Yükleme veya kaldırma bitti."
+
+#~ msgid "Installation finished."
+#~ msgstr "Yükleme bitti."
+
+#~ msgid "Installing"
+#~ msgstr "Yüklüyor"
+
+#~ msgid "Jan"
+#~ msgstr "Oca"
+
+#~ msgid "January"
+#~ msgstr "Ocak"
+
+#~ msgid "Jul"
+#~ msgstr "Tem"
+
+#~ msgid "July"
+#~ msgstr "Temmuz"
+
+#~ msgid "Jun"
+#~ msgstr "Haz"
+
+#~ msgid "June"
+#~ msgstr "Haziran"
+
+#~ msgid "Manage Extensions"
+#~ msgstr "Genişletmeleri Yönet"
+
+#~ msgid "Manage extensions or plugins for your STB_BOX"
+#~ msgstr "STB_BOX'nun genişletmelerini veya eklentilerini yönetin"
+
+#~ msgid "Mar"
+#~ msgstr "Mar"
+
+#~ msgid "March"
+#~ msgstr "Mart"
+
+#~ msgid "May"
+#~ msgstr "May"
+
+#~ msgid "Mon"
+#~ msgstr "Pts"
+
+#~ msgid "Multimedia"
+#~ msgstr "Çoklu Ortam"
+
+#~ msgid "Network"
+#~ msgstr "Ağ"
+
+#~ msgid "No description available."
+#~ msgstr "Tanımlama yok."
+
+#~ msgid "No network connection available."
+#~ msgstr "Ağ bağlantısı yok."
+
+#~ msgid ""
+#~ "No packages were upgraded yet. So you can check your network and try "
+#~ "again."
+#~ msgstr ""
+#~ "Paket(ler) henüz yükseltilmedi. Ağınızı kontrol edip tekrar "
+#~ "deneyebilirsiniz."
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "Nothing to upgrade"
+#~ msgstr "Yükseltilecek bir şey yok."
+
+#~ msgid "Nov"
+#~ msgstr "Kas"
+
+#~ msgid "November"
+#~ msgstr "Kasım"
+
+#~ msgid "Oct"
+#~ msgstr "Eki"
+
+#~ msgid "October"
+#~ msgstr "Ekim"
+
+#~ msgid "Online update of your STB_BOX software."
+#~ msgstr "STB_BOX yazılımı için çevrimiçi güncelleme."
+
+#~ msgid "Only extensions."
+#~ msgstr "Sadece genişletmeler."
+
+#~ msgid "Package list update"
+#~ msgstr "Paket liste güncelleme"
+
+#~ msgid "Packages"
+#~ msgstr "Paketler"
+
+#~ msgid "Packet Manager"
+#~ msgstr "Paket Yöneticisi"
+
+#~ msgid "Packet manager"
+#~ msgstr "Paket yöneticisi"
+
+#~ msgid "Please wait while restore completes..."
+#~ msgstr "Lütfen geri yüklemenin bitmesini bekleyin..."
+
+#~ msgid "Please wait..."
+#~ msgstr "Lütfen bekleyin..."
+
+#~ msgid "Plugin Details"
+#~ msgstr "Eklenti Detayları"
+
+#~ msgid "Plugin manager activity information"
+#~ msgstr "Eklenti yöneticisi etkinlik bilgisi"
+
+#~ msgid "Plugin manager help"
+#~ msgstr "Eklenti yöneticisi yardım"
+
+#~ msgid "Press OK on your remote control to continue."
+#~ msgstr "Devam etmek için kumandanızda OK'a basın."
+
+#~ msgid "Process"
+#~ msgstr "İşlem"
+
+#~ msgid "Recordings"
+#~ msgstr "Kayıtlar"
+
+#~ msgid "Reload"
+#~ msgstr "Yenile"
+
+#~ msgid "Remove"
+#~ msgstr "Kaldır"
+
+#~ msgid "Remove finished."
+#~ msgstr "Kaldırma bitti."
+
+#~ msgid "Removing"
+#~ msgstr "Kaldırıyor"
+
+#~ msgid "Renaming old backup..."
+#~ msgstr "Eski yedek yeniden adlandırılıyor..."
+
+#~ msgid "Sat"
+#~ msgstr "Cti"
+
+#~ msgid "Satellite equipment"
+#~ msgstr "Uydu aygıtı"
+
+#~ msgid "Searching for available updates. Please wait..."
+#~ msgstr "Güncelleştirmeler aranıyor. Lütfen bekleyin..."
+
+#~ msgid "Searching for new installed or removed packages. Please wait..."
+#~ msgstr ""
+#~ "Yeni yüklenmiş veya kaldırılmış paketler aranıyor. Lütfen bekleyin..."
+
+#~ msgid "Sep"
+#~ msgstr "Eyl"
+
+#~ msgid "September"
+#~ msgstr "Eylül"
+
+#~ msgid "Skins"
+#~ msgstr "Görsel-arayüzler"
+
+#~ msgid "Software"
+#~ msgstr "Yazılım"
+
+#~ msgid "Software Manager"
+#~ msgstr "Yazılım Yöneticisi"
+
+#~ msgid "Software Update"
+#~ msgstr "Yazılım Güncelleme"
+
+#~ msgid "Sorry, no Details available!"
+#~ msgstr "Üzgünüm, detay yok!"
+
+#~ msgid "Sun"
+#~ msgstr "Paz"
+
+#~ msgid "System"
+#~ msgstr "Sistem"
+
+#~ msgid "There are at least "
+#~ msgstr "En az"
+
+#~ msgid "There are currently no outstanding actions."
+#~ msgstr "Bekleyen işlem yok."
+
+#~ msgid "There are no updates available."
+#~ msgstr "Güncelleme yok."
+
+#~ msgid "There was an error downloading the packetlist. Please try again."
+#~ msgstr "Paket listesini indirirken hata oluştu. Lütfen yeniden deneyin."
+
+#~ msgid "This plugin is installed."
+#~ msgstr "Bu eklenti yüklendi."
+
+#~ msgid "This plugin is not installed."
+#~ msgstr "Bu eklenti yüklenmedi."
+
+#~ msgid "This plugin will be installed."
+#~ msgstr "Bu eklenti yüklenecek."
+
+#~ msgid "This plugin will be removed."
+#~ msgstr "Bu eklenti kaldırılacak."
+
+#~ msgid "Thu"
+#~ msgstr "Per"
+
+#~ msgid "Trying to download a new packetlist. Please wait..."
+#~ msgstr "Yeni bir paket listesi indiriliyor. Lütfen bekleyin..."
+
+#~ msgid "Tue"
+#~ msgstr "Sal"
+
+#~ msgid "Unattended"
+#~ msgstr "Gözetimsiz"
+
+#~ msgid "Unattended upgrade without GUI and reboot system"
+#~ msgstr "Kullanıcı arayüzsüz gözetimsiz yükselt ve sistemi yeniden başlat"
+
+#~ msgid "Undo install"
+#~ msgstr "Yükleme iptali"
+
+#~ msgid "Undo uninstall"
+#~ msgstr "Kaldırma iptali"
+
+#~ msgid "Uninstall"
+#~ msgstr "Kaldır"
+
+#~ msgid "Update"
+#~ msgstr "Güncelle"
+
+#~ msgid "Updatefeed not available."
+#~ msgstr "Güncelleme beslemesi yok."
+
+#~ msgid "Updating software catalog"
+#~ msgstr "Yazılım kataloğu güncelleniyor"
+
+#~ msgid "Upgrade and ask to reboot"
+#~ msgstr "Yükselt ve yeniden başlatma için sor"
+
+#~ msgid "Upgrade finished."
+#~ msgstr "Yükseltme bitti."
+
+#~ msgid "Upgrading"
+#~ msgstr "Yükseltiliyor"
+
+#~ msgid "View Changes"
+#~ msgstr "Değişiklikleri izle"
+
+#~ msgid "View details"
+#~ msgstr "Detayları izle"
+
+#~ msgid "View list of available "
+#~ msgstr "Listesini izle"
+
+#~ msgid "View list of available CommonInterface extensions"
+#~ msgstr "Kullanılabilir OrtakArayüz genişletmelerinin listesini izle."
+
+#~ msgid "View list of available Display and Userinterface extensions."
+#~ msgstr "Kullanılabilir Görüntü ve Kullanıcı Arayüzü genişletmeler listesi"
+
+#~ msgid "View list of available EPG extensions."
+#~ msgstr "Kullanılabilir EPG genişletmelerinin listesini izle."
+
+#~ msgid "View list of available Satellite equipment extensions."
+#~ msgstr "Kullanılabilir Uydu aygıt genişletmelerinin listesini izle."
+
+#~ msgid "View list of available communication extensions."
+#~ msgstr "Kullanılabilir iletişim genişletmelerinin listesini izle."
+
+#~ msgid "View list of available default settings"
+#~ msgstr "Kullanılabilir varsayılan ayarların listesini izle."
+
+#~ msgid "View list of available multimedia extensions."
+#~ msgstr "Kullanılabilir çoklu ortam genişletmelerinin listesini izle."
+
+#~ msgid "View list of available networking extensions"
+#~ msgstr "Kullanılabilir ağ genişletmelerinin listesini izle."
+
+#~ msgid "View list of available recording extensions"
+#~ msgstr "Kullanılabilir kayıt genişletmelerinin listesini izle."
+
+#~ msgid "View list of available skins"
+#~ msgstr "Kullanılabilir görsel-arayüzlerin listesini izle."
+
+#~ msgid "View list of available software extensions"
+#~ msgstr "Kullanılabilir yazılım genişletmelerinin listesini izle."
+
+#~ msgid "View list of available system extensions"
+#~ msgstr "Kullanılabilir sistem genişletmelerinin listesini izle."
+
+#~ msgid "View the changes"
+#~ msgstr "Değişiklikleri izle"
+
+#~ msgid "View, install and remove available or installed packages."
+#~ msgstr "Kullanılabilir veya yüklenmiş paketleti izle, yükle veya kaldır."
+
+#, fuzzy
+#~ msgid "STB_BOX software because updates are available."
+#~ msgstr "STB_BOX yazılım güncellemeleri var."
+
+#~ msgid "Wed"
+#~ msgstr "Çar"
+
+#~ msgid "You can cancel the installation."
+#~ msgstr "Yüklemeyi iptal edebilirsiniz."
+
+#~ msgid "You can cancel the removal."
+#~ msgstr "Kaldırmayı iptal edebilirsiniz."
+
+#~ msgid "You can install this plugin."
+#~ msgstr "Bu eklentiyi yükleyebilirsiniz."
+
+#~ msgid "You can remove this plugin."
+#~ msgstr "Bu eklentiyi kaldırabilirsiniz."
+
+#~ msgid ""
+#~ "Your STB_BOX isn't connected to the internet properly. Please check it "
+#~ "and try again."
+#~ msgstr ""
+#~ "STB_BOX internete bağlı değil. Lütfen kontrol edin ve tekrar deneyin."
+
+#~ msgid ""
+#~ "Your STB_BOX might be unusable now. Please consult the manual for further "
+#~ "assistance before rebooting your STB_BOX."
+#~ msgstr ""
+#~ "STB_BOX şimdi kullanılamıyor. Lütfen yeniden başlatmadan önce yardım "
+#~ "almak için kullanıcı kılavuzuna başvurun."
+
+#~ msgid "detected"
+#~ msgstr "bulundu"
+
+#~ msgid "unknown"
+#~ msgstr "bilinmeyen"

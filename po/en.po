@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-31 13:21+0100\n"
-"PO-Revision-Date: 2012-03-31 13:34+0100\n"
+"POT-Creation-Date: 2012-09-14 18:04+0100\n"
+"PO-Revision-Date: 2012-09-14 19:42-0000\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -23,6 +23,9 @@ msgstr "%a %e %b  %-H:%M"
 msgid "16 Mb"
 msgstr "16 Mb"
 
+msgid "30 Days"
+msgstr "30 Days"
+
 msgid "32 Mb"
 msgstr "32 Mb"
 
@@ -35,16 +38,8 @@ msgstr "8 Mb"
 msgid "96 Mb"
 msgstr "96 Mb"
 
-#, python-format
-msgid ""
-"A configuration file (%s) was modified since Installation.\n"
-"Do you want to keep your version?"
-msgstr ""
-"A configuration file (%s) was modified since Installation.\n"
-"Do you want to keep your version?"
-
-msgid "A small overview of the available icon states and actions."
-msgstr "A small overview of the available icon states and actions."
+msgid "A background update check is is progress, please wait for retry."
+msgstr "A background update check is is progress, please wait for retry."
 
 msgid "Activate"
 msgstr "Activate"
@@ -58,11 +53,41 @@ msgstr "Active:"
 msgid "Add"
 msgstr "Add"
 
-msgid "After pressing OK, please wait!"
-msgstr "After pressing OK, please wait!"
+msgid ""
+"Allows the softcam to be checked if it stopped working, and restarted "
+"automatically if needed."
+msgstr ""
+"Allows the softcam to be checked if it stopped working, and restarted "
+"automatically if needed."
 
-msgid "Apr"
-msgstr "Apr"
+msgid "Allows you schedule your boackups."
+msgstr "Allows you schedule your boackups."
+
+msgid "Allows you schedule your image backups."
+msgstr "Allows you schedule your image backups."
+
+msgid "Allows you to control the power state of your STB_BOX."
+msgstr "Allows you to control the power state of your STB_BOX."
+
+msgid "Allows you to put your STB_BOX in standby at a set time."
+msgstr "Allows you to put your STB_BOX in standby at a set time."
+
+msgid "Allows you to put your STB_BOX into deepstandby at a set time."
+msgstr "Allows you to put your STB_BOX into deepstandby at a set time."
+
+msgid "Allows you to reboot your STB_BOX at a set time."
+msgstr "Allows you to reboot your STB_BOX at a set time."
+
+msgid "Allows you to restart your STB_BOX interface at a set time."
+msgstr "Allows you to restart your STB_BOX interface at a set time."
+
+msgid "Allows you to tag your backups to a box. (default is box name/type)"
+msgstr "Allows you to tag your backups to a box. (default is box name/type)"
+
+msgid ""
+"Allows you to tag your image backup to a box. (default is box name/type)"
+msgstr ""
+"Allows you to tag your image backup to a box. (default is box name/type)"
 
 msgid "Are you ready to create a backup ?"
 msgstr "Are you ready to create a backup ?"
@@ -102,20 +127,11 @@ msgstr ""
 "Are you sure you want to restore this backup:\n"
 " "
 
-msgid "Aug"
-msgstr "Aug"
-
-msgid "Author: "
-msgstr "Author: "
-
 msgid "Autostart"
 msgstr "Autostart"
 
 msgid "Autostart:"
 msgstr "Autostart:"
-
-msgid "Back"
-msgstr "Back"
 
 msgid "Backing up files..."
 msgstr "Backing up files..."
@@ -141,8 +157,12 @@ msgstr "Backup Manager Log"
 msgid "Backup Manager Setup"
 msgstr "Backup Manager Setup"
 
-msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Backup failed - e. g. wrong backup destination or no space left on backup device"
+msgid ""
+"Backup failed - e. g. wrong backup destination or no space left on backup "
+"device"
+msgstr ""
+"Backup failed - e. g. wrong backup destination or no space left on backup "
+"device"
 
 msgid ""
 "Backup in progress,\n"
@@ -151,20 +171,37 @@ msgstr ""
 "Backup in progress,\n"
 "Please for it to finish, before trying again"
 
+msgid "Backup prefix"
+msgstr "Backup prefix"
+
 msgid "BackupManager"
 msgstr "BackupManager"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam can't run whilst MGcamd is running"
 
-msgid "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths"
+msgid ""
+"Can't unmount partiton, make sure it is not being used for swap or record/"
+"timeshift paths"
+msgstr ""
+"Can't unmount partiton, make sure it is not being used for swap or record/"
+"timeshift paths"
 
 msgid "Cancel"
 msgstr "Cancel"
 
-msgid "Check every (mins)"
-msgstr "Check every (mins)"
+msgid "Change Location"
+msgstr "Change Location"
+
+msgid ""
+"Changes need a system restart to take effect.\n"
+"Restart your STB_BOX now?"
+msgstr ""
+"Changes need a system restart to take effect.\n"
+"Restart your STB_BOX now?"
+
+msgid "Checking Feeds"
+msgstr "Checking Feeds"
 
 msgid "Checking Free RAM.."
 msgstr "Checking Free RAM.."
@@ -174,6 +211,9 @@ msgstr "Checking softcams..."
 
 msgid "Choose Files"
 msgstr "Choose Files"
+
+msgid "Choose local ipk's folder"
+msgstr "Choose local ipk's folder"
 
 msgid "Choose where to mount your devices to:"
 msgstr "Choose where to mount your devices to:"
@@ -187,20 +227,8 @@ msgstr "Command To Run"
 msgid "Command type"
 msgstr "Command type"
 
-msgid "CommonInterface"
-msgstr "CommonInterface"
-
-msgid "Communication"
-msgstr "Communication"
-
 msgid "Comparing against backup..."
 msgstr "Comparing against backup..."
-
-msgid "Configuring"
-msgstr "Configuring"
-
-msgid "Continue"
-msgstr "Continue"
 
 msgid "Create"
 msgstr "Create"
@@ -238,14 +266,11 @@ msgstr "Daily"
 msgid "Deactivate"
 msgstr "Deactivate"
 
-msgid "Dec"
-msgstr "Dec"
-
 msgid "Deep Standby Time"
 msgstr "Deep Standby Time"
 
-msgid "Default Settings"
-msgstr "Default Settings"
+msgid "DeepStandby Time"
+msgstr "DeepStandby Time"
 
 msgid "Delete"
 msgstr "Delete"
@@ -253,21 +278,11 @@ msgstr "Delete"
 msgid "Deselect"
 msgstr "Deselect"
 
-msgid "Details for plugin: "
-msgstr "Details for plugin: "
-
 msgid "Device: "
 msgstr "Device: "
 
 msgid "Device: None available"
 msgstr "Device: None available"
-
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your STB_BOX now?"
-msgstr ""
-"Changes need a system restart to take effect.\n"
-"Restart your STB_BOX now?"
 
 msgid "Disable Startup"
 msgstr "Disable Startup"
@@ -275,33 +290,11 @@ msgstr "Disable Startup"
 msgid "Disabled"
 msgstr "Disabled"
 
-msgid "Display and Userinterface"
-msgstr "Display and Userinterface"
-
-msgid "Do you want to install the package:\n"
-msgstr "Do you want to install the package:\n"
-
-msgid "Do you want to reboot your STB_BOX?"
-msgstr "Do you want to reboot your STB_BOX?"
-
-msgid "Do you want to remove the package:\n"
-msgstr "Do you want to remove the package:\n"
-
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Do you want to restore your Enigma2 plugins ?"
 
 msgid "Do you want to restore your Enigma2 settings ?"
 msgstr "Do you want to restore your Enigma2 settings ?"
-
-msgid "Do you want to update your STB_BOX?"
-msgstr "Do you want to update your STB_BOX?"
-
-msgid "Do you want to upgrade the package:\n"
-msgstr "Do you want to upgrade the package:\n"
-
-#, python-format
-msgid "Done - Installed or upgraded %d packages"
-msgstr "Done - Installed or upgraded %d packages"
 
 msgid "Download"
 msgstr "Download"
@@ -309,26 +302,23 @@ msgstr "Download"
 msgid "Download Confirmation"
 msgstr "Download Confirmation"
 
-msgid "Downloading"
-msgstr "Downloading"
-
 msgid "Downloading Image..."
 msgstr "Downloading Image..."
 
 msgid "Downloads"
 msgstr "Downloads"
 
-msgid "Electronic Program Guide"
-msgstr "Electronic Program Guide"
-
-msgid "Enable Auto Timer Check ?"
-msgstr "Enable Auto Timer Check ?"
-
 msgid "Enable Deep Standby"
 msgstr "Enable Deep Standby"
 
+msgid "Enable DeepStandby"
+msgstr "Enable DeepStandby"
+
 msgid "Enable GUI Restart"
 msgstr "Enable GUI Restart"
+
+msgid "Enable GUI restart"
+msgstr "Enable GUI restart"
 
 msgid "Enable Power Manager"
 msgstr "Enable Power Manager"
@@ -345,29 +335,23 @@ msgstr "Enable Startup"
 msgid "Enable Swap at startup"
 msgstr "Enable Swap at startup"
 
+msgid "Enable frozen check ?"
+msgstr "Enable frozen check ?"
+
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Enough Retries, delaying till next schedule."
-
-msgid "Error"
-msgstr "Error"
 
 msgid "Exit the restore wizard"
 msgstr "Exit the restore wizard"
 
-msgid "Experimental"
-msgstr "Experimental"
+msgid "Extra IPK's"
+msgstr "Extra IPK's"
 
-msgid "Extensions management"
-msgstr "Extensions management"
-
-msgid "Feb"
-msgstr "Feb"
+msgid "Extra Package's Location"
+msgstr "Extra Package's Location"
 
 msgid "Folder prefix"
 msgstr "Folder prefix"
-
-msgid "Following tasks will be done after you press OK!"
-msgstr "Following tasks will be done after you press OK!"
 
 msgid "Found none stanadard softcam, trying to start, this may fail"
 msgstr "Found none stanadard softcam, trying to start, this may fail"
@@ -377,6 +361,9 @@ msgstr "Found none standard softcam, trying to start, this may fail"
 
 msgid "Friday"
 msgstr "Friday"
+
+msgid "Frozen check interval"
+msgstr "Frozen check interval"
 
 msgid "GB"
 msgstr "GB"
@@ -423,38 +410,23 @@ msgstr "Install IPK's from your tmp folder."
 msgid "Install local extension"
 msgstr "Install local extension"
 
-msgid "Install or remove finished."
-msgstr "Install or remove finished."
-
-msgid "Installation finished."
-msgstr "Installation finished."
-
-msgid "Installing"
-msgstr "Installing"
+msgid "Installing Service"
+msgstr "Installing Service"
 
 msgid "Installing..."
 msgstr "Installing..."
 
-msgid "Jan"
-msgstr "Jan"
+msgid "Location of where backup should be saved."
+msgstr "Location of where backup should be saved."
 
-msgid "Jul"
-msgstr "Jul"
-
-msgid "Jun"
-msgstr "Jun"
+msgid "Location of where image backup should lbe saved."
+msgstr "Location of where image backup should lbe saved."
 
 msgid "MB"
 msgstr "MB"
 
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr "MGcamd can't run whilst CCcam is running"
-
-msgid "Manage Extensions"
-msgstr "Manage Extensions"
-
-msgid "Manage extensions or plugins for your STB_BOX"
-msgstr "Manage extensions or plugins for your STB_BOX"
 
 msgid "Manage you devices mountpoints."
 msgstr "Manage you devices mountpoints."
@@ -464,12 +436,6 @@ msgstr "Manage your backups of your settings."
 
 msgid "Manage your cron jobs."
 msgstr "Manage your cron jobs."
-
-msgid "Mar"
-msgstr "Mar"
-
-msgid "May"
-msgstr "May"
 
 msgid "Monday"
 msgstr "Monday"
@@ -489,17 +455,11 @@ msgstr "Mount: "
 msgid "Moving to Backup Location..."
 msgstr "Moving to Backup Location..."
 
-msgid "Multimedia"
-msgstr "Multimedia"
-
 msgid "NO, do not restore plugins"
 msgstr "NO, do not restore plugins"
 
 msgid "NO, do not restore settings"
 msgstr "NO, do not restore settings"
-
-msgid "Network"
-msgstr "Network"
 
 msgid "New Backup"
 msgstr "New Backup"
@@ -547,32 +507,11 @@ msgstr ""
 "No config files found, please setup Oscam first\n"
 "in /etc/tuxbox/config"
 
-msgid "No description available."
-msgstr "No description available."
-
-msgid "No network connection available."
-msgstr "No network connection available."
-
-msgid "No packages were upgraded yet. So you can check your network and try again."
-msgstr "No packages were upgraded yet. So you can check your network and try again."
-
 msgid "No plugins where needed to be installed"
 msgstr "No plugins where needed to be installed"
 
 msgid "None"
 msgstr "None"
-
-msgid "Nothing to upgrade"
-msgstr "Nothing to upgrade"
-
-msgid "Nov"
-msgstr "Nov"
-
-msgid "Now installing service"
-msgstr "Now installing service"
-
-msgid "Now removing service"
-msgstr "Now removing service"
 
 msgid "Now skipping restore process"
 msgstr "Now skipping restore process"
@@ -583,26 +522,8 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "OK, to perform a restore"
 
-msgid "Oct"
-msgstr "Oct"
-
-msgid "Online update of your STB_BOX software."
-msgstr "Online update of your STB_BOX software."
-
-msgid "Only extensions."
-msgstr "Only extensions."
-
-msgid "Package list update"
-msgstr "Package list update"
-
-msgid "Packages"
-msgstr "Packages"
-
-msgid "Packet Manager"
-msgstr "Packet Manager"
-
-msgid "Packet manager"
-msgstr "Packet manager"
+msgid "Please enter a folder that contains some packages."
+msgstr "Please enter a folder that contains some packages."
 
 msgid "Please select device to use as swapfile location"
 msgstr "Please select device to use as swapfile location"
@@ -625,32 +546,30 @@ msgstr "Please wait while starting\n"
 msgid "Please wait while stopping\n"
 msgstr "Please wait while stopping\n"
 
-msgid "Please wait..."
-msgstr "Please wait..."
+msgid "Please wait whilst feeds state is checked."
+msgstr "Please wait whilst feeds state is checked."
 
-msgid "Plugin Details"
-msgstr "Plugin Details"
+msgid "Please wait."
+msgstr "Please wait."
 
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-
-msgid "Plugin manager activity information"
-msgstr "Plugin manager activity information"
-
-msgid "Plugin manager help"
-msgstr "Plugin manager help"
+msgid ""
+"Plugin Listing failed - e. g. wrong backup destination or no space left on "
+"backup device"
+msgstr ""
+"Plugin Listing failed - e. g. wrong backup destination or no space left on "
+"backup device"
 
 msgid "Power Manager"
 msgstr "Power Manager"
 
+msgid "Power Manager Setup"
+msgstr "Power Manager Setup"
+
 msgid "Predefined"
 msgstr "Predefined"
 
-msgid "Press OK on your remote control to continue."
-msgstr "Press OK on your remote control to continue."
-
-msgid "Process"
-msgstr "Process"
+msgid "Preparing extra plugins..."
+msgstr "Preparing extra plugins..."
 
 #, python-format
 msgid "Ready to install \"%s\" ?"
@@ -672,29 +591,14 @@ msgstr "Reboot Time"
 msgid "Rebooting..."
 msgstr "Rebooting..."
 
-msgid "Recordings"
-msgstr "Recordings"
-
 msgid "Refresh List"
 msgstr "Refresh List"
-
-msgid "Reload"
-msgstr "Reload"
-
-msgid "Remove"
-msgstr "Remove"
 
 msgid "Remove Confirmation"
 msgstr "Remove Confirmation"
 
-msgid "Remove finished."
-msgstr "Remove finished."
-
-msgid "Removing"
-msgstr "Removing"
-
-msgid "Renaming old backup..."
-msgstr "Renaming old backup..."
+msgid "Removing Service"
+msgstr "Removing Service"
 
 msgid "Repeat how often"
 msgstr "Repeat how often"
@@ -726,6 +630,9 @@ msgstr "Restore Wizard"
 msgid "Restoring backup..."
 msgstr "Restoring backup..."
 
+msgid "Restoring plugins, this can take a long time..."
+msgstr "Restoring plugins, this can take a long time..."
+
 msgid "Restoring plugins..."
 msgstr "Restoring plugins..."
 
@@ -747,9 +654,6 @@ msgstr "Run your shell scripts."
 msgid "Running"
 msgstr "Running"
 
-msgid "Satellite equipment"
-msgstr "Satellite equipment"
-
 msgid "Saturday"
 msgstr "Saturday"
 
@@ -761,12 +665,6 @@ msgstr "Schedule Backups"
 
 msgid "Script Runner"
 msgstr "Script Runner"
-
-msgid "Searching for available updates. Please wait..."
-msgstr "Searching for available updates. Please wait..."
-
-msgid "Searching for new installed or removed packages. Please wait..."
-msgstr "Searching for new installed or removed packages. Please wait..."
 
 msgid "Select"
 msgstr "Select"
@@ -789,17 +687,38 @@ msgstr "Select an image to Restore / Delete:"
 msgid "Select files/folders to backup"
 msgstr "Select files/folders to backup"
 
+msgid "Select folder that contains plugins"
+msgstr "Select folder that contains plugins"
+
 msgid "Select the Swap File Size:"
 msgstr "Select the Swap File Size:"
 
 msgid "Select:"
 msgstr "Select:"
 
-msgid "Sep"
-msgstr "Sep"
+msgid "Set the delay time to wait before asking again."
+msgstr "Set the delay time to wait before asking again."
 
-msgid "Service is not currently in use do you want to remove the service ?"
-msgstr "Service is not currently in use do you want to remove the service ?"
+msgid "Set the invterval to be checked in mins."
+msgstr "Set the invterval to be checked in mins."
+
+msgid "Set the repeat interval of backup schedule."
+msgstr "Set the repeat interval of backup schedule."
+
+msgid "Set the time of backup to start."
+msgstr "Set the time of backup to start."
+
+msgid "Set the time to enter deepstandby mode."
+msgstr "Set the time to enter deepstandby mode."
+
+msgid "Set the time to enter standby mode."
+msgstr "Set the time to enter standby mode."
+
+msgid "Set the time to reboot."
+msgstr "Set the time to reboot."
+
+msgid "Set the time to restart the interface."
+msgstr "Set the time to restart the interface."
 
 msgid "Setting Up..."
 msgstr "Setting Up..."
@@ -812,9 +731,6 @@ msgstr "Shut-down."
 
 msgid "Size: "
 msgstr "Size: "
-
-msgid "Skins"
-msgstr "Skins"
 
 msgid "Softcam Manager"
 msgstr "Softcam Manager"
@@ -834,20 +750,20 @@ msgstr "Softcam Starting..."
 msgid "SoftcamCheck"
 msgstr "SoftcamCheck"
 
-msgid "Software"
-msgstr "Software"
-
-msgid "Software Manager"
-msgstr "Software Manager"
-
-msgid "Software Update"
-msgstr "Software Update"
+msgid ""
+"Sorry but location does exist or not setup, please setup in Backup Manager ?"
+msgstr ""
+"Sorry but location does exist or not setup, please setup in Backup Manager ?"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Sorry feeds are down for maintenance, Please try again later."
 
-msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgid ""
+"Sorry feeds are down for maintenance, Please try using Backup Manager to "
+"restore plugins later."
+msgstr ""
+"Sorry feeds are down for maintenance, Please try using Backup Manager to "
+"restore plugins later."
 
 msgid "Sorry feeds are down for maintenance, please try again later."
 msgstr "Sorry feeds are down for maintenance, please try again later."
@@ -855,14 +771,21 @@ msgstr "Sorry feeds are down for maintenance, please try again later."
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "Sorry you STB_BOX is not yet compatible."
 
-msgid "Sorry, no Details available!"
-msgstr "Sorry, no Details available!"
+msgid ""
+"Sorry, no physical devices that supports SWAP attached. Can't create "
+"Swapfile on network or fat32 filesystems"
+msgstr ""
+"Sorry, no physical devices that supports SWAP attached. Can't create "
+"Swapfile on network or fat32 filesystems"
 
-msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
-msgstr "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
-
-msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
-msgstr "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
+msgid ""
+"Sorry, not enough free ram found, and no physical devices that supports SWAP "
+"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
+"make backup"
+msgstr ""
+"Sorry, not enough free ram found, and no physical devices that supports SWAP "
+"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
+"make backup"
 
 msgid "Standby"
 msgstr "Standby"
@@ -900,8 +823,11 @@ msgstr "Swap Place:"
 msgid "Swap Size:"
 msgstr "Swap Size:"
 
-msgid "System"
-msgstr "System"
+msgid "TB"
+msgstr "TB"
+
+msgid "Temp Folder"
+msgstr "Temp Folder"
 
 msgid "The backup location does not have enough freespace."
 msgstr "The backup location does not have enough freespace."
@@ -915,32 +841,8 @@ msgstr "The wizard is finished now, and will reboot"
 msgid "The wizard is finished now."
 msgstr "The wizard is finished now."
 
-msgid "There are at least "
-msgstr "There are at least "
-
-msgid "There are currently no outstanding actions."
-msgstr "There are currently no outstanding actions."
-
-msgid "There are no updates available."
-msgstr "There are no updates available."
-
-msgid "There was an error downloading the packetlist. Please try again."
-msgstr "There was an error downloading the packetlist. Please try again."
-
 msgid "This Device is already mounted as HDD."
 msgstr "This Device is already mounted as HDD."
-
-msgid "This plugin is installed."
-msgstr "This plugin is installed."
-
-msgid "This plugin is not installed."
-msgstr "This plugin is not installed."
-
-msgid "This plugin will be installed."
-msgstr "This plugin will be installed."
-
-msgid "This plugin will be removed."
-msgstr "This plugin will be removed."
 
 msgid "Thursday"
 msgstr "Thursday"
@@ -951,41 +853,14 @@ msgstr "Time of Backup to start"
 msgid "Time to execute command or script"
 msgstr "Time to execute command or script"
 
-msgid "Trying to download a new packetlist. Please wait..."
-msgstr "Trying to download a new packetlist. Please wait..."
-
 msgid "Tuesday"
 msgstr "Tuesday"
 
 msgid "Type: "
 msgstr "Type: "
 
-msgid "Unattended upgrade without GUI and reboot system"
-msgstr "Unattended upgrade without GUI and reboot system"
-
-msgid "Undo install"
-msgstr "Undo install"
-
-msgid "Undo uninstall"
-msgstr "Undo uninstall"
-
-msgid "Uninstall"
-msgstr "Uninstall"
-
-msgid "Update"
-msgstr "Update"
-
-msgid "Update feed not available."
-msgstr "Update feed not available."
-
-msgid "Updating software catalog"
-msgstr "Updating software catalog"
-
-msgid "Upgrade finished."
-msgstr "Upgrade finished."
-
-msgid "Upgrading"
-msgstr "Upgrading"
+msgid "Updating mount locations."
+msgstr "Updating mount locations."
 
 msgid "Use as HDD"
 msgstr "Use as HDD"
@@ -993,62 +868,8 @@ msgstr "Use as HDD"
 msgid "ViX"
 msgstr "ViX"
 
-msgid "View Changes"
-msgstr "View Changes"
-
 msgid "View Progress"
 msgstr "View Progress"
-
-msgid "View details"
-msgstr "View details"
-
-msgid "View list of available "
-msgstr "View list of available "
-
-msgid "View list of available CommonInterface extensions"
-msgstr "View list of available CommonInterface extensions"
-
-msgid "View list of available Display and Userinterface extensions."
-msgstr "View list of available Display and Userinterface extensions."
-
-msgid "View list of available EPG extensions."
-msgstr "View list of available EPG extensions."
-
-msgid "View list of available Satellite equipment extensions."
-msgstr "View list of available Satellite equipment extensions."
-
-msgid "View list of available communication extensions."
-msgstr "View list of available communication extensions."
-
-msgid "View list of available default settings"
-msgstr "View list of available default settings"
-
-msgid "View list of available multimedia extensions."
-msgstr "View list of available multimedia extensions."
-
-msgid "View list of available networking extensions"
-msgstr "View list of available networking extensions"
-
-msgid "View list of available recording extensions"
-msgstr "View list of available recording extensions"
-
-msgid "View list of available skins"
-msgstr "View list of available skins"
-
-msgid "View list of available software extensions"
-msgstr "View list of available software extensions"
-
-msgid "View list of available system extensions"
-msgstr "View list of available system extensions"
-
-msgid "View the changes"
-msgstr "View the changes"
-
-msgid "View, install and remove available or installed packages."
-msgstr "View, install and remove available or installed packages."
-
-msgid "STB_BOX software because updates are available."
-msgstr "STB_BOX software because updates are available."
 
 msgid "Wait please while creating swapfile..."
 msgstr "Wait please while creating swapfile..."
@@ -1079,12 +900,14 @@ msgid ""
 "Welcome to the restore wizard.\n"
 "\n"
 "A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+"You can use this wizard to restore your setting and any extra plugins that "
+"where installed when the backup was created.\n"
 msgstr ""
 "Welcome to the restore wizard.\n"
 "\n"
 "A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+"You can use this wizard to restore your setting and any extra plugins that "
+"where installed when the backup was created.\n"
 
 msgid "What Day of month ?"
 msgstr "What Day of month ?"
@@ -1097,18 +920,6 @@ msgstr "YES, to restore plugins"
 
 msgid "YES, to restore settings"
 msgstr "YES, to restore settings"
-
-msgid "You can cancel the installation."
-msgstr "You can cancel the installation."
-
-msgid "You can cancel the removal."
-msgstr "You can cancel the removal."
-
-msgid "You can install this plugin."
-msgstr "You can install this plugin."
-
-msgid "You can remove this plugin."
-msgstr "You can remove this plugin."
 
 msgid "You have no backup to delete."
 msgstr "You have no backup to delete."
@@ -1129,17 +940,21 @@ msgid "You have to create a Swap File before to activate the autostart."
 msgstr "You have to create a Swap File before to activate the autostart."
 
 msgid ""
-"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
+"Your STB_BOX is about to run a backup of your settings and detect your "
+"plugins,\n"
 "Do you want to allow this?"
 msgstr ""
-"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
+"Your STB_BOX is about to run a backup of your settings and detect your "
+"plugins,\n"
 "Do you want to allow this?"
 
 msgid ""
-"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
+"Your STB_BOX is about to run a full image backup, this can take about 6 "
+"minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
+"Your STB_BOX is about to run a full image backup, this can take about 6 "
+"minutes to complete,\n"
 "do you want to allow this?"
 
 msgid ""
@@ -1170,26 +985,25 @@ msgstr ""
 "Your STB_BOX is going for nightly standby,\n"
 "do you want to allow this?"
 
-msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
-msgstr "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
+msgid ""
+"Your STB_BOX is not connected to the internet, Please try using Backup "
+"Manager to restore plugins later."
+msgstr ""
+"Your STB_BOX is not connected to the internet, Please try using Backup "
+"Manager to restore plugins later."
 
-msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
-msgstr "Your STB_BOX is not connected to the internet, please check your network settings and try again."
-
-msgid "detected"
-msgstr "detected"
+msgid ""
+"Your STB_BOX is not connected to the internet, please check your network "
+"settings and try again."
+msgstr ""
+"Your STB_BOX is not connected to the internet, please check your network "
+"settings and try again."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Downloading Image.'"
 
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Expanding Image.'"
-
-msgid "extensions."
-msgstr "extensions."
-
-msgid "packages selected."
-msgstr "packages selected."
 
 msgid "please wait..."
 msgstr "please wait..."
@@ -1200,12 +1014,396 @@ msgstr "there was a problem with this device, please reformat and try again."
 msgid "unavailable"
 msgstr "unavailable"
 
-msgid "unknown"
-msgstr "unknown"
+#~ msgid ""
+#~ "A configuration file (%s) was modified since Installation.\n"
+#~ "Do you want to keep your version?"
+#~ msgstr ""
+#~ "A configuration file (%s) was modified since Installation.\n"
+#~ "Do you want to keep your version?"
 
-msgid "updates available."
-msgstr "updates available."
+#~ msgid "A small overview of the available icon states and actions."
+#~ msgstr "A small overview of the available icon states and actions."
 
-msgid "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
-msgstr "Your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
+#~ msgid "After pressing OK, please wait!"
+#~ msgstr "After pressing OK, please wait!"
 
+#~ msgid "Apr"
+#~ msgstr "Apr"
+
+#~ msgid "Aug"
+#~ msgstr "Aug"
+
+#~ msgid "Author: "
+#~ msgstr "Author: "
+
+#~ msgid "Back"
+#~ msgstr "Back"
+
+#~ msgid "Check every (mins)"
+#~ msgstr "Check every (mins)"
+
+#~ msgid "CommonInterface"
+#~ msgstr "CommonInterface"
+
+#~ msgid "Communication"
+#~ msgstr "Communication"
+
+#~ msgid "Configuring"
+#~ msgstr "Configuring"
+
+#~ msgid "Continue"
+#~ msgstr "Continue"
+
+#~ msgid "Dec"
+#~ msgstr "Dec"
+
+#~ msgid "Default Settings"
+#~ msgstr "Default Settings"
+
+#~ msgid "Details for plugin: "
+#~ msgstr "Details for plugin: "
+
+#~ msgid "Display and Userinterface"
+#~ msgstr "Display and Userinterface"
+
+#~ msgid "Do you want to install the package:\n"
+#~ msgstr "Do you want to install the package:\n"
+
+#~ msgid "Do you want to reboot your STB_BOX?"
+#~ msgstr "Do you want to reboot your STB_BOX?"
+
+#~ msgid "Do you want to remove the package:\n"
+#~ msgstr "Do you want to remove the package:\n"
+
+#~ msgid "Do you want to update your STB_BOX?"
+#~ msgstr "Do you want to update your STB_BOX?"
+
+#~ msgid "Do you want to upgrade the package:\n"
+#~ msgstr "Do you want to upgrade the package:\n"
+
+#~ msgid "Done - Installed or upgraded %d packages"
+#~ msgstr "Done - Installed or upgraded %d packages"
+
+#~ msgid "Downloading"
+#~ msgstr "Downloading"
+
+#~ msgid "Electronic Program Guide"
+#~ msgstr "Electronic Program Guide"
+
+#~ msgid "Enable Auto Timer Check ?"
+#~ msgstr "Enable Auto Timer Check ?"
+
+#~ msgid "Error"
+#~ msgstr "Error"
+
+#~ msgid "Experimental"
+#~ msgstr "Experimental"
+
+#~ msgid "Extensions management"
+#~ msgstr "Extensions management"
+
+#~ msgid "Feb"
+#~ msgstr "Feb"
+
+#~ msgid "Following tasks will be done after you press OK!"
+#~ msgstr "Following tasks will be done after you press OK!"
+
+#~ msgid "Install or remove finished."
+#~ msgstr "Install or remove finished."
+
+#~ msgid "Installation finished."
+#~ msgstr "Installation finished."
+
+#~ msgid "Installing"
+#~ msgstr "Installing"
+
+#~ msgid "Jan"
+#~ msgstr "Jan"
+
+#~ msgid "Jul"
+#~ msgstr "Jul"
+
+#~ msgid "Jun"
+#~ msgstr "Jun"
+
+#~ msgid "Manage Extensions"
+#~ msgstr "Manage Extensions"
+
+#~ msgid "Manage extensions or plugins for your STB_BOX"
+#~ msgstr "Manage extensions or plugins for your STB_BOX"
+
+#~ msgid "Mar"
+#~ msgstr "Mar"
+
+#~ msgid "May"
+#~ msgstr "May"
+
+#~ msgid "Multimedia"
+#~ msgstr "Multimedia"
+
+#~ msgid "Network"
+#~ msgstr "Network"
+
+#~ msgid "No description available."
+#~ msgstr "No description available."
+
+#~ msgid "No network connection available."
+#~ msgstr "No network connection available."
+
+#~ msgid ""
+#~ "No packages were upgraded yet. So you can check your network and try "
+#~ "again."
+#~ msgstr ""
+#~ "No packages were upgraded yet. So you can check your network and try "
+#~ "again."
+
+#~ msgid "Nothing to upgrade"
+#~ msgstr "Nothing to upgrade"
+
+#~ msgid "Nov"
+#~ msgstr "Nov"
+
+#~ msgid "Now installing service"
+#~ msgstr "Now installing service"
+
+#~ msgid "Now removing service"
+#~ msgstr "Now removing service"
+
+#~ msgid "Oct"
+#~ msgstr "Oct"
+
+#~ msgid "Online update of your STB_BOX software."
+#~ msgstr "Online update of your STB_BOX software."
+
+#~ msgid "Only extensions."
+#~ msgstr "Only extensions."
+
+#~ msgid "Package list update"
+#~ msgstr "Package list update"
+
+#~ msgid "Packages"
+#~ msgstr "Packages"
+
+#~ msgid "Packet Manager"
+#~ msgstr "Packet Manager"
+
+#~ msgid "Packet manager"
+#~ msgstr "Packet manager"
+
+#~ msgid "Please wait..."
+#~ msgstr "Please wait..."
+
+#~ msgid "Plugin Details"
+#~ msgstr "Plugin Details"
+
+#~ msgid "Plugin manager activity information"
+#~ msgstr "Plugin manager activity information"
+
+#~ msgid "Plugin manager help"
+#~ msgstr "Plugin manager help"
+
+#~ msgid "Press OK on your remote control to continue."
+#~ msgstr "Press OK on your remote control to continue."
+
+#~ msgid "Process"
+#~ msgstr "Process"
+
+#~ msgid "Recordings"
+#~ msgstr "Recordings"
+
+#~ msgid "Reload"
+#~ msgstr "Reload"
+
+#~ msgid "Remove"
+#~ msgstr "Remove"
+
+#~ msgid "Remove finished."
+#~ msgstr "Remove finished."
+
+#~ msgid "Removing"
+#~ msgstr "Removing"
+
+#~ msgid "Renaming old backup..."
+#~ msgstr "Renaming old backup..."
+
+#~ msgid "Satellite equipment"
+#~ msgstr "Satellite equipment"
+
+#~ msgid "Searching for available updates. Please wait..."
+#~ msgstr "Searching for available updates. Please wait..."
+
+#~ msgid "Searching for new installed or removed packages. Please wait..."
+#~ msgstr "Searching for new installed or removed packages. Please wait..."
+
+#~ msgid "Sep"
+#~ msgstr "Sep"
+
+#~ msgid "Service is not currently in use do you want to remove the service ?"
+#~ msgstr "Service is not currently in use do you want to remove the service ?"
+
+#~ msgid "Skins"
+#~ msgstr "Skins"
+
+#~ msgid "Software"
+#~ msgstr "Software"
+
+#~ msgid "Software Manager"
+#~ msgstr "Software Manager"
+
+#~ msgid "Software Update"
+#~ msgstr "Software Update"
+
+#~ msgid "Sorry, no Details available!"
+#~ msgstr "Sorry, no Details available!"
+
+#~ msgid "System"
+#~ msgstr "System"
+
+#~ msgid "There are at least "
+#~ msgstr "There are at least "
+
+#~ msgid "There are currently no outstanding actions."
+#~ msgstr "There are currently no outstanding actions."
+
+#~ msgid "There are no updates available."
+#~ msgstr "There are no updates available."
+
+#~ msgid "There was an error downloading the packetlist. Please try again."
+#~ msgstr "There was an error downloading the packetlist. Please try again."
+
+#~ msgid "This plugin is installed."
+#~ msgstr "This plugin is installed."
+
+#~ msgid "This plugin is not installed."
+#~ msgstr "This plugin is not installed."
+
+#~ msgid "This plugin will be installed."
+#~ msgstr "This plugin will be installed."
+
+#~ msgid "This plugin will be removed."
+#~ msgstr "This plugin will be removed."
+
+#~ msgid "Trying to download a new packetlist. Please wait..."
+#~ msgstr "Trying to download a new packetlist. Please wait..."
+
+#~ msgid "Unattended upgrade without GUI and reboot system"
+#~ msgstr "Unattended upgrade without GUI and reboot system"
+
+#~ msgid "Undo install"
+#~ msgstr "Undo install"
+
+#~ msgid "Undo uninstall"
+#~ msgstr "Undo uninstall"
+
+#~ msgid "Uninstall"
+#~ msgstr "Uninstall"
+
+#~ msgid "Update"
+#~ msgstr "Update"
+
+#~ msgid "Update feed not available."
+#~ msgstr "Update feed not available."
+
+#~ msgid "Updating software catalog"
+#~ msgstr "Updating software catalog"
+
+#~ msgid "Upgrade finished."
+#~ msgstr "Upgrade finished."
+
+#~ msgid "Upgrading"
+#~ msgstr "Upgrading"
+
+#~ msgid "View Changes"
+#~ msgstr "View Changes"
+
+#~ msgid "View details"
+#~ msgstr "View details"
+
+#~ msgid "View list of available "
+#~ msgstr "View list of available "
+
+#~ msgid "View list of available CommonInterface extensions"
+#~ msgstr "View list of available CommonInterface extensions"
+
+#~ msgid "View list of available Display and Userinterface extensions."
+#~ msgstr "View list of available Display and Userinterface extensions."
+
+#~ msgid "View list of available EPG extensions."
+#~ msgstr "View list of available EPG extensions."
+
+#~ msgid "View list of available Satellite equipment extensions."
+#~ msgstr "View list of available Satellite equipment extensions."
+
+#~ msgid "View list of available communication extensions."
+#~ msgstr "View list of available communication extensions."
+
+#~ msgid "View list of available default settings"
+#~ msgstr "View list of available default settings"
+
+#~ msgid "View list of available multimedia extensions."
+#~ msgstr "View list of available multimedia extensions."
+
+#~ msgid "View list of available networking extensions"
+#~ msgstr "View list of available networking extensions"
+
+#~ msgid "View list of available recording extensions"
+#~ msgstr "View list of available recording extensions"
+
+#~ msgid "View list of available skins"
+#~ msgstr "View list of available skins"
+
+#~ msgid "View list of available software extensions"
+#~ msgstr "View list of available software extensions"
+
+#~ msgid "View list of available system extensions"
+#~ msgstr "View list of available system extensions"
+
+#~ msgid "View the changes"
+#~ msgstr "View the changes"
+
+#~ msgid "View, install and remove available or installed packages."
+#~ msgstr "View, install and remove available or installed packages."
+
+#~ msgid "STB_BOX software because updates are available."
+#~ msgstr "STB_BOX software because updates are available."
+
+#~ msgid "You can cancel the installation."
+#~ msgstr "You can cancel the installation."
+
+#~ msgid "You can cancel the removal."
+#~ msgstr "You can cancel the removal."
+
+#~ msgid "You can install this plugin."
+#~ msgstr "You can install this plugin."
+
+#~ msgid "You can remove this plugin."
+#~ msgstr "You can remove this plugin."
+
+#~ msgid ""
+#~ "Your STB_BOX isn't connected to the internet properly. Please check it "
+#~ "and try again."
+#~ msgstr ""
+#~ "Your STB_BOX isn't connected to the internet properly. Please check it "
+#~ "and try again."
+
+#~ msgid ""
+#~ "Your STB_BOX might be unusable now. Please consult the manual for further "
+#~ "assistance before rebooting your STB_BOX."
+#~ msgstr ""
+#~ "Your STB_BOX might be unusable now. Please consult the manual for further "
+#~ "assistance before rebooting your STB_BOX."
+
+#~ msgid "detected"
+#~ msgstr "detected"
+
+#~ msgid "extensions."
+#~ msgstr "extensions."
+
+#~ msgid "packages selected."
+#~ msgstr "packages selected."
+
+#~ msgid "unknown"
+#~ msgstr "unknown"
+
+#~ msgid "updates available."
+#~ msgstr "updates available."

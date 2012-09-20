@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-12 16:30+0100\n"
-"PO-Revision-Date: 2012-09-14 19:42-0000\n"
+"POT-Creation-Date: 2012-09-18 17:16+0100\n"
+"PO-Revision-Date: 2012-09-20 09:20+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -187,11 +187,11 @@ msgid "CCcam can't run whilst MGcamd is running"
 msgstr "Während MGcamd läuft kann CCcam nicht ausgeführt werden"
 
 msgid ""
-"Can't unmount partiton, make sure it is not being used for swap or record/"
+"Can't unmount partition, make sure it is not being used for swap or record/"
 "timeshift paths"
 msgstr ""
-"Kann Partition nicht aushängen, bitte sicherstellen dass diese nicht für "
-"Auslagerungsdatei oder Aufnahme/Timeshift-Pfade genutzt wird"
+"Partition kann nicht ausgehängt (umount) werden. Überprüfe ob sie nicht für "
+"Swap oder Aufnahme/TimeShift benutzt wird"
 
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -360,11 +360,6 @@ msgstr "Ordner von Extra Paketen"
 msgid "Folder prefix"
 msgstr "Ordner-Präfix"
 
-msgid "Found none stanadard softcam, trying to start, this may fail"
-msgstr ""
-"Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt "
-"möglicherweise fehl"
-
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr ""
 "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt "
@@ -430,8 +425,8 @@ msgstr "Installiert..."
 msgid "Location of where backup should be saved."
 msgstr "Pfad wo Backups gespeichert werden sollen."
 
-msgid "Location of where image backup should lbe saved."
-msgstr "Pfad wo Image-Backups gespeichert werden sollen."
+msgid "Location of where image backup should be saved."
+msgstr "Ort wo Image Backups gespeichert werden sollen."
 
 msgid "MB"
 msgstr "MB"
@@ -542,8 +537,8 @@ msgstr "Bitte Gerät für Auslagerungsdatei auswählen"
 msgid "Please select the file to restore ?"
 msgstr "Bitte wähle Datei die wieder hergestellt werden soll."
 
-msgid "Please wait while gathers infomation..."
-msgstr "Bitte warten während informationen gesammelt werden..."
+msgid "Please wait while gathers information..."
+msgstr "Bitte warten während Informationen gesammelt werden..."
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Bitte warten bis Plugins wiederhergestellt sind"
@@ -710,8 +705,8 @@ msgstr "Auswählen:"
 msgid "Set the delay time to wait before asking again."
 msgstr "Zeit bis zur erneuten Nachfrage."
 
-msgid "Set the invterval to be checked in mins."
-msgstr "Gebe das Zeitintervall für Prüfungen in Minuten an."
+msgid "Set the interval to be checked in mins."
+msgstr "Zeitintervall zwischen den Überprüfungen in Minuten."
 
 msgid "Set the repeat interval of backup schedule."
 msgstr "Gebe das Zeitintervall für automatische Backups an."
@@ -1035,354 +1030,3 @@ msgstr ""
 msgid "unavailable"
 msgstr "nicht verfügbar"
 
-#~ msgid ""
-#~ "A background update check is is progress, Please try using Backup Manager "
-#~ "to restore plugins later."
-#~ msgstr ""
-#~ "Eine Updateprüfung läuft im Hintergrund. Bitte den Backupmanager später "
-#~ "benutzen um Plugins wiederherzustellen."
-
-#~ msgid ""
-#~ "A configuration file (%s) was modified since Installation.\n"
-#~ "Do you want to keep your version?"
-#~ msgstr ""
-#~ "Eine Konfigurationsdatei (%s) wurde seit der Installation verändert.\n"
-#~ "Möchten Sie die aktuelle Version behalten?"
-
-#~ msgid "A small overview of the available icon states and actions."
-#~ msgstr "Eine kleine Status- / Aktionen-Übersicht der Icons."
-
-#~ msgid "After pressing OK, please wait!"
-#~ msgstr "Nachdem Du OK gedrückt hast bitte warten!"
-
-#~ msgid "Are you sure you want to update your STB_BOX?"
-#~ msgstr "Sicher das die STB_BOX aktualisiert werden soll?"
-
-#~ msgid "Author: "
-#~ msgstr "Autor: "
-
-#~ msgid "Back"
-#~ msgstr "Zurück"
-
-#~ msgid "CommonInterface"
-#~ msgstr "CommonInterface"
-
-#~ msgid "Communication"
-#~ msgstr "Kommunikation"
-
-#~ msgid "Configuring"
-#~ msgstr "Konfigurieren"
-
-#~ msgid "Continue"
-#~ msgstr "Fortfahren"
-
-#~ msgid "Default Settings"
-#~ msgstr "Standardeinstellungen"
-
-#~ msgid "Details for plugin: "
-#~ msgstr "Plugin-Details: "
-
-#~ msgid "Display and Userinterface"
-#~ msgstr "Videoeinstellungen und Darstellung"
-
-#~ msgid "Do you want to install the package:\n"
-#~ msgstr "Paket installieren:\n"
-
-#~ msgid "Do you want to reboot your STB_BOX?"
-#~ msgstr "Den STB_BOX neu starten?"
-
-#~ msgid "Do you want to remove the package:\n"
-#~ msgstr "Das Paket deinstallieren:\n"
-
-#~ msgid "Do you want to update your STB_BOX?"
-#~ msgstr "Den STB_BOX updaten?"
-
-#~ msgid "Do you want to upgrade the package:\n"
-#~ msgstr "Das Paket aktualisieren:\n"
-
-#~ msgid "Done - Installed or upgraded %d packages"
-#~ msgstr "Fertig - %d Pakete installiert oder aktualisiert "
-
-#~ msgid "Downloading"
-#~ msgstr "Lädt herunter"
-
-#~ msgid "Electronic Program Guide"
-#~ msgstr "Electronic Program Guide"
-
-#~ msgid "Error"
-#~ msgstr "Fehler"
-
-#~ msgid "Extensions management"
-#~ msgstr "Erweiterungs-Management"
-
-#~ msgid "Following tasks will be done after you press OK!"
-#~ msgstr "Folgende Aufgaben werden nach drücken von OK ausgeführt!"
-
-#~ msgid "Install or remove finished."
-#~ msgstr "Installation oder Deinstallation beendet."
-
-#~ msgid "Installation finished."
-#~ msgstr "Installation abgeschlossen."
-
-#~ msgid "Installing"
-#~ msgstr "Installiert"
-
-#~ msgid "Manage Extensions"
-#~ msgstr "Erweiterungs Verwaltung"
-
-#~ msgid "Manage extensions or plugins for your STB_BOX"
-#~ msgstr "Verwalte Erweiterungen und Plugins deiner Box"
-
-#~ msgid "Multimedia"
-#~ msgstr "Multimedia"
-
-#~ msgid "Network"
-#~ msgstr "Netzwerk"
-
-#~ msgid "No description available."
-#~ msgstr "Keine Beschreibung verfügbar."
-
-#~ msgid "No network connection available."
-#~ msgstr "Keine Netzwerkverbindung verfügbar."
-
-#~ msgid ""
-#~ "No packages were upgraded yet. So you can check your network and try "
-#~ "again."
-#~ msgstr ""
-#~ "Es wurden noch keine Pakete aktualisiert. Das Netzwerk kann überprüft und "
-#~ "nochmals versucht werden."
-
-#~ msgid "Nothing to upgrade"
-#~ msgstr "Keine Upgrades verfügbar"
-
-#~ msgid "Online update of your STB_BOX software."
-#~ msgstr "Online Update der STB-GUI Software."
-
-#~ msgid "Only extensions."
-#~ msgstr "Nur Erweiterungen."
-
-#~ msgid "Package list update"
-#~ msgstr "Paketliste aktualisieren"
-
-#~ msgid "Packages"
-#~ msgstr "Pakete"
-
-#~ msgid "Packet Manager"
-#~ msgstr "Paket Verwaltung"
-
-#~ msgid "Packet manager"
-#~ msgstr "Paket Verwaltung"
-
-#~ msgid "Please wait..."
-#~ msgstr "Bitte warten..."
-
-#~ msgid "Plugin manager activity information"
-#~ msgstr "Aktivitäten Plugin Verwaltung"
-
-#~ msgid "Plugin manager help"
-#~ msgstr "Hilfe Plugin Verwaltung"
-
-#~ msgid "Press OK on your remote control to continue."
-#~ msgstr "Zum Fortfahren OK auf der Fernbedienung drücken"
-
-#~ msgid "Process"
-#~ msgstr "Verarbeiten"
-
-#~ msgid "Recordings"
-#~ msgstr "Aufnahmen"
-
-#~ msgid "Reload"
-#~ msgstr "Neu laden"
-
-#~ msgid "Remove"
-#~ msgstr "Löschen"
-
-#~ msgid "Remove finished."
-#~ msgstr "Löschen beendet."
-
-#~ msgid "Removing"
-#~ msgstr "Wird gelöscht"
-
-#~ msgid "Renaming old backup..."
-#~ msgstr "Altes Backup wird umbenannt..."
-
-#~ msgid "Satellite equipment"
-#~ msgstr "Satellitenempfangs-Ausrüstung"
-
-#~ msgid "Searching for available updates. Please wait..."
-#~ msgstr "Verfügbare Updates werden gesucht. Bitte warten..."
-
-#~ msgid "Searching for new installed or removed packages. Please wait..."
-#~ msgstr ""
-#~ "Suche nach neu installierten oder deinstallierten Paketen. Bitte warten..."
-
-#~ msgid "Skins"
-#~ msgstr "Skins"
-
-#~ msgid "Software"
-#~ msgstr "Software"
-
-#~ msgid "Software Manager"
-#~ msgstr "Software Verwaltung"
-
-#~ msgid "Software Update"
-#~ msgstr "Online-Update"
-
-#~ msgid "Sorry, no Details available!"
-#~ msgstr "Leider keine Details verfügbar!"
-
-#~ msgid "System"
-#~ msgstr "System"
-
-#~ msgid "The current update maybe unstable"
-#~ msgstr "Das aktuelle Update könnte instabil sein"
-
-#~ msgid "There are at least "
-#~ msgstr "Es gibt mindestens"
-
-#~ msgid "There are currently no outstanding actions."
-#~ msgstr "Es gibt zurzeit keine ausstehenden Aktionen."
-
-#~ msgid "There are no updates available."
-#~ msgstr "Es sind keine Updates verfügbar."
-
-#~ msgid "There was an error downloading the packetlist. Please try again."
-#~ msgstr "Fehlerhaftes Herunterladen der Paketliste. Bitte später versuchen."
-
-#~ msgid "This plugin is installed."
-#~ msgstr "Das Plugin ist installiert."
-
-#~ msgid "This plugin is not installed."
-#~ msgstr "Das Plugin ist nicht installiert."
-
-#~ msgid "This plugin will be installed."
-#~ msgstr "Dieses Plugin wird installiert."
-
-#~ msgid "This plugin will be removed."
-#~ msgstr "Dieses Plugin wird deinstalliert."
-
-#~ msgid "Trying to download a new packetlist. Please wait..."
-#~ msgstr ""
-#~ "Es wird versucht eine neue Paketliste herunterzuladen. Bitte warten..."
-
-#~ msgid "Unattended upgrade without GUI and reboot system"
-#~ msgstr "Upgrade im Hintergrund ohne Benutzerführung und Systemneustart"
-
-#~ msgid "Undo install"
-#~ msgstr "Installation wiederrufen"
-
-#~ msgid "Undo uninstall"
-#~ msgstr "Deinstallation wiederrufen"
-
-#~ msgid "Uninstall"
-#~ msgstr "Deinstallation"
-
-#~ msgid "Update"
-#~ msgstr "Update"
-
-#~ msgid "Update feed not available."
-#~ msgstr "Update Feed nicht verfügbar."
-
-#~ msgid "Updating software catalog"
-#~ msgstr "Erweiterungsliste wird aktualisiert"
-
-#~ msgid "Upgrade finished."
-#~ msgstr "Upgrade abgeschlossen"
-
-#~ msgid "Upgrading"
-#~ msgstr "Aktualisiert"
-
-#~ msgid "View Changes"
-#~ msgstr "Änderungen ansehen"
-
-#~ msgid "View details"
-#~ msgstr "Details anzeigen"
-
-#~ msgid "View list of available "
-#~ msgstr "Anzeigen der Liste verfügbarer"
-
-#~ msgid "View list of available CommonInterface extensions"
-#~ msgstr "Anzeigen der Liste verfügbarer Common Interface-Erweiterungen"
-
-#~ msgid "View list of available Display and Userinterface extensions."
-#~ msgstr ""
-#~ "Anzeigen der Liste verfügbarer Video- und Darstellungs-Erweiterungen."
-
-#~ msgid "View list of available EPG extensions."
-#~ msgstr "Anzeigen der Liste verfügbarer EPG-Erweiterungen."
-
-#~ msgid "View list of available Satellite equipment extensions."
-#~ msgstr ""
-#~ "Anzeigen der Liste verfügbarer Satelliten-Empfangsausrüstungs-"
-#~ "Erweiterungen."
-
-#~ msgid "View list of available communication extensions."
-#~ msgstr "Anzeigen der Liste verfügbarer Kommunikations-Erweiterungen"
-
-#~ msgid "View list of available default settings"
-#~ msgstr "Anzeigen der Liste verfügbarer Standardeinstellungen"
-
-#~ msgid "View list of available multimedia extensions."
-#~ msgstr "Anzeigen der Liste verfügbarer Multimedia-Erweiterungen."
-
-#~ msgid "View list of available networking extensions"
-#~ msgstr "Anzeigen der Liste verfügbarer Netzwerk-Erweiterungen"
-
-#~ msgid "View list of available recording extensions"
-#~ msgstr "Anzeigen der Liste verfügbarer Aufnahme-Erweiterungen"
-
-#~ msgid "View list of available skins"
-#~ msgstr "Anzeigen der Liste verfügbarer Skins"
-
-#~ msgid "View list of available software extensions"
-#~ msgstr "Anzeigen der Liste verfügbarer Software-Erweiterungen"
-
-#~ msgid "View list of available system extensions"
-#~ msgstr "Anzeigen der Liste verfügbarer System-Erweiterungen"
-
-#~ msgid "View the changes"
-#~ msgstr "Änderungen ansehen"
-
-#~ msgid "View, install and remove available or installed packages."
-#~ msgstr "Ansehen, installieren und löschen von Paketen"
-
-#~ msgid "STB_BOX software because updates are available."
-#~ msgstr "STB_BOX Software da neue Updates verfügbar"
-
-#~ msgid "You can cancel the installation."
-#~ msgstr "Installation abbrechen."
-
-#~ msgid "You can cancel the removal."
-#~ msgstr "Löschen abbrechen."
-
-#~ msgid "You can install this plugin."
-#~ msgstr "Plugin installieren."
-
-#~ msgid "You can remove this plugin."
-#~ msgstr "Plugin deinstallieren."
-
-#~ msgid ""
-#~ "Your STB_BOX isn't connected to the internet properly. Please check it "
-#~ "and try again."
-#~ msgstr ""
-#~ "Der STB_BOX ist nicht korrekt mit dem Internet verbunden. Bitte prüfen "
-#~ "und nochmals versuchen."
-
-#~ msgid ""
-#~ "Your STB_BOX might be unusable now. Please consult the manual for further "
-#~ "assistance before rebooting your STB_BOX."
-#~ msgstr ""
-#~ "Die STB_BOX könnte jetzt unbenutzbar sein. Bitte Handbuch für weitere "
-#~ "Hilfe lesen bevor die STB_BOX neu gestartet wird."
-
-#~ msgid "extensions."
-#~ msgstr "Erweiterungen."
-
-#~ msgid "packages selected."
-#~ msgstr "Paket gewählt."
-
-#~ msgid "unknown"
-#~ msgstr "unbekannt"
-
-#~ msgid "updates available."
-#~ msgstr "Updates verfügbar."

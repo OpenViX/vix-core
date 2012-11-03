@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-14 20:28+0100\n"
-"PO-Revision-Date: 2012-09-25 15:20+0100\n"
+"POT-Creation-Date: 2012-11-01 03:05+0000\n"
+"PO-Revision-Date: 2012-11-03 13:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: rimas\n"
 "Language: et\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.3\n"
+"X-Generator: Poedit 1.5.4\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -41,6 +41,9 @@ msgstr "96MB"
 
 msgid "A background update check is is progress, please wait for retry."
 msgstr "Uuenduste kontroll toimub taustal. Oota ja proovi uuesti"
+
+msgid "A backup has been detected."
+msgstr "Leiti varukoopia."
 
 msgid "Activate"
 msgstr "Aktiveeri"
@@ -419,10 +422,10 @@ msgid "Installing..."
 msgstr "Paigaldamine..."
 
 msgid "Location of where backup should be saved."
-msgstr "Asukoht, kuhu varukoopiad salvestatakse"
+msgstr "Varukoopia salvestamise asukoht."
 
 msgid "Location of where image backup should be saved."
-msgstr "Asukoht, kuhu tarkvarakoopia tuleks salvestada."
+msgstr "Tarkvarakoopia salvestamise asukoht."
 
 msgid "MB"
 msgstr "MB"
@@ -602,6 +605,9 @@ msgstr "Eemaldamise kinnitamine"
 msgid "Removing Service"
 msgstr "Teenuse eemaldamine"
 
+msgid "Removing temp mounts..."
+msgstr "Eemaldatakse ajutised haakepunktid..."
+
 msgid "Repeat how often"
 msgstr "Kordamise sagedus"
 
@@ -619,12 +625,6 @@ msgstr "Taasta"
 
 msgid "Restore Confirmation"
 msgstr "Taastamise kinnitamine"
-
-msgid "Restore Plugins"
-msgstr "Taasta laiendused"
-
-msgid "Restore Settings"
-msgstr "Taastamise sätted"
 
 msgid "Restore Wizard"
 msgstr "Taastamisabiline"
@@ -683,8 +683,11 @@ msgstr "Vali skript:"
 msgid "Select an image to Download:"
 msgstr "Vali allalaadimiseks image:"
 
-msgid "Select an image to Restore / Delete:"
-msgstr "Taasta või kustuta tarkvaratõmmis:"
+msgid "Select an image to delete:"
+msgstr "Vali kustutamisekd tarkvarakoopia:"
+
+msgid "Select extra packages folder"
+msgstr "Vali lisapakettide kaust"
 
 msgid "Select files/folders to backup"
 msgstr "Vali varundamiseks failid/kataloogid"
@@ -772,6 +775,9 @@ msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti."
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "STB_BOX ei ole veel ühilduv."
 
+msgid "Sorry, but the restore failed."
+msgstr "Taastamine nurjus."
+
 msgid ""
 "Sorry, no physical devices that supports SWAP attached. Can't create "
 "Swapfile on network or fat32 filesystems"
@@ -827,7 +833,7 @@ msgid "TB"
 msgstr "TB"
 
 msgid "Temp Folder"
-msgstr ""
+msgstr "Temp kaust"
 
 msgid "The backup location does not have enough freespace."
 msgstr "Varundamise asukohas ei ole piisavalt vaba ruumi."
@@ -1262,6 +1268,12 @@ msgstr "pole saadaval"
 #~ msgid "Renaming old backup..."
 #~ msgstr "Vana varukoopia ümber nimetamine..."
 
+#~ msgid "Restore Plugins"
+#~ msgstr "Taasta laiendused"
+
+#~ msgid "Restore Settings"
+#~ msgstr "Taastamise sätted"
+
 #~ msgid "Satellite equipment"
 #~ msgstr "Satelliidiseadmed"
 
@@ -1270,6 +1282,9 @@ msgstr "pole saadaval"
 
 #~ msgid "Searching for new installed or removed packages. Please wait..."
 #~ msgstr "Paigaldatud või eemaldatud pakettide otsimine. Oota..."
+
+#~ msgid "Select an image to Restore / Delete:"
+#~ msgstr "Taasta või kustuta tarkvaratõmmis:"
 
 #~ msgid "Sep"
 #~ msgstr "Sep"

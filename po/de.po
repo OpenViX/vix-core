@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-24 04:20+0100\n"
-"PO-Revision-Date: 2012-10-31 08:37+0100\n"
+"POT-Creation-Date: 2012-11-15 19:37+0000\n"
+"PO-Revision-Date: 2012-11-21 15:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -42,6 +42,9 @@ msgstr "96MB"
 msgid "A background update check is is progress, please wait for retry."
 msgstr ""
 "Eine Updateprüfung läuft im Hintergrund. Bitte warten und erneut versuchen."
+
+msgid "A backup has been detected."
+msgstr "Ein Backup wurde gefunden."
 
 msgid "Activate"
 msgstr "Aktivieren"
@@ -246,10 +249,6 @@ msgstr "Erzeuge und verwalte Swapdateien"
 msgid "Create and Restore complete images of the system."
 msgstr "Erzeuge Images und stelle System wieder her."
 
-msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-msgstr ""
-"Zeitplan für Standby, GUI Neustart, Neustart und Ausschalten erstellen."
-
 msgid "Creating Backup Files..."
 msgstr "Backup-Dateien werden erstellt..."
 
@@ -422,6 +421,13 @@ msgstr "Installiere Service"
 
 msgid "Installing..."
 msgstr "Installiert..."
+
+msgid ""
+"It seems you have not setup a extra location, please setup in Backup Manager "
+"setup menu "
+msgstr ""
+"Es sieht so aus als wenn Du noch keinen Extra-Ort angegeben hast. Bitte "
+"Extra-Ort in den Einstellungen von der Backup-Verwaltung festlegen."
 
 msgid "Location of where backup should be saved."
 msgstr "Pfad wo Backups gespeichert werden sollen."
@@ -628,12 +634,6 @@ msgstr "Wiederherstellen"
 msgid "Restore Confirmation"
 msgstr "Wiederherstellen bestätigen"
 
-msgid "Restore Plugins"
-msgstr "Plugins wieder herstellen"
-
-msgid "Restore Settings"
-msgstr "Einstellungen wieder herstellen"
-
 msgid "Restore Wizard"
 msgstr "Wiederherstellungsassistent"
 
@@ -764,10 +764,11 @@ msgid "SoftcamCheck"
 msgstr "Softcam-Überprüfung"
 
 msgid ""
-"Sorry but location does exist or not setup, please setup in Backup Manager ?"
+"Sorry but location does exist or not setup, please setup in Backup Manager "
+"setup menu "
 msgstr ""
-"Entschuldigung aber Ordner existiert nicht oder ist nicht eingerichtet. "
-"Bitte in Backup-Verwaltung einrichten."
+"Sorry aber dieser Ort existiert nicht oder wurde nicht konfiguriert. Bitte "
+"in den Einstellungen von der Backup-Verwaltung festlegen."
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr ""
@@ -1040,5 +1041,22 @@ msgstr ""
 msgid "unavailable"
 msgstr "nicht verfügbar"
 
+#~ msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
+#~ msgstr ""
+#~ "Zeitplan für Standby, GUI Neustart, Neustart und Ausschalten erstellen."
+
+#~ msgid "Restore Plugins"
+#~ msgstr "Plugins wieder herstellen"
+
+#~ msgid "Restore Settings"
+#~ msgstr "Einstellungen wieder herstellen"
+
 #~ msgid "Select an image to Restore / Delete:"
 #~ msgstr "Wähle ein Image zum Wiederherstellen/Löschen:"
+
+#~ msgid ""
+#~ "Sorry but location does exist or not setup, please setup in Backup "
+#~ "Manager ?"
+#~ msgstr ""
+#~ "Entschuldigung aber Ordner existiert nicht oder ist nicht eingerichtet. "
+#~ "Bitte in Backup-Verwaltung einrichten."

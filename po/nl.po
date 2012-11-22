@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-14 18:04+0100\n"
-"PO-Revision-Date: 2012-09-14 19:21+0100\n"
+"POT-Creation-Date: 2012-11-21 18:01+0000\n"
+"PO-Revision-Date: 2012-11-22 14:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Generator: Poedit 1.5.3\n"
+"X-Generator: Poedit 1.5.4\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -42,6 +42,9 @@ msgstr "96 Mb"
 
 msgid "A background update check is is progress, please wait for retry."
 msgstr "De feeds worden gecontroleerd; even wachten."
+
+msgid "A backup has been detected."
+msgstr "Een backup is verwijderd."
 
 msgid "Activate"
 msgstr "Aktiveer"
@@ -184,11 +187,11 @@ msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam en MGcamd kunnen niet beide actief zijn"
 
 msgid ""
-"Can't unmount partiton, make sure it is not being used for swap or record/"
+"Can't unmount partition, make sure it is not being used for swap or record/"
 "timeshift paths"
 msgstr ""
-"Kan de partitie niet unmounten; stel zeker dat deze niet in gebruik is voor "
-"Swap/opname/timeshift paden"
+"Kan de partitie niet unmounten''; kijk of deze niet wordt gebruikt voor SWAP/"
+"Opname/Timeshift/Logs/EPG."
 
 msgid "Cancel"
 msgstr "Annuleer"
@@ -242,9 +245,6 @@ msgstr "Creëer en beheer uw swapfiles."
 
 msgid "Create and Restore complete images of the system."
 msgstr "Creëer en herstel complete images van het systeem."
-
-msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-msgstr "Creëer schema's voor Standby, Herstarten GUI, DeepStandby en Reboot."
 
 msgid "Creating Backup Files..."
 msgstr "Creëer backup bestanden"
@@ -357,11 +357,6 @@ msgstr "Lokatie voor extra pakkettens"
 msgid "Folder prefix"
 msgstr "Folder prefix"
 
-msgid "Found none stanadard softcam, trying to start, this may fail"
-msgstr ""
-"Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, maar "
-"dat kan mislukken"
-
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr ""
 "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, maar "
@@ -424,11 +419,18 @@ msgstr "Installeert service"
 msgid "Installing..."
 msgstr "Installeert...."
 
+msgid ""
+"It seems you have not setup a extra location, please setup in Backup Manager "
+"setup menu "
+msgstr ""
+"U heeft geen extra lokatie ingesteld; U kunt dat doen via het menu van de "
+"Backup Manager."
+
 msgid "Location of where backup should be saved."
 msgstr "Locatie voor uw backups."
 
-msgid "Location of where image backup should lbe saved."
-msgstr "Locatie voor uw image backups."
+msgid "Location of where image backup should be saved."
+msgstr "Lokatie waar images moeten worden opgeslagen."
 
 msgid "MB"
 msgstr "MB"
@@ -539,8 +541,8 @@ msgstr "Selecteer het apparaat dat u voor de swapfile wilt gebruiken"
 msgid "Please select the file to restore ?"
 msgstr "Kies bestanden die teruggeplaatst moeten worden."
 
-msgid "Please wait while gathers infomation..."
-msgstr "Bezig informatie te verzamelen..."
+msgid "Please wait while gathers information..."
+msgstr "De informatie wordt verzameld..."
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Even wachten tot het installeren van plugins gereed is..."
@@ -608,6 +610,9 @@ msgstr "Bevestig verwijderen"
 msgid "Removing Service"
 msgstr "Verwijdert service"
 
+msgid "Removing temp mounts..."
+msgstr "Verwijdert tijdelijke mounts..."
+
 msgid "Repeat how often"
 msgstr "Hoe vaak herhalen"
 
@@ -625,12 +630,6 @@ msgstr "Herstel"
 
 msgid "Restore Confirmation"
 msgstr "Bevestig herstellen"
-
-msgid "Restore Plugins"
-msgstr "Installeer plugins weer"
-
-msgid "Restore Settings"
-msgstr "Paalts installingen terug"
 
 msgid "Restore Wizard"
 msgstr "Herstel wizard"
@@ -689,8 +688,11 @@ msgstr "Selecteer eenscript om uit te voeren:"
 msgid "Select an image to Download:"
 msgstr "Selecteer een image om te downloaden:"
 
-msgid "Select an image to Restore / Delete:"
-msgstr "Selecteer een image om te herstellen/verwijderen:"
+msgid "Select an image to delete:"
+msgstr "Kies een image om te verwijderen:"
+
+msgid "Select extra packages folder"
+msgstr "Kies de folder met extra plugins"
 
 msgid "Select files/folders to backup"
 msgstr "Selecteer bestanden/mappen om te backuppen"
@@ -707,8 +709,8 @@ msgstr "Selecteer:"
 msgid "Set the delay time to wait before asking again."
 msgstr "Stel de tijd tijd in waarna het weer gevraagd wordt."
 
-msgid "Set the invterval to be checked in mins."
-msgstr "Stel het controle interval in (min)."
+msgid "Set the interval to be checked in mins."
+msgstr "Bepaal het controleinterval (in minuten)."
 
 msgid "Set the repeat interval of backup schedule."
 msgstr "Stel het backup interval in."
@@ -759,8 +761,11 @@ msgid "SoftcamCheck"
 msgstr "Softcam controle"
 
 msgid ""
-"Sorry but location does exist or not setup, please setup in Backup Manager ?"
-msgstr "Lokatie bestaat niet; stel deze in in de backup manager."
+"Sorry but location does exist or not setup, please setup in Backup Manager "
+"setup menu "
+msgstr ""
+"De lokatie bestaat niet; U kunt die instellen via het menu van de Backup "
+"Manager"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr ""
@@ -779,6 +784,9 @@ msgstr ""
 
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "Sorry, uw STB_BOX is nog niet geschikt."
+
+msgid "Sorry, but the restore failed."
+msgstr "Het terugplaatsen is mislukt."
 
 msgid ""
 "Sorry, no physical devices that supports SWAP attached. Can't create "
@@ -1024,3 +1032,42 @@ msgstr ""
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
+
+#~ msgid ""
+#~ "Can't unmount partiton, make sure it is not being used for swap or record/"
+#~ "timeshift paths"
+#~ msgstr ""
+#~ "Kan de partitie niet unmounten; stel zeker dat deze niet in gebruik is "
+#~ "voor Swap/opname/timeshift paden"
+
+#~ msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
+#~ msgstr ""
+#~ "Creëer schema's voor Standby, Herstarten GUI, DeepStandby en Reboot."
+
+#~ msgid "Found none stanadard softcam, trying to start, this may fail"
+#~ msgstr ""
+#~ "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, "
+#~ "maar dat kan mislukken"
+
+#~ msgid "Location of where image backup should lbe saved."
+#~ msgstr "Locatie voor uw image backups."
+
+#~ msgid "Please wait while gathers infomation..."
+#~ msgstr "Bezig informatie te verzamelen..."
+
+#~ msgid "Restore Plugins"
+#~ msgstr "Installeer plugins weer"
+
+#~ msgid "Restore Settings"
+#~ msgstr "Paalts installingen terug"
+
+#~ msgid "Select an image to Restore / Delete:"
+#~ msgstr "Selecteer een image om te herstellen/verwijderen:"
+
+#~ msgid "Set the invterval to be checked in mins."
+#~ msgstr "Stel het controle interval in (min)."
+
+#~ msgid ""
+#~ "Sorry but location does exist or not setup, please setup in Backup "
+#~ "Manager ?"
+#~ msgstr "Lokatie bestaat niet; stel deze in in de backup manager."

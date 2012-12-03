@@ -9,7 +9,7 @@ EXTRA_DIST = $(LANGPO)
 if UPDATE_PO
 # the TRANSLATORS: allows putting translation comments before the to-be-translated line.
 vix-py.pot: $(top_srcdir)/src/*.py
-	$(XGETTEXT) -L Python --from-code=UTF-8 --add-comments="TRANSLATORS:" -d @PACKAGE_NAME@ -s -o $@ $^
+	$(XGETTEXT) --no-wrap -L Python --from-code=UTF-8 --add-comments="TRANSLATORS:" -d @PACKAGE_NAME@ -s -o $@ $^
 
 vix-xml.pot: $(srcdir)/xml2po.py $(top_srcdir)/src/*.xml $(top_srcdir)/src/data/*.xml
 	$(PYTHON) $^ > $@
@@ -17,11 +17,11 @@ vix-xml.pot: $(srcdir)/xml2po.py $(top_srcdir)/src/*.xml $(top_srcdir)/src/data/
 vix.pot: vix-py.pot vix-xml.pot
 	sed --in-place vix-py.pot --expression=s/CHARSET/UTF-8/
 	sed --in-place vix-xml.pot --expression=s/CHARSET/UTF-8/
-	cat $^ | $(MSGUNIQ) --no-location -o $@ -
+	cat $^ | $(MSGUNIQ) --no-wrap --no-location -o $@ -
 
 %.po: vix.pot
 	if [ -f $@ ]; then \
-		$(MSGMERGE) --backup=none --no-location -s -N -U $@ $< && touch $@; \
+		$(MSGMERGE) --backup=none --no-wrap --no-location -s -N -U $@ $< && touch $@; \
 	else \
 		$(MSGINIT) -l $@ -o $@ -i $< --no-translator; \
 	fi

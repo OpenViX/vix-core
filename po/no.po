@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-14 18:04+0100\n"
+"POT-Creation-Date: 2012-12-03 15:01+0000\n"
 "PO-Revision-Date: 2012-09-14 19:42-0000\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: Regarto\n"
@@ -41,6 +41,9 @@ msgstr "96 Mb"
 msgid "A background update check is is progress, please wait for retry."
 msgstr ""
 
+msgid "A backup has been detected."
+msgstr ""
+
 msgid "Activate"
 msgstr "Aktiver"
 
@@ -50,22 +53,14 @@ msgstr "Aktiv"
 msgid "Active:"
 msgstr "Aktiv:"
 
-msgid "Add"
-msgstr "Legg til"
-
-msgid ""
-"Allows the softcam to be checked if it stopped working, and restarted "
-"automatically if needed."
-msgstr ""
-"Lar deg kontrollere om softcam har stoppet å virke og om nødvendig å "
-"restarte den."
+msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+msgstr "Lar deg kontrollere om softcam har stoppet å virke og om nødvendig å restarte den."
 
 msgid "Allows you schedule your boackups."
 msgstr "Gir mulighet for automatisk sikkerhetkopiering på ønsket tidspunkt."
 
 msgid "Allows you schedule your image backups."
-msgstr ""
-"Gir mulighet for automatisk sikkerhetkopiering av imaget på ønsket tidspunkt."
+msgstr "Gir mulighet for automatisk sikkerhetkopiering av imaget på ønsket tidspunkt."
 
 msgid "Allows you to control the power state of your STB_BOX."
 msgstr "Lar deg regulere om din STB_BOX skal slås helt av."
@@ -83,15 +78,10 @@ msgid "Allows you to restart your STB_BOX interface at a set time."
 msgstr "Lar deg restarte GUI på din STB_BOX på angitt tidspunkt."
 
 msgid "Allows you to tag your backups to a box. (default is box name/type)"
-msgstr ""
-"Lar deg merke dine sikkerhetskopier til bestemt boks. (Standard er boksnavn/"
-"type)"
+msgstr "Lar deg merke dine sikkerhetskopier til bestemt boks. (Standard er boksnavn/type)"
 
-msgid ""
-"Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr ""
-"Lar deg merke dine sikkerhetskopier av imaget til bestemt boks. (Standard er "
-"boksnavn/type)"
+msgid "Allows you to tag your image backup to a box. (default is box name/type)"
+msgstr "Lar deg merke dine sikkerhetskopier av imaget til bestemt boks. (Standard er boksnavn/type)"
 
 msgid "Are you ready to create a backup ?"
 msgstr "Er du klar til å ta en sikkerhetskopi nå?"
@@ -113,11 +103,6 @@ msgstr ""
 " "
 
 msgid ""
-"Are you sure you want to delete this:\n"
-" "
-msgstr ""
-
-msgid ""
 "Are you sure you want to download this image:\n"
 " "
 msgstr ""
@@ -129,9 +114,6 @@ msgstr ""
 
 msgid "Autostart"
 msgstr "Autostart"
-
-msgid "Autostart:"
-msgstr "Autostart:"
 
 msgid "Backing up files..."
 msgstr "Sikkerhetskopierer filer..."
@@ -157,12 +139,8 @@ msgstr "Backup Manager Log"
 msgid "Backup Manager Setup"
 msgstr "Backup Manager innstillinger"
 
-msgid ""
-"Backup failed - e. g. wrong backup destination or no space left on backup "
-"device"
-msgstr ""
-"Sikkerhetskopiering feilet - dvs. feil målmappe for sikkerhetskopien eller "
-"ikke nok lagringskapasitet igjenn på lagringsmediumet"
+msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Sikkerhetskopiering feilet - dvs. feil målmappe for sikkerhetskopien eller ikke nok lagringskapasitet igjenn på lagringsmediumet"
 
 msgid ""
 "Backup in progress,\n"
@@ -180,12 +158,8 @@ msgstr "BackupManager"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam kan ikkje kjøre samtidig som MGcamd kjører"
 
-msgid ""
-"Can't unmount partiton, make sure it is not being used for swap or record/"
-"timeshift paths"
+msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
 msgstr ""
-"Kan ikke koble fra denne partisjonen. Kontroller at ikke partisjonen blir "
-"benyttet som lokasjon for swap eller opptak/timeshift"
 
 msgid "Cancel"
 msgstr "Avbryt"
@@ -197,9 +171,6 @@ msgid ""
 "Changes need a system restart to take effect.\n"
 "Restart your STB_BOX now?"
 msgstr ""
-
-msgid "Checking Feeds"
-msgstr "Kontrollerer innmating av data"
 
 msgid "Checking Free RAM.."
 msgstr "Checking ledig RAM.."
@@ -219,12 +190,6 @@ msgstr "Velg hvor du vil koble til din enhet:"
 msgid "Close"
 msgstr "Lukk"
 
-msgid "Command To Run"
-msgstr "Command To Run"
-
-msgid "Command type"
-msgstr "Command type"
-
 msgid "Comparing against backup..."
 msgstr "Sammenligner mot sikkerhetskopi..."
 
@@ -237,11 +202,6 @@ msgstr "Opprette og behandle dine swapfiler."
 msgid "Create and Restore complete images of the system."
 msgstr "Opprette og gjennopprette komplette imager av ditt system."
 
-msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-msgstr ""
-"Opprette tidsinnstillinger for hvilemodus, restart av GUI, nedlukking og "
-"restart."
-
 msgid "Creating Backup Files..."
 msgstr "Oppretter sikkerhetskopier av filer..."
 
@@ -251,23 +211,14 @@ msgstr "Oppretter swap..."
 msgid "Creating list of installed plugins..."
 msgstr "Oppretter oversikt over installerte plugins..."
 
-msgid "Cron Manager"
-msgstr "Cron Manager"
-
 msgid "Current Status:"
 msgstr "Gjeldende status:"
-
-msgid "Custom"
-msgstr "Tilpasset"
 
 msgid "Daily"
 msgstr "Daglig"
 
 msgid "Deactivate"
 msgstr "Deaktiver"
-
-msgid "Deep Standby Time"
-msgstr "Tidspunkt for dyp hvilemodus"
 
 msgid "DeepStandby Time"
 msgstr "Tidspunkt for dyp hvilemodus"
@@ -287,9 +238,6 @@ msgstr "Enhet: Ikke tilgjengelig"
 msgid "Disable Startup"
 msgstr "Deaktiver oppstart"
 
-msgid "Disabled"
-msgstr "Deaktivert"
-
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Ønsker du å lgjennopprette dine Enigma2 plugins?"
 
@@ -308,14 +256,8 @@ msgstr "Laster ned image..."
 msgid "Downloads"
 msgstr "Nedlastinger"
 
-msgid "Enable Deep Standby"
-msgstr "Aktiver dyp hvilemodus"
-
 msgid "Enable DeepStandby"
 msgstr "Aktiver dyp hvilemodus"
-
-msgid "Enable GUI Restart"
-msgstr "Aktiver GUI restart"
 
 msgid "Enable GUI restart"
 msgstr "Aktiver GUI restart"
@@ -353,16 +295,8 @@ msgstr ""
 msgid "Folder prefix"
 msgstr "Mappe prefix"
 
-msgid "Found none stanadard softcam, trying to start, this may fail"
-msgstr ""
-"Har ikke funnet noen standard softcam, prøver å starte, dette kan feile"
-
 msgid "Found none standard softcam, trying to start, this may fail"
-msgstr ""
-"Har ikke funnet noen standard softcam, prøver å starte, dette kan feile"
-
-msgid "Friday"
-msgstr "Fredag"
+msgstr "Har ikke funnet noen standard softcam, prøver å starte, dette kan feile"
 
 msgid "Frozen check interval"
 msgstr "Intervall for kontroll av frys"
@@ -373,14 +307,8 @@ msgstr "GB"
 msgid "GUI Restart Time"
 msgstr "Tidspunkt for restart av GUI"
 
-msgid "H: = Hourly / D: = Daily / W: = Weekly / M: = Monthly"
-msgstr "H: = Hourly / D: = Daily / W: = Weekly / M: = Monthly"
-
 msgid "HARD DISK: "
 msgstr "HARD DISK: "
-
-msgid "Hourly"
-msgstr "Hver time"
 
 msgid "IPK Installer"
 msgstr "IPK Installer"
@@ -412,17 +340,17 @@ msgstr "Installer IPK's fra din tmp folder."
 msgid "Install local extension"
 msgstr "Installer utvidelser overført til boksen"
 
-msgid "Installing Service"
-msgstr "Installing Service"
-
 msgid "Installing..."
 msgstr "Installerer..."
+
+msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+msgstr ""
 
 msgid "Location of where backup should be saved."
 msgstr "Lokasjon der sikkerhetskopi ønskes lagret."
 
-msgid "Location of where image backup should lbe saved."
-msgstr "Lokasjon der sikkerhetskopi av imaget ønskes lagret."
+msgid "Location of where image backup should be saved."
+msgstr ""
 
 msgid "MB"
 msgstr "MB"
@@ -435,15 +363,6 @@ msgstr "Behandle dine enheters tilkoblingspunkt."
 
 msgid "Manage your backups of your settings."
 msgstr "Behandle sikkerhetskopiene av dine innstillinger."
-
-msgid "Manage your cron jobs."
-msgstr "Behandle dine cron-jobber."
-
-msgid "Monday"
-msgstr "Mandag"
-
-msgid "Monthly"
-msgstr "Månedlig"
 
 msgid "Mount Manager"
 msgstr "Mount Manager"
@@ -468,18 +387,6 @@ msgstr "Ny sikkerhetskopi"
 
 msgid "Next Backup: "
 msgstr "Neste sikkerhetskopi:"
-
-msgid "Next Deep Standby: \n"
-msgstr "Neste dyp hvilemodus: \n"
-
-msgid "Next GUI Restart: \n"
-msgstr "Neste GUI restart: \n"
-
-msgid "Next Reboot: \n"
-msgstr "Neste restart: \n"
-
-msgid "Next Standby: \n"
-msgstr "Neste hvilemodus: \n"
 
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -533,8 +440,8 @@ msgstr "Vennligst velg en lokasjon for swapfilen"
 msgid "Please select the file to restore ?"
 msgstr "Vennligst velg filen som skal gjennopprettes!"
 
-msgid "Please wait while gathers infomation..."
-msgstr "Vennligst vent mens informasjon innhentes..."
+msgid "Please wait while gathers information..."
+msgstr ""
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Vennligst vent mens gjennoppretting av plugins fullføres..."
@@ -548,44 +455,20 @@ msgstr "Vennligst vent mens oppstart pågår\n"
 msgid "Please wait while stopping\n"
 msgstr "Vennligst vent mens avslutting pågår\n"
 
-msgid "Please wait whilst feeds state is checked."
-msgstr "Vennligst vent mens kontroll av oppkoblingsstatus pågår."
-
 msgid "Please wait."
 msgstr ""
 
-msgid ""
-"Plugin Listing failed - e. g. wrong backup destination or no space left on "
-"backup device"
-msgstr ""
-"Opplisting av plugin feilet - dvs. feil lokasjon for sikkerhetskopi eller "
-"for lite lagringskapasitet igjenn på enheten"
-
-msgid "Power Manager"
-msgstr "Power Manager"
+msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Opplisting av plugin feilet - dvs. feil lokasjon for sikkerhetskopi eller for lite lagringskapasitet igjenn på enheten"
 
 msgid "Power Manager Setup"
 msgstr "Power Manager innstillinger"
 
-msgid "Predefined"
-msgstr "Forhåndsdefinert"
-
 msgid "Preparing extra plugins..."
 msgstr ""
 
-#, python-format
-msgid "Ready to install \"%s\" ?"
-msgstr "Klar for installering \"%s\" ?"
-
-#, python-format
-msgid "Ready to remove \"%s\" ?"
-msgstr "Klar for avinstallering \"%s\" ?"
-
 msgid "Really close without saving settings?"
 msgstr "Vil du virkelig lukke uten å lagre innstillingene?"
-
-msgid "Reboot"
-msgstr "Restart"
 
 msgid "Reboot Time"
 msgstr "Restart varighet"
@@ -599,8 +482,8 @@ msgstr "Oppdater listen"
 msgid "Remove Confirmation"
 msgstr "Avinstalleringsbekreftelse"
 
-msgid "Removing Service"
-msgstr "Avinstallerer tjenesten"
+msgid "Removing temp mounts..."
+msgstr ""
 
 msgid "Repeat how often"
 msgstr "Gjennta hvor ofte"
@@ -619,12 +502,6 @@ msgstr "Gjennopprette"
 
 msgid "Restore Confirmation"
 msgstr "Gjennopprettingsbekreftelse"
-
-msgid "Restore Plugins"
-msgstr "Gjennopprette plugins"
-
-msgid "Restore Settings"
-msgstr "Gjennopprette innstillinger"
 
 msgid "Restore Wizard"
 msgstr "Gjennopprettingsveileder"
@@ -647,17 +524,8 @@ msgstr "Kjør"
 msgid "Run Confirmation"
 msgstr "Bekreftelse på prosess som kjører"
 
-msgid "Run how often ?"
-msgstr "Kjøre hvor ofte?"
-
 msgid "Run your shell scripts."
 msgstr "Kjør dine shell-skript."
-
-msgid "Running"
-msgstr "Kjører"
-
-msgid "Saturday"
-msgstr "Lørdag"
 
 msgid "Save"
 msgstr "Lagre"
@@ -683,8 +551,11 @@ msgstr "Velg et skript som skal kjøres:"
 msgid "Select an image to Download:"
 msgstr "Velg et image som skal lastes ned:"
 
-msgid "Select an image to Restore / Delete:"
-msgstr "Velg imaget som skal gjennopprettes/slettes:"
+msgid "Select an image to delete:"
+msgstr ""
+
+msgid "Select extra packages folder"
+msgstr ""
 
 msgid "Select files/folders to backup"
 msgstr "Velg filer/mapper som skal sikkerhetskopieres:"
@@ -701,8 +572,8 @@ msgstr "Velg:"
 msgid "Set the delay time to wait before asking again."
 msgstr "Bestem tidsintervallet mellom hver gang du får spørsmål igjenn."
 
-msgid "Set the invterval to be checked in mins."
-msgstr "Bestem tidsintervallet for neste sjekk i minutter."
+msgid "Set the interval to be checked in mins."
+msgstr ""
 
 msgid "Set the repeat interval of backup schedule."
 msgstr "Bestem intervallet mellom hver tidsinstilte sikkerhetkopiering."
@@ -728,9 +599,6 @@ msgstr "Kobler opp..."
 msgid "Setup Mounts"
 msgstr "Setup Mounts"
 
-msgid "Shut-down."
-msgstr "Slå av."
-
 msgid "Size: "
 msgstr "Størrelse:"
 
@@ -752,48 +620,26 @@ msgstr "Softcam startes..."
 msgid "SoftcamCheck"
 msgstr "SoftcamCheck"
 
-msgid ""
-"Sorry but location does exist or not setup, please setup in Backup Manager ?"
+msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
 msgstr ""
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
-msgstr ""
-"Beklager, tilkoblingen er nede grunnet vedlikehold. Vennligst prøv igjenn "
-"senere."
+msgstr "Beklager, tilkoblingen er nede grunnet vedlikehold. Vennligst prøv igjenn senere."
 
-msgid ""
-"Sorry feeds are down for maintenance, Please try using Backup Manager to "
-"restore plugins later."
-msgstr ""
-"Beklager, tilkoblingen er nede grunnet vedlikehold. Vennligst prøv Backup "
-"Manager igjenn senere for å gjennopprette plugins."
-
-msgid "Sorry feeds are down for maintenance, please try again later."
-msgstr ""
-"Beklager, tilkoblingen er nede grunnet vedlikehold. Vennligst prøv igjenn "
-"senere."
+msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgstr "Beklager, tilkoblingen er nede grunnet vedlikehold. Vennligst prøv Backup Manager igjenn senere for å gjennopprette plugins."
 
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "Beklager, din STB_BOX er for tiden ikke kompatibel."
 
-msgid ""
-"Sorry, no physical devices that supports SWAP attached. Can't create "
-"Swapfile on network or fat32 filesystems"
+msgid "Sorry, but the restore failed."
 msgstr ""
-"Beklager, ingen fysiske enheter som støtter SWAP er tilkoblet. Kan ikke "
-"opprette Swapfile på nettverk eller fat32 filsystem"
 
-msgid ""
-"Sorry, not enough free ram found, and no physical devices that supports SWAP "
-"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
-"make backup"
-msgstr ""
-"Beklager, ikke nok ledig minne funnet og ingen fysiske enheter som støtter "
-"SWAP er tilkoblet. Kan ikke opprette Swapfile på nettverk eller fat32 "
-"filsystem. Kan ikke opprette sikkerhetskopi."
+msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
+msgstr "Beklager, ingen fysiske enheter som støtter SWAP er tilkoblet. Kan ikke opprette Swapfile på nettverk eller fat32 filsystem"
 
-msgid "Standby"
-msgstr "Hvilemodus"
+msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
+msgstr "Beklager, ikke nok ledig minne funnet og ingen fysiske enheter som støtter SWAP er tilkoblet. Kan ikke opprette Swapfile på nettverk eller fat32 filsystem. Kan ikke opprette sikkerhetskopi."
 
 msgid "Standby Time"
 msgstr "Tidspunkt for hvilemodus"
@@ -809,12 +655,6 @@ msgstr "Status:"
 
 msgid "Stop"
 msgstr "Stopp"
-
-msgid "Stopped"
-msgstr "Stoppet"
-
-msgid "Sunday"
-msgstr "Søndag"
 
 msgid "Swap File not found. You have to create the file before to activate."
 msgstr "Swapfil ikke funnet. Du må opprette filen før du kan aktivere."
@@ -849,17 +689,8 @@ msgstr "Veiledningen er nå avsluttet."
 msgid "This Device is already mounted as HDD."
 msgstr "Enheten er allerede koblet opp som HDD."
 
-msgid "Thursday"
-msgstr "Torsdag"
-
 msgid "Time of Backup to start"
 msgstr "Tidspunkt for start av sikkerhetskopiering"
-
-msgid "Time to execute command or script"
-msgstr "Tidspunkt for start av command eller skript"
-
-msgid "Tuesday"
-msgstr "Tirsdag"
 
 msgid "Type: "
 msgstr "Type: "
@@ -895,9 +726,6 @@ msgstr "Vennligst vent mens søking etter enheter på din STB_BOX pågår..."
 msgid "Wait please while scanning..."
 msgstr "Vennligst vent mens søking pågår..."
 
-msgid "Wednesday"
-msgstr "Onsdag"
-
 msgid "Weekly"
 msgstr "Ukentlig"
 
@@ -905,20 +733,12 @@ msgid ""
 "Welcome to the restore wizard.\n"
 "\n"
 "A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that "
-"where installed when the backup was created.\n"
+"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
 msgstr ""
 "Velkommen til gjennopprettingsveilederen.\n"
 "\n"
 "En sikkerhetskopi har blitt oppdaget.\n"
-"Du kan bruke veilederen til å gjennopprette dine innstillinger og eventuelle "
-"ekstra plugins som var installert da sikkerhetskopien ble opprettet.\n"
-
-msgid "What Day of month ?"
-msgstr "Hvilken dag i måneden?"
-
-msgid "What Day of week ?"
-msgstr "Hvilken dag i uken?"
+"Du kan bruke veilederen til å gjennopprette dine innstillinger og eventuelle ekstra plugins som var installert da sikkerhetskopien ble opprettet.\n"
 
 msgid "YES, to restore plugins"
 msgstr "Ja, til å gjennopprette plugins"
@@ -945,59 +765,23 @@ msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Du må opprette en swapfil før du kan aktivere autostart."
 
 msgid ""
-"Your STB_BOX is about to run a backup of your settings and detect your "
-"plugins,\n"
+"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
-"Din STB_BOX er i ferd med å utføre en sikkethetskopiering og søke etter dine "
-"plugins,\n"
+"Din STB_BOX er i ferd med å utføre en sikkethetskopiering og søke etter dine plugins,\n"
 "Vil du tillate dette?"
 
 msgid ""
-"Your STB_BOX is about to run a full image backup, this can take about 6 "
-"minutes to complete,\n"
+"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"Din STB_BOX er i ferd med å utføre en full sikkethetskopiering av imaget, "
-"dette kan ta omkring 6 minutter å fullføre,\n"
+"Din STB_BOX er i ferd med å utføre en full sikkethetskopiering av imaget, dette kan ta omkring 6 minutter å fullføre,\n"
 "Vil du tillate dette?"
 
-msgid ""
-"Your STB_BOX is going for a nightly Reboot,\n"
-"do you want to allow this?"
-msgstr ""
-"Din STB_BOX er i ferd med å utføre en restart som utføres hver natt,\n"
-"Vil du tillate dette?"
-
-msgid ""
-"Your STB_BOX is going for nightly GUI Restart,\n"
-"do you want to allow this?"
-msgstr ""
-"Din STB_BOX er i ferd med å utføre en GUI restart som utføres hver natt,\n"
-"Vil du tillate dette? "
-
-msgid ""
-"Your STB_BOX is going for nightly shut-down,\n"
-"do you want to allow this?"
-msgstr ""
-"Din STB_BOX er i ferd med å bli slått av og som utføres hver natt,\n"
-"Vil du tillate dette?"
-
-msgid ""
-"Your STB_BOX is going for nightly standby,\n"
-"do you want to allow this?"
-msgstr ""
-"Din STB_BOX er i ferd med å bli satt i hvilemodus og som utføres hver natt,\n"
-"Vil du tillate dette?"
-
-msgid ""
-"Your STB_BOX is not connected to the internet, Please try using Backup "
-"Manager to restore plugins later."
+msgid "Your STB_BOX is not connected to the internet, Please try using Backup Manager to restore plugins later."
 msgstr ""
 
-msgid ""
-"Your STB_BOX is not connected to the internet, please check your network "
-"settings and try again."
+msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
 msgstr ""
 
 msgid "echo 'Downloading Image.'"
@@ -1006,12 +790,8 @@ msgstr "echo 'Laster ned image.'"
 msgid "echo 'Expanding Image.'"
 msgstr "echo 'Pakker ut image.'"
 
-msgid "please wait..."
-msgstr "vennligst vent..."
-
 msgid "there was a problem with this device, please reformat and try again."
-msgstr ""
-"det oppstod et problem med enheten, vennligst reformater og prøv igjenn."
+msgstr "det oppstod et problem med enheten, vennligst reformater og prøv igjenn."
 
 msgid "unavailable"
 msgstr "utilgjengelig"
@@ -1025,6 +805,9 @@ msgstr "utilgjengelig"
 
 #~ msgid "A small overview of the available icon states and actions."
 #~ msgstr "En liten oversikt over tilgjengelige ikonstatus og valg."
+
+#~ msgid "Add"
+#~ msgstr "Legg til"
 
 #~ msgid "After pressing OK, please wait!"
 #~ msgstr "Vennligst vent etter å ha trykket OK!"
@@ -1050,8 +833,23 @@ msgstr "utilgjengelig"
 #~ msgid "Author: "
 #~ msgstr "Utvikler:"
 
+#~ msgid "Autostart:"
+#~ msgstr "Autostart:"
+
 #~ msgid "Back"
 #~ msgstr "Tilbake"
+
+#~ msgid "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths"
+#~ msgstr "Kan ikke koble fra denne partisjonen. Kontroller at ikke partisjonen blir benyttet som lokasjon for swap eller opptak/timeshift"
+
+#~ msgid "Checking Feeds"
+#~ msgstr "Kontrollerer innmating av data"
+
+#~ msgid "Command To Run"
+#~ msgstr "Command To Run"
+
+#~ msgid "Command type"
+#~ msgstr "Command type"
 
 #~ msgid "CommonInterface"
 #~ msgstr "CommonInterface"
@@ -1065,8 +863,20 @@ msgstr "utilgjengelig"
 #~ msgid "Continue"
 #~ msgstr "Fortsett"
 
+#~ msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
+#~ msgstr "Opprette tidsinnstillinger for hvilemodus, restart av GUI, nedlukking og restart."
+
+#~ msgid "Cron Manager"
+#~ msgstr "Cron Manager"
+
+#~ msgid "Custom"
+#~ msgstr "Tilpasset"
+
 #~ msgid "Dec"
 #~ msgstr "Des"
+
+#~ msgid "Deep Standby Time"
+#~ msgstr "Tidspunkt for dyp hvilemodus"
 
 #~ msgid "Default Settings"
 #~ msgstr "Standardinnstillinger"
@@ -1080,6 +890,9 @@ msgstr "utilgjengelig"
 #~ msgstr ""
 #~ "Endringer gjort av enheter vil ikke virke før boksen er restartet.\n"
 #~ "Restarte din STB_BOX nå?"
+
+#~ msgid "Disabled"
+#~ msgstr "Deaktivert"
 
 #~ msgid "Display and Userinterface"
 #~ msgstr "Skjermvisning og brukergrensesnitt"
@@ -1108,6 +921,12 @@ msgstr "utilgjengelig"
 #~ msgid "Electronic Program Guide"
 #~ msgstr "Elektronisk programoversikt"
 
+#~ msgid "Enable Deep Standby"
+#~ msgstr "Aktiver dyp hvilemodus"
+
+#~ msgid "Enable GUI Restart"
+#~ msgstr "Aktiver GUI restart"
+
 #~ msgid "Error"
 #~ msgstr "Feil"
 
@@ -1120,6 +939,21 @@ msgstr "utilgjengelig"
 #~ msgid "Following tasks will be done after you press OK!"
 #~ msgstr "Følgende oppgaver vil bli utført etter at du har trykket OK!"
 
+#~ msgid "Found none stanadard softcam, trying to start, this may fail"
+#~ msgstr "Har ikke funnet noen standard softcam, prøver å starte, dette kan feile"
+
+#~ msgid "Friday"
+#~ msgstr "Fredag"
+
+#~ msgid "STB_BOX software because updates are available."
+#~ msgstr "STB_BOX programvare fordi oppdateringer er tilgjengelige."
+
+#~ msgid "H: = Hourly / D: = Daily / W: = Weekly / M: = Monthly"
+#~ msgstr "H: = Hourly / D: = Daily / W: = Weekly / M: = Monthly"
+
+#~ msgid "Hourly"
+#~ msgstr "Hver time"
+
 #~ msgid "Install or remove finished."
 #~ msgstr "Installering eller avinstallering fullført."
 
@@ -1128,6 +962,9 @@ msgstr "utilgjengelig"
 
 #~ msgid "Installing"
 #~ msgstr "Installerer"
+
+#~ msgid "Installing Service"
+#~ msgstr "Installing Service"
 
 #~ msgid "Jan"
 #~ msgstr "Jan"
@@ -1138,11 +975,17 @@ msgstr "utilgjengelig"
 #~ msgid "Jun"
 #~ msgstr "Jun"
 
+#~ msgid "Location of where image backup should lbe saved."
+#~ msgstr "Lokasjon der sikkerhetskopi av imaget ønskes lagret."
+
 #~ msgid "Manage Extensions"
 #~ msgstr "Manage Extensions"
 
 #~ msgid "Manage extensions or plugins for your STB_BOX"
 #~ msgstr "Behandle utvidelser eller plugins for din STB_BOX"
+
+#~ msgid "Manage your cron jobs."
+#~ msgstr "Behandle dine cron-jobber."
 
 #~ msgid "Mar"
 #~ msgstr "Mar"
@@ -1150,11 +993,29 @@ msgstr "utilgjengelig"
 #~ msgid "May"
 #~ msgstr "Mai"
 
+#~ msgid "Monday"
+#~ msgstr "Mandag"
+
+#~ msgid "Monthly"
+#~ msgstr "Månedlig"
+
 #~ msgid "Multimedia"
 #~ msgstr "Multimedia"
 
 #~ msgid "Network"
 #~ msgstr "Nettverk"
+
+#~ msgid "Next Deep Standby: \n"
+#~ msgstr "Neste dyp hvilemodus: \n"
+
+#~ msgid "Next GUI Restart: \n"
+#~ msgstr "Neste GUI restart: \n"
+
+#~ msgid "Next Reboot: \n"
+#~ msgstr "Neste restart: \n"
+
+#~ msgid "Next Standby: \n"
+#~ msgstr "Neste hvilemodus: \n"
 
 #~ msgid "No description available."
 #~ msgstr "Ingen beskrivelse tilgjengelig."
@@ -1162,12 +1023,8 @@ msgstr "utilgjengelig"
 #~ msgid "No network connection available."
 #~ msgstr "Ingen nettverkstilkoblinger tilgjengelig."
 
-#~ msgid ""
-#~ "No packages were upgraded yet. So you can check your network and try "
-#~ "again."
-#~ msgstr ""
-#~ "Ingen pakker er oppdatert ennå. Så du kan kontrollere nettverket ditt og "
-#~ "prøve igjenn."
+#~ msgid "No packages were upgraded yet. So you can check your network and try again."
+#~ msgstr "Ingen pakker er oppdatert ennå. Så du kan kontrollere nettverket ditt og prøve igjenn."
 
 #~ msgid "Nothing to upgrade"
 #~ msgstr "Ikke noe å oppdatere"
@@ -1196,6 +1053,12 @@ msgstr "utilgjengelig"
 #~ msgid "Packet manager"
 #~ msgstr "Packet manager"
 
+#~ msgid "Please wait while gathers infomation..."
+#~ msgstr "Vennligst vent mens informasjon innhentes..."
+
+#~ msgid "Please wait whilst feeds state is checked."
+#~ msgstr "Vennligst vent mens kontroll av oppkoblingsstatus pågår."
+
 #~ msgid "Please wait..."
 #~ msgstr "Vennligst vent..."
 
@@ -1208,11 +1071,26 @@ msgstr "utilgjengelig"
 #~ msgid "Plugin manager help"
 #~ msgstr "Plugin manager hjelp"
 
+#~ msgid "Power Manager"
+#~ msgstr "Power Manager"
+
+#~ msgid "Predefined"
+#~ msgstr "Forhåndsdefinert"
+
 #~ msgid "Press OK on your remote control to continue."
 #~ msgstr "Trykk OK på fjernkontrollen for å fortsette."
 
 #~ msgid "Process"
 #~ msgstr "Prosess"
+
+#~ msgid "Ready to install \"%s\" ?"
+#~ msgstr "Klar for installering \"%s\" ?"
+
+#~ msgid "Ready to remove \"%s\" ?"
+#~ msgstr "Klar for avinstallering \"%s\" ?"
+
+#~ msgid "Reboot"
+#~ msgstr "Restart"
 
 #~ msgid "Recordings"
 #~ msgstr "Innspillinger"
@@ -1229,21 +1107,47 @@ msgstr "utilgjengelig"
 #~ msgid "Removing"
 #~ msgstr "Avinstallering"
 
+#~ msgid "Removing Service"
+#~ msgstr "Avinstallerer tjenesten"
+
 #~ msgid "Renaming old backup..."
 #~ msgstr "Gir nytt navn til tidligere sikkerhetskopi..."
 
+#~ msgid "Restore Plugins"
+#~ msgstr "Gjennopprette plugins"
+
+#~ msgid "Restore Settings"
+#~ msgstr "Gjennopprette innstillinger"
+
+#~ msgid "Run how often ?"
+#~ msgstr "Kjøre hvor ofte?"
+
+#~ msgid "Running"
+#~ msgstr "Kjører"
+
 #~ msgid "Satellite equipment"
 #~ msgstr "Satelittutstyr"
+
+#~ msgid "Saturday"
+#~ msgstr "Lørdag"
 
 #~ msgid "Searching for available updates. Please wait..."
 #~ msgstr "Søker etter tilgjengelige oppdateringer. Vennligst vent..."
 
 #~ msgid "Searching for new installed or removed packages. Please wait..."
-#~ msgstr ""
-#~ "Søker etter nyinstallerte eller avinstallerte pakker. Vennligst vent..."
+#~ msgstr "Søker etter nyinstallerte eller avinstallerte pakker. Vennligst vent..."
+
+#~ msgid "Select an image to Restore / Delete:"
+#~ msgstr "Velg imaget som skal gjennopprettes/slettes:"
 
 #~ msgid "Sep"
 #~ msgstr "Sep"
+
+#~ msgid "Set the invterval to be checked in mins."
+#~ msgstr "Bestem tidsintervallet for neste sjekk i minutter."
+
+#~ msgid "Shut-down."
+#~ msgstr "Slå av."
 
 #~ msgid "Skins"
 #~ msgstr "Skins"
@@ -1257,8 +1161,20 @@ msgstr "utilgjengelig"
 #~ msgid "Software Update"
 #~ msgstr "Software Update"
 
+#~ msgid "Sorry feeds are down for maintenance, please try again later."
+#~ msgstr "Beklager, tilkoblingen er nede grunnet vedlikehold. Vennligst prøv igjenn senere."
+
 #~ msgid "Sorry, no Details available!"
 #~ msgstr "Beklager, ingen detaljer er tilgjengelige!"
+
+#~ msgid "Standby"
+#~ msgstr "Hvilemodus"
+
+#~ msgid "Stopped"
+#~ msgstr "Stoppet"
+
+#~ msgid "Sunday"
+#~ msgstr "Søndag"
 
 #~ msgid "System"
 #~ msgstr "System"
@@ -1290,8 +1206,17 @@ msgstr "utilgjengelig"
 #~ msgid "This plugin will be removed."
 #~ msgstr "Denne plugin vil nå bli avinstallert."
 
+#~ msgid "Thursday"
+#~ msgstr "Torsdag"
+
+#~ msgid "Time to execute command or script"
+#~ msgstr "Tidspunkt for start av command eller skript"
+
 #~ msgid "Trying to download a new packetlist. Please wait..."
 #~ msgstr "Forsøker å laste ned en ny pakkeoversikt. Vennligst vent..."
+
+#~ msgid "Tuesday"
+#~ msgstr "Tirsdag"
 
 #~ msgid "Unattended upgrade without GUI and reboot system"
 #~ msgstr "Oppdatering uten GUI og restarting av systemet uten varsling"
@@ -1371,8 +1296,14 @@ msgstr "utilgjengelig"
 #~ msgid "View, install and remove available or installed packages."
 #~ msgstr "Se, installer og avinstaller tilgjengelige og installerte pakker"
 
-#~ msgid "STB_BOX software because updates are available."
-#~ msgstr "STB_BOX programvare fordi oppdateringer er tilgjengelige."
+#~ msgid "Wednesday"
+#~ msgstr "Onsdag"
+
+#~ msgid "What Day of month ?"
+#~ msgstr "Hvilken dag i måneden?"
+
+#~ msgid "What Day of week ?"
+#~ msgstr "Hvilken dag i uken?"
 
 #~ msgid "You can cancel the installation."
 #~ msgstr "Du kan avbryte installeringen."
@@ -1387,18 +1318,38 @@ msgstr "utilgjengelig"
 #~ msgstr "Du kan avinstallere denne plugin."
 
 #~ msgid ""
-#~ "Your STB_BOX isn't connected to the internet properly. Please check it "
-#~ "and try again."
+#~ "Your STB_BOX is going for a nightly Reboot,\n"
+#~ "do you want to allow this?"
 #~ msgstr ""
-#~ "Din STB_BOX er ikke koblet til internett. Vennligst sjekk dette og prøv "
-#~ "igjenn."
+#~ "Din STB_BOX er i ferd med å utføre en restart som utføres hver natt,\n"
+#~ "Vil du tillate dette?"
 
 #~ msgid ""
-#~ "Your box is not connected to the internet, please check your network "
-#~ "settings and try again."
+#~ "Your STB_BOX is going for nightly GUI Restart,\n"
+#~ "do you want to allow this?"
 #~ msgstr ""
-#~ "Din STB_BOX er ikke koblet til internett. Vennligst sjekk dine "
-#~ "nettverksinnstillinger og prøv igjenn."
+#~ "Din STB_BOX er i ferd med å utføre en GUI restart som utføres hver natt,\n"
+#~ "Vil du tillate dette? "
+
+#~ msgid ""
+#~ "Your STB_BOX is going for nightly shut-down,\n"
+#~ "do you want to allow this?"
+#~ msgstr ""
+#~ "Din STB_BOX er i ferd med å bli slått av og som utføres hver natt,\n"
+#~ "Vil du tillate dette?"
+
+#~ msgid ""
+#~ "Your STB_BOX is going for nightly standby,\n"
+#~ "do you want to allow this?"
+#~ msgstr ""
+#~ "Din STB_BOX er i ferd med å bli satt i hvilemodus og som utføres hver natt,\n"
+#~ "Vil du tillate dette?"
+
+#~ msgid "Your STB_BOX isn't connected to the internet properly. Please check it and try again."
+#~ msgstr "Din STB_BOX er ikke koblet til internett. Vennligst sjekk dette og prøv igjenn."
+
+#~ msgid "Your box is not connected to the internet, please check your network settings and try again."
+#~ msgstr "Din STB_BOX er ikke koblet til internett. Vennligst sjekk dine nettverksinnstillinger og prøv igjenn."
 
 #~ msgid "extensions."
 #~ msgstr "utvidelser."
@@ -1406,15 +1357,14 @@ msgstr "utilgjengelig"
 #~ msgid "packages selected."
 #~ msgstr "valgte pakker."
 
+#~ msgid "please wait..."
+#~ msgstr "vennligst vent..."
+
 #~ msgid "unknown"
 #~ msgstr "ukjent"
 
 #~ msgid "updates available."
 #~ msgstr "oppdateringer tilgjengelig."
 
-#~ msgid ""
-#~ "your STB_BOX might be unusable now. Please consult the manual for further "
-#~ "assistance before rebooting your STB_BOX."
-#~ msgstr ""
-#~ "din STB_BOX kan være utilgjengelig for bruk nå. Vennligst se i "
-#~ "brukerhåndboken for hjelp før du restarter din STB_BOX."
+#~ msgid "your STB_BOX might be unusable now. Please consult the manual for further assistance before rebooting your STB_BOX."
+#~ msgstr "din STB_BOX kan være utilgjengelig for bruk nå. Vennligst se i brukerhåndboken for hjelp før du restarter din STB_BOX."

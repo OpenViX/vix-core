@@ -155,7 +155,7 @@ msgid ""
 "Please for it to finish, before trying again"
 msgstr ""
 
-msgid "BackupManager"
+msgid "Backup Manager"
 msgstr ""
 
 msgid "CCcam can't run whilst MGcamd is running"
@@ -412,7 +412,7 @@ msgstr ""
 msgid "Image Manager Setup"
 msgstr ""
 
-msgid "ImageManager"
+msgid "Image Manager"
 msgstr ""
 
 msgid "Inactive"

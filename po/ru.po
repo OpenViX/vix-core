@@ -154,7 +154,7 @@ msgstr ""
 msgid "Backup prefix"
 msgstr "Добавить к имени резервной копии"
 
-msgid "BackupManager"
+msgid "Backup Manager"
 msgstr "Резервное копирование"
 
 msgid "CCcam can't run whilst MGcamd is running"
@@ -323,7 +323,7 @@ msgstr "Управление прошивкой"
 msgid "Image Manager Setup"
 msgstr "Настройки сохранения прошивки"
 
-msgid "ImageManager"
+msgid "Image Manager"
 msgstr "Управление прошивкой"
 
 msgid "Inactive"

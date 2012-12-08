@@ -157,7 +157,7 @@ msgstr ""
 msgid "Backup prefix"
 msgstr "Varukoopia nimi"
 
-msgid "BackupManager"
+msgid "Backup Manager"
 msgstr "Varukoopia haldur"
 
 msgid "CCcam can't run whilst MGcamd is running"
@@ -326,7 +326,7 @@ msgstr "Tarkvarakoopia haldur"
 msgid "Image Manager Setup"
 msgstr "Seadistamine"
 
-msgid "ImageManager"
+msgid "Image Manager"
 msgstr "Tarkvarakoopia haldur"
 
 msgid "Inactive"

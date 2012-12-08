@@ -157,7 +157,7 @@ msgstr ""
 msgid "Backup prefix"
 msgstr "Backup Namensanfang"
 
-msgid "BackupManager"
+msgid "Backup Manager"
 msgstr "Backup Verwaltung"
 
 msgid "CCcam can't run whilst MGcamd is running"
@@ -326,7 +326,7 @@ msgstr "Image Verwaltung"
 msgid "Image Manager Setup"
 msgstr "Einstellungen Image Verwaltung"
 
-msgid "ImageManager"
+msgid "Image Manager"
 msgstr "Image Verwaltung"
 
 msgid "Inactive"

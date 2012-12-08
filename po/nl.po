@@ -1,4 +1,3 @@
-# Dutch translations for plugins package.
 # Copyright (C) 2011 THE plugins'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the plugins package.
 # Automatically generated, 2011.
@@ -8,7 +7,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-03 15:01+0000\n"
-"PO-Revision-Date: 2012-12-08 21:00+0100\n"
+"PO-Revision-Date: 2012-12-08 21:07+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -157,9 +156,6 @@ msgstr ""
 
 msgid "Backup prefix"
 msgstr "Back-up prefix"
-
-msgid "Backup Manager"
-msgstr "Backup Manager"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam en MGcamd kunnen niet beide actief zijn"
@@ -326,9 +322,6 @@ msgstr "Image Manager"
 
 msgid "Image Manager Setup"
 msgstr "Image Manager instellingen"
-
-msgid "Image Manager"
-msgstr "Image Manager"
 
 msgid "Inactive"
 msgstr "Inaktief"

@@ -156,9 +156,6 @@ msgstr ""
 msgid "Backup prefix"
 msgstr ""
 
-msgid "Backup Manager"
-msgstr "YedeklemeYöneticisi"
-
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "MGcamd çalışırken CCcam çalışamaz"
 

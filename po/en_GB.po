@@ -156,9 +156,6 @@ msgstr ""
 msgid "Backup prefix"
 msgstr "Backup prefix"
 
-msgid "Backup Manager"
-msgstr "Backup Manager"
-
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam can't run whilst MGcamd is running"
 

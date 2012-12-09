@@ -157,9 +157,6 @@ msgstr ""
 msgid "Backup prefix"
 msgstr "Varukoopia nimi"
 
-msgid "Backup Manager"
-msgstr "Varukoopia haldur"
-
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "MGcamd töötamisel ei saa CCcam käivituda"
 

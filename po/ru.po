@@ -154,9 +154,6 @@ msgstr ""
 msgid "Backup prefix"
 msgstr "Добавить к имени резервной копии"
 
-msgid "Backup Manager"
-msgstr "Резервное копирование"
-
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam не работает одновременно с MgCamd"
 

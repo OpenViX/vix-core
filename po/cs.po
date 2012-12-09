@@ -154,9 +154,6 @@ msgstr ""
 msgid "Backup prefix"
 msgstr ""
 
-msgid "Backup Manager"
-msgstr "SprávceZáloh"
-
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam nelze provozovat zároveň s MGcamdem"
 

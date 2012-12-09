@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-03 15:01+0000\n"
-"PO-Revision-Date: 2012-12-08 21:07+0100\n"
-"Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
+"PO-Revision-Date: 2012-12-09 02:32+0100\n"
+"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
 "X-Generator: Poedit 1.5.4\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -797,199 +799,3 @@ msgstr "er was een probleem met dit apparaat; formatteer opnieuw en probeer het 
 msgid "unavailable"
 msgstr "niet beschikbaar"
 
-#~ msgid "Add"
-#~ msgstr "Voeg toe"
-
-#~ msgid ""
-#~ "Are you sure you want to delete this:\n"
-#~ " "
-#~ msgstr ""
-#~ "Weet u zeker di te verwijderen:\n"
-#~ " "
-
-#~ msgid "Autostart:"
-#~ msgstr "Autostart:"
-
-#~ msgid "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths"
-#~ msgstr "Kan de partitie niet unmounten; stel zeker dat deze niet in gebruik is voor Swap/opname/timeshift paden"
-
-#~ msgid "Checking Feeds"
-#~ msgstr "Controleert feeds"
-
-#~ msgid "Command To Run"
-#~ msgstr "Opdracht uit te voeren"
-
-#~ msgid "Command type"
-#~ msgstr "Command type"
-
-#~ msgid "Create schedules for Standby, Restart GUI, DeepStandby and Reboot."
-#~ msgstr "Creëer schema's voor Standby, Herstarten GUI, DeepStandby en Reboot."
-
-#~ msgid "Cron Manager"
-#~ msgstr "Cronmanager"
-
-#~ msgid "Custom"
-#~ msgstr "Aangepast"
-
-#~ msgid "Deep Standby Time"
-#~ msgstr "Deep Sleep"
-
-#~ msgid "Disabled"
-#~ msgstr "Uitgeschakeld"
-
-#~ msgid "Enable Deep Standby"
-#~ msgstr "Schakel Deep Sleep in"
-
-#~ msgid "Enable GUI Restart"
-#~ msgstr "GUI herstarten toestaan"
-
-#~ msgid "Found none stanadard softcam, trying to start, this may fail"
-#~ msgstr "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, maar dat kan mislukken"
-
-#~ msgid "Friday"
-#~ msgstr "vrijdag"
-
-#~ msgid "H: = Hourly / D: = Daily / W: = Weekly / M: = Monthly"
-#~ msgstr "H: = elk uur / D: = Dagelijks / W: = Weekelijks / M: = Maandelijks"
-
-#~ msgid "Hourly"
-#~ msgstr "Elk uur"
-
-#~ msgid "Installing Service"
-#~ msgstr "Installeert service"
-
-#~ msgid "Location of where image backup should lbe saved."
-#~ msgstr "Locatie voor uw image backups."
-
-#~ msgid "Manage your cron jobs."
-#~ msgstr "Beheer uw cron jobs."
-
-#~ msgid "Monday"
-#~ msgstr "maandag"
-
-#~ msgid "Monthly"
-#~ msgstr "Maandelijks"
-
-#~ msgid "Next Deep Standby: \n"
-#~ msgstr "Volgende Deep Sleep: \n"
-
-#~ msgid "Next GUI Restart: \n"
-#~ msgstr "Volgende GUI-herstart: \n"
-
-#~ msgid "Next Reboot: \n"
-#~ msgstr "Volgende reboot: \n"
-
-#~ msgid "Next Standby: \n"
-#~ msgstr "Volgende standby: \n"
-
-#~ msgid "Please wait while gathers infomation..."
-#~ msgstr "Bezig informatie te verzamelen..."
-
-#~ msgid "Please wait whilst feeds state is checked."
-#~ msgstr "Even wachten: de status van de feeds wordt gecontroleerd."
-
-#~ msgid "Power Manager"
-#~ msgstr "Powe Manager"
-
-#~ msgid "Predefined"
-#~ msgstr "Vastgesteld"
-
-#~ msgid "Ready to install \"%s\" ?"
-#~ msgstr "Gereed om \"%s\" te installeren?"
-
-#~ msgid "Ready to remove \"%s\" ?"
-#~ msgstr "Gereed om \"%s\" te verwijderen?"
-
-#~ msgid "Reboot"
-#~ msgstr "Start opnieuw"
-
-#~ msgid "Removing Service"
-#~ msgstr "Verwijdert service"
-
-#~ msgid "Restore Plugins"
-#~ msgstr "Installeer plugins weer"
-
-#~ msgid "Restore Settings"
-#~ msgstr "Paalts installingen terug"
-
-#~ msgid "Run how often ?"
-#~ msgstr "Hoe vaak uitvoeren?"
-
-#~ msgid "Running"
-#~ msgstr "Loopt"
-
-#~ msgid "Saturday"
-#~ msgstr "zaterdag"
-
-#~ msgid "Select an image to Restore / Delete:"
-#~ msgstr "Selecteer een image om te herstellen/verwijderen:"
-
-#~ msgid "Set the invterval to be checked in mins."
-#~ msgstr "Stel het controle interval in (min)."
-
-#~ msgid "Shut-down."
-#~ msgstr "Afskuiten."
-
-#~ msgid "Sorry but location does exist or not setup, please setup in Backup Manager ?"
-#~ msgstr "Lokatie bestaat niet; stel deze in in de backup manager."
-
-#~ msgid "Sorry feeds are down for maintenance, please try again later."
-#~ msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
-
-#~ msgid "Standby"
-#~ msgstr "Standby"
-
-#~ msgid "Stopped"
-#~ msgstr "Gestopt"
-
-#~ msgid "Sunday"
-#~ msgstr "zondag"
-
-#~ msgid "Thursday"
-#~ msgstr "donderdag"
-
-#~ msgid "Time to execute command or script"
-#~ msgstr "Tijd om het script uit te voeren"
-
-#~ msgid "Tuesday"
-#~ msgstr "dinsdag"
-
-#~ msgid "Wednesday"
-#~ msgstr "woensdag"
-
-#~ msgid "What Day of month ?"
-#~ msgstr "Welke dag van de maand?"
-
-#~ msgid "What Day of week ?"
-#~ msgstr "Welke dag van de week?"
-
-#~ msgid ""
-#~ "Your STB_BOX is going for a nightly Reboot,\n"
-#~ "do you want to allow this?"
-#~ msgstr ""
-#~ "Uw STB_BOX is ingsteld op een nachtelijke herstart,\n"
-#~ "wilt u dat toestaan?"
-
-#~ msgid ""
-#~ "Your STB_BOX is going for nightly GUI Restart,\n"
-#~ "do you want to allow this?"
-#~ msgstr ""
-#~ "Uw STB_BOX is ingsteld op een nachtelijke GUI-herstart,\n"
-#~ "wilt u dat toestaan?"
-
-#~ msgid ""
-#~ "Your STB_BOX is going for nightly shut-down,\n"
-#~ "do you want to allow this?"
-#~ msgstr ""
-#~ "Uw STB_BOX is ingsteld om 's nachts uitgeschakeld te worden,\n"
-#~ "wilt u dat toestaan?"
-
-#~ msgid ""
-#~ "Your STB_BOX is going for nightly standby,\n"
-#~ "do you want to allow this?"
-#~ msgstr ""
-#~ "Uw STB_BOX is ingsteld om 's nachts in standby te gaan,\n"
-#~ "wilt u dat toestaan?"
-
-#~ msgid "please wait..."
-#~ msgstr "even wachten..."

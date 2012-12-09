@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-03 15:01+0000\n"
-"PO-Revision-Date: 2012-09-14 19:42-0000\n"
+"PO-Revision-Date: 2012-12-09 02:33+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: lv\n"
@@ -310,9 +310,6 @@ msgid "Image Manager"
 msgstr ""
 
 msgid "Image Manager Setup"
-msgstr ""
-
-msgid "Image Manager"
 msgstr ""
 
 msgid "Inactive"
@@ -770,3 +767,4 @@ msgstr ""
 
 msgid "unavailable"
 msgstr ""
+

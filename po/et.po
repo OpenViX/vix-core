@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-03 15:01+0000\n"
-"PO-Revision-Date: 2012-12-09 02:33+0100\n"
-"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
+"POT-Creation-Date: 2012-12-09 05:03+0000\n"
+"PO-Revision-Date: 2012-12-12 15:37+0100\n"
+"Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: rimas\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
@@ -19,25 +19,25 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 
 msgid "%a %e %b  %-H:%M"
-msgstr ""
+msgstr "%a %e %b  %-H:%M"
 
 msgid "16 Mb"
-msgstr "16MB"
+msgstr "16 Mb"
 
 msgid "30 Days"
 msgstr "30 päeva"
 
 msgid "32 Mb"
-msgstr "32MB"
+msgstr "32 Mb"
 
 msgid "64 Mb"
-msgstr "64MB"
+msgstr "64 Mb"
 
 msgid "8 Mb"
-msgstr "8MB"
+msgstr "8 Mb"
 
 msgid "96 Mb"
-msgstr "96MB"
+msgstr "96 Mb"
 
 msgid "A background update check is is progress, please wait for retry."
 msgstr "Uuenduste kontroll toimub taustal. Oota ja proovi uuesti"
@@ -63,21 +63,6 @@ msgstr "Võimaldab planeerida varukoopiate loomist."
 msgid "Allows you schedule your image backups."
 msgstr "Võimaldab planeerida tarkvarakoopiate loomist."
 
-msgid "Allows you to control the power state of your STB_BOX."
-msgstr "Võimaldab kontrollida STB_BOX energiatarvet."
-
-msgid "Allows you to put your STB_BOX in standby at a set time."
-msgstr "Võimaldab panna STB_BOX määratud ajal ooterežiimi."
-
-msgid "Allows you to put your STB_BOX into deepstandby at a set time."
-msgstr "Võimaldab panna STB_BOX määratud ajal sügavooterežiimi."
-
-msgid "Allows you to reboot your STB_BOX at a set time."
-msgstr "Võimaldab taaskäivitada STB_BOX määratud ajal."
-
-msgid "Allows you to restart your STB_BOX interface at a set time."
-msgstr "Võimaldab määratud ajal taaskäivitada STB_BOX kasutajaliidese."
-
 msgid "Allows you to tag your backups to a box. (default is box name/type)"
 msgstr "Võimaldab siduda varukoopia nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
 
@@ -85,10 +70,10 @@ msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr "Võimaldab siduda tarkvarakoopia nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
 
 msgid "Are you ready to create a backup ?"
-msgstr "Kas lood varukoopia?"
+msgstr "Kas lood seadistustest varukoopia?"
 
 msgid "Are you ready to create a backup image ?"
-msgstr "Kas lood tarkvarakoopia? "
+msgstr "Kas lood süsteemist tarkvarakoopia? "
 
 msgid "Are you ready to install ?"
 msgstr "Kas paigaldad?"
@@ -224,9 +209,6 @@ msgstr "Iga päev"
 msgid "Deactivate"
 msgstr "Lülita välja"
 
-msgid "DeepStandby Time"
-msgstr "Sügavoote aeg"
-
 msgid "Delete"
 msgstr "Kustuta"
 
@@ -260,21 +242,6 @@ msgstr "Image allalaadimine..."
 msgid "Downloads"
 msgstr "Allalaadimised"
 
-msgid "Enable DeepStandby"
-msgstr "Luba sügavooterežiim"
-
-msgid "Enable GUI restart"
-msgstr "Luba GUI taaskäivitamine"
-
-msgid "Enable Power Manager"
-msgstr "Toitehalduri lubamine"
-
-msgid "Enable Reboot"
-msgstr "Luba taaskäivitamine"
-
-msgid "Enable Standby"
-msgstr "Luba ooterežiim"
-
 msgid "Enable Startup"
 msgstr "Luba autostart"
 
@@ -307,9 +274,6 @@ msgstr "Hangumise kontrolli ajavahemik"
 
 msgid "GB"
 msgstr "GB"
-
-msgid "GUI Restart Time"
-msgstr "GUI taaskäivitamise aeg"
 
 msgid "HARD DISK: "
 msgstr "KÕVAKETAS: "
@@ -345,7 +309,7 @@ msgid "Installing..."
 msgstr "Paigaldamine..."
 
 msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
-msgstr ""
+msgstr "Eraldi asukoht on määramata. Määra see kasutades varukoopia haldurit"
 
 msgid "Location of where backup should be saved."
 msgstr "Varukoopia salvestamise asukoht."
@@ -462,17 +426,11 @@ msgstr "Oota."
 msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Laienduste laadimine nurjus - n.t.  vale asukoht või ruumipuudus varundamise asukohas"
 
-msgid "Power Manager Setup"
-msgstr "Toite haldur"
-
 msgid "Preparing extra plugins..."
 msgstr "Laienduste ettevalmistamine..."
 
 msgid "Really close without saving settings?"
 msgstr "Väljud muudatusi salvetamata?"
-
-msgid "Reboot Time"
-msgstr "Taaskäivituse aeg"
 
 msgid "Rebooting..."
 msgstr "Taaskäivitus..."
@@ -511,13 +469,10 @@ msgid "Restoring backup..."
 msgstr "Varukoopia taastamine..."
 
 msgid "Restoring plugins, this can take a long time..."
-msgstr "Laienduste taastamine. See võib kesta kaua"
+msgstr "Laienduste taastamine. See võib kesta kaua..."
 
 msgid "Restoring plugins..."
 msgstr "Laienduste taastamine..."
-
-msgid "Retry after cancel (mins)"
-msgstr "Proovi uuesti pärast tühistamist (min)"
 
 msgid "Run"
 msgstr "Käivita"
@@ -570,9 +525,6 @@ msgstr "Vali saalefaili suurus:"
 msgid "Select:"
 msgstr "Vali:"
 
-msgid "Set the delay time to wait before asking again."
-msgstr "Määra uuesti küsimisele ooteaeg."
-
 msgid "Set the interval to be checked in mins."
 msgstr "Ajavahemik, mille järel kontrollida (min)"
 
@@ -581,18 +533,6 @@ msgstr "Määra varundamise ajakava."
 
 msgid "Set the time of backup to start."
 msgstr "Määra varundamise käivitamise aeg."
-
-msgid "Set the time to enter deepstandby mode."
-msgstr "Määra sügavooterežiimi mineku aeg."
-
-msgid "Set the time to enter standby mode."
-msgstr "Määra ooterežiimi mineku aeg."
-
-msgid "Set the time to reboot."
-msgstr "Määra vastuvõtja taaskäivitamise aeg."
-
-msgid "Set the time to restart the interface."
-msgstr "Määra kasutajaliidese taaskäivitamise aeg."
 
 msgid "Setting Up..."
 msgstr "Seadistamine..."
@@ -622,7 +562,7 @@ msgid "SoftcamCheck"
 msgstr "EMU kontroll"
 
 msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-msgstr ""
+msgstr "Asukoht puudub või on määramata. Määra see kasutades varukoopia haldurit"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti."
@@ -641,9 +581,6 @@ msgstr "Andmekandjat, mis toetaks saalet, ei ole ühendatud. Saalefaili loomine 
 
 msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
 msgstr "Ei ole piisavalt vaba mälu ega andmekandjat, mis toetaks saalet. Saalefaili loomine võrgus või fat32 süsteemis ei ole võimalik. Varukoopiat ei saa luua"
-
-msgid "Standby Time"
-msgstr "Ooterežiimi mineku aeg"
 
 msgid "Start"
 msgstr "Käivita"
@@ -695,6 +632,9 @@ msgstr "Varundamise käivitamise aeg"
 
 msgid "Type: "
 msgstr "Tüüp: "
+
+msgid "USB: "
+msgstr "USB: "
 
 msgid "Updating mount locations."
 msgstr "Haakepunktide uuendamine"
@@ -797,3 +737,65 @@ msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."
 msgid "unavailable"
 msgstr "pole saadaval"
 
+#~ msgid "Allows you to control the power state of your STB_BOX."
+#~ msgstr "Võimaldab kontrollida STB_BOX energiatarvet."
+
+#~ msgid "Allows you to put your STB_BOX in standby at a set time."
+#~ msgstr "Võimaldab panna STB_BOX määratud ajal ooterežiimi."
+
+#~ msgid "Allows you to put your STB_BOX into deepstandby at a set time."
+#~ msgstr "Võimaldab panna STB_BOX määratud ajal sügavooterežiimi."
+
+#~ msgid "Allows you to reboot your STB_BOX at a set time."
+#~ msgstr "Võimaldab taaskäivitada STB_BOX määratud ajal."
+
+#~ msgid "Allows you to restart your STB_BOX interface at a set time."
+#~ msgstr "Võimaldab määratud ajal taaskäivitada STB_BOX kasutajaliidese."
+
+#~ msgid "DeepStandby Time"
+#~ msgstr "Sügavoote aeg"
+
+#~ msgid "Enable DeepStandby"
+#~ msgstr "Luba sügavooterežiim"
+
+#~ msgid "Enable GUI restart"
+#~ msgstr "Luba GUI taaskäivitamine"
+
+#~ msgid "Enable Power Manager"
+#~ msgstr "Toitehalduri lubamine"
+
+#~ msgid "Enable Reboot"
+#~ msgstr "Luba taaskäivitamine"
+
+#~ msgid "Enable Standby"
+#~ msgstr "Luba ooterežiim"
+
+#~ msgid "GUI Restart Time"
+#~ msgstr "GUI taaskäivitamise aeg"
+
+#~ msgid "Power Manager Setup"
+#~ msgstr "Toite haldur"
+
+#~ msgid "Reboot Time"
+#~ msgstr "Taaskäivituse aeg"
+
+#~ msgid "Retry after cancel (mins)"
+#~ msgstr "Proovi uuesti pärast tühistamist (min)"
+
+#~ msgid "Set the delay time to wait before asking again."
+#~ msgstr "Määra uuesti küsimisele ooteaeg."
+
+#~ msgid "Set the time to enter deepstandby mode."
+#~ msgstr "Määra sügavooterežiimi mineku aeg."
+
+#~ msgid "Set the time to enter standby mode."
+#~ msgstr "Määra ooterežiimi mineku aeg."
+
+#~ msgid "Set the time to reboot."
+#~ msgstr "Määra vastuvõtja taaskäivitamise aeg."
+
+#~ msgid "Set the time to restart the interface."
+#~ msgstr "Määra kasutajaliidese taaskäivitamise aeg."
+
+#~ msgid "Standby Time"
+#~ msgstr "Ooterežiimi mineku aeg"

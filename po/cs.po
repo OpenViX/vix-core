@@ -609,7 +609,7 @@ msgstr "Zpráva Správce Softcamu"
 msgid "Softcam Setup"
 msgstr "Nastavení Softcamu"
 
-msgid "Softcam Sopping..."
+msgid "Softcam Stopping..."
 msgstr "Zastavuji Softcam..."
 
 msgid "Softcam Starting..."

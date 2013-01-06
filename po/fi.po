@@ -593,7 +593,7 @@ msgstr ""
 msgid "Softcam Setup"
 msgstr ""
 
-msgid "Softcam Sopping..."
+msgid "Softcam Stopping..."
 msgstr ""
 
 msgid "Softcam Starting..."

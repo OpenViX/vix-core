@@ -612,7 +612,7 @@ msgstr "Softcam Manager Logg"
 msgid "Softcam Setup"
 msgstr "Softcam Oppsett"
 
-msgid "Softcam Sopping..."
+msgid "Softcam Stopping..."
 msgstr "Stopper softcam..."
 
 msgid "Softcam Starting..."

@@ -552,7 +552,7 @@ msgstr "EMU halduri logi"
 msgid "Softcam Setup"
 msgstr "EMU seadistamine"
 
-msgid "Softcam Sopping..."
+msgid "Softcam Stopping..."
 msgstr "EMU peatamine..."
 
 msgid "Softcam Starting..."

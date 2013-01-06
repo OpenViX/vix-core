@@ -608,7 +608,7 @@ msgstr "Softcam Yönetici Günlüğü"
 msgid "Softcam Setup"
 msgstr "Softcam Kurulumu"
 
-msgid "Softcam Sopping..."
+msgid "Softcam Stopping..."
 msgstr "Softcam Durduruluyor..."
 
 msgid "Softcam Starting..."

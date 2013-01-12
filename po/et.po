@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-09 05:03+0000\n"
-"PO-Revision-Date: 2012-12-12 15:37+0100\n"
+"POT-Creation-Date: 2013-01-09 23:38+0000\n"
+"PO-Revision-Date: 2013-01-12 14:06+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: rimas\n"
 "Language: et\n"
@@ -55,7 +55,7 @@ msgid "Active:"
 msgstr "Aktiivne:"
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
-msgstr "Võimaldab kontrollida, kas EMU ei ole ȟangunud ja vajadusel selle automaatselt taaskäivitada."
+msgstr "Võimaldab kontrollida, kas EMU ei ole hangunud ja vajadusel selle automaatselt taaskäivitada."
 
 msgid "Allows you schedule your boackups."
 msgstr "Võimaldab planeerida varukoopiate loomist."
@@ -130,7 +130,7 @@ msgid "Backup Manager Setup"
 msgstr "Varundamise seadistamine"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Varundamine nurjus - n.t.  vale asukoht või ruumi puudus varundamise asukohas"
+msgstr "Varundamine nurjus - nt.  vale asukoht või ruumi puudus varundamise asukohas"
 
 msgid ""
 "Backup in progress,\n"
@@ -159,7 +159,7 @@ msgid ""
 "Restart your STB_BOX now?"
 msgstr ""
 "Muudatused vajavad jõustumiseks süsteemi taaskäivitamist.\n"
-"Kas taaskäivitame STB_BOX?"
+"Kas taaskäivitad STB_BOX?"
 
 msgid "Checking Free RAM.."
 msgstr "Vaba mälu uurimine.."
@@ -252,7 +252,7 @@ msgid "Enable frozen check ?"
 msgstr "Lubada hangumise kontroll?"
 
 msgid "Enough Retries, delaying till next schedule."
-msgstr ", delaying till next schedule."
+msgstr "Rohkem ei proovi, lükatakse järgmise korrale."
 
 msgid "Exit the restore wizard"
 msgstr "Välju taastamisabilisest"
@@ -302,11 +302,20 @@ msgstr "Paigaldamise kinnitus"
 msgid "Install IPK's from your tmp folder."
 msgstr "Paigalda IPK 'tmp' kaustast."
 
+msgid "Install extensions."
+msgstr "Paigalda laiendusi"
+
 msgid "Install local extension"
 msgstr "IPK paigaldamine"
 
 msgid "Installing..."
 msgstr "Paigaldamine..."
+
+msgid "Invert"
+msgstr "Pööra ümber"
+
+msgid "Ipkg"
+msgstr "Ipkg"
 
 msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 msgstr "Eraldi asukoht on määramata. Määra see kasutades varukoopia haldurit"
@@ -429,6 +438,9 @@ msgstr "Laienduste laadimine nurjus - n.t.  vale asukoht või ruumipuudus varund
 msgid "Preparing extra plugins..."
 msgstr "Laienduste ettevalmistamine..."
 
+msgid "Press OK to toggle the selection."
+msgstr "Valiku muutmiseks vajuta OK."
+
 msgid "Really close without saving settings?"
 msgstr "Väljud muudatusi salvetamata?"
 
@@ -505,10 +517,10 @@ msgid "Select a script to run:"
 msgstr "Vali skript:"
 
 msgid "Select an image to Download:"
-msgstr "Vali allalaadimiseks image:"
+msgstr "Vali allalaadimiseks tarkvaratõmmis:"
 
 msgid "Select an image to delete:"
-msgstr "Vali kustutamisekd tarkvarakoopia:"
+msgstr "Vali kustutamiseks tarkvarakoopia:"
 
 msgid "Select extra packages folder"
 msgstr "Vali lisapakettide kaust"
@@ -552,11 +564,11 @@ msgstr "EMU halduri logi"
 msgid "Softcam Setup"
 msgstr "EMU seadistamine"
 
-msgid "Softcam Stopping..."
-msgstr "EMU peatamine..."
-
 msgid "Softcam Starting..."
 msgstr "EMU käivitamine..."
+
+msgid "Softcam Stopping..."
+msgstr "EMU peatamine..."
 
 msgid "SoftcamCheck"
 msgstr "EMU kontroll"

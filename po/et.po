@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-22 12:52+0100\n"
-"PO-Revision-Date: 2013-05-03 17:28+0100\n"
+"POT-Creation-Date: 2013-05-20 00:06+0100\n"
+"PO-Revision-Date: 2013-05-20 17:58+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: rimas\n"
 "Language: et\n"
@@ -97,6 +97,13 @@ msgid ""
 " "
 msgstr ""
 "Kas taastad varukoopia:\n"
+" "
+
+msgid ""
+"Are you sure you want to restore this image:\n"
+" "
+msgstr ""
+"Kas taastad tarkvarakoopia:\n"
 " "
 
 msgid "Autostart"
@@ -261,7 +268,7 @@ msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "Leiti ebastandardne EMU. Käivitamine võib nurjuda"
 
 msgid "Free space:"
-msgstr ""
+msgstr "Vaba ruum:"
 
 msgid "Frozen check interval"
 msgstr "Hangumise kontrolli ajavahemik"
@@ -399,6 +406,9 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "Jah, taasta"
 
+msgid "Please copy the folder"
+msgstr "Kopeeri kataloog"
+
 msgid "Please enter a folder that contains some packages."
 msgstr "Vali kaust, milles leidub pakette."
 
@@ -496,7 +506,7 @@ msgid "Select"
 msgstr "Vali"
 
 msgid "Select a backup to Restore / Delete:"
-msgstr "Vali taastamiseks või kustutamiseks varukoopia:"
+msgstr "Taasta või kustuta varukoopia:"
 
 msgid "Select a package to install:"
 msgstr "Vali paigaldamiseks pakett:"
@@ -505,7 +515,7 @@ msgid "Select an image to Download:"
 msgstr "Vali allalaadimiseks tarkvaratõmmis:"
 
 msgid "Select an image to delete:"
-msgstr "Vali kustutamiseks tarkvarakoopia:"
+msgstr "Taasta või kustuta tarkvarakoopia:"
 
 msgid "Select extra packages folder"
 msgstr "Vali lisapakettide kaust"
@@ -535,7 +545,7 @@ msgid "Setting Up..."
 msgstr "Seadistamine..."
 
 msgid "Setup Mounts"
-msgstr "Haakepuktid"
+msgstr "Haakepunktid"
 
 msgid "Size: "
 msgstr "Suurus: "
@@ -558,6 +568,9 @@ msgstr "EMU peatamine..."
 msgid "SoftcamCheck"
 msgstr "EMU kontroll"
 
+msgid "Sorry Image Restore is not supported on the"
+msgstr "Tarkvarakoopia taastamine ei ole toetatud vastuvõtjaga"
+
 msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
 msgstr "Asukoht puudub või on määramata. Määra see kasutades varukoopia haldurit"
 
@@ -566,6 +579,9 @@ msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti."
 
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti"
+
+msgid "Sorry the image "
+msgstr "Kahjuks image"
 
 msgid "Sorry you STB_BOX is not yet compatible."
 msgstr "STB_BOX ei ole veel ühilduv."
@@ -643,19 +659,19 @@ msgid "ViX"
 msgstr "ViX"
 
 msgid "ViX Backup Manager"
-msgstr ""
+msgstr "ViX varukoopia haldur"
 
 msgid "ViX Image Manager"
-msgstr ""
+msgstr "ViX tarkvarakoopia haldur"
 
 msgid "ViX Mount Manager"
-msgstr ""
+msgstr "ViX haakepunktid"
 
 msgid "ViX Script Runner"
-msgstr ""
+msgstr "ViX skriptid"
 
 msgid "ViX Swap Manager"
-msgstr ""
+msgstr "ViX saale haldur"
 
 msgid "View Progress"
 msgstr "Näita edenemist"
@@ -711,6 +727,9 @@ msgstr "Pole midagi kustutada."
 msgid "You have no image to download."
 msgstr "Pole midagi alla laadida."
 
+msgid "You have no image to restore."
+msgstr "Tarkvarakoopia puudub."
+
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Enne autostardi lubamist tuleb luua saalefail. "
 
@@ -743,89 +762,9 @@ msgstr "echo 'Image laiendamine.'"
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."
 
+msgid "to a USB stick, place in front USB port of reciver and power on"
+msgstr "usb pulgale, ühenda esipaneelil olevasse pesasse ja lülita sisse"
+
 msgid "unavailable"
 msgstr "pole saadaval"
 
-#~ msgid "Allows you to control the power state of your STB_BOX."
-#~ msgstr "Võimaldab kontrollida STB_BOX energiatarvet."
-
-#~ msgid "Allows you to put your STB_BOX in standby at a set time."
-#~ msgstr "Võimaldab panna STB_BOX määratud ajal ooterežiimi."
-
-#~ msgid "Allows you to put your STB_BOX into deepstandby at a set time."
-#~ msgstr "Võimaldab panna STB_BOX määratud ajal sügavooterežiimi."
-
-#~ msgid "Allows you to reboot your STB_BOX at a set time."
-#~ msgstr "Võimaldab taaskäivitada STB_BOX määratud ajal."
-
-#~ msgid "Allows you to restart your STB_BOX interface at a set time."
-#~ msgstr "Võimaldab määratud ajal taaskäivitada STB_BOX kasutajaliidese."
-
-#~ msgid "Are you ready to run the script ?"
-#~ msgstr "Kas käivitad skripti?"
-
-#~ msgid "DeepStandby Time"
-#~ msgstr "Sügavoote aeg"
-
-#~ msgid "Enable DeepStandby"
-#~ msgstr "Luba sügavooterežiim"
-
-#~ msgid "Enable GUI restart"
-#~ msgstr "Luba GUI taaskäivitamine"
-
-#~ msgid "Enable Power Manager"
-#~ msgstr "Toitehalduri lubamine"
-
-#~ msgid "Enable Reboot"
-#~ msgstr "Luba taaskäivitamine"
-
-#~ msgid "Enable Standby"
-#~ msgstr "Luba ooterežiim"
-
-#~ msgid "Extra Package's Location"
-#~ msgstr "Lisapakettide asukoht"
-
-#~ msgid "Folder prefix"
-#~ msgstr "Kataloogi nimi"
-
-#~ msgid "GUI Restart Time"
-#~ msgstr "GUI taaskäivitamise aeg"
-
-#~ msgid "Power Manager Setup"
-#~ msgstr "Toite haldur"
-
-#~ msgid "Really close without saving settings?"
-#~ msgstr "Väljud muudatusi salvetamata?"
-
-#~ msgid "Reboot Time"
-#~ msgstr "Taaskäivituse aeg"
-
-#~ msgid "Retry after cancel (mins)"
-#~ msgstr "Proovi uuesti pärast tühistamist (min)"
-
-#~ msgid "Run Confirmation"
-#~ msgstr "Käivitamise kinnitamine"
-
-#~ msgid "Select a script to run:"
-#~ msgstr "Vali skript:"
-
-#~ msgid "Set the delay time to wait before asking again."
-#~ msgstr "Määra uuesti küsimisele ooteaeg."
-
-#~ msgid "Set the time to enter deepstandby mode."
-#~ msgstr "Määra sügavooterežiimi mineku aeg."
-
-#~ msgid "Set the time to enter standby mode."
-#~ msgstr "Määra ooterežiimi mineku aeg."
-
-#~ msgid "Set the time to reboot."
-#~ msgstr "Määra vastuvõtja taaskäivitamise aeg."
-
-#~ msgid "Set the time to restart the interface."
-#~ msgstr "Määra kasutajaliidese taaskäivitamise aeg."
-
-#~ msgid "Standby Time"
-#~ msgstr "Ooterežiimi mineku aeg"
-
-#~ msgid "You have no script to run."
-#~ msgstr "Pole skripti."

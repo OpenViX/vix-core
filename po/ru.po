@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 15:00+0100\n"
-"PO-Revision-Date: 2013-05-22 16:20+0100\n"
+"POT-Creation-Date: 2013-06-01 13:51+0100\n"
+"PO-Revision-Date: 2013-06-02 22:37+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: RU locale by Sowa\n"
 "Language: ru_RU\n"
@@ -311,11 +311,9 @@ msgstr "Установка дополнений"
 msgid "Installing..."
 msgstr "Устанавливается..."
 
-#, fuzzy
 msgid "Invert"
 msgstr "Изменить порядок"
 
-#, fuzzy
 msgid "Ipkg"
 msgstr "Пакеты ipk"
 
@@ -339,6 +337,9 @@ msgstr "Работа с точками монтирования"
 
 msgid "Manage your backups of your settings."
 msgstr "Управление сохранениями настроек"
+
+msgid "Mount"
+msgstr "Монтировать"
 
 msgid "Mount Manager"
 msgstr "Менеджер монтирования"
@@ -506,9 +507,6 @@ msgstr "Выполнить скрипт"
 msgid "Select"
 msgstr "Выбор"
 
-msgid "Select a backup to Restore / Delete:"
-msgstr "Выбор резервной копии для восстановления/удаления:"
-
 msgid "Select a backup to Restore:"
 msgstr "Выберите резервную копию для восстановления:"
 
@@ -517,9 +515,6 @@ msgstr "Выбор пакета для установки:"
 
 msgid "Select an image to Download:"
 msgstr "Выбор имиджа для загрузки:"
-
-msgid "Select an image to delete:"
-msgstr "Выберите имидж для удаления:"
 
 msgid "Select an image to restore:"
 msgstr "Выберите имидж для восстановления:"
@@ -655,6 +650,9 @@ msgstr "Тип: "
 
 msgid "USB: "
 msgstr "USB: "
+
+msgid "Unmount"
+msgstr "Отмонтир."
 
 msgid "Updating mount locations."
 msgstr "Обновление точек монтирования"

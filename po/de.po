@@ -108,9 +108,7 @@ msgstr ""
 "Dieses Backup jetzt wiederherstellen:\n"
 " "
 
-msgid ""
-"Are you sure you want to restore this image:\n"
-" "
+msgid "Are you sure you want to restore this image:\n"
 msgstr "Sicher das dieses Image wiederhergestellt werden soll:\n"
 
 msgid "Autostart"

@@ -38,10 +38,12 @@ dist-hook: $(LANGPO)
 install-data-local: $(LANGMO)
 	for lang in $(LANGS); do \
 		$(mkinstalldirs) $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/$$lang/LC_MESSAGES; \
-		$(INSTALL_DATA) $$lang.mo $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/$$lang/LC_MESSAGES/ViX.mo; \
+		$(INSTALL_DATA) $$lang.po $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/vix-$$lang.po; \
+		$(INSTALL_DATA) $$lang.mo $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/$$lang/LC_MESSAGES/vix.mo; \
 	done
 
 uninstall-local:
 	for lang in $(LANGS); do \
-		$(RM) $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/$$lang/LC_MESSAGES/ViX.mo; \
+		$(RM) $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/vix-$$lang.po; \
+		$(RM) $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/$$lang/LC_MESSAGES/vix.mo; \
 	done

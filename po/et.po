@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 00:06+0100\n"
+"POT-Creation-Date: 2013-06-10 13:39+0100\n"
 "PO-Revision-Date: 2013-05-20 17:58+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: rimas\n"
@@ -53,6 +53,9 @@ msgstr "Aktiivne"
 
 msgid "Active:"
 msgstr "Aktiivne:"
+
+msgid "Allows the softcam manager to be launched from extensions."
+msgstr ""
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Võimaldab kontrollida, kas EMU ei ole hangunud ja vajadusel selle automaatselt taaskäivitada."
@@ -158,12 +161,11 @@ msgstr "Tühista"
 msgid "Change Location"
 msgstr "Muuda asukohta"
 
+#, python-format
 msgid ""
 "Changes need a system restart to take effect.\n"
-"Restart your STB_BOX now?"
+"Restart your %s %s now?"
 msgstr ""
-"Muudatused vajavad jõustumiseks süsteemi taaskäivitamist.\n"
-"Kas taaskäivitad STB_BOX?"
 
 msgid "Checking Free RAM.."
 msgstr "Vaba mälu uurimine.."
@@ -252,8 +254,8 @@ msgstr "Luba autostart"
 msgid "Enable Swap at startup"
 msgstr "Luba käivitumisel saale"
 
-msgid "Enable frozen check ?"
-msgstr "Lubada hangumise kontroll?"
+msgid "Enable frozen check"
+msgstr ""
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Rohkem ei proovi, lükatakse järgmise korrale."
@@ -338,6 +340,9 @@ msgstr "Halda andmekandjate haakepunkte."
 
 msgid "Manage your backups of your settings."
 msgstr "Halda varukoopiaid seadistustest."
+
+msgid "Mount"
+msgstr ""
 
 msgid "Mount Manager"
 msgstr "Haakepunktid"
@@ -463,11 +468,12 @@ msgstr "Kordamise sagedus"
 msgid "Restart"
 msgstr "Taaskäivitus"
 
+#, python-format
+msgid "Restart %s %s."
+msgstr ""
+
 msgid "Restart Enigma2."
 msgstr "Taaskäivita Enigma2."
-
-msgid "Restart STB_BOX."
-msgstr "Taaskäivita STB_BOX."
 
 msgid "Restore"
 msgstr "Taasta"
@@ -505,8 +511,8 @@ msgstr "Skriptid"
 msgid "Select"
 msgstr "Vali"
 
-msgid "Select a backup to Restore / Delete:"
-msgstr "Taasta või kustuta varukoopia:"
+msgid "Select a backup to Restore:"
+msgstr ""
 
 msgid "Select a package to install:"
 msgstr "Vali paigaldamiseks pakett:"
@@ -514,8 +520,8 @@ msgstr "Vali paigaldamiseks pakett:"
 msgid "Select an image to Download:"
 msgstr "Vali allalaadimiseks tarkvaratõmmis:"
 
-msgid "Select an image to delete:"
-msgstr "Taasta või kustuta tarkvarakoopia:"
+msgid "Select an image to restore:"
+msgstr ""
 
 msgid "Select extra packages folder"
 msgstr "Vali lisapakettide kaust"
@@ -546,6 +552,9 @@ msgstr "Seadistamine..."
 
 msgid "Setup Mounts"
 msgstr "Haakepunktid"
+
+msgid "Show in extensions"
+msgstr ""
 
 msgid "Size: "
 msgstr "Suurus: "
@@ -583,8 +592,9 @@ msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti"
 msgid "Sorry the image "
 msgstr "Kahjuks image"
 
-msgid "Sorry you STB_BOX is not yet compatible."
-msgstr "STB_BOX ei ole veel ühilduv."
+#, python-format
+msgid "Sorry you %s %s is not yet compatible."
+msgstr ""
 
 msgid "Sorry, but the restore failed."
 msgstr "Taastamine nurjus."
@@ -649,6 +659,9 @@ msgstr "Tüüp: "
 msgid "USB: "
 msgstr "USB: "
 
+msgid "Unmount"
+msgstr ""
+
 msgid "Updating mount locations."
 msgstr "Haakepunktide uuendamine"
 
@@ -689,8 +702,9 @@ msgstr ""
 msgid "Wait please while scanning for devices..."
 msgstr "Oota, riistavara uurimine..."
 
-msgid "Wait please while scanning your STB_BOX devices..."
-msgstr "Oota, STB_BOX riistvara uurimine..."
+#, python-format
+msgid "Wait please while scanning your %s %s devices..."
+msgstr ""
 
 msgid "Wait please while scanning..."
 msgstr "Oota, toimub otsing..."
@@ -733,25 +747,25 @@ msgstr "Tarkvarakoopia puudub."
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Enne autostardi lubamist tuleb luua saalefail. "
 
+#, python-format
 msgid ""
-"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
+"Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
-"STB_BOX varundab seadistused ja tuvastab laiendused.\n"
-"Kas lubad seda?"
 
+#, python-format
 msgid ""
-"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
+"Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"STB_BOX alustab tarkvarast 1:1 tarkvarakoopia loomist. See võib kesta umbes 6 minutit.\n"
-"Kas lubad seda?"
 
-msgid "Your STB_BOX is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr "STB_BOX ei ole interńetiga ühendatud. Proovi laiendusi taastada hiljem."
+#, python-format
+msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
+msgstr ""
 
-msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
-msgstr "STB_BOX ei ole ühendastud internetti. Kontrolli võrguseadistust ja proovi uuesti."
+#, python-format
+msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
+msgstr ""
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Image allalaadimine.'"
@@ -767,4 +781,3 @@ msgstr "usb pulgale, ühenda esipaneelil olevasse pesasse ja lülita sisse"
 
 msgid "unavailable"
 msgstr "pole saadaval"
-

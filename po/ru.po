@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-01 13:51+0100\n"
+"POT-Creation-Date: 2013-06-10 13:39+0100\n"
 "PO-Revision-Date: 2013-06-02 22:37+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: RU locale by Sowa\n"
@@ -54,6 +54,9 @@ msgstr "Активный"
 
 msgid "Active:"
 msgstr "Активный:"
+
+msgid "Allows the softcam manager to be launched from extensions."
+msgstr ""
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Позволяет проверять работу эмулятора и автоматически перезапускать его при необходимости."
@@ -157,12 +160,11 @@ msgstr "Отмена"
 msgid "Change Location"
 msgstr "Изменить местоположение"
 
+#, python-format
 msgid ""
 "Changes need a system restart to take effect.\n"
-"Restart your STB_BOX now?"
+"Restart your %s %s now?"
 msgstr ""
-"Изменения настроек требуют перезагруки!\n"
-"Сделать это сейчас?"
 
 msgid "Checking Free RAM.."
 msgstr "Проверка свободной памяти.."
@@ -251,8 +253,8 @@ msgstr "Включить автостарт"
 msgid "Enable Swap at startup"
 msgstr "Включить автостарт файла подкачки"
 
-msgid "Enable frozen check ?"
-msgstr "Включить проверку работы эмулятора?"
+msgid "Enable frozen check"
+msgstr ""
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Достаточно повторов, задержка до следующего пункта планировщика."
@@ -465,11 +467,12 @@ msgstr "Как часто повторять"
 msgid "Restart"
 msgstr "Перезапуск"
 
+#, python-format
+msgid "Restart %s %s."
+msgstr ""
+
 msgid "Restart Enigma2."
 msgstr "Перезагрузка Энигмы"
-
-msgid "Restart STB_BOX."
-msgstr "Перезагрузка ресивера"
 
 msgid "Restore"
 msgstr "Восстановление"
@@ -549,6 +552,9 @@ msgstr "Настройка..."
 msgid "Setup Mounts"
 msgstr "Настройки монтирования"
 
+msgid "Show in extensions"
+msgstr ""
+
 msgid "Size: "
 msgstr "Размер: "
 
@@ -585,8 +591,9 @@ msgstr "Извините, ресурс закрыт на техническое 
 msgid "Sorry the image "
 msgstr "К сожалению, имидж "
 
-msgid "Sorry you STB_BOX is not yet compatible."
-msgstr "Жаль, но ваш STB_BOX пока не поддерживается."
+#, python-format
+msgid "Sorry you %s %s is not yet compatible."
+msgstr ""
 
 msgid "Sorry, but the restore failed."
 msgstr "Извините, но восстановление не удалось."
@@ -694,8 +701,9 @@ msgstr ""
 msgid "Wait please while scanning for devices..."
 msgstr "Подождите, сканируются накопители..."
 
-msgid "Wait please while scanning your STB_BOX devices..."
-msgstr "Подождите, сканируются подключённые накопители..."
+#, python-format
+msgid "Wait please while scanning your %s %s devices..."
+msgstr ""
 
 msgid "Wait please while scanning..."
 msgstr "Подождите, идёт поиск..."
@@ -738,25 +746,25 @@ msgstr "Не обнаружен имидж для восстановления."
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Вы должны создать файл подкачки прежде, чем активировать автозапуск."
 
+#, python-format
 msgid ""
-"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
+"Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
-"STB_BOX собирается открыть резервную копию настроек и определить плагины,\n"
-"Вы желаете продолжить?"
 
+#, python-format
 msgid ""
-"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
+"Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"STB_BOX попробует создать полную копию прошивки, это может занять некоторое время\n"
-"Вы желаете продолжить?"
 
-msgid "Your STB_BOX is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr "STB_BOX не подключен к интернету, попробуйте использовать функции резервного копирования для восстановления плагинов позже."
+#, python-format
+msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
+msgstr ""
 
-msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
-msgstr "STB_BOX не подключен к интернету, проверьте настройки сети и повторите попытку."
+#, python-format
+msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
+msgstr ""
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Загружается имидж.'"
@@ -772,4 +780,3 @@ msgstr " USB-флешь, вставьте USB-флешь в передний п�
 
 msgid "unavailable"
 msgstr "недоступен"
-

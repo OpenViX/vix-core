@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-03 17:46+0000\n"
+"POT-Creation-Date: 2013-06-10 13:39+0100\n"
 "PO-Revision-Date: 2013-02-04 16:41+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: none\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "%a %e %b  %-H:%M"
@@ -52,6 +52,9 @@ msgstr "Aktiv"
 
 msgid "Active:"
 msgstr "Aktiv:"
+
+msgid "Allows the softcam manager to be launched from extensions."
+msgstr ""
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Tillåter att softcamen kontrolleras om den har slutat fungera, och startar om automatiskt om det behövs."
@@ -91,6 +94,11 @@ msgid ""
 "Are you sure you want to restore this backup:\n"
 " "
 msgstr "Är du säker på att du vill återställa den här backupen:"
+
+msgid ""
+"Are you sure you want to restore this image:\n"
+" "
+msgstr ""
 
 msgid "Autostart"
 msgstr "Autostart"
@@ -144,12 +152,11 @@ msgstr "Avbryt"
 msgid "Change Location"
 msgstr "Byt Sökväg"
 
+#, python-format
 msgid ""
 "Changes need a system restart to take effect.\n"
-"Restart your STB_BOX now?"
+"Restart your %s %s now?"
 msgstr ""
-"Systemet måste startas om för att ändringarna ska gälla.\n"
-"Vill du starta om din STB_BOX nu?"
 
 msgid "Checking Free RAM.."
 msgstr "Kontrollerar Ledigt RAM..."
@@ -238,8 +245,8 @@ msgstr "Aktivera Startup"
 msgid "Enable Swap at startup"
 msgstr "Aktivera Swap vid start"
 
-msgid "Enable frozen check ?"
-msgstr "Aktivera kontroll av frysningar ?"
+msgid "Enable frozen check"
+msgstr ""
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Inga mer försök, senarelägger till nästa tidschema."
@@ -252,6 +259,9 @@ msgstr "Extra IPK's"
 
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "Hittade en icke-standard softcam, försöker starta, detta kan misslyckas"
+
+msgid "Free space:"
+msgstr ""
 
 msgid "Frozen check interval"
 msgstr "Intervall för kontroll av frysningar"
@@ -322,6 +332,9 @@ msgstr "Hantera dina enheters monteringspunkter."
 msgid "Manage your backups of your settings."
 msgstr "Hantera dina backuper av inställningarna."
 
+msgid "Mount"
+msgstr ""
+
 msgid "Mount Manager"
 msgstr "Monteringshanterare"
 
@@ -389,6 +402,9 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "OK, att göra en återställning "
 
+msgid "Please copy the folder"
+msgstr ""
+
 msgid "Please enter a folder that contains some packages."
 msgstr "Välj en mapp som innehåller paketfiler."
 
@@ -443,11 +459,12 @@ msgstr "Repetera hur ofta"
 msgid "Restart"
 msgstr "Starta om"
 
+#, python-format
+msgid "Restart %s %s."
+msgstr ""
+
 msgid "Restart Enigma2."
 msgstr "Starta om Enigma2."
-
-msgid "Restart STB_BOX."
-msgstr "Starta om STB_BOX."
 
 msgid "Restore"
 msgstr "Återställ"
@@ -467,6 +484,9 @@ msgstr "Återställer plugins, detta kan ta länge..."
 msgid "Restoring plugins..."
 msgstr "Återställer plugins..."
 
+msgid "Run"
+msgstr ""
+
 msgid "Run your shell scripts."
 msgstr "Kör dina shell scripts."
 
@@ -482,8 +502,8 @@ msgstr "Skriptexekverare"
 msgid "Select"
 msgstr "Välj"
 
-msgid "Select a backup to Restore / Delete:"
-msgstr "Välj en backup att Återställa/ Radera:"
+msgid "Select a backup to Restore:"
+msgstr ""
 
 msgid "Select a package to install:"
 msgstr "Välj ett paket att installera:"
@@ -491,8 +511,8 @@ msgstr "Välj ett paket att installera:"
 msgid "Select an image to Download:"
 msgstr "Välj en Image att Ladda ner:"
 
-msgid "Select an image to delete:"
-msgstr "Välj en Image att radera:"
+msgid "Select an image to restore:"
+msgstr ""
 
 msgid "Select extra packages folder"
 msgstr "Välj mapp för extrapaket"
@@ -524,6 +544,9 @@ msgstr "Ställer in..."
 msgid "Setup Mounts"
 msgstr "Monteringsinställningar"
 
+msgid "Show in extensions"
+msgstr ""
+
 msgid "Size: "
 msgstr "Storlek:"
 
@@ -545,6 +568,9 @@ msgstr "Softcam Stoppar..."
 msgid "SoftcamCheck"
 msgstr "SoftcamKontroll"
 
+msgid "Sorry Image Restore is not supported on the"
+msgstr ""
+
 msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
 msgstr "Tyvärr, sökvägen finns inte eller är inte konfigurerad, vänligen sätt upp i Backuphanterarens meny"
 
@@ -554,8 +580,12 @@ msgstr "Tyvärr, feeds är nere för underhåll, Var god försök igen senare."
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Tyvärr, feeds är nere för underhåll, försök att använda Backuphanteraren för att återställa plugins senare."
 
-msgid "Sorry you STB_BOX is not yet compatible."
-msgstr "Tyvärr din STB_BOX är inte kompatibel."
+msgid "Sorry the image "
+msgstr ""
+
+#, python-format
+msgid "Sorry you %s %s is not yet compatible."
+msgstr ""
 
 msgid "Sorry, but the restore failed."
 msgstr "Tyvärr, återställningen misslyckades."
@@ -620,6 +650,9 @@ msgstr "Typ: "
 msgid "USB: "
 msgstr "USB: "
 
+msgid "Unmount"
+msgstr ""
+
 msgid "Updating mount locations."
 msgstr "Uppdaterar destinationer för montering."
 
@@ -660,8 +693,9 @@ msgstr ""
 msgid "Wait please while scanning for devices..."
 msgstr "Var god vänta, sökning av enheter pågår..."
 
-msgid "Wait please while scanning your STB_BOX devices..."
-msgstr "Var god vänta, STB_BOX enheter skannas..."
+#, python-format
+msgid "Wait please while scanning your %s %s devices..."
+msgstr ""
 
 msgid "Wait please while scanning..."
 msgstr "Var god vänta, sökning pågår..."
@@ -698,28 +732,31 @@ msgstr "Du har ingen Image att ta bort."
 msgid "You have no image to download."
 msgstr "Du har ingen Image att ladda ner."
 
+msgid "You have no image to restore."
+msgstr ""
+
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Du måste skapa en Växlingsfil innan du aktiverar autostart."
 
+#, python-format
 msgid ""
-"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
+"Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
-"Din STB_BOX kommer att göra en backup av dina inställningar och detektera dina plugins,\n"
-"Vill du tillåta detta?"
 
+#, python-format
 msgid ""
-"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
+"Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"Din STB_BOX kommer att göra en full Imagebackup detta kan ta ca: 6 minuteratt slutföra,\n"
-"Vill du tillåta detta?"
 
-msgid "Your STB_BOX is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr "Din STB_BOX är inte ansluten till internet, försök att använda Backuphanteraren för att återställa plugins senare"
+#, python-format
+msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
+msgstr ""
 
-msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
-msgstr "Din STB_BOX är inte ansluten till internet, kontrollera dina nätverksinställningar och försök igen."
+#, python-format
+msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
+msgstr ""
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Laddar ner Image.'"
@@ -730,6 +767,8 @@ msgstr "echo 'Packar upp Image.'"
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "det uppstod ett problem med denna enhet, formatera om och försök igen."
 
+msgid "to a USB stick, place in front USB port of reciver and power on"
+msgstr ""
+
 msgid "unavailable"
 msgstr "ej tillgänglig"
-

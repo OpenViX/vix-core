@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-03 17:37+0000\n"
-"PO-Revision-Date: 2013-06-10 07:31+0100\n"
+"POT-Creation-Date: 2013-06-10 13:39+0100\n"
+"PO-Revision-Date: 2013-06-10 17:51+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -56,6 +56,9 @@ msgstr "Actief"
 msgid "Active:"
 msgstr "Actief:"
 
+msgid "Allows the softcam manager to be launched from extensions."
+msgstr "Geeft de mogelijkheid de softcammanager vanuit de extensies te starten."
+
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Controleert of de softcam nog werkt en herstart als dat niet het geval is."
 
@@ -99,6 +102,13 @@ msgid ""
 " "
 msgstr ""
 "Weet u zeker dat u deze back-up wilt herstellen:\n"
+" "
+
+msgid ""
+"Are you sure you want to restore this image:\n"
+" "
+msgstr ""
+"Weet u zeker dat u dit image wilt terugplaatsen:\n"
 " "
 
 msgid "Autostart"
@@ -153,12 +163,13 @@ msgstr "Annuleer"
 msgid "Change Location"
 msgstr "Verander locatie"
 
+#, python-format
 msgid ""
 "Changes need a system restart to take effect.\n"
-"Restart your STB_BOX now?"
+"Restart your %s %s now?"
 msgstr ""
-"Apparaat aanpassingen vereisen een systeem herstart om te worden doorgevoerd.\n"
-"Uw %s %s nu opnieuw starten?"
+"U moet het systeem herstarten om de veranderingen door te voeren.\n"
+"Uw %s %s nu herstarten?"
 
 msgid "Checking Free RAM.."
 msgstr "Controleert vrije RAM..."
@@ -247,8 +258,8 @@ msgstr "Startup inschakelen"
 msgid "Enable Swap at startup"
 msgstr "Swap tijdens opstarten inschakelen"
 
-msgid "Enable frozen check ?"
-msgstr "Controleer op vastgelopen?"
+msgid "Enable frozen check"
+msgstr "SofCamCheck inschakelen"
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Vaak genoeg geprobeerd, wacht op de volgende geplande tijd."
@@ -261,6 +272,9 @@ msgstr "Extra IPK's"
 
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, maar dat kan mislukken"
+
+msgid "Free space:"
+msgstr "Vrije ruimte"
 
 msgid "Frozen check interval"
 msgstr "Vastloop-controle interval"
@@ -331,6 +345,9 @@ msgstr "Beheer de mountpoints van uw apparaten."
 msgid "Manage your backups of your settings."
 msgstr "Beheer de back-ups van uw instellingen."
 
+msgid "Mount"
+msgstr "Mount"
+
 msgid "Mount Manager"
 msgstr "Mountmanager"
 
@@ -398,6 +415,9 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "JA, voer een herstelactie uit"
 
+msgid "Please copy the folder"
+msgstr "Kopieer de map"
+
 msgid "Please enter a folder that contains some packages."
 msgstr "Kies een folder die plugins bevat."
 
@@ -452,11 +472,12 @@ msgstr "Hoe vaak herhalen"
 msgid "Restart"
 msgstr "Herstart"
 
+#, python-format
+msgid "Restart %s %s."
+msgstr "Herstart %s %s."
+
 msgid "Restart Enigma2."
 msgstr "Start Enigma2 opnieuw."
-
-msgid "Restart STB_BOX."
-msgstr "Start %s %s opnieuw."
 
 msgid "Restore"
 msgstr "Herstel"
@@ -476,6 +497,9 @@ msgstr "Bezig plugins te installeren; dit kan lang duren..."
 msgid "Restoring plugins..."
 msgstr "Plaatst plugins terug..."
 
+msgid "Run"
+msgstr "Voer uit"
+
 msgid "Run your shell scripts."
 msgstr "Voer uw shell scripts uit."
 
@@ -491,8 +515,8 @@ msgstr "Script uitvoeren"
 msgid "Select"
 msgstr "Selecteer"
 
-msgid "Select a backup to Restore / Delete:"
-msgstr "Selecteer een back-up om te herstellen/verwijderen:"
+msgid "Select a backup to Restore:"
+msgstr "Kies een backup om terug te zetten!"
 
 msgid "Select a package to install:"
 msgstr "Selecteer een pakket om te installeren:"
@@ -500,8 +524,8 @@ msgstr "Selecteer een pakket om te installeren:"
 msgid "Select an image to Download:"
 msgstr "Selecteer een image om te downloaden:"
 
-msgid "Select an image to delete:"
-msgstr "Kies een image om te verwijderen:"
+msgid "Select an image to restore:"
+msgstr "Kies een image om terug te zetten"
 
 msgid "Select extra packages folder"
 msgstr "Kies de folder met extra plugins"
@@ -533,6 +557,9 @@ msgstr "Bezig met instellen...."
 msgid "Setup Mounts"
 msgstr "Mounts instellingen"
 
+msgid "Show in extensions"
+msgstr "Toon in extensies"
+
 msgid "Size: "
 msgstr "Afmetingen: "
 
@@ -554,6 +581,9 @@ msgstr "Softcam bezig te stoppen..."
 msgid "SoftcamCheck"
 msgstr "Softcam controle"
 
+msgid "Sorry Image Restore is not supported on the"
+msgstr "Sorry: het terugzetten van een image wordt niet ondersteund door een"
+
 msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
 msgstr "De locatie bestaat niet; U kunt die instellen via het menu van de Backup Manager"
 
@@ -563,8 +593,12 @@ msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer later opnieuw de plugins te installeren via de Backup Manager."
 
-msgid "Sorry you STB_BOX is not yet compatible."
-msgstr "Sorry, uw %s %s is nog niet geschikt."
+msgid "Sorry the image "
+msgstr "Sorry he image "
+
+#, python-format
+msgid "Sorry you %s %s is not yet compatible."
+msgstr "Sorry uw %s %s is nog niet compatible."
 
 msgid "Sorry, but the restore failed."
 msgstr "Het terugplaatsen is mislukt."
@@ -629,6 +663,9 @@ msgstr "Type: "
 msgid "USB: "
 msgstr "USB: "
 
+msgid "Unmount"
+msgstr "Unmount"
+
 msgid "Updating mount locations."
 msgstr "Mounts worden geupdate."
 
@@ -669,8 +706,9 @@ msgstr ""
 msgid "Wait please while scanning for devices..."
 msgstr "Even wachten op het scannen van de media...."
 
-msgid "Wait please while scanning your STB_BOX devices..."
-msgstr "Even wachten terwijl uw %s %s de media scant...."
+#, python-format
+msgid "Wait please while scanning your %s %s devices..."
+msgstr "Wacht terwijl uw %s %s medium gescand wordt ..."
 
 msgid "Wait please while scanning..."
 msgstr "Een ogenblikje geduld, zoeken is bezig..."
@@ -707,28 +745,35 @@ msgstr "Er is geen image dat verwijderd kan worden."
 msgid "You have no image to download."
 msgstr "U heegt geen image om te downloaden."
 
+msgid "You have no image to restore."
+msgstr "U heeft geen images om terug te plaatsen"
+
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr "U moet een swapfile maken voordat deze actief kan worden."
 
+#, python-format
 msgid ""
-"Your STB_BOX is about to run a backup of your settings and detect your plugins,\n"
+"Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
-"Uw %s %s gaat een back-up maken van uw settings en de geïnstalleerde plugins,\n"
-"Wilt u dat?"
-
-msgid ""
-"Your STB_BOX is about to run a full image backup, this can take about 6 minutes to complete,\n"
-"do you want to allow this?"
-msgstr ""
-"Uw %s %s gaat een volledige back-up maken, dat kan zo'n 6 minuten duren, \n"
+"Uw %s %s is gereed een settings backup te maken.\n"
 "Wilt u doorgaan?"
 
-msgid "Your STB_BOX is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr "Uw %s %s heeft geen internetverbinding; probeer later nog eens de plugins te installeren met de Backup Manager."
+#, python-format
+msgid ""
+"Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
+"do you want to allow this?"
+msgstr ""
+"Uw %s %s is gereed een image backup te maken; dat kan wel 6 minuten duren.\n"
+"Wilt u doorgaan?"
 
-msgid "Your STB_BOX is not connected to the internet, please check your network settings and try again."
-msgstr "Uw %s %s is niet met het internet verbonden. Controleer uw netwerk instellingen en probeer het opnieuw."
+#, python-format
+msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
+msgstr "Uw %s %s is niet met internet verbonden. Gebruik de backupmanager later om uw plugins weer te installeren."
+
+#, python-format
+msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
+msgstr "Uw %s %s is niet met internet verbonden. Controleer uw netwerk instellingen en probeer het opnieuw."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Download image.'"
@@ -739,92 +784,8 @@ msgstr "echo 'Expanding image.'"
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "er was een probleem met dit apparaat; formatteer opnieuw en probeer het weer."
 
+msgid "to a USB stick, place in front USB port of reciver and power on"
+msgstr "naar een USB-stick, plaats die in de front steker en schakel uw ontvanger in"
+
 msgid "unavailable"
 msgstr "niet beschikbaar"
-
-#~ msgid "Allows you to control the power state of your STB_BOX."
-#~ msgstr "Bepaal de status van uw %s %s."
-
-#~ msgid "Allows you to put your STB_BOX in standby at a set time."
-#~ msgstr "Laat uw %s %s op een bepaalde tijd in standby gaan."
-
-#~ msgid "Allows you to put your STB_BOX into deepstandby at a set time."
-#~ msgstr "Laat uw %s %s op een bepaalde tijd uitzetten."
-
-#~ msgid "Allows you to reboot your STB_BOX at a set time."
-#~ msgstr "Laat uw %s %s op een bepaalde tijd rebooten."
-
-#~ msgid "Allows you to restart your STB_BOX interface at a set time."
-#~ msgstr "Laat de GUI van uw %s %s op een bepaalde tijd herstarten."
-
-#~ msgid "Are you ready to run the script ?"
-#~ msgstr "Weet u zeker dat het script uitgevoerd moet worden?"
-
-#~ msgid "DeepStandby Time"
-#~ msgstr "Deep Sleep tijd"
-
-#~ msgid "Enable DeepStandby"
-#~ msgstr "DeepStandby inschakelen"
-
-#~ msgid "Enable GUI restart"
-#~ msgstr "GUI herstart inschakelen"
-
-#~ msgid "Enable Power Manager"
-#~ msgstr "Powermanager inschakelen"
-
-#~ msgid "Enable Reboot"
-#~ msgstr "Reboot toestaan"
-
-#~ msgid "Enable Standby"
-#~ msgstr "Standby toestaan"
-
-#~ msgid "Extra Package's Location"
-#~ msgstr "Locatie voor extra pakkettens"
-
-#~ msgid "Folder prefix"
-#~ msgstr "Folder prefix"
-
-#~ msgid "GUI Restart Time"
-#~ msgstr "GUI herstart tijd"
-
-#~ msgid "Power Manager Setup"
-#~ msgstr "Power Manager instellingen"
-
-#~ msgid "Really close without saving settings?"
-#~ msgstr "Echt afsluiten zonder op te slaan?"
-
-#~ msgid "Reboot Time"
-#~ msgstr "Reboot tijdstip"
-
-#~ msgid "Retry after cancel (mins)"
-#~ msgstr "Probeer opnieuw of annuleer (minuten)"
-
-#~ msgid "Run"
-#~ msgstr "Voer uit"
-
-#~ msgid "Run Confirmation"
-#~ msgstr "Bevestig uitvoeren"
-
-#~ msgid "Select a script to run:"
-#~ msgstr "Selecteer eenscript om uit te voeren:"
-
-#~ msgid "Set the delay time to wait before asking again."
-#~ msgstr "Stel de tijd tijd in waarna het weer gevraagd wordt."
-
-#~ msgid "Set the time to enter deepstandby mode."
-#~ msgstr "Stel de tijd in waarop uw STB_BOX wordt uitgeschakeld."
-
-#~ msgid "Set the time to enter standby mode."
-#~ msgstr "Stel de tijd in waarop naar standby gegaan moet worden."
-
-#~ msgid "Set the time to reboot."
-#~ msgstr "Stel de reboottijd in."
-
-#~ msgid "Set the time to restart the interface."
-#~ msgstr "Stel de interface herstarttijd in."
-
-#~ msgid "Standby Time"
-#~ msgstr "Standby Tijd"
-
-#~ msgid "You have no script to run."
-#~ msgstr "U heeft geen script dat uitgevoerd kan worden."

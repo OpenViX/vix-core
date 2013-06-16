@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plugins 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-10 13:39+0100\n"
+"POT-Creation-Date: 2013-06-16 13:26+0100\n"
 "PO-Revision-Date: 2013-06-10 13:39+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,8 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -42,6 +41,9 @@ msgstr ""
 msgid "A background update check is is progress, please wait for retry."
 msgstr ""
 
+msgid "A backup has been detected."
+msgstr ""
+
 msgid "Activate"
 msgstr ""
 
@@ -49,6 +51,24 @@ msgid "Active"
 msgstr ""
 
 msgid "Active:"
+msgstr ""
+
+msgid "Allows the softcam manager to be launched from extensions."
+msgstr ""
+
+msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+msgstr ""
+
+msgid "Allows you schedule your boackups."
+msgstr ""
+
+msgid "Allows you schedule your image backups."
+msgstr ""
+
+msgid "Allows you to tag your backups to a box. (default is box name/type)"
+msgstr ""
+
+msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr ""
 
 msgid "Are you ready to create a backup ?"
@@ -95,15 +115,19 @@ msgstr ""
 msgid "Backup Created"
 msgstr ""
 
+msgid "Backup Location"
+msgstr ""
+
 msgid "Backup Manager"
 msgstr ""
 
 msgid "Backup Manager Log"
 msgstr ""
 
-msgid ""
-"Backup failed - e. g. wrong backup destination or no space left on backup "
-"device"
+msgid "Backup Manager Setup"
+msgstr ""
+
+msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr ""
 
 msgid ""
@@ -111,12 +135,13 @@ msgid ""
 "Please for it to finish, before trying again"
 msgstr ""
 
+msgid "Backup prefix"
+msgstr ""
+
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr ""
 
-msgid ""
-"Can't unmount partition, make sure it is not being used for swap or record/"
-"timeshift paths"
+msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
 msgstr ""
 
 msgid "Cancel"
@@ -218,6 +243,9 @@ msgstr ""
 msgid "Enable Swap at startup"
 msgstr ""
 
+msgid "Enable frozen check"
+msgstr ""
+
 msgid "Enough Retries, delaying till next schedule."
 msgstr ""
 
@@ -233,6 +261,9 @@ msgstr ""
 msgid "Free space:"
 msgstr ""
 
+msgid "Frozen check interval"
+msgstr ""
+
 msgid "GB"
 msgstr ""
 
@@ -243,6 +274,9 @@ msgid "IPK Installer"
 msgstr ""
 
 msgid "Image Manager"
+msgstr ""
+
+msgid "Image Manager Setup"
 msgstr ""
 
 msgid "Inactive"
@@ -275,9 +309,13 @@ msgstr ""
 msgid "Ipkg"
 msgstr ""
 
-msgid ""
-"It seems you have not setup a extra location, please setup in Backup Manager "
-"setup menu "
+msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+msgstr ""
+
+msgid "Location of where backup should be saved."
+msgstr ""
+
+msgid "Location of where image backup should be saved."
 msgstr ""
 
 msgid "MB"
@@ -339,6 +377,9 @@ msgid ""
 "in /etc/tuxbox/config"
 msgstr ""
 
+msgid "No plugins where needed to be installed"
+msgstr ""
+
 msgid "None"
 msgstr ""
 
@@ -360,6 +401,9 @@ msgstr ""
 msgid "Please select device to use as swapfile location"
 msgstr ""
 
+msgid "Please select the file to restore ?"
+msgstr ""
+
 msgid "Please wait while gathers information..."
 msgstr ""
 
@@ -378,9 +422,7 @@ msgstr ""
 msgid "Please wait."
 msgstr ""
 
-msgid ""
-"Plugin Listing failed - e. g. wrong backup destination or no space left on "
-"backup device"
+msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 msgstr ""
 
 msgid "Preparing extra plugins..."
@@ -399,6 +441,9 @@ msgid "Remove Confirmation"
 msgstr ""
 
 msgid "Removing temp mounts..."
+msgstr ""
+
+msgid "Repeat how often"
 msgstr ""
 
 msgid "Restart"
@@ -438,6 +483,9 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
+msgid "Schedule Backups"
+msgstr ""
+
 msgid "Script Runner"
 msgstr ""
 
@@ -471,10 +519,22 @@ msgstr ""
 msgid "Select:"
 msgstr ""
 
+msgid "Set the interval to be checked in mins."
+msgstr ""
+
+msgid "Set the repeat interval of backup schedule."
+msgstr ""
+
+msgid "Set the time of backup to start."
+msgstr ""
+
 msgid "Setting Up..."
 msgstr ""
 
 msgid "Setup Mounts"
+msgstr ""
+
+msgid "Show in extensions"
 msgstr ""
 
 msgid "Size: "
@@ -501,17 +561,13 @@ msgstr ""
 msgid "Sorry Image Restore is not supported on the"
 msgstr ""
 
-msgid ""
-"Sorry but location does exist or not setup, please setup in Backup Manager "
-"setup menu "
+msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
 msgstr ""
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr ""
 
-msgid ""
-"Sorry feeds are down for maintenance, Please try using Backup Manager to "
-"restore plugins later."
+msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr ""
 
 msgid "Sorry the image "
@@ -524,15 +580,10 @@ msgstr ""
 msgid "Sorry, but the restore failed."
 msgstr ""
 
-msgid ""
-"Sorry, no physical devices that supports SWAP attached. Can't create "
-"Swapfile on network or fat32 filesystems"
+msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
 msgstr ""
 
-msgid ""
-"Sorry, not enough free ram found, and no physical devices that supports SWAP "
-"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
-"make backup"
+msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
 msgstr ""
 
 msgid "Start"
@@ -571,7 +622,16 @@ msgstr ""
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr ""
 
+msgid "The wizard is finished now, and will reboot"
+msgstr ""
+
+msgid "The wizard is finished now."
+msgstr ""
+
 msgid "This Device is already mounted as HDD."
+msgstr ""
+
+msgid "Time of Backup to start"
 msgstr ""
 
 msgid "Type: "
@@ -631,6 +691,13 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+msgstr ""
+
 msgid "YES, to restore plugins"
 msgstr ""
 
@@ -657,28 +724,22 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Your %s %s is about to run a backup of your settings and detect your "
-"plugins,\n"
+"Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
 
 #, python-format
 msgid ""
-"Your %s %s is about to run a full image backup, this can take about 6 "
-"minutes to complete,\n"
+"Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
 
 #, python-format
-msgid ""
-"Your %s %s is not connected to the internet, Please try using Backup Manager "
-"to restore plugins later."
+msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
 msgstr ""
 
 #, python-format
-msgid ""
-"Your %s %s is not connected to the internet, please check your network "
-"settings and try again."
+msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
 msgstr ""
 
 msgid "echo 'Downloading Image.'"
@@ -694,93 +755,4 @@ msgid "to a USB stick, place in front USB port of reciver and power on"
 msgstr ""
 
 msgid "unavailable"
-msgstr ""
-
-msgid "A backup has been detected."
-msgstr ""
-
-msgid "No plugins where needed to be installed"
-msgstr ""
-
-msgid "Please select the file to restore ?"
-msgstr ""
-
-msgid "The wizard is finished now, and will reboot"
-msgstr ""
-
-msgid "The wizard is finished now."
-msgstr ""
-
-msgid ""
-"Welcome to the restore wizard.\n"
-"\n"
-"A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that "
-"where installed when the backup was created.\n"
-msgstr ""
-
-msgid "Allows the softcam manager to be launched from extensions."
-msgstr ""
-
-msgid ""
-"Allows the softcam to be checked if it stopped working, and restarted "
-"automatically if needed."
-msgstr ""
-
-msgid "Allows you schedule your boackups."
-msgstr ""
-
-msgid "Allows you schedule your image backups."
-msgstr ""
-
-msgid "Allows you to tag your backups to a box. (default is box name/type)"
-msgstr ""
-
-msgid ""
-"Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr ""
-
-msgid "Backup Location"
-msgstr ""
-
-msgid "Backup Manager Setup"
-msgstr ""
-
-msgid "Backup prefix"
-msgstr ""
-
-msgid "Enable frozen check"
-msgstr ""
-
-msgid "Frozen check interval"
-msgstr ""
-
-msgid "Image Manager Setup"
-msgstr ""
-
-msgid "Location of where backup should be saved."
-msgstr ""
-
-msgid "Location of where image backup should be saved."
-msgstr ""
-
-msgid "Repeat how often"
-msgstr ""
-
-msgid "Schedule Backups"
-msgstr ""
-
-msgid "Set the interval to be checked in mins."
-msgstr ""
-
-msgid "Set the repeat interval of backup schedule."
-msgstr ""
-
-msgid "Set the time of backup to start."
-msgstr ""
-
-msgid "Show in extensions"
-msgstr ""
-
-msgid "Time of Backup to start"
 msgstr ""

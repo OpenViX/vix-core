@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-10 13:39+0100\n"
-"PO-Revision-Date: 2013-05-20 17:58+0100\n"
+"POT-Creation-Date: 2013-06-25 15:01+0100\n"
+"PO-Revision-Date: 2013-06-28 16:00+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: rimas\n"
 "Language: et\n"
@@ -55,7 +55,7 @@ msgid "Active:"
 msgstr "Aktiivne:"
 
 msgid "Allows the softcam manager to be launched from extensions."
-msgstr ""
+msgstr "Võimaldab EMU halduri käivitada laienduste menüüst."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Võimaldab kontrollida, kas EMU ei ole hangunud ja vajadusel selle automaatselt taaskäivitada."
@@ -71,9 +71,6 @@ msgstr "Võimaldab siduda varukoopia nime vastuvõtjaga (vaikimisi vastuvõtja n
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr "Võimaldab siduda tarkvarakoopia nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
-
-msgid "Are you ready to create a backup ?"
-msgstr "Kas lood seadistustest varukoopia?"
 
 msgid "Are you ready to create a backup image ?"
 msgstr "Kas lood süsteemist tarkvarakoopia? "
@@ -166,6 +163,8 @@ msgid ""
 "Changes need a system restart to take effect.\n"
 "Restart your %s %s now?"
 msgstr ""
+"Muudatused vajavad jõustumiseks süsteemi taaskäivitamist.\n"
+"Kas taaskäivitad %s %s?"
 
 msgid "Checking Free RAM.."
 msgstr "Vaba mälu uurimine.."
@@ -255,7 +254,7 @@ msgid "Enable Swap at startup"
 msgstr "Luba käivitumisel saale"
 
 msgid "Enable frozen check"
-msgstr ""
+msgstr "Luba hangumise kontroll"
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Rohkem ei proovi, lükatakse järgmise korrale."
@@ -342,7 +341,7 @@ msgid "Manage your backups of your settings."
 msgstr "Halda varukoopiaid seadistustest."
 
 msgid "Mount"
-msgstr ""
+msgstr "Haagi"
 
 msgid "Mount Manager"
 msgstr "Haakepunktid"
@@ -470,7 +469,7 @@ msgstr "Taaskäivitus"
 
 #, python-format
 msgid "Restart %s %s."
-msgstr ""
+msgstr "Taaskäivita %s %s."
 
 msgid "Restart Enigma2."
 msgstr "Taaskäivita Enigma2."
@@ -512,7 +511,7 @@ msgid "Select"
 msgstr "Vali"
 
 msgid "Select a backup to Restore:"
-msgstr ""
+msgstr "Taasta varukoopia:"
 
 msgid "Select a package to install:"
 msgstr "Vali paigaldamiseks pakett:"
@@ -521,7 +520,7 @@ msgid "Select an image to Download:"
 msgstr "Vali allalaadimiseks tarkvaratõmmis:"
 
 msgid "Select an image to restore:"
-msgstr ""
+msgstr "Taasta tarkvarakoopia:"
 
 msgid "Select extra packages folder"
 msgstr "Vali lisapakettide kaust"
@@ -554,7 +553,7 @@ msgid "Setup Mounts"
 msgstr "Haakepunktid"
 
 msgid "Show in extensions"
-msgstr ""
+msgstr "Näita laienduste menüüs"
 
 msgid "Size: "
 msgstr "Suurus: "
@@ -594,7 +593,7 @@ msgstr "Kahjuks image"
 
 #, python-format
 msgid "Sorry you %s %s is not yet compatible."
-msgstr ""
+msgstr "%s %s ei ole veel ühilduv."
 
 msgid "Sorry, but the restore failed."
 msgstr "Taastamine nurjus."
@@ -660,7 +659,7 @@ msgid "USB: "
 msgstr "USB: "
 
 msgid "Unmount"
-msgstr ""
+msgstr "Haagi lahti"
 
 msgid "Updating mount locations."
 msgstr "Haakepunktide uuendamine"
@@ -704,7 +703,7 @@ msgstr "Oota, riistavara uurimine..."
 
 #, python-format
 msgid "Wait please while scanning your %s %s devices..."
-msgstr ""
+msgstr "Oota, %s %s riistavara uurimine..."
 
 msgid "Wait please while scanning..."
 msgstr "Oota, toimub otsing..."
@@ -752,20 +751,24 @@ msgid ""
 "Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
+"%s %s varundab seadistused ja tuvastab laiendused.\n"
+"Kas lubad seda?"
 
 #, python-format
 msgid ""
 "Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
+"%s %s alustab tarkvarast 1:1 tarkvarakoopia loomist. See võib kesta umbes 6 minutit.\n"
+"Kas nõustud?"
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr ""
+msgstr "%s %s ei ole internetiga ühendatud. Proovi laiendusi taastada hiljem."
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
-msgstr ""
+msgstr "%s %s ei ole ühendatud internetti. Kontrolli võrgu seadeid ja proovi uuesti."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Image allalaadimine.'"
@@ -781,3 +784,6 @@ msgstr "usb pulgale, ühenda esipaneelil olevasse pesasse ja lülita sisse"
 
 msgid "unavailable"
 msgstr "pole saadaval"
+
+#~ msgid "Are you ready to create a backup ?"
+#~ msgstr "Kas lood seadistustest varukoopia?"

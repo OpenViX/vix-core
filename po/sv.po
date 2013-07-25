@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-10 13:39+0100\n"
+"POT-Creation-Date: 2013-07-25 09:58+0200\n"
 "PO-Revision-Date: 2013-02-04 16:41+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: none\n"
@@ -70,9 +70,6 @@ msgstr "Låter dig tagga dina dina backuper till en box. (standard är boxnamn/t
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr "Låter dig tagga dina dina Imagebackuper till en box. (standard är boxnamn/typ)"
-
-msgid "Are you ready to create a backup ?"
-msgstr "Är du redo att skapa en backup?"
 
 msgid "Are you ready to create a backup image ?"
 msgstr "Är du redo att skapa en Imagebackup?"
@@ -772,3 +769,6 @@ msgstr ""
 
 msgid "unavailable"
 msgstr "ej tillgänglig"
+
+#~ msgid "Are you ready to create a backup ?"
+#~ msgstr "Är du redo att skapa en backup?"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-10 13:39+0100\n"
+"POT-Creation-Date: 2013-07-25 09:58+0200\n"
 "PO-Revision-Date: 2013-06-13 07:03+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
@@ -71,9 +71,6 @@ msgstr "Erlaubt es Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr "Erlaubt es Image-Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
-
-msgid "Are you ready to create a backup ?"
-msgstr "Backup jetzt erstellen?"
 
 msgid "Are you ready to create a backup image ?"
 msgstr "Image jetzt erstellen? "

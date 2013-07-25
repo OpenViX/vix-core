@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-10 13:39+0100\n"
+"POT-Creation-Date: 2013-07-25 09:58+0200\n"
 "PO-Revision-Date: 2013-06-10 17:51+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
@@ -73,9 +73,6 @@ msgstr "U kunt labels aan back-ups van een ontvanger hangen (default is box naam
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr "U kunt labels aan image back-ups van een ontvanger hangen (default is box naam/type)."
-
-msgid "Are you ready to create a backup ?"
-msgstr "Bent u gereed een back-up van uw instellingen te maken?"
 
 msgid "Are you ready to create a backup image ?"
 msgstr "Bent u gereed om een imageback-up te maken?"
@@ -789,3 +786,6 @@ msgstr "naar een USB-stick, plaats die in de front steker en schakel uw ontvange
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
+
+#~ msgid "Are you ready to create a backup ?"
+#~ msgstr "Bent u gereed een back-up van uw instellingen te maken?"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-10 13:39+0100\n"
+"POT-Creation-Date: 2013-07-25 09:58+0200\n"
 "PO-Revision-Date: 2013-06-02 22:37+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: RU locale by Sowa\n"
@@ -72,9 +72,6 @@ msgstr "Указывает принадлежность резервной ко�
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr "Указывает принадлежность резервной копии прошивки ресиверу (по умолчанию имя/тип)"
-
-msgid "Are you ready to create a backup ?"
-msgstr "Вы готовы к созданию резервной копии?"
 
 msgid "Are you ready to create a backup image ?"
 msgstr "Вы готовы к созданию полной копии прошивки?"
@@ -780,3 +777,6 @@ msgstr " USB-флешь, вставьте USB-флешь в передний п�
 
 msgid "unavailable"
 msgstr "недоступен"
+
+#~ msgid "Are you ready to create a backup ?"
+#~ msgstr "Вы готовы к созданию резервной копии?"

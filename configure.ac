@@ -34,6 +34,5 @@ etc/cron/Makefile
 etc/cron/crontabs/Makefile
 po/Makefile
 src/Makefile
-src/data/Makefile
 src/images/Makefile
 ])

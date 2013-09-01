@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-25 09:58+0200\n"
-"PO-Revision-Date: 2013-06-10 17:51+0100\n"
+"POT-Creation-Date: 2013-08-26 15:30+0200\n"
+"PO-Revision-Date: 2013-09-01 08:21+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -454,9 +454,6 @@ msgstr "Druk op OK om de selectie om te wisselen.."
 msgid "Rebooting..."
 msgstr "Bezig met rebooten..."
 
-msgid "Refresh List"
-msgstr "Ververs lijst"
-
 msgid "Remove Confirmation"
 msgstr "Bevestig verwijderen"
 
@@ -565,6 +562,9 @@ msgstr "Softcammanager"
 
 msgid "Softcam Manager Log"
 msgstr "Softcammanager log"
+
+msgid "Softcam Manager Setup"
+msgstr "Softcammanager instellingen"
 
 msgid "Softcam Setup"
 msgstr "Softcam instellingen"
@@ -789,3 +789,6 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Are you ready to create a backup ?"
 #~ msgstr "Bent u gereed een back-up van uw instellingen te maken?"
+
+#~ msgid "Refresh List"
+#~ msgstr "Ververs lijst"

@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-25 15:01+0100\n"
-"PO-Revision-Date: 2013-06-28 16:00+0100\n"
-"Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
+"POT-Creation-Date: 2013-10-19 21:00+0200\n"
+"PO-Revision-Date: 2013-10-20 17:17+0100\n"
+"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: rimas\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
@@ -21,8 +21,14 @@ msgstr ""
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
 
+msgid "128 Mb"
+msgstr ""
+
 msgid "16 Mb"
 msgstr "16 Mb"
+
+msgid "256 Mb"
+msgstr ""
 
 msgid "30 Days"
 msgstr "30 päeva"
@@ -59,6 +65,9 @@ msgstr "Võimaldab EMU halduri käivitada laienduste menüüst."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Võimaldab kontrollida, kas EMU ei ole hangunud ja vajadusel selle automaatselt taaskäivitada."
+
+msgid "Allows you have the window close automatically."
+msgstr ""
 
 msgid "Allows you schedule your boackups."
 msgstr "Võimaldab planeerida varukoopiate loomist."
@@ -184,6 +193,9 @@ msgstr "Määra seadmetele haakepunktid:"
 msgid "Close"
 msgstr "Sulge"
 
+msgid "Close window on success"
+msgstr ""
+
 msgid "Comparing against backup..."
 msgstr "Võrdleme varukoopiaga..."
 
@@ -204,6 +216,9 @@ msgstr "Saale loomine..."
 
 msgid "Creating list of installed plugins..."
 msgstr "Paigaldatud laienduste nimekirja loomine..."
+
+msgid "Creating zip..."
+msgstr ""
 
 msgid "Current Status:"
 msgstr "Olek:"
@@ -428,6 +443,9 @@ msgstr "Oota andmete kogumist..."
 msgid "Please wait while plugins restore completes..."
 msgstr "Oota laienduste taastamist..."
 
+msgid "Please wait while restore prepares"
+msgstr ""
+
 msgid "Please wait while settings restore completes..."
 msgstr "Oota kanalinimekirja taastamist..."
 
@@ -451,9 +469,6 @@ msgstr "Valiku muutmiseks vajuta OK."
 
 msgid "Rebooting..."
 msgstr "Taaskäivitus..."
-
-msgid "Refresh List"
-msgstr "Värskenda loend"
 
 msgid "Remove Confirmation"
 msgstr "Eemaldamise kinnitamine"
@@ -506,6 +521,9 @@ msgstr "Ajastatud varundamine"
 
 msgid "Script Runner"
 msgstr "Skriptid"
+
+msgid "Script Runner Setup"
+msgstr ""
 
 msgid "Select"
 msgstr "Vali"
@@ -564,6 +582,9 @@ msgstr "EMU haldur"
 msgid "Softcam Manager Log"
 msgstr "EMU halduri logi"
 
+msgid "Softcam Manager Setup"
+msgstr ""
+
 msgid "Softcam Setup"
 msgstr "EMU seadistamine"
 
@@ -587,9 +608,6 @@ msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti."
 
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti"
-
-msgid "Sorry the image "
-msgstr "Kahjuks image"
 
 #, python-format
 msgid "Sorry you %s %s is not yet compatible."
@@ -773,9 +791,6 @@ msgstr "%s %s ei ole ühendatud internetti. Kontrolli võrgu seadeid ja proovi u
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Image allalaadimine.'"
 
-msgid "echo 'Expanding Image.'"
-msgstr "echo 'Image laiendamine.'"
-
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."
 
@@ -784,6 +799,3 @@ msgstr "usb pulgale, ühenda esipaneelil olevasse pesasse ja lülita sisse"
 
 msgid "unavailable"
 msgstr "pole saadaval"
-
-#~ msgid "Are you ready to create a backup ?"
-#~ msgstr "Kas lood seadistustest varukoopia?"

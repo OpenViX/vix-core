@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-25 09:58+0200\n"
+"POT-Creation-Date: 2013-10-19 21:00+0200\n"
 "PO-Revision-Date: 2013-01-25 19:24+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: www.CostaBlancaTranslations.com <maria@CostaBlancaTranslations.com>\n"
@@ -21,8 +21,14 @@ msgstr ""
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
 
+msgid "128 Mb"
+msgstr ""
+
 msgid "16 Mb"
 msgstr "16Mb"
+
+msgid "256 Mb"
+msgstr ""
 
 msgid "30 Days"
 msgstr "30 días"
@@ -59,6 +65,9 @@ msgstr ""
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Permite detectar si el softcam ya no funciona y lo reinicia si hace falta."
+
+msgid "Allows you have the window close automatically."
+msgstr ""
 
 msgid "Allows you schedule your boackups."
 msgstr "Permite programar copias de seguridad."
@@ -180,6 +189,9 @@ msgstr "Elegir dónde montar tus dispositivos:"
 msgid "Close"
 msgstr "Cerrar"
 
+msgid "Close window on success"
+msgstr ""
+
 msgid "Comparing against backup..."
 msgstr "Comparando con la copia de seguridad..."
 
@@ -200,6 +212,9 @@ msgstr "Creando intercambio..."
 
 msgid "Creating list of installed plugins..."
 msgstr "Creando una lista de complementos instalados..."
+
+msgid "Creating zip..."
+msgstr ""
 
 msgid "Current Status:"
 msgstr "Estado actual:"
@@ -424,6 +439,9 @@ msgstr "Espera mientras se recopila la información..."
 msgid "Please wait while plugins restore completes..."
 msgstr "Espera mientras se restauran los complementos..."
 
+msgid "Please wait while restore prepares"
+msgstr ""
+
 msgid "Please wait while settings restore completes..."
 msgstr "Espera mientras se restaura la configuración..."
 
@@ -447,9 +465,6 @@ msgstr ""
 
 msgid "Rebooting..."
 msgstr "Reiniciando..."
-
-msgid "Refresh List"
-msgstr "Actualizar lista"
 
 msgid "Remove Confirmation"
 msgstr "Suprimir confirmación"
@@ -502,6 +517,9 @@ msgstr "Programar copias de seguridad"
 
 msgid "Script Runner"
 msgstr "Administrador de scripts"
+
+msgid "Script Runner Setup"
+msgstr ""
 
 msgid "Select"
 msgstr "Seleccionar"
@@ -560,6 +578,9 @@ msgstr "Administrador de Softcams"
 msgid "Softcam Manager Log"
 msgstr "Historial del administrador de Softcam"
 
+msgid "Softcam Manager Setup"
+msgstr ""
+
 msgid "Softcam Setup"
 msgstr "Configuración de Softcam"
 
@@ -583,9 +604,6 @@ msgstr "Ojo: los Feeds están apagados por mantenimiento. Vuelve a intentarlo m�
 
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Ojo: los feeds están apagados por mantenimiento. Restaura los complementos más tarde usando el administrador de copias de seguridad. "
-
-msgid "Sorry the image "
-msgstr ""
 
 #, python-format
 msgid "Sorry you %s %s is not yet compatible."
@@ -762,9 +780,6 @@ msgstr ""
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Descargando Image'"
-
-msgid "echo 'Expanding Image.'"
-msgstr "echo 'Ampliando Image'"
 
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "Ha habido un problema con este dispositivo. Reformatéalo y vuelve a intentarlo."

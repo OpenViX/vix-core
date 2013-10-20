@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-25 09:58+0200\n"
-"PO-Revision-Date: 2012-12-09 02:33+0100\n"
+"POT-Creation-Date: 2013-10-19 21:00+0200\n"
+"PO-Revision-Date: 2013-10-20 17:17+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: fy\n"
@@ -19,7 +19,13 @@ msgstr ""
 msgid "%a %e %b  %-H:%M"
 msgstr ""
 
+msgid "128 Mb"
+msgstr ""
+
 msgid "16 Mb"
+msgstr ""
+
+msgid "256 Mb"
 msgstr ""
 
 msgid "30 Days"
@@ -56,6 +62,9 @@ msgid "Allows the softcam manager to be launched from extensions."
 msgstr ""
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+msgstr ""
+
+msgid "Allows you have the window close automatically."
 msgstr ""
 
 msgid "Allows you schedule your boackups."
@@ -170,6 +179,9 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
+msgid "Close window on success"
+msgstr ""
+
 msgid "Comparing against backup..."
 msgstr ""
 
@@ -189,6 +201,9 @@ msgid "Creating Swap.."
 msgstr ""
 
 msgid "Creating list of installed plugins..."
+msgstr ""
+
+msgid "Creating zip..."
 msgstr ""
 
 msgid "Current Status:"
@@ -406,6 +421,9 @@ msgstr ""
 msgid "Please wait while plugins restore completes..."
 msgstr ""
 
+msgid "Please wait while restore prepares"
+msgstr ""
+
 msgid "Please wait while settings restore completes..."
 msgstr ""
 
@@ -428,9 +446,6 @@ msgid "Press OK to toggle the selection."
 msgstr ""
 
 msgid "Rebooting..."
-msgstr ""
-
-msgid "Refresh List"
 msgstr ""
 
 msgid "Remove Confirmation"
@@ -483,6 +498,9 @@ msgid "Schedule Backups"
 msgstr ""
 
 msgid "Script Runner"
+msgstr ""
+
+msgid "Script Runner Setup"
 msgstr ""
 
 msgid "Select"
@@ -542,6 +560,9 @@ msgstr ""
 msgid "Softcam Manager Log"
 msgstr ""
 
+msgid "Softcam Manager Setup"
+msgstr ""
+
 msgid "Softcam Setup"
 msgstr ""
 
@@ -564,9 +585,6 @@ msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr ""
 
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr ""
-
-msgid "Sorry the image "
 msgstr ""
 
 #, python-format
@@ -739,9 +757,6 @@ msgid "Your %s %s is not connected to the internet, please check your network se
 msgstr ""
 
 msgid "echo 'Downloading Image.'"
-msgstr ""
-
-msgid "echo 'Expanding Image.'"
 msgstr ""
 
 msgid "there was a problem with this device, please reformat and try again."

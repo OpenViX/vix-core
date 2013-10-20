@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-25 09:58+0200\n"
-"PO-Revision-Date: 2012-12-09 02:33+0100\n"
+"POT-Creation-Date: 2013-10-19 21:00+0200\n"
+"PO-Revision-Date: 2013-10-20 17:17+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: yngvekl <yklarsen@gmail.com>\n"
 "Language: nb\n"
@@ -21,8 +21,14 @@ msgstr ""
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
 
+msgid "128 Mb"
+msgstr ""
+
 msgid "16 Mb"
 msgstr "16 MB"
+
+msgid "256 Mb"
+msgstr ""
 
 msgid "30 Days"
 msgstr "30 Dager"
@@ -59,6 +65,9 @@ msgstr ""
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Lar softcam sjekkes om den er stoppet, og evt. startes på nytt om nødvendig."
+
+msgid "Allows you have the window close automatically."
+msgstr ""
 
 msgid "Allows you schedule your boackups."
 msgstr "Lar deg å planlegge backupene dine."
@@ -180,6 +189,9 @@ msgstr "Velg hvor enheten skal tilkobles:"
 msgid "Close"
 msgstr "Lukk"
 
+msgid "Close window on success"
+msgstr ""
+
 msgid "Comparing against backup..."
 msgstr "Sammenligner med backup..."
 
@@ -200,6 +212,9 @@ msgstr "Oppretter swap..."
 
 msgid "Creating list of installed plugins..."
 msgstr "Oppretter liste over installerte plugins..."
+
+msgid "Creating zip..."
+msgstr ""
 
 msgid "Current Status:"
 msgstr "Nåværende status:"
@@ -424,6 +439,9 @@ msgstr "Innsamling av informasjon pågår, vennligst vent..."
 msgid "Please wait while plugins restore completes..."
 msgstr "Vennligst vent til gjenoppretting av plugins er fullført..."
 
+msgid "Please wait while restore prepares"
+msgstr ""
+
 msgid "Please wait while settings restore completes..."
 msgstr "Vennligst vent til gjenoppretting av innstillinger er fullført..."
 
@@ -447,9 +465,6 @@ msgstr ""
 
 msgid "Rebooting..."
 msgstr "Starter på nytt..."
-
-msgid "Refresh List"
-msgstr "Oppdater liste"
 
 msgid "Remove Confirmation"
 msgstr "Bekreftelse på fjerning"
@@ -502,6 +517,9 @@ msgstr "Tidfest backup'er"
 
 msgid "Script Runner"
 msgstr "Script Runner"
+
+msgid "Script Runner Setup"
+msgstr ""
 
 msgid "Select"
 msgstr "Velg"
@@ -560,6 +578,9 @@ msgstr "Softcam Manager"
 msgid "Softcam Manager Log"
 msgstr "Softcam Manager Logg"
 
+msgid "Softcam Manager Setup"
+msgstr ""
+
 msgid "Softcam Setup"
 msgstr "Softcam Oppsett"
 
@@ -583,9 +604,6 @@ msgstr "Beklager, feeds er nede for vedlikehold. Prøv igjen senere."
 
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Beklager, feeds er nede for vedlikehold. Prøv gjenoppretting av plugins med Backup Manager senere."
-
-msgid "Sorry the image "
-msgstr ""
 
 #, python-format
 msgid "Sorry you %s %s is not yet compatible."
@@ -765,9 +783,6 @@ msgstr ""
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Laster ned image.'"
 
-msgid "echo 'Expanding Image.'"
-msgstr "echo 'Pakker ut image.'"
-
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "det var et problem med denne enheten. Formater enheten og prøv igjen."
 
@@ -776,6 +791,3 @@ msgstr ""
 
 msgid "unavailable"
 msgstr "ikke tilgjengelig"
-
-#~ msgid "Are you ready to create a backup ?"
-#~ msgstr "Klar til å opprette en backup av innstillingene?"

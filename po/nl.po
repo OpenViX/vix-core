@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-26 15:30+0200\n"
-"PO-Revision-Date: 2013-09-01 08:21+0100\n"
+"POT-Creation-Date: 2013-10-19 21:00+0200\n"
+"PO-Revision-Date: 2013-10-20 18:19+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -23,8 +23,14 @@ msgstr ""
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
 
+msgid "128 Mb"
+msgstr "128 Mb"
+
 msgid "16 Mb"
 msgstr "16 Mb"
+
+msgid "256 Mb"
+msgstr "256 Mb"
 
 msgid "30 Days"
 msgstr "30 dagen"
@@ -61,6 +67,9 @@ msgstr "Geeft de mogelijkheid de softcammanager vanuit de extensies te starten."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Controleert of de softcam nog werkt en herstart als dat niet het geval is."
+
+msgid "Allows you have the window close automatically."
+msgstr "Maakt het mogelijk het venster automatisch te sluiten."
 
 msgid "Allows you schedule your boackups."
 msgstr "Plan back-ups."
@@ -186,6 +195,9 @@ msgstr "U wilt het apparaat mounten als:"
 msgid "Close"
 msgstr "Sluit"
 
+msgid "Close window on success"
+msgstr "Sluit venster indien geslaagd"
+
 msgid "Comparing against backup..."
 msgstr "Vergelijkt met back-up..."
 
@@ -206,6 +218,9 @@ msgstr "Creëert swap"
 
 msgid "Creating list of installed plugins..."
 msgstr "Maakt een lijst met beschikbare plugins..."
+
+msgid "Creating zip..."
+msgstr "Creërt zip..."
 
 msgid "Current Status:"
 msgstr "Actuele status"
@@ -430,6 +445,9 @@ msgstr "De informatie wordt verzameld..."
 msgid "Please wait while plugins restore completes..."
 msgstr "Even wachten tot het installeren van plugins gereed is..."
 
+msgid "Please wait while restore prepares"
+msgstr "Wacht terwijl de restore wordt voorbereid"
+
 msgid "Please wait while settings restore completes..."
 msgstr "Even wachten tot het herstellen van de instellingen gereed is..."
 
@@ -505,6 +523,9 @@ msgstr "Plan back-ups"
 
 msgid "Script Runner"
 msgstr "Script uitvoeren"
+
+msgid "Script Runner Setup"
+msgstr "Script Runner instellingen"
 
 msgid "Select"
 msgstr "Selecteer"
@@ -589,9 +610,6 @@ msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
 
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer later opnieuw de plugins te installeren via de Backup Manager."
-
-msgid "Sorry the image "
-msgstr "Sorry he image "
 
 #, python-format
 msgid "Sorry you %s %s is not yet compatible."
@@ -775,9 +793,6 @@ msgstr "Uw %s %s is niet met internet verbonden. Controleer uw netwerk instellin
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Download image.'"
 
-msgid "echo 'Expanding Image.'"
-msgstr "echo 'Expanding image.'"
-
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "er was een probleem met dit apparaat; formatteer opnieuw en probeer het weer."
 
@@ -786,9 +801,3 @@ msgstr "naar een USB-stick, plaats die in de front steker en schakel uw ontvange
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
-
-#~ msgid "Are you ready to create a backup ?"
-#~ msgstr "Bent u gereed een back-up van uw instellingen te maken?"
-
-#~ msgid "Refresh List"
-#~ msgstr "Ververs lijst"

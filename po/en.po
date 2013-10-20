@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-25 09:58+0200\n"
-"PO-Revision-Date: 2013-06-10 13:41+0100\n"
+"POT-Creation-Date: 2013-10-19 21:00+0200\n"
+"PO-Revision-Date: 2013-10-20 17:19+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -22,8 +22,14 @@ msgstr ""
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
 
+msgid "128 Mb"
+msgstr "128 Mb"
+
 msgid "16 Mb"
 msgstr "16 Mb"
+
+msgid "256 Mb"
+msgstr "256 Mb"
 
 msgid "30 Days"
 msgstr "30 Days"
@@ -60,6 +66,9 @@ msgstr "Allows the softcam manager to be launched from extensions."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+
+msgid "Allows you have the window close automatically."
+msgstr "Allows you have the window close automatically."
 
 msgid "Allows you schedule your boackups."
 msgstr "Allows you schedule your boackups."
@@ -185,6 +194,9 @@ msgstr "Choose where to mount your devices to:"
 msgid "Close"
 msgstr "Close"
 
+msgid "Close window on success"
+msgstr "Close window on success"
+
 msgid "Comparing against backup..."
 msgstr "Comparing against backup..."
 
@@ -205,6 +217,9 @@ msgstr "Creating Swap.."
 
 msgid "Creating list of installed plugins..."
 msgstr "Creating list of installed plugins..."
+
+msgid "Creating zip..."
+msgstr "Creating zip..."
 
 msgid "Current Status:"
 msgstr "Current Status:"
@@ -429,6 +444,9 @@ msgstr "Please wait while gathers information..."
 msgid "Please wait while plugins restore completes..."
 msgstr "Please wait while plugins restore completes..."
 
+msgid "Please wait while restore prepares"
+msgstr "Please wait while restore prepares"
+
 msgid "Please wait while settings restore completes..."
 msgstr "Please wait while settings restore completes..."
 
@@ -452,9 +470,6 @@ msgstr "Press OK to toggle the selection."
 
 msgid "Rebooting..."
 msgstr "Rebooting..."
-
-msgid "Refresh List"
-msgstr "Refresh List"
 
 msgid "Remove Confirmation"
 msgstr "Remove Confirmation"
@@ -507,6 +522,9 @@ msgstr "Schedule Backups"
 
 msgid "Script Runner"
 msgstr "Script Runner"
+
+msgid "Script Runner Setup"
+msgstr "Script Runner Setup"
 
 msgid "Select"
 msgstr "Select"
@@ -565,6 +583,9 @@ msgstr "Softcam Manager"
 msgid "Softcam Manager Log"
 msgstr "Softcam Manager Log"
 
+msgid "Softcam Manager Setup"
+msgstr "Softcam Manager Setup"
+
 msgid "Softcam Setup"
 msgstr "Softcam Setup"
 
@@ -588,9 +609,6 @@ msgstr "Sorry feeds are down for maintenance, Please try again later."
 
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-
-msgid "Sorry the image "
-msgstr "Sorry the image "
 
 #, python-format
 msgid "Sorry you %s %s is not yet compatible."
@@ -773,9 +791,6 @@ msgstr "Your %s %s is not connected to the internet, please check your network s
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Downloading Image.'"
-
-msgid "echo 'Expanding Image.'"
-msgstr "echo 'Expanding Image.'"
 
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "there was a problem with this device, please reformat and try again."

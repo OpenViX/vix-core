@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-19 21:00+0200\n"
-"PO-Revision-Date: 2013-10-20 18:19+0100\n"
+"PO-Revision-Date: 2013-10-28 07:34+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -66,13 +66,13 @@ msgid "Allows the softcam manager to be launched from extensions."
 msgstr "Geeft de mogelijkheid de softcammanager vanuit de extensies te starten."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
-msgstr "Controleert of de softcam nog werkt en herstart als dat niet het geval is."
+msgstr "Controleert of de softcam nog werkt en herstart die als dat niet het geval is."
 
 msgid "Allows you have the window close automatically."
 msgstr "Maakt het mogelijk het venster automatisch te sluiten."
 
 msgid "Allows you schedule your boackups."
-msgstr "Plan back-ups."
+msgstr "Plan settings back-ups."
 
 msgid "Allows you schedule your image backups."
 msgstr "Plan image back-ups."
@@ -124,7 +124,7 @@ msgid "Backing up files..."
 msgstr "Bestanden worden geback-upped"
 
 msgid "Backup Complete..."
-msgstr "Back-up kompleet..."
+msgstr "Back-up compleet..."
 
 msgid "Backup Confirmation"
 msgstr "Back-up bevestiging"
@@ -136,13 +136,13 @@ msgid "Backup Location"
 msgstr "Back-up locatie"
 
 msgid "Backup Manager"
-msgstr "Backup Manager"
+msgstr "Backupmanager"
 
 msgid "Backup Manager Log"
-msgstr "Backup Manager Log"
+msgstr "Backupmanager log"
 
 msgid "Backup Manager Setup"
-msgstr "Backup Manager instellingen"
+msgstr "Backupmanager instellingen"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Back-up mislukt of verkeerde backup bestemming of onvoldoende ruimte"
@@ -152,7 +152,7 @@ msgid ""
 "Please for it to finish, before trying again"
 msgstr ""
 "Back-up in uitvoering,\n"
-"Laat dit doorlopen alvorens opnieuw te proberen"
+"Laat dit doorlopen voordat u opnieuw probeert"
 
 msgid "Backup prefix"
 msgstr "Back-up prefix"
@@ -238,7 +238,7 @@ msgid "Deselect"
 msgstr "Deselecteer"
 
 msgid "Device: "
-msgstr "Device: "
+msgstr "Apparaat: "
 
 msgid "Device: None available"
 msgstr "Apparaat: niet beschikbaar"
@@ -259,7 +259,7 @@ msgid "Download Confirmation"
 msgstr "Download confirmatie"
 
 msgid "Downloading Image..."
-msgstr "Download Image..."
+msgstr "Download image..."
 
 msgid "Downloads"
 msgstr "Downloads"
@@ -271,7 +271,7 @@ msgid "Enable Swap at startup"
 msgstr "Swap tijdens opstarten inschakelen"
 
 msgid "Enable frozen check"
-msgstr "SofCamCheck inschakelen"
+msgstr "Softcamcontrole inschakelen"
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Vaak genoeg geprobeerd, wacht op de volgende geplande tijd."
@@ -289,7 +289,7 @@ msgid "Free space:"
 msgstr "Vrije ruimte"
 
 msgid "Frozen check interval"
-msgstr "Vastloop-controle interval"
+msgstr "Controle interval"
 
 msgid "GB"
 msgstr "GB"
@@ -301,13 +301,13 @@ msgid "IPK Installer"
 msgstr "IPK Installeren"
 
 msgid "Image Manager"
-msgstr "Image Manager"
+msgstr "Imagemanager"
 
 msgid "Image Manager Setup"
-msgstr "Image Manager instellingen"
+msgstr "Imagemanager instellingen"
 
 msgid "Inactive"
-msgstr "Inaktief"
+msgstr "Inactief"
 
 msgid "Info"
 msgstr "Info"
@@ -319,7 +319,7 @@ msgid "Install Confirmation"
 msgstr "Installatie bevestiging"
 
 msgid "Install IPK's from your tmp folder."
-msgstr "Installeer IPK's van uw tmp map."
+msgstr "Installeer IPK's in uw tmp map."
 
 msgid "Install extensions."
 msgstr "Installeer extensies"
@@ -334,7 +334,7 @@ msgid "Invert"
 msgstr "Keer om"
 
 msgid "Ipkg"
-msgstr "Ipkg"
+msgstr "IPKG"
 
 msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 msgstr "U heeft geen extra locatie ingesteld; U kunt dat doen via het menu van de Backup Manager."
@@ -434,7 +434,7 @@ msgid "Please enter a folder that contains some packages."
 msgstr "Kies een folder die plugins bevat."
 
 msgid "Please select device to use as swapfile location"
-msgstr "Selecteer het apparaat dat u voor de swapfile wilt gebruiken"
+msgstr "Selecteer het medium dat u voor de swapfile wilt gebruiken"
 
 msgid "Please select the file to restore ?"
 msgstr "Kies bestanden die teruggeplaatst moeten worden."
@@ -498,7 +498,7 @@ msgid "Restore Confirmation"
 msgstr "Bevestig herstellen"
 
 msgid "Restore Wizard"
-msgstr "Herstel wizard"
+msgstr "Herstelwizard"
 
 msgid "Restoring backup..."
 msgstr "Plaatst back-up terug..."
@@ -525,7 +525,7 @@ msgid "Script Runner"
 msgstr "Script uitvoeren"
 
 msgid "Script Runner Setup"
-msgstr "Script Runner instellingen"
+msgstr "Scriptrunner instellingen"
 
 msgid "Select"
 msgstr "Selecteer"
@@ -552,13 +552,13 @@ msgid "Select folder that contains plugins"
 msgstr "Kies de folder met plugins"
 
 msgid "Select the Swap File Size:"
-msgstr "Selecteer de Swap File grootte:"
+msgstr "Selecteer de grootte van de swapfile:"
 
 msgid "Select:"
 msgstr "Selecteer:"
 
 msgid "Set the interval to be checked in mins."
-msgstr "Bepaal het controleinterval (in minuten)."
+msgstr "Bepaal het controle-interval (in minuten)."
 
 msgid "Set the repeat interval of backup schedule."
 msgstr "Stel het back-upinterval in."
@@ -591,10 +591,10 @@ msgid "Softcam Setup"
 msgstr "Softcam instellingen"
 
 msgid "Softcam Starting..."
-msgstr "Softcam bezig te starten..."
+msgstr "Bezig Softcam te starten..."
 
 msgid "Softcam Stopping..."
-msgstr "Softcam bezig te stoppen..."
+msgstr "Bezig Softcam te stoppen..."
 
 msgid "SoftcamCheck"
 msgstr "Softcam controle"
@@ -603,13 +603,13 @@ msgid "Sorry Image Restore is not supported on the"
 msgstr "Sorry: het terugzetten van een image wordt niet ondersteund door een"
 
 msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-msgstr "De locatie bestaat niet; U kunt die instellen via het menu van de Backup Manager"
+msgstr "De locatie bestaat niet; U kunt die instellen via het menu van de backupmanager"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
 
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer later opnieuw de plugins te installeren via de Backup Manager."
+msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer later opnieuw de plugins te installeren via de backupmanager."
 
 #, python-format
 msgid "Sorry you %s %s is not yet compatible."
@@ -643,7 +643,7 @@ msgid "Swap Manager"
 msgstr "Swapmanager"
 
 msgid "Swap Place:"
-msgstr "Swap locatie:"
+msgstr "Swaplocatie:"
 
 msgid "Swap Size:"
 msgstr "Swap grootte:"
@@ -691,19 +691,19 @@ msgid "ViX"
 msgstr "ViX"
 
 msgid "ViX Backup Manager"
-msgstr "ViX Backup Manager"
+msgstr "ViX backupmanager"
 
 msgid "ViX Image Manager"
-msgstr "ViX Image Manager"
+msgstr "ViX imagemanager"
 
 msgid "ViX Mount Manager"
-msgstr "ViX Mount Manager"
+msgstr "ViX mountmanager"
 
 msgid "ViX Script Runner"
-msgstr "ViX Script Runner"
+msgstr "ViX xcriptrunner"
 
 msgid "ViX Swap Manager"
-msgstr "ViX Swap Manager"
+msgstr "ViX swapmanager"
 
 msgid "View Progress"
 msgstr "Bekijk voortgang"
@@ -758,10 +758,10 @@ msgid "You have no image to delete."
 msgstr "Er is geen image dat verwijderd kan worden."
 
 msgid "You have no image to download."
-msgstr "U heegt geen image om te downloaden."
+msgstr "U hebt geen image om te downloaden."
 
 msgid "You have no image to restore."
-msgstr "U heeft geen images om terug te plaatsen"
+msgstr "U heeft geen image om terug te plaatsen"
 
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr "U moet een swapfile maken voordat deze actief kan worden."
@@ -788,16 +788,17 @@ msgstr "Uw %s %s is niet met internet verbonden. Gebruik de backupmanager later 
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
-msgstr "Uw %s %s is niet met internet verbonden. Controleer uw netwerk instellingen en probeer het opnieuw."
+msgstr "Uw %s %s is niet met internet verbonden. Controleer uw netwerkinstellingen en probeer het opnieuw."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Download image.'"
 
 msgid "there was a problem with this device, please reformat and try again."
-msgstr "er was een probleem met dit apparaat; formatteer opnieuw en probeer het weer."
+msgstr "er was een probleem met dit medium; formatteer opnieuw en probeer het weer."
 
 msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr "naar een USB-stick, plaats die in de front steker en schakel uw ontvanger in"
+msgstr "naar een USB-stick, plaats die in de aansluiting op de voorkant en schakel uw ontvanger in"
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
+

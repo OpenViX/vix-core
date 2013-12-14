@@ -7,27 +7,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-19 21:00+0200\n"
-"PO-Revision-Date: 2013-10-20 17:16+0100\n"
-"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
+"POT-Creation-Date: 2013-12-14 14:16+0100\n"
+"PO-Revision-Date: 2013-12-14 18:45+0100\n"
+"Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: CÜNEYT OCAKLILAR <ocaklilar@gmail.com>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Turkish\n"
+"X-Poedit-Country: TURKEY\n"
 
 msgid "%a %e %b  %-H:%M"
-msgstr ""
+msgstr "%a %e %b  %-H:%M"
 
 msgid "128 Mb"
-msgstr ""
+msgstr "128 Mb"
 
 msgid "16 Mb"
 msgstr "16 Mb"
 
 msgid "256 Mb"
-msgstr ""
+msgstr "256 Mb"
 
 msgid "30 Days"
 msgstr ""
@@ -45,10 +47,10 @@ msgid "96 Mb"
 msgstr "96 Mb"
 
 msgid "A background update check is is progress, please wait for retry."
-msgstr ""
+msgstr "Arkaplan güncelleme kontrolu sürüyor, tekrar denemek için lütfen bekleyin."
 
 msgid "A backup has been detected."
-msgstr ""
+msgstr "Bir yedek bulundu."
 
 msgid "Activate"
 msgstr "Etkinleştir"
@@ -60,25 +62,25 @@ msgid "Active:"
 msgstr "Etkin:"
 
 msgid "Allows the softcam manager to be launched from extensions."
-msgstr ""
+msgstr "Softcam yöneticisinin uzantılardan çıkarılmasını sağlar."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
-msgstr ""
+msgstr "Softcamin çalışma kontrolunu, gerekirse tekrar otomatik olarak başlamasını sağlar."
 
 msgid "Allows you have the window close automatically."
-msgstr ""
+msgstr "Pencereyi otomatik olarak kapamanızı sağlar."
 
 msgid "Allows you schedule your boackups."
-msgstr ""
+msgstr "Yedeklerinizi zamanlamanızı sağlar."
 
 msgid "Allows you schedule your image backups."
-msgstr ""
+msgstr "İmaj yedeklerinizi zamanlamanızı sağlar."
 
 msgid "Allows you to tag your backups to a box. (default is box name/type)"
-msgstr ""
+msgstr "İmaj yedeklerinizi bir alıcı ile ilişkilendirmenizi sağlar. (varsayılan, alıcı adı/tipi)"
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr ""
+msgstr "İmaj yedeklerinizi bir alıcı ile ilişkilendirmenizi sağlar. (varsayılan, alıcı adı/tipi)"
 
 msgid "Are you ready to create a backup image ?"
 msgstr "Yedek imajı yaratmaya hazır mısınız?"
@@ -111,6 +113,8 @@ msgid ""
 "Are you sure you want to restore this image:\n"
 " "
 msgstr ""
+"Bu imajı geri yüklemek istediğinizden emin misiniz:\n"
+" "
 
 msgid "Autostart"
 msgstr "Oto-başlama"
@@ -150,25 +154,27 @@ msgstr ""
 "Lütfen tekrar denemeden bitmesini bekleyin"
 
 msgid "Backup prefix"
-msgstr ""
+msgstr "Yedek öneki"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "MGcamd çalışırken CCcam çalışamaz"
 
 msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr ""
+msgstr "Bölüm ayrılamıyor, swap veya kayıt/zaman kaydırma yollarında kullanılmadığından emin olun"
 
 msgid "Cancel"
 msgstr "İptal"
 
 msgid "Change Location"
-msgstr ""
+msgstr "Konum Değiştir"
 
 #, python-format
 msgid ""
 "Changes need a system restart to take effect.\n"
 "Restart your %s %s now?"
 msgstr ""
+"Değişikliklerin etkinleşmesi için sistemin yeniden başlaması gerekiyor.\n"
+"%s %s nız şimdi tekrar başlatılsın mı?"
 
 msgid "Checking Free RAM.."
 msgstr "Boş RAM denetleniyor..."
@@ -180,7 +186,7 @@ msgid "Choose Files"
 msgstr "Dosyaları Seçin"
 
 msgid "Choose local ipk's folder"
-msgstr ""
+msgstr "Yerel ipk dosyasını seç"
 
 msgid "Choose where to mount your devices to:"
 msgstr "Aygıtlarınızın bağlanacağını konumu seçin:"
@@ -189,7 +195,7 @@ msgid "Close"
 msgstr "Kapat"
 
 msgid "Close window on success"
-msgstr ""
+msgstr "Başarılı olunca pencereyi kapat"
 
 msgid "Comparing against backup..."
 msgstr "Yedek ile karşılaştırılıyor..."
@@ -213,7 +219,7 @@ msgid "Creating list of installed plugins..."
 msgstr "Yüklenmiş eklentilerin listesi yaratılıyor..."
 
 msgid "Creating zip..."
-msgstr ""
+msgstr "Zip yaratılıyor..."
 
 msgid "Current Status:"
 msgstr "Güncel Durum:"
@@ -238,6 +244,9 @@ msgstr "Aygıt: Yok"
 
 msgid "Disable Startup"
 msgstr "Başlamayı Engelle"
+
+msgid "Do you want to restart GUI now ?"
+msgstr "GUI yi şimdi tekrar başlatmak ister misiniz ?"
 
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Enigma2 eklentilerinizi geri yüklemek istiyor musunuz?"
@@ -264,7 +273,7 @@ msgid "Enable Swap at startup"
 msgstr "Başlangıçta Swapı Etkinleştir"
 
 msgid "Enable frozen check"
-msgstr ""
+msgstr "Donma kontrolunu etkinleştirin"
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Yeterli yeniden deneme, sonraki zamanlamaya kadar erteleniyor."
@@ -273,16 +282,16 @@ msgid "Exit the restore wizard"
 msgstr "Yeniden yükleme sihirbazından çık"
 
 msgid "Extra IPK's"
-msgstr ""
+msgstr "Ek IPK lar"
 
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "Standart dışı softcam bulundu, başlatılmaya çalışılıyor, başarısız olabilir"
 
 msgid "Free space:"
-msgstr ""
+msgstr "Boş alan:"
 
 msgid "Frozen check interval"
-msgstr ""
+msgstr "Donma kontrolu aralığı"
 
 msgid "GB"
 msgstr "GB"
@@ -297,7 +306,7 @@ msgid "Image Manager"
 msgstr "İmaj Yöneticisi"
 
 msgid "Image Manager Setup"
-msgstr ""
+msgstr "İmaj Yöneticisi Kurulumu"
 
 msgid "Inactive"
 msgstr "Aktif değil"
@@ -315,7 +324,7 @@ msgid "Install IPK's from your tmp folder."
 msgstr "tmp klasöründen IPK'leri yükle."
 
 msgid "Install extensions."
-msgstr ""
+msgstr "Uzantıları kur."
 
 msgid "Install local extension"
 msgstr "Yerel genişletmeleri yükle"
@@ -324,19 +333,19 @@ msgid "Installing..."
 msgstr "Yüklüyor..."
 
 msgid "Invert"
-msgstr ""
+msgstr "Tersine çevir"
 
 msgid "Ipkg"
-msgstr ""
+msgstr "Ipkg"
 
 msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
-msgstr ""
+msgstr "Ek bir konum belirlememişsiniz, lütfen Yedekleme Yöneticisi kurulum menüsünde belirleyin"
 
 msgid "Location of where backup should be saved."
-msgstr ""
+msgstr "Yedeğin kaydedileceği konum."
 
 msgid "Location of where image backup should be saved."
-msgstr ""
+msgstr "İmaj yedeğinin kaydedileceği konum."
 
 msgid "MB"
 msgstr "MB"
@@ -351,7 +360,7 @@ msgid "Manage your backups of your settings."
 msgstr "Ayarlarınızın yedeklerini yönetin."
 
 msgid "Mount"
-msgstr ""
+msgstr "Tak"
 
 msgid "Mount Manager"
 msgstr "Bağlantı Yöneticisi"
@@ -421,10 +430,10 @@ msgid "OK, to perform a restore"
 msgstr "Geri yükleme için OK"
 
 msgid "Please copy the folder"
-msgstr ""
+msgstr "Lütfen dosyayı kopyalayın"
 
 msgid "Please enter a folder that contains some packages."
-msgstr ""
+msgstr "Bazı paketler içeren bir dosya girin."
 
 msgid "Please select device to use as swapfile location"
 msgstr "Lütfen swap dosyası konumu için kullanılacak aygıtı seçin"
@@ -433,16 +442,16 @@ msgid "Please select the file to restore ?"
 msgstr "Lütfen geri yüklenecek dosyayı seçin."
 
 msgid "Please wait while gathers information..."
-msgstr ""
+msgstr "Bilgi toplarken lütfen bekleyin..."
 
 msgid "Please wait while plugins restore completes..."
-msgstr ""
+msgstr "Eklenti yüklemesi bitene kadar bekleyin..."
 
 msgid "Please wait while restore prepares"
-msgstr ""
+msgstr "Geri yükleme hazırlanırken lütfen bekleyin"
 
 msgid "Please wait while settings restore completes..."
-msgstr ""
+msgstr "Ayar geri yükleme bitene kadar bekleyin..."
 
 msgid "Please wait while starting\n"
 msgstr "Lütfen başlarken bekleyin\n"
@@ -451,16 +460,16 @@ msgid "Please wait while stopping\n"
 msgstr "Lütfen dururken bekleyin\n"
 
 msgid "Please wait."
-msgstr ""
+msgstr "Lütfen bekleyin."
 
 msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Eklenti Listeleme başarısız - yanlış yedek konumu veya yedekleme ünitesinde yer kalmadı"
 
 msgid "Preparing extra plugins..."
-msgstr ""
+msgstr "Ek eklentiler hazırlanıyor..."
 
 msgid "Press OK to toggle the selection."
-msgstr ""
+msgstr "Seçime geçiş için OK e basın."
 
 msgid "Rebooting..."
 msgstr "Yeniden başlıyor..."
@@ -469,7 +478,7 @@ msgid "Remove Confirmation"
 msgstr "Kaldırma Onayı"
 
 msgid "Removing temp mounts..."
-msgstr ""
+msgstr "Geçici bağlar kaldırılıyor..."
 
 msgid "Repeat how often"
 msgstr "Tekrar sıklığı"
@@ -479,7 +488,7 @@ msgstr "Yeniden başlat"
 
 #, python-format
 msgid "Restart %s %s."
-msgstr ""
+msgstr "%s %s i tekrar başlat."
 
 msgid "Restart Enigma2."
 msgstr "Enigma2'yi yeniden başlat."
@@ -497,7 +506,7 @@ msgid "Restoring backup..."
 msgstr "Yedek geri yükleniyor..."
 
 msgid "Restoring plugins, this can take a long time..."
-msgstr ""
+msgstr "Eklentiler geri yükleniyor, uzun zaman alabilir..."
 
 msgid "Restoring plugins..."
 msgstr "Eklentiler geri yükleniyor..."
@@ -518,13 +527,13 @@ msgid "Script Runner"
 msgstr "Betik Çalıştırıcı"
 
 msgid "Script Runner Setup"
-msgstr ""
+msgstr "Komut Yürütücü Kurulumu"
 
 msgid "Select"
 msgstr "Seç"
 
 msgid "Select a backup to Restore:"
-msgstr ""
+msgstr "Geri yüklenecek bir yedek seçin:"
 
 msgid "Select a package to install:"
 msgstr "Yüklenecek bir paket seçin:"
@@ -533,16 +542,16 @@ msgid "Select an image to Download:"
 msgstr "İndirilecek bir imaj seçin:"
 
 msgid "Select an image to restore:"
-msgstr ""
+msgstr "Geri yüklenecek bir imaj seçin:"
 
 msgid "Select extra packages folder"
-msgstr ""
+msgstr "Ek paketler dosyasını seçin"
 
 msgid "Select files/folders to backup"
 msgstr "Yedeklenecek dosyaları/klasörleri seçin"
 
 msgid "Select folder that contains plugins"
-msgstr ""
+msgstr "Eklenti içeren dosyayı seçin"
 
 msgid "Select the Swap File Size:"
 msgstr "Swap Dosya Boyutunu seçin:"
@@ -551,13 +560,13 @@ msgid "Select:"
 msgstr "Seç:"
 
 msgid "Set the interval to be checked in mins."
-msgstr ""
+msgstr "Kontrol aralığını dakika olarak ayarlayın."
 
 msgid "Set the repeat interval of backup schedule."
-msgstr ""
+msgstr "Yedekleme programının tekrarlanma aralığını belirleyin."
 
 msgid "Set the time of backup to start."
-msgstr ""
+msgstr "Yedeklemenin başlayacağı zamanı belirleyin."
 
 msgid "Setting Up..."
 msgstr "Kuruluyor..."
@@ -566,7 +575,7 @@ msgid "Setup Mounts"
 msgstr "Bağlantıları Kur"
 
 msgid "Show in extensions"
-msgstr ""
+msgstr "Uzantılarda göster"
 
 msgid "Size: "
 msgstr "Boyut:"
@@ -578,7 +587,7 @@ msgid "Softcam Manager Log"
 msgstr "Softcam Yönetici Günlüğü"
 
 msgid "Softcam Manager Setup"
-msgstr ""
+msgstr "Softcam Yöneticisi Kurulumu"
 
 msgid "Softcam Setup"
 msgstr "Softcam Kurulumu"
@@ -593,23 +602,23 @@ msgid "SoftcamCheck"
 msgstr "SoftcamKontrol"
 
 msgid "Sorry Image Restore is not supported on the"
-msgstr ""
+msgstr "Üzgünüz,İmaj Geri yüklemeyi desteklemiyor"
 
 msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-msgstr ""
+msgstr "Üzgünüz, konum yok ya da belirlenmemiş, Yedekleme Yöneticisi kurulum menüsünde belirleyin"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
-msgstr ""
+msgstr "Beslemeler bakımda, sonra tekrar deneyin."
 
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr ""
+msgstr "Beslemeler bakımda, eklentileri geri yüklemek için yedekleme yöneticisini  sonra kullanmayı deneyin."
 
 #, python-format
 msgid "Sorry you %s %s is not yet compatible."
-msgstr ""
+msgstr "Üzgünüz, %s %s niz henüz uyumlu değil."
 
 msgid "Sorry, but the restore failed."
-msgstr ""
+msgstr "Üzgünüz, geri yükleme başarısız."
 
 msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
 msgstr "Üzgünüm, SWAP destekleyen cihaz bağlı değil. Ağ veya fat32 dosya sistemi üzerinde Swap dosyası yaratılamaz"
@@ -642,7 +651,7 @@ msgid "Swap Size:"
 msgstr "Swap Boyutu:"
 
 msgid "TB"
-msgstr ""
+msgstr "TB"
 
 msgid "Temp Folder"
 msgstr ""
@@ -669,10 +678,10 @@ msgid "Type: "
 msgstr "Tip:"
 
 msgid "USB: "
-msgstr ""
+msgstr "USB: "
 
 msgid "Unmount"
-msgstr ""
+msgstr "Çıkar"
 
 msgid "Updating mount locations."
 msgstr ""
@@ -684,19 +693,19 @@ msgid "ViX"
 msgstr "ViX"
 
 msgid "ViX Backup Manager"
-msgstr ""
+msgstr "ViX Yedekleme Yöneticisiş"
 
 msgid "ViX Image Manager"
-msgstr ""
+msgstr "ViX İmaj Yöneticisi"
 
 msgid "ViX Mount Manager"
-msgstr ""
+msgstr "ViX Bağlantı Yöneticisi"
 
 msgid "ViX Script Runner"
-msgstr ""
+msgstr "ViX Komut Yürütücü"
 
 msgid "ViX Swap Manager"
-msgstr ""
+msgstr "ViX Swap Yöneticisi"
 
 msgid "View Progress"
 msgstr "İşlemi izle"
@@ -716,7 +725,7 @@ msgstr "Lütfen aygıtlar incelenirken bekleyin..."
 
 #, python-format
 msgid "Wait please while scanning your %s %s devices..."
-msgstr ""
+msgstr "%s %s aygıtlarınız taranırken bekleyin..."
 
 msgid "Wait please while scanning..."
 msgstr "Lütfen incelenirken bekleyin..."
@@ -754,7 +763,7 @@ msgid "You have no image to download."
 msgstr "İndirilecek imajınız yok."
 
 msgid "You have no image to restore."
-msgstr ""
+msgstr "Geri yüklenecek imajınız yok."
 
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Otomatik başlamayı etkinleştirmek için önce bir Swap dosyası yaratmalısınız."
@@ -764,20 +773,24 @@ msgid ""
 "Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
+"%s %s' niz ayarlarınızı yedeklemek ve eklentilerinizi bulmak üzere,\n"
+"Buna izin veriyor musunuz?"
 
 #, python-format
 msgid ""
 "Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
+"%s %s' niz tam imaj yedeklemek üzere, bitmesi 6 dakikja kadar sürebilir,\n"
+"buna izin veriyor musunuz"
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr ""
+msgstr "%s %s'niz internete bağlı değil, eklentileri yüklemek için Yedekleme Yöneticisini kullanmayı sonra tekrar deneyin."
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
-msgstr ""
+msgstr "%s %s'niz internete bağlı değil, ağ ayarlarınızı kontrol edip yine deneyin."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'İmaj İndiriliyor.'"
@@ -786,7 +799,8 @@ msgid "there was a problem with this device, please reformat and try again."
 msgstr "Bu aygıtta bir problem var, lütfen tekrar biçimleyin ve yeniden deneyin."
 
 msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr ""
+msgstr "bir USB belleğe, alıcının ön USB girişine takıp gücü açın"
 
 msgid "unavailable"
 msgstr "bulunamıyor"
+

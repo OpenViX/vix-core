@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-14 14:16+0100\n"
-"PO-Revision-Date: 2013-12-14 18:45+0100\n"
+"PO-Revision-Date: 2013-12-16 08:18+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: CÜNEYT OCAKLILAR <ocaklilar@gmail.com>\n"
 "Language: tr\n"
@@ -20,19 +20,19 @@ msgstr ""
 "X-Poedit-Country: TURKEY\n"
 
 msgid "%a %e %b  %-H:%M"
-msgstr "%a %e %b  %-H:%M"
+msgstr ""
 
 msgid "128 Mb"
-msgstr "128 Mb"
+msgstr ""
 
 msgid "16 Mb"
 msgstr "16 Mb"
 
 msgid "256 Mb"
-msgstr "256 Mb"
+msgstr ""
 
 msgid "30 Days"
-msgstr ""
+msgstr "30 Gün"
 
 msgid "32 Mb"
 msgstr "32 Mb"
@@ -62,7 +62,7 @@ msgid "Active:"
 msgstr "Etkin:"
 
 msgid "Allows the softcam manager to be launched from extensions."
-msgstr "Softcam yöneticisinin uzantılardan çıkarılmasını sağlar."
+msgstr "Softcam yöneticisinin uzantılardan indirilmesini sağlar."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Softcamin çalışma kontrolunu, gerekirse tekrar otomatik olarak başlamasını sağlar."
@@ -160,7 +160,7 @@ msgid "CCcam can't run whilst MGcamd is running"
 msgstr "MGcamd çalışırken CCcam çalışamaz"
 
 msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Bölüm ayrılamıyor, swap veya kayıt/zaman kaydırma yollarında kullanılmadığından emin olun"
+msgstr "Bölüm çıkarılamıyor, swap veya kayıt/zaman kaydırma yollarında kullanılmadığından emin olun"
 
 msgid "Cancel"
 msgstr "İptal"
@@ -189,7 +189,7 @@ msgid "Choose local ipk's folder"
 msgstr "Yerel ipk dosyasını seç"
 
 msgid "Choose where to mount your devices to:"
-msgstr "Aygıtlarınızın bağlanacağını konumu seçin:"
+msgstr "Aygıtlarınızın bağlanacağı konumu seçin:"
 
 msgid "Close"
 msgstr "Kapat"
@@ -336,7 +336,7 @@ msgid "Invert"
 msgstr "Tersine çevir"
 
 msgid "Ipkg"
-msgstr "Ipkg"
+msgstr ""
 
 msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 msgstr "Ek bir konum belirlememişsiniz, lütfen Yedekleme Yöneticisi kurulum menüsünde belirleyin"
@@ -354,13 +354,13 @@ msgid "MGcamd can't run whilst CCcam is running"
 msgstr "CCcam çalışırken MGcamd çalışamaz"
 
 msgid "Manage you devices mountpoints."
-msgstr "Aygıtlarınızın bağlantılarını yönetin."
+msgstr "Aygıtlarınızın bağlantı noktalarını yönetin."
 
 msgid "Manage your backups of your settings."
 msgstr "Ayarlarınızın yedeklerini yönetin."
 
 msgid "Mount"
-msgstr "Tak"
+msgstr "Bağla"
 
 msgid "Mount Manager"
 msgstr "Bağlantı Yöneticisi"
@@ -478,7 +478,7 @@ msgid "Remove Confirmation"
 msgstr "Kaldırma Onayı"
 
 msgid "Removing temp mounts..."
-msgstr "Geçici bağlar kaldırılıyor..."
+msgstr "Geçici bağlantılar kaldırılıyor..."
 
 msgid "Repeat how often"
 msgstr "Tekrar sıklığı"
@@ -524,10 +524,10 @@ msgid "Schedule Backups"
 msgstr "Yedekleri Zamanla"
 
 msgid "Script Runner"
-msgstr "Betik Çalıştırıcı"
+msgstr "Komut Dizisi Çalıştırıcı"
 
 msgid "Script Runner Setup"
-msgstr "Komut Yürütücü Kurulumu"
+msgstr "Komut Dizisi Çalıştırıcı  Kurulumu"
 
 msgid "Select"
 msgstr "Seç"
@@ -651,10 +651,10 @@ msgid "Swap Size:"
 msgstr "Swap Boyutu:"
 
 msgid "TB"
-msgstr "TB"
+msgstr ""
 
 msgid "Temp Folder"
-msgstr ""
+msgstr "Geçici Klasör"
 
 msgid "The backup location does not have enough freespace."
 msgstr "Yedek konumunda yeterli boş yer yok."
@@ -678,13 +678,13 @@ msgid "Type: "
 msgstr "Tip:"
 
 msgid "USB: "
-msgstr "USB: "
+msgstr ""
 
 msgid "Unmount"
 msgstr "Çıkar"
 
 msgid "Updating mount locations."
-msgstr ""
+msgstr "Bağlantı konumları güncelleniyor."
 
 msgid "Use as HDD"
 msgstr "HDD olarak kullan"
@@ -693,7 +693,7 @@ msgid "ViX"
 msgstr "ViX"
 
 msgid "ViX Backup Manager"
-msgstr "ViX Yedekleme Yöneticisiş"
+msgstr "ViX Yedekleme Yöneticisi"
 
 msgid "ViX Image Manager"
 msgstr "ViX İmaj Yöneticisi"
@@ -718,7 +718,7 @@ msgid ""
 "for softcam's..."
 msgstr ""
 "Lütfen bekleyin\n"
-"softcams inceleniyor..."
+"softcamlar taranıyor..."
 
 msgid "Wait please while scanning for devices..."
 msgstr "Lütfen aygıtlar incelenirken bekleyin..."

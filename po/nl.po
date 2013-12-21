@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-19 21:00+0200\n"
-"PO-Revision-Date: 2013-10-28 07:34+0100\n"
+"POT-Creation-Date: 2013-12-19 02:20+0100\n"
+"PO-Revision-Date: 2013-12-21 14:12+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -245,6 +245,9 @@ msgstr "Apparaat: niet beschikbaar"
 
 msgid "Disable Startup"
 msgstr "Startup uitschakelen"
+
+msgid "Do you want to restart GUI now ?"
+msgstr "Wilt u de gebruikersinterface nu opnieuw starten?"
 
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Wilt u uw plugins weer installeren?"
@@ -599,8 +602,8 @@ msgstr "Bezig Softcam te stoppen..."
 msgid "SoftcamCheck"
 msgstr "Softcam controle"
 
-msgid "Sorry Image Restore is not supported on the"
-msgstr "Sorry: het terugzetten van een image wordt niet ondersteund door een"
+msgid "Sorry Image Restore is not supported on the "
+msgstr "Helaas is het herstellen nit ondersteund op de "
 
 msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
 msgstr "De locatie bestaat niet; U kunt die instellen via het menu van de backupmanager"
@@ -656,6 +659,9 @@ msgstr "Tijdelijke folder"
 
 msgid "The backup location does not have enough freespace."
 msgstr "De back-uplocatie heeft niet voldoende ruimte."
+
+msgid "The backup location does not have enough freespace.\n"
+msgstr "De back-up locatie heeft niet genoeg vrije ruimte.\n"
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "De gekozen locatie bestaat niet, gebruik nu /media/hdd"
@@ -802,3 +808,5 @@ msgstr "naar een USB-stick, plaats die in de aansluiting op de voorkant en schak
 msgid "unavailable"
 msgstr "niet beschikbaar"
 
+#~ msgid "Sorry Image Restore is not supported on the"
+#~ msgstr "Sorry: het terugzetten van een image wordt niet ondersteund door een"

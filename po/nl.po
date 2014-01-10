@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-19 02:20+0100\n"
-"PO-Revision-Date: 2013-12-21 14:12+0100\n"
+"POT-Creation-Date: 2014-01-09 22:21+0100\n"
+"PO-Revision-Date: 2014-01-10 17:46+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -442,8 +442,11 @@ msgstr "Selecteer het medium dat u voor de swapfile wilt gebruiken"
 msgid "Please select the file to restore ?"
 msgstr "Kies bestanden die teruggeplaatst moeten worden."
 
-msgid "Please wait while gathers information..."
-msgstr "De informatie wordt verzameld..."
+msgid "Please wait while gathers information... A"
+msgstr "Even wachten terwijl de informatie verzameld wordt..."
+
+msgid "Please wait while gathers information... B"
+msgstr "Even wachten terwijl de informatie verzameld wordt..."
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Even wachten tot het installeren van plugins gereed is..."
@@ -617,6 +620,9 @@ msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer later opnieuw de pl
 #, python-format
 msgid "Sorry you %s %s is not yet compatible."
 msgstr "Sorry uw %s %s is nog niet compatible."
+
+msgid "Sorry, but the file is not compatible with this image version."
+msgstr "Het bestand is niet verenigbaar met deze versie van de firmware."
 
 msgid "Sorry, but the restore failed."
 msgstr "Het terugplaatsen is mislukt."
@@ -807,6 +813,9 @@ msgstr "naar een USB-stick, plaats die in de aansluiting op de voorkant en schak
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
+
+#~ msgid "Please wait while gathers information..."
+#~ msgstr "De informatie wordt verzameld..."
 
 #~ msgid "Sorry Image Restore is not supported on the"
 #~ msgstr "Sorry: het terugzetten van een image wordt niet ondersteund door een"

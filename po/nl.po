@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 22:21+0100\n"
-"PO-Revision-Date: 2014-01-10 17:46+0100\n"
+"POT-Creation-Date: 2014-02-11 13:23+0100\n"
+"PO-Revision-Date: 2014-02-11 21:26+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -120,6 +120,12 @@ msgstr ""
 msgid "Autostart"
 msgstr "Autostart"
 
+msgid "Backing up Kernel..."
+msgstr "Kernel wordt geback-upped..."
+
+msgid "Backing up Root file system..."
+msgstr "Root file systeem wordt gebackupped..."
+
 msgid "Backing up files..."
 msgstr "Bestanden worden geback-upped"
 
@@ -209,9 +215,6 @@ msgstr "Creëer en beheer uw swapfiles."
 
 msgid "Create and Restore complete images of the system."
 msgstr "Creëer en herstel complete images van het systeem."
-
-msgid "Creating Backup Files..."
-msgstr "Creëert back-upbestanden..."
 
 msgid "Creating Swap.."
 msgstr "Creëert swap"
@@ -430,9 +433,6 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "JA, voer een herstelactie uit"
 
-msgid "Please copy the folder"
-msgstr "Kopieer de map"
-
 msgid "Please enter a folder that contains some packages."
 msgstr "Kies een folder die plugins bevat."
 
@@ -442,11 +442,8 @@ msgstr "Selecteer het medium dat u voor de swapfile wilt gebruiken"
 msgid "Please select the file to restore ?"
 msgstr "Kies bestanden die teruggeplaatst moeten worden."
 
-msgid "Please wait while gathers information... A"
-msgstr "Even wachten terwijl de informatie verzameld wordt..."
-
-msgid "Please wait while gathers information... B"
-msgstr "Even wachten terwijl de informatie verzameld wordt..."
+msgid "Please wait while gathers information..."
+msgstr "De informatie wordt verzameld..."
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Even wachten tot het installeren van plugins gereed is..."
@@ -605,9 +602,6 @@ msgstr "Bezig Softcam te stoppen..."
 msgid "SoftcamCheck"
 msgstr "Softcam controle"
 
-msgid "Sorry Image Restore is not supported on the "
-msgstr "Helaas is het herstellen nit ondersteund op de "
-
 msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
 msgstr "De locatie bestaat niet; U kunt die instellen via het menu van de backupmanager"
 
@@ -616,10 +610,6 @@ msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
 
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer later opnieuw de plugins te installeren via de backupmanager."
-
-#, python-format
-msgid "Sorry you %s %s is not yet compatible."
-msgstr "Sorry uw %s %s is nog niet compatible."
 
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Het bestand is niet verenigbaar met deze versie van de firmware."
@@ -808,14 +798,29 @@ msgstr "echo 'Download image.'"
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "er was een probleem met dit medium; formatteer opnieuw en probeer het weer."
 
-msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr "naar een USB-stick, plaats die in de aansluiting op de voorkant en schakel uw ontvanger in"
-
 msgid "unavailable"
 msgstr "niet beschikbaar"
 
-#~ msgid "Please wait while gathers information..."
-#~ msgstr "De informatie wordt verzameld..."
+#~ msgid "Creating Backup Files..."
+#~ msgstr "Creëert back-upbestanden..."
+
+#~ msgid "Please copy the folder"
+#~ msgstr "Kopieer de map"
+
+#~ msgid "Please wait while gathers information... A"
+#~ msgstr "Even wachten terwijl de informatie verzameld wordt..."
+
+#~ msgid "Please wait while gathers information... B"
+#~ msgstr "Even wachten terwijl de informatie verzameld wordt..."
 
 #~ msgid "Sorry Image Restore is not supported on the"
 #~ msgstr "Sorry: het terugzetten van een image wordt niet ondersteund door een"
+
+#~ msgid "Sorry Image Restore is not supported on the "
+#~ msgstr "Helaas is het herstellen nit ondersteund op de "
+
+#~ msgid "Sorry you %s %s is not yet compatible."
+#~ msgstr "Sorry uw %s %s is nog niet compatible."
+
+#~ msgid "to a USB stick, place in front USB port of reciver and power on"
+#~ msgstr "naar een USB-stick, plaats die in de aansluiting op de voorkant en schakel uw ontvanger in"

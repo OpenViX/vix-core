@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-06 05:00+0100\n"
-"PO-Revision-Date: 2014-01-08 21:01+0100\n"
+"POT-Creation-Date: 2014-02-11 13:38+0100\n"
+"PO-Revision-Date: 2014-02-11 20:52+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -124,6 +124,12 @@ msgstr ""
 msgid "Autostart"
 msgstr "Autostart"
 
+msgid "Backing up Kernel..."
+msgstr "Sichern vom Kernel..."
+
+msgid "Backing up Root file system..."
+msgstr "Sichern vom Root Dateisystem..."
+
 msgid "Backing up files..."
 msgstr "Sichert Dateien..."
 
@@ -221,9 +227,6 @@ msgstr "Erzeuge und verwalte Swapdateien"
 
 msgid "Create and Restore complete images of the system."
 msgstr "Erzeuge Images und stelle System wieder her."
-
-msgid "Creating Backup Files..."
-msgstr "Backup-Dateien werden erstellt..."
 
 msgid "Creating Swap.."
 msgstr "Auslagerungsdatei wird erstellt..."
@@ -448,9 +451,6 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "OK, zum Wiederherstellen"
 
-msgid "Please copy the folder"
-msgstr "Bitte den Ordner kopieren"
-
 msgid "Please enter a folder that contains some packages."
 msgstr "Bitte einen Ordner wählen der Pakete enthält."
 
@@ -460,11 +460,8 @@ msgstr "Bitte Gerät für Auslagerungsdatei auswählen"
 msgid "Please select the file to restore ?"
 msgstr "Bitte wähle Datei die wieder hergestellt werden soll."
 
-msgid "Please wait while gathers information... A"
-msgstr "Bitte warten Informationen werden gesammelt... A"
-
-msgid "Please wait while gathers information... B"
-msgstr "Bitte warten Informationen werden gesammelt... B"
+msgid "Please wait while gathers information..."
+msgstr "Bitte warten während Informationen gesammelt werden..."
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Bitte warten bis Plugins wiederhergestellt sind"
@@ -627,10 +624,6 @@ msgstr "Stoppe Softcam..."
 msgid "SoftcamCheck"
 msgstr "Softcam-Überprüfung"
 
-msgid "Sorry Image Restore is not supported on the "
-msgstr ""
-"Tut uns leid aber Image Wiederherstellung wird nicht unterstützt bei der "
-
 msgid ""
 "Sorry but location does exist or not setup, please setup in Backup Manager "
 "setup menu "
@@ -649,10 +642,6 @@ msgid ""
 msgstr ""
 "Tut uns leid. Feeds sind wegen Wartung nicht erreichbar. Bitte Plugins mit "
 "Backup Verwaltung später wiederherstellen."
-
-#, python-format
-msgid "Sorry you %s %s is not yet compatible."
-msgstr "Tut uns leid aber %s %s ist noch nicht kompatibel."
 
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr ""
@@ -869,15 +858,31 @@ msgid "there was a problem with this device, please reformat and try again."
 msgstr ""
 "Es gibt ein Problem mit dem Gerät, bitte formatieren und erneut versuchen."
 
-msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr ""
-"auf einen USB-Stick, in der vorderen USB Buchse stecken und Einschalten"
-
 msgid "unavailable"
 msgstr "nicht verfügbar"
 
-#~ msgid "Please wait while gathers information..."
-#~ msgstr "Bitte warten während Informationen gesammelt werden..."
+#~ msgid "Creating Backup Files..."
+#~ msgstr "Backup-Dateien werden erstellt..."
+
+#~ msgid "Please copy the folder"
+#~ msgstr "Bitte den Ordner kopieren"
+
+#~ msgid "Please wait while gathers information... A"
+#~ msgstr "Bitte warten Informationen werden gesammelt... A"
+
+#~ msgid "Please wait while gathers information... B"
+#~ msgstr "Bitte warten Informationen werden gesammelt... B"
 
 #~ msgid "Sorry Image Restore is not supported on the"
 #~ msgstr "Tut uns leid Image Wiederherstellung wird nicht unterstützt auf der"
+
+#~ msgid "Sorry Image Restore is not supported on the "
+#~ msgstr ""
+#~ "Tut uns leid aber Image Wiederherstellung wird nicht unterstützt bei der "
+
+#~ msgid "Sorry you %s %s is not yet compatible."
+#~ msgstr "Tut uns leid aber %s %s ist noch nicht kompatibel."
+
+#~ msgid "to a USB stick, place in front USB port of reciver and power on"
+#~ msgstr ""
+#~ "auf einen USB-Stick, in der vorderen USB Buchse stecken und Einschalten"

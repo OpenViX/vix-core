@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-11 13:23+0100\n"
-"PO-Revision-Date: 2014-02-11 21:26+0100\n"
+"POT-Creation-Date: 2014-09-17 11:36+0100\n"
+"PO-Revision-Date: 2014-09-27 06:53+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -166,22 +166,14 @@ msgstr "Back-up prefix"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam en MGcamd kunnen niet beide actief zijn"
 
-msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Kan de partitie niet 'unmounten'; kijk of deze niet wordt gebruikt voor SWAP/Opname/Timeshift/Logs/EPG."
+msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
+msgstr "Kan de partitie niet unmounten; kijk of deze niet in gebruik is als opname/timeshift pad."
 
 msgid "Cancel"
 msgstr "Annuleer"
 
 msgid "Change Location"
 msgstr "Verander locatie"
-
-#, python-format
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your %s %s now?"
-msgstr ""
-"U moet het systeem herstarten om de veranderingen door te voeren.\n"
-"Uw %s %s nu herstarten?"
 
 msgid "Checking Free RAM.."
 msgstr "Controleert vrije RAM..."
@@ -210,11 +202,11 @@ msgstr "Vergelijkt met back-up..."
 msgid "Create"
 msgstr "Creëer"
 
-msgid "Create and Manage your swapfiles."
-msgstr "Creëer en beheer uw swapfiles."
+msgid "Create and Manage your swap files."
+msgstr "Beheer SWAP-bestanden."
 
-msgid "Create and Restore complete images of the system."
-msgstr "Creëer en herstel complete images van het systeem."
+msgid "Create and Restore complete images of your system."
+msgstr "Maak en herstel complete images van uw systeem."
 
 msgid "Creating Swap.."
 msgstr "Creëert swap"
@@ -342,8 +334,8 @@ msgstr "Keer om"
 msgid "Ipkg"
 msgstr "IPKG"
 
-msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
-msgstr "U heeft geen extra locatie ingesteld; U kunt dat doen via het menu van de Backup Manager."
+msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
+msgstr "Het lijkt erop dat u geen extra locatie heeft ingesteld; doe dat in het context menu van de back-up manager."
 
 msgid "Location of where backup should be saved."
 msgstr "Locatie voor uw back-ups."
@@ -357,11 +349,11 @@ msgstr "MB"
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr "MGcamd en CCcam kunnen niet beide actief zijn"
 
-msgid "Manage you devices mountpoints."
-msgstr "Beheer de mountpoints van uw apparaten."
+msgid "Manage the backups of your settings."
+msgstr "Begeer de back-ups van uw instellingen."
 
-msgid "Manage your backups of your settings."
-msgstr "Beheer de back-ups van uw instellingen."
+msgid "Manage your devices mount points."
+msgstr "Beheer hoe uw apparaten gemount zijn."
 
 msgid "Mount"
 msgstr "Mount"
@@ -450,6 +442,13 @@ msgstr "Even wachten tot het installeren van plugins gereed is..."
 
 msgid "Please wait while restore prepares"
 msgstr "Wacht terwijl de restore wordt voorbereid"
+
+msgid "Please wait while scanning for devices..."
+msgstr "Wacht, de apparaten worden gescand..."
+
+#, python-format
+msgid "Please wait while scanning your %s %s devices..."
+msgstr "Uw %s %s apparaten worden gescand..."
 
 msgid "Please wait while settings restore completes..."
 msgstr "Even wachten tot het herstellen van de instellingen gereed is..."
@@ -602,8 +601,8 @@ msgstr "Bezig Softcam te stoppen..."
 msgid "SoftcamCheck"
 msgstr "Softcam controle"
 
-msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-msgstr "De locatie bestaat niet; U kunt die instellen via het menu van de backupmanager"
+msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
+msgstr "Die locatie bestaat niet of is niet ingesteld; maak de juiste instelling in het context menu van de back-up manager."
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
@@ -658,6 +657,14 @@ msgstr "De back-uplocatie heeft niet voldoende ruimte."
 
 msgid "The backup location does not have enough freespace.\n"
 msgstr "De back-up locatie heeft niet genoeg vrije ruimte.\n"
+
+#, python-format
+msgid ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
+msgstr ""
+"Het systeem moet herstart worden om deze aanpassing te effectueren.\n"
+"Uw %s %s nu herstarten?"
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "De gekozen locatie bestaat niet, gebruik nu /media/hdd"
@@ -719,13 +726,6 @@ msgid ""
 msgstr ""
 "Een ogenblikje geduld, zoeken \n"
 "naar softcams"
-
-msgid "Wait please while scanning for devices..."
-msgstr "Even wachten op het scannen van de media...."
-
-#, python-format
-msgid "Wait please while scanning your %s %s devices..."
-msgstr "Wacht terwijl uw %s %s medium gescand wordt ..."
 
 msgid "Wait please while scanning..."
 msgstr "Een ogenblikje geduld, zoeken is bezig..."
@@ -801,8 +801,33 @@ msgstr "er was een probleem met dit medium; formatteer opnieuw en probeer het we
 msgid "unavailable"
 msgstr "niet beschikbaar"
 
+#~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
+#~ msgstr "Kan de partitie niet 'unmounten'; kijk of deze niet wordt gebruikt voor SWAP/Opname/Timeshift/Logs/EPG."
+
+#~ msgid ""
+#~ "Changes need a system restart to take effect.\n"
+#~ "Restart your %s %s now?"
+#~ msgstr ""
+#~ "U moet het systeem herstarten om de veranderingen door te voeren.\n"
+#~ "Uw %s %s nu herstarten?"
+
+#~ msgid "Create and Manage your swapfiles."
+#~ msgstr "Creëer en beheer uw swapfiles."
+
+#~ msgid "Create and Restore complete images of the system."
+#~ msgstr "Creëer en herstel complete images van het systeem."
+
 #~ msgid "Creating Backup Files..."
 #~ msgstr "Creëert back-upbestanden..."
+
+#~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+#~ msgstr "U heeft geen extra locatie ingesteld; U kunt dat doen via het menu van de Backup Manager."
+
+#~ msgid "Manage you devices mountpoints."
+#~ msgstr "Beheer de mountpoints van uw apparaten."
+
+#~ msgid "Manage your backups of your settings."
+#~ msgstr "Beheer de back-ups van uw instellingen."
 
 #~ msgid "Please copy the folder"
 #~ msgstr "Kopieer de map"
@@ -819,8 +844,17 @@ msgstr "niet beschikbaar"
 #~ msgid "Sorry Image Restore is not supported on the "
 #~ msgstr "Helaas is het herstellen nit ondersteund op de "
 
+#~ msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
+#~ msgstr "De locatie bestaat niet; U kunt die instellen via het menu van de backupmanager"
+
 #~ msgid "Sorry you %s %s is not yet compatible."
 #~ msgstr "Sorry uw %s %s is nog niet compatible."
+
+#~ msgid "Wait please while scanning for devices..."
+#~ msgstr "Even wachten op het scannen van de media...."
+
+#~ msgid "Wait please while scanning your %s %s devices..."
+#~ msgstr "Wacht terwijl uw %s %s medium gescand wordt ..."
 
 #~ msgid "to a USB stick, place in front USB port of reciver and power on"
 #~ msgstr "naar een USB-stick, plaats die in de aansluiting op de voorkant en schakel uw ontvanger in"

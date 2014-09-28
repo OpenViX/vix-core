@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-11 13:38+0100\n"
-"PO-Revision-Date: 2014-02-11 20:52+0100\n"
+"POT-Creation-Date: 2014-09-27 16:24+0100\n"
+"PO-Revision-Date: 2014-09-28 19:08+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -175,25 +175,17 @@ msgid "CCcam can't run whilst MGcamd is running"
 msgstr "Während MGcamd läuft kann CCcam nicht ausgeführt werden"
 
 msgid ""
-"Can't unmount partition, make sure it is not being used for swap or record/"
-"timeshift paths"
+"Can't unmount the partition, make sure it is not being used for swap or "
+"record/timeshift paths"
 msgstr ""
-"Partition kann nicht ausgehängt (umount) werden. Überprüfe ob sie nicht für "
-"Swap oder Aufnahme/TimeShift benutzt wird"
+"Partition aushängen nicht möglich. Bitte sicher stellen das sie nicht für "
+"Swap/Aufnahme/TimeShift benutzt wird."
 
 msgid "Cancel"
 msgstr "Abbrechen"
 
 msgid "Change Location"
 msgstr "Ordner ändern"
-
-#, python-format
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your %s %s now?"
-msgstr ""
-"Änderungen benötigen Neustart um wirksam zu werden.\n"
-"%s %s jetzt neu starten?"
 
 msgid "Checking Free RAM.."
 msgstr "Prüfe freien Arbeitsspeicher.."
@@ -222,11 +214,11 @@ msgstr "Vergleiche mit Backup..."
 msgid "Create"
 msgstr "Erstellen"
 
-msgid "Create and Manage your swapfiles."
-msgstr "Erzeuge und verwalte Swapdateien"
+msgid "Create and Manage your swap files."
+msgstr "Swap Datei erzeugen oder verwalten."
 
-msgid "Create and Restore complete images of the system."
-msgstr "Erzeuge Images und stelle System wieder her."
+msgid "Create and Restore complete images of your system."
+msgstr "Komplette Images vom System erzeugen oder flashen."
 
 msgid "Creating Swap.."
 msgstr "Auslagerungsdatei wird erstellt..."
@@ -357,11 +349,11 @@ msgid "Ipkg"
 msgstr ""
 
 msgid ""
-"It seems you have not setup a extra location, please setup in Backup Manager "
-"setup menu "
+"It seems you have not setup an extra location, please setup in Backup "
+"Manager setup menu "
 msgstr ""
-"Es sieht so aus als wenn Du noch keinen Extra-Ort angegeben hast. Bitte "
-"Extra-Ort in den Einstellungen von der Backup-Verwaltung festlegen."
+"Es sieht so aus als wenn kein Extra Ort konfiguriert wurde. Bitte in den "
+"Einstellungen vom Backup-Manager einstellen."
 
 msgid "Location of where backup should be saved."
 msgstr "Pfad wo Backups gespeichert werden sollen."
@@ -375,11 +367,11 @@ msgstr "MB"
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr "Während CCcam läuft kann MGcamd nicht ausgeführt werden"
 
-msgid "Manage you devices mountpoints."
-msgstr "Verwalte deine Einhängepunkte"
+msgid "Manage the backups of your settings."
+msgstr "Verwalte die Backups der Einstellungen."
 
-msgid "Manage your backups of your settings."
-msgstr "Verwalte Backups deiner Einstellungen."
+msgid "Manage your devices mount points."
+msgstr "Verwalte die Einhängepunkte."
 
 msgid "Mount"
 msgstr ""
@@ -468,6 +460,13 @@ msgstr "Bitte warten bis Plugins wiederhergestellt sind"
 
 msgid "Please wait while restore prepares"
 msgstr "Bitte warten solange Wiederherstellung sich vorbereitet"
+
+msgid "Please wait while scanning for devices..."
+msgstr "Bitte warten. Suche Geräte..."
+
+#, python-format
+msgid "Please wait while scanning your %s %s devices..."
+msgstr "Bitte warten. Suche Geräte für %s %s..."
 
 msgid "Please wait while settings restore completes..."
 msgstr "Bitte warten bis Einstellungen wiederhergestellt sind"
@@ -625,11 +624,11 @@ msgid "SoftcamCheck"
 msgstr "Softcam-Überprüfung"
 
 msgid ""
-"Sorry but location does exist or not setup, please setup in Backup Manager "
-"setup menu "
+"Sorry but that location does not exist or is not setup, please setup in "
+"Backup Manager setup menu "
 msgstr ""
-"Sorry aber dieser Ort existiert nicht oder wurde nicht konfiguriert. Bitte "
-"in den Einstellungen von der Backup-Verwaltung festlegen."
+"Tut uns leid aber der Ort ist nicht vorhanden oder nicht konfiguriert. Bitte "
+"in den Einstellungen vom Backup-Manager einstellen."
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr ""
@@ -704,6 +703,14 @@ msgstr "Ungenügend Speicherplatz am Sicherungsspeicherort."
 msgid "The backup location does not have enough freespace.\n"
 msgstr "Das Sicherungs Verzeichnis hat nicht genug freien Speicher.\n"
 
+#, python-format
+msgid ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
+msgstr ""
+"Die Änderungen erfordern einen Neustart.\n"
+"Jetzt %s %s neu starten?"
+
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Der gewählte Speicherort existiert nicht, nutze /media/hdd"
 
@@ -764,13 +771,6 @@ msgid ""
 msgstr ""
 "Bitte warten während Suchlauf \n"
 "nach Softcams..."
-
-msgid "Wait please while scanning for devices..."
-msgstr "Bitte warten während Suchlauf nach Geräten..."
-
-#, python-format
-msgid "Wait please while scanning your %s %s devices..."
-msgstr "Bitte warten während %s %s Geräte gesucht werden..."
 
 msgid "Wait please while scanning..."
 msgstr "Während Suchlauf bitte warten..."
@@ -861,8 +861,41 @@ msgstr ""
 msgid "unavailable"
 msgstr "nicht verfügbar"
 
+#~ msgid ""
+#~ "Can't unmount partition, make sure it is not being used for swap or "
+#~ "record/timeshift paths"
+#~ msgstr ""
+#~ "Partition kann nicht ausgehängt (umount) werden. Überprüfe ob sie nicht "
+#~ "für Swap oder Aufnahme/TimeShift benutzt wird"
+
+#~ msgid ""
+#~ "Changes need a system restart to take effect.\n"
+#~ "Restart your %s %s now?"
+#~ msgstr ""
+#~ "Änderungen benötigen Neustart um wirksam zu werden.\n"
+#~ "%s %s jetzt neu starten?"
+
+#~ msgid "Create and Manage your swapfiles."
+#~ msgstr "Erzeuge und verwalte Swapdateien"
+
+#~ msgid "Create and Restore complete images of the system."
+#~ msgstr "Erzeuge Images und stelle System wieder her."
+
 #~ msgid "Creating Backup Files..."
 #~ msgstr "Backup-Dateien werden erstellt..."
+
+#~ msgid ""
+#~ "It seems you have not setup a extra location, please setup in Backup "
+#~ "Manager setup menu "
+#~ msgstr ""
+#~ "Es sieht so aus als wenn Du noch keinen Extra-Ort angegeben hast. Bitte "
+#~ "Extra-Ort in den Einstellungen von der Backup-Verwaltung festlegen."
+
+#~ msgid "Manage you devices mountpoints."
+#~ msgstr "Verwalte deine Einhängepunkte"
+
+#~ msgid "Manage your backups of your settings."
+#~ msgstr "Verwalte Backups deiner Einstellungen."
 
 #~ msgid "Please copy the folder"
 #~ msgstr "Bitte den Ordner kopieren"
@@ -880,8 +913,21 @@ msgstr "nicht verfügbar"
 #~ msgstr ""
 #~ "Tut uns leid aber Image Wiederherstellung wird nicht unterstützt bei der "
 
+#~ msgid ""
+#~ "Sorry but location does exist or not setup, please setup in Backup "
+#~ "Manager setup menu "
+#~ msgstr ""
+#~ "Sorry aber dieser Ort existiert nicht oder wurde nicht konfiguriert. "
+#~ "Bitte in den Einstellungen von der Backup-Verwaltung festlegen."
+
 #~ msgid "Sorry you %s %s is not yet compatible."
 #~ msgstr "Tut uns leid aber %s %s ist noch nicht kompatibel."
+
+#~ msgid "Wait please while scanning for devices..."
+#~ msgstr "Bitte warten während Suchlauf nach Geräten..."
+
+#~ msgid "Wait please while scanning your %s %s devices..."
+#~ msgstr "Bitte warten während %s %s Geräte gesucht werden..."
 
 #~ msgid "to a USB stick, place in front USB port of reciver and power on"
 #~ msgstr ""

@@ -1,23 +1,22 @@
 # Estonian translations for plugins package.
 # Copyright (C) 2011 THE plugins'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the plugins package.
-# Automatically generated, 2011.
 #
+# Automatically generated, 2011, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-27 03:37+0100\n"
-"PO-Revision-Date: 2014-03-27 22:07+0100\n"
+"POT-Creation-Date: 2014-09-17 12:03+0100\n"
+"PO-Revision-Date: 2014-10-01 15:54+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
-"Language-Team: rimas\n"
+"Language-Team: Estonian <kde-i18n-doc@kde.org>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-Language: Estonian\n"
+"X-Generator: Poedit 1.6.9\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -62,28 +61,28 @@ msgid "Active:"
 msgstr "Aktiivne:"
 
 msgid "Allows the softcam manager to be launched from extensions."
-msgstr "Võimaldab EMU halduri käivitada laienduste menüüst."
+msgstr "Võimaldab EMU halduri käivitamise laienduste menüüst."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
-msgstr "Võimaldab kontrollida, kas EMU ei ole hangunud ja vajadusel selle automaatselt taaskäivitada."
+msgstr "Võimaldab kontrollida, kas EMU on hangunud ja vajadusel selle automaatselt taaskäivitada."
 
 msgid "Allows you have the window close automatically."
 msgstr "Võimaldab akna automaatse sulgumise."
 
 msgid "Allows you schedule your boackups."
-msgstr "Võimaldab planeerida varukoopiate loomist."
+msgstr "Võimaldab ajastada varukoopiate loomist."
 
 msgid "Allows you schedule your image backups."
-msgstr "Võimaldab planeerida imagekoopiate loomist."
+msgstr "Võimaldab ajastada süsteemitõmmiste loomist."
 
 msgid "Allows you to tag your backups to a box. (default is box name/type)"
 msgstr "Võimaldab siduda varukoopia nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr "Võimaldab siduda imagekoopia nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
+msgstr "Võimaldab siduda süsteemitõmmise nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
 
 msgid "Are you ready to create a backup image ?"
-msgstr "Kas lood süsteemist imagekoopia? "
+msgstr "Kas lood süsteemitõmmise? "
 
 msgid "Are you ready to install ?"
 msgstr "Kas paigaldad?"
@@ -99,7 +98,7 @@ msgid ""
 "Are you sure you want to download this image:\n"
 " "
 msgstr ""
-"Kas laed selle image alla:\n"
+"Kas tõmbad selle süsteemitõmmise:\n"
 " "
 
 msgid ""
@@ -113,7 +112,7 @@ msgid ""
 "Are you sure you want to restore this image:\n"
 " "
 msgstr ""
-"Kas taastad image:\n"
+"Kas paigaldad süsteemitõmmise:\n"
 " "
 
 msgid "Autostart"
@@ -123,7 +122,7 @@ msgid "Backing up Kernel..."
 msgstr "Kerneli varundamine..."
 
 msgid "Backing up Root file system..."
-msgstr "Juur failisüsteemi varundamine"
+msgstr "Failisüsteemi varundamine"
 
 msgid "Backing up files..."
 msgstr "Varundamine..."
@@ -141,7 +140,7 @@ msgid "Backup Location"
 msgstr "Varukoopia asukoht"
 
 msgid "Backup Manager"
-msgstr "Varukoopia haldur"
+msgstr "Varukoopiad"
 
 msgid "Backup Manager Log"
 msgstr "Varundamise logi"
@@ -165,7 +164,7 @@ msgstr "Varukoopia nimi"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "MGcamd töötamisel ei saa CCcam käivituda"
 
-msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
+msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
 msgstr "Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale või salvestamise/ajanihke jaoks"
 
 msgid "Cancel"
@@ -173,14 +172,6 @@ msgstr "Tühista"
 
 msgid "Change Location"
 msgstr "Muuda asukohta"
-
-#, python-format
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your %s %s now?"
-msgstr ""
-"Muudatused vajavad jõustumiseks süsteemi taaskäivitamist.\n"
-"Kas taaskäivitad %s %s?"
 
 msgid "Checking Free RAM.."
 msgstr "Vaba mälu uurimine.."
@@ -209,11 +200,11 @@ msgstr "Võrdleme varukoopiaga..."
 msgid "Create"
 msgstr "Loo"
 
-msgid "Create and Manage your swapfiles."
+msgid "Create and Manage your swap files."
 msgstr "Loo ja halda saalefaile"
 
-msgid "Create and Restore complete images of the system."
-msgstr "Loo ja taasta täielikke süsteemi varukoopiaid."
+msgid "Create and Restore complete images of your system."
+msgstr "Loo ja taasta täielikke süsteemitõmmiseid."
 
 msgid "Creating Swap.."
 msgstr "Saale loomine..."
@@ -258,16 +249,16 @@ msgid "Do you want to restore your Enigma2 settings ?"
 msgstr "Kas taastad Enigma2 seadistused?"
 
 msgid "Download"
-msgstr "Allalaadimine"
+msgstr "Tõmba"
 
 msgid "Download Confirmation"
 msgstr "Allalaadimise kinnitamine"
 
 msgid "Downloading Image..."
-msgstr "Image allalaadimine..."
+msgstr "Tõmmise allalaadimine..."
 
 msgid "Downloads"
-msgstr "Allalaadimised"
+msgstr "Tõmba"
 
 msgid "Enable Startup"
 msgstr "Luba autostart"
@@ -306,10 +297,10 @@ msgid "IPK Installer"
 msgstr "IPK paigaldaja"
 
 msgid "Image Manager"
-msgstr "Image haldur"
+msgstr "Süsteemitõmmised"
 
 msgid "Image Manager Setup"
-msgstr "Seadistamine"
+msgstr "Süsteemitõmmised"
 
 msgid "Inactive"
 msgstr "Väljas"
@@ -341,14 +332,14 @@ msgstr "Pööra ümber"
 msgid "Ipkg"
 msgstr "Ipkg"
 
-msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
 msgstr "Eraldi asukoht on määramata. Määra see kasutades varukoopia haldurit"
 
 msgid "Location of where backup should be saved."
 msgstr "Varukoopia salvestamise asukoht."
 
 msgid "Location of where image backup should be saved."
-msgstr "Imagekoopia salvestamise asukoht."
+msgstr "Süsteemitõmmise salvestamise asukoht."
 
 msgid "MB"
 msgstr "MB"
@@ -356,11 +347,11 @@ msgstr "MB"
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr "CCcam töötamisel ei saa MGcamd käivituda"
 
-msgid "Manage you devices mountpoints."
-msgstr "Halda andmekandjate haakepunkte."
+msgid "Manage the backups of your settings."
+msgstr "Loo ja taasta varukoopiaid seadistustest."
 
-msgid "Manage your backups of your settings."
-msgstr "Halda varukoopiaid seadistustest."
+msgid "Manage your devices mount points."
+msgstr "Halda andmekandjate haakepunkte."
 
 msgid "Mount"
 msgstr "Haagi"
@@ -381,13 +372,13 @@ msgid "NO, do not restore plugins"
 msgstr "Ei, laiendusi ei taasta"
 
 msgid "NO, do not restore settings"
-msgstr "Ei, seadustusi ei taasta"
+msgstr "Ei, seadistusi ei taasta"
 
 msgid "New Backup"
 msgstr "Loo uus"
 
 msgid "Next Backup: "
-msgstr "Järgmine varukoopia: "
+msgstr "Järgmine varundamine: "
 
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -448,7 +439,14 @@ msgid "Please wait while plugins restore completes..."
 msgstr "Oota laienduste taastamist..."
 
 msgid "Please wait while restore prepares"
-msgstr "Oota ettevalmistusi taastamiseks"
+msgstr "Valmistumine taastamiseks"
+
+msgid "Please wait while scanning for devices..."
+msgstr "Oota, riistavara uurimine..."
+
+#, python-format
+msgid "Please wait while scanning your %s %s devices..."
+msgstr "Oota, %s %s riistavara uurimine..."
 
 msgid "Please wait while settings restore completes..."
 msgstr "Oota kanalinimekirja taastamist..."
@@ -539,10 +537,10 @@ msgid "Select a package to install:"
 msgstr "Vali paigaldamiseks pakett:"
 
 msgid "Select an image to Download:"
-msgstr "Vali allalaadimiseks tarkvaratõmmis:"
+msgstr "Vali antud nimekirjast:"
 
 msgid "Select an image to restore:"
-msgstr "Taasta image:"
+msgstr "Paigalda süsteemitõmmis:"
 
 msgid "Select extra packages folder"
 msgstr "Vali lisapakettide kaust"
@@ -581,7 +579,7 @@ msgid "Size: "
 msgstr "Suurus: "
 
 msgid "Softcam Manager"
-msgstr "EMU haldur"
+msgstr "EMU haldamine"
 
 msgid "Softcam Manager Log"
 msgstr "EMU halduri logi"
@@ -601,7 +599,7 @@ msgstr "EMU peatamine..."
 msgid "SoftcamCheck"
 msgstr "EMU kontroll"
 
-msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
+msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
 msgstr "Asukoht puudub või on määramata. Määra see kasutades varukoopia haldurit"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
@@ -638,7 +636,7 @@ msgid "Swap File not found. You have to create the file before to activate."
 msgstr "Saalefaili ei leitud. Enne käivitamist tuleb see luua."
 
 msgid "Swap Manager"
-msgstr "Saale haldur"
+msgstr "Saale haldamine"
 
 msgid "Swap Place:"
 msgstr "Saale asukoht:"
@@ -657,6 +655,14 @@ msgstr "Varundamise asukohas ei ole piisavalt vaba ruumi."
 
 msgid "The backup location does not have enough freespace.\n"
 msgstr "Varukoopia asukohas ei ole piisavalt vaba ruumi.\n"
+
+#, python-format
+msgid ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
+msgstr ""
+"Muudatused vajavad jõustumiseks süsteemi taaskäivitamist.\n"
+"Kas taaskäivitad %s %s?"
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Valitud asukoht puudub, kasutame /media/hdd"
@@ -692,10 +698,10 @@ msgid "ViX"
 msgstr "ViX"
 
 msgid "ViX Backup Manager"
-msgstr "ViX varukoopia haldur"
+msgstr "ViX varukoopiad"
 
 msgid "ViX Image Manager"
-msgstr "ViX image haldur"
+msgstr "ViX süsteemitõmmised"
 
 msgid "ViX Mount Manager"
 msgstr "ViX haakepunktid"
@@ -719,13 +725,6 @@ msgstr ""
 "Oota, \n"
 "EMU otsimine..."
 
-msgid "Wait please while scanning for devices..."
-msgstr "Oota, riistavara uurimine..."
-
-#, python-format
-msgid "Wait please while scanning your %s %s devices..."
-msgstr "Oota, %s %s riistavara uurimine..."
-
 msgid "Wait please while scanning..."
 msgstr "Oota, toimub otsing..."
 
@@ -741,7 +740,7 @@ msgstr ""
 "Tere tulemast taastamisabilisse.\n"
 "\n"
 "Leiti varukoopia.\n"
-"Saad kasutada seda abilist, et taastada oma seadistused ja laiendused, mis olid paigaldatud ajal, kui varukoopia loodi.\n"
+"Laiendused ja seadistused, mis olid varukoopia loomise ajaks paigaldatud, saab taastada kasutades seda tööriista.\n"
 
 msgid "YES, to restore plugins"
 msgstr "Jah, taasta laiendused"
@@ -762,7 +761,7 @@ msgid "You have no image to download."
 msgstr "Pole midagi alla laadida."
 
 msgid "You have no image to restore."
-msgstr "Image puudub."
+msgstr "Pole midagi paigaldada."
 
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Enne autostardi lubamist tuleb luua saalefail. "
@@ -780,7 +779,7 @@ msgid ""
 "Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"%s %s alustab imagest 1:1 tarkvarakoopia loomist. See võib kesta umbes 6 minutit.\n"
+"%s %s alustab süsteemist 1:1 süsteemitõmmise loomist. See võib kesta umbes 6 minutit.\n"
 "Kas nõustud?"
 
 #, python-format
@@ -792,7 +791,7 @@ msgid "Your %s %s is not connected to the internet, please check your network se
 msgstr "%s %s ei ole ühendatud internetti. Kontrolli võrgu seadeid ja proovi uuesti."
 
 msgid "echo 'Downloading Image.'"
-msgstr "echo 'Image allalaadimine.'"
+msgstr "echo 'Tõmmise allalaadimine.'"
 
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."
@@ -800,3 +799,46 @@ msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."
 msgid "unavailable"
 msgstr "pole saadaval"
 
+#~ msgid ""
+#~ "Can't unmount partition, make sure it is not being used for swap or "
+#~ "record/timeshift paths"
+#~ msgstr ""
+#~ "Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale või "
+#~ "salvestamise/ajanihke jaoks"
+
+#~ msgid ""
+#~ "Changes need a system restart to take effect.\n"
+#~ "Restart your %s %s now?"
+#~ msgstr ""
+#~ "Muudatused vajavad jõustumiseks süsteemi taaskäivitamist.\n"
+#~ "Kas taaskäivitad %s %s?"
+
+#~ msgid "Create and Manage your swapfiles."
+#~ msgstr "Loo ja halda saalefaile"
+
+#~ msgid "Create and Restore complete images of the system."
+#~ msgstr "Loo ja taasta täielikke süsteemikoopiaid."
+
+#~ msgid ""
+#~ "It seems you have not setup a extra location, please setup in Backup "
+#~ "Manager setup menu "
+#~ msgstr ""
+#~ "Eraldi asukoht on määramata. Määra see kasutades varukoopia haldurit"
+
+#~ msgid "Manage you devices mountpoints."
+#~ msgstr "Halda andmekandjate haakepunkte."
+
+#~ msgid "Manage your backups of your settings."
+#~ msgstr "Halda varukoopiaid seadistustest."
+
+#~ msgid ""
+#~ "Sorry but location does exist or not setup, please setup in Backup "
+#~ "Manager setup menu "
+#~ msgstr ""
+#~ "Asukoht puudub või on määramata. Määra see kasutades varukoopia haldurit"
+
+#~ msgid "Wait please while scanning for devices..."
+#~ msgstr "Oota, riistavara uurimine..."
+
+#~ msgid "Wait please while scanning your %s %s devices..."
+#~ msgstr "Oota, %s %s riistavara uurimine..."

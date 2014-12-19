@@ -6,15 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-12 19:18+0100\n"
-"PO-Revision-Date: 2014-04-06 09:06+0200\n"
-"Last-Translator: Timo Jarvenpaa <timojarvenpaa@hotmail.com>\n"
-"Language-Team: none\n"
+"POT-Creation-Date: 2014-12-05 14:40+0000\n"
+"PO-Revision-Date: 2014-12-19 17:16+0100\n"
+"Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
+"Language-Team: Samzan\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-Language: Finnish\n"
 "X-Poedit-Country: FINLAND\n"
 
@@ -164,22 +165,14 @@ msgstr "Tiedoston etuliite"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam ei toimi yhtäaikaa MGcamd:in kanssa"
 
-msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Levyosion liitosta ei voida poistaa, tarkista ettei se ole käytössä sivutustiedostolle tai tallennukselle/ajansiirrolle"
+msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
+msgstr "Liitos epäonnistui. Varmista ettei polku ole sivutus, ajastus tai ajansiirto käytössä"
 
 msgid "Cancel"
 msgstr "Keskeytä"
 
 msgid "Change Location"
 msgstr "Hakemiston valinta"
-
-#, python-format
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your %s %s now?"
-msgstr ""
-"Muutokset vaativat uudelleenkäynnistyksen.\n"
-"Käynnistetäänkö %s %s nyt uudelleen?"
 
 msgid "Checking Free RAM.."
 msgstr "Tarkistetaan vapaa RAM..."
@@ -208,11 +201,11 @@ msgstr "Vertaillaan varmuuskopioon..."
 msgid "Create"
 msgstr "Luo"
 
-msgid "Create and Manage your swapfiles."
-msgstr "Luo ja hallitse sivutustiedostoja (swapfiles)."
+msgid "Create and Manage your swap files."
+msgstr "Muokkaa sivutustiedostoa"
 
-msgid "Create and Restore complete images of the system."
-msgstr "Luo ja palauta täydellisiä järjestelmän varmuuskopioita."
+msgid "Create and Restore complete images of your system."
+msgstr "Muokkaa image-varmuuskopioita"
 
 msgid "Creating Swap.."
 msgstr "Luodaan sivutustiedostoa..."
@@ -340,8 +333,8 @@ msgstr "Käänteinen"
 msgid "Ipkg"
 msgstr "Ipkg"
 
-msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
-msgstr "Et ole määrittänyt lisäosien hakemistoa, tee se Varmuuskopioiden asetusvalikossa "
+msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
+msgstr "Sinulla ei ole asetuksissa lisähakemistoa. Aseta varmuuskopioinnin lisähakemisto asetuksissa"
 
 msgid "Location of where backup should be saved."
 msgstr "Varmuuskopioiden tallennuskansio."
@@ -355,11 +348,11 @@ msgstr "MB"
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr "MGcamd ei toimi yhtä aikaa CCcam:in kanssa"
 
-msgid "Manage you devices mountpoints."
-msgstr "Hallitse laitteiden liitoskohtia (mountpoints)."
+msgid "Manage the backups of your settings."
+msgstr "Muokkaa asetusten varmuuskopioita"
 
-msgid "Manage your backups of your settings."
-msgstr "Hallitse asetusten varmuuskopioita."
+msgid "Manage your devices mount points."
+msgstr "Muokkaa laitteen liitoksia"
 
 msgid "Mount"
 msgstr "Liitä"
@@ -448,6 +441,13 @@ msgstr "Odota, lisäosien palautusta suoritetaan..."
 
 msgid "Please wait while restore prepares"
 msgstr "Odota, palautusta valmistellaan"
+
+msgid "Please wait while scanning for devices..."
+msgstr "Odota. Etsitään laitteita..."
+
+#, python-format
+msgid "Please wait while scanning your %s %s devices..."
+msgstr "Odota. Etsitään %s %s laitteita..."
 
 msgid "Please wait while settings restore completes..."
 msgstr "Odota, asetusten palautus kesken..."
@@ -600,8 +600,8 @@ msgstr "Softcam pysähtyy..."
 msgid "SoftcamCheck"
 msgstr "Softcam-tarkistus"
 
-msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-msgstr "Sijaintia ei löydy tai ei ole määritetty, tarkista asetukset varmuuskopioinnin asetusvalikosta"
+msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
+msgstr "Sijaintia ei ole olemassa tai ole asetettu. Aseta sijaintin asetuksissa"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Ohjelmasyötteet eivät ole käytössä huollon takia, yritä myöhemmin uudelleen."
@@ -656,6 +656,14 @@ msgstr "Varmuuskopion sijainnissa ei ole tarpeeksi vapaata tilaa."
 
 msgid "The backup location does not have enough freespace.\n"
 msgstr "Varmuuskopion sijainnissa ei ole tarpeeksi vapaata tilaa.\n"
+
+#, python-format
+msgid ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
+msgstr ""
+"E2 on uudelleenkäynnistettävä.\n"
+"Uudelleenkäynnistä%s %s nyt?"
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Valittua sijaintia ei löydy, käytetään /media/hdd sijaintia"
@@ -717,13 +725,6 @@ msgid ""
 msgstr ""
 "Odota, haetaan\n"
 "softcammeja..."
-
-msgid "Wait please while scanning for devices..."
-msgstr "Odota, laitteita haetaan..."
-
-#, python-format
-msgid "Wait please while scanning your %s %s devices..."
-msgstr "Odota, haetaan %s %s:n laitteita..."
 
 msgid "Wait please while scanning..."
 msgstr "Odota, tietoja haetaan..."
@@ -799,3 +800,48 @@ msgstr "tässä laitteessa oli ongelma, alusta se ja yritä uudelleen."
 msgid "unavailable"
 msgstr "Ei saatavilla"
 
+#~ msgid ""
+#~ "Can't unmount partition, make sure it is not being used for swap or "
+#~ "record/timeshift paths"
+#~ msgstr ""
+#~ "Levyosion liitosta ei voida poistaa, tarkista ettei se ole käytössä "
+#~ "sivutustiedostolle tai tallennukselle/ajansiirrolle"
+
+#~ msgid ""
+#~ "Changes need a system restart to take effect.\n"
+#~ "Restart your %s %s now?"
+#~ msgstr ""
+#~ "Muutokset vaativat uudelleenkäynnistyksen.\n"
+#~ "Käynnistetäänkö %s %s nyt uudelleen?"
+
+#~ msgid "Create and Manage your swapfiles."
+#~ msgstr "Luo ja hallitse sivutustiedostoja (swapfiles)."
+
+#~ msgid "Create and Restore complete images of the system."
+#~ msgstr "Luo ja palauta täydellisiä järjestelmän varmuuskopioita."
+
+#~ msgid ""
+#~ "It seems you have not setup a extra location, please setup in Backup "
+#~ "Manager setup menu "
+#~ msgstr ""
+#~ "Et ole määrittänyt lisäosien hakemistoa, tee se Varmuuskopioiden "
+#~ "asetusvalikossa "
+
+#~ msgid "Manage you devices mountpoints."
+#~ msgstr "Hallitse laitteiden liitoskohtia (mountpoints)."
+
+#~ msgid "Manage your backups of your settings."
+#~ msgstr "Hallitse asetusten varmuuskopioita."
+
+#~ msgid ""
+#~ "Sorry but location does exist or not setup, please setup in Backup "
+#~ "Manager setup menu "
+#~ msgstr ""
+#~ "Sijaintia ei löydy tai ei ole määritetty, tarkista asetukset "
+#~ "varmuuskopioinnin asetusvalikosta"
+
+#~ msgid "Wait please while scanning for devices..."
+#~ msgstr "Odota, laitteita haetaan..."
+
+#~ msgid "Wait please while scanning your %s %s devices..."
+#~ msgstr "Odota, haetaan %s %s:n laitteita..."

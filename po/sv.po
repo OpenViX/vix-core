@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-19 21:00+0200\n"
-"PO-Revision-Date: 2013-10-20 17:17+0100\n"
-"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
+"POT-Creation-Date: 2014-12-31 17:36+0000\n"
+"PO-Revision-Date: 2015-01-05 22:46+0100\n"
+"Last-Translator: Robert Johansson\n"
 "Language-Team: none\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,13 @@ msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-T:%M"
 
 msgid "128 Mb"
-msgstr ""
+msgstr "128 Mb"
 
 msgid "16 Mb"
 msgstr "16 Mb"
 
 msgid "256 Mb"
-msgstr ""
+msgstr "256 Mb"
 
 msgid "30 Days"
 msgstr "30 Dagar"
@@ -60,13 +60,13 @@ msgid "Active:"
 msgstr "Aktiv:"
 
 msgid "Allows the softcam manager to be launched from extensions."
-msgstr ""
+msgstr "Tillåter softcam hanteraren att startas från utökningar."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Tillåter att softcamen kontrolleras om den har slutat fungera, och startar om automatiskt om det behövs."
 
 msgid "Allows you have the window close automatically."
-msgstr ""
+msgstr "Tillåter dig ha att fönstret stängs automatiskt."
 
 msgid "Allows you schedule your boackups."
 msgstr "Låter dig schemalägga dina backuper."
@@ -105,9 +105,17 @@ msgid ""
 "Are you sure you want to restore this image:\n"
 " "
 msgstr ""
+"Är du säker på att du vill återställa denna image:\n"
+" "
 
 msgid "Autostart"
 msgstr "Autostart"
+
+msgid "Backing up Kernel..."
+msgstr "Tar backup på Kernel..."
+
+msgid "Backing up Root file system..."
+msgstr "Tar backup på Root filsystemet..."
 
 msgid "Backing up files..."
 msgstr "Säkerhetskopierar filer..."
@@ -149,20 +157,14 @@ msgstr "Backupprefix"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam kan inte startas medan MGcamd är igång"
 
-msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Kan inte avmontera partitionen, se till att den inte används som växlingsfil eller inspelning/timeshift"
+msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
+msgstr "Kan inte avmontera partitionen, kontrollera att den inte används för växlingsfil eller inspelning/timeshift sökvägar"
 
 msgid "Cancel"
 msgstr "Avbryt"
 
 msgid "Change Location"
 msgstr "Byt Sökväg"
-
-#, python-format
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your %s %s now?"
-msgstr ""
 
 msgid "Checking Free RAM.."
 msgstr "Kontrollerar Ledigt RAM..."
@@ -183,7 +185,7 @@ msgid "Close"
 msgstr "Stäng"
 
 msgid "Close window on success"
-msgstr ""
+msgstr "Stäng fönster vid framgång"
 
 msgid "Comparing against backup..."
 msgstr "Jämför mot backup..."
@@ -191,14 +193,11 @@ msgstr "Jämför mot backup..."
 msgid "Create"
 msgstr "Skapa"
 
-msgid "Create and Manage your swapfiles."
-msgstr "Skapa och hantera dina växlingsfiler."
+msgid "Create and Manage your swap files."
+msgstr "Skapa och hantera dina växlingsfiler"
 
-msgid "Create and Restore complete images of the system."
-msgstr "Skapa och Återställ fullständiga Images av systemet."
-
-msgid "Creating Backup Files..."
-msgstr "Skapar Backupfiler"
+msgid "Create and Restore complete images of your system."
+msgstr "Skapa och återställ fullständiga images av ditt system"
 
 msgid "Creating Swap.."
 msgstr "Skapar Växlingsfil..."
@@ -207,7 +206,7 @@ msgid "Creating list of installed plugins..."
 msgstr "Skapar en lista över installerade plugins..."
 
 msgid "Creating zip..."
-msgstr ""
+msgstr "Skapar zip..."
 
 msgid "Current Status:"
 msgstr "Aktuell Status:"
@@ -232,6 +231,9 @@ msgstr "Enhet: Ingen tillgänglig"
 
 msgid "Disable Startup"
 msgstr "Inaktivera Startup"
+
+msgid "Do you want to restart GUI now ?"
+msgstr "Vill du starta om det grafiska användargränssnittet nu?"
 
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Vill du återställa dina Enigma2 plugins ?"
@@ -258,7 +260,7 @@ msgid "Enable Swap at startup"
 msgstr "Aktivera Swap vid start"
 
 msgid "Enable frozen check"
-msgstr ""
+msgstr "Tillåt låst kontroll"
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Inga mer försök, senarelägger till nästa tidschema."
@@ -273,7 +275,7 @@ msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "Hittade en icke-standard softcam, försöker starta, detta kan misslyckas"
 
 msgid "Free space:"
-msgstr ""
+msgstr "Ledigt utrymme:"
 
 msgid "Frozen check interval"
 msgstr "Intervall för kontroll av frysningar"
@@ -323,8 +325,8 @@ msgstr "Invertera"
 msgid "Ipkg"
 msgstr "Ipkg"
 
-msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
-msgstr "Det verkar som du inte har någon extra position, vänligen konfigurera i Backuphanterarens inställningsmeny"
+msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
+msgstr "Du verkar inte ha ställt in en extra plats, vänligen ställ in i menyn Installation Backuphanterare."
 
 msgid "Location of where backup should be saved."
 msgstr "Position att spara backup på. "
@@ -338,14 +340,14 @@ msgstr "MB"
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr "MGcamd kan inte startas medan CCcam är igång"
 
-msgid "Manage you devices mountpoints."
-msgstr "Hantera dina enheters monteringspunkter."
+msgid "Manage the backups of your settings."
+msgstr "Hantera backuperna av dina inställningar"
 
-msgid "Manage your backups of your settings."
-msgstr "Hantera dina backuper av inställningarna."
+msgid "Manage your devices mount points."
+msgstr "Hantera din enhets monteringar"
 
 msgid "Mount"
-msgstr ""
+msgstr "Montera"
 
 msgid "Mount Manager"
 msgstr "Monteringshanterare"
@@ -414,9 +416,6 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "OK, att göra en återställning "
 
-msgid "Please copy the folder"
-msgstr ""
-
 msgid "Please enter a folder that contains some packages."
 msgstr "Välj en mapp som innehåller paketfiler."
 
@@ -433,7 +432,14 @@ msgid "Please wait while plugins restore completes..."
 msgstr "Var god vänta under tiden som återställning av plugins slutförs..."
 
 msgid "Please wait while restore prepares"
-msgstr ""
+msgstr "Vänligen vänta medans återställande förbereds"
+
+msgid "Please wait while scanning for devices..."
+msgstr "Vänligen vänta, skanning efter enheter pågår..."
+
+#, python-format
+msgid "Please wait while scanning your %s %s devices..."
+msgstr "Vänligen vänta, skanning pågår av dina %s %s enheter..."
 
 msgid "Please wait while settings restore completes..."
 msgstr "Var god vänta under tiden som återställning av inställningarna slutförs..."
@@ -473,7 +479,7 @@ msgstr "Starta om"
 
 #, python-format
 msgid "Restart %s %s."
-msgstr ""
+msgstr "Starta om %s %s."
 
 msgid "Restart Enigma2."
 msgstr "Starta om Enigma2."
@@ -497,7 +503,7 @@ msgid "Restoring plugins..."
 msgstr "Återställer plugins..."
 
 msgid "Run"
-msgstr ""
+msgstr "Kör"
 
 msgid "Run your shell scripts."
 msgstr "Kör dina shell scripts."
@@ -512,13 +518,13 @@ msgid "Script Runner"
 msgstr "Skriptexekverare"
 
 msgid "Script Runner Setup"
-msgstr ""
+msgstr "Skriptexekverare inställningar"
 
 msgid "Select"
 msgstr "Välj"
 
 msgid "Select a backup to Restore:"
-msgstr ""
+msgstr "Välj en backup att återställa:"
 
 msgid "Select a package to install:"
 msgstr "Välj ett paket att installera:"
@@ -527,7 +533,7 @@ msgid "Select an image to Download:"
 msgstr "Välj en Image att Ladda ner:"
 
 msgid "Select an image to restore:"
-msgstr ""
+msgstr "Välj en image att återställa:"
 
 msgid "Select extra packages folder"
 msgstr "Välj mapp för extrapaket"
@@ -560,7 +566,7 @@ msgid "Setup Mounts"
 msgstr "Monteringsinställningar"
 
 msgid "Show in extensions"
-msgstr ""
+msgstr "Visa i utökningar"
 
 msgid "Size: "
 msgstr "Storlek:"
@@ -572,7 +578,7 @@ msgid "Softcam Manager Log"
 msgstr "Logg för Softcamhanteraren"
 
 msgid "Softcam Manager Setup"
-msgstr ""
+msgstr "Softcamhanterare inställning"
 
 msgid "Softcam Setup"
 msgstr "Softcam Setup"
@@ -586,11 +592,8 @@ msgstr "Softcam Stoppar..."
 msgid "SoftcamCheck"
 msgstr "SoftcamKontroll"
 
-msgid "Sorry Image Restore is not supported on the"
-msgstr ""
-
-msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-msgstr "Tyvärr, sökvägen finns inte eller är inte konfigurerad, vänligen sätt upp i Backuphanterarens meny"
+msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
+msgstr "Beklagar men den platsen finns inte eller är inte uppsatt, vänligen ställ in i menyn Installation Backuphanterare."
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Tyvärr, feeds är nere för underhåll, Var god försök igen senare."
@@ -598,9 +601,8 @@ msgstr "Tyvärr, feeds är nere för underhåll, Var god försök igen senare."
 msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Tyvärr, feeds är nere för underhåll, försök att använda Backuphanteraren för att återställa plugins senare."
 
-#, python-format
-msgid "Sorry you %s %s is not yet compatible."
-msgstr ""
+msgid "Sorry, but the file is not compatible with this image version."
+msgstr "Beklagar men filen är inte kompatibel med versionen på denna image."
 
 msgid "Sorry, but the restore failed."
 msgstr "Tyvärr, återställningen misslyckades."
@@ -644,6 +646,17 @@ msgstr "Temp Mapp"
 msgid "The backup location does not have enough freespace."
 msgstr "Backupdestinationen har inte tillräckligt med ledigt utrymme."
 
+msgid "The backup location does not have enough freespace.\n"
+msgstr "Platsen för backup har inte tillräckligt med ledigt utrymme.\n"
+
+#, python-format
+msgid ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
+msgstr ""
+"En omstart krävs för att ändringar skall träda i kraft.\n"
+"Starta om din %s %s nu?"
+
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Den valda destination existerar inte, använder /media/hdd"
 
@@ -666,7 +679,7 @@ msgid "USB: "
 msgstr "USB: "
 
 msgid "Unmount"
-msgstr ""
+msgstr "Avmontera"
 
 msgid "Updating mount locations."
 msgstr "Uppdaterar destinationer för montering."
@@ -705,13 +718,6 @@ msgstr ""
 "Var god vänta sökning av\n"
 "softcams pågår..."
 
-msgid "Wait please while scanning for devices..."
-msgstr "Var god vänta, sökning av enheter pågår..."
-
-#, python-format
-msgid "Wait please while scanning your %s %s devices..."
-msgstr ""
-
 msgid "Wait please while scanning..."
 msgstr "Var god vänta, sökning pågår..."
 
@@ -748,7 +754,7 @@ msgid "You have no image to download."
 msgstr "Du har ingen Image att ladda ner."
 
 msgid "You have no image to restore."
-msgstr ""
+msgstr "Du har ingen image att återställa"
 
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Du måste skapa en Växlingsfil innan du aktiverar autostart."
@@ -758,20 +764,24 @@ msgid ""
 "Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
+"Din %s %s kommer att göra en backup av dina inställingar och upptäcka plugins.\n"
+"Vill du tillåta detta?"
 
 #, python-format
 msgid ""
 "Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
+"Din %s %s kommer att göra en fullständig image backup, detta kan ta ca 6 minuter att genomföra.\n"
+"Vill du tillåta detta?"
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr ""
+msgstr "Din %s %s är inte ansluten till Internet, vänligen försök att använda Backuphanteraren senare för att återställa plugins."
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
-msgstr ""
+msgstr "Din %s %s är inte ansluten till Internet, vänligen kontrollera dina nätverksinställningar och försök igen."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Laddar ner Image.'"
@@ -779,8 +789,32 @@ msgstr "echo 'Laddar ner Image.'"
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "det uppstod ett problem med denna enhet, formatera om och försök igen."
 
-msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr ""
-
 msgid "unavailable"
 msgstr "ej tillgänglig"
+
+#~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
+#~ msgstr "Kan inte avmontera partitionen, se till att den inte används som växlingsfil eller inspelning/timeshift"
+
+#~ msgid "Create and Manage your swapfiles."
+#~ msgstr "Skapa och hantera dina växlingsfiler."
+
+#~ msgid "Create and Restore complete images of the system."
+#~ msgstr "Skapa och Återställ fullständiga Images av systemet."
+
+#~ msgid "Creating Backup Files..."
+#~ msgstr "Skapar Backupfiler"
+
+#~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+#~ msgstr "Det verkar som du inte har någon extra position, vänligen konfigurera i Backuphanterarens inställningsmeny"
+
+#~ msgid "Manage you devices mountpoints."
+#~ msgstr "Hantera dina enheters monteringspunkter."
+
+#~ msgid "Manage your backups of your settings."
+#~ msgstr "Hantera dina backuper av inställningarna."
+
+#~ msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
+#~ msgstr "Tyvärr, sökvägen finns inte eller är inte konfigurerad, vänligen sätt upp i Backuphanterarens meny"
+
+#~ msgid "Wait please while scanning for devices..."
+#~ msgstr "Var god vänta, sökning av enheter pågår..."

@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-17 11:36+0100\n"
-"PO-Revision-Date: 2014-10-11 11:51+0100\n"
-"Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
+"POT-Creation-Date: 2015-02-13 17:17+0000\n"
+"PO-Revision-Date: 2015-02-23 14:06+0100\n"
+"Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -47,8 +47,11 @@ msgstr "8 Mb"
 msgid "96 Mb"
 msgstr "96 Mb"
 
-msgid "A background update check is is progress, please wait for retry."
-msgstr "De feeds worden gecontroleerd; even wachten."
+msgid "A background update check is in progress, please try again."
+msgstr "Er wordt momenteel op updates gecontroleerd; probeer het later nogmaals. "
+
+msgid "A background update check is is progress, please try again."
+msgstr "Er wordt momenteel op updates gecontroleerd; probeer het later nogmaals. "
 
 msgid "A backup has been detected."
 msgstr "Een back-up is verwijderd."
@@ -155,10 +158,10 @@ msgstr "Back-up mislukt of verkeerde backup bestemming of onvoldoende ruimte"
 
 msgid ""
 "Backup in progress,\n"
-"Please for it to finish, before trying again"
+"Please wait for it to finish, before trying again"
 msgstr ""
-"Back-up in uitvoering,\n"
-"Laat dit doorlopen voordat u opnieuw probeert"
+"Er loopt een back-up,\n"
+"wacht tot deze klaar is voordat u het weer probeert."
 
 msgid "Backup prefix"
 msgstr "Back-up prefix"
@@ -166,8 +169,8 @@ msgstr "Back-up prefix"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam en MGcamd kunnen niet beide actief zijn"
 
-msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Kan de partitie niet unmounten; kijk of deze niet in gebruik is als opname/timeshift pad."
+msgid "Can't un-mount the partition, make sure it is not being used for swap or record/timeshift paths"
+msgstr "Kan de partietie niet 'unmounten', stel zeker dat deze niet gebruikt wordt voor SWAP, logs, picons, opname of timeshift."
 
 msgid "Cancel"
 msgstr "Annuleer"
@@ -334,8 +337,8 @@ msgstr "Keer om"
 msgid "Ipkg"
 msgstr "IPKG"
 
-msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
-msgstr "Het lijkt erop dat u geen extra locatie heeft ingesteld; doe dat in het context menu van de back-up manager."
+msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
+msgstr "U moet eerst een extra lokatie aanmaken in het menu van de back-up manager "
 
 msgid "Location of where backup should be saved."
 msgstr "Locatie voor uw back-ups."
@@ -434,14 +437,8 @@ msgstr "Selecteer het medium dat u voor de swapfile wilt gebruiken"
 msgid "Please select the file to restore ?"
 msgstr "Kies bestanden die teruggeplaatst moeten worden."
 
-msgid "Please wait while gathers information..."
-msgstr "De informatie wordt verzameld..."
-
 msgid "Please wait while plugins restore completes..."
 msgstr "Even wachten tot het installeren van plugins gereed is..."
-
-msgid "Please wait while restore prepares"
-msgstr "Wacht terwijl de restore wordt voorbereid"
 
 msgid "Please wait while scanning for devices..."
 msgstr "Wacht, de apparaten worden gescand..."
@@ -459,11 +456,17 @@ msgstr "Wacht terwijl er gestart wordt\n"
 msgid "Please wait while stopping\n"
 msgstr "Wacht terwijl er gestopt wordt\n"
 
+msgid "Please wait while the restore prepares"
+msgstr "Wacht terwijl het herstellen wordt voorbereid."
+
+msgid "Please wait while the system gathers information..."
+msgstr "Wacht terwijl het systeem informatie verzamelt..."
+
 msgid "Please wait."
 msgstr "Even wachten."
 
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Maken van een lijst met plugins is mislukt - of een verkeerde back-up locatie of onvoldoende vrije ruimte"
+msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Het maken van een lijst van plugins is mislukt, b.v. omdat er een verkeerde bestemming is gekozen of omdat er niet voldoende ruimte is."
 
 msgid "Preparing extra plugins..."
 msgstr "Bereidt extra plugins voor.."
@@ -601,14 +604,14 @@ msgstr "Bezig Softcam te stoppen..."
 msgid "SoftcamCheck"
 msgstr "Softcam controle"
 
-msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
-msgstr "Die locatie bestaat niet of is niet ingesteld; maak de juiste instelling in het context menu van de back-up manager."
+msgid "Sorry but that location does not exist or is not setup, please set it up in the Backup Manager setup menu "
+msgstr "die lokatie bestaat niet of is niet ingesteld; doe dat in het menu van de back-up manager."
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
 
-msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer later opnieuw de plugins te installeren via de backupmanager."
+msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgstr "De feeds zijn dood vanwege onderhoud. Probeer later nog eens de plugins te herstellen via de back-up manager."
 
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Het bestand is niet verenigbaar met deze versie van de firmware."
@@ -652,11 +655,11 @@ msgstr "TB"
 msgid "Temp Folder"
 msgstr "Tijdelijke folder"
 
-msgid "The backup location does not have enough freespace."
-msgstr "De back-uplocatie heeft niet voldoende ruimte."
+msgid "The backup location does not have enough free space."
+msgstr "De back-up lokatie heeft onvoldoende ruimte."
 
-msgid "The backup location does not have enough freespace.\n"
-msgstr "De back-up locatie heeft niet genoeg vrije ruimte.\n"
+msgid "The backup location does not have enough free space.\n"
+msgstr "De back-up lokatie heeft onvoldoende ruimte.\n"
 
 #, python-format
 msgid ""
@@ -795,14 +798,27 @@ msgstr "Uw %s %s is niet met internet verbonden. Controleer uw netwerkinstelling
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Download image.'"
 
-msgid "there was a problem with this device, please reformat and try again."
-msgstr "er was een probleem met dit medium; formatteer opnieuw en probeer het weer."
+msgid "there is a problem with this device, please reformat and try again."
+msgstr "er is een probleem met dit apparaat; formatteer het en probeer het nogmaals."
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
 
+#~ msgid "A background update check is is progress, please wait for retry."
+#~ msgstr "De feeds worden gecontroleerd; even wachten."
+
+#~ msgid ""
+#~ "Backup in progress,\n"
+#~ "Please for it to finish, before trying again"
+#~ msgstr ""
+#~ "Back-up in uitvoering,\n"
+#~ "Laat dit doorlopen voordat u opnieuw probeert"
+
 #~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
 #~ msgstr "Kan de partitie niet 'unmounten'; kijk of deze niet wordt gebruikt voor SWAP/Opname/Timeshift/Logs/EPG."
+
+#~ msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
+#~ msgstr "Kan de partitie niet unmounten; kijk of deze niet in gebruik is als opname/timeshift pad."
 
 #~ msgid ""
 #~ "Changes need a system restart to take effect.\n"
@@ -823,6 +839,9 @@ msgstr "niet beschikbaar"
 #~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 #~ msgstr "U heeft geen extra locatie ingesteld; U kunt dat doen via het menu van de Backup Manager."
 
+#~ msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
+#~ msgstr "Het lijkt erop dat u geen extra locatie heeft ingesteld; doe dat in het context menu van de back-up manager."
+
 #~ msgid "Manage you devices mountpoints."
 #~ msgstr "Beheer de mountpoints van uw apparaten."
 
@@ -832,11 +851,20 @@ msgstr "niet beschikbaar"
 #~ msgid "Please copy the folder"
 #~ msgstr "Kopieer de map"
 
+#~ msgid "Please wait while gathers information..."
+#~ msgstr "De informatie wordt verzameld..."
+
 #~ msgid "Please wait while gathers information... A"
 #~ msgstr "Even wachten terwijl de informatie verzameld wordt..."
 
 #~ msgid "Please wait while gathers information... B"
 #~ msgstr "Even wachten terwijl de informatie verzameld wordt..."
+
+#~ msgid "Please wait while restore prepares"
+#~ msgstr "Wacht terwijl de restore wordt voorbereid"
+
+#~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+#~ msgstr "Maken van een lijst met plugins is mislukt - of een verkeerde back-up locatie of onvoldoende vrije ruimte"
 
 #~ msgid "Sorry Image Restore is not supported on the"
 #~ msgstr "Sorry: het terugzetten van een image wordt niet ondersteund door een"
@@ -847,14 +875,29 @@ msgstr "niet beschikbaar"
 #~ msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
 #~ msgstr "De locatie bestaat niet; U kunt die instellen via het menu van de backupmanager"
 
+#~ msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
+#~ msgstr "Die locatie bestaat niet of is niet ingesteld; maak de juiste instelling in het context menu van de back-up manager."
+
+#~ msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+#~ msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer later opnieuw de plugins te installeren via de backupmanager."
+
 #~ msgid "Sorry you %s %s is not yet compatible."
 #~ msgstr "Sorry uw %s %s is nog niet compatible."
+
+#~ msgid "The backup location does not have enough freespace."
+#~ msgstr "De back-uplocatie heeft niet voldoende ruimte."
+
+#~ msgid "The backup location does not have enough freespace.\n"
+#~ msgstr "De back-up locatie heeft niet genoeg vrije ruimte.\n"
 
 #~ msgid "Wait please while scanning for devices..."
 #~ msgstr "Even wachten op het scannen van de media...."
 
 #~ msgid "Wait please while scanning your %s %s devices..."
 #~ msgstr "Wacht terwijl uw %s %s medium gescand wordt ..."
+
+#~ msgid "there was a problem with this device, please reformat and try again."
+#~ msgstr "er was een probleem met dit medium; formatteer opnieuw en probeer het weer."
 
 #~ msgid "to a USB stick, place in front USB port of reciver and power on"
 #~ msgstr "naar een USB-stick, plaats die in de aansluiting op de voorkant en schakel uw ontvanger in"

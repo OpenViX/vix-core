@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-17 12:03+0100\n"
-"PO-Revision-Date: 2014-10-01 15:54+0100\n"
-"Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
+"POT-Creation-Date: 2015-03-03 18:05+0000\n"
+"PO-Revision-Date: 2015-03-05 07:06+0200\n"
+"Last-Translator: rimas\n"
 "Language-Team: Estonian <kde-i18n-doc@kde.org>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.7.1\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -45,8 +45,11 @@ msgstr "8 Mb"
 msgid "96 Mb"
 msgstr "96 Mb"
 
-msgid "A background update check is is progress, please wait for retry."
-msgstr "Uuenduste kontroll toimub taustal. Oota ja proovi uuesti"
+msgid "A background update check is in progress, please try again."
+msgstr "Taustal toimub uuenduste otsing. Ürita hiljem uuesti."
+
+msgid "A background update check is is progress, please try again."
+msgstr "Taustal toimub uuenduste otsing. Ürita hiljem uuesti."
 
 msgid "A backup has been detected."
 msgstr "Leiti varukoopia."
@@ -153,10 +156,10 @@ msgstr "Varundamine nurjus - nt.  vale asukoht või ruumi puudus varundamise asu
 
 msgid ""
 "Backup in progress,\n"
-"Please for it to finish, before trying again"
+"Please wait for it to finish, before trying again"
 msgstr ""
-"Toimub varundamine,\n"
-"Oota selle lõpuni enne uuesti proovimist"
+"Toimub varundamine.\n"
+"Oota selle lõppemist, enne kui uuesti üritad"
 
 msgid "Backup prefix"
 msgstr "Varukoopia nimi"
@@ -164,8 +167,8 @@ msgstr "Varukoopia nimi"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "MGcamd töötamisel ei saa CCcam käivituda"
 
-msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale või salvestamise/ajanihke jaoks"
+msgid "Can't un-mount the partition, make sure it is not being used for swap or record/timeshift paths"
+msgstr "Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale või salvestamise/ajanihke tarbeks"
 
 msgid "Cancel"
 msgstr "Tühista"
@@ -332,8 +335,8 @@ msgstr "Pööra ümber"
 msgid "Ipkg"
 msgstr "Ipkg"
 
-msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
-msgstr "Eraldi asukoht on määramata. Määra see kasutades varukoopia haldurit"
+msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
+msgstr "Lisaasukoht on määramata. Saad seda teha menüüs 'Varukoopiad'"
 
 msgid "Location of where backup should be saved."
 msgstr "Varukoopia salvestamise asukoht."
@@ -432,14 +435,8 @@ msgstr "Vali andmekandja saalefaili asukohaks"
 msgid "Please select the file to restore ?"
 msgstr "Vali fail, mida taastada"
 
-msgid "Please wait while gathers information..."
-msgstr "Oota andmete kogumist..."
-
 msgid "Please wait while plugins restore completes..."
 msgstr "Oota laienduste taastamist..."
-
-msgid "Please wait while restore prepares"
-msgstr "Valmistumine taastamiseks"
 
 msgid "Please wait while scanning for devices..."
 msgstr "Oota, riistavara uurimine..."
@@ -457,11 +454,17 @@ msgstr "Oota käivitamist\n"
 msgid "Please wait while stopping\n"
 msgstr "Oota peatamist\n"
 
+msgid "Please wait while the restore prepares"
+msgstr "Valmistumine taastamiseks"
+
+msgid "Please wait while the system gathers information..."
+msgstr "Oota, kuni süsteem kogub teavet..."
+
 msgid "Please wait."
 msgstr "Oota."
 
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Laienduste laadimine nurjus - n.t.  vale asukoht või ruumipuudus varundamise asukohas"
+msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Laienduste märkimine nurjus  - nt. kehtetu varukoopia asukoht või ruumipuudus"
 
 msgid "Preparing extra plugins..."
 msgstr "Laienduste ettevalmistamine..."
@@ -599,14 +602,14 @@ msgstr "EMU peatamine..."
 msgid "SoftcamCheck"
 msgstr "EMU kontroll"
 
-msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
-msgstr "Asukoht puudub või on määramata. Määra see kasutades varukoopia haldurit"
+msgid "Sorry but that location does not exist or is not setup, please set it up in the Backup Manager setup menu "
+msgstr "See asukoht puudub või on seadistamata. Saad seda teha menüüs 'Varukoopiad'"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti."
 
-msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti"
+msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgstr "Toimuvad serverite hooldetööd. Ürita laienduste taastamist hiljem."
 
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Fail ei ole ühilduv selle tarkvaraversiooniga. "
@@ -650,10 +653,10 @@ msgstr "TB"
 msgid "Temp Folder"
 msgstr "Temp kaust"
 
-msgid "The backup location does not have enough freespace."
-msgstr "Varundamise asukohas ei ole piisavalt vaba ruumi."
+msgid "The backup location does not have enough free space."
+msgstr "Varukoopia asukohas ei ole piisavalt vaba ruumi."
 
-msgid "The backup location does not have enough freespace.\n"
+msgid "The backup location does not have enough free space.\n"
 msgstr "Varukoopia asukohas ei ole piisavalt vaba ruumi.\n"
 
 #, python-format
@@ -793,18 +796,27 @@ msgstr "%s %s ei ole ühendatud internetti. Kontrolli võrgu seadeid ja proovi u
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Tõmmise allalaadimine.'"
 
-msgid "there was a problem with this device, please reformat and try again."
-msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."
+msgid "there is a problem with this device, please reformat and try again."
+msgstr "selle andmekandjaga on mingi probleem, vorminda see ja proovi uuesti."
 
 msgid "unavailable"
 msgstr "pole saadaval"
 
+#~ msgid "A background update check is is progress, please wait for retry."
+#~ msgstr "Uuenduste kontroll toimub taustal. Oota ja proovi uuesti"
+
 #~ msgid ""
-#~ "Can't unmount partition, make sure it is not being used for swap or "
-#~ "record/timeshift paths"
+#~ "Backup in progress,\n"
+#~ "Please for it to finish, before trying again"
 #~ msgstr ""
-#~ "Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale või "
-#~ "salvestamise/ajanihke jaoks"
+#~ "Toimub varundamine,\n"
+#~ "Oota selle lõpuni enne uuesti proovimist"
+
+#~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
+#~ msgstr "Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale või salvestamise/ajanihke jaoks"
+
+#~ msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
+#~ msgstr "Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale või salvestamise/ajanihke jaoks"
 
 #~ msgid ""
 #~ "Changes need a system restart to take effect.\n"
@@ -819,11 +831,11 @@ msgstr "pole saadaval"
 #~ msgid "Create and Restore complete images of the system."
 #~ msgstr "Loo ja taasta täielikke süsteemikoopiaid."
 
-#~ msgid ""
-#~ "It seems you have not setup a extra location, please setup in Backup "
-#~ "Manager setup menu "
-#~ msgstr ""
-#~ "Eraldi asukoht on määramata. Määra see kasutades varukoopia haldurit"
+#~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+#~ msgstr "Eraldi asukoht on määramata. Määra see kasutades varukoopia haldurit"
+
+#~ msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
+#~ msgstr "Eraldi asukoht on määramata. Määra see kasutades varukoopia haldurit"
 
 #~ msgid "Manage you devices mountpoints."
 #~ msgstr "Halda andmekandjate haakepunkte."
@@ -831,14 +843,35 @@ msgstr "pole saadaval"
 #~ msgid "Manage your backups of your settings."
 #~ msgstr "Halda varukoopiaid seadistustest."
 
-#~ msgid ""
-#~ "Sorry but location does exist or not setup, please setup in Backup "
-#~ "Manager setup menu "
-#~ msgstr ""
-#~ "Asukoht puudub või on määramata. Määra see kasutades varukoopia haldurit"
+#~ msgid "Please wait while gathers information..."
+#~ msgstr "Oota andmete kogumist..."
+
+#~ msgid "Please wait while restore prepares"
+#~ msgstr "Valmistumine taastamiseks"
+
+#~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+#~ msgstr "Laienduste laadimine nurjus - n.t.  vale asukoht või ruumipuudus varundamise asukohas"
+
+#~ msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
+#~ msgstr "Asukoht puudub või on määramata. Määra see kasutades varukoopia haldurit"
+
+#~ msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
+#~ msgstr "Asukoht puudub või on määramata. Määra see kasutades varukoopia haldurit"
+
+#~ msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+#~ msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti"
+
+#~ msgid "The backup location does not have enough freespace."
+#~ msgstr "Varundamise asukohas ei ole piisavalt vaba ruumi."
+
+#~ msgid "The backup location does not have enough freespace.\n"
+#~ msgstr "Varukoopia asukohas ei ole piisavalt vaba ruumi.\n"
 
 #~ msgid "Wait please while scanning for devices..."
 #~ msgstr "Oota, riistavara uurimine..."
 
 #~ msgid "Wait please while scanning your %s %s devices..."
 #~ msgstr "Oota, %s %s riistavara uurimine..."
+
+#~ msgid "there was a problem with this device, please reformat and try again."
+#~ msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."

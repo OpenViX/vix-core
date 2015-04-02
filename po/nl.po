@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-13 17:17+0000\n"
-"PO-Revision-Date: 2015-02-23 14:06+0100\n"
+"POT-Creation-Date: 2015-04-01 21:30+0100\n"
+"PO-Revision-Date: 2015-04-02 09:49+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -165,6 +165,9 @@ msgstr ""
 
 msgid "Backup prefix"
 msgstr "Back-up prefix"
+
+msgid "Backups to keep"
+msgstr "Te bewaren backups"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam en MGcamd kunnen niet beide actief zijn"
@@ -358,6 +361,9 @@ msgstr "Beheer de back-ups van uw instellingen."
 msgid "Manage your devices mount points."
 msgstr "Beheer hoe uw apparaten gemount zijn."
 
+msgid "Max backups to keep (0==all)"
+msgstr "Max aantal backups (0 = allemaal)"
+
 msgid "Mount"
 msgstr "Mount"
 
@@ -473,6 +479,12 @@ msgstr "Bereidt extra plugins voor.."
 
 msgid "Press OK to toggle the selection."
 msgstr "Druk op OK om de selectie om te wisselen.."
+
+msgid "Query before backup starts"
+msgstr "Melding als backup start"
+
+msgid "Query before starting backup."
+msgstr "Melding als backup start"
 
 msgid "Rebooting..."
 msgstr "Bezig met rebooten..."

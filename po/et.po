@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-03 18:05+0000\n"
+"POT-Creation-Date: 2015-04-04 12:40+0100\n"
 "PO-Revision-Date: 2015-03-05 07:06+0200\n"
 "Last-Translator: rimas\n"
 "Language-Team: Estonian <kde-i18n-doc@kde.org>\n"
@@ -163,6 +163,9 @@ msgstr ""
 
 msgid "Backup prefix"
 msgstr "Varukoopia nimi"
+
+msgid "Backups to keep"
+msgstr ""
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "MGcamd töötamisel ei saa CCcam käivituda"
@@ -356,6 +359,9 @@ msgstr "Loo ja taasta varukoopiaid seadistustest."
 msgid "Manage your devices mount points."
 msgstr "Halda andmekandjate haakepunkte."
 
+msgid "Max backups to keep (0==all)"
+msgstr ""
+
 msgid "Mount"
 msgstr "Haagi"
 
@@ -471,6 +477,12 @@ msgstr "Laienduste ettevalmistamine..."
 
 msgid "Press OK to toggle the selection."
 msgstr "Valiku muutmiseks vajuta OK."
+
+msgid "Query before backup starts"
+msgstr ""
+
+msgid "Query before starting backup."
+msgstr ""
 
 msgid "Rebooting..."
 msgstr "Taaskäivitus..."

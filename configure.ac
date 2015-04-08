@@ -13,19 +13,11 @@ AC_PROG_CXX
 CPPFLAGS="$CPPFLAGS $PYTHON_CPPFLAGS"
 LDFLAGS="$LDFLAGS $PYTHON_LDFLAGS"
 
-AC_ARG_WITH(po,
-        AS_HELP_STRING([--with-po],[enable updating of po files]),
-        [with_po="$withval"],[with_po="no"])
-if test "$with_po" = "yes"; then
-        AC_PATH_PROG(MSGINIT, msginit)
-        AC_PATH_PROG(MSGMERGE, msgmerge)
-        AC_PATH_PROG(MSGUNIQ, msguniq)
-        AC_PATH_PROG(XGETTEXT, xgettext)
-        if test -z "$MSGINIT" -o -z "$MSGMERGE" -o -z "$MSGUNIQ" -o -z "$XGETTEXT"; then
-                AC_MSG_ERROR([Could not find required gettext tools])
-        fi
-fi
-AM_CONDITIONAL(UPDATE_PO, test "$with_po" = "yes")
+AC_PATH_PROG(MSGFMT, msgfmt, AC_MSG_ERROR(Could not find msgfmt))
+AC_PATH_PROG(MSGINIT, msginit, AC_MSG_ERROR(Could not find msginit))
+AC_PATH_PROG(MSGMERGE, msgmerge, AC_MSG_ERROR(Could not find msgmerge))
+AC_PATH_PROG(MSGUNIQ, msguniq, AC_MSG_ERROR(Could not find msguniq))
+AC_PATH_PROG(XGETTEXT, xgettext, AC_MSG_ERROR(Could not find xgettext))
 
 AC_OUTPUT([
 Makefile

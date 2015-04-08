@@ -1,12 +1,11 @@
 dist_noinst_SCRIPTS = xml2po.py
 
-LANGS = ar bg ca cs da de el en en_GB es et fa fi fr fy he hr hu is it lt lv nl no nb pl pt pt_BR ro ru sv sk sl sr th tr uk
+LANGS = ar bg ca cs da de el en en_GB es et fa fi fr fy he hr hu is it ku lt lv nl no nb pl pt pt_BR ro ru sv sk sl sr th tr uk
 LANGMO = $(LANGS:=.mo)
 LANGPO = $(LANGS:=.po)
 
 EXTRA_DIST = $(LANGPO)
 
-if UPDATE_PO
 # the TRANSLATORS: allows putting translation comments before the to-be-translated line.
 vix-py.pot: $(top_srcdir)/src/*.py
 	$(XGETTEXT) --no-wrap -L Python --from-code=UTF-8 --add-comments="TRANSLATORS:" -d @PACKAGE_NAME@ -s -o $@ $^
@@ -25,7 +24,6 @@ vix.pot: vix-py.pot vix-xml.pot
 	else \
 		$(MSGINIT) -l $@ -o $@ -i $< --no-translator; \
 	fi
-endif
 
 .po.mo:
 	$(MSGFMT) -o $@ $<

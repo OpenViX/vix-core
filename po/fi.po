@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-05 14:40+0000\n"
-"PO-Revision-Date: 2014-12-19 17:16+0100\n"
-"Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
+"POT-Creation-Date: 2015-06-08 10:24+0100\n"
+"PO-Revision-Date: 2015-06-14 22:37+0200\n"
+"Last-Translator: Timo <timo.lehmuskoski@kolumbus.fi>\n"
 "Language-Team: Samzan\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -46,8 +46,11 @@ msgstr "8 Mb"
 msgid "96 Mb"
 msgstr "96 Mb"
 
-msgid "A background update check is is progress, please wait for retry."
-msgstr "Taustapäivitys on käynnissä, odota uudelleenyritystä."
+msgid "A background update check is in progress, please try again."
+msgstr "Taustalla ajettava päivitystarkistus käynnissä, yritä uudelleen."
+
+msgid "A background update check is is progress, please try again."
+msgstr "Taustalla ajettava päivitystarkistus käynnissä, yritä uudelleen."
 
 msgid "A backup has been detected."
 msgstr "Varmuuskopio tunnistettu"
@@ -154,19 +157,22 @@ msgstr "Varmuuskopiointi epäonnistui - tarkista onko valittu väärä hakemisto
 
 msgid ""
 "Backup in progress,\n"
-"Please for it to finish, before trying again"
+"Please wait for it to finish, before trying again"
 msgstr ""
 "Varmuuskopiointi käynnissä,\n"
-"odota sen päättymistä, ennen kuin yrität uudestaan"
+"Ole hyvä ja odota sen päättymistä ennen kuin yrität uudestaan."
 
 msgid "Backup prefix"
 msgstr "Tiedoston etuliite"
 
+msgid "Backups to keep"
+msgstr "Säilytettävä varmuuskopioiden määrä"
+
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam ei toimi yhtäaikaa MGcamd:in kanssa"
 
-msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Liitos epäonnistui. Varmista ettei polku ole sivutus, ajastus tai ajansiirto käytössä"
+msgid "Can't un-mount the partition, make sure it is not being used for swap or record/timeshift paths"
+msgstr "Osion liitosta ei voi purkaa, varmista ettei polkua käytetä swap-tiedostolle tai tallennus/ajansiirtoon"
 
 msgid "Cancel"
 msgstr "Keskeytä"
@@ -333,8 +339,8 @@ msgstr "Käänteinen"
 msgid "Ipkg"
 msgstr "Ipkg"
 
-msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
-msgstr "Sinulla ei ole asetuksissa lisähakemistoa. Aseta varmuuskopioinnin lisähakemisto asetuksissa"
+msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
+msgstr "Näyttää siltä että et ole asettanut ylimääräistä sijaintia. Aseta se Backup Managerin asetusvalikosta"
 
 msgid "Location of where backup should be saved."
 msgstr "Varmuuskopioiden tallennuskansio."
@@ -353,6 +359,9 @@ msgstr "Muokkaa asetusten varmuuskopioita"
 
 msgid "Manage your devices mount points."
 msgstr "Muokkaa laitteen liitoksia"
+
+msgid "Max backups to keep (0==all)"
+msgstr "Suurin määrä säilytettäviä varmuuskopioita (0==kaikki)"
 
 msgid "Mount"
 msgstr "Liitä"
@@ -433,14 +442,8 @@ msgstr "Valitse laite sivutustiedostoa varten"
 msgid "Please select the file to restore ?"
 msgstr "Valitse palautettava tiedosto?"
 
-msgid "Please wait while gathers information..."
-msgstr "Odota, kerätään tietoja..."
-
 msgid "Please wait while plugins restore completes..."
 msgstr "Odota, lisäosien palautusta suoritetaan..."
-
-msgid "Please wait while restore prepares"
-msgstr "Odota, palautusta valmistellaan"
 
 msgid "Please wait while scanning for devices..."
 msgstr "Odota. Etsitään laitteita..."
@@ -458,17 +461,29 @@ msgstr "Odota, käynnistetään\n"
 msgid "Please wait while stopping\n"
 msgstr "Odota, pysäytetään\n"
 
+msgid "Please wait while the restore prepares"
+msgstr "Odota palautuksen valmistelua"
+
+msgid "Please wait while the system gathers information..."
+msgstr "Ole hyvä ja odota, järjestelmä kerää tietoja..."
+
 msgid "Please wait."
 msgstr "Odota."
 
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Lisäosien luettelointi epäonnistui - tarkista onko käytössä väärä hakemisto tai liian vähän tilaa varmuuskopiolle"
+msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Plugin-listaus epäonnistui - Väärä varmistuskohde tai tallennuskohteessa on levytila lopussa"
 
 msgid "Preparing extra plugins..."
 msgstr "Valmistellaan ylimääräisiä lisäosia..."
 
 msgid "Press OK to toggle the selection."
 msgstr "Suorita valinta OK-näppäimellä."
+
+msgid "Query before backup starts"
+msgstr "Kysely ennen varmistusta alkaa"
+
+msgid "Query before starting backup."
+msgstr "Kysely ennen kuin varmistus aloitetaan."
 
 msgid "Rebooting..."
 msgstr "Käynnistyy uudelleen..."
@@ -600,14 +615,14 @@ msgstr "Softcam pysähtyy..."
 msgid "SoftcamCheck"
 msgstr "Softcam-tarkistus"
 
-msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
-msgstr "Sijaintia ei ole olemassa tai ole asetettu. Aseta sijaintin asetuksissa"
+msgid "Sorry but that location does not exist or is not setup, please set it up in the Backup Manager setup menu "
+msgstr "Kohdetta ei ole. Aseta se käyttäen Backup Managerin asetusvalikkoa"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Ohjelmasyötteet eivät ole käytössä huollon takia, yritä myöhemmin uudelleen."
 
-msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr "Ohjelmasyötteet eivät ole käytössä huollon takia, yritä palauttaa lisäosat varmuuskopioinnin kautta myöhemmin uudelleen."
+msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgstr "Syötteissä on huoltokatko. Ole hyvä ja käytä Backup Manageria palauttaaksesi pluginit."
 
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Tiedosto ei ole yhteensopiva tämän ohjelmaversion kanssa."
@@ -651,11 +666,11 @@ msgstr "TB"
 msgid "Temp Folder"
 msgstr "Temp-kansio"
 
-msgid "The backup location does not have enough freespace."
-msgstr "Varmuuskopion sijainnissa ei ole tarpeeksi vapaata tilaa."
+msgid "The backup location does not have enough free space."
+msgstr "Varmuuskopioiden tallennuskohteessa ei ole riittävästi tilaa."
 
-msgid "The backup location does not have enough freespace.\n"
-msgstr "Varmuuskopion sijainnissa ei ole tarpeeksi vapaata tilaa.\n"
+msgid "The backup location does not have enough free space.\n"
+msgstr "Varmuuskopioiden tallennuskohteessa ei ole riittävästi tilaa.\n"
 
 #, python-format
 msgid ""
@@ -794,18 +809,27 @@ msgstr "%s %s ei ole kytketty internettiin, tarkista verkkoasetukset ja yritä u
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Ladataan ohjelmisto.'"
 
-msgid "there was a problem with this device, please reformat and try again."
-msgstr "tässä laitteessa oli ongelma, alusta se ja yritä uudelleen."
+msgid "there is a problem with this device, please reformat and try again."
+msgstr "tässä laitteessa esiintyi ongelmia. Alusta laite ja yritä uudelleen"
 
 msgid "unavailable"
 msgstr "Ei saatavilla"
 
+#~ msgid "A background update check is is progress, please wait for retry."
+#~ msgstr "Taustapäivitys on käynnissä, odota uudelleenyritystä."
+
 #~ msgid ""
-#~ "Can't unmount partition, make sure it is not being used for swap or "
-#~ "record/timeshift paths"
+#~ "Backup in progress,\n"
+#~ "Please for it to finish, before trying again"
 #~ msgstr ""
-#~ "Levyosion liitosta ei voida poistaa, tarkista ettei se ole käytössä "
-#~ "sivutustiedostolle tai tallennukselle/ajansiirrolle"
+#~ "Varmuuskopiointi käynnissä,\n"
+#~ "odota sen päättymistä, ennen kuin yrität uudestaan"
+
+#~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
+#~ msgstr "Levyosion liitosta ei voida poistaa, tarkista ettei se ole käytössä sivutustiedostolle tai tallennukselle/ajansiirrolle"
+
+#~ msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
+#~ msgstr "Liitos epäonnistui. Varmista ettei polku ole sivutus, ajastus tai ajansiirto käytössä"
 
 #~ msgid ""
 #~ "Changes need a system restart to take effect.\n"
@@ -820,12 +844,11 @@ msgstr "Ei saatavilla"
 #~ msgid "Create and Restore complete images of the system."
 #~ msgstr "Luo ja palauta täydellisiä järjestelmän varmuuskopioita."
 
-#~ msgid ""
-#~ "It seems you have not setup a extra location, please setup in Backup "
-#~ "Manager setup menu "
-#~ msgstr ""
-#~ "Et ole määrittänyt lisäosien hakemistoa, tee se Varmuuskopioiden "
-#~ "asetusvalikossa "
+#~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+#~ msgstr "Et ole määrittänyt lisäosien hakemistoa, tee se Varmuuskopioiden asetusvalikossa "
+
+#~ msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
+#~ msgstr "Sinulla ei ole asetuksissa lisähakemistoa. Aseta varmuuskopioinnin lisähakemisto asetuksissa"
 
 #~ msgid "Manage you devices mountpoints."
 #~ msgstr "Hallitse laitteiden liitoskohtia (mountpoints)."
@@ -833,15 +856,35 @@ msgstr "Ei saatavilla"
 #~ msgid "Manage your backups of your settings."
 #~ msgstr "Hallitse asetusten varmuuskopioita."
 
-#~ msgid ""
-#~ "Sorry but location does exist or not setup, please setup in Backup "
-#~ "Manager setup menu "
-#~ msgstr ""
-#~ "Sijaintia ei löydy tai ei ole määritetty, tarkista asetukset "
-#~ "varmuuskopioinnin asetusvalikosta"
+#~ msgid "Please wait while gathers information..."
+#~ msgstr "Odota, kerätään tietoja..."
+
+#~ msgid "Please wait while restore prepares"
+#~ msgstr "Odota, palautusta valmistellaan"
+
+#~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+#~ msgstr "Lisäosien luettelointi epäonnistui - tarkista onko käytössä väärä hakemisto tai liian vähän tilaa varmuuskopiolle"
+
+#~ msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
+#~ msgstr "Sijaintia ei löydy tai ei ole määritetty, tarkista asetukset varmuuskopioinnin asetusvalikosta"
+
+#~ msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
+#~ msgstr "Sijaintia ei ole olemassa tai ole asetettu. Aseta sijaintin asetuksissa"
+
+#~ msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+#~ msgstr "Ohjelmasyötteet eivät ole käytössä huollon takia, yritä palauttaa lisäosat varmuuskopioinnin kautta myöhemmin uudelleen."
+
+#~ msgid "The backup location does not have enough freespace."
+#~ msgstr "Varmuuskopion sijainnissa ei ole tarpeeksi vapaata tilaa."
+
+#~ msgid "The backup location does not have enough freespace.\n"
+#~ msgstr "Varmuuskopion sijainnissa ei ole tarpeeksi vapaata tilaa.\n"
 
 #~ msgid "Wait please while scanning for devices..."
 #~ msgstr "Odota, laitteita haetaan..."
 
 #~ msgid "Wait please while scanning your %s %s devices..."
 #~ msgstr "Odota, haetaan %s %s:n laitteita..."
+
+#~ msgid "there was a problem with this device, please reformat and try again."
+#~ msgstr "tässä laitteessa oli ongelma, alusta se ja yritä uudelleen."

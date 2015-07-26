@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-01 21:30+0100\n"
-"PO-Revision-Date: 2015-04-02 09:49+0100\n"
+"POT-Creation-Date: 2015-07-24 21:19+0100\n"
+"PO-Revision-Date: 2015-07-26 16:45+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -625,6 +625,9 @@ msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
 msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "De feeds zijn dood vanwege onderhoud. Probeer later nog eens de plugins te herstellen via de back-up manager."
 
+msgid "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
+msgstr "De feeds zijn momenteel niet actief. Probeer later de plugins te installeren via de backupmanager."
+
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Het bestand is niet verenigbaar met deze versie van de firmware."
 
@@ -802,6 +805,10 @@ msgstr ""
 #, python-format
 msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
 msgstr "Uw %s %s is niet met internet verbonden. Gebruik de backupmanager later om uw plugins weer te installeren."
+
+#, python-format
+msgid "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
+msgstr "Uw %s %s is niet met het internet verbonden. Probeer later de plugins te installeren via de backupmanager."
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."

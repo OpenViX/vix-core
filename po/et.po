@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-04 12:40+0100\n"
-"PO-Revision-Date: 2015-05-02 16:00+0200\n"
+"POT-Creation-Date: 2015-08-26 08:55+0100\n"
+"PO-Revision-Date: 2015-08-28 07:28+0300\n"
 "Last-Translator: rimas\n"
 "Language-Team: Estonian <kde-i18n-doc@kde.org>\n"
 "Language: et\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.4\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -445,11 +445,11 @@ msgid "Please wait while plugins restore completes..."
 msgstr "Oota laienduste taastamist..."
 
 msgid "Please wait while scanning for devices..."
-msgstr "Oota, riistavara uurimine..."
+msgstr "Oota, riistvara uurimine..."
 
 #, python-format
 msgid "Please wait while scanning your %s %s devices..."
-msgstr "Oota, %s %s riistavara uurimine..."
+msgstr "Oota, %s %s riistvara uurimine..."
 
 msgid "Please wait while settings restore completes..."
 msgstr "Oota kanalinimekirja taastamist..."
@@ -622,6 +622,9 @@ msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti."
 
 msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Toimuvad serverite hooldetööd. Ürita laienduste taastamist hiljem."
+
+msgid "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
+msgstr "Toimivad serverite hooldustööd. Ürita laienduste taastamist hiljem"
 
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Fail ei ole ühilduv selle tarkvaraversiooniga. "
@@ -802,6 +805,10 @@ msgid "Your %s %s is not connected to the internet, Please try using Backup Mana
 msgstr "%s %s ei ole internetiga ühendatud. Proovi laiendusi taastada hiljem."
 
 #, python-format
+msgid "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
+msgstr "%s %s ei ole internetiga ühendatud. Ürita laienduste taastamist hiljem."
+
+#, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
 msgstr "%s %s ei ole ühendatud internetti. Kontrolli võrgu seadeid ja proovi uuesti."
 
@@ -887,3 +894,27 @@ msgstr "pole saadaval"
 
 #~ msgid "there was a problem with this device, please reformat and try again."
 #~ msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."
+
+#~ msgid "Creating Backup Files..."
+#~ msgstr "Backup-Dateien werden erstellt..."
+
+#~ msgid "Please copy the folder"
+#~ msgstr "Bitte den Ordner kopieren"
+
+#~ msgid "Please wait while gathers information... A"
+#~ msgstr "Bitte warten Informationen werden gesammelt... A"
+
+#~ msgid "Please wait while gathers information... B"
+#~ msgstr "Bitte warten Informationen werden gesammelt... B"
+
+#~ msgid "Sorry Image Restore is not supported on the"
+#~ msgstr "Tut uns leid Image Wiederherstellung wird nicht unterstützt auf der"
+
+#~ msgid "Sorry Image Restore is not supported on the "
+#~ msgstr "Tut uns leid aber Image Wiederherstellung wird nicht unterstützt bei der "
+
+#~ msgid "Sorry you %s %s is not yet compatible."
+#~ msgstr "Tut uns leid aber %s %s ist noch nicht kompatibel."
+
+#~ msgid "to a USB stick, place in front USB port of reciver and power on"
+#~ msgstr "auf einen USB-Stick, in der vorderen USB Buchse stecken und Einschalten"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-19 21:00+0200\n"
-"PO-Revision-Date: 2013-10-20 17:19+0100\n"
+"POT-Creation-Date: 2015-10-31 23:16+0000\n"
+"PO-Revision-Date: 2015-11-01 20:22+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: jerry\n"
 "Language: cs\n"
@@ -16,39 +16,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 1.8.6\n"
 
 msgid "%a %e %b  %-H:%M"
-msgstr ""
+msgstr "%a %e %b  %-H:%M"
 
 msgid "128 Mb"
-msgstr ""
+msgstr "128 Mb"
 
 msgid "16 Mb"
-msgstr ""
+msgstr "16 Mb"
 
 msgid "256 Mb"
-msgstr ""
+msgstr "256 Mb"
 
 msgid "30 Days"
-msgstr ""
+msgstr "30 dní"
 
 msgid "32 Mb"
-msgstr ""
+msgstr "32 Mb"
 
 msgid "64 Mb"
-msgstr ""
+msgstr "64 Mb"
 
 msgid "8 Mb"
-msgstr ""
+msgstr "8 Mb"
 
 msgid "96 Mb"
-msgstr ""
+msgstr "96 Mb"
 
-msgid "A background update check is is progress, please wait for retry."
-msgstr ""
+msgid "A background update check is in progress, please try again."
+msgstr "Běží kontrola na pozadí, prosím zkuste to znovu později."
+
+msgid "A background update check is is progress, please try again."
+msgstr "Běží kontrola na pozadí, prosím zkuste to znovu později."
 
 msgid "A backup has been detected."
-msgstr ""
+msgstr "Byla nalezena záloha."
 
 msgid "Activate"
 msgstr "Aktivovat"
@@ -60,25 +64,25 @@ msgid "Active:"
 msgstr "Aktivní:"
 
 msgid "Allows the softcam manager to be launched from extensions."
-msgstr ""
+msgstr "Povolí správci sofcamů být spouštěn z rozšíření."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
-msgstr ""
+msgstr "Povolí kontrolu softcamu a jeho případné znovuspuštění v případě potřeby."
 
 msgid "Allows you have the window close automatically."
-msgstr ""
+msgstr "Umožní automatické uzavírání oken."
 
 msgid "Allows you schedule your boackups."
-msgstr ""
+msgstr "Umožní naplánovat zálohy nastavení."
 
 msgid "Allows you schedule your image backups."
-msgstr ""
+msgstr "Umožní naplánovat zálohy image."
 
 msgid "Allows you to tag your backups to a box. (default is box name/type)"
-msgstr ""
+msgstr "Umožní označit zálohy dle přístroje. (výchozí je jméno/typ přijímače)"
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr ""
+msgstr "Umožní označit zálohy dle přístroje. (výchozí je jméno/typ přijímače)"
 
 msgid "Are you ready to create a backup image ?"
 msgstr "Jste připraveni vytvořit zálohu image ?"
@@ -103,15 +107,21 @@ msgstr ""
 msgid ""
 "Are you sure you want to restore this backup:\n"
 " "
-msgstr ""
+msgstr "Opravdu chcete obnovit tuto zálohu:"
 
 msgid ""
 "Are you sure you want to restore this image:\n"
 " "
-msgstr ""
+msgstr "Opravdu chcete obnovit tento image:"
 
 msgid "Autostart"
-msgstr ""
+msgstr "Autostart"
+
+msgid "Backing up Kernel..."
+msgstr "Zálohuji kernel ..."
+
+msgid "Backing up Root file system..."
+msgstr "Zálohuji souborový systém ..."
 
 msgid "Backing up files..."
 msgstr "Zálohuji soubory..."
@@ -142,31 +152,28 @@ msgstr "Záloha selhala - třeba nesprávné umístění nebo zbývá málo mís
 
 msgid ""
 "Backup in progress,\n"
-"Please for it to finish, before trying again"
+"Please wait for it to finish, before trying again"
 msgstr ""
-"Probíhá záloha,\n"
-"Počkejte na její dokončení, a zkuste to znovu"
+"Záloha probíhá,\n"
+"prosím počkejte na její dokončení a zkuste to znovu."
 
 msgid "Backup prefix"
-msgstr ""
+msgstr "Předpona zálohy"
+
+msgid "Backups to keep"
+msgstr "Počet záloh k zachování"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam nelze provozovat zároveň s MGcamdem"
 
-msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr ""
+msgid "Can't un-mount the partition, make sure it is not being used for swap or record/timeshift paths"
+msgstr "Nelze odpojit oddíl, zkontrolujte, není-li používán pro SWAP nebo pro timeshift/záznam"
 
 msgid "Cancel"
 msgstr "Zrušit"
 
 msgid "Change Location"
-msgstr ""
-
-#, python-format
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your %s %s now?"
-msgstr ""
+msgstr "Změna umístění"
 
 msgid "Checking Free RAM.."
 msgstr "Kontrola volné RAM."
@@ -175,10 +182,10 @@ msgid "Checking softcams..."
 msgstr "Kontrola softcamu..."
 
 msgid "Choose Files"
-msgstr "Vyberte soubor"
+msgstr "Vyberte soubory"
 
 msgid "Choose local ipk's folder"
-msgstr ""
+msgstr "Zvolte adresář s IPK balíčky"
 
 msgid "Choose where to mount your devices to:"
 msgstr "Vyberte, kam chcete připojit své zařízení:"
@@ -187,7 +194,7 @@ msgid "Close"
 msgstr "Zavřít"
 
 msgid "Close window on success"
-msgstr ""
+msgstr "Zavřít okno při úspěchu"
 
 msgid "Comparing against backup..."
 msgstr "Srovnávání zálohy..."
@@ -195,14 +202,11 @@ msgstr "Srovnávání zálohy..."
 msgid "Create"
 msgstr "Vytvořit"
 
-msgid "Create and Manage your swapfiles."
-msgstr "Vytvoří a spravuje odkládací soubory."
+msgid "Create and Manage your swap files."
+msgstr "Vytvořit a spravovat swap soubory."
 
-msgid "Create and Restore complete images of the system."
-msgstr "Vytvoří a obnoví kompletní image systému."
-
-msgid "Creating Backup Files..."
-msgstr "Vytváření souboru zálohy..."
+msgid "Create and Restore complete images of your system."
+msgstr "Vytvořit a obnovit kompletní obrazy systému."
 
 msgid "Creating Swap.."
 msgstr "Vytvářím swap.."
@@ -211,7 +215,7 @@ msgid "Creating list of installed plugins..."
 msgstr "Vytvářím seznam nainstalovaných pluginů..."
 
 msgid "Creating zip..."
-msgstr ""
+msgstr "Zipuji ..."
 
 msgid "Current Status:"
 msgstr "Nynější stav:"
@@ -236,6 +240,9 @@ msgstr "Zařízení: Nedostupné"
 
 msgid "Disable Startup"
 msgstr "Nespouštět"
+
+msgid "Do you want to restart GUI now ?"
+msgstr "Chcete nyní restartovat uživatelské rozhranní?"
 
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Chcete obnovit vaše pluginy v Enigmy2 ?"
@@ -262,7 +269,7 @@ msgid "Enable Swap at startup"
 msgstr "Povolit swap po startu"
 
 msgid "Enable frozen check"
-msgstr ""
+msgstr "Zapnout kontrolu zamrznutí"
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Opakování, zpoždění do dalšího plánu."
@@ -271,19 +278,19 @@ msgid "Exit the restore wizard"
 msgstr "Ukončit průvodce obnovou"
 
 msgid "Extra IPK's"
-msgstr ""
+msgstr "Extra IPK balíčky"
 
 msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "Nalezen nestandardní softcam, snažící se spustit, může to selhat"
 
 msgid "Free space:"
-msgstr ""
+msgstr "Volné místo:"
 
 msgid "Frozen check interval"
-msgstr ""
+msgstr "Interval kontroly zamrznutí"
 
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 msgid "HARD DISK: "
 msgstr "HDD: "
@@ -301,7 +308,7 @@ msgid "Inactive"
 msgstr "Neaktivní"
 
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 msgid "Install"
 msgstr "Instalovat"
@@ -313,7 +320,7 @@ msgid "Install IPK's from your tmp folder."
 msgstr "Instalace IPK ze složky tmp."
 
 msgid "Install extensions."
-msgstr ""
+msgstr "Instaluje rozšíření."
 
 msgid "Install local extension"
 msgstr "Instalovat místní balíčky"
@@ -322,34 +329,37 @@ msgid "Installing..."
 msgstr "Instaluji..."
 
 msgid "Invert"
-msgstr ""
+msgstr "Invertovat"
 
 msgid "Ipkg"
-msgstr ""
+msgstr "Ipkg"
 
-msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
-msgstr ""
+msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
+msgstr "Vypadá to, že nemáte nastaveno další umístění, nastavte jej prosím ve Správci zálohování."
 
 msgid "Location of where backup should be saved."
-msgstr ""
+msgstr "Umístění, kam se mají ukládat zálohy nastavení."
 
 msgid "Location of where image backup should be saved."
-msgstr ""
+msgstr "Umístění, kam se mají ukládat zálohy image."
 
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr "MGcamd nelze provozovat zároveň s CCcamem"
 
-msgid "Manage you devices mountpoints."
-msgstr "Správa přípojných bodů zařízení."
+msgid "Manage the backups of your settings."
+msgstr "Spravovat zálohy nastavení."
 
-msgid "Manage your backups of your settings."
-msgstr "Správa záloh vašeho nastavení."
+msgid "Manage your devices mount points."
+msgstr "Spravovat připojovací body."
+
+msgid "Max backups to keep (0==all)"
+msgstr "Maximum záloh k zachování (0==všechny)"
 
 msgid "Mount"
-msgstr ""
+msgstr "Připojit"
 
 msgid "Mount Manager"
 msgstr "Správce připojení"
@@ -413,16 +423,13 @@ msgid "Now skipping restore process"
 msgstr "Vynechání procesu obnovy"
 
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 msgid "OK, to perform a restore"
 msgstr "OK, provedete obnovu"
 
-msgid "Please copy the folder"
-msgstr ""
-
 msgid "Please enter a folder that contains some packages."
-msgstr ""
+msgstr "Zadejte složku, která obsahuje nějaké balíčky."
 
 msgid "Please select device to use as swapfile location"
 msgstr "Vyberte zařízení pro odkládání"
@@ -430,17 +437,18 @@ msgstr "Vyberte zařízení pro odkládání"
 msgid "Please select the file to restore ?"
 msgstr "Vybrat soubor k obnově ?"
 
-msgid "Please wait while gathers information..."
-msgstr ""
-
 msgid "Please wait while plugins restore completes..."
-msgstr ""
+msgstr "Počkejte prosím na obnovení pluginů..."
 
-msgid "Please wait while restore prepares"
-msgstr ""
+msgid "Please wait while scanning for devices..."
+msgstr "Počkejte prosím na prohledání zařízení..."
+
+#, python-format
+msgid "Please wait while scanning your %s %s devices..."
+msgstr "Počkejte prosím na prohledání zařízení %s %s ..."
 
 msgid "Please wait while settings restore completes..."
-msgstr ""
+msgstr "Počkejte prosím na obnovení nastavení ..."
 
 msgid "Please wait while starting\n"
 msgstr "Čekejte, spouští se\n"
@@ -448,17 +456,29 @@ msgstr "Čekejte, spouští se\n"
 msgid "Please wait while stopping\n"
 msgstr "Čekejte, zastavuje se\n"
 
-msgid "Please wait."
-msgstr ""
+msgid "Please wait while the restore prepares"
+msgstr "Počkejte, než se připraví obnovení"
 
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Seznam pluginů selhal - možná je nesprávná destinace, nebo je málo místa na zálohovacím zařízení"
+msgid "Please wait while the system gathers information..."
+msgstr "Prosím počkejte, systém shromažďuje potřebné informace..."
+
+msgid "Please wait."
+msgstr "Prosím čekejte."
+
+msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Soupis pluginů selhal - např. chybné umístění cíle nebo málo místa v úložišti."
 
 msgid "Preparing extra plugins..."
-msgstr ""
+msgstr "Připravuji extra pluginy..."
 
 msgid "Press OK to toggle the selection."
-msgstr ""
+msgstr "Zvol OK pro výběr."
+
+msgid "Query before backup starts"
+msgstr "Zařadit před zahájením zálohy."
+
+msgid "Query before starting backup."
+msgstr "Zařadit před zahájením zálohy."
 
 msgid "Rebooting..."
 msgstr "Restartuje se..."
@@ -467,20 +487,20 @@ msgid "Remove Confirmation"
 msgstr "Odebrat konfiguraci"
 
 msgid "Removing temp mounts..."
-msgstr ""
+msgstr "Odstraňuji dočasná připojení..."
 
 msgid "Repeat how often"
 msgstr "Jak často opakovat"
 
 msgid "Restart"
-msgstr ""
+msgstr "Restart"
 
 #, python-format
 msgid "Restart %s %s."
-msgstr ""
+msgstr "Restart %s %s."
 
 msgid "Restart Enigma2."
-msgstr ""
+msgstr "Restartovat Enigma2."
 
 msgid "Restore"
 msgstr "Obnova"
@@ -495,7 +515,7 @@ msgid "Restoring backup..."
 msgstr "Obnova zálohy..."
 
 msgid "Restoring plugins, this can take a long time..."
-msgstr ""
+msgstr "Obnovuji pluginy, může to chvilku trvat..."
 
 msgid "Restoring plugins..."
 msgstr "Obnova pluginů..."
@@ -516,13 +536,13 @@ msgid "Script Runner"
 msgstr "Spouštěč skriptu"
 
 msgid "Script Runner Setup"
-msgstr ""
+msgstr "Nastavení spouštěče skriptů."
 
 msgid "Select"
-msgstr "Vybrat"
+msgstr "Vyber"
 
 msgid "Select a backup to Restore:"
-msgstr ""
+msgstr "Vyberte zálohu k obnově:"
 
 msgid "Select a package to install:"
 msgstr "Vyberte balíček k instalaci:"
@@ -531,16 +551,16 @@ msgid "Select an image to Download:"
 msgstr "Vyberte image ke stažení:"
 
 msgid "Select an image to restore:"
-msgstr ""
+msgstr "Vyberte image k obnově:"
 
 msgid "Select extra packages folder"
-msgstr ""
+msgstr "Vyberte extra adresář s balíčky"
 
 msgid "Select files/folders to backup"
 msgstr "Vyberte soubory/složky na zálohování"
 
 msgid "Select folder that contains plugins"
-msgstr ""
+msgstr "Vyberte adresář, který obsahuje pluginy."
 
 msgid "Select the Swap File Size:"
 msgstr "Velikost odkl. souboru:"
@@ -549,13 +569,13 @@ msgid "Select:"
 msgstr "Vybrat:"
 
 msgid "Set the interval to be checked in mins."
-msgstr ""
+msgstr "Nastavte interval kontroly v minutách."
 
 msgid "Set the repeat interval of backup schedule."
-msgstr ""
+msgstr "Nastavte interval opakování zálohování."
 
 msgid "Set the time of backup to start."
-msgstr ""
+msgstr "Nastavte čas zahájení zálohování."
 
 msgid "Setting Up..."
 msgstr "Nastavuji..."
@@ -564,7 +584,7 @@ msgid "Setup Mounts"
 msgstr "Připojování"
 
 msgid "Show in extensions"
-msgstr ""
+msgstr "Zobrazit v rozšířeních."
 
 msgid "Size: "
 msgstr "Vel.: "
@@ -576,7 +596,7 @@ msgid "Softcam Manager Log"
 msgstr "Zpráva Správce Softcamu"
 
 msgid "Softcam Manager Setup"
-msgstr ""
+msgstr "Nastavení správce softcamu"
 
 msgid "Softcam Setup"
 msgstr "Nastavení Softcamu"
@@ -590,24 +610,23 @@ msgstr "Zastavuji Softcam..."
 msgid "SoftcamCheck"
 msgstr "KontrolaSoftcamu"
 
-msgid "Sorry Image Restore is not supported on the"
-msgstr ""
-
-msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-msgstr ""
+msgid "Sorry but that location does not exist or is not setup, please set it up in the Backup Manager setup menu "
+msgstr "Toto umístění není nastaveno nebo neexistuje. Nastavte správné umístění ve správci zálohování."
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
-msgstr ""
+msgstr "Aktualizační servery jsou mimo provoz kvůli údržbě. Zkuste to prosím později."
 
-msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr ""
+msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgstr "Aktualizační servery jsou mimo provoz kvůli údržbě. Zkuste obnovit pluginy později."
 
-#, python-format
-msgid "Sorry you %s %s is not yet compatible."
-msgstr ""
+msgid "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
+msgstr "Aktualizační servery jsou mimo provoz kvůli údržbě. Zkuste to prosím později."
+
+msgid "Sorry, but the file is not compatible with this image version."
+msgstr "Soubor není kompatibilní s touto verzí image."
 
 msgid "Sorry, but the restore failed."
-msgstr ""
+msgstr "Obnova selhala."
 
 msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
 msgstr "Soráč, nepřipojeno zařízení,podporující odkládání. Nelze vytvořit odkládací soubor na síti nebo fat32 jednotce"
@@ -616,7 +635,7 @@ msgid "Sorry, not enough free ram found, and no physical devices that supports S
 msgstr "Soráč,nedostatek volné RAM, a není připojeno žádné zařízení, podporující "
 
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 msgid "Starting..."
 msgstr "Spouštím..."
@@ -625,7 +644,7 @@ msgid "Status:"
 msgstr "Stav:"
 
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
 msgid "Swap File not found. You have to create the file before to activate."
 msgstr "Odkládací soubor nebyl nalezen. Musíte soubor před aktivací vytvořit."
@@ -640,13 +659,24 @@ msgid "Swap Size:"
 msgstr "Vel.Swapu:"
 
 msgid "TB"
-msgstr ""
+msgstr "TB"
 
 msgid "Temp Folder"
-msgstr ""
+msgstr "dočasné soubory"
 
-msgid "The backup location does not have enough freespace."
-msgstr "Vybrané umístění zálohy nemá dostatek volného místa."
+msgid "The backup location does not have enough free space."
+msgstr "Málo místa v úložišti záloh."
+
+msgid "The backup location does not have enough free space.\n"
+msgstr "Málo místa v úložišti záloh.\n"
+
+#, python-format
+msgid ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
+msgstr ""
+"Změny vyžadují restart systému.\n"
+"Restartovat %s %s nyní?"
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Vybrané umístění neexistuje, použijte /media/hdd"
@@ -667,34 +697,34 @@ msgid "Type: "
 msgstr "Typ: "
 
 msgid "USB: "
-msgstr ""
+msgstr "USB: "
 
 msgid "Unmount"
-msgstr ""
+msgstr "Odpojit"
 
 msgid "Updating mount locations."
-msgstr ""
+msgstr "Aktualizuji přípojné body."
 
 msgid "Use as HDD"
 msgstr "Užít jako HDD"
 
 msgid "ViX"
-msgstr ""
+msgstr "ViX"
 
 msgid "ViX Backup Manager"
-msgstr ""
+msgstr "ViX Správce zálohy"
 
 msgid "ViX Image Manager"
-msgstr ""
+msgstr "ViX Správce Image"
 
 msgid "ViX Mount Manager"
-msgstr ""
+msgstr "ViX Správce připojovacích bodů"
 
 msgid "ViX Script Runner"
-msgstr ""
+msgstr "ViX Správce skriptů"
 
 msgid "ViX Swap Manager"
-msgstr ""
+msgstr "ViX Správce odkládání"
 
 msgid "View Progress"
 msgstr "Průběh"
@@ -706,16 +736,11 @@ msgid ""
 "Wait please while scanning\n"
 "for softcam's..."
 msgstr ""
-
-msgid "Wait please while scanning for devices..."
-msgstr "Čekejte při skenování zařízení..."
-
-#, python-format
-msgid "Wait please while scanning your %s %s devices..."
-msgstr ""
+"Čekejte prosím na\n"
+"prohledání softcamů."
 
 msgid "Wait please while scanning..."
-msgstr "Během skenování čekejte..."
+msgstr "Čekejte na dokončení skenování..."
 
 msgid "Weekly"
 msgstr "Týdně"
@@ -750,7 +775,7 @@ msgid "You have no image to download."
 msgstr "Nemáte žádný image ke stažení."
 
 msgid "You have no image to restore."
-msgstr ""
+msgstr "Nemáte žádné image k obnovení."
 
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Musíte vytvořit odkládací soubor, než se aktivuje automatické spuštění."
@@ -760,29 +785,68 @@ msgid ""
 "Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
+"Váš %s %s se chystá provést zálohu nastavení a zjištění pluginů.\n"
+"Chcete to provést?"
 
 #, python-format
 msgid ""
 "Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
+"Váš %s %s se chystá provést kompletní zálohu image, toto trvá kolem 6 minut.\n"
+"Chcete to provést?"
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr ""
+msgstr "Váš %s %s není připojen k internetu, zkontrolujte nastavení připojení a zkuste znovu prostřednictvím Správce zálohování."
+
+#, python-format
+msgid "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
+msgstr "Váš %s %s není připojen k internetu, zkontrolujte nastavení připojení a zkuste znovu prostřednictvím Správce zálohování."
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
-msgstr ""
+msgstr "Váš %s %s není připojen k internetu, zkontrolujte nastavení připojení a zkuste znovu."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo Stažení image."
 
-msgid "there was a problem with this device, please reformat and try again."
-msgstr "nastal problém se zařízením, přeformátujte ho a zkuste to znovu."
-
-msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr ""
+msgid "there is a problem with this device, please reformat and try again."
+msgstr "S tímto zařízením jsou problémy, prosím zkontrolujte a spusťte znovu."
 
 msgid "unavailable"
 msgstr "nedostupné"
+
+#~ msgid ""
+#~ "Backup in progress,\n"
+#~ "Please for it to finish, before trying again"
+#~ msgstr ""
+#~ "Probíhá záloha,\n"
+#~ "Počkejte na její dokončení, a zkuste to znovu"
+
+#~ msgid "Create and Manage your swapfiles."
+#~ msgstr "Vytvoří a spravuje odkládací soubory."
+
+#~ msgid "Create and Restore complete images of the system."
+#~ msgstr "Vytvoří a obnoví kompletní image systému."
+
+#~ msgid "Creating Backup Files..."
+#~ msgstr "Vytváření souboru zálohy..."
+
+#~ msgid "Manage you devices mountpoints."
+#~ msgstr "Správa přípojných bodů zařízení."
+
+#~ msgid "Manage your backups of your settings."
+#~ msgstr "Správa záloh vašeho nastavení."
+
+#~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+#~ msgstr "Seznam pluginů selhal - možná je nesprávná destinace, nebo je málo místa na zálohovacím zařízení"
+
+#~ msgid "The backup location does not have enough freespace."
+#~ msgstr "Vybrané umístění zálohy nemá dostatek volného místa."
+
+#~ msgid "Wait please while scanning for devices..."
+#~ msgstr "Čekejte při skenování zařízení..."
+
+#~ msgid "there was a problem with this device, please reformat and try again."
+#~ msgstr "nastal problém se zařízením, přeformátujte ho a zkuste to znovu."

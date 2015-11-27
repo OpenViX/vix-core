@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-26 08:55+0100\n"
-"PO-Revision-Date: 2015-08-28 07:28+0300\n"
+"PO-Revision-Date: 2015-11-20 15:31+0200\n"
 "Last-Translator: rimas\n"
 "Language-Team: Estonian <kde-i18n-doc@kde.org>\n"
 "Language: et\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.5\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -216,7 +216,7 @@ msgid "Creating Swap.."
 msgstr "Saale loomine..."
 
 msgid "Creating list of installed plugins..."
-msgstr "Paigaldatud laienduste nimekirja loomine..."
+msgstr "Paigaldatud pluginate nimekirja loomine..."
 
 msgid "Creating zip..."
 msgstr "Zip faili loomine..."
@@ -249,7 +249,7 @@ msgid "Do you want to restart GUI now ?"
 msgstr "Kas taaskäivitad kasutajaliidese kohe?"
 
 msgid "Do you want to restore your Enigma2 plugins ?"
-msgstr "Kas taastad Enigma2 laiendused?"
+msgstr "Kas taastad Enigma2 pluginad?"
 
 msgid "Do you want to restore your Enigma2 settings ?"
 msgstr "Kas taastad Enigma2 seadistused?"
@@ -378,7 +378,7 @@ msgid "Moving to Backup Location..."
 msgstr "Liigutamine varukoopia asukohta..."
 
 msgid "NO, do not restore plugins"
-msgstr "Ei, laiendusi ei taasta"
+msgstr "Ei, pluginaid ei taasta"
 
 msgid "NO, do not restore settings"
 msgstr "Ei, seadistusi ei taasta"
@@ -418,7 +418,7 @@ msgstr ""
 "asukohas /etc/tuxbox/config"
 
 msgid "No plugins where needed to be installed"
-msgstr "Laiendusi ei olnud vaja paigaldada"
+msgstr "Pluginaid ei olnud vaja paigaldada"
 
 msgid "None"
 msgstr "Pole"
@@ -442,7 +442,7 @@ msgid "Please select the file to restore ?"
 msgstr "Vali fail, mida taastada"
 
 msgid "Please wait while plugins restore completes..."
-msgstr "Oota laienduste taastamist..."
+msgstr "Oota pluginate taastamist..."
 
 msgid "Please wait while scanning for devices..."
 msgstr "Oota, riistvara uurimine..."
@@ -470,10 +470,10 @@ msgid "Please wait."
 msgstr "Oota."
 
 msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Laienduste märkimine nurjus  - nt. kehtetu varukoopia asukoht või ruumipuudus"
+msgstr "Pluginate märkimine nurjus  - nt. kehtetu varukoopia asukoht või ruumipuudus"
 
 msgid "Preparing extra plugins..."
-msgstr "Laienduste ettevalmistamine..."
+msgstr "Pluginate ettevalmistamine..."
 
 msgid "Press OK to toggle the selection."
 msgstr "Valiku muutmiseks vajuta OK."
@@ -519,10 +519,10 @@ msgid "Restoring backup..."
 msgstr "Varukoopia taastamine..."
 
 msgid "Restoring plugins, this can take a long time..."
-msgstr "Laienduste taastamine. See võib kesta kaua..."
+msgstr "Pluginate taastamine. See võib kesta kaua..."
 
 msgid "Restoring plugins..."
-msgstr "Laienduste taastamine..."
+msgstr "Pluginate taastamine..."
 
 msgid "Run"
 msgstr "Käivita"
@@ -564,7 +564,7 @@ msgid "Select files/folders to backup"
 msgstr "Vali varundamiseks failid/kataloogid"
 
 msgid "Select folder that contains plugins"
-msgstr "Vali kaust, milles leidub laiendusi"
+msgstr "Vali kaust, milles leidub pluginaid"
 
 msgid "Select the Swap File Size:"
 msgstr "Vali saalefaili suurus:"
@@ -621,10 +621,10 @@ msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti."
 
 msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr "Toimuvad serverite hooldetööd. Ürita laienduste taastamist hiljem."
+msgstr "Toimuvad serverite hooldetööd. Ürita pluginate taastamist hiljem."
 
 msgid "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
-msgstr "Toimivad serverite hooldustööd. Ürita laienduste taastamist hiljem"
+msgstr "Toimivad serverite hooldustööd. Ürita pluginate taastamist hiljem"
 
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Fail ei ole ühilduv selle tarkvaraversiooniga. "
@@ -758,10 +758,10 @@ msgstr ""
 "Tere tulemast taastamisabilisse.\n"
 "\n"
 "Leiti varukoopia.\n"
-"Laiendused ja seadistused, mis olid varukoopia loomise ajaks paigaldatud, saab taastada kasutades seda tööriista.\n"
+"Pluginad ja seadistused, mis olid varukoopia loomise ajaks paigaldatud, saab taastada kasutades seda tööriista.\n"
 
 msgid "YES, to restore plugins"
-msgstr "Jah, taasta laiendused"
+msgstr "Jah, taasta pluginad"
 
 msgid "YES, to restore settings"
 msgstr "Jah, taasta seadistused"
@@ -789,7 +789,7 @@ msgid ""
 "Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
-"%s %s varundab seadistused ja tuvastab laiendused.\n"
+"%s %s varundab seadistused ja tuvastab pluginad.\n"
 "Kas lubad seda?"
 
 #, python-format
@@ -802,11 +802,11 @@ msgstr ""
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr "%s %s ei ole internetiga ühendatud. Proovi laiendusi taastada hiljem."
+msgstr "%s %s ei ole internetiga ühendatud. Proovi pluginaid taastada hiljem."
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
-msgstr "%s %s ei ole internetiga ühendatud. Ürita laienduste taastamist hiljem."
+msgstr "%s %s ei ole internetiga ühendatud. Ürita pluginate taastamist hiljem."
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
@@ -820,101 +820,3 @@ msgstr "selle andmekandjaga on mingi probleem, vorminda see ja proovi uuesti."
 
 msgid "unavailable"
 msgstr "pole saadaval"
-
-#~ msgid "A background update check is is progress, please wait for retry."
-#~ msgstr "Uuenduste kontroll toimub taustal. Oota ja proovi uuesti"
-
-#~ msgid ""
-#~ "Backup in progress,\n"
-#~ "Please for it to finish, before trying again"
-#~ msgstr ""
-#~ "Toimub varundamine,\n"
-#~ "Oota selle lõpuni enne uuesti proovimist"
-
-#~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
-#~ msgstr "Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale või salvestamise/ajanihke jaoks"
-
-#~ msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
-#~ msgstr "Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale või salvestamise/ajanihke jaoks"
-
-#~ msgid ""
-#~ "Changes need a system restart to take effect.\n"
-#~ "Restart your %s %s now?"
-#~ msgstr ""
-#~ "Muudatused vajavad jõustumiseks süsteemi taaskäivitamist.\n"
-#~ "Kas taaskäivitad %s %s?"
-
-#~ msgid "Create and Manage your swapfiles."
-#~ msgstr "Loo ja halda saalefaile"
-
-#~ msgid "Create and Restore complete images of the system."
-#~ msgstr "Loo ja taasta täielikke süsteemikoopiaid."
-
-#~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
-#~ msgstr "Eraldi asukoht on määramata. Määra see kasutades varukoopia haldurit"
-
-#~ msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
-#~ msgstr "Eraldi asukoht on määramata. Määra see kasutades varukoopia haldurit"
-
-#~ msgid "Manage you devices mountpoints."
-#~ msgstr "Halda andmekandjate haakepunkte."
-
-#~ msgid "Manage your backups of your settings."
-#~ msgstr "Halda varukoopiaid seadistustest."
-
-#~ msgid "Please wait while gathers information..."
-#~ msgstr "Oota andmete kogumist..."
-
-#~ msgid "Please wait while restore prepares"
-#~ msgstr "Valmistumine taastamiseks"
-
-#~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-#~ msgstr "Laienduste laadimine nurjus - n.t.  vale asukoht või ruumipuudus varundamise asukohas"
-
-#~ msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-#~ msgstr "Asukoht puudub või on määramata. Määra see kasutades varukoopia haldurit"
-
-#~ msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
-#~ msgstr "Asukoht puudub või on määramata. Määra see kasutades varukoopia haldurit"
-
-#~ msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-#~ msgstr "Uuenduste serveri hooldustööd. Proovi hiljem uuesti"
-
-#~ msgid "The backup location does not have enough freespace."
-#~ msgstr "Varundamise asukohas ei ole piisavalt vaba ruumi."
-
-#~ msgid "The backup location does not have enough freespace.\n"
-#~ msgstr "Varukoopia asukohas ei ole piisavalt vaba ruumi.\n"
-
-#~ msgid "Wait please while scanning for devices..."
-#~ msgstr "Oota, riistavara uurimine..."
-
-#~ msgid "Wait please while scanning your %s %s devices..."
-#~ msgstr "Oota, %s %s riistavara uurimine..."
-
-#~ msgid "there was a problem with this device, please reformat and try again."
-#~ msgstr "andmekandjaga tekkis probleem, vorminda see ja proovi uuesti."
-
-#~ msgid "Creating Backup Files..."
-#~ msgstr "Backup-Dateien werden erstellt..."
-
-#~ msgid "Please copy the folder"
-#~ msgstr "Bitte den Ordner kopieren"
-
-#~ msgid "Please wait while gathers information... A"
-#~ msgstr "Bitte warten Informationen werden gesammelt... A"
-
-#~ msgid "Please wait while gathers information... B"
-#~ msgstr "Bitte warten Informationen werden gesammelt... B"
-
-#~ msgid "Sorry Image Restore is not supported on the"
-#~ msgstr "Tut uns leid Image Wiederherstellung wird nicht unterstützt auf der"
-
-#~ msgid "Sorry Image Restore is not supported on the "
-#~ msgstr "Tut uns leid aber Image Wiederherstellung wird nicht unterstützt bei der "
-
-#~ msgid "Sorry you %s %s is not yet compatible."
-#~ msgstr "Tut uns leid aber %s %s ist noch nicht kompatibel."
-
-#~ msgid "to a USB stick, place in front USB port of reciver and power on"
-#~ msgstr "auf einen USB-Stick, in der vorderen USB Buchse stecken und Einschalten"

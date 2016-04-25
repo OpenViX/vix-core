@@ -71,7 +71,7 @@ msgstr "Permetti di verificare che la softcam non si blocchi, se necessario riav
 msgid "Allows you have the window close automatically."
 msgstr "Permetti alle finestre di chiudersi automaticamente."
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Permetti di programmare i backup."
 
 msgid "Allows you schedule your image backups."

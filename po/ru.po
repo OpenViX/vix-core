@@ -70,7 +70,7 @@ msgstr "Позволяет проверять работу эмулятора и
 msgid "Allows you have the window close automatically."
 msgstr ""
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Позволяет планировать создание резервных копий."
 
 msgid "Allows you schedule your image backups."

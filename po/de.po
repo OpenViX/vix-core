@@ -72,7 +72,7 @@ msgstr "Erlaubt es zu prüfen ob Softcams noch laufen. Softcams werden, wenn nö
 msgid "Allows you have the window close automatically."
 msgstr "Erlaubt es das Fenster automatisch schließen zu lassen."
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Erlaubt es Zeiten für automatische Backups anzugeben."
 
 msgid "Allows you schedule your image backups."

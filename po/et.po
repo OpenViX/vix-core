@@ -72,7 +72,7 @@ msgstr "Võimaldab kontrollida, kas EMU on hangunud ja vajadusel selle automaats
 msgid "Allows you have the window close automatically."
 msgstr "Võimaldab akna automaatse sulgumise."
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Võimaldab ajastada varukoopiate loomist."
 
 msgid "Allows you schedule your image backups."

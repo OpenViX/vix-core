@@ -700,7 +700,7 @@ msgstr ""
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr ""
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr ""
 
 msgid "Allows you schedule your image backups."

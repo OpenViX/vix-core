@@ -70,7 +70,7 @@ msgstr "Softcamin çalışma kontrolunu, gerekirse tekrar otomatik olarak başla
 msgid "Allows you have the window close automatically."
 msgstr "Pencereyi otomatik olarak kapamanızı sağlar."
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Yedeklerinizi zamanlamanızı sağlar."
 
 msgid "Allows you schedule your image backups."

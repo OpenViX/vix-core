@@ -71,7 +71,7 @@ msgstr "Permite-i Softcamului sa verifice daca s-a oprit din functiune si are ne
 msgid "Allows you have the window close automatically."
 msgstr "Permite inchiderea ferestrelor automat."
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Permite programarea unei copii de rezerva."
 
 msgid "Allows you schedule your image backups."

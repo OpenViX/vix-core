@@ -69,7 +69,7 @@ msgstr "Umožňuje skontrolovať, či neprestal bežať softcam a ak to bude pot
 msgid "Allows you have the window close automatically."
 msgstr "Umožňuje automatické zatvorenie okna."
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Umožňuje naplánovať zálohovanie."
 
 msgid "Allows you schedule your image backups."

@@ -68,7 +68,7 @@ msgstr "Tillåter att softcamen kontrolleras om den har slutat fungera, och star
 msgid "Allows you have the window close automatically."
 msgstr "Tillåter dig ha att fönstret stängs automatiskt."
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Låter dig schemalägga dina backuper."
 
 msgid "Allows you schedule your image backups."

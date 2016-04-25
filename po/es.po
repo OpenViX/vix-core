@@ -69,7 +69,7 @@ msgstr "Permite detectar si el softcam ya no funciona y lo reinicia si hace falt
 msgid "Allows you have the window close automatically."
 msgstr ""
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Permite programar copias de seguridad."
 
 msgid "Allows you schedule your image backups."

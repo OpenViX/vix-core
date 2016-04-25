@@ -70,7 +70,7 @@ msgstr "Lar deg kontrollere om softcam har stoppet å virke og om nødvendig å 
 msgid "Allows you have the window close automatically."
 msgstr ""
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Gir mulighet for automatisk sikkerhetkopiering på ønsket tidspunkt."
 
 msgid "Allows you schedule your image backups."

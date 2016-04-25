@@ -72,7 +72,7 @@ msgstr "Povolí kontrolu softcamu a jeho případné znovuspuštění v případ
 msgid "Allows you have the window close automatically."
 msgstr "Umožní automatické uzavírání oken."
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Umožní naplánovat zálohy nastavení."
 
 msgid "Allows you schedule your image backups."

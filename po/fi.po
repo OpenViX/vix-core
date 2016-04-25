@@ -73,7 +73,7 @@ msgstr "Tarkistaa onko softcam pysähtynyt ja käynnistää sen tarvittaessa aut
 msgid "Allows you have the window close automatically."
 msgstr "Sulje ikkuna automaattisesti."
 
-msgid "Allows you schedule your boackups."
+msgid "Allows you schedule your backups."
 msgstr "Ajasta varmuuskopiointi"
 
 msgid "Allows you schedule your image backups."

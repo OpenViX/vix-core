@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-20 14:52+0000\n"
-"PO-Revision-Date: 2016-02-20 22:15+0100\n"
+"POT-Creation-Date: 2016-07-05 15:31+0200\n"
+"PO-Revision-Date: 2016-07-05 17:32+0200\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -62,6 +62,9 @@ msgstr "Aktiv"
 
 msgid "Active:"
 msgstr "Aktiv:"
+
+msgid "Allows the script runner to be launched from extensions."
+msgstr "Erlaubt es den Scriptstarter aus den Erweiterungen zu starten."
 
 msgid "Allows the softcam manager to be launched from extensions."
 msgstr "Erlaubt es den Softcam-Menager aus Erweiterungen zu starten."
@@ -150,9 +153,6 @@ msgstr "Backup Verwaltung"
 
 msgid "Backup Manager Log"
 msgstr "Backup Verwaltung Log"
-
-msgid "Backup Manager Setup"
-msgstr "Einstellungen Backup Verwaltung"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Backup fehlgeschlagen - z.B. falscher Sicherungsort oder zu wenig freier Speicher auf dem Sicherungslaufwerk"
@@ -307,9 +307,6 @@ msgstr "IPK-Installer"
 
 msgid "Image Manager"
 msgstr "Image Verwaltung"
-
-msgid "Image Manager Setup"
-msgstr "Einstellungen Image Verwaltung"
 
 msgid "Inactive"
 msgstr "Inaktiv"
@@ -542,9 +539,6 @@ msgstr "Zeitgeplante Backups"
 msgid "Script Runner"
 msgstr "Script ausführen"
 
-msgid "Script Runner Setup"
-msgstr "Script ausführen Einstellungen"
-
 msgid "Select"
 msgstr "Auswählen"
 
@@ -587,6 +581,9 @@ msgstr "Gebe das Zeitintervall für automatische Image-Backups an."
 msgid "Setting Up..."
 msgstr "Stellt ein..."
 
+msgid "Setup"
+msgstr ""
+
 msgid "Setup Mounts"
 msgstr "Mounts einstellen"
 
@@ -601,12 +598,6 @@ msgstr "Softcam Verwaltung"
 
 msgid "Softcam Manager Log"
 msgstr "Softcam Verwaltung Log"
-
-msgid "Softcam Manager Setup"
-msgstr "Einstellungen Softcam Verwaltung"
-
-msgid "Softcam Setup"
-msgstr "Softcam-Einstellungen"
 
 msgid "Softcam Starting..."
 msgstr "Starte Softcam..."
@@ -830,6 +821,9 @@ msgstr "nicht verfügbar"
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "Eine Updateprüfung läuft im Hintergrund. Bitte warten und erneut versuchen."
 
+#~ msgid "Backup Manager Setup"
+#~ msgstr "Einstellungen Backup Verwaltung"
+
 #~ msgid ""
 #~ "Backup in progress,\n"
 #~ "Please for it to finish, before trying again"
@@ -861,6 +855,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Found none standard softcam, trying to start, this may fail"
 #~ msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl"
+
+#~ msgid "Image Manager Setup"
+#~ msgstr "Einstellungen Image Verwaltung"
 
 #~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 #~ msgstr "Es sieht so aus als wenn Du noch keinen Extra-Ort angegeben hast. Bitte Extra-Ort in den Einstellungen von der Backup-Verwaltung festlegen."
@@ -898,6 +895,15 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 #~ msgstr "Auflistung der Plugins fehlgeschlagen - z.B. falscher Sicherungsspeicherort oder ungenügend Speicher auf dem Sicherungslaufwerk"
+
+#~ msgid "Script Runner Setup"
+#~ msgstr "Script ausführen Einstellungen"
+
+#~ msgid "Softcam Manager Setup"
+#~ msgstr "Einstellungen Softcam Verwaltung"
+
+#~ msgid "Softcam Setup"
+#~ msgstr "Softcam-Einstellungen"
 
 #~ msgid "Sorry Image Restore is not supported on the"
 #~ msgstr "Tut uns leid Image Wiederherstellung wird nicht unterstützt auf der"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-10 15:44+0100\n"
-"PO-Revision-Date: 2016-05-11 06:01+0200\n"
+"POT-Creation-Date: 2016-07-05 23:40+0200\n"
+"PO-Revision-Date: 2016-07-06 07:46+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -153,9 +153,6 @@ msgstr "Backupmanager"
 
 msgid "Backup Manager Log"
 msgstr "Backupmanager log"
-
-msgid "Backup Manager Setup"
-msgstr "Backupmanager instellingen"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Back-up mislukt of verkeerde backup bestemming of onvoldoende ruimte"
@@ -311,9 +308,6 @@ msgstr "IPK Installeren"
 msgid "Image Manager"
 msgstr "Imagemanager"
 
-msgid "Image Manager Setup"
-msgstr "Imagemanager instellingen"
-
 msgid "Inactive"
 msgstr "Inactief"
 
@@ -436,6 +430,9 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "JA, voer een herstelactie uit"
 
+msgid "PK Installer"
+msgstr ""
+
 msgid "Please enter a folder that contains some packages."
 msgstr "Kies een folder die plugins bevat."
 
@@ -543,9 +540,6 @@ msgstr "Plan back-ups"
 msgid "Script Runner"
 msgstr "Script uitvoeren"
 
-msgid "Script Runner Setup"
-msgstr "Scriptrunner instellingen"
-
 msgid "Select"
 msgstr "Selecteer"
 
@@ -588,6 +582,9 @@ msgstr "Stel de tijd in waarop een back-up wordt gemaakt."
 msgid "Setting Up..."
 msgstr "Bezig met instellen...."
 
+msgid "Setup"
+msgstr "Instellingen"
+
 msgid "Setup Mounts"
 msgstr "Mounts instellingen"
 
@@ -602,12 +599,6 @@ msgstr "Softcammanager"
 
 msgid "Softcam Manager Log"
 msgstr "Softcammanager log"
-
-msgid "Softcam Manager Setup"
-msgstr "Softcammanager instellingen"
-
-msgid "Softcam Setup"
-msgstr "Softcam instellingen"
 
 msgid "Softcam Starting..."
 msgstr "Bezig Softcam te starten..."
@@ -831,6 +822,9 @@ msgstr "niet beschikbaar"
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "De feeds worden gecontroleerd; even wachten."
 
+#~ msgid "Backup Manager Setup"
+#~ msgstr "Backupmanager instellingen"
+
 #~ msgid ""
 #~ "Backup in progress,\n"
 #~ "Please for it to finish, before trying again"
@@ -862,6 +856,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Found none standard softcam, trying to start, this may fail"
 #~ msgstr "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, maar dat kan mislukken"
+
+#~ msgid "Image Manager Setup"
+#~ msgstr "Imagemanager instellingen"
 
 #~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 #~ msgstr "U heeft geen extra locatie ingesteld; U kunt dat doen via het menu van de Backup Manager."
@@ -899,6 +896,15 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 #~ msgstr "Maken van een lijst met plugins is mislukt - of een verkeerde back-up locatie of onvoldoende vrije ruimte"
+
+#~ msgid "Script Runner Setup"
+#~ msgstr "Scriptrunner instellingen"
+
+#~ msgid "Softcam Manager Setup"
+#~ msgstr "Softcammanager instellingen"
+
+#~ msgid "Softcam Setup"
+#~ msgstr "Softcam instellingen"
 
 #~ msgid "Sorry Image Restore is not supported on the"
 #~ msgstr "Sorry: het terugzetten van een image wordt niet ondersteund door een"

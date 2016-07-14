@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-05 23:40+0200\n"
-"PO-Revision-Date: 2016-07-06 07:46+0200\n"
+"POT-Creation-Date: 2016-07-13 10:52+0200\n"
+"PO-Revision-Date: 2016-07-14 05:57+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -150,9 +150,6 @@ msgstr "Back-up locatie"
 
 msgid "Backup Manager"
 msgstr "Backupmanager"
-
-msgid "Backup Manager Log"
-msgstr "Backupmanager log"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Back-up mislukt of verkeerde backup bestemming of onvoldoende ruimte"
@@ -347,11 +344,17 @@ msgstr "Locatie voor uw back-ups."
 msgid "Location of where image backup should be saved."
 msgstr "Locatie waar images moeten worden opgeslagen."
 
+msgid "Logs"
+msgstr "Logs"
+
 msgid "MB"
 msgstr "MB"
 
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr "MGcamd en CCcam kunnen niet beide actief zijn"
+
+msgid "Main menu"
+msgstr "Hoofdmenu"
 
 msgid "Manage the backups of your settings."
 msgstr "Beheer de back-ups van uw instellingen."
@@ -429,9 +432,6 @@ msgstr "OK"
 
 msgid "OK, to perform a restore"
 msgstr "JA, voer een herstelactie uit"
-
-msgid "PK Installer"
-msgstr ""
 
 msgid "Please enter a folder that contains some packages."
 msgstr "Kies een folder die plugins bevat."
@@ -594,11 +594,11 @@ msgstr "Toon in extensies"
 msgid "Size: "
 msgstr "Afmetingen: "
 
+msgid "SoftCam and CI"
+msgstr "SoftCam en CI"
+
 msgid "Softcam Manager"
 msgstr "Softcammanager"
-
-msgid "Softcam Manager Log"
-msgstr "Softcammanager log"
 
 msgid "Softcam Starting..."
 msgstr "Bezig Softcam te starten..."
@@ -822,6 +822,9 @@ msgstr "niet beschikbaar"
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "De feeds worden gecontroleerd; even wachten."
 
+#~ msgid "Backup Manager Log"
+#~ msgstr "Backupmanager log"
+
 #~ msgid "Backup Manager Setup"
 #~ msgstr "Backupmanager instellingen"
 
@@ -899,6 +902,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Script Runner Setup"
 #~ msgstr "Scriptrunner instellingen"
+
+#~ msgid "Softcam Manager Log"
+#~ msgstr "Softcammanager log"
 
 #~ msgid "Softcam Manager Setup"
 #~ msgstr "Softcammanager instellingen"

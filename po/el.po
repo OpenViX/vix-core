@@ -7,764 +7,938 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-19 21:00+0200\n"
-"PO-Revision-Date: 2013-10-20 17:19+0100\n"
-"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
+"POT-Creation-Date: 2016-07-15 11:08+0200\n"
+"PO-Revision-Date: 2016-07-17 14:24+0200\n"
+"Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
 "Language-Team: none\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.7.7\n"
 
 msgid "%a %e %b  %-H:%M"
-msgstr ""
+msgstr "%a %e %b  %-H:%M"
 
 msgid "128 Mb"
-msgstr ""
+msgstr "128 Mb"
 
 msgid "16 Mb"
-msgstr ""
+msgstr "16 Mb"
 
 msgid "256 Mb"
-msgstr ""
+msgstr "256 Mb"
 
 msgid "30 Days"
-msgstr ""
+msgstr "30 Ημέρες"
 
 msgid "32 Mb"
-msgstr ""
+msgstr "32 Mb"
 
 msgid "64 Mb"
-msgstr ""
+msgstr "64 Mb"
 
 msgid "8 Mb"
-msgstr ""
+msgstr "8 Mb"
 
 msgid "96 Mb"
-msgstr ""
+msgstr "96 Mb"
 
-msgid "A background update check is is progress, please wait for retry."
-msgstr ""
+msgid "A background update check is in progress, please try again."
+msgstr "Εκτελείται έλεγχος ενημέρωσης στο παρασκήνιο, παρακαλώ δοκιμάστε ξανά."
+
+msgid "A background update check is is progress, please try again."
+msgstr "Εκτελείται έλεγχος ενημέρωσης στο παρασκήνιο, παρακαλώ δοκιμάστε ξανά."
 
 msgid "A backup has been detected."
-msgstr ""
+msgstr "Εντοπίστηκε ένα αντίγραφο ασφαλείας."
 
 msgid "Activate"
-msgstr ""
+msgstr "Ενεργοποίηση"
 
 msgid "Active"
-msgstr ""
+msgstr "Ενεργό"
 
 msgid "Active:"
-msgstr ""
+msgstr "Ενεργό:"
+
+msgid "Allows the script runner to be launched from extensions."
+msgstr "Επιτρέπει στην εκτέλεση script να εκτελείται από τις επεκτάσεις."
 
 msgid "Allows the softcam manager to be launched from extensions."
-msgstr ""
+msgstr "Επιτρέπει στη διαχείριση softcam να εκτελείται από τις επεκτάσεις."
 
-msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+msgid ""
+"Allows the softcam to be checked if it stopped working, and restarted "
+"automatically if needed."
 msgstr ""
+"Επιτρέπει τον έλεγχο του softcam αν αυτό σταματήσει και την αυτόματη "
+"επανεκκίνησή του αν απαιτείται."
 
 msgid "Allows you have the window close automatically."
-msgstr ""
+msgstr "Επιτρέπει το αυτόματο κλείσιμο του παραθύρου."
 
 msgid "Allows you schedule your backups."
-msgstr ""
+msgstr "Επιτρέπει τον προγραμματισμό των εφεδρειών."
 
 msgid "Allows you schedule your image backups."
-msgstr ""
+msgstr "Επιτρέπει τον προγραμματισμό των εφεδρειών image."
 
 msgid "Allows you to tag your backups to a box. (default is box name/type)"
 msgstr ""
+"Επιτρέπει τις ετικέτες στα αντίγραφα ασφαλείας ενός δέκτη. (προεπιλογή όνομα "
+"δέκτη/τύπος)"
 
-msgid "Allows you to tag your image backup to a box. (default is box name/type)"
+msgid ""
+"Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr ""
+"Επιτρέπει τις ετικέτες στο αντίγραφο ασφαλείας image ενός δέκτη. (προεπιλογή "
+"όνομα δέκτη/τύπος)"
 
 msgid "Are you ready to create a backup image ?"
-msgstr ""
+msgstr "Είστε έτοιμοι για τη δημιουργία ενός αντιγράφου ασφαλείας του image ;"
 
 msgid "Are you ready to install ?"
-msgstr ""
+msgstr "Είστε έτοιμοι για εγκατάσταση ;"
 
 msgid ""
 "Are you sure you want to delete this backup:\n"
 " "
 msgstr ""
+"Σίγουρα θέλετε να διαγραφεί αυτό το αντίγραφο ασφαλείας:\n"
+" "
 
 msgid ""
 "Are you sure you want to download this image:\n"
 " "
 msgstr ""
+"Σίγουρα θέλετε να γίνει λήψη αυτού του image:\n"
+" "
 
 msgid ""
 "Are you sure you want to restore this backup:\n"
 " "
 msgstr ""
+"Σίγουρα θέλετε να γίνει επαναφορά αυτού του αντίγραφου ασφαλείας:\n"
+" "
 
 msgid ""
 "Are you sure you want to restore this image:\n"
 " "
 msgstr ""
+"Σίγουρα θέλετε να γίνει επαναφορά αυτού του image:\n"
+" "
+
+msgid "Automatic settings backup"
+msgstr "Αυτόματη εφεδρεία ρυθμίσεων"
 
 msgid "Autostart"
-msgstr ""
+msgstr "Αυτόματη εκκίνηση"
+
+msgid "Backing up Kernel..."
+msgstr "Εφεδρεία Kernel..."
+
+msgid "Backing up Root file system..."
+msgstr "Εφεδρεία του συστήματος αρχείων Ρίζας..."
 
 msgid "Backing up files..."
-msgstr ""
+msgstr "Εφεδρεία αρχείων..."
 
 msgid "Backup Complete..."
-msgstr ""
+msgstr "Ολοκλήρωση Εφεδρείας..."
 
 msgid "Backup Confirmation"
-msgstr ""
+msgstr "Επικύρωση Εφεδρείας"
 
 msgid "Backup Created"
-msgstr ""
+msgstr "Το αντίγραφο ασφαλείας δημιουργήθηκε"
 
 msgid "Backup Location"
-msgstr ""
+msgstr "Θέση αντιγράφων ασφαλείας"
 
 msgid "Backup Manager"
-msgstr ""
+msgstr "Διαχείριση Αντιγράφων Ασφαλείας"
 
-msgid "Backup Manager Log"
+msgid ""
+"Backup failed - e. g. wrong backup destination or no space left on backup "
+"device"
 msgstr ""
-
-msgid "Backup Manager Setup"
-msgstr ""
-
-msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
-msgstr ""
+"Αποτυχία εφεδρείας - π.χ. λάθος διαδρομή εφεδρείας ή έλλειψη χώρου στη "
+"συσκευή"
 
 msgid ""
 "Backup in progress,\n"
-"Please for it to finish, before trying again"
+"Please wait for it to finish, before trying again"
 msgstr ""
+"Εφεδρεία σε εξέλιξη,\n"
+"Παρακαλώ περιμένετε να ολοκληρωθεί πριν ξαναπροσπαθήσετε"
 
 msgid "Backup prefix"
-msgstr ""
+msgstr "Πρόθεση αντιγράφου ασφαλείας"
+
+msgid "Backups to keep"
+msgstr "Αντίγραφα ασφαλείας για διατήρηση"
 
 msgid "CCcam can't run whilst MGcamd is running"
-msgstr ""
+msgstr "Το CCcam δεν μπορεί να εκτελεστεί καθώς εκτελείται το MGcamd"
 
-msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
+msgid ""
+"Can't un-mount the partition, make sure it is not being used for swap or "
+"record/timeshift paths"
 msgstr ""
+"Αδυναμία αποπροσάρτησης του διαμερίσματος, σιγουρευτείτε ότι δεν "
+"χρησιμοποιείται για swap ή διαδρομές εγγραφών/χρονομετατόπισης"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 msgid "Change Location"
-msgstr ""
-
-#, python-format
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your %s %s now?"
-msgstr ""
+msgstr "Αλλαγή Τοποθεσίας"
 
 msgid "Checking Free RAM.."
-msgstr ""
+msgstr "Έλεγχος Ελεύθερης RAM..."
 
 msgid "Checking softcams..."
-msgstr ""
+msgstr "Έλεγχος softcams..."
 
 msgid "Choose Files"
-msgstr ""
+msgstr "Επιλογή αρχείων"
 
 msgid "Choose local ipk's folder"
-msgstr ""
+msgstr "Επιλογή φακέλου τοπικών ipk's"
 
 msgid "Choose where to mount your devices to:"
-msgstr ""
+msgstr "Επιλέξτε το σημείο προσάρτησης των συσκευών σας: "
 
 msgid "Close"
-msgstr ""
+msgstr "Κλείσιμο"
 
 msgid "Close window on success"
-msgstr ""
+msgstr "Κλείσιμο παραθύρου μετά την επιτυχία"
 
 msgid "Comparing against backup..."
-msgstr ""
+msgstr "Σύγκριση με το αντίγραφο ασφαλείας..."
 
 msgid "Create"
-msgstr ""
+msgstr "Δημιουργία"
 
-msgid "Create and Manage your swapfiles."
-msgstr ""
+msgid "Create and Manage your swap files."
+msgstr "Δημιουργία και Διαχείριση των αρχείων swap."
 
-msgid "Create and Restore complete images of the system."
-msgstr ""
-
-msgid "Creating Backup Files..."
-msgstr ""
+msgid "Create and Restore complete images of your system."
+msgstr "Δημιουργία και Επαναφορά ολοκληρωμένων images στο σύστημά σας."
 
 msgid "Creating Swap.."
-msgstr ""
+msgstr "Δημιουργία Swap..."
 
 msgid "Creating list of installed plugins..."
-msgstr ""
+msgstr "Δημιουργία λίστας των εγκατεστημένων προσθέτων..."
 
 msgid "Creating zip..."
-msgstr ""
+msgstr "Δημιουργία zip..."
 
 msgid "Current Status:"
-msgstr ""
+msgstr "Τρέχουσα Κατάσταση:"
 
 msgid "Daily"
-msgstr ""
+msgstr "Καθημερινά"
 
 msgid "Deactivate"
-msgstr ""
+msgstr "Απενεργοποίηση"
 
 msgid "Delete"
-msgstr ""
+msgstr "Διαγραφή"
 
 msgid "Deselect"
-msgstr ""
+msgstr "Αποεπιλογή"
 
 msgid "Device: "
-msgstr ""
+msgstr "Συσκευή: "
 
 msgid "Device: None available"
-msgstr ""
+msgstr "Συσκευή: Καμία διαθέσιμη"
 
 msgid "Disable Startup"
-msgstr ""
+msgstr "Απενεργοποίηση Εκκίνησης"
+
+msgid "Do you want to restart GUI now ?"
+msgstr "Να γίνει επανεκκίνηση της επιφάνειας χρήστη τώρα ;"
 
 msgid "Do you want to restore your Enigma2 plugins ?"
-msgstr ""
+msgstr "Θέλετε να γίνει επαναφορά των προσθέτων Enigma2 ;"
 
 msgid "Do you want to restore your Enigma2 settings ?"
-msgstr ""
+msgstr "Θέλετε να γίνει επαναφορά των ρυθμίσεων του Enigma2 ;"
 
 msgid "Download"
-msgstr ""
+msgstr "Λήψη"
 
 msgid "Download Confirmation"
-msgstr ""
+msgstr "Επιβεβαίωση Λήψης"
 
 msgid "Downloading Image..."
-msgstr ""
+msgstr "Λήψη Image..."
 
 msgid "Downloads"
-msgstr ""
+msgstr "Λήψεις"
 
 msgid "Enable Startup"
-msgstr ""
+msgstr "Ενεργοποίηση Εκκίνησης"
 
 msgid "Enable Swap at startup"
-msgstr ""
+msgstr "Ενεργοποίηση Swap στην εκκίνηση"
 
 msgid "Enable frozen check"
-msgstr ""
+msgstr "Ενεργοποίηση ελέγχου παγώματος"
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr ""
+"Αρκετές Επαναπροσπάθειες, καθυστέρηση μέχρι τον επόμενο προγραμματισμό."
 
 msgid "Exit the restore wizard"
-msgstr ""
+msgstr "Έξοδος από τον οδηγό επαναφοράς"
 
 msgid "Extra IPK's"
-msgstr ""
+msgstr "Επιπρόσθετα αρχεία IPK"
 
-msgid "Found none standard softcam, trying to start, this may fail"
+msgid "Found non-standard softcam, trying to start, this may fail"
 msgstr ""
+"Βρέθηκε ένα μη στάνταρ softcam, προσπάθεια εκκίνησης, πιθανότητα αποτυχίας"
 
 msgid "Free space:"
-msgstr ""
+msgstr "Ελεύθερος χώρος:"
 
 msgid "Frozen check interval"
-msgstr ""
+msgstr "Μεσοδιάστημα ελέγχου παγώματος"
 
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 msgid "HARD DISK: "
-msgstr ""
+msgstr "ΣΚΛΗΡΟΣ ΔΙΣΚΟΣ: "
 
 msgid "IPK Installer"
-msgstr ""
+msgstr "Εγκατάσταση IPK"
 
 msgid "Image Manager"
-msgstr ""
-
-msgid "Image Manager Setup"
-msgstr ""
+msgstr "Διαχείριση Image"
 
 msgid "Inactive"
-msgstr ""
+msgstr "Ανενεργό"
 
 msgid "Info"
-msgstr ""
+msgstr "Πληροφορίες"
 
 msgid "Install"
-msgstr ""
+msgstr "Εγκατάσταση"
 
 msgid "Install Confirmation"
-msgstr ""
+msgstr "Επιβεβαίωση Εγκατάστασης"
 
 msgid "Install IPK's from your tmp folder."
-msgstr ""
+msgstr "Εγκατάσταση αρχείων IPK από το φάκελο tmp."
 
 msgid "Install extensions."
-msgstr ""
+msgstr "Εγκατάσταση επεκτάσεων."
 
 msgid "Install local extension"
-msgstr ""
+msgstr "Εγκατάσταση τοπικής επέκτασης"
 
 msgid "Installing..."
-msgstr ""
+msgstr "Εγκατάσταση..."
 
 msgid "Invert"
-msgstr ""
+msgstr "Αντιστροφή"
 
 msgid "Ipkg"
-msgstr ""
+msgstr "Ipkg"
 
-msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+msgid ""
+"It seems you have not setup an extra location, please set it up in the "
+"Backup Manager setup menu "
 msgstr ""
+"Φαίνεται ότι δεν έχει ρυθμιστεί επιπρόσθετη τοποθεσία, παρακαλώ ρυθμίστε την "
+"στο μενού ρυθμίσεων της Διαχείρισης Εφεδρείας"
 
 msgid "Location of where backup should be saved."
-msgstr ""
+msgstr "Τοποθεσία αποθήκευσης του αντιγράφου ασφαλείας."
 
 msgid "Location of where image backup should be saved."
-msgstr ""
+msgstr "Τοποθεσία αποθήκευσης του αντιγράφου ασφαλείας του image."
+
+msgid "Logs"
+msgstr "Καταγραφές"
 
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 msgid "MGcamd can't run whilst CCcam is running"
-msgstr ""
+msgstr "Το MGcamd δεν μπορεί να εκτελεστεί καθώς εκτελείται το CCcam"
 
-msgid "Manage you devices mountpoints."
-msgstr ""
+msgid "Main menu"
+msgstr "Κύριο μενού"
 
-msgid "Manage your backups of your settings."
-msgstr ""
+msgid "Manage the backups of your settings."
+msgstr "Διαχείριση των αντιγράφων ασφαλείας των ρυθμίσεών σας."
+
+msgid "Manage your devices mount points."
+msgstr "Διαχείριση των σημείων προσάρτησης των συσκευών σας."
+
+msgid "Max backups to keep (0==all)"
+msgstr "Μέγιστα αντίγραφα ασφαλείας για διατήρηση (0==όλα)"
+
+msgid "Max image backups to keep (0==all)"
+msgstr "Μέγιστα αντίγραφα ασφαλείας image για διατήρηση (0==όλα)"
 
 msgid "Mount"
-msgstr ""
+msgstr "Προσάρτηση"
 
 msgid "Mount Manager"
-msgstr ""
+msgstr "Διαχείριση Προσαρτήσεων"
 
 msgid "Mount failed"
-msgstr ""
+msgstr "Αποτυχία προσάρτησης"
 
 msgid "Mount: "
-msgstr ""
+msgstr "Προσάρτηση: "
 
 msgid "Moving to Backup Location..."
-msgstr ""
+msgstr "Μετακίνηση στην Τοποθεσίας Εφεδρείας..."
 
 msgid "NO, do not restore plugins"
-msgstr ""
+msgstr "ΟΧΙ, να μη γίνει επαναφορά των προσθέτων"
 
 msgid "NO, do not restore settings"
-msgstr ""
+msgstr "ΟΧΙ, να μη γίνει επαναφορά των ρυθμίσεων"
 
 msgid "New Backup"
-msgstr ""
+msgstr "Νέα Εφεδρεία"
 
 msgid "Next Backup: "
-msgstr ""
+msgstr "Επόμενη Εφεδρεία: "
 
 msgid ""
 "No config files found, please setup CCcam first\n"
 "in /etc/CCcam.cfg"
 msgstr ""
+"Δεν βρέθηκαν αρχεία ρυθμίσεων, παρακαλώ ρυθμίστε το CCcam πρώτα\n"
+"στο /etc/CCcam.cfg"
 
 msgid ""
 "No config files found, please setup Hypercam first\n"
 "in /etc/hypercam.cfg"
 msgstr ""
+"Δεν βρέθηκαν αρχεία ρυθμίσεων, παρακαλώ ρυθμίστε το Hypercam πρώτα\n"
+"στο /etc/hypercam .cfg"
 
 msgid ""
 "No config files found, please setup MGcamd first\n"
-"in /var/keys"
+"in /usr/keys"
 msgstr ""
+"Δεν βρέθηκαν αρχεία ρυθμίσεων, παρακαλώ ρυθμίστε το MGcamd πρώτα\n"
+"στο /usr/keys"
 
 msgid ""
 "No config files found, please setup Oscam first\n"
 "in /etc/tuxbox/config"
 msgstr ""
+"Δεν βρέθηκαν αρχεία ρυθμίσεων, παρακαλώ ρυθμίστε το Oscam πρώτα\n"
+"στο /etc/tuxbox/config"
 
 msgid "No plugins where needed to be installed"
-msgstr ""
+msgstr "Χωρίς πρόσθετα για εγκατάσταση"
 
 msgid "None"
-msgstr ""
+msgstr "Κανένα"
 
 msgid "Now skipping restore process"
-msgstr ""
+msgstr "Παράκαμψη τώρα της διαδικασίας επαναφοράς"
 
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 msgid "OK, to perform a restore"
-msgstr ""
-
-msgid "Please copy the folder"
-msgstr ""
+msgstr "ΟΚ, να γίνει επαναφορά"
 
 msgid "Please enter a folder that contains some packages."
-msgstr ""
+msgstr "Παρακαλώ εισάγετε ένα φάκελο που περιέχει μερικά πακέτα."
 
 msgid "Please select device to use as swapfile location"
-msgstr ""
+msgstr "Επιλέξτε μία συσκευή για χρήση τοποθεσίας swap"
 
 msgid "Please select the file to restore ?"
-msgstr ""
-
-msgid "Please wait while gathers information..."
-msgstr ""
+msgstr "Παρακαλώ επιλέξτε το αρχείο προς επαναφορά ;"
 
 msgid "Please wait while plugins restore completes..."
-msgstr ""
+msgstr "Παρακαλώ περιμένετε καθώς ολοκληρώνεται η επαναφορά των προσθέτων..."
 
-msgid "Please wait while restore prepares"
+msgid "Please wait while scanning for devices..."
+msgstr "Παρακαλώ περιμένετε καθώς γίνεται ανίχνευση για συσκευές..."
+
+#, python-format
+msgid "Please wait while scanning your %s %s devices..."
 msgstr ""
+"Παρακαλώ περιμένετε καθώς γίνεται ανίχνευση του %s %s σας για συσκευές..."
 
 msgid "Please wait while settings restore completes..."
-msgstr ""
+msgstr "Παρακαλώ περιμένετε καθώς ολοκληρώνεται η επαναφορά των ρυθμίσεων..."
 
 msgid "Please wait while starting\n"
-msgstr ""
+msgstr "Παρακαλώ περιμένετε καθώς ξεκινά το\n"
 
 msgid "Please wait while stopping\n"
-msgstr ""
+msgstr "Παρακαλώ περιμένετε καθώς σταματά\n"
+
+msgid "Please wait while the restore prepares"
+msgstr "Παρακαλώ περιμένετε καθώς ετοιμάζεται η επαναφορά"
+
+msgid "Please wait while the system gathers information..."
+msgstr "Παρακαλώ περιμένετε καθώς το σύστημα συλλέγει πληροφορίες..."
 
 msgid "Please wait."
-msgstr ""
+msgstr "Παρακαλώ περιμένετε."
 
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+msgid ""
+"Plugin listing failed - e. g. wrong backup destination or no space left on "
+"backup device"
 msgstr ""
+"Αποτυχία δημιουργίας λίστας προσθέτων - π.χ. λάθος διαδρομή εφεδρείας ή "
+"έλλειψη χώρου στη συσκευή"
 
 msgid "Preparing extra plugins..."
-msgstr ""
+msgstr "Προετοιμασία επιπρόσθετων προσθέτων..."
 
 msgid "Press OK to toggle the selection."
-msgstr ""
+msgstr "Πιέστε ΟΚ για εναλλαγή της επιλογής."
+
+msgid "Query before backup starts"
+msgstr "Ερώτηση πριν την εκκίνηση της εφεδρείας"
+
+msgid "Query before image backup starts"
+msgstr "Ερώτηση πριν την εκκίνηση της εφεδρείας image"
+
+msgid "Query before starting backup."
+msgstr "Ερώτηση πριν την εκκίνηση της εφεδρείας."
+
+msgid "Query before starting image backup."
+msgstr "Ερώτηση πριν την εκκίνηση της εφεδρείας του image."
 
 msgid "Rebooting..."
-msgstr ""
+msgstr "Επανεκκίνηση..."
 
 msgid "Remove Confirmation"
-msgstr ""
+msgstr "Αφαίρεση Επιβεβαίωσης"
 
 msgid "Removing temp mounts..."
-msgstr ""
+msgstr "Αφαίρεση προσωρινών προσαρτήσεων..."
 
 msgid "Repeat how often"
-msgstr ""
+msgstr "Επανάληψη πόσο συχνά"
 
 msgid "Restart"
-msgstr ""
+msgstr "Επανεκκίνηση"
 
 #, python-format
 msgid "Restart %s %s."
-msgstr ""
+msgstr "Επανεκκίνηση του %s %s."
 
 msgid "Restart Enigma2."
-msgstr ""
+msgstr "Επανεκκίνηση Enigma2."
 
 msgid "Restore"
-msgstr ""
+msgstr "Επαναφορά"
 
 msgid "Restore Confirmation"
-msgstr ""
+msgstr "Επιβεβαίωση Επαναφοράς"
 
 msgid "Restore Wizard"
-msgstr ""
+msgstr "Οδηγός Επαναφοράς"
 
 msgid "Restoring backup..."
-msgstr ""
+msgstr "Επαναφορά αντιγράφου ασφαλείας..."
 
 msgid "Restoring plugins, this can take a long time..."
-msgstr ""
+msgstr "Επαναφορά προσθέτων, αυτό μπορεί να διαρκέσει αρκετά..."
 
 msgid "Restoring plugins..."
-msgstr ""
+msgstr "Επαναφορά προσθέτων..."
 
 msgid "Run"
-msgstr ""
+msgstr "Εκτέλεση"
 
 msgid "Run your shell scripts."
-msgstr ""
+msgstr "Εκτέλεση script κελύφους."
 
 msgid "Save"
-msgstr ""
+msgstr "Αποθήκευση"
 
 msgid "Schedule Backups"
-msgstr ""
+msgstr "Προγραμματισμός Εφεδρείας"
 
 msgid "Script Runner"
-msgstr ""
-
-msgid "Script Runner Setup"
-msgstr ""
+msgstr "Εκτέλεση Script"
 
 msgid "Select"
-msgstr ""
+msgstr "Επιλογή"
 
 msgid "Select a backup to Restore:"
-msgstr ""
+msgstr "Επιλογή ενός αντιγράφου ασφαλείας προς Επαναφορά:"
 
 msgid "Select a package to install:"
-msgstr ""
+msgstr "Επιλογή πακέτου για εγκατάσταση:"
 
 msgid "Select an image to Download:"
-msgstr ""
+msgstr "Επιλογή ενός image για Λήψη:"
 
 msgid "Select an image to restore:"
-msgstr ""
+msgstr "Επιλογή ενός image για επαναφορά:"
 
 msgid "Select extra packages folder"
-msgstr ""
+msgstr "Επιλογή φακέλου επιπρόσθετων πακέτων"
 
 msgid "Select files/folders to backup"
-msgstr ""
+msgstr "Επιλογή αρχείων/φακέλων προς εφεδρεία..."
 
 msgid "Select folder that contains plugins"
-msgstr ""
+msgstr "Επιλογή φακέλου που περιέχει πρόσθετα"
 
 msgid "Select the Swap File Size:"
-msgstr ""
+msgstr "Επιλογή Μεγέθους Αρχείου Swap: "
 
 msgid "Select:"
-msgstr ""
+msgstr "Επιλογή:"
 
 msgid "Set the interval to be checked in mins."
-msgstr ""
+msgstr "Ορισμός μεσοδιαστήματος ελέγχου σε λεπτά."
 
 msgid "Set the repeat interval of backup schedule."
-msgstr ""
+msgstr "Ορισμός του μεσοδιαστήματος επανάληψης του προγραμματισμού εφεδρείας."
 
 msgid "Set the time of backup to start."
-msgstr ""
+msgstr "Ορισμός ώρας έναρξης εφεδρείας."
 
 msgid "Setting Up..."
-msgstr ""
+msgstr "Ρύθμιση..."
+
+msgid "Setup"
+msgstr "Εγκατάσταση"
 
 msgid "Setup Mounts"
-msgstr ""
+msgstr "Ρυθμίσεις Προσαρτήσεων"
 
 msgid "Show in extensions"
-msgstr ""
+msgstr "Εμφάνιση στις επεκτάσεις"
 
 msgid "Size: "
-msgstr ""
+msgstr "Μέγεθος: "
+
+msgid "SoftCam and CI"
+msgstr "SoftCam και CI"
 
 msgid "Softcam Manager"
-msgstr ""
-
-msgid "Softcam Manager Log"
-msgstr ""
-
-msgid "Softcam Manager Setup"
-msgstr ""
-
-msgid "Softcam Setup"
-msgstr ""
+msgstr "Διαχείριση Softcam"
 
 msgid "Softcam Starting..."
-msgstr ""
+msgstr "Εκκίνηση Softcam..."
 
 msgid "Softcam Stopping..."
-msgstr ""
+msgstr "Σταμάτημα Softcam..."
 
 msgid "SoftcamCheck"
-msgstr ""
+msgstr "Έλεγχος Softcam"
 
-msgid "Sorry Image Restore is not supported on the"
+msgid ""
+"Sorry but that location does not exist or is not setup, please set it up in "
+"the Backup Manager setup menu "
 msgstr ""
-
-msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-msgstr ""
+"Λυπούμαστε, αλλά αυτή η τοποθεσία δεν υπάρχει ή δεν έχει ρυθμιστεί, παρακαλώ "
+"ρυθμίστε την στο μενού της Διαχείρισης Εφεδρείας"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr ""
+"Λυπούμαστε, οι πηγές δεν είναι διαθέσιμες λόγω συντήρησης, δοκιμάστε "
+"αργότερα."
 
-msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgid ""
+"Sorry the feeds are down for maintenance, Please try using Backup Manager to "
+"restore plugins later."
 msgstr ""
+"Λυπούμαστε, οι πηγές δεν είναι διαθέσιμες λόγω συντήρησης, δοκιμάστε να "
+"χρησιμοποιήσετε τη Διαχείριση Εφεδρείας για την επαναφορά των προσθέτων "
+"αργότερα."
 
-#, python-format
-msgid "Sorry you %s %s is not yet compatible."
+msgid ""
+"Sorry the feeds are down for maintenance, Please try using the Backup "
+"Manager to restore plugins later."
 msgstr ""
+"Λυπούμαστε, οι πηγές δεν είναι διαθέσιμες λόγω συντήρησης, δοκιμάστε να "
+"χρησιμοποιήσετε τη Διαχείριση Εφεδρείας για την επαναφορά των προσθέτων "
+"αργότερα."
+
+msgid "Sorry, But this machine is not supported yet."
+msgstr "Λυπούμαστε, αλλά αυτή η συσκευή δεν υποστηρίζεται ακόμα."
+
+msgid "Sorry, but the file is not compatible with this image version."
+msgstr ""
+"Λυπούμαστε, αλλά αυτό το αρχείο δεν είναι συμβατό με αυτή την έκδοση του "
+"image."
 
 msgid "Sorry, but the restore failed."
-msgstr ""
+msgstr "Λυπούμαστε, αλλά η επαναφορά απέτυχε."
 
-msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
+msgid ""
+"Sorry, no physical devices that supports SWAP attached. Can't create "
+"Swapfile on network or fat32 filesystems"
 msgstr ""
+"Λυπούμαστε, δεν έχουν συνδεθεί συσκευές που υποστηρίζουν το SWAP. Αδυναμία "
+"δημιουργίας αρχείου Swap στο δίκτυο ή σε συστήματα αρχείων fat32"
 
-msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
+msgid ""
+"Sorry, not enough free ram found, and no physical devices that supports SWAP "
+"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
+"make backup"
 msgstr ""
+"Λυπούμαστε, μη επαρκής μνήμη ram, και δεν έχουν συνδεθεί συσκευές που "
+"υποστηρίζουν το SWAP. Αδυναμία δημιουργίας αρχείου swap στο δίκτυο ή σε "
+"συστήματα αρχείων fat32, αδυναμία εφεδρείας"
 
 msgid "Start"
-msgstr ""
+msgstr "Εκκίνηση"
 
 msgid "Starting..."
-msgstr ""
+msgstr "Εκκίνηση..."
 
 msgid "Status:"
-msgstr ""
+msgstr "Κατάσταση:"
 
 msgid "Stop"
-msgstr ""
+msgstr "Σταμάτημα"
 
 msgid "Swap File not found. You have to create the file before to activate."
 msgstr ""
+"Το αρχείο swap δεν βρέθηκε. Πρέπει να δημιουργήστε το αρχείο πριν το "
+"ενεργοποιήσετε."
 
 msgid "Swap Manager"
-msgstr ""
+msgstr "Διαχείριση Swap"
 
 msgid "Swap Place:"
-msgstr ""
+msgstr "Τοποθεσία Swap: "
 
 msgid "Swap Size:"
-msgstr ""
+msgstr "Μέγεθος Swap:"
 
 msgid "TB"
-msgstr ""
+msgstr "TB"
 
 msgid "Temp Folder"
-msgstr ""
+msgstr "Προσωρινός Φάκελος"
 
-msgid "The backup location does not have enough freespace."
+msgid "The backup location does not have enough free space."
+msgstr "Η τοποθεσία της εφεδρείας δεν διαθέτει αρκετό ελεύθερο χώρο."
+
+msgid "The backup location does not have enough free space.\n"
+msgstr "Η τοποθεσία της εφεδρείας δεν διαθέτει αρκετό ελεύθερο χώρο.\n"
+
+#, python-format
+msgid ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
 msgstr ""
+"Απαιτείται επανεκκίνηση συστήματος για να εφαρμοστούν οι αλλαγές.\n"
+"Επανεκκίνηση του %s %s σας τώρα;"
 
 msgid "The chosen location does not exist, using /media/hdd"
-msgstr ""
+msgstr "Η επιλεγμένη τοποθεσία δεν υπάρχει, χρήση του /media/hdd"
 
 msgid "The wizard is finished now, and will reboot"
-msgstr ""
+msgstr "Ο οδηγός ολοκληρώθηκε και θα γίνει επανεκκίνηση"
 
 msgid "The wizard is finished now."
-msgstr ""
+msgstr "Ο οδηγός ολοκληρώθηκε."
 
 msgid "This Device is already mounted as HDD."
-msgstr ""
+msgstr "Αυτή η Συσκευή έχει ήδη προσαρτηθεί ως HDD."
 
 msgid "Time of Backup to start"
-msgstr ""
+msgstr "Ώρα έναρξης Εφεδρείας"
 
 msgid "Type: "
-msgstr ""
+msgstr "Τύπος: "
 
 msgid "USB: "
-msgstr ""
+msgstr "USB: "
 
 msgid "Unmount"
-msgstr ""
+msgstr "Αποπροσάρτηση"
 
 msgid "Updating mount locations."
-msgstr ""
+msgstr "Ενημέρωση τοποθεσιών προσάρτησης."
 
 msgid "Use as HDD"
-msgstr ""
+msgstr "Χρήση ως HDD"
 
 msgid "ViX"
-msgstr ""
+msgstr "ViX"
 
 msgid "ViX Backup Manager"
-msgstr ""
+msgstr "ViX Διαχείριση Εφεδρείας"
 
 msgid "ViX Image Manager"
-msgstr ""
+msgstr "ViX Διαχείριση Image"
 
 msgid "ViX Mount Manager"
-msgstr ""
+msgstr "ViX Διαχείριση Προσαρτήσεων"
 
 msgid "ViX Script Runner"
-msgstr ""
+msgstr "ViX Εκτέλεση Script"
 
 msgid "ViX Swap Manager"
-msgstr ""
+msgstr "ViX Διαχείριση Swap"
 
 msgid "View Progress"
-msgstr ""
+msgstr "Επισκόπηση Προόδου"
 
 msgid "Wait please while creating swapfile..."
-msgstr ""
+msgstr "Παρακαλώ περιμένετε καθώς δημιουργείται το αρχείο swap..."
 
 msgid ""
 "Wait please while scanning\n"
 "for softcam's..."
 msgstr ""
-
-msgid "Wait please while scanning for devices..."
-msgstr ""
-
-#, python-format
-msgid "Wait please while scanning your %s %s devices..."
-msgstr ""
+"Παρακαλώ περιμένετε για την ανίχνευση\n"
+"για softcam's..."
 
 msgid "Wait please while scanning..."
-msgstr ""
+msgstr "Παρακαλώ περιμένετε καθώς γίνεται ανίχνευση..."
 
 msgid "Weekly"
-msgstr ""
+msgstr "Εβδομαδιαία"
 
 msgid ""
 "Welcome to the restore wizard.\n"
 "\n"
 "A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+"You can use this wizard to restore your setting and any extra plugins that "
+"where installed when the backup was created.\n"
 msgstr ""
+"Καλωσήρθατε στον οδηγό επαναφοράς.\n"
+"\n"
+"Έχει εντοπιστεί ένα αντίγραφο ασφαλείας.\n"
+"Μπορείτε να χρησιμοποιήσετε αυτό τον οδηγό για την επαναφορά των ρυθμίσεών "
+"σας και όλα τα επιπρόσθετα πρόσθετα που ήταν εγκατεστημένα κατά την "
+"εφεδρεία.\n"
 
 msgid "YES, to restore plugins"
-msgstr ""
+msgstr "ΝΑΙ, για επαναφορά προσθέτων"
 
 msgid "YES, to restore settings"
-msgstr ""
+msgstr "ΝΑΙ, για επαναφορά ρυθμίσεων"
 
 msgid "You have no backup to delete."
-msgstr ""
+msgstr "Δεν υπάρχουν αντίγραφα ασφαλείας για διαγραφή."
 
 msgid "You have no backups to restore."
-msgstr ""
+msgstr "Δεν υπάρχουν αντίγραφα ασφαλείας για επαναφορά."
 
 msgid "You have no image to delete."
-msgstr ""
+msgstr "Δεν υπάρχει image για διαγραφή."
 
 msgid "You have no image to download."
-msgstr ""
+msgstr "Δεν υπάρχει image για λήψη."
 
 msgid "You have no image to restore."
-msgstr ""
+msgstr "Δεν υπάρχει image για επαναφορά."
 
 msgid "You have to create a Swap File before to activate the autostart."
-msgstr ""
+msgstr "Πρέπει να δημιουργήσετε ένα αρχείο Swap πριν την αυτόματη εκκίνηση."
 
 #, python-format
 msgid ""
-"Your %s %s is about to run a backup of your settings and detect your plugins,\n"
+"Your %s %s is about to run a backup of your settings and detect your "
+"plugins,\n"
 "Do you want to allow this?"
 msgstr ""
+"Ο %s %s σας θα εκτελέσει εφεδρεία των ρυθμίσεών σας και εντοπισμό των "
+"προσθέτων σας,\n"
+"Θέλετε να επιτραπεί αυτό;"
 
 #, python-format
 msgid ""
-"Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
+"Your %s %s is about to run a full image backup, this can take about 6 "
+"minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
+"Ο %s %s σας θα εκτελέσει πλήρη εφεδρεία του image σας, αυτό θα χρειαστεί "
+"περίπου 6 λεπτά για να ολοκληρωθεί,\n"
+"θέλετε να επιτραπεί αυτό;"
 
 #, python-format
-msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
+msgid ""
+"Your %s %s is not connected to the internet, Please try using Backup Manager "
+"to restore plugins later."
 msgstr ""
+"Ο %s %s σας δεν είναι συνδεδεμένος στο διαδίκτυο, παρακαλώ χρησιμοποιήστε τη "
+"Διαχείριση Εφεδρείας για επαναφορά των προσθέτων αργότερα."
 
 #, python-format
-msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
+msgid ""
+"Your %s %s is not connected to the internet, Please try using the Backup "
+"Manager to restore plugins later."
 msgstr ""
+"Ο %s %s σας δεν είναι συνδεδεμένος στο διαδίκτυο, παρακαλώ χρησιμοποιήστε τη "
+"Διαχείριση Εφεδρείας για επαναφορά των προσθέτων αργότερα."
+
+#, python-format
+msgid ""
+"Your %s %s is not connected to the internet, please check your network "
+"settings and try again."
+msgstr ""
+"Ο %s %s σας δεν είναι συνδεδεμένος στο διαδίκτυο, ελέγξτε τις ρυθμίσεις "
+"δικτύου και προσπαθήστε ξανά."
 
 msgid "echo 'Downloading Image.'"
-msgstr ""
+msgstr "echo 'Λήψη Image.'"
 
-msgid "there was a problem with this device, please reformat and try again."
+msgid "there is a problem with this device, please reformat and try again."
 msgstr ""
-
-msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr ""
+"υπάρχει πρόβλημα με αυτή τη συσκευή, παρακαλώ επαναμορφοποιήστε την και "
+"ξαναπροσπαθήστε."
 
 msgid "unavailable"
+msgstr "μη διαθέσιμο"
+
+msgid ""
+"Can't unmount the partition, make sure it is not being used for swap or "
+"record/timeshift paths"
 msgstr ""
+"Partition aushängen nicht möglich. Bitte sicher stellen das sie nicht für "
+"Swap/Aufnahme/TimeShift benutzt wird."
+
+msgid ""
+"It seems you have not setup an extra location, please setup in Backup "
+"Manager setup menu "
+msgstr ""
+"Es sieht so aus als wenn kein Extra Ort konfiguriert wurde. Bitte in den "
+"Einstellungen vom Backup-Manager einstellen."
+
+msgid "Please wait while gathers information... A"
+msgstr "Bitte warten Informationen werden gesammelt... A"
+
+msgid "Please wait while gathers information... B"
+msgstr "Bitte warten Informationen werden gesammelt... B"
+
+msgid "Sorry Image Restore is not supported on the "
+msgstr ""
+"Tut uns leid aber Image Wiederherstellung wird nicht unterstützt bei der "
+
+msgid ""
+"Sorry but that location does not exist or is not setup, please setup in "
+"Backup Manager setup menu "
+msgstr ""
+"Tut uns leid aber der Ort ist nicht vorhanden oder nicht konfiguriert. Bitte "
+"in den Einstellungen vom Backup-Manager einstellen."
+
+msgid "The backup location does not have enough freespace.\n"
+msgstr "Das Sicherungs Verzeichnis hat nicht genug freien Speicher.\n"

@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plugins 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-19 21:00+0200\n"
-"PO-Revision-Date: 2013-10-20 17:19+0100\n"
-"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
+"POT-Creation-Date: 2016-07-23 19:30+0200\n"
+"PO-Revision-Date: 2016-07-24 15:46+0200\n"
+"Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: none\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.6\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -44,8 +45,11 @@ msgstr "8 Mb"
 msgid "96 Mb"
 msgstr "96 Mb"
 
-msgid "A background update check is is progress, please wait for retry."
-msgstr "A background update check is is progress, please wait for retry."
+msgid "A background update check is in progress, please try again."
+msgstr "A background update check is in progress, please try again."
+
+msgid "A background update check is is progress, please try again."
+msgstr "A background update check is is progress, please try again."
 
 msgid "A backup has been detected."
 msgstr "A backup has been detected."
@@ -58,6 +62,9 @@ msgstr "Active"
 
 msgid "Active:"
 msgstr "Active:"
+
+msgid "Allows the script runner to be launched from extensions."
+msgstr "Allows the script runner to be launched from extensions."
 
 msgid "Allows the softcam manager to be launched from extensions."
 msgstr "Allows the softcam manager to be launched from extensions."
@@ -114,8 +121,17 @@ msgstr ""
 "Are you sure you want to restore this image:\n"
 " "
 
+msgid "Automatic settings backup"
+msgstr "Automatic settings backup"
+
 msgid "Autostart"
 msgstr "Autostart"
+
+msgid "Backing up Kernel..."
+msgstr "Backing up Kernel..."
+
+msgid "Backing up Root file system..."
+msgstr "Backing up Root file system..."
 
 msgid "Backing up files..."
 msgstr "Backing up files..."
@@ -135,44 +151,33 @@ msgstr "Backup Location"
 msgid "Backup Manager"
 msgstr "Backup Manager"
 
-msgid "Backup Manager Log"
-msgstr "Backup Manager Log"
-
-msgid "Backup Manager Setup"
-msgstr "Backup Manager Setup"
-
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Backup failed - e. g. wrong backup destination or no space left on backup device"
 
 msgid ""
 "Backup in progress,\n"
-"Please for it to finish, before trying again"
+"Please wait for it to finish, before trying again"
 msgstr ""
 "Backup in progress,\n"
-"Please for it to finish, before trying again"
+"Please wait for it to finish, before trying again"
 
 msgid "Backup prefix"
 msgstr "Backup prefix"
 
+msgid "Backups to keep"
+msgstr "Backups to keep"
+
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam can't run whilst MGcamd is running"
 
-msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
+msgid "Can't un-mount the partition, make sure it is not being used for swap or record/timeshift paths"
+msgstr "Can't un-mount the partition, make sure it is not being used for swap or record/timeshift paths"
 
 msgid "Cancel"
 msgstr "Cancel"
 
 msgid "Change Location"
 msgstr "Change Location"
-
-#, python-format
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your %s %s now?"
-msgstr ""
-"Changes need a system restart to take effect.\n"
-"Restart your %s %s now?"
 
 msgid "Checking Free RAM.."
 msgstr "Checking Free RAM.."
@@ -201,14 +206,11 @@ msgstr "Comparing against backup..."
 msgid "Create"
 msgstr "Create"
 
-msgid "Create and Manage your swapfiles."
-msgstr "Create and Manage your swapfiles."
+msgid "Create and Manage your swap files."
+msgstr "Create and Manage your swap files."
 
-msgid "Create and Restore complete images of the system."
-msgstr "Create and Restore complete images of the system."
-
-msgid "Creating Backup Files..."
-msgstr "Creating Backup Files..."
+msgid "Create and Restore complete images of your system."
+msgstr "Create and Restore complete images of your system."
 
 msgid "Creating Swap.."
 msgstr "Creating Swap.."
@@ -242,6 +244,9 @@ msgstr "Device: None available"
 
 msgid "Disable Startup"
 msgstr "Disable Startup"
+
+msgid "Do you want to restart GUI now ?"
+msgstr "Do you want to restart GUI now ?"
 
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Do you want to restore your Enigma2 plugins ?"
@@ -279,8 +284,8 @@ msgstr "Exit the restore wizard"
 msgid "Extra IPK's"
 msgstr "Extra IPK's"
 
-msgid "Found none standard softcam, trying to start, this may fail"
-msgstr "Found none standard softcam, trying to start, this may fail"
+msgid "Found non-standard softcam, trying to start, this may fail"
+msgstr "Found non-standard softcam, trying to start, this may fail"
 
 msgid "Free space:"
 msgstr "Free space:"
@@ -299,9 +304,6 @@ msgstr "IPK Installer"
 
 msgid "Image Manager"
 msgstr "Image Manager"
-
-msgid "Image Manager Setup"
-msgstr "Image Manager Setup"
 
 msgid "Inactive"
 msgstr "Inactive"
@@ -333,8 +335,8 @@ msgstr "Invert"
 msgid "Ipkg"
 msgstr "Ipkg"
 
-msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
-msgstr "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
+msgstr "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
 
 msgid "Location of where backup should be saved."
 msgstr "Location of where backup should be saved."
@@ -342,17 +344,29 @@ msgstr "Location of where backup should be saved."
 msgid "Location of where image backup should be saved."
 msgstr "Location of where image backup should be saved."
 
+msgid "Logs"
+msgstr "Logs"
+
 msgid "MB"
 msgstr "MB"
 
 msgid "MGcamd can't run whilst CCcam is running"
 msgstr "MGcamd can't run whilst CCcam is running"
 
-msgid "Manage you devices mountpoints."
-msgstr "Manage you devices mount points."
+msgid "Main menu"
+msgstr "Main menu"
 
-msgid "Manage your backups of your settings."
-msgstr "Manage your backups of your settings."
+msgid "Manage the backups of your settings."
+msgstr "Manage the backups of your settings."
+
+msgid "Manage your devices mount points."
+msgstr "Manage your devices mount points."
+
+msgid "Max backups to keep (0==all)"
+msgstr "Max backups to keep (0==all)"
+
+msgid "Max image backups to keep (0==all)"
+msgstr "Max image backups to keep (0==all)"
 
 msgid "Mount"
 msgstr "Mount"
@@ -397,10 +411,10 @@ msgstr ""
 
 msgid ""
 "No config files found, please setup MGcamd first\n"
-"in /var/keys"
+"in /usr/keys"
 msgstr ""
 "No config files found, please setup MGcamd first\n"
-"in /var/keys"
+"in /usr/keys"
 
 msgid ""
 "No config files found, please setup Oscam first\n"
@@ -424,9 +438,6 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "OK, to perform a restore"
 
-msgid "Please copy the folder"
-msgstr "Please copy the folder"
-
 msgid "Please enter a folder that contains some packages."
 msgstr "Please enter a folder that contains some packages."
 
@@ -436,14 +447,15 @@ msgstr "Please select device to use as swapfile location"
 msgid "Please select the file to restore ?"
 msgstr "Please select the file to restore ?"
 
-msgid "Please wait while gathers information..."
-msgstr "Please wait while gathers information..."
-
 msgid "Please wait while plugins restore completes..."
 msgstr "Please wait while plugins restore completes..."
 
-msgid "Please wait while restore prepares"
-msgstr "Please wait while restore prepares"
+msgid "Please wait while scanning for devices..."
+msgstr "Please wait while scanning for devices..."
+
+#, python-format
+msgid "Please wait while scanning your %s %s devices..."
+msgstr "Please wait while scanning your %s %s devices..."
 
 msgid "Please wait while settings restore completes..."
 msgstr "Please wait while settings restore completes..."
@@ -454,17 +466,35 @@ msgstr "Please wait while starting\n"
 msgid "Please wait while stopping\n"
 msgstr "Please wait while stopping\n"
 
+msgid "Please wait while the restore prepares"
+msgstr "Please wait while the restore prepares"
+
+msgid "Please wait while the system gathers information..."
+msgstr "Please wait while the system gathers information..."
+
 msgid "Please wait."
 msgstr "Please wait."
 
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
 
 msgid "Preparing extra plugins..."
 msgstr "Preparing extra plugins..."
 
 msgid "Press OK to toggle the selection."
 msgstr "Press OK to toggle the selection."
+
+msgid "Query before backup starts"
+msgstr "Query before backup starts"
+
+msgid "Query before image backup starts"
+msgstr "Query before image backup starts"
+
+msgid "Query before starting backup."
+msgstr "Query before starting backup."
+
+msgid "Query before starting image backup."
+msgstr "Query before starting image backup."
 
 msgid "Rebooting..."
 msgstr "Rebooting..."
@@ -521,9 +551,6 @@ msgstr "Schedule Backups"
 msgid "Script Runner"
 msgstr "Script Runner"
 
-msgid "Script Runner Setup"
-msgstr "Script Runner Setup"
-
 msgid "Select"
 msgstr "Select"
 
@@ -566,6 +593,9 @@ msgstr "Set the time of backup to start."
 msgid "Setting Up..."
 msgstr "Setting Up..."
 
+msgid "Setup"
+msgstr "Setup"
+
 msgid "Setup Mounts"
 msgstr "Setup Mounts"
 
@@ -575,17 +605,11 @@ msgstr "Show in extensions"
 msgid "Size: "
 msgstr "Size: "
 
+msgid "SoftCam and CI"
+msgstr "SoftCam and CI"
+
 msgid "Softcam Manager"
 msgstr "Softcam Manager"
-
-msgid "Softcam Manager Log"
-msgstr "Softcam Manager Log"
-
-msgid "Softcam Manager Setup"
-msgstr "Softcam Manager Setup"
-
-msgid "Softcam Setup"
-msgstr "Softcam Setup"
 
 msgid "Softcam Starting..."
 msgstr "Softcam Starting..."
@@ -596,21 +620,23 @@ msgstr "Softcam Stopping..."
 msgid "SoftcamCheck"
 msgstr "SoftcamCheck"
 
-msgid "Sorry Image Restore is not supported on the"
-msgstr "Sorry Image Restore is not supported on the"
-
-msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-msgstr "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
+msgid "Sorry but that location does not exist or is not setup, please set it up in the Backup Manager setup menu "
+msgstr "Sorry but that location does not exist or is not setup, please set it up in the Backup Manager setup menu "
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Sorry feeds are down for maintenance, Please try again later."
 
-msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+msgstr "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 
-#, python-format
-msgid "Sorry you %s %s is not yet compatible."
-msgstr "Sorry you %s %s is not yet compatible."
+msgid "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
+msgstr "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
+
+msgid "Sorry, But this machine is not supported yet."
+msgstr "Sorry, But this machine is not supported yet."
+
+msgid "Sorry, but the file is not compatible with this image version."
+msgstr "Sorry, but the file is not compatible with this image version."
 
 msgid "Sorry, but the restore failed."
 msgstr "Sorry, but the restore failed."
@@ -651,8 +677,19 @@ msgstr "TB"
 msgid "Temp Folder"
 msgstr "Temp Folder"
 
-msgid "The backup location does not have enough freespace."
+msgid "The backup location does not have enough free space."
 msgstr "The backup location does not have enough free space."
+
+msgid "The backup location does not have enough free space.\n"
+msgstr "The backup location does not have enough free space.\n"
+
+#, python-format
+msgid ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
+msgstr ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "The chosen location does not exist, using /media/hdd"
@@ -714,13 +751,6 @@ msgid ""
 msgstr ""
 "Wait please while scanning\n"
 "for softcam's..."
-
-msgid "Wait please while scanning for devices..."
-msgstr "Wait please while scanning for devices..."
-
-#, python-format
-msgid "Wait please while scanning your %s %s devices..."
-msgstr "Wait please while scanning your %s %s devices..."
 
 msgid "Wait please while scanning..."
 msgstr "Wait please while scanning..."
@@ -784,17 +814,126 @@ msgid "Your %s %s is not connected to the internet, Please try using Backup Mana
 msgstr "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
 
 #, python-format
+msgid "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
+msgstr "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
+
+#, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
 msgstr "Your %s %s is not connected to the internet, please check your network settings and try again."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Downloading Image.'"
 
-msgid "there was a problem with this device, please reformat and try again."
-msgstr "there was a problem with this device, please reformat and try again."
-
-msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr "to a USB stick, place in front USB port of reciver and power on"
+msgid "there is a problem with this device, please reformat and try again."
+msgstr "there is a problem with this device, please reformat and try again."
 
 msgid "unavailable"
 msgstr "unavailable"
+
+#~ msgid "A background update check is is progress, please wait for retry."
+#~ msgstr "A background update check is is progress, please wait for retry."
+
+#~ msgid "Backup Manager Log"
+#~ msgstr "Backup Manager Log"
+
+#~ msgid "Backup Manager Setup"
+#~ msgstr "Backup Manager Setup"
+
+#~ msgid ""
+#~ "Backup in progress,\n"
+#~ "Please for it to finish, before trying again"
+#~ msgstr ""
+#~ "Backup in progress,\n"
+#~ "Please for it to finish, before trying again"
+
+#~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
+#~ msgstr "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
+
+#~ msgid ""
+#~ "Changes need a system restart to take effect.\n"
+#~ "Restart your %s %s now?"
+#~ msgstr ""
+#~ "Changes need a system restart to take effect.\n"
+#~ "Restart your %s %s now?"
+
+#~ msgid "Create and Manage your swapfiles."
+#~ msgstr "Create and Manage your swapfiles."
+
+#~ msgid "Create and Restore complete images of the system."
+#~ msgstr "Create and Restore complete images of the system."
+
+#~ msgid "Creating Backup Files..."
+#~ msgstr "Creating Backup Files..."
+
+#~ msgid "Found none standard softcam, trying to start, this may fail"
+#~ msgstr "Found none standard softcam, trying to start, this may fail"
+
+#~ msgid "Image Manager Setup"
+#~ msgstr "Image Manager Setup"
+
+#~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+#~ msgstr "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+
+#~ msgid "Manage you devices mountpoints."
+#~ msgstr "Manage you devices mount points."
+
+#~ msgid "Manage your backups of your settings."
+#~ msgstr "Manage your backups of your settings."
+
+#~ msgid ""
+#~ "No config files found, please setup MGcamd first\n"
+#~ "in /var/keys"
+#~ msgstr ""
+#~ "No config files found, please setup MGcamd first\n"
+#~ "in /var/keys"
+
+#~ msgid "Please copy the folder"
+#~ msgstr "Please copy the folder"
+
+#~ msgid "Please wait while gathers information..."
+#~ msgstr "Please wait while gathers information..."
+
+#~ msgid "Please wait while restore prepares"
+#~ msgstr "Please wait while restore prepares"
+
+#~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+#~ msgstr "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+
+#~ msgid "Script Runner Setup"
+#~ msgstr "Script Runner Setup"
+
+#~ msgid "Softcam Manager Log"
+#~ msgstr "Softcam Manager Log"
+
+#~ msgid "Softcam Manager Setup"
+#~ msgstr "Softcam Manager Setup"
+
+#~ msgid "Softcam Setup"
+#~ msgstr "Softcam Setup"
+
+#~ msgid "Sorry Image Restore is not supported on the"
+#~ msgstr "Sorry Image Restore is not supported on the"
+
+#~ msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
+#~ msgstr "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
+
+#~ msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+#~ msgstr "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+
+#~ msgid "Sorry you %s %s is not yet compatible."
+#~ msgstr "Sorry you %s %s is not yet compatible."
+
+#~ msgid "The backup location does not have enough freespace."
+#~ msgstr "The backup location does not have enough free space."
+
+#~ msgid "Wait please while scanning for devices..."
+#~ msgstr "Wait please while scanning for devices..."
+
+#~ msgid "Wait please while scanning your %s %s devices..."
+#~ msgstr "Wait please while scanning your %s %s devices..."
+
+#~ msgid "there was a problem with this device, please reformat and try again."
+#~ msgstr "there was a problem with this device, please reformat and try again."
+
+#~ msgid "to a USB stick, place in front USB port of reciver and power on"
+#~ msgstr "to a USB stick, place in front USB port of reciver and power on"

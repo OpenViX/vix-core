@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-13 10:52+0200\n"
-"PO-Revision-Date: 2016-07-14 05:57+0200\n"
+"POT-Creation-Date: 2016-07-27 17:49+0200\n"
+"PO-Revision-Date: 2016-07-27 18:21+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -365,6 +365,9 @@ msgstr "Beheer hoe uw apparaten gemount zijn."
 msgid "Max backups to keep (0==all)"
 msgstr "Max aantal backups (0 = allemaal)"
 
+msgid "Max image backups to keep (0==all)"
+msgstr "Max aantal backups behouden (0==alle)"
+
 msgid "Mount"
 msgstr "Mount"
 
@@ -482,8 +485,14 @@ msgstr "Druk op OK om de selectie om te wisselen.."
 msgid "Query before backup starts"
 msgstr "Melding als backup start"
 
+msgid "Query before image backup starts"
+msgstr "Vragen alvorens image back-up start."
+
 msgid "Query before starting backup."
 msgstr "Melding als backup start"
+
+msgid "Query before starting image backup."
+msgstr "Vragen alvorens image back-up te starten."
 
 msgid "Rebooting..."
 msgstr "Bezig met rebooten..."

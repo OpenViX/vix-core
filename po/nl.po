@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-27 17:49+0200\n"
-"PO-Revision-Date: 2016-07-27 18:21+0200\n"
+"POT-Creation-Date: 2016-08-09 20:41+0200\n"
+"PO-Revision-Date: 2016-08-11 07:25+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -81,8 +81,8 @@ msgstr "Plan settings back-ups."
 msgid "Allows you schedule your image backups."
 msgstr "Plan image back-ups."
 
-msgid "Allows you to tag your backups to a box. (default is box name/type)"
-msgstr "U kunt labels aan back-ups van een ontvanger hangen (default is box naam/type)."
+msgid "Allows you to tag your backups to a box."
+msgstr "Hier kunt u een label geven aan de back-ups van uw STB."
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr "U kunt labels aan image back-ups van een ontvanger hangen (default is box naam/type)."
@@ -307,6 +307,9 @@ msgstr "Imagemanager"
 
 msgid "Inactive"
 msgstr "Inactief"
+
+msgid "Include machine name in backup name"
+msgstr "Neem de STB-naam op in de naam van de back-up"
 
 msgid "Info"
 msgstr "Info"
@@ -692,6 +695,9 @@ msgstr ""
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "De gekozen locatie bestaat niet, gebruik nu /media/hdd"
 
+msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
+msgstr "De naam van de STB kan worden opgenomen in de naam van het back-up bestand, maar dat kan de naam wel lang maken."
+
 msgid "The wizard is finished now, and will reboot"
 msgstr "De wizard is gereed; uw systeem wordt opnieuw gestart."
 
@@ -830,6 +836,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "De feeds worden gecontroleerd; even wachten."
+
+#~ msgid "Allows you to tag your backups to a box. (default is box name/type)"
+#~ msgstr "U kunt labels aan back-ups van een ontvanger hangen (default is box naam/type)."
 
 #~ msgid "Backup Manager Log"
 #~ msgstr "Backupmanager log"

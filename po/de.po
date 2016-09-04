@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-15 11:08+0200\n"
-"PO-Revision-Date: 2016-07-16 11:30+0200\n"
+"POT-Creation-Date: 2016-09-03 22:24+0200\n"
+"PO-Revision-Date: 2016-09-04 19:42+0200\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -81,8 +81,8 @@ msgstr "Erlaubt es Zeiten für automatische Backups anzugeben."
 msgid "Allows you schedule your image backups."
 msgstr "Erlaubt es Zeiten für automatische Image-Backups anzugeben."
 
-msgid "Allows you to tag your backups to a box. (default is box name/type)"
-msgstr "Erlaubt es Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
+msgid "Allows you to tag your backups to a box."
+msgstr "Erlaubt es die Backups einer Box zuzuordnen."
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr "Erlaubt es Image-Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
@@ -307,6 +307,9 @@ msgstr "Image Verwaltung"
 
 msgid "Inactive"
 msgstr "Inaktiv"
+
+msgid "Include machine name in backup name"
+msgstr "Boxname beim Beackupnamen benutzen"
 
 msgid "Info"
 msgstr "Info"
@@ -606,7 +609,7 @@ msgid "Size: "
 msgstr "Größe: "
 
 msgid "SoftCam and CI"
-msgstr ""
+msgstr "SoftCam und CI"
 
 msgid "Softcam Manager"
 msgstr "Softcam Verwaltung"
@@ -693,6 +696,9 @@ msgstr ""
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Der gewählte Speicherort existiert nicht, nutze /media/hdd"
+
+msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
+msgstr "Der Name von der Box kann im Backupnamen enthalten sein macht den Namen aber etwas länger."
 
 msgid "The wizard is finished now, and will reboot"
 msgstr "Der Assistent wurde beendet jetzt folgt ein Neustart"
@@ -832,6 +838,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "Eine Updateprüfung läuft im Hintergrund. Bitte warten und erneut versuchen."
+
+#~ msgid "Allows you to tag your backups to a box. (default is box name/type)"
+#~ msgstr "Erlaubt es Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
 
 #~ msgid "Backup Manager Log"
 #~ msgstr "Backup Verwaltung Log"

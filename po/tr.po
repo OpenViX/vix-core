@@ -129,7 +129,7 @@ msgid "Backup Confirmation"
 msgstr "Yedekleme Onayı"
 
 msgid "Backup Created"
-msgstr "Yedek Yaratıldı"
+msgstr "Yedek Oluşturuldu"
 
 msgid "Backup Location"
 msgstr "Yedek Konumu"
@@ -481,7 +481,7 @@ msgid "Removing temp mounts..."
 msgstr "Geçici bağlantılar kaldırılıyor..."
 
 msgid "Repeat how often"
-msgstr "Tekrar sıklığı"
+msgstr "Tekrarlama sıklığı"
 
 msgid "Restart"
 msgstr "Yeniden başlat"

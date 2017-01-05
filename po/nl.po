@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-03 09:21+0100\n"
-"PO-Revision-Date: 2016-12-11 10:38+0100\n"
+"POT-Creation-Date: 2017-01-05 14:06+0100\n"
+"PO-Revision-Date: 2017-01-05 20:38+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -260,8 +260,8 @@ msgstr "Download"
 msgid "Download Confirmation"
 msgstr "Download confirmatie"
 
-msgid "Downloading Image..."
-msgstr "Download image..."
+msgid "Downloading"
+msgstr "Bezig met downloaden"
 
 msgid "Downloads"
 msgstr "Downloads"
@@ -822,9 +822,6 @@ msgstr "Uw %s %s is niet met het internet verbonden. Probeer later de plugins te
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
 msgstr "Uw %s %s is niet met internet verbonden. Controleer uw netwerkinstellingen en probeer het opnieuw."
 
-msgid "echo 'Downloading Image.'"
-msgstr "echo 'Download image.'"
-
 msgid "there is a problem with this device, please reformat and try again."
 msgstr "er is een probleem met dit apparaat; formatteer het en probeer het nogmaals."
 
@@ -871,6 +868,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Creating Backup Files..."
 #~ msgstr "Creëert back-upbestanden..."
+
+#~ msgid "Downloading Image..."
+#~ msgstr "Download image..."
 
 #~ msgid "Found none standard softcam, trying to start, this may fail"
 #~ msgstr "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, maar dat kan mislukken"
@@ -973,6 +973,9 @@ msgstr "niet beschikbaar"
 #~ "\n"
 #~ "Er is een back-up gevonden.\n"
 #~ "U kunt deze wizard gebruiken om uw instellingen terug te plaatsen, evenals de plugins die ten tijde van het maken van de back-up waren geïnstalleerd.\n"
+
+#~ msgid "echo 'Downloading Image.'"
+#~ msgstr "echo 'Download image.'"
 
 #~ msgid "there was a problem with this device, please reformat and try again."
 #~ msgstr "er was een probleem met dit medium; formatteer opnieuw en probeer het weer."

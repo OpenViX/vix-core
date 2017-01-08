@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-03 22:24+0200\n"
-"PO-Revision-Date: 2016-09-04 19:42+0200\n"
+"POT-Creation-Date: 2017-01-07 21:19+0100\n"
+"PO-Revision-Date: 2017-01-08 10:19+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -260,8 +260,8 @@ msgstr "Herunterladen"
 msgid "Download Confirmation"
 msgstr "Herunterladen bestätigen"
 
-msgid "Downloading Image..."
-msgstr "Lädt Image herunter..."
+msgid "Downloading"
+msgstr ""
 
 msgid "Downloads"
 msgstr ""
@@ -426,8 +426,8 @@ msgstr ""
 "Keine Konfigurationsdateien gefunden, bitte zuerst OScam einrichten\n"
 "in /etc/tuxbox/config"
 
-msgid "No plugins where needed to be installed"
-msgstr "Es müssen keine Plugins installiert werden"
+msgid "No plugins needed to be installed"
+msgstr "Es war nicht nötig Plugins zu installieren"
 
 msgid "None"
 msgstr "Keine"
@@ -635,9 +635,6 @@ msgstr "Tut uns leid. Wegen Wartungsarbeiten sind die Feeds nicht verfügbar. Ba
 msgid "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
 msgstr "Tut uns leid die Feeds sind wegen Wartungsarbeiten nicht erreichbar. Bitte später nochmal versuchen mit der Backup Verwaltung Plugins wiederherzustellen."
 
-msgid "Sorry, But this machine is not supported yet."
-msgstr "Tut uns leid aber die Box wird noch nicht unterstützt."
-
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Tut uns leid aber die Datei is nicht kompatibel mit dieser Image-Version."
 
@@ -768,12 +765,12 @@ msgid ""
 "Welcome to the restore wizard.\n"
 "\n"
 "A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+"You can use this wizard to restore your settings and any extra plugins that were installed when the backup was created.\n"
 msgstr ""
 "Willkommen zum Wiederherstellungsassistenten.\n"
 "\n"
-"Ein Backup wurde gefunden.\n"
-"Mit diesem Assistenten können Einstellungen und Plugins wieder hergestellt werden die zum Zeitpunkt des Backups vorhanden waren.\n"
+"Eine Sicherung wurde gefunden.\n"
+"Du kannst diesen Assistenten benutzen um Einstellungen und Plugins so wieder herzustellen wie zum Zeitpunkt der Sicherung.\n"
 
 msgid "YES, to restore plugins"
 msgstr "JA, um Plugins wieder herzustellen"
@@ -827,9 +824,6 @@ msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte später nochmal 
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
 msgstr "Die %s %s ist nicht mit dem Internet verbunden. Bitte Netzwerkeinstellungen überprüfen."
 
-msgid "echo 'Downloading Image.'"
-msgstr "echo 'Image herunterladen.'"
-
 msgid "there is a problem with this device, please reformat and try again."
 msgstr "Es gibt ein Problem mit dem Medium. Bitte neu formatieren und erneut versuchen"
 
@@ -877,6 +871,9 @@ msgstr "nicht verfügbar"
 #~ msgid "Creating Backup Files..."
 #~ msgstr "Backup-Dateien werden erstellt..."
 
+#~ msgid "Downloading Image..."
+#~ msgstr "Lädt Image herunter..."
+
 #~ msgid "Found none standard softcam, trying to start, this may fail"
 #~ msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl"
 
@@ -901,6 +898,9 @@ msgstr "nicht verfügbar"
 #~ msgstr ""
 #~ "Keine Konfigurationsdateien gefunden, bitte zuerst MGcamd einrichten\n"
 #~ "in /var/keys"
+
+#~ msgid "No plugins where needed to be installed"
+#~ msgstr "Es müssen keine Plugins installiert werden"
 
 #~ msgid "Please copy the folder"
 #~ msgstr "Bitte den Ordner kopieren"
@@ -950,6 +950,9 @@ msgstr "nicht verfügbar"
 #~ msgid "Sorry you %s %s is not yet compatible."
 #~ msgstr "Tut uns leid aber %s %s ist noch nicht kompatibel."
 
+#~ msgid "Sorry, But this machine is not supported yet."
+#~ msgstr "Tut uns leid aber die Box wird noch nicht unterstützt."
+
 #~ msgid "The backup location does not have enough freespace."
 #~ msgstr "Ungenügend Speicherplatz am Sicherungsspeicherort."
 
@@ -961,6 +964,20 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Wait please while scanning your %s %s devices..."
 #~ msgstr "Bitte warten während %s %s Geräte gesucht werden..."
+
+#~ msgid ""
+#~ "Welcome to the restore wizard.\n"
+#~ "\n"
+#~ "A backup has been detected.\n"
+#~ "You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+#~ msgstr ""
+#~ "Willkommen zum Wiederherstellungsassistenten.\n"
+#~ "\n"
+#~ "Ein Backup wurde gefunden.\n"
+#~ "Mit diesem Assistenten können Einstellungen und Plugins wieder hergestellt werden die zum Zeitpunkt des Backups vorhanden waren.\n"
+
+#~ msgid "echo 'Downloading Image.'"
+#~ msgstr "echo 'Image herunterladen.'"
 
 #~ msgid "there was a problem with this device, please reformat and try again."
 #~ msgstr "Es gibt ein Problem mit dem Gerät, bitte formatieren und erneut versuchen."

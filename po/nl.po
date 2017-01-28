@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-05 14:06+0100\n"
-"PO-Revision-Date: 2017-01-05 20:38+0100\n"
+"POT-Creation-Date: 2017-01-25 19:50+0000\n"
+"PO-Revision-Date: 2017-01-28 04:38+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -424,6 +424,13 @@ msgstr ""
 "Geen configuratiebestand gevonden; maak eerst de Oscam instellingen\n"
 "in /etc/tuxbox/config"
 
+msgid ""
+"No config files found, please setup Oscam first\n"
+"in /etc/tuxbox/config or /etc/tuxbox/config/oscam"
+msgstr ""
+"Geen configuratiebestand gevonden; maak eerst de Oscam instellingen\n"
+"in /etc/tuxbox/config of /etc/tuxbox/config/oscam"
+
 msgid "No plugins needed to be installed"
 msgstr "Er hoefden geen plugins geïnstalleerd te worden"
 
@@ -821,6 +828,14 @@ msgstr "Uw %s %s is niet met het internet verbonden. Probeer later de plugins te
 #, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
 msgstr "Uw %s %s is niet met internet verbonden. Controleer uw netwerkinstellingen en probeer het opnieuw."
+
+#, python-format
+msgid ""
+"ofgwrite error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"ofgwrite-fout (ook opgenomen in alle debuglogs):\n"
+"%s"
 
 msgid "there is a problem with this device, please reformat and try again."
 msgstr "er is een probleem met dit apparaat; formatteer het en probeer het nogmaals."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 11:25+0100\n"
-"PO-Revision-Date: 2016-08-14 22:56+0300\n"
+"POT-Creation-Date: 2017-03-07 07:36+0200\n"
+"PO-Revision-Date: 2017-03-07 11:12+0200\n"
 "Last-Translator: rimas\n"
 "Language-Team: Estonian <kde-i18n-doc@kde.org>\n"
 "Language: et\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -62,37 +62,6 @@ msgstr "Aktiivne"
 
 msgid "Active:"
 msgstr "Aktiivne:"
-
-msgid "Allows the script runner to be launched from extensions."
-msgstr "Võimaldab skriptide käivitamise laienduste menüüst."
-
-msgid "Allows the softcam manager to be launched from extensions."
-msgstr "Võimaldab EMU halduri käivitamise laienduste menüüst."
-
-msgid ""
-"Allows the softcam to be checked if it stopped working, and restarted "
-"automatically if needed."
-msgstr ""
-"Võimaldab kontrollida, kas EMU on hangunud ja vajadusel selle automaatselt "
-"taaskäivitada."
-
-msgid "Allows you have the window close automatically."
-msgstr "Võimaldab akna automaatse sulgumise."
-
-msgid "Allows you schedule your backups."
-msgstr "Võimaldab ajastada varukoopiate loomist."
-
-msgid "Allows you schedule your image backups."
-msgstr "Võimaldab ajastada süsteemitõmmiste loomist."
-
-msgid "Allows you to tag your backups to a box."
-msgstr "Võimaldab siduda varukoopia nime vastuvõtjaga."
-
-msgid ""
-"Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr ""
-"Võimaldab siduda süsteemitõmmise nime vastuvõtjaga (vaikimisi vastuvõtja "
-"nimi)"
 
 msgid "Are you ready to create a backup image ?"
 msgstr "Kas luua süsteemitõmmis? "
@@ -158,11 +127,8 @@ msgstr "Varukoopia asukoht"
 msgid "Backup Manager"
 msgstr "Varukoopiad"
 
-msgid ""
-"Backup failed - e. g. wrong backup destination or no space left on backup "
-"device"
-msgstr ""
-"Varundamine nurjus - nt.  vale asukoht või ruumi puudus varundamise asukohas"
+msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Varundamine nurjus - nt.  vale asukoht või ruumi puudus varundamise asukohas"
 
 msgid ""
 "Backup in progress,\n"
@@ -174,18 +140,11 @@ msgstr ""
 msgid "Backup prefix"
 msgstr "Varukoopia nimi"
 
-msgid "Backups to keep"
-msgstr "Säilitatavad varukoopiad"
-
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "MGcamd töötamisel ei saa CCcam käivituda"
 
-msgid ""
-"Can't un-mount the partition, make sure it is not being used for swap or "
-"record/timeshift paths"
-msgstr ""
-"Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale või "
-"salvestamise/ajanihke tarbeks"
+msgid "Can't un-mount the partition, make sure it is not being used for swap or record/timeshift paths"
+msgstr "Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale või salvestamise/ajanihke tarbeks"
 
 msgid "Cancel"
 msgstr "Tühista"
@@ -274,8 +233,8 @@ msgstr "Tõmba"
 msgid "Download Confirmation"
 msgstr "Allalaadimise kinnitamine"
 
-msgid "Downloading Image..."
-msgstr "Tõmmise allalaadimine..."
+msgid "Downloading"
+msgstr "Allalaadimisel"
 
 msgid "Downloads"
 msgstr "Tõmba"
@@ -352,16 +311,8 @@ msgstr "Pööra ümber"
 msgid "Ipkg"
 msgstr "Ipkg"
 
-msgid ""
-"It seems you have not setup an extra location, please set it up in the "
-"Backup Manager setup menu "
+msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
 msgstr "Lisaasukoht on määramata. Saad seda teha menüüs 'Varukoopiad'"
-
-msgid "Location of where backup should be saved."
-msgstr "Varukoopia salvestamise asukoht."
-
-msgid "Location of where image backup should be saved."
-msgstr "Süsteemitõmmise salvestamise asukoht."
 
 msgid "Logs"
 msgstr "Logid"
@@ -442,7 +393,14 @@ msgstr ""
 "Seadistusfaile ei leitud. Seadista kõigepealt OScam\n"
 "asukohas /etc/tuxbox/config"
 
-msgid "No plugins where needed to be installed"
+msgid ""
+"No config files found, please setup Oscam first\n"
+"in /etc/tuxbox/config or /etc/tuxbox/config/oscam"
+msgstr ""
+"Seadistusfaile ei leitud.Seadista esmalt oscam\n"
+"asukohas /etc/tuxbox/config või /etc/tuxbox/config/oscam"
+
+msgid "No plugins needed to be installed"
 msgstr "Pluginaid ei olnud vaja paigaldada"
 
 msgid "None"
@@ -494,11 +452,8 @@ msgstr "Oota, kuni süsteem kogub teavet..."
 msgid "Please wait."
 msgstr "Oota."
 
-msgid ""
-"Plugin listing failed - e. g. wrong backup destination or no space left on "
-"backup device"
-msgstr ""
-"Pluginate märkimine nurjus  - nt. kehtetu varukoopia asukoht või ruumipuudus"
+msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
+msgstr "Pluginate märkimine nurjus  - nt. kehtetu varukoopia asukoht või ruumipuudus"
 
 msgid "Preparing extra plugins..."
 msgstr "Pluginate ettevalmistamine"
@@ -511,12 +466,6 @@ msgstr "Päring enne varundamise alustamist"
 
 msgid "Query before image backup starts"
 msgstr "Päring enne varundamise alustamist"
-
-msgid "Query before starting backup."
-msgstr "Enne varundamise alustamist küsitakse."
-
-msgid "Query before starting image backup."
-msgstr "Enne varundamise alustamist küsitakse."
 
 msgid "Rebooting..."
 msgstr "Taaskäivitus..."
@@ -603,15 +552,6 @@ msgstr "Vali saalefaili suurus:"
 msgid "Select:"
 msgstr "Vali:"
 
-msgid "Set the interval to be checked in mins."
-msgstr "Ajavahemik kontrollimise vahel (min)"
-
-msgid "Set the repeat interval of backup schedule."
-msgstr "Määra varundamise ajakava."
-
-msgid "Set the time of backup to start."
-msgstr "Määra varundamise käivitamise aeg."
-
 msgid "Setting Up..."
 msgstr "Seadistamine..."
 
@@ -642,27 +582,17 @@ msgstr "EMU peatamine..."
 msgid "SoftcamCheck"
 msgstr "EMU kontroll"
 
-msgid ""
-"Sorry but that location does not exist or is not setup, please set it up in "
-"the Backup Manager setup menu "
-msgstr ""
-"See asukoht puudub või on seadistamata. Saad seda teha menüüs 'Varukoopiad'"
+msgid "Sorry but that location does not exist or is not setup, please set it up in the Backup Manager setup menu "
+msgstr "See asukoht puudub või on seadistamata. Saad seda teha menüüs 'Varukoopiad'"
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Toimuvad serverite hooldetööd. Proovi hiljem uuesti"
 
-msgid ""
-"Sorry the feeds are down for maintenance, Please try using Backup Manager to "
-"restore plugins later."
+msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "Toimuvad serverite hooldetööd. Ürita pluginate taastamist hiljem."
 
-msgid ""
-"Sorry the feeds are down for maintenance, Please try using the Backup "
-"Manager to restore plugins later."
+msgid "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
 msgstr "Toimivad serverite hooldetööd. Ürita pluginate taastamist hiljem"
-
-msgid "Sorry, But this machine is not supported yet."
-msgstr "See vastuvõtja ei ole veel toetatud."
 
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Fail ei ole ühilduv selle tarkvaraversiooniga. "
@@ -670,20 +600,11 @@ msgstr "Fail ei ole ühilduv selle tarkvaraversiooniga. "
 msgid "Sorry, but the restore failed."
 msgstr "Taastamine nurjus."
 
-msgid ""
-"Sorry, no physical devices that supports SWAP attached. Can't create "
-"Swapfile on network or fat32 filesystems"
-msgstr ""
-"Saalet toetav andmekandja ei ole ühendatud. Saalefaili loomine võrgus või "
-"fat32 süsteemis ei ole võimalik"
+msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
+msgstr "Saalet toetav andmekandja ei ole ühendatud. Saalefaili loomine võrgus või fat32 süsteemis ei ole võimalik"
 
-msgid ""
-"Sorry, not enough free ram found, and no physical devices that supports SWAP "
-"attached. Can't create Swapfile on network or fat32 filesystems, unable to "
-"make backup"
-msgstr ""
-"Ei ole piisavalt vaba mälu ega andmekandjat, mis toetaks saalet. Saalefaili "
-"loomine võrgus või fat32 süsteemis ei ole võimalik. Varukoopiat ei saa luua"
+msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
+msgstr "Ei ole piisavalt vaba mälu ega andmekandjat, mis toetaks saalet. Saalefaili loomine võrgus või fat32 süsteemis ei ole võimalik. Varukoopiat ei saa luua"
 
 msgid "Start"
 msgstr "Käivita"
@@ -727,15 +648,10 @@ msgid ""
 "Restart your %s %s now?"
 msgstr ""
 "Muudatused vajavad jõustumiseks süsteemi taaskäivitamist.\n"
-"Kas taaskäivitad %s %s?"
+"Kas taaskäivitada %s %s?"
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Valitud asukoht puudub, kasutame /media/hdd"
-
-msgid ""
-"The name of the receiver can be included in the backup filename, but makes "
-"the filename lengthy."
-msgstr ""
 
 msgid "The wizard is finished now, and will reboot"
 msgstr "Abiline on läbitud, toimub taaskäivitus"
@@ -805,14 +721,12 @@ msgid ""
 "Welcome to the restore wizard.\n"
 "\n"
 "A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that "
-"where installed when the backup was created.\n"
+"You can use this wizard to restore your settings and any extra plugins that were installed when the backup was created.\n"
 msgstr ""
 "Tere tulemast taastamisabilisse.\n"
 "\n"
 "Leiti varukoopia.\n"
-"Siin saab taastada pluginad ja seadistused, mis olid varukoopia loomise "
-"ajaks paigaldatud.\n"
+"Siin saab taastada pluginad ja seadistused, mis olid varukoopia loomise ajaks paigaldatud.\n"
 
 msgid "YES, to restore plugins"
 msgstr "Jah, taasta pluginad"
@@ -840,8 +754,7 @@ msgstr "Enne autostardi lubamist tuleb luua saalefail."
 
 #, python-format
 msgid ""
-"Your %s %s is about to run a backup of your settings and detect your "
-"plugins,\n"
+"Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
 "%s %s varundab seadistused ja tuvastab pluginad.\n"
@@ -849,35 +762,31 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Your %s %s is about to run a full image backup, this can take about 6 "
-"minutes to complete,\n"
+"Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
-"%s %s alustab süsteemist 1:1 süsteemitõmmise loomist. See võib kesta umbes 6 "
-"minutit.\n"
+"%s %s alustab süsteemist 1:1 süsteemitõmmise loomist. See võib kesta umbes 6 minutit.\n"
 "Kas nõustud?"
 
 #, python-format
-msgid ""
-"Your %s %s is not connected to the internet, Please try using Backup Manager "
-"to restore plugins later."
+msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
 msgstr "%s %s ei ole internetiga ühendatud. Proovi pluginaid taastada hiljem."
 
 #, python-format
-msgid ""
-"Your %s %s is not connected to the internet, Please try using the Backup "
-"Manager to restore plugins later."
+msgid "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
 msgstr "%s %s ei ole internetiga ühendatud. Ürita pluginate taastamist hiljem."
 
 #, python-format
-msgid ""
-"Your %s %s is not connected to the internet, please check your network "
-"settings and try again."
-msgstr ""
-"%s %s ei ole ühendatud internetti. Kontrolli võrgu seadeid ja proovi uuesti."
+msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
+msgstr "%s %s ei ole ühendatud internetti. Kontrolli võrgu seadeid ja proovi uuesti."
 
-msgid "echo 'Downloading Image.'"
-msgstr "echo 'Tõmmise allalaadimine.'"
+#, python-format
+msgid ""
+"ofgwrite error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"ofgwrite viga (saadeti ka silumislogidesse):\n"
+"%s"
 
 msgid "there is a problem with this device, please reformat and try again."
 msgstr "selle andmekandjaga on mingi probleem, vorminda see ja proovi uuesti."
@@ -885,12 +794,38 @@ msgstr "selle andmekandjaga on mingi probleem, vorminda see ja proovi uuesti."
 msgid "unavailable"
 msgstr "pole saadaval"
 
+#~ msgid "A background update check is is progress, please wait for retry."
+#~ msgstr "A background update check is is progress, please wait for retry."
+
+#~ msgid "Allows the script runner to be launched from extensions."
+#~ msgstr "Võimaldab skriptide käivitamise laienduste menüüst."
+
+#~ msgid "Allows the softcam manager to be launched from extensions."
+#~ msgstr "Võimaldab EMU halduri käivitamise laienduste menüüst."
+
+#~ msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+#~ msgstr "Võimaldab kontrollida, kas EMU on hangunud ja vajadusel selle automaatselt taaskäivitada."
+
+#~ msgid "Allows you have the window close automatically."
+#~ msgstr "Võimaldab akna automaatse sulgumise."
+
+#~ msgid "Allows you schedule your backups."
+#~ msgstr "Võimaldab ajastada varukoopiate loomist."
+
 #~ msgid "Allows you schedule your boackups."
 #~ msgstr "Võimaldab ajastada varukoopiate loomist."
 
+#~ msgid "Allows you schedule your image backups."
+#~ msgstr "Võimaldab ajastada süsteemitõmmiste loomist."
+
+#~ msgid "Allows you to tag your backups to a box."
+#~ msgstr "Võimaldab siduda varukoopia nime vastuvõtjaga."
+
 #~ msgid "Allows you to tag your backups to a box. (default is box name/type)"
-#~ msgstr ""
-#~ "Võimaldab siduda varukoopia nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
+#~ msgstr "Võimaldab siduda varukoopia nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
+
+#~ msgid "Allows you to tag your image backup to a box. (default is box name/type)"
+#~ msgstr "Võimaldab siduda süsteemitõmmise nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
 
 #~ msgid "Backup Manager Log"
 #~ msgstr "Varundamise logi"
@@ -898,34 +833,6 @@ msgstr "pole saadaval"
 #~ msgid "Backup Manager Setup"
 #~ msgstr "Varundamise seadistamine"
 
-#~ msgid "Found none standard softcam, trying to start, this may fail"
-#~ msgstr "Leiti ebastandardne EMU. Käivitamine võib nurjuda"
-
-#~ msgid "Image Manager Setup"
-#~ msgstr "Süsteemitõmmised"
-
-#~ msgid ""
-#~ "No config files found, please setup MGcamd first\n"
-#~ "in /var/keys"
-#~ msgstr ""
-#~ "Seadistusfaile ei leitud. Seadista kõigepealt MGcamd\n"
-#~ "asukohas /var/keys/newcamd.list"
-
-#~ msgid "Script Runner Setup"
-#~ msgstr "Skriptide seaded"
-
-#~ msgid "Softcam Manager Log"
-#~ msgstr "EMU halduri logi"
-
-#~ msgid "Softcam Manager Setup"
-#~ msgstr "EMU halduri seaded"
-
-#~ msgid "Softcam Setup"
-#~ msgstr "EMU seadistamine"
-
-#~ msgid "A background update check is is progress, please wait for retry."
-#~ msgstr "A background update check is is progress, please wait for retry."
-
 #~ msgid ""
 #~ "Backup in progress,\n"
 #~ "Please for it to finish, before trying again"
@@ -933,12 +840,11 @@ msgstr "pole saadaval"
 #~ "Backup in progress,\n"
 #~ "Please for it to finish, before trying again"
 
-#~ msgid ""
-#~ "Can't unmount partition, make sure it is not being used for swap or "
-#~ "record/timeshift paths"
-#~ msgstr ""
-#~ "Can't unmount partition, make sure it is not being used for swap or "
-#~ "record/timeshift paths"
+#~ msgid "Backups to keep"
+#~ msgstr "Säilitatavad varukoopiad"
+
+#~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
+#~ msgstr "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
 
 #~ msgid ""
 #~ "Changes need a system restart to take effect.\n"
@@ -956,18 +862,39 @@ msgstr "pole saadaval"
 #~ msgid "Creating Backup Files..."
 #~ msgstr "Creating Backup Files..."
 
-#~ msgid ""
-#~ "It seems you have not setup a extra location, please setup in Backup "
-#~ "Manager setup menu "
-#~ msgstr ""
-#~ "It seems you have not setup a extra location, please setup in Backup "
-#~ "Manager setup menu "
+#~ msgid "Downloading Image..."
+#~ msgstr "Tõmmise allalaadimine..."
+
+#~ msgid "Found none standard softcam, trying to start, this may fail"
+#~ msgstr "Leiti ebastandardne EMU. Käivitamine võib nurjuda"
+
+#~ msgid "Image Manager Setup"
+#~ msgstr "Süsteemitõmmised"
+
+#~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+#~ msgstr "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
+
+#~ msgid "Location of where backup should be saved."
+#~ msgstr "Varukoopia salvestamise asukoht."
+
+#~ msgid "Location of where image backup should be saved."
+#~ msgstr "Süsteemitõmmise salvestamise asukoht."
 
 #~ msgid "Manage you devices mountpoints."
 #~ msgstr "Manage you devices mount points."
 
 #~ msgid "Manage your backups of your settings."
 #~ msgstr "Manage your backups of your settings."
+
+#~ msgid ""
+#~ "No config files found, please setup MGcamd first\n"
+#~ "in /var/keys"
+#~ msgstr ""
+#~ "Seadistusfaile ei leitud. Seadista kõigepealt MGcamd\n"
+#~ "asukohas /var/keys/newcamd.list"
+
+#~ msgid "No plugins where needed to be installed"
+#~ msgstr "Pluginaid ei olnud vaja paigaldada"
 
 #~ msgid "Please copy the folder"
 #~ msgstr "Please copy the folder"
@@ -978,32 +905,50 @@ msgstr "pole saadaval"
 #~ msgid "Please wait while restore prepares"
 #~ msgstr "Please wait while restore prepares"
 
-#~ msgid ""
-#~ "Plugin Listing failed - e. g. wrong backup destination or no space left "
-#~ "on backup device"
-#~ msgstr ""
-#~ "Plugin Listing failed - e. g. wrong backup destination or no space left "
-#~ "on backup device"
+#~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+#~ msgstr "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
+
+#~ msgid "Query before starting backup."
+#~ msgstr "Enne varundamise alustamist küsitakse."
+
+#~ msgid "Query before starting image backup."
+#~ msgstr "Enne varundamise alustamist küsitakse."
+
+#~ msgid "Script Runner Setup"
+#~ msgstr "Skriptide seaded"
+
+#~ msgid "Set the interval to be checked in mins."
+#~ msgstr "Ajavahemik kontrollimise vahel (min)"
+
+#~ msgid "Set the repeat interval of backup schedule."
+#~ msgstr "Määra varundamise ajakava."
+
+#~ msgid "Set the time of backup to start."
+#~ msgstr "Määra varundamise käivitamise aeg."
+
+#~ msgid "Softcam Manager Log"
+#~ msgstr "EMU halduri logi"
+
+#~ msgid "Softcam Manager Setup"
+#~ msgstr "EMU halduri seaded"
+
+#~ msgid "Softcam Setup"
+#~ msgstr "EMU seadistamine"
 
 #~ msgid "Sorry Image Restore is not supported on the"
 #~ msgstr "Sorry Image Restore is not supported on the"
 
-#~ msgid ""
-#~ "Sorry but location does exist or not setup, please setup in Backup "
-#~ "Manager setup menu "
-#~ msgstr ""
-#~ "Sorry but location does exist or not setup, please setup in Backup "
-#~ "Manager setup menu "
+#~ msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
+#~ msgstr "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
 
-#~ msgid ""
-#~ "Sorry feeds are down for maintenance, Please try using Backup Manager to "
-#~ "restore plugins later."
-#~ msgstr ""
-#~ "Sorry feeds are down for maintenance, Please try using Backup Manager to "
-#~ "restore plugins later."
+#~ msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+#~ msgstr "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 
 #~ msgid "Sorry you %s %s is not yet compatible."
 #~ msgstr "Sorry you %s %s is not yet compatible."
+
+#~ msgid "Sorry, But this machine is not supported yet."
+#~ msgstr "See vastuvõtja ei ole veel toetatud."
 
 #~ msgid "The backup location does not have enough freespace."
 #~ msgstr "The backup location does not have enough free space."
@@ -1014,9 +959,22 @@ msgstr "pole saadaval"
 #~ msgid "Wait please while scanning your %s %s devices..."
 #~ msgstr "Wait please while scanning your %s %s devices..."
 
-#~ msgid "there was a problem with this device, please reformat and try again."
+#~ msgid ""
+#~ "Welcome to the restore wizard.\n"
+#~ "\n"
+#~ "A backup has been detected.\n"
+#~ "You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
 #~ msgstr ""
-#~ "there was a problem with this device, please reformat and try again."
+#~ "Tere tulemast taastamisabilisse.\n"
+#~ "\n"
+#~ "Leiti varukoopia.\n"
+#~ "Siin saab taastada pluginad ja seadistused, mis olid varukoopia loomise ajaks paigaldatud.\n"
+
+#~ msgid "echo 'Downloading Image.'"
+#~ msgstr "echo 'Tõmmise allalaadimine.'"
+
+#~ msgid "there was a problem with this device, please reformat and try again."
+#~ msgstr "there was a problem with this device, please reformat and try again."
 
 #~ msgid "to a USB stick, place in front USB port of reciver and power on"
 #~ msgstr "to a USB stick, place in front USB port of reciver and power on"

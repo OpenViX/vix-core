@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-07 21:19+0100\n"
-"PO-Revision-Date: 2017-01-08 10:19+0100\n"
+"POT-Creation-Date: 2017-04-08 10:06+0200\n"
+"PO-Revision-Date: 2017-04-14 11:32+0200\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.9\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -62,30 +62,6 @@ msgstr "Aktiv"
 
 msgid "Active:"
 msgstr "Aktiv:"
-
-msgid "Allows the script runner to be launched from extensions."
-msgstr "Erlaubt es den Scriptstarter aus den Erweiterungen zu starten."
-
-msgid "Allows the softcam manager to be launched from extensions."
-msgstr "Erlaubt es den Softcam-Menager aus Erweiterungen zu starten."
-
-msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
-msgstr "Erlaubt es zu prüfen ob Softcams noch laufen. Softcams werden, wenn nötig, erneut gestartet."
-
-msgid "Allows you have the window close automatically."
-msgstr "Erlaubt es das Fenster automatisch schließen zu lassen."
-
-msgid "Allows you schedule your backups."
-msgstr "Erlaubt es Zeiten für automatische Backups anzugeben."
-
-msgid "Allows you schedule your image backups."
-msgstr "Erlaubt es Zeiten für automatische Image-Backups anzugeben."
-
-msgid "Allows you to tag your backups to a box."
-msgstr "Erlaubt es die Backups einer Box zuzuordnen."
-
-msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr "Erlaubt es Image-Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
 
 msgid "Are you ready to create a backup image ?"
 msgstr "Image jetzt erstellen? "
@@ -163,9 +139,6 @@ msgstr ""
 
 msgid "Backup prefix"
 msgstr "Backup Namensanfang"
-
-msgid "Backups to keep"
-msgstr "Anzahl zu erhaltener Backups"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "Während MGcamd läuft kann CCcam nicht ausgeführt werden"
@@ -341,12 +314,6 @@ msgstr ""
 msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
 msgstr "Ort für Backups scheint nicht eingestellt zu sein. Bitte den Ort im Menü vom Backup-Manager einstellen."
 
-msgid "Location of where backup should be saved."
-msgstr "Pfad wo Backups gespeichert werden sollen."
-
-msgid "Location of where image backup should be saved."
-msgstr "Ort wo Image Backups gespeichert werden sollen."
-
 msgid "Logs"
 msgstr ""
 
@@ -426,6 +393,13 @@ msgstr ""
 "Keine Konfigurationsdateien gefunden, bitte zuerst OScam einrichten\n"
 "in /etc/tuxbox/config"
 
+msgid ""
+"No config files found, please setup Oscam first\n"
+"in /etc/tuxbox/config or /etc/tuxbox/config/oscam"
+msgstr ""
+"Keine  Config Datei gefunden. Bitte Oscam erst konfigurieren.\n"
+"Konfiguration gehört nach /etc/tuxbox/config oder /etc/tuxbox/config/oscam"
+
 msgid "No plugins needed to be installed"
 msgstr "Es war nicht nötig Plugins zu installieren"
 
@@ -492,12 +466,6 @@ msgstr "Fragen bevor Backup startet"
 
 msgid "Query before image backup starts"
 msgstr "Vor Imagesicherung fragen"
-
-msgid "Query before starting backup."
-msgstr "Fragen bevor Backup startet."
-
-msgid "Query before starting image backup."
-msgstr "Vor Imagesicherung fragen."
 
 msgid "Rebooting..."
 msgstr "Neustart..."
@@ -583,15 +551,6 @@ msgstr "Größe der Auslagerungsdatei auswählen:"
 
 msgid "Select:"
 msgstr "Auswählen:"
-
-msgid "Set the interval to be checked in mins."
-msgstr "Zeitintervall zwischen den Überprüfungen in Minuten."
-
-msgid "Set the repeat interval of backup schedule."
-msgstr "Gebe das Zeitintervall für automatische Backups an."
-
-msgid "Set the time of backup to start."
-msgstr "Gebe das Zeitintervall für automatische Image-Backups an."
 
 msgid "Setting Up..."
 msgstr "Stellt ein..."
@@ -693,9 +652,6 @@ msgstr ""
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Der gewählte Speicherort existiert nicht, nutze /media/hdd"
-
-msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
-msgstr "Der Name von der Box kann im Backupnamen enthalten sein macht den Namen aber etwas länger."
 
 msgid "The wizard is finished now, and will reboot"
 msgstr "Der Assistent wurde beendet jetzt folgt ein Neustart"
@@ -824,6 +780,14 @@ msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte später nochmal 
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
 msgstr "Die %s %s ist nicht mit dem Internet verbunden. Bitte Netzwerkeinstellungen überprüfen."
 
+#, python-format
+msgid ""
+"ofgwrite error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"ofgwrite Fehler (auch in Debug.Log):\n"
+"%s"
+
 msgid "there is a problem with this device, please reformat and try again."
 msgstr "Es gibt ein Problem mit dem Medium. Bitte neu formatieren und erneut versuchen"
 
@@ -833,8 +797,32 @@ msgstr "nicht verfügbar"
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "Eine Updateprüfung läuft im Hintergrund. Bitte warten und erneut versuchen."
 
+#~ msgid "Allows the script runner to be launched from extensions."
+#~ msgstr "Erlaubt es den Scriptstarter aus den Erweiterungen zu starten."
+
+#~ msgid "Allows the softcam manager to be launched from extensions."
+#~ msgstr "Erlaubt es den Softcam-Menager aus Erweiterungen zu starten."
+
+#~ msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+#~ msgstr "Erlaubt es zu prüfen ob Softcams noch laufen. Softcams werden, wenn nötig, erneut gestartet."
+
+#~ msgid "Allows you have the window close automatically."
+#~ msgstr "Erlaubt es das Fenster automatisch schließen zu lassen."
+
+#~ msgid "Allows you schedule your backups."
+#~ msgstr "Erlaubt es Zeiten für automatische Backups anzugeben."
+
+#~ msgid "Allows you schedule your image backups."
+#~ msgstr "Erlaubt es Zeiten für automatische Image-Backups anzugeben."
+
+#~ msgid "Allows you to tag your backups to a box."
+#~ msgstr "Erlaubt es die Backups einer Box zuzuordnen."
+
 #~ msgid "Allows you to tag your backups to a box. (default is box name/type)"
 #~ msgstr "Erlaubt es Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
+
+#~ msgid "Allows you to tag your image backup to a box. (default is box name/type)"
+#~ msgstr "Erlaubt es Image-Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
 
 #~ msgid "Backup Manager Log"
 #~ msgstr "Backup Verwaltung Log"
@@ -848,6 +836,9 @@ msgstr "nicht verfügbar"
 #~ msgstr ""
 #~ "Backup wird durchgeführt,\n"
 #~ "Bitte vor neuem Versuch Beendigung abwarten"
+
+#~ msgid "Backups to keep"
+#~ msgstr "Anzahl zu erhaltener Backups"
 
 #~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
 #~ msgstr "Partition kann nicht ausgehängt (umount) werden. Überprüfe ob sie nicht für Swap oder Aufnahme/TimeShift benutzt wird"
@@ -886,6 +877,12 @@ msgstr "nicht verfügbar"
 #~ msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
 #~ msgstr "Es sieht so aus als wenn kein Extra Ort konfiguriert wurde. Bitte in den Einstellungen vom Backup-Manager einstellen."
 
+#~ msgid "Location of where backup should be saved."
+#~ msgstr "Pfad wo Backups gespeichert werden sollen."
+
+#~ msgid "Location of where image backup should be saved."
+#~ msgstr "Ort wo Image Backups gespeichert werden sollen."
+
 #~ msgid "Manage you devices mountpoints."
 #~ msgstr "Verwalte deine Einhängepunkte"
 
@@ -920,8 +917,23 @@ msgstr "nicht verfügbar"
 #~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 #~ msgstr "Auflistung der Plugins fehlgeschlagen - z.B. falscher Sicherungsspeicherort oder ungenügend Speicher auf dem Sicherungslaufwerk"
 
+#~ msgid "Query before starting backup."
+#~ msgstr "Fragen bevor Backup startet."
+
+#~ msgid "Query before starting image backup."
+#~ msgstr "Vor Imagesicherung fragen."
+
 #~ msgid "Script Runner Setup"
 #~ msgstr "Script ausführen Einstellungen"
+
+#~ msgid "Set the interval to be checked in mins."
+#~ msgstr "Zeitintervall zwischen den Überprüfungen in Minuten."
+
+#~ msgid "Set the repeat interval of backup schedule."
+#~ msgstr "Gebe das Zeitintervall für automatische Backups an."
+
+#~ msgid "Set the time of backup to start."
+#~ msgstr "Gebe das Zeitintervall für automatische Image-Backups an."
 
 #~ msgid "Softcam Manager Log"
 #~ msgstr "Softcam Verwaltung Log"
@@ -958,6 +970,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "The backup location does not have enough freespace.\n"
 #~ msgstr "Das Sicherungs Verzeichnis hat nicht genug freien Speicher.\n"
+
+#~ msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
+#~ msgstr "Der Name von der Box kann im Backupnamen enthalten sein macht den Namen aber etwas länger."
 
 #~ msgid "Wait please while scanning for devices..."
 #~ msgstr "Bitte warten während Suchlauf nach Geräten..."

@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-07 07:36+0200\n"
-"PO-Revision-Date: 2017-03-07 11:12+0200\n"
+"POT-Creation-Date: 2017-07-05 08:22+0100\n"
+"PO-Revision-Date: 2017-07-07 15:03+0300\n"
 "Last-Translator: rimas\n"
-"Language-Team: Estonian <kde-i18n-doc@kde.org>\n"
+"Language-Team: Estonian <rimas>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.2\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -103,29 +103,26 @@ msgstr "Seadistuste automaatne varundamine"
 msgid "Autostart"
 msgstr "Autostart"
 
-msgid "Backing up Kernel..."
-msgstr "Kerneli varundamine..."
-
-msgid "Backing up Root file system..."
-msgstr "Failisüsteemi varundamine"
-
 msgid "Backing up files..."
 msgstr "Varundamine..."
+
+msgid "Backing up kernel..."
+msgstr "Kerneli varundamine..."
+
+msgid "Backing up root file system..."
+msgstr "Failisüsteemi varundamine..."
 
 msgid "Backup Complete..."
 msgstr "Varukoopia on tehtud..."
 
-msgid "Backup Confirmation"
+msgid "Backup complete..."
+msgstr "Varukoopia on tehtud..."
+
+msgid "Backup confirmation"
 msgstr "Varundamise kinnitamine"
 
-msgid "Backup Created"
+msgid "Backup created"
 msgstr "Varukoopia loodud"
-
-msgid "Backup Location"
-msgstr "Varukoopia asukoht"
-
-msgid "Backup Manager"
-msgstr "Varukoopiad"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Varundamine nurjus - nt.  vale asukoht või ruumi puudus varundamise asukohas"
@@ -136,6 +133,12 @@ msgid ""
 msgstr ""
 "Toimub varundamine.\n"
 "Oota selle lõppemist, enne kui uuesti üritad"
+
+msgid "Backup location"
+msgstr "Varukoopia asukoht"
+
+msgid "Backup manager"
+msgstr "Varukoopiad"
 
 msgid "Backup prefix"
 msgstr "Varukoopia nimi"
@@ -149,16 +152,16 @@ msgstr "Partitsiooni lahtihaakimine nurjus. Veendu, et seda ei kasutata saale v�
 msgid "Cancel"
 msgstr "Tühista"
 
-msgid "Change Location"
+msgid "Change location"
 msgstr "Muuda asukohta"
 
-msgid "Checking Free RAM.."
+msgid "Checking free RAM.."
 msgstr "Vaba mälu uurimine.."
 
 msgid "Checking softcams..."
 msgstr "EMU kontroll..."
 
-msgid "Choose Files"
+msgid "Choose files"
 msgstr "Vali failid"
 
 msgid "Choose local ipk's folder"
@@ -182,19 +185,19 @@ msgstr "Loo"
 msgid "Create and Manage your swap files."
 msgstr "Loo ja halda saalefaile"
 
-msgid "Create and Restore complete images of your system."
-msgstr "Loo ja taasta täielikke süsteemitõmmiseid."
-
-msgid "Creating Swap.."
-msgstr "Saale loomine..."
+msgid "Create and flash complete images of your system."
+msgstr "Loo ja paigalda täielikke süsteemitõmmiseid."
 
 msgid "Creating list of installed plugins..."
 msgstr "Paigaldatud pluginate nimekirja loomine..."
 
+msgid "Creating swap.."
+msgstr "Saale loomine..."
+
 msgid "Creating zip..."
 msgstr "Zip faili loomine..."
 
-msgid "Current Status:"
+msgid "Current status:"
 msgstr "Olek:"
 
 msgid "Daily"
@@ -215,7 +218,10 @@ msgstr "Asukoht: "
 msgid "Device: None available"
 msgstr "Andmekandja ei ole saadaval"
 
-msgid "Disable Startup"
+msgid "Device: none available"
+msgstr "Andmekandja ei ole saadaval"
+
+msgid "Disable startup"
 msgstr "Keela autostart"
 
 msgid "Do you want to restart GUI now ?"
@@ -227,10 +233,13 @@ msgstr "Kas taastada Enigma2 pluginad?"
 msgid "Do you want to restore your Enigma2 settings ?"
 msgstr "Kas taastada Enigma2 seadistused?"
 
+msgid "Do you want to restore your enigma2 settings ?"
+msgstr "Kas taastada Enigma2 seadistused?"
+
 msgid "Download"
 msgstr "Tõmba"
 
-msgid "Download Confirmation"
+msgid "Download confirmation"
 msgstr "Allalaadimise kinnitamine"
 
 msgid "Downloading"
@@ -239,16 +248,16 @@ msgstr "Allalaadimisel"
 msgid "Downloads"
 msgstr "Tõmba"
 
-msgid "Enable Startup"
-msgstr "Luba autostart"
-
-msgid "Enable Swap at startup"
-msgstr "Luba käivitumisel saale"
-
 msgid "Enable frozen check"
 msgstr "Luba hangumise kontroll"
 
-msgid "Enough Retries, delaying till next schedule."
+msgid "Enable startup"
+msgstr "Luba autostart"
+
+msgid "Enable swap at startup"
+msgstr "Alglaadimisel saale lubatud"
+
+msgid "Enough retries, delaying till next schedule."
 msgstr "Rohkem ei proovi, lükatakse järgmise korrale."
 
 msgid "Exit the restore wizard"
@@ -256,6 +265,9 @@ msgstr "Välju taastamisabilisest"
 
 msgid "Extra IPK's"
 msgstr "Lisa IPK-d"
+
+msgid "Flash"
+msgstr "Paigalda"
 
 msgid "Found non-standard softcam, trying to start, this may fail"
 msgstr "Leiti ebastandardne EMU. Käivitamine võib nurjuda"
@@ -272,10 +284,10 @@ msgstr "GB"
 msgid "HARD DISK: "
 msgstr "KÕVAKETAS: "
 
-msgid "IPK Installer"
+msgid "IPK installer"
 msgstr "IPK paigaldamine"
 
-msgid "Image Manager"
+msgid "Image manager"
 msgstr "Süsteemitõmmised"
 
 msgid "Inactive"
@@ -290,11 +302,11 @@ msgstr "Info"
 msgid "Install"
 msgstr "Paigalda"
 
-msgid "Install Confirmation"
-msgstr "Paigaldamise kinnitus"
-
 msgid "Install IPK's from your tmp folder."
 msgstr "Paigalda IPK 'tmp' kaustast."
+
+msgid "Install confirmation"
+msgstr "Paigaldamise kinnitus"
 
 msgid "Install extensions."
 msgstr "Paigalda laiendusi"
@@ -341,16 +353,16 @@ msgstr "Suurim säilitatavate varukoopiate arv (0=kõik)"
 msgid "Mount"
 msgstr "Haagi"
 
-msgid "Mount Manager"
-msgstr "Haakepunktid"
-
 msgid "Mount failed"
 msgstr "Haakimine nurjus"
+
+msgid "Mount manager"
+msgstr "Võrgu haakepunktid"
 
 msgid "Mount: "
 msgstr "Haagitud: "
 
-msgid "Moving to Backup Location..."
+msgid "Moving to backup Location..."
 msgstr "Liigutamine varukoopia asukohta..."
 
 msgid "NO, do not restore plugins"
@@ -359,10 +371,10 @@ msgstr "Ei, pluginaid ei taasta"
 msgid "NO, do not restore settings"
 msgstr "Ei, seadistusi ei taasta"
 
-msgid "New Backup"
+msgid "New backup"
 msgstr "Loo uus"
 
-msgid "Next Backup: "
+msgid "Next backup: "
 msgstr "Järgmine varundamine: "
 
 msgid ""
@@ -443,8 +455,8 @@ msgstr "Oota käivitamist\n"
 msgid "Please wait while stopping\n"
 msgstr "Oota peatamist\n"
 
-msgid "Please wait while the restore prepares"
-msgstr "Valmistumine taastamiseks"
+msgid "Please wait while the flash prepares"
+msgstr "Valmistumine paigaldamiseks"
 
 msgid "Please wait while the system gathers information..."
 msgstr "Oota, kuni süsteem kogub teavet..."
@@ -470,7 +482,7 @@ msgstr "Päring enne varundamise alustamist"
 msgid "Rebooting..."
 msgstr "Taaskäivitus..."
 
-msgid "Remove Confirmation"
+msgid "Remove confirmation"
 msgstr "Eemaldamise kinnitamine"
 
 msgid "Removing temp mounts..."
@@ -486,8 +498,8 @@ msgstr "Taaskäivitus"
 msgid "Restart %s %s."
 msgstr "Taaskäivita %s %s."
 
-msgid "Restart Enigma2."
-msgstr "Taaskäivita Enigma2."
+msgid "Restart GUI."
+msgstr "Taaskäivita E2."
 
 msgid "Restore"
 msgstr "Taasta"
@@ -495,7 +507,10 @@ msgstr "Taasta"
 msgid "Restore Confirmation"
 msgstr "Taastamise kinnitamine"
 
-msgid "Restore Wizard"
+msgid "Restore confirmation"
+msgstr "Taastamise kinnitamine"
+
+msgid "Restore wizard"
 msgstr "Taastamisabiline"
 
 msgid "Restoring backup..."
@@ -516,10 +531,10 @@ msgstr "Käivita skripte"
 msgid "Save"
 msgstr "Salvesta"
 
-msgid "Schedule Backups"
+msgid "Schedule backups"
 msgstr "Ajastatud varundamine"
 
-msgid "Script Runner"
+msgid "Script runner"
 msgstr "Skriptid"
 
 msgid "Select"
@@ -528,13 +543,16 @@ msgstr "Vali"
 msgid "Select a backup to Restore:"
 msgstr "Taasta varukoopia:"
 
+msgid "Select a backup to restore:"
+msgstr "Taasta varukoopia:"
+
 msgid "Select a package to install:"
 msgstr "Vali paigaldamiseks pakett:"
 
 msgid "Select an image to Download:"
 msgstr "Vali antud nimekirjast:"
 
-msgid "Select an image to restore:"
+msgid "Select an image to flash:"
 msgstr "Paigalda süsteemitõmmis:"
 
 msgid "Select extra packages folder"
@@ -552,13 +570,13 @@ msgstr "Vali saalefaili suurus:"
 msgid "Select:"
 msgstr "Vali:"
 
-msgid "Setting Up..."
+msgid "Setting up..."
 msgstr "Seadistamine..."
 
 msgid "Setup"
 msgstr "Seadistamine"
 
-msgid "Setup Mounts"
+msgid "Setup mounts"
 msgstr "Haakepunktid"
 
 msgid "Show in extensions"
@@ -567,16 +585,16 @@ msgstr "Kuva laienduste menüüs"
 msgid "Size: "
 msgstr "Suurus: "
 
-msgid "SoftCam and CI"
-msgstr "EMU / CI"
+msgid "Softcam"
+msgstr "Emulaator"
 
-msgid "Softcam Manager"
+msgid "Softcam manager"
 msgstr "EMU haldamine"
 
-msgid "Softcam Starting..."
+msgid "Softcam starting..."
 msgstr "EMU käivitamine..."
 
-msgid "Softcam Stopping..."
+msgid "Softcam stopping..."
 msgstr "EMU peatamine..."
 
 msgid "SoftcamCheck"
@@ -600,7 +618,7 @@ msgstr "Fail ei ole ühilduv selle tarkvaraversiooniga. "
 msgid "Sorry, but the restore failed."
 msgstr "Taastamine nurjus."
 
-msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
+msgid "Sorry, no physical devices that supports swap attached. Can't create Swap file on network or fat32 filesystems"
 msgstr "Saalet toetav andmekandja ei ole ühendatud. Saalefaili loomine võrgus või fat32 süsteemis ei ole võimalik"
 
 msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
@@ -618,22 +636,22 @@ msgstr "Olek:"
 msgid "Stop"
 msgstr "Peata"
 
-msgid "Swap File not found. You have to create the file before to activate."
+msgid "Swap file not found. You have to create the file before you try to activate it."
 msgstr "Saalefaili ei leitud. Enne käivitamist tuleb see luua."
 
-msgid "Swap Manager"
+msgid "Swap manager"
 msgstr "Saale haldamine"
 
-msgid "Swap Place:"
+msgid "Swap place:"
 msgstr "Saale asukoht:"
 
-msgid "Swap Size:"
+msgid "Swap size:"
 msgstr "Saale suurus:"
 
 msgid "TB"
 msgstr "TB"
 
-msgid "Temp Folder"
+msgid "Temp folder"
 msgstr "Temp kaust"
 
 msgid "The backup location does not have enough free space."
@@ -659,10 +677,10 @@ msgstr "Abiline on läbitud, toimub taaskäivitus"
 msgid "The wizard is finished now."
 msgstr "Abiline on läbitud."
 
-msgid "This Device is already mounted as HDD."
+msgid "This device is already mounted as HDD."
 msgstr "See andmekandja on juba kõvakettana haagitud."
 
-msgid "Time of Backup to start"
+msgid "Time of backup to start"
 msgstr "Varundamise käivitamise aeg"
 
 msgid "Type: "
@@ -671,7 +689,7 @@ msgstr "Tüüp: "
 msgid "USB: "
 msgstr "USB: "
 
-msgid "Unmount"
+msgid "Un-mount"
 msgstr "Haagi lahti"
 
 msgid "Updating mount locations."
@@ -683,22 +701,22 @@ msgstr "Kasuta kõvakettana"
 msgid "ViX"
 msgstr "ViX"
 
-msgid "ViX Backup Manager"
+msgid "ViX Backup manager"
 msgstr "ViX varukoopiad"
 
-msgid "ViX Image Manager"
+msgid "ViX Image manager"
 msgstr "ViX süsteemitõmmised"
 
-msgid "ViX Mount Manager"
+msgid "ViX Mount manager"
 msgstr "ViX haakepunktid"
 
-msgid "ViX Script Runner"
+msgid "ViX Script runner"
 msgstr "ViX skriptid"
 
-msgid "ViX Swap Manager"
+msgid "ViX Swap manager"
 msgstr "ViX saale haldur"
 
-msgid "View Progress"
+msgid "View progress"
 msgstr "Näita edenemist"
 
 msgid "Wait please while creating swapfile..."
@@ -746,11 +764,11 @@ msgstr "Pole midagi kustutada."
 msgid "You have no image to download."
 msgstr "Pole midagi alla laadida."
 
-msgid "You have no image to restore."
-msgstr "Pole midagi paigaldada."
+msgid "You have no image to flash."
+msgstr "Süsteemitõmmis paigaldamiseks puudub."
 
-msgid "You have to create a Swap File before to activate the autostart."
-msgstr "Enne autostardi lubamist tuleb luua saalefail."
+msgid "You have to create a swap file before trying to activate the autostart."
+msgstr "Enne autostardi lubamist tuleb saalefail luua."
 
 #, python-format
 msgid ""
@@ -788,7 +806,7 @@ msgstr ""
 "ofgwrite viga (saadeti ka silumislogidesse):\n"
 "%s"
 
-msgid "there is a problem with this device, please reformat and try again."
+msgid "there is a problem with this device, please reformat it and try again."
 msgstr "selle andmekandjaga on mingi probleem, vorminda see ja proovi uuesti."
 
 msgid "unavailable"
@@ -827,6 +845,24 @@ msgstr "pole saadaval"
 #~ msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 #~ msgstr "Võimaldab siduda süsteemitõmmise nime vastuvõtjaga (vaikimisi vastuvõtja nimi)"
 
+#~ msgid "Backing up Kernel..."
+#~ msgstr "Kerneli varundamine..."
+
+#~ msgid "Backing up Root file system..."
+#~ msgstr "Failisüsteemi varundamine"
+
+#~ msgid "Backup Confirmation"
+#~ msgstr "Varundamise kinnitamine"
+
+#~ msgid "Backup Created"
+#~ msgstr "Varukoopia loodud"
+
+#~ msgid "Backup Location"
+#~ msgstr "Varukoopia asukoht"
+
+#~ msgid "Backup Manager"
+#~ msgstr "Varukoopiad"
+
 #~ msgid "Backup Manager Log"
 #~ msgstr "Varundamise logi"
 
@@ -846,6 +882,9 @@ msgstr "pole saadaval"
 #~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
 #~ msgstr "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
 
+#~ msgid "Change Location"
+#~ msgstr "Muuda asukohta"
+
 #~ msgid ""
 #~ "Changes need a system restart to take effect.\n"
 #~ "Restart your %s %s now?"
@@ -853,23 +892,62 @@ msgstr "pole saadaval"
 #~ "Changes need a system restart to take effect.\n"
 #~ "Restart your %s %s now?"
 
+#~ msgid "Checking Free RAM.."
+#~ msgstr "Vaba mälu uurimine.."
+
+#~ msgid "Choose Files"
+#~ msgstr "Vali failid"
+
 #~ msgid "Create and Manage your swapfiles."
 #~ msgstr "Create and Manage your swapfiles."
 
 #~ msgid "Create and Restore complete images of the system."
 #~ msgstr "Create and Restore complete images of the system."
 
+#~ msgid "Create and Restore complete images of your system."
+#~ msgstr "Loo ja taasta täielikke süsteemitõmmiseid."
+
 #~ msgid "Creating Backup Files..."
 #~ msgstr "Creating Backup Files..."
+
+#~ msgid "Creating Swap.."
+#~ msgstr "Saale loomine..."
+
+#~ msgid "Current Status:"
+#~ msgstr "Olek:"
+
+#~ msgid "Disable Startup"
+#~ msgstr "Keela autostart"
+
+#~ msgid "Download Confirmation"
+#~ msgstr "Allalaadimise kinnitamine"
 
 #~ msgid "Downloading Image..."
 #~ msgstr "Tõmmise allalaadimine..."
 
+#~ msgid "Enable Startup"
+#~ msgstr "Luba autostart"
+
+#~ msgid "Enable Swap at startup"
+#~ msgstr "Luba käivitumisel saale"
+
+#~ msgid "Enough Retries, delaying till next schedule."
+#~ msgstr "Rohkem ei proovi, lükatakse järgmise korrale."
+
 #~ msgid "Found none standard softcam, trying to start, this may fail"
 #~ msgstr "Leiti ebastandardne EMU. Käivitamine võib nurjuda"
 
+#~ msgid "IPK Installer"
+#~ msgstr "IPK paigaldamine"
+
+#~ msgid "Image Manager"
+#~ msgstr "Süsteemitõmmised"
+
 #~ msgid "Image Manager Setup"
 #~ msgstr "Süsteemitõmmised"
+
+#~ msgid "Install Confirmation"
+#~ msgstr "Paigaldamise kinnitus"
 
 #~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 #~ msgstr "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
@@ -885,6 +963,18 @@ msgstr "pole saadaval"
 
 #~ msgid "Manage your backups of your settings."
 #~ msgstr "Manage your backups of your settings."
+
+#~ msgid "Mount Manager"
+#~ msgstr "Haakepunktid"
+
+#~ msgid "Moving to Backup Location..."
+#~ msgstr "Liigutamine varukoopia asukohta..."
+
+#~ msgid "New Backup"
+#~ msgstr "Loo uus"
+
+#~ msgid "Next Backup: "
+#~ msgstr "Järgmine varundamine: "
 
 #~ msgid ""
 #~ "No config files found, please setup MGcamd first\n"
@@ -905,6 +995,9 @@ msgstr "pole saadaval"
 #~ msgid "Please wait while restore prepares"
 #~ msgstr "Please wait while restore prepares"
 
+#~ msgid "Please wait while the restore prepares"
+#~ msgstr "Valmistumine taastamiseks"
+
 #~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 #~ msgstr "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 
@@ -914,8 +1007,26 @@ msgstr "pole saadaval"
 #~ msgid "Query before starting image backup."
 #~ msgstr "Enne varundamise alustamist küsitakse."
 
+#~ msgid "Remove Confirmation"
+#~ msgstr "Eemaldamise kinnitamine"
+
+#~ msgid "Restart Enigma2."
+#~ msgstr "Taaskäivita Enigma2."
+
+#~ msgid "Restore Wizard"
+#~ msgstr "Taastamisabiline"
+
+#~ msgid "Schedule Backups"
+#~ msgstr "Ajastatud varundamine"
+
+#~ msgid "Script Runner"
+#~ msgstr "Skriptid"
+
 #~ msgid "Script Runner Setup"
 #~ msgstr "Skriptide seaded"
+
+#~ msgid "Select an image to restore:"
+#~ msgstr "Paigalda süsteemitõmmis:"
 
 #~ msgid "Set the interval to be checked in mins."
 #~ msgstr "Ajavahemik kontrollimise vahel (min)"
@@ -926,6 +1037,18 @@ msgstr "pole saadaval"
 #~ msgid "Set the time of backup to start."
 #~ msgstr "Määra varundamise käivitamise aeg."
 
+#~ msgid "Setting Up..."
+#~ msgstr "Seadistamine..."
+
+#~ msgid "Setup Mounts"
+#~ msgstr "Haakepunktid"
+
+#~ msgid "SoftCam and CI"
+#~ msgstr "EMU / CI"
+
+#~ msgid "Softcam Manager"
+#~ msgstr "EMU haldamine"
+
 #~ msgid "Softcam Manager Log"
 #~ msgstr "EMU halduri logi"
 
@@ -934,6 +1057,12 @@ msgstr "pole saadaval"
 
 #~ msgid "Softcam Setup"
 #~ msgstr "EMU seadistamine"
+
+#~ msgid "Softcam Starting..."
+#~ msgstr "EMU käivitamine..."
+
+#~ msgid "Softcam Stopping..."
+#~ msgstr "EMU peatamine..."
 
 #~ msgid "Sorry Image Restore is not supported on the"
 #~ msgstr "Sorry Image Restore is not supported on the"
@@ -950,8 +1079,53 @@ msgstr "pole saadaval"
 #~ msgid "Sorry, But this machine is not supported yet."
 #~ msgstr "See vastuvõtja ei ole veel toetatud."
 
+#~ msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
+#~ msgstr "Saalet toetav andmekandja ei ole ühendatud. Saalefaili loomine võrgus või fat32 süsteemis ei ole võimalik"
+
+#~ msgid "Swap File not found. You have to create the file before to activate."
+#~ msgstr "Saalefaili ei leitud. Enne käivitamist tuleb see luua."
+
+#~ msgid "Swap Manager"
+#~ msgstr "Saale haldamine"
+
+#~ msgid "Swap Place:"
+#~ msgstr "Saale asukoht:"
+
+#~ msgid "Swap Size:"
+#~ msgstr "Saale suurus:"
+
+#~ msgid "Temp Folder"
+#~ msgstr "Temp kaust"
+
 #~ msgid "The backup location does not have enough freespace."
 #~ msgstr "The backup location does not have enough free space."
+
+#~ msgid "This Device is already mounted as HDD."
+#~ msgstr "See andmekandja on juba kõvakettana haagitud."
+
+#~ msgid "Time of Backup to start"
+#~ msgstr "Varundamise käivitamise aeg"
+
+#~ msgid "Unmount"
+#~ msgstr "Haagi lahti"
+
+#~ msgid "ViX Backup Manager"
+#~ msgstr "ViX varukoopiad"
+
+#~ msgid "ViX Image Manager"
+#~ msgstr "ViX süsteemitõmmised"
+
+#~ msgid "ViX Mount Manager"
+#~ msgstr "ViX haakepunktid"
+
+#~ msgid "ViX Script Runner"
+#~ msgstr "ViX skriptid"
+
+#~ msgid "ViX Swap Manager"
+#~ msgstr "ViX saale haldur"
+
+#~ msgid "View Progress"
+#~ msgstr "Näita edenemist"
 
 #~ msgid "Wait please while scanning for devices..."
 #~ msgstr "Wait please while scanning for devices..."
@@ -970,8 +1144,17 @@ msgstr "pole saadaval"
 #~ "Leiti varukoopia.\n"
 #~ "Siin saab taastada pluginad ja seadistused, mis olid varukoopia loomise ajaks paigaldatud.\n"
 
+#~ msgid "You have no image to restore."
+#~ msgstr "Pole midagi paigaldada."
+
+#~ msgid "You have to create a Swap File before to activate the autostart."
+#~ msgstr "Enne autostardi lubamist tuleb luua saalefail."
+
 #~ msgid "echo 'Downloading Image.'"
 #~ msgstr "echo 'Tõmmise allalaadimine.'"
+
+#~ msgid "there is a problem with this device, please reformat and try again."
+#~ msgstr "selle andmekandjaga on mingi probleem, vorminda see ja proovi uuesti."
 
 #~ msgid "there was a problem with this device, please reformat and try again."
 #~ msgstr "there was a problem with this device, please reformat and try again."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-08 10:06+0200\n"
-"PO-Revision-Date: 2017-04-14 11:32+0200\n"
+"POT-Creation-Date: 2017-08-09 18:10+0100\n"
+"PO-Revision-Date: 2017-09-02 11:05+0200\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.0.1\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -103,29 +103,26 @@ msgstr "Automatische Einstellungssicherung"
 msgid "Autostart"
 msgstr "Autostart"
 
-msgid "Backing up Kernel..."
-msgstr "Sichern vom Kernel..."
-
-msgid "Backing up Root file system..."
-msgstr "Sichern vom Root Dateisystem..."
-
 msgid "Backing up files..."
 msgstr "Sichert Dateien..."
+
+msgid "Backing up kernel..."
+msgstr "BackUp von Kernel..."
+
+msgid "Backing up root file system..."
+msgstr "BackUp Root-Verzeichnis..."
 
 msgid "Backup Complete..."
 msgstr "Backup abgeschlossen..."
 
-msgid "Backup Confirmation"
-msgstr "Backup bestätigen"
+msgid "Backup complete..."
+msgstr "BackUp beendet..."
 
-msgid "Backup Created"
-msgstr "Backup erstellt"
+msgid "Backup confirmation"
+msgstr "BackUp bestätigung"
 
-msgid "Backup Location"
-msgstr "Speicherort für Backup"
-
-msgid "Backup Manager"
-msgstr "Backup Verwaltung"
+msgid "Backup created"
+msgstr "BackUp erzeugt"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
 msgstr "Backup fehlgeschlagen - z.B. falscher Sicherungsort oder zu wenig freier Speicher auf dem Sicherungslaufwerk"
@@ -136,6 +133,12 @@ msgid ""
 msgstr ""
 "Backup findet statt.\n"
 "Bitte auf das Ende warten und erneut versuchen"
+
+msgid "Backup location"
+msgstr "BackUp Zielverzeichnis"
+
+msgid "Backup manager"
+msgstr "BackUp Verwaltung"
 
 msgid "Backup prefix"
 msgstr "Backup Namensanfang"
@@ -149,17 +152,17 @@ msgstr "Partition kann nicht ausgehängt werden. Bitte sicher stellen das sie ni
 msgid "Cancel"
 msgstr "Abbrechen"
 
-msgid "Change Location"
-msgstr "Ordner ändern"
+msgid "Change location"
+msgstr "Ändere Zielverzeichnis"
 
-msgid "Checking Free RAM.."
-msgstr "Prüfe freien Arbeitsspeicher.."
+msgid "Checking free RAM.."
+msgstr "Prüfe freien Speicher"
 
 msgid "Checking softcams..."
 msgstr "Überprüfe Softcams..."
 
-msgid "Choose Files"
-msgstr "Dateien auswählen"
+msgid "Choose files"
+msgstr "Wähle Dateien"
 
 msgid "Choose local ipk's folder"
 msgstr "Lokalen IPK Ordner wählen"
@@ -182,20 +185,20 @@ msgstr "Erstellen"
 msgid "Create and Manage your swap files."
 msgstr "Swap Datei erzeugen oder verwalten."
 
-msgid "Create and Restore complete images of your system."
-msgstr "Komplette Images vom System erzeugen oder flashen."
-
-msgid "Creating Swap.."
-msgstr "Auslagerungsdatei wird erstellt..."
+msgid "Create and flash complete images of your system."
+msgstr "Erzeuge und flashe komplettes Image von deinem System"
 
 msgid "Creating list of installed plugins..."
 msgstr "Erstelle Liste der installierten Plugins..."
 
+msgid "Creating swap.."
+msgstr "Erzeuge Swap..."
+
 msgid "Creating zip..."
 msgstr "Erstelle ZIP..."
 
-msgid "Current Status:"
-msgstr "Status:"
+msgid "Current status:"
+msgstr "Aktueller Status:"
 
 msgid "Daily"
 msgstr "Täglich"
@@ -215,8 +218,11 @@ msgstr "Gerät: "
 msgid "Device: None available"
 msgstr "Gerät: Nicht verfügbar"
 
-msgid "Disable Startup"
-msgstr "Autostart deaktivieren"
+msgid "Device: none available"
+msgstr "Gerät: keines verfügbar"
+
+msgid "Disable startup"
+msgstr "Deaktiviere Startup"
 
 msgid "Do you want to restart GUI now ?"
 msgstr "Soll die Benutzeroberfläche jetzt neu gestartet werden?"
@@ -227,35 +233,41 @@ msgstr "Willst Du deine Enigma2 Plugins wieder herstellen?"
 msgid "Do you want to restore your Enigma2 settings ?"
 msgstr "Willst Du deine Enigma2 Einstellungen wieder herstellen?"
 
+msgid "Do you want to restore your enigma2 settings ?"
+msgstr "Willst Du die Enigma2-Einstellungen wieder herstellen?"
+
 msgid "Download"
 msgstr "Herunterladen"
 
-msgid "Download Confirmation"
-msgstr "Herunterladen bestätigen"
+msgid "Download confirmation"
+msgstr "Download Bestätigung"
 
 msgid "Downloading"
-msgstr ""
+msgstr "Lade herrunter"
 
 msgid "Downloads"
-msgstr ""
-
-msgid "Enable Startup"
-msgstr "Autostart aktivieren"
-
-msgid "Enable Swap at startup"
-msgstr "Auslagerungsdatei-Autostart aktivieren"
+msgstr "Downloads"
 
 msgid "Enable frozen check"
 msgstr "Freeze-Check aktivieren"
 
-msgid "Enough Retries, delaying till next schedule."
-msgstr "Zu viele Versuche, bis zur nächsten Zeitplan-Aktion zurückgestellt."
+msgid "Enable startup"
+msgstr "Aktiviere Startup"
+
+msgid "Enable swap at startup"
+msgstr "Aktiviere Swap nach Start"
+
+msgid "Enough retries, delaying till next schedule."
+msgstr "Genug Wiederholungen, warte bis zum nächsten Start."
 
 msgid "Exit the restore wizard"
 msgstr "Wiederherstellungsassistenten beenden"
 
 msgid "Extra IPK's"
 msgstr "Extra IPK's"
+
+msgid "Flash"
+msgstr ""
 
 msgid "Found non-standard softcam, trying to start, this may fail"
 msgstr "Nichtstandard Softcam gefunden. Versuch zu starten. Es kann fehlschlagen."
@@ -272,10 +284,10 @@ msgstr "GB"
 msgid "HARD DISK: "
 msgstr "FESTPLATTE: "
 
-msgid "IPK Installer"
-msgstr "IPK-Installer"
+msgid "IPK installer"
+msgstr "IPK Instalieren"
 
-msgid "Image Manager"
+msgid "Image manager"
 msgstr "Image Verwaltung"
 
 msgid "Inactive"
@@ -290,11 +302,11 @@ msgstr "Info"
 msgid "Install"
 msgstr "Installieren"
 
-msgid "Install Confirmation"
-msgstr "Bestätigung der Installation"
-
 msgid "Install IPK's from your tmp folder."
 msgstr "Installiere IPKs aus dem tmp Verzeichnis."
+
+msgid "Install confirmation"
+msgstr "Installation Bestätigung"
 
 msgid "Install extensions."
 msgstr "Installiere Erweiterung"
@@ -341,17 +353,17 @@ msgstr "Maximale Anzahl von Images behalten (0==alle)"
 msgid "Mount"
 msgstr "Einhängen"
 
-msgid "Mount Manager"
-msgstr "Mount Verwaltung"
-
 msgid "Mount failed"
 msgstr "Einhängen fehlgeschlagen"
+
+msgid "Mount manager"
+msgstr "Mount Verwaltung"
 
 msgid "Mount: "
 msgstr "Mount: "
 
-msgid "Moving to Backup Location..."
-msgstr "An Sicherungsspeicherort verschieben..."
+msgid "Moving to backup Location..."
+msgstr "Verschiebe nach Backup-Zielverzeichnis"
 
 msgid "NO, do not restore plugins"
 msgstr "NEIN, Plugins nicht wieder herstellen"
@@ -359,11 +371,11 @@ msgstr "NEIN, Plugins nicht wieder herstellen"
 msgid "NO, do not restore settings"
 msgstr "NEIN, Einstellungen nicht wieder herstellen"
 
-msgid "New Backup"
+msgid "New backup"
 msgstr "Neues Backup"
 
-msgid "Next Backup: "
-msgstr "Nächstes Backup: "
+msgid "Next backup: "
+msgstr "Nächstes Backup:"
 
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -443,8 +455,8 @@ msgstr "Startvorgang abwarten\n"
 msgid "Please wait while stopping\n"
 msgstr "Bitte Stoppvorgang abwarten\n"
 
-msgid "Please wait while the restore prepares"
-msgstr "Bitte warten. Wiederherstellung wird vorbereitet"
+msgid "Please wait while the flash prepares"
+msgstr "Bitte warten. Flash wird vorbereitet."
 
 msgid "Please wait while the system gathers information..."
 msgstr "Bitte warten während das System Informationen sammelt..."
@@ -470,8 +482,8 @@ msgstr "Vor Imagesicherung fragen"
 msgid "Rebooting..."
 msgstr "Neustart..."
 
-msgid "Remove Confirmation"
-msgstr "Löschen bestätigen"
+msgid "Remove confirmation"
+msgstr "Entfernen Bestätigung"
 
 msgid "Removing temp mounts..."
 msgstr "Entferne temporäre Mounts"
@@ -486,8 +498,8 @@ msgstr "Neustart"
 msgid "Restart %s %s."
 msgstr "Neustart %s %s."
 
-msgid "Restart Enigma2."
-msgstr "Enigma2 neu starten."
+msgid "Restart GUI."
+msgstr "Benutzeroberfläche neu starten."
 
 msgid "Restore"
 msgstr "Wiederherstellen"
@@ -495,8 +507,11 @@ msgstr "Wiederherstellen"
 msgid "Restore Confirmation"
 msgstr "Wiederherstellen bestätigen"
 
-msgid "Restore Wizard"
-msgstr "Wiederherstellungsassistent"
+msgid "Restore confirmation"
+msgstr "Wiederherstellen Bestätigung"
+
+msgid "Restore wizard"
+msgstr "Wiederherstellen Assistent"
 
 msgid "Restoring backup..."
 msgstr "Backup wiederherstellen..."
@@ -516,11 +531,11 @@ msgstr "Führe dein Script aus."
 msgid "Save"
 msgstr "Speichern"
 
-msgid "Schedule Backups"
-msgstr "Zeitgeplante Backups"
+msgid "Schedule backups"
+msgstr "Plane Backups"
 
-msgid "Script Runner"
-msgstr "Script ausführen"
+msgid "Script runner"
+msgstr "Scipte ausführen"
 
 msgid "Select"
 msgstr "Auswählen"
@@ -528,14 +543,17 @@ msgstr "Auswählen"
 msgid "Select a backup to Restore:"
 msgstr "Wähle ein Backup zur Wiederherstellung:"
 
+msgid "Select a backup to restore:"
+msgstr "Wähle ein Backup zum Wiederherstellen"
+
 msgid "Select a package to install:"
 msgstr "Paket zur Installation wählen:"
 
 msgid "Select an image to Download:"
 msgstr "Image zum Herunterladen auswählen:"
 
-msgid "Select an image to restore:"
-msgstr "Wähle ein Image zur Wiederherstellung:"
+msgid "Select an image to flash:"
+msgstr "Wähle ein Image zum Wiederherstellen:"
 
 msgid "Select extra packages folder"
 msgstr "Wähle einen Ordner der Extra-Packete enthält"
@@ -552,14 +570,14 @@ msgstr "Größe der Auslagerungsdatei auswählen:"
 msgid "Select:"
 msgstr "Auswählen:"
 
-msgid "Setting Up..."
-msgstr "Stellt ein..."
+msgid "Setting up..."
+msgstr "Konfiguriere..."
 
 msgid "Setup"
 msgstr "Einstellungen"
 
-msgid "Setup Mounts"
-msgstr "Mounts einstellen"
+msgid "Setup mounts"
+msgstr "Konfigiriere Mounts"
 
 msgid "Show in extensions"
 msgstr "Zeige in Erweiterungen"
@@ -567,17 +585,17 @@ msgstr "Zeige in Erweiterungen"
 msgid "Size: "
 msgstr "Größe: "
 
-msgid "SoftCam and CI"
-msgstr "SoftCam und CI"
+msgid "Softcam"
+msgstr ""
 
-msgid "Softcam Manager"
+msgid "Softcam manager"
 msgstr "Softcam Verwaltung"
 
-msgid "Softcam Starting..."
-msgstr "Starte Softcam..."
+msgid "Softcam starting..."
+msgstr "Softcam startet..."
 
-msgid "Softcam Stopping..."
-msgstr "Stoppe Softcam..."
+msgid "Softcam stopping..."
+msgstr "Softcam stoppt..."
 
 msgid "SoftcamCheck"
 msgstr "Softcam-Überprüfung"
@@ -600,8 +618,8 @@ msgstr "Tut uns leid aber die Datei is nicht kompatibel mit dieser Image-Version
 msgid "Sorry, but the restore failed."
 msgstr "Sorry, aber die Wiederherstellung ist fehlgeschlagen."
 
-msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
-msgstr "Sorry, kein geeignetes Gerät für Auslagerungsdatei angeschlossen. Keine Auslagerungsdatei im Netzwerk oder mit FAT32 möglich"
+msgid "Sorry, no physical devices that supports swap attached. Can't create Swap file on network or fat32 filesystems"
+msgstr "Tut uns leid. Kein Gerät verbunden das Swap erlauben würde. Kann Swap-Datei nicht auf Netzwerk oder Fat32 erzeugen."
 
 msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
 msgstr "Sorry, nicht genügend RAM und kein Gerät für eine Auslagerungsdatei angeschlossen. Keine Auslagerungsdatei im Netzwerk oder auf FAT32 möglich. Backup kann nicht erstellt werden"
@@ -618,23 +636,23 @@ msgstr "Status:"
 msgid "Stop"
 msgstr "Stopp"
 
-msgid "Swap File not found. You have to create the file before to activate."
-msgstr "Auslagerungsdatei nicht gefunden. Vor Aktivierung muss die Datei erstellt werden-"
+msgid "Swap file not found. You have to create the file before you try to activate it."
+msgstr "Swap-Datei nicht gefunden. Du musst eine Swap-Datei werzeugen bevor sie aktiviert werden kann."
 
-msgid "Swap Manager"
-msgstr "Auslagerungsdatei Verwaltung"
+msgid "Swap manager"
+msgstr "Swap Verwaltung"
 
-msgid "Swap Place:"
-msgstr "Speicherort:"
+msgid "Swap place:"
+msgstr "Swap Zielverzeichnis:"
 
-msgid "Swap Size:"
-msgstr "Größe:"
+msgid "Swap size:"
+msgstr "Swap Größe:"
 
 msgid "TB"
 msgstr ""
 
-msgid "Temp Folder"
-msgstr "Temp Ordner"
+msgid "Temp folder"
+msgstr "Temp Verzeichnis"
 
 msgid "The backup location does not have enough free space."
 msgstr "Der Ort für die Backups hat nicht genug freien Speicher."
@@ -659,11 +677,11 @@ msgstr "Der Assistent wurde beendet jetzt folgt ein Neustart"
 msgid "The wizard is finished now."
 msgstr "Der Assistent ist abgeschlossen."
 
-msgid "This Device is already mounted as HDD."
-msgstr "Das Gerät ist bereits als HDD eingehängt."
+msgid "This device is already mounted as HDD."
+msgstr "Dieses Gerät wurde schon als HDD gemountet."
 
-msgid "Time of Backup to start"
-msgstr "Startzeit des Backups"
+msgid "Time of backup to start"
+msgstr "Zeit wann Backup starten soll"
 
 msgid "Type: "
 msgstr "Typ: "
@@ -671,8 +689,8 @@ msgstr "Typ: "
 msgid "USB: "
 msgstr ""
 
-msgid "Unmount"
-msgstr "Aushängen"
+msgid "Un-mount"
+msgstr ""
 
 msgid "Updating mount locations."
 msgstr "Freigaben erneuern."
@@ -683,22 +701,22 @@ msgstr "Als HDD verwenden"
 msgid "ViX"
 msgstr "ViX"
 
-msgid "ViX Backup Manager"
+msgid "ViX Backup manager"
 msgstr "ViX Backup Verwaltung"
 
-msgid "ViX Image Manager"
+msgid "ViX Image manager"
 msgstr "ViX Image Verwaltung"
 
-msgid "ViX Mount Manager"
+msgid "ViX Mount manager"
 msgstr "ViX Mount Verwaltung"
 
-msgid "ViX Script Runner"
-msgstr "ViX Script Ausführung"
+msgid "ViX Script runner"
+msgstr "ViX Script ausführen"
 
-msgid "ViX Swap Manager"
+msgid "ViX Swap manager"
 msgstr "ViX Swap Verwaltung"
 
-msgid "View Progress"
+msgid "View progress"
 msgstr "Fortschritt anzeigen"
 
 msgid "Wait please while creating swapfile..."
@@ -746,11 +764,11 @@ msgstr "Kein Image zum löschen"
 msgid "You have no image to download."
 msgstr "Kein Image zum Herunterladen."
 
-msgid "You have no image to restore."
-msgstr "Kein Image zur Wiederherstellung vorhanden"
+msgid "You have no image to flash."
+msgstr "Du hast kein Image zum Wiederherstellen."
 
-msgid "You have to create a Swap File before to activate the autostart."
-msgstr "Vor dem Aktivieren des Autostarts muss eine Auslagerungsdatei erstellt werden. "
+msgid "You have to create a swap file before trying to activate the autostart."
+msgstr "Du musst eine Swap-Datei erzeugen bevor autostart aktiviert werden kann."
 
 #, python-format
 msgid ""
@@ -788,8 +806,8 @@ msgstr ""
 "ofgwrite Fehler (auch in Debug.Log):\n"
 "%s"
 
-msgid "there is a problem with this device, please reformat and try again."
-msgstr "Es gibt ein Problem mit dem Medium. Bitte neu formatieren und erneut versuchen"
+msgid "there is a problem with this device, please reformat it and try again."
+msgstr "da gibt es ein Problem mit dem Gerät. Bitte neu formatieren und erneut versuchen."
 
 msgid "unavailable"
 msgstr "nicht verfügbar"
@@ -824,6 +842,24 @@ msgstr "nicht verfügbar"
 #~ msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 #~ msgstr "Erlaubt es Image-Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
 
+#~ msgid "Backing up Kernel..."
+#~ msgstr "Sichern vom Kernel..."
+
+#~ msgid "Backing up Root file system..."
+#~ msgstr "Sichern vom Root Dateisystem..."
+
+#~ msgid "Backup Confirmation"
+#~ msgstr "Backup bestätigen"
+
+#~ msgid "Backup Created"
+#~ msgstr "Backup erstellt"
+
+#~ msgid "Backup Location"
+#~ msgstr "Speicherort für Backup"
+
+#~ msgid "Backup Manager"
+#~ msgstr "Backup Verwaltung"
+
 #~ msgid "Backup Manager Log"
 #~ msgstr "Backup Verwaltung Log"
 
@@ -846,6 +882,9 @@ msgstr "nicht verfügbar"
 #~ msgid "Can't unmount the partition, make sure it is not being used for swap or record/timeshift paths"
 #~ msgstr "Partition aushängen nicht möglich. Bitte sicher stellen das sie nicht für Swap/Aufnahme/TimeShift benutzt wird."
 
+#~ msgid "Change Location"
+#~ msgstr "Ordner ändern"
+
 #~ msgid ""
 #~ "Changes need a system restart to take effect.\n"
 #~ "Restart your %s %s now?"
@@ -853,23 +892,62 @@ msgstr "nicht verfügbar"
 #~ "Änderungen benötigen Neustart um wirksam zu werden.\n"
 #~ "%s %s jetzt neu starten?"
 
+#~ msgid "Checking Free RAM.."
+#~ msgstr "Prüfe freien Arbeitsspeicher.."
+
+#~ msgid "Choose Files"
+#~ msgstr "Dateien auswählen"
+
 #~ msgid "Create and Manage your swapfiles."
 #~ msgstr "Erzeuge und verwalte Swapdateien"
 
 #~ msgid "Create and Restore complete images of the system."
 #~ msgstr "Erzeuge Images und stelle System wieder her."
 
+#~ msgid "Create and Restore complete images of your system."
+#~ msgstr "Komplette Images vom System erzeugen oder flashen."
+
 #~ msgid "Creating Backup Files..."
 #~ msgstr "Backup-Dateien werden erstellt..."
+
+#~ msgid "Creating Swap.."
+#~ msgstr "Auslagerungsdatei wird erstellt..."
+
+#~ msgid "Current Status:"
+#~ msgstr "Status:"
+
+#~ msgid "Disable Startup"
+#~ msgstr "Autostart deaktivieren"
+
+#~ msgid "Download Confirmation"
+#~ msgstr "Herunterladen bestätigen"
 
 #~ msgid "Downloading Image..."
 #~ msgstr "Lädt Image herunter..."
 
+#~ msgid "Enable Startup"
+#~ msgstr "Autostart aktivieren"
+
+#~ msgid "Enable Swap at startup"
+#~ msgstr "Auslagerungsdatei-Autostart aktivieren"
+
+#~ msgid "Enough Retries, delaying till next schedule."
+#~ msgstr "Zu viele Versuche, bis zur nächsten Zeitplan-Aktion zurückgestellt."
+
 #~ msgid "Found none standard softcam, trying to start, this may fail"
 #~ msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl"
 
+#~ msgid "IPK Installer"
+#~ msgstr "IPK-Installer"
+
+#~ msgid "Image Manager"
+#~ msgstr "Image Verwaltung"
+
 #~ msgid "Image Manager Setup"
 #~ msgstr "Einstellungen Image Verwaltung"
+
+#~ msgid "Install Confirmation"
+#~ msgstr "Bestätigung der Installation"
 
 #~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 #~ msgstr "Es sieht so aus als wenn Du noch keinen Extra-Ort angegeben hast. Bitte Extra-Ort in den Einstellungen von der Backup-Verwaltung festlegen."
@@ -888,6 +966,18 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Manage your backups of your settings."
 #~ msgstr "Verwalte Backups deiner Einstellungen."
+
+#~ msgid "Mount Manager"
+#~ msgstr "Mount Verwaltung"
+
+#~ msgid "Moving to Backup Location..."
+#~ msgstr "An Sicherungsspeicherort verschieben..."
+
+#~ msgid "New Backup"
+#~ msgstr "Neues Backup"
+
+#~ msgid "Next Backup: "
+#~ msgstr "Nächstes Backup: "
 
 #~ msgid ""
 #~ "No config files found, please setup MGcamd first\n"
@@ -914,6 +1004,9 @@ msgstr "nicht verfügbar"
 #~ msgid "Please wait while restore prepares"
 #~ msgstr "Bitte warten solange Wiederherstellung sich vorbereitet"
 
+#~ msgid "Please wait while the restore prepares"
+#~ msgstr "Bitte warten. Wiederherstellung wird vorbereitet"
+
 #~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 #~ msgstr "Auflistung der Plugins fehlgeschlagen - z.B. falscher Sicherungsspeicherort oder ungenügend Speicher auf dem Sicherungslaufwerk"
 
@@ -923,8 +1016,26 @@ msgstr "nicht verfügbar"
 #~ msgid "Query before starting image backup."
 #~ msgstr "Vor Imagesicherung fragen."
 
+#~ msgid "Remove Confirmation"
+#~ msgstr "Löschen bestätigen"
+
+#~ msgid "Restart Enigma2."
+#~ msgstr "Enigma2 neu starten."
+
+#~ msgid "Restore Wizard"
+#~ msgstr "Wiederherstellungsassistent"
+
+#~ msgid "Schedule Backups"
+#~ msgstr "Zeitgeplante Backups"
+
+#~ msgid "Script Runner"
+#~ msgstr "Script ausführen"
+
 #~ msgid "Script Runner Setup"
 #~ msgstr "Script ausführen Einstellungen"
+
+#~ msgid "Select an image to restore:"
+#~ msgstr "Wähle ein Image zur Wiederherstellung:"
 
 #~ msgid "Set the interval to be checked in mins."
 #~ msgstr "Zeitintervall zwischen den Überprüfungen in Minuten."
@@ -935,6 +1046,18 @@ msgstr "nicht verfügbar"
 #~ msgid "Set the time of backup to start."
 #~ msgstr "Gebe das Zeitintervall für automatische Image-Backups an."
 
+#~ msgid "Setting Up..."
+#~ msgstr "Stellt ein..."
+
+#~ msgid "Setup Mounts"
+#~ msgstr "Mounts einstellen"
+
+#~ msgid "SoftCam and CI"
+#~ msgstr "SoftCam und CI"
+
+#~ msgid "Softcam Manager"
+#~ msgstr "Softcam Verwaltung"
+
 #~ msgid "Softcam Manager Log"
 #~ msgstr "Softcam Verwaltung Log"
 
@@ -943,6 +1066,12 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Softcam Setup"
 #~ msgstr "Softcam-Einstellungen"
+
+#~ msgid "Softcam Starting..."
+#~ msgstr "Starte Softcam..."
+
+#~ msgid "Softcam Stopping..."
+#~ msgstr "Stoppe Softcam..."
 
 #~ msgid "Sorry Image Restore is not supported on the"
 #~ msgstr "Tut uns leid Image Wiederherstellung wird nicht unterstützt auf der"
@@ -965,6 +1094,24 @@ msgstr "nicht verfügbar"
 #~ msgid "Sorry, But this machine is not supported yet."
 #~ msgstr "Tut uns leid aber die Box wird noch nicht unterstützt."
 
+#~ msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
+#~ msgstr "Sorry, kein geeignetes Gerät für Auslagerungsdatei angeschlossen. Keine Auslagerungsdatei im Netzwerk oder mit FAT32 möglich"
+
+#~ msgid "Swap File not found. You have to create the file before to activate."
+#~ msgstr "Auslagerungsdatei nicht gefunden. Vor Aktivierung muss die Datei erstellt werden-"
+
+#~ msgid "Swap Manager"
+#~ msgstr "Auslagerungsdatei Verwaltung"
+
+#~ msgid "Swap Place:"
+#~ msgstr "Speicherort:"
+
+#~ msgid "Swap Size:"
+#~ msgstr "Größe:"
+
+#~ msgid "Temp Folder"
+#~ msgstr "Temp Ordner"
+
 #~ msgid "The backup location does not have enough freespace."
 #~ msgstr "Ungenügend Speicherplatz am Sicherungsspeicherort."
 
@@ -973,6 +1120,33 @@ msgstr "nicht verfügbar"
 
 #~ msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
 #~ msgstr "Der Name von der Box kann im Backupnamen enthalten sein macht den Namen aber etwas länger."
+
+#~ msgid "This Device is already mounted as HDD."
+#~ msgstr "Das Gerät ist bereits als HDD eingehängt."
+
+#~ msgid "Time of Backup to start"
+#~ msgstr "Startzeit des Backups"
+
+#~ msgid "Unmount"
+#~ msgstr "Aushängen"
+
+#~ msgid "ViX Backup Manager"
+#~ msgstr "ViX Backup Verwaltung"
+
+#~ msgid "ViX Image Manager"
+#~ msgstr "ViX Image Verwaltung"
+
+#~ msgid "ViX Mount Manager"
+#~ msgstr "ViX Mount Verwaltung"
+
+#~ msgid "ViX Script Runner"
+#~ msgstr "ViX Script Ausführung"
+
+#~ msgid "ViX Swap Manager"
+#~ msgstr "ViX Swap Verwaltung"
+
+#~ msgid "View Progress"
+#~ msgstr "Fortschritt anzeigen"
 
 #~ msgid "Wait please while scanning for devices..."
 #~ msgstr "Bitte warten während Suchlauf nach Geräten..."
@@ -991,8 +1165,17 @@ msgstr "nicht verfügbar"
 #~ "Ein Backup wurde gefunden.\n"
 #~ "Mit diesem Assistenten können Einstellungen und Plugins wieder hergestellt werden die zum Zeitpunkt des Backups vorhanden waren.\n"
 
+#~ msgid "You have no image to restore."
+#~ msgstr "Kein Image zur Wiederherstellung vorhanden"
+
+#~ msgid "You have to create a Swap File before to activate the autostart."
+#~ msgstr "Vor dem Aktivieren des Autostarts muss eine Auslagerungsdatei erstellt werden. "
+
 #~ msgid "echo 'Downloading Image.'"
 #~ msgstr "echo 'Image herunterladen.'"
+
+#~ msgid "there is a problem with this device, please reformat and try again."
+#~ msgstr "Es gibt ein Problem mit dem Medium. Bitte neu formatieren und erneut versuchen"
 
 #~ msgid "there was a problem with this device, please reformat and try again."
 #~ msgstr "Es gibt ein Problem mit dem Gerät, bitte formatieren und erneut versuchen."

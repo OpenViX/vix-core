@@ -1147,11 +1147,22 @@ class ImageManagerDownload(Screen):
 				'xpeedlx3'        : 'GI-Xpeed-LX3'
 			}
 
+# Ensure this item is missing before we check box support...
+			try:
+				del self._error_message
+			except:
+				pass
 			try:
 				self.boxtype = supportedMachines[getMachineMake()]
 			except:
 				print "[ImageManager][populate_List] the %s is not currently supported by OpenViX." % getMachineMake()
-				self.boxtype = 'UNKNOWN'
+				self._error_message =  _("The %s is not currently supported by OpenViX.") % getMachineMake()
+				self["key_green"].setText(_("Show Error"))
+				self["key_green"].show()
+				self.emlist.append(_("**ERROR**"))
+				self["list"].setList(self.emlist)
+				self["list"].show()
+				return
 
 			url = 'http://www.openvix.co.uk/openvix-builds/'+self.boxtype+'/'
 			conn = urllib2.urlopen(url)
@@ -1179,6 +1190,9 @@ class ImageManagerDownload(Screen):
 			self["list"].show()
 
 	def keyDownload(self):
+		if hasattr(self, "_error_message"):
+			self.session.open(MessageBox, self._error_message, MessageBox.TYPE_INFO, timeout=10)
+			return
 		self.sel = self['list'].getCurrent()
 		if self.sel:
 			message = _("Are you sure you want to download this image:\n ") + self.sel

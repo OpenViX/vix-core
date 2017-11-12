@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-07 09:55+0000\n"
-"PO-Revision-Date: 2017-11-09 06:52+0100\n"
+"PO-Revision-Date: 2017-11-12 09:13+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.4\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -98,7 +98,7 @@ msgstr ""
 " "
 
 msgid "Automatic settings backup"
-msgstr "Automatische settingsbackup"
+msgstr "Automatische settingsback-up"
 
 msgid "Autostart"
 msgstr "Autostart"
@@ -125,7 +125,7 @@ msgid "Backup created"
 msgstr "Back-up gemaakt"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Back-up mislukt of verkeerde backup bestemming of onvoldoende ruimte"
+msgstr "Back-up mislukt of verkeerde back-up bestemming of onvoldoende ruimte"
 
 msgid ""
 "Backup in progress,\n"
@@ -352,10 +352,10 @@ msgid "Manage your devices mount points."
 msgstr "Beheer hoe uw apparaten gemount zijn."
 
 msgid "Max backups to keep (0==all)"
-msgstr "Max aantal backups (0 = allemaal)"
+msgstr "Max aantal back-up (0 = onbeperkt)"
 
 msgid "Max image backups to keep (0==all)"
-msgstr "Max aantal backups behouden (0==alle)"
+msgstr "Max aantal back-up behouden (0=alle)"
 
 msgid "Mount"
 msgstr "Mount"
@@ -479,7 +479,7 @@ msgid "Press OK to toggle the selection."
 msgstr "Druk op OK om de selectie om te wisselen.."
 
 msgid "Query before backup starts"
-msgstr "Melding als backup start"
+msgstr "Melding als back-up start"
 
 msgid "Query before image backup starts"
 msgstr "Vragen alvorens image back-up start."
@@ -546,7 +546,7 @@ msgid "Select"
 msgstr "Selecteer"
 
 msgid "Select a backup to Restore:"
-msgstr "Kies een backup om terug te zetten!"
+msgstr "Kies een back-up om terug te zetten!"
 
 msgid "Select a backup to restore:"
 msgstr "Kies een back-up om te herstellen:"
@@ -615,7 +615,7 @@ msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager
 msgstr "De feeds zijn dood vanwege onderhoud. Probeer later nog eens de plugins te herstellen via de back-up manager."
 
 msgid "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
-msgstr "De feeds zijn momenteel niet actief. Probeer later de plugins te installeren via de backupmanager."
+msgstr "De feeds zijn momenteel niet actief. Probeer later de plugins te installeren via de back-up manager."
 
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Het bestand is niet verenigbaar met deze versie van de firmware."
@@ -674,7 +674,7 @@ msgstr ""
 "Uw %s %s nu herstarten?"
 
 msgid "The chosen location does not exist, using /media/hdd"
-msgstr "De gekozen locatie bestaat niet, gebruik nu /media/hdd"
+msgstr "De gekozen lokatie bestaat niet, gebruik nu /media/hdd"
 
 msgid "The wizard is finished now, and will reboot"
 msgstr "De wizard is gereed; uw systeem wordt opnieuw gestart."
@@ -707,7 +707,7 @@ msgid "ViX"
 msgstr "ViX"
 
 msgid "ViX Backup manager"
-msgstr "ViX Backup manager"
+msgstr "ViX Back-up manager"
 
 msgid "ViX Image manager"
 msgstr "ViX Image manager"
@@ -788,16 +788,16 @@ msgid ""
 "Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
-"Uw %s %s is gereed een settings backup te maken.\n"
+"Uw %s %s is gereed een settings back-up te maken.\n"
 "Wilt u doorgaan?"
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr "Uw %s %s is niet met internet verbonden. Gebruik de backupmanager later om uw plugins weer te installeren."
+msgstr "Uw %s %s is niet met internet verbonden. Gebruik de back-up manager later om uw plugins weer te installeren."
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
-msgstr "Uw %s %s is niet met het internet verbonden. Probeer later de plugins te installeren via de backupmanager."
+msgstr "Uw %s %s is niet met het internet verbonden. Probeer later de plugins te installeren via de back-up manager."
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."

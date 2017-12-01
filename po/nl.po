@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-07 09:55+0000\n"
-"PO-Revision-Date: 2017-11-12 09:13+0100\n"
+"POT-Creation-Date: 2017-11-30 19:37+0000\n"
+"PO-Revision-Date: 2017-12-01 16:27+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -139,6 +139,9 @@ msgstr "Back-up lokatie"
 
 msgid "Backup manager"
 msgstr "Back-up manager"
+
+msgid "Backup manager settings"
+msgstr "Back-upmanager instellingen"
 
 msgid "Backup prefix"
 msgstr "Back-up prefix"
@@ -296,6 +299,9 @@ msgstr "IPK installeren"
 
 msgid "Image manager"
 msgstr "Image manager"
+
+msgid "Image manager settings"
+msgstr "Imagemanager instellingen"
 
 msgid "Inactive"
 msgstr "Inactief"
@@ -542,6 +548,9 @@ msgstr "Plan back-ups"
 msgid "Script runner"
 msgstr "Scriptrunner"
 
+msgid "Script runner settings"
+msgstr "Scriptrunner instellingen"
+
 msgid "Select"
 msgstr "Selecteer"
 
@@ -595,6 +604,9 @@ msgstr "Softcam"
 
 msgid "Softcam manager"
 msgstr "Softcam manager"
+
+msgid "Softcam manager settings"
+msgstr "Softcammanager instellingen"
 
 msgid "Softcam starting..."
 msgstr "Softcam start..."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-02 12:38+0100\n"
-"PO-Revision-Date: 2017-10-03 17:23+0200\n"
+"POT-Creation-Date: 2017-12-13 12:15+0000\n"
+"PO-Revision-Date: 2017-12-13 19:15+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.4\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -139,6 +139,9 @@ msgstr "BackUp Zielverzeichnis"
 
 msgid "Backup manager"
 msgstr "BackUp Verwaltung"
+
+msgid "Backup manager settings"
+msgstr "Backup Verwaltung Einstellungen"
 
 msgid "Backup prefix"
 msgstr "Backup Namensanfang"
@@ -276,6 +279,9 @@ msgstr "Extra IPK's"
 msgid "Flash"
 msgstr ""
 
+msgid "Flash confirmation"
+msgstr "Bestätigung FLASH"
+
 msgid "Found non-standard softcam, trying to start, this may fail"
 msgstr "Nichtstandard Softcam gefunden. Versuch zu starten. Es kann fehlschlagen."
 
@@ -296,6 +302,9 @@ msgstr "IPK Instalieren"
 
 msgid "Image manager"
 msgstr "Image Verwaltung"
+
+msgid "Image manager settings"
+msgstr "Image Verwaltung Einstellungen"
 
 msgid "Inactive"
 msgstr "Inaktiv"
@@ -331,7 +340,7 @@ msgid "Ipkg"
 msgstr ""
 
 msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
-msgstr "Ort für Backups scheint nicht eingestellt zu sein. Bitte den Ort im Menü vom Backup-Manager einstellen."
+msgstr "Ort für Backups scheint nicht eingestellt zu sein. Bitte den Ort im Menü vom Backup Verwaltung einstellen."
 
 msgid "Logs"
 msgstr ""
@@ -514,9 +523,6 @@ msgstr "Wiederherstellen"
 msgid "Restore Confirmation"
 msgstr "Wiederherstellen bestätigen"
 
-msgid "Restore confirmation"
-msgstr "Wiederherstellen Bestätigung"
-
 msgid "Restore wizard"
 msgstr "Wiederherstellen Assistent"
 
@@ -543,6 +549,9 @@ msgstr "Plane Backups"
 
 msgid "Script runner"
 msgstr "Scipte ausführen"
+
+msgid "Script runner settings"
+msgstr "Script Ausführung Einstellungen"
 
 msgid "Select"
 msgstr "Auswählen"
@@ -598,6 +607,9 @@ msgstr ""
 msgid "Softcam manager"
 msgstr "Softcam Verwaltung"
 
+msgid "Softcam manager settings"
+msgstr "Softcam Verwaltung Einstellungen"
+
 msgid "Softcam starting..."
 msgstr "Softcam startet..."
 
@@ -608,7 +620,7 @@ msgid "SoftcamCheck"
 msgstr "Softcam-Überprüfung"
 
 msgid "Sorry but that location does not exist or is not setup, please set it up in the Backup Manager setup menu "
-msgstr "Entschuldigung aber der Ort für Backups existiert nicht oder ist nicht eingestellt. Bitte den Ort im Menü vom Backup-Manager einstellen."
+msgstr "Entschuldigung aber der Ort für Backups existiert nicht oder ist nicht eingestellt. Bitte den Ort im Menü vom Backup Verwaltung einstellen."
 
 msgid "Sorry feeds are down for maintenance, Please try again later."
 msgstr "Tut uns leid. Feeds sind wegen Wartung nicht erreichbar. Bitte später erneut versuchen."
@@ -758,6 +770,16 @@ msgstr "JA, um Plugins wieder herzustellen"
 
 msgid "YES, to restore settings"
 msgstr "JA, um Einstellungen wieder herzustellen"
+
+msgid ""
+"You are about to flash an eMMC flash, we cannot take any responsibility for any errors or damage to your box during this process.\n"
+"Proceed with CAUTION!:\n"
+"Are you sure you want to flash this image:\n"
+" "
+msgstr ""
+"Du willst gerade eMMC Flash schreiben. Wir können keine Garantie bei eventuellen Fehlern und Beschädigungen übernehmen.\n"
+"Fortfahren mit Vorsicht:\n"
+"Bist Du sichewr das dieses Image geflashed werden soll?"
 
 msgid "You have no backup to delete."
 msgstr "Keine Backup zum Löschen."
@@ -1041,6 +1063,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Restore Wizard"
 #~ msgstr "Wiederherstellungsassistent"
+
+#~ msgid "Restore confirmation"
+#~ msgstr "Wiederherstellen Bestätigung"
 
 #~ msgid "Schedule Backups"
 #~ msgstr "Zeitgeplante Backups"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-30 19:37+0000\n"
-"PO-Revision-Date: 2017-12-01 16:27+0100\n"
+"POT-Creation-Date: 2017-12-13 12:51+0000\n"
+"PO-Revision-Date: 2017-12-14 05:30+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.5\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -279,6 +279,9 @@ msgstr "Extra IPK's"
 msgid "Flash"
 msgstr "Flash"
 
+msgid "Flash confirmation"
+msgstr "Bevestig flashen"
+
 msgid "Found non-standard softcam, trying to start, this may fail"
 msgstr "Niet-standaard CAM gevonden. Er wordt geprobeerd deze te starten, maar dit kan mislukken."
 
@@ -517,9 +520,6 @@ msgstr "Herstel"
 
 msgid "Restore Confirmation"
 msgstr "Bevestig herstellen"
-
-msgid "Restore confirmation"
-msgstr "Herstellen bevestigen"
 
 msgid "Restore wizard"
 msgstr "Herstel-wizard"
@@ -768,6 +768,16 @@ msgstr "JA, installeer plugins weer"
 
 msgid "YES, to restore settings"
 msgstr "JA, plaats de instellingen weer terug"
+
+msgid ""
+"You are about to flash an eMMC flash, we cannot take any responsibility for any errors or damage to your box during this process.\n"
+"Proceed with CAUTION!:\n"
+"Are you sure you want to flash this image:\n"
+" "
+msgstr ""
+"U staat op het punt te flashen met een eMMC flash; wij kunnen geen enkele verantwoordelijkheid accepteren voor fouten, problemen of schade aan uw ontvanger ten gevolge van dit proces.\n"
+"Betracht de nodige voorzichtigheid!:\n"
+"Weet u zeker dat u dit image wilt flashen:"
 
 msgid "You have no backup to delete."
 msgstr "Er is geen back-up die verwijderd kan worden."
@@ -1051,6 +1061,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Restore Wizard"
 #~ msgstr "Herstelwizard"
+
+#~ msgid "Restore confirmation"
+#~ msgstr "Herstellen bevestigen"
 
 #~ msgid "Schedule Backups"
 #~ msgstr "Plan back-ups"

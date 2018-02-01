@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-13 12:51+0000\n"
-"PO-Revision-Date: 2017-12-14 05:30+0100\n"
+"POT-Creation-Date: 2018-01-31 22:00+0000\n"
+"PO-Revision-Date: 2018-02-01 04:51+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.0.6\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -62,6 +62,30 @@ msgstr "Actief"
 
 msgid "Active:"
 msgstr "Actief:"
+
+msgid "Allows the script runner to be launched from extensions."
+msgstr "Maakt het mogelijk dit script te laten lopen vanuit het extensieoverzicht."
+
+msgid "Allows the softcam manager to be launched from extensions."
+msgstr "Geeft de mogelijkheid de softcammanager vanuit de extensies te starten."
+
+msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+msgstr "Controleert of de softcam nog werkt en herstart die als dat niet het geval is."
+
+msgid "Allows you to close the window automatically."
+msgstr "Laat het venster automatisch sluiten."
+
+msgid "Allows you to schedule your backups."
+msgstr "U kunt planmatig back-ups laten maken."
+
+msgid "Allows you to schedule your image backups."
+msgstr "U kunt planmatig image back-ups laten maken."
+
+msgid "Allows you to tag your backups to a box."
+msgstr "Hier kunt u een label geven aan de back-ups van uw STB, maar dat kan de naam wel lang maken."
+
+msgid "Allows you to tag your image backup to a box. (default is box name/type)"
+msgstr "U kunt labels aan image back-ups van een ontvanger hangen (default is box naam/type)."
 
 msgid "Are you ready to install ?"
 msgstr "Bent u gereed te installeren?"
@@ -146,6 +170,9 @@ msgstr "Back-upmanager instellingen"
 msgid "Backup prefix"
 msgstr "Back-up prefix"
 
+msgid "Backups to keep"
+msgstr "Maximum aantal back-ups dat u wilt bewaren. Indien u alle back-ups wilt bewaren voert u \"0\" in."
+
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam en MGcamd kunnen niet beide actief zijn"
 
@@ -184,6 +211,9 @@ msgstr "Vergelijkt met back-up..."
 
 msgid "Create"
 msgstr "Creëer"
+
+msgid "Create a settings backup before updating."
+msgstr "Maakt een back-up van uw instellingen alvorens te updaten."
 
 msgid "Create and Manage your swap files."
 msgstr "Beheer SWAP-bestanden."
@@ -342,6 +372,12 @@ msgstr "IPKG"
 msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
 msgstr "U moet eerst een extra lokatie aanmaken in het menu van de back-up manager "
 
+msgid "Location of where backup should be saved."
+msgstr "Waar moet de image back-up worden opgeslagen?"
+
+msgid "Location of where the image backup should be saved."
+msgstr "Waar moet de image back-up worden opgeslagen?"
+
 msgid "Logs"
 msgstr "Logs"
 
@@ -491,7 +527,13 @@ msgid "Query before backup starts"
 msgstr "Melding als back-up start"
 
 msgid "Query before image backup starts"
-msgstr "Vragen alvorens image back-up start."
+msgstr "Vragen alvorens de image back-up te starten."
+
+msgid "Query before starting backup."
+msgstr "Melding als back-up start"
+
+msgid "Query before starting image backup."
+msgstr "Vragen alvorens image back-up te starten."
 
 msgid "Rebooting..."
 msgstr "Bezig met rebooten..."
@@ -583,6 +625,15 @@ msgstr "Selecteer de grootte van de swapfile:"
 
 msgid "Select:"
 msgstr "Selecteer:"
+
+msgid "Set the interval to be checked in mins."
+msgstr "Bepaal het controle-interval (in minuten)."
+
+msgid "Set the repeat interval of backup schedule."
+msgstr "Stel het back-up interval in."
+
+msgid "Set the time of backup to start."
+msgstr "Stel de tijd in waarop een back-up wordt gemaakt."
 
 msgid "Setting up..."
 msgstr "Maakt instellingen..."
@@ -687,6 +738,9 @@ msgstr ""
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "De gekozen lokatie bestaat niet, gebruik nu /media/hdd"
+
+msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
+msgstr "De naam van de STB kan worden opgenomen in de naam van het back-up bestand, maar dat kan de naam wel lang maken."
 
 msgid "The wizard is finished now, and will reboot"
 msgstr "De wizard is gereed; uw systeem wordt opnieuw gestart."
@@ -842,15 +896,6 @@ msgstr "niet beschikbaar"
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "De feeds worden gecontroleerd; even wachten."
 
-#~ msgid "Allows the script runner to be launched from extensions."
-#~ msgstr "Maakt het mogelijk dit script te laten lopen vanuit het extensieoverzicht."
-
-#~ msgid "Allows the softcam manager to be launched from extensions."
-#~ msgstr "Geeft de mogelijkheid de softcammanager vanuit de extensies te starten."
-
-#~ msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
-#~ msgstr "Controleert of de softcam nog werkt en herstart die als dat niet het geval is."
-
 #~ msgid "Allows you have the window close automatically."
 #~ msgstr "Maakt het mogelijk het venster automatisch te sluiten."
 
@@ -860,14 +905,8 @@ msgstr "niet beschikbaar"
 #~ msgid "Allows you schedule your image backups."
 #~ msgstr "Plan image back-ups."
 
-#~ msgid "Allows you to tag your backups to a box."
-#~ msgstr "Hier kunt u een label geven aan de back-ups van uw STB."
-
 #~ msgid "Allows you to tag your backups to a box. (default is box name/type)"
 #~ msgstr "U kunt labels aan back-ups van een ontvanger hangen (default is box naam/type)."
-
-#~ msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-#~ msgstr "U kunt labels aan image back-ups van een ontvanger hangen (default is box naam/type)."
 
 #~ msgid "Are you ready to create a backup image ?"
 #~ msgstr "Bent u gereed om een imageback-up te maken?"
@@ -909,9 +948,6 @@ msgstr "niet beschikbaar"
 #~ msgstr ""
 #~ "Back-up in uitvoering,\n"
 #~ "Laat dit doorlopen voordat u opnieuw probeert"
-
-#~ msgid "Backups to keep"
-#~ msgstr "Te bewaren backups"
 
 #~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
 #~ msgstr "Kan de partitie niet 'unmounten'; kijk of deze niet wordt gebruikt voor SWAP/Opname/Timeshift/Logs/EPG."
@@ -992,9 +1028,6 @@ msgstr "niet beschikbaar"
 #~ msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
 #~ msgstr "Het lijkt erop dat u geen extra locatie heeft ingesteld; doe dat in het context menu van de back-up manager."
 
-#~ msgid "Location of where backup should be saved."
-#~ msgstr "Locatie voor uw back-ups."
-
 #~ msgid "Location of where image backup should be saved."
 #~ msgstr "Locatie waar images moeten worden opgeslagen."
 
@@ -1047,12 +1080,6 @@ msgstr "niet beschikbaar"
 #~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 #~ msgstr "Maken van een lijst met plugins is mislukt - of een verkeerde back-up locatie of onvoldoende vrije ruimte"
 
-#~ msgid "Query before starting backup."
-#~ msgstr "Melding als backup start"
-
-#~ msgid "Query before starting image backup."
-#~ msgstr "Vragen alvorens image back-up te starten."
-
 #~ msgid "Remove Confirmation"
 #~ msgstr "Bevestig verwijderen"
 
@@ -1076,15 +1103,6 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Select an image to restore:"
 #~ msgstr "Kies een image om terug te zetten"
-
-#~ msgid "Set the interval to be checked in mins."
-#~ msgstr "Bepaal het controle-interval (in minuten)."
-
-#~ msgid "Set the repeat interval of backup schedule."
-#~ msgstr "Stel het back-upinterval in."
-
-#~ msgid "Set the time of backup to start."
-#~ msgstr "Stel de tijd in waarop een back-up wordt gemaakt."
 
 #~ msgid "Setting Up..."
 #~ msgstr "Bezig met instellen...."
@@ -1157,9 +1175,6 @@ msgstr "niet beschikbaar"
 
 #~ msgid "The backup location does not have enough freespace.\n"
 #~ msgstr "De back-up locatie heeft niet genoeg vrije ruimte.\n"
-
-#~ msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
-#~ msgstr "De naam van de STB kan worden opgenomen in de naam van het back-up bestand, maar dat kan de naam wel lang maken."
 
 #~ msgid "This Device is already mounted as HDD."
 #~ msgstr "Dit medium is al gemount als HDD."

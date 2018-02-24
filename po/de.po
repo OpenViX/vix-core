@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-13 12:15+0000\n"
-"PO-Revision-Date: 2017-12-13 19:15+0100\n"
+"POT-Creation-Date: 2018-02-23 18:09+0000\n"
+"PO-Revision-Date: 2018-02-24 09:21+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -62,6 +62,30 @@ msgstr "Aktiv"
 
 msgid "Active:"
 msgstr "Aktiv:"
+
+msgid "Allows the script runner to be launched from extensions."
+msgstr "Erlaubt es den Scriptstarter aus den Erweiterungen zu starten."
+
+msgid "Allows the softcam manager to be launched from extensions."
+msgstr "Erlaubt es den Softcam-Menager aus Erweiterungen zu starten."
+
+msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+msgstr "Erlaubt es zu prüfen ob Softcams noch laufen. Softcams werden, wenn nötig, erneut gestartet."
+
+msgid "Allows you to close the window automatically."
+msgstr "Erlaubt es das sich das Fenster automatisch schließt."
+
+msgid "Allows you to schedule your backups."
+msgstr "Erlaubt es zeitgesteuerte Backups einzurichten."
+
+msgid "Allows you to schedule your image backups."
+msgstr "Erlaubt es zeitgesteuerte Image-Backups einzurichten."
+
+msgid "Allows you to tag your backups to a box."
+msgstr "Erlaubt es die Backups einer Box zuzuordnen."
+
+msgid "Allows you to tag your image backup to a box. (default is box name/type)"
+msgstr "Erlaubt es Image-Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
 
 msgid "Are you ready to install ?"
 msgstr "Jetzt installieren?"
@@ -146,6 +170,9 @@ msgstr "Backup Verwaltung Einstellungen"
 msgid "Backup prefix"
 msgstr "Backup Namensanfang"
 
+msgid "Backups to keep"
+msgstr "Anzahl zu erhaltener Backups"
+
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "Während MGcamd läuft kann CCcam nicht ausgeführt werden"
 
@@ -184,6 +211,9 @@ msgstr "Vergleiche mit Backup..."
 
 msgid "Create"
 msgstr "Erstellen"
+
+msgid "Create a settings backup before updating."
+msgstr "Erstelle ein Back der Einstellungen vor einem Update."
 
 msgid "Create and Manage your swap files."
 msgstr "Swap Datei erzeugen oder verwalten."
@@ -342,6 +372,12 @@ msgstr ""
 msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
 msgstr "Ort für Backups scheint nicht eingestellt zu sein. Bitte den Ort im Menü vom Backup Verwaltung einstellen."
 
+msgid "Location of where backup should be saved."
+msgstr "Pfad wo Backups gespeichert werden sollen."
+
+msgid "Location of where the image backup should be saved."
+msgstr "Ort an dem die Image-Backups gespeichert werden sollen."
+
 msgid "Logs"
 msgstr ""
 
@@ -495,6 +531,12 @@ msgstr "Fragen bevor Backup startet"
 msgid "Query before image backup starts"
 msgstr "Vor Imagesicherung fragen"
 
+msgid "Query before starting backup."
+msgstr "Fragen bevor Backup startet."
+
+msgid "Query before starting image backup."
+msgstr "Vor Imagesicherung fragen."
+
 msgid "Rebooting..."
 msgstr "Neustart..."
 
@@ -585,6 +627,15 @@ msgstr "Größe der Auslagerungsdatei auswählen:"
 
 msgid "Select:"
 msgstr "Auswählen:"
+
+msgid "Set the interval to be checked in mins."
+msgstr "Zeitintervall zwischen den Überprüfungen in Minuten."
+
+msgid "Set the repeat interval of backup schedule."
+msgstr "Gebe das Zeitintervall für automatische Backups an."
+
+msgid "Set the time of backup to start."
+msgstr "Gebe das Zeitintervall für automatische Image-Backups an."
 
 msgid "Setting up..."
 msgstr "Konfiguriere..."
@@ -689,6 +740,9 @@ msgstr ""
 
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Der gewählte Speicherort existiert nicht, nutze /media/hdd"
+
+msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
+msgstr "Der Name von der Box kann im Backupnamen enthalten sein macht den Namen aber etwas länger."
 
 msgid "The wizard is finished now, and will reboot"
 msgstr "Der Assistent wurde beendet jetzt folgt ein Neustart"
@@ -844,15 +898,6 @@ msgstr "nicht verfügbar"
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "Eine Updateprüfung läuft im Hintergrund. Bitte warten und erneut versuchen."
 
-#~ msgid "Allows the script runner to be launched from extensions."
-#~ msgstr "Erlaubt es den Scriptstarter aus den Erweiterungen zu starten."
-
-#~ msgid "Allows the softcam manager to be launched from extensions."
-#~ msgstr "Erlaubt es den Softcam-Menager aus Erweiterungen zu starten."
-
-#~ msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
-#~ msgstr "Erlaubt es zu prüfen ob Softcams noch laufen. Softcams werden, wenn nötig, erneut gestartet."
-
 #~ msgid "Allows you have the window close automatically."
 #~ msgstr "Erlaubt es das Fenster automatisch schließen zu lassen."
 
@@ -862,14 +907,8 @@ msgstr "nicht verfügbar"
 #~ msgid "Allows you schedule your image backups."
 #~ msgstr "Erlaubt es Zeiten für automatische Image-Backups anzugeben."
 
-#~ msgid "Allows you to tag your backups to a box."
-#~ msgstr "Erlaubt es die Backups einer Box zuzuordnen."
-
 #~ msgid "Allows you to tag your backups to a box. (default is box name/type)"
 #~ msgstr "Erlaubt es Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
-
-#~ msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-#~ msgstr "Erlaubt es Image-Backups zu bezeichnen. (Standard ist Boxname/Boxtyp)"
 
 #~ msgid "Are you ready to create a backup image ?"
 #~ msgstr "Image jetzt erstellen? "
@@ -911,9 +950,6 @@ msgstr "nicht verfügbar"
 #~ msgstr ""
 #~ "Backup wird durchgeführt,\n"
 #~ "Bitte vor neuem Versuch Beendigung abwarten"
-
-#~ msgid "Backups to keep"
-#~ msgstr "Anzahl zu erhaltener Backups"
 
 #~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
 #~ msgstr "Partition kann nicht ausgehängt (umount) werden. Überprüfe ob sie nicht für Swap oder Aufnahme/TimeShift benutzt wird"
@@ -994,9 +1030,6 @@ msgstr "nicht verfügbar"
 #~ msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
 #~ msgstr "Es sieht so aus als wenn kein Extra Ort konfiguriert wurde. Bitte in den Einstellungen vom Backup-Manager einstellen."
 
-#~ msgid "Location of where backup should be saved."
-#~ msgstr "Pfad wo Backups gespeichert werden sollen."
-
 #~ msgid "Location of where image backup should be saved."
 #~ msgstr "Ort wo Image Backups gespeichert werden sollen."
 
@@ -1049,12 +1082,6 @@ msgstr "nicht verfügbar"
 #~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 #~ msgstr "Auflistung der Plugins fehlgeschlagen - z.B. falscher Sicherungsspeicherort oder ungenügend Speicher auf dem Sicherungslaufwerk"
 
-#~ msgid "Query before starting backup."
-#~ msgstr "Fragen bevor Backup startet."
-
-#~ msgid "Query before starting image backup."
-#~ msgstr "Vor Imagesicherung fragen."
-
 #~ msgid "Remove Confirmation"
 #~ msgstr "Löschen bestätigen"
 
@@ -1078,15 +1105,6 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Select an image to restore:"
 #~ msgstr "Wähle ein Image zur Wiederherstellung:"
-
-#~ msgid "Set the interval to be checked in mins."
-#~ msgstr "Zeitintervall zwischen den Überprüfungen in Minuten."
-
-#~ msgid "Set the repeat interval of backup schedule."
-#~ msgstr "Gebe das Zeitintervall für automatische Backups an."
-
-#~ msgid "Set the time of backup to start."
-#~ msgstr "Gebe das Zeitintervall für automatische Image-Backups an."
 
 #~ msgid "Setting Up..."
 #~ msgstr "Stellt ein..."
@@ -1159,9 +1177,6 @@ msgstr "nicht verfügbar"
 
 #~ msgid "The backup location does not have enough freespace.\n"
 #~ msgstr "Das Sicherungs Verzeichnis hat nicht genug freien Speicher.\n"
-
-#~ msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
-#~ msgstr "Der Name von der Box kann im Backupnamen enthalten sein macht den Namen aber etwas länger."
 
 #~ msgid "This Device is already mounted as HDD."
 #~ msgstr "Das Gerät ist bereits als HDD eingehängt."

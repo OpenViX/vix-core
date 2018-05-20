@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-23 18:09+0000\n"
-"PO-Revision-Date: 2018-02-24 09:21+0100\n"
+"POT-Creation-Date: 2018-05-20 09:30+0100\n"
+"PO-Revision-Date: 2018-05-20 20:44+0200\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.6\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -108,11 +108,6 @@ msgid ""
 msgstr ""
 "Wollen Sie dieses Image herunterladen:\n"
 " "
-
-msgid ""
-"Are you sure you want to flash this image:\n"
-" "
-msgstr "Sicher das dieses Image geflasht werden soll:"
 
 msgid ""
 "Are you sure you want to restore this backup:\n"
@@ -264,6 +259,14 @@ msgstr ""
 "Soll ein Image Backup erstellt werden?\n"
 "Der Vorgang kann etwa 6 Minuten dauern."
 
+#, python-format
+msgid ""
+"Do you want to flash image\n"
+"%s"
+msgstr ""
+"Willst Du das folgende Image flashen\n"
+"%s"
+
 msgid "Do you want to restart GUI now ?"
 msgstr "Soll die Benutzeroberfläche jetzt neu gestartet werden?"
 
@@ -288,6 +291,14 @@ msgstr "Lade herrunter"
 msgid "Downloads"
 msgstr "Downloads"
 
+msgid "ET8500 Image Restore"
+msgstr "ET8500 Image wieder herstellen"
+
+msgid ""
+"ET8500 Multiboot: Yes to restore OS1 No to restore OS2:\n"
+" "
+msgstr "ET8500 Multiboot: Ja zum wieder herstellen OS1, Nein zum wieder herstellen OS2:"
+
 msgid "Enable frozen check"
 msgstr "Freeze-Check aktivieren"
 
@@ -308,9 +319,6 @@ msgstr "Extra IPK's"
 
 msgid "Flash"
 msgstr ""
-
-msgid "Flash confirmation"
-msgstr "Bestätigung FLASH"
 
 msgid "Found non-standard softcam, trying to start, this may fail"
 msgstr "Nichtstandard Softcam gefunden. Versuch zu starten. Es kann fehlschlagen."
@@ -467,6 +475,9 @@ msgstr ""
 msgid "No plugins needed to be installed"
 msgstr "Es war nicht nötig Plugins zu installieren"
 
+msgid "No, do not flash image"
+msgstr "Nein, Image nicht flashen"
+
 msgid "None"
 msgstr "Keine"
 
@@ -539,6 +550,16 @@ msgstr "Vor Imagesicherung fragen."
 
 msgid "Rebooting..."
 msgstr "Neustart..."
+
+#, python-format
+msgid ""
+"Recording(s) are in progress or coming up in few seconds!\n"
+"Do you still want to flash image\n"
+"%s?"
+msgstr ""
+"Aufnahme(n) laufen oder starten in wenigen Sekunden!\n"
+"Willst Du immer noch das Image \n"
+"%s flashen?"
 
 msgid "Remove confirmation"
 msgstr "Entfernen Bestätigung"
@@ -825,15 +846,14 @@ msgstr "JA, um Plugins wieder herzustellen"
 msgid "YES, to restore settings"
 msgstr "JA, um Einstellungen wieder herzustellen"
 
-msgid ""
-"You are about to flash an eMMC flash, we cannot take any responsibility for any errors or damage to your box during this process.\n"
-"Proceed with CAUTION!:\n"
-"Are you sure you want to flash this image:\n"
-" "
-msgstr ""
-"Du willst gerade eMMC Flash schreiben. Wir können keine Garantie bei eventuellen Fehlern und Beschädigungen übernehmen.\n"
-"Fortfahren mit Vorsicht:\n"
-"Bist Du sichewr das dieses Image geflashed werden soll?"
+msgid "Yes, with backup"
+msgstr "Ja, mit Backup"
+
+msgid "Yes, without backup"
+msgstr "Nein, ohne Backup"
+
+msgid "You have decided not to flash image."
+msgstr "Du hast dich entschieden das Image nicht zu flashen."
 
 msgid "You have no backup to delete."
 msgstr "Keine Backup zum Löschen."
@@ -881,6 +901,9 @@ msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte später nochmal 
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
 msgstr "Die %s %s ist nicht mit dem Internet verbunden. Bitte Netzwerkeinstellungen überprüfen."
 
+msgid "flash image unzip successful"
+msgstr "Flash Image entpacken erfolgreich"
+
 #, python-format
 msgid ""
 "ofgwrite error (also sent to any debug log):\n"
@@ -889,11 +912,35 @@ msgstr ""
 "ofgwrite Fehler (auch in Debug.Log):\n"
 "%s"
 
+#, python-format
+msgid "slot%s - %s (current image) with, backup"
+msgstr "Slot%s - %s (aktuelles Image), mit Backup"
+
+#, python-format
+msgid "slot%s - %s (current image), without backup"
+msgstr "Slot%s - %s (aktuelles Image), ohne Backup"
+
+#, python-format
+msgid "slot%s - %s, with backup"
+msgstr "Slot%s - %s, mit Backup"
+
+#, python-format
+msgid "slot%s - %s, without backup"
+msgstr "Slot%s - %s, ohne Backup"
+
 msgid "there is a problem with this device, please reformat it and try again."
 msgstr "da gibt es ein Problem mit dem Gerät. Bitte neu formatieren und erneut versuchen."
 
 msgid "unavailable"
 msgstr "nicht verfügbar"
+
+#, python-format
+msgid ""
+"unzip error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"Fehler beim Entpacken:\n"
+"%s"
 
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "Eine Updateprüfung läuft im Hintergrund. Bitte warten und erneut versuchen."
@@ -912,6 +959,11 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Are you ready to create a backup image ?"
 #~ msgstr "Image jetzt erstellen? "
+
+#~ msgid ""
+#~ "Are you sure you want to flash this image:\n"
+#~ " "
+#~ msgstr "Sicher das dieses Image geflasht werden soll:"
 
 #~ msgid ""
 #~ "Are you sure you want to restore this image:\n"
@@ -1008,6 +1060,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Enough Retries, delaying till next schedule."
 #~ msgstr "Zu viele Versuche, bis zur nächsten Zeitplan-Aktion zurückgestellt."
+
+#~ msgid "Flash confirmation"
+#~ msgstr "Bestätigung FLASH"
 
 #~ msgid "Found none standard softcam, trying to start, this may fail"
 #~ msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl"
@@ -1221,6 +1276,16 @@ msgstr "nicht verfügbar"
 #~ "\n"
 #~ "Ein Backup wurde gefunden.\n"
 #~ "Mit diesem Assistenten können Einstellungen und Plugins wieder hergestellt werden die zum Zeitpunkt des Backups vorhanden waren.\n"
+
+#~ msgid ""
+#~ "You are about to flash an eMMC flash, we cannot take any responsibility for any errors or damage to your box during this process.\n"
+#~ "Proceed with CAUTION!:\n"
+#~ "Are you sure you want to flash this image:\n"
+#~ " "
+#~ msgstr ""
+#~ "Du willst gerade eMMC Flash schreiben. Wir können keine Garantie bei eventuellen Fehlern und Beschädigungen übernehmen.\n"
+#~ "Fortfahren mit Vorsicht:\n"
+#~ "Bist Du sichewr das dieses Image geflashed werden soll?"
 
 #~ msgid "You have no image to restore."
 #~ msgstr "Kein Image zur Wiederherstellung vorhanden"

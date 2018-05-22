@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-31 22:00+0000\n"
-"PO-Revision-Date: 2018-02-01 04:51+0100\n"
+"POT-Creation-Date: 2018-05-21 22:11+0100\n"
+"PO-Revision-Date: 2018-05-22 17:45+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.0.7\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -108,11 +108,6 @@ msgid ""
 msgstr ""
 "Weet u zeker dat u dit image wilt downloaden:\n"
 " "
-
-msgid ""
-"Are you sure you want to flash this image:\n"
-" "
-msgstr "Weet u zeker dat u dit image wilt flashen:"
 
 msgid ""
 "Are you sure you want to restore this backup:\n"
@@ -264,6 +259,14 @@ msgstr ""
 "Wilt u een volledige imageback-up maken?\n"
 "Dit kan wel 6 minuten duren."
 
+#, python-format
+msgid ""
+"Do you want to flash image\n"
+"%s"
+msgstr ""
+"Wilt u image\n"
+"%s flashen?"
+
 msgid "Do you want to restart GUI now ?"
 msgstr "Wilt u de gebruikersinterface nu opnieuw starten?"
 
@@ -288,6 +291,16 @@ msgstr "Bezig met downloaden"
 msgid "Downloads"
 msgstr "Downloads"
 
+msgid "ET8500 Image Restore"
+msgstr "ET8500 Imagerestore"
+
+msgid ""
+"ET8500 Multiboot: Yes to restore OS1 No to restore OS2:\n"
+" "
+msgstr ""
+"ET8500 Multiboot: Ja tegen restore OS1 Nee tegen restore OS2:\n"
+" "
+
 msgid "Enable frozen check"
 msgstr "Softcamcontrole inschakelen"
 
@@ -308,9 +321,6 @@ msgstr "Extra IPK's"
 
 msgid "Flash"
 msgstr "Flash"
-
-msgid "Flash confirmation"
-msgstr "Bevestig flashen"
 
 msgid "Found non-standard softcam, trying to start, this may fail"
 msgstr "Niet-standaard CAM gevonden. Er wordt geprobeerd deze te starten, maar dit kan mislukken."
@@ -465,6 +475,9 @@ msgstr ""
 msgid "No plugins needed to be installed"
 msgstr "Er hoefden geen plugins geïnstalleerd te worden"
 
+msgid "No, do not flash image"
+msgstr "Nee, flash geen image."
+
 msgid "None"
 msgstr "Geen"
 
@@ -537,6 +550,16 @@ msgstr "Vragen alvorens image back-up te starten."
 
 msgid "Rebooting..."
 msgstr "Bezig met rebooten..."
+
+#, python-format
+msgid ""
+"Recording(s) are in progress or coming up in few seconds!\n"
+"Do you still want to flash image\n"
+"%s?"
+msgstr ""
+"Opname(s) lopen of starten zeer binnenkort!\n"
+"Wilt u toch een image\n"
+"%s flashen?"
 
 msgid "Remove confirmation"
 msgstr "Verwijder bevestiging"
@@ -823,15 +846,14 @@ msgstr "JA, installeer plugins weer"
 msgid "YES, to restore settings"
 msgstr "JA, plaats de instellingen weer terug"
 
-msgid ""
-"You are about to flash an eMMC flash, we cannot take any responsibility for any errors or damage to your box during this process.\n"
-"Proceed with CAUTION!:\n"
-"Are you sure you want to flash this image:\n"
-" "
-msgstr ""
-"U staat op het punt te flashen met een eMMC flash; wij kunnen geen enkele verantwoordelijkheid accepteren voor fouten, problemen of schade aan uw ontvanger ten gevolge van dit proces.\n"
-"Betracht de nodige voorzichtigheid!:\n"
-"Weet u zeker dat u dit image wilt flashen:"
+msgid "Yes, with backup"
+msgstr "Ja, met back-up"
+
+msgid "Yes, without backup"
+msgstr "Ja, zonder back-up"
+
+msgid "You have decided not to flash image."
+msgstr "U heeft besloten geen image te flashen."
 
 msgid "You have no backup to delete."
 msgstr "Er is geen back-up die verwijderd kan worden."
@@ -879,6 +901,9 @@ msgstr "Uw %s %s is niet met het internet verbonden. Probeer later de plugins te
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
 msgstr "Uw %s %s is niet met internet verbonden. Controleer uw netwerkinstellingen en probeer het opnieuw."
 
+msgid "flash image unzip successful"
+msgstr "flash image unzip gelukt"
+
 #, python-format
 msgid ""
 "ofgwrite error (also sent to any debug log):\n"
@@ -887,11 +912,35 @@ msgstr ""
 "ofgwrite-fout (ook opgenomen in alle debuglogs):\n"
 "%s"
 
+#, python-format
+msgid "slot%s - %s (current image) with, backup"
+msgstr "slot%s - %s (huidig image), met back-up"
+
+#, python-format
+msgid "slot%s - %s (current image), without backup"
+msgstr "slot%s - %s (huidig image), zonder backup"
+
+#, python-format
+msgid "slot%s - %s, with backup"
+msgstr "slot%s - %s, met back-up"
+
+#, python-format
+msgid "slot%s - %s, without backup"
+msgstr "slot%s - %s, zonder back-up"
+
 msgid "there is a problem with this device, please reformat it and try again."
 msgstr "Er is een probleem met dit apparaat; initieer het en probeer het opnieuw."
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
+
+#, python-format
+msgid ""
+"unzip error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"unzip fout (ook opgenomen in debug log):\n"
+"%s"
 
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "De feeds worden gecontroleerd; even wachten."
@@ -910,6 +959,11 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Are you ready to create a backup image ?"
 #~ msgstr "Bent u gereed om een imageback-up te maken?"
+
+#~ msgid ""
+#~ "Are you sure you want to flash this image:\n"
+#~ " "
+#~ msgstr "Weet u zeker dat u dit image wilt flashen:"
 
 #~ msgid ""
 #~ "Are you sure you want to restore this image:\n"
@@ -1006,6 +1060,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Enough Retries, delaying till next schedule."
 #~ msgstr "Vaak genoeg geprobeerd, wacht op de volgende geplande tijd."
+
+#~ msgid "Flash confirmation"
+#~ msgstr "Bevestig flashen"
 
 #~ msgid "Found none standard softcam, trying to start, this may fail"
 #~ msgstr "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, maar dat kan mislukken"
@@ -1219,6 +1276,16 @@ msgstr "niet beschikbaar"
 #~ "\n"
 #~ "Er is een back-up gevonden.\n"
 #~ "U kunt deze wizard gebruiken om uw instellingen terug te plaatsen, evenals de plugins die ten tijde van het maken van de back-up waren geïnstalleerd.\n"
+
+#~ msgid ""
+#~ "You are about to flash an eMMC flash, we cannot take any responsibility for any errors or damage to your box during this process.\n"
+#~ "Proceed with CAUTION!:\n"
+#~ "Are you sure you want to flash this image:\n"
+#~ " "
+#~ msgstr ""
+#~ "U staat op het punt te flashen met een eMMC flash; wij kunnen geen enkele verantwoordelijkheid accepteren voor fouten, problemen of schade aan uw ontvanger ten gevolge van dit proces.\n"
+#~ "Betracht de nodige voorzichtigheid!:\n"
+#~ "Weet u zeker dat u dit image wilt flashen:"
 
 #~ msgid "You have no image to restore."
 #~ msgstr "U heeft geen image om terug te plaatsen"

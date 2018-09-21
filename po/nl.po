@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-19 10:12+0100\n"
-"PO-Revision-Date: 2018-08-19 12:27+0200\n"
+"POT-Creation-Date: 2018-09-19 09:58+0100\n"
+"PO-Revision-Date: 2018-09-21 11:07+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -46,9 +46,6 @@ msgid "96 Mb"
 msgstr "96 Mb"
 
 msgid "A background update check is in progress, please try again."
-msgstr "Er wordt momenteel op updates gecontroleerd; probeer het later nogmaals."
-
-msgid "A background update check is is progress, please try again."
 msgstr "Er wordt momenteel op updates gecontroleerd; probeer het later nogmaals."
 
 msgid "A backup has been detected."
@@ -727,14 +724,14 @@ msgstr "Softcam controle"
 msgid "Sorry but that location does not exist or is not setup, please set it up in the Backup Manager setup menu "
 msgstr "Die lokatie bestaat niet of is niet ingesteld; doe dat in het menu van de back-up manager."
 
-msgid "Sorry feeds are down for maintenance, Please try again later."
-msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
-
 msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 msgstr "De feeds zijn dood vanwege onderhoud. Probeer later nog eens de plugins te herstellen via de back-up manager."
 
 msgid "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
 msgstr "De feeds zijn momenteel niet actief. Probeer later de plugins te installeren via de back-up manager."
+
+msgid "Sorry the feeds are down for maintenance. Please try again later."
+msgstr "Vanwege onderhoud zijn de feeds niet beschikbaar. Probeer het later nog eens."
 
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Het bestand is niet verenigbaar met deze versie van de firmware."
@@ -915,6 +912,10 @@ msgid "You have to create a swap file before trying to activate the autostart."
 msgstr "U moet een swap-bestand aanmaken alvorens de autostart geactiveerd kan worden."
 
 #, python-format
+msgid "Your %s %s could not connect to the plugin feeds at this time. Please try using the Backup Manager to restore plugins later."
+msgstr "Uw  %s %s kon niet met de plugin-feeds worden verbonden. U kunt op een later tijdstip de Backup Manager gebruiken om de plugins te herstellen."
+
+#, python-format
 msgid ""
 "Your %s %s is about to create a full image backup, this can take about 6 minutes to complete.\n"
 "Do you want to allow this?"
@@ -931,16 +932,24 @@ msgstr ""
 "Wilt u doorgaan?"
 
 #, python-format
+msgid "Your %s %s is not connected to a network. Please check your network settings and try again."
+msgstr "Uw %s %s is niet met een netwerk verbonden. Controleer uw netwerk (instellingen) en probeer het opnieuw."
+
+#, python-format
+msgid "Your %s %s is not connected to a network. Please try using the Backup Manager to restore plugins later when a network connection is available."
+msgstr "Uw %s %s is niet met een netwerk verbonden. U kunt de Backup Manager gebruiken zodra het netwerk beschikbaar is."
+
+#, python-format
 msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
 msgstr "Uw %s %s is niet met internet verbonden. Gebruik de back-up manager later om uw plugins weer te installeren."
 
 #, python-format
-msgid "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
-msgstr "Uw %s %s is niet met het internet verbonden. Probeer later de plugins te installeren via de back-up manager."
+msgid "Your %s %s is not connected to the internet. Please check your network settings and try again."
+msgstr "Uw %s %s is niet met het internet verbonden. Controleer uw netwerk (instellingen) en probeer het opnieuw."
 
 #, python-format
-msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
-msgstr "Uw %s %s is niet met internet verbonden. Controleer uw netwerkinstellingen en probeer het opnieuw."
+msgid "Your %s %s is not connected to the internet. Please try using the Backup Manager to restore plugins later."
+msgstr "Uw  %s %s is niet met het internet verbonden. U kunt op een later tijdstip de Backup Manager gebruiken om de plugins te herstellen."
 
 msgid "flash image unzip successful"
 msgstr "flash image unzip gelukt"
@@ -978,6 +987,9 @@ msgid ""
 msgstr ""
 "unzip fout (ook opgenomen in debug log):\n"
 "%s"
+
+#~ msgid "A background update check is is progress, please try again."
+#~ msgstr "Er wordt momenteel op updates gecontroleerd; probeer het later nogmaals."
 
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "De feeds worden gecontroleerd; even wachten."
@@ -1232,6 +1244,9 @@ msgstr ""
 #~ msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
 #~ msgstr "Die locatie bestaat niet of is niet ingesteld; maak de juiste instelling in het context menu van de back-up manager."
 
+#~ msgid "Sorry feeds are down for maintenance, Please try again later."
+#~ msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
+
 #~ msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 #~ msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer later opnieuw de plugins te installeren via de backupmanager."
 
@@ -1327,6 +1342,12 @@ msgstr ""
 #~ msgstr ""
 #~ "Uw %s %s is gereed een image backup te maken; dat kan wel 6 minuten duren.\n"
 #~ "Wilt u doorgaan?"
+
+#~ msgid "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
+#~ msgstr "Uw %s %s is niet met het internet verbonden. Probeer later de plugins te installeren via de back-up manager."
+
+#~ msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
+#~ msgstr "Uw %s %s is niet met internet verbonden. Controleer uw netwerkinstellingen en probeer het opnieuw."
 
 #~ msgid "echo 'Downloading Image.'"
 #~ msgstr "echo 'Download image.'"

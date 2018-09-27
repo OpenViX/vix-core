@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-03 11:39+0100\n"
-"PO-Revision-Date: 2018-08-03 21:17+0200\n"
+"POT-Creation-Date: 2018-09-22 10:44+0100\n"
+"PO-Revision-Date: 2018-09-27 10:08+0200\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.1.1\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -46,9 +46,6 @@ msgid "96 Mb"
 msgstr "96MB"
 
 msgid "A background update check is in progress, please try again."
-msgstr "Im Hintergrund wird auf mögliche Updates geprüft. Bitte später erneut versuchen."
-
-msgid "A background update check is is progress, please try again."
 msgstr "Im Hintergrund wird auf mögliche Updates geprüft. Bitte später erneut versuchen."
 
 msgid "A backup has been detected."
@@ -91,8 +88,8 @@ msgid "Are you ready to install ?"
 msgstr "Jetzt installieren?"
 
 #, python-format
-msgid "Are you sure you want to delete image slot %s"
-msgstr "Lösche Image in Slot %s. Sicher?"
+msgid "Are you sure you want to delete image slot %s ?"
+msgstr "Bist Du sicher das dieser Image Slot %s gelöscht werden soll?"
 
 msgid ""
 "Are you sure you want to delete this backup:\n"
@@ -140,8 +137,8 @@ msgstr "BackUp von Kernel..."
 msgid "Backing up root file system..."
 msgstr "BackUp Root-Verzeichnis..."
 
-msgid "Backup Complete..."
-msgstr "Backup abgeschlossen..."
+msgid "Backup complete."
+msgstr "Backup vollendet."
 
 msgid "Backup complete..."
 msgstr "BackUp beendet..."
@@ -152,15 +149,13 @@ msgstr "BackUp bestätigung"
 msgid "Backup created"
 msgstr "BackUp erzeugt"
 
-msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Backup fehlgeschlagen - z.B. falscher Sicherungsort oder zu wenig freier Speicher auf dem Sicherungslaufwerk"
+msgid "Backup failed - e. g. wrong backup destination or no space left on backup device."
+msgstr "Backup fehlgeschlagen. Entweder falscher Ort oder nicht mehr genug freier Speicher auf Gerät."
 
 msgid ""
 "Backup in progress,\n"
-"Please wait for it to finish, before trying again"
-msgstr ""
-"Backup findet statt.\n"
-"Bitte auf das Ende warten und erneut versuchen"
+"Please wait for it to finish, before trying again."
+msgstr "Backup läuft. Bitte warten bis beendet vor erneutem Versuch."
 
 msgid "Backup location"
 msgstr "BackUp Zielverzeichnis"
@@ -180,8 +175,11 @@ msgstr "Anzahl zu erhaltener Backups"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "Während MGcamd läuft kann CCcam nicht ausgeführt werden"
 
-msgid "Can't un-mount the partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Partition kann nicht ausgehängt werden. Bitte sicher stellen das sie nicht für Swap oder TimeShift/Aufnahmen benutzt wird"
+msgid "CCcam can't run whilst MGcamd is running."
+msgstr "CCcam kann nicht zusammen mit MGcamd laufen.-"
+
+msgid "Can't un-mount the partition; make sure it is not being used for SWAP or record/timeshift paths."
+msgstr "Unmount vom GHerät nicht möglich. Bitte sicher stellen das es nicht von Swap, Aufnahme oder Timeshift benutzt wird."
 
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -198,8 +196,8 @@ msgstr "Überprüfe Softcams..."
 msgid "Choose files"
 msgstr "Wähle Dateien"
 
-msgid "Choose local ipk's folder"
-msgstr "Lokalen IPK Ordner wählen"
+msgid "Choose local IPK's folder"
+msgstr "Wähle lokalen IPK Ordner"
 
 msgid "Choose where to mount your devices to:"
 msgstr "Bitte Einhängepunkte der Geräte auswählen:"
@@ -219,20 +217,20 @@ msgstr "Erstellen"
 msgid "Create a settings backup before updating."
 msgstr "Erstelle ein Back der Einstellungen vor einem Update."
 
-msgid "Create and Manage your swap files."
-msgstr "Swap Datei erzeugen oder verwalten."
+msgid "Create and Manage your SWAP files."
+msgstr "Erzeuge und verwalte Swap Dateien."
 
 msgid "Create and flash complete images of your system."
 msgstr "Erzeuge und flashe komplettes Image von deinem System"
 
-msgid "Create empty slot"
-msgstr "Ereuge leeren Slot"
+msgid "Create empty slot."
+msgstr "Erzeuge leeren Slot."
+
+msgid "Creating SWAP.."
+msgstr "Erzeuge Swap..."
 
 msgid "Creating list of installed plugins..."
 msgstr "Erstelle Liste der installierten Plugins..."
-
-msgid "Creating swap.."
-msgstr "Erzeuge Swap..."
 
 msgid "Creating zip..."
 msgstr "Erstelle ZIP..."
@@ -314,20 +312,20 @@ msgstr "ET8500 Multiboot: Ja zum wieder herstellen OS1, Nein zum wieder herstell
 msgid "Empty slot"
 msgstr "Leerer Slot"
 
+msgid "Enable SWAP at startup"
+msgstr "Swap beim Start aktivieren"
+
 msgid "Enable frozen check"
 msgstr "Freeze-Check aktivieren"
 
 msgid "Enable startup"
 msgstr "Aktiviere Startup"
 
-msgid "Enable swap at startup"
-msgstr "Aktiviere Swap nach Start"
-
 msgid "Enough retries, delaying till next schedule."
 msgstr "Genug Wiederholungen, warte bis zum nächsten Start."
 
 msgid "Erase"
-msgstr ""
+msgstr "Löschen"
 
 msgid "Exit the restore wizard"
 msgstr "Wiederherstellungsassistenten beenden"
@@ -341,8 +339,11 @@ msgstr ""
 msgid "Flash confirmation"
 msgstr "Bestätigung FLASH"
 
-msgid "Found non-standard softcam, trying to start, this may fail"
-msgstr "Nichtstandard Softcam gefunden. Versuch zu starten. Es kann fehlschlagen."
+msgid "Flash image unzip successful."
+msgstr "Unzip vom Flash Image erfolgreich."
+
+msgid "Found non-standard softcam, trying to start, this may fail."
+msgstr "Keine Standard Softcam gefunden. Es wird ein Start versucht aber es könnte fehl schlagen."
 
 msgid "Free space:"
 msgstr "Freier Speicher:"
@@ -398,8 +399,8 @@ msgstr "Invertieren"
 msgid "Ipkg"
 msgstr ""
 
-msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
-msgstr "Ort für Backups scheint nicht eingestellt zu sein. Bitte den Ort im Menü vom Backup Verwaltung einstellen."
+msgid "It seems you have not setup an extra location; please set it up in the Backup manager setup menu."
+msgstr "Es sieht so aus als wenn kein Extra Ort definiert wurde. Bitte im Menü der Backup Verwaltung einrichten."
 
 msgid "Location of where backup should be saved."
 msgstr "Pfad wo Backups gespeichert werden sollen."
@@ -413,8 +414,8 @@ msgstr ""
 msgid "MB"
 msgstr "MB"
 
-msgid "MGcamd can't run whilst CCcam is running"
-msgstr "Während CCcam läuft kann MGcamd nicht ausgeführt werden"
+msgid "MGcamd can't run whilst CCcam is running."
+msgstr "MGcamd kann nicht zusammen mit CCcam laufen."
 
 msgid "Main menu"
 msgstr "Hauptmenü"
@@ -434,8 +435,8 @@ msgstr "Maximale Anzahl von Images behalten (0==alle)"
 msgid "Mount"
 msgstr "Einhängen"
 
-msgid "Mount failed"
-msgstr "Einhängen fehlgeschlagen"
+msgid "Mount failed."
+msgstr ""
 
 msgid "Mount manager"
 msgstr "Mount Verwaltung"
@@ -449,7 +450,7 @@ msgstr "Verschiebe nach Backup-Zielverzeichnis"
 msgid "MultiBoot manager"
 msgstr "Multiboot Verwaltung"
 
-msgid "Multiboot Image Manager"
+msgid "Multiboot image manager"
 msgstr "Multiboot Image Verwaltung"
 
 msgid "NO, do not restore plugins"
@@ -464,40 +465,48 @@ msgstr "Neues Backup"
 msgid "Next backup: "
 msgstr "Nächstes Backup:"
 
+#, python-format
+msgid ""
+"Nnzip error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"Unzip Fehler (auch in Debug Log):\n"
+"%s"
+
 msgid ""
 "No config files found, please setup CCcam first\n"
-"in /etc/CCcam.cfg"
+"in /etc/CCcam.cfg."
 msgstr ""
-"Keine Konfigurationsdateien gefunden, bitte zuerst CCcam einrichten\n"
-"in /etc/CCcam.cfg"
+"Keine Konfigdatei gefunden. Bitte CCcam erst einrichten\n"
+"in /etc/CCcam.cfg."
 
 msgid ""
 "No config files found, please setup Hypercam first\n"
-"in /etc/hypercam.cfg"
+"in /etc/hypercam.cfg."
 msgstr ""
-"Keine Konfigurationsdateien gefunden, bitte zuerst Hypercam einrichten\n"
-"in /etc/hypercam.cfg"
+"Keine Konfigdatei gefunden. Bitte Hypercam erst einrichten\n"
+"in /etc/hypercam.cfg."
 
 msgid ""
 "No config files found, please setup MGcamd first\n"
-"in /usr/keys"
+"in /usr/keys."
 msgstr ""
-"Keine Kanfigurationdatei gefunden, bitte MGCamd erst einrichten\n"
-"in /usr/keys"
+"Keine Konfigdatei gefunden. Bitte MGcamd erst einrichten\n"
+"in /usr/keys."
 
 msgid ""
 "No config files found, please setup Oscam first\n"
-"in /etc/tuxbox/config"
+"in /etc/tuxbox/config or in /etc/tuxbox/config/oscam."
 msgstr ""
-"Keine Konfigurationsdateien gefunden, bitte zuerst OScam einrichten\n"
-"in /etc/tuxbox/config"
+"Keine Konfigdatei gefunden. Bitte OScam erst einrichten\n"
+"in /etc/tuxbox/config oder /etc/tuxbox/config/oscam."
 
 msgid ""
 "No config files found, please setup Oscam first\n"
-"in /etc/tuxbox/config or /etc/tuxbox/config/oscam"
+"in /etc/tuxbox/config."
 msgstr ""
-"Keine  Config Datei gefunden. Bitte Oscam erst konfigurieren.\n"
-"Konfiguration gehört nach /etc/tuxbox/config oder /etc/tuxbox/config/oscam"
+"Keine Konfigdatei gefunden. Bitte OScam erst einrichten\n"
+"in /etc/tuxbox/config"
 
 msgid "No plugins needed to be installed"
 msgstr "Es war nicht nötig Plugins zu installieren"
@@ -505,11 +514,17 @@ msgstr "Es war nicht nötig Plugins zu installieren"
 msgid "None"
 msgstr "Keine"
 
-msgid "Note: slot list does not show current image or empty slots"
-msgstr "Achtung: Slot-Liste zeigt nicht das aktuelle Image oder leere Slots"
+msgid "Note: slot list does not show current image or empty slots."
+msgstr "Info:Slot Liste zeigt nicht das aktuelle Image oder leere Slots."
 
 msgid "Now skipping restore process"
 msgstr "Überspinge die Wiederherstellung"
+
+#, python-format
+msgid ""
+"OFGwrite error (also sent to any debug log):\n"
+"%s"
+msgstr "OFGwrite Fehler (auch im Debug Log): m%s"
 
 msgid "OK"
 msgstr "OK"
@@ -520,8 +535,8 @@ msgstr "OK, zum Wiederherstellen"
 msgid "Please enter a folder that contains some packages."
 msgstr "Bitte einen Ordner wählen der Pakete enthält."
 
-msgid "Please select device to use as swapfile location"
-msgstr "Bitte Gerät für Auslagerungsdatei auswählen"
+msgid "Please select device to use as SWAP file location."
+msgstr "Bitte Geräte als Ort für Swap Datei wählen."
 
 msgid "Please select the file to restore ?"
 msgstr "Bitte wähle Datei die wieder hergestellt werden soll."
@@ -545,8 +560,8 @@ msgstr "Startvorgang abwarten\n"
 msgid "Please wait while stopping\n"
 msgstr "Bitte Stoppvorgang abwarten\n"
 
-msgid "Please wait while the flash prepares"
-msgstr "Bitte warten. Flash wird vorbereitet."
+msgid "Please wait while the flash prepares."
+msgstr "Bitte warten während Flash sich vorbereitet."
 
 msgid "Please wait while the system gathers information..."
 msgstr "Bitte warten während das System Informationen sammelt..."
@@ -554,8 +569,8 @@ msgstr "Bitte warten während das System Informationen sammelt..."
 msgid "Please wait."
 msgstr "Bitte warten."
 
-msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Auflistung der Plugins fehlgeschlagen. Vielleicht falscher Ort von Backup oder kein Speicher mehr frei"
+msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device."
+msgstr "Erzeuge Plugin Liste fehlgeschlagen. Entweder falscher Ort oder nicht mehr genug freier Speicher auf dem Gerät."
 
 msgid "Preparing extra plugins..."
 msgstr "Bereite Extra Plugins vor"
@@ -634,6 +649,18 @@ msgstr "Ausführen"
 msgid "Run your shell scripts."
 msgstr "Führe dein Script aus."
 
+msgid "SWAP file not found. You have to create the file before you try to activate it."
+msgstr "Swap Datei nicht gefunden. Swap Datei muss erzeugt werden bevor sie aktiviert werden kann."
+
+msgid "SWAP manager"
+msgstr "Swap Verwaltung"
+
+msgid "SWAP place:"
+msgstr ""
+
+msgid "SWAP size:"
+msgstr ""
+
 msgid "Save"
 msgstr "Speichern"
 
@@ -673,8 +700,8 @@ msgstr "Dateien/Ordner zur Sicherung auswählen"
 msgid "Select folder that contains plugins"
 msgstr "Bitte Ordner mit Plugins auswählen"
 
-msgid "Select the Swap File Size:"
-msgstr "Größe der Auslagerungsdatei auswählen:"
+msgid "Select the SWAP file size:"
+msgstr ""
 
 msgid "Select:"
 msgstr "Auswählen:"
@@ -721,17 +748,17 @@ msgstr "Softcam stoppt..."
 msgid "SoftcamCheck"
 msgstr "Softcam-Überprüfung"
 
-msgid "Sorry but that location does not exist or is not setup, please set it up in the Backup Manager setup menu "
-msgstr "Entschuldigung aber der Ort für Backups existiert nicht oder ist nicht eingestellt. Bitte den Ort im Menü vom Backup Verwaltung einstellen."
+msgid "Sorry but that location does not exist or is not setup; please set it up in the Backup manager setup menu."
+msgstr "Tut uns leid. Der Ort existiert nicht oder ist noch nicht eingerichtet. Bitte Ort im Menü von der Backup Verwaltung einrichten."
 
-msgid "Sorry feeds are down for maintenance, Please try again later."
-msgstr "Tut uns leid. Feeds sind wegen Wartung nicht erreichbar. Bitte später erneut versuchen."
+msgid "Sorry the feeds are down for maintenance. Please try again later."
+msgstr "Tut uns leid. Wegen Wartungsarbeiten sind die Feeds z.Z. nicht erreichbar. Bitte später erneut versuchen."
 
-msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr "Tut uns leid. Wegen Wartungsarbeiten sind die Feeds nicht verfügbar. Backup-Verwaltung später erneut versuchen um Plugins wieder herzustellen."
+msgid "Sorry the feeds are down for maintenance. Please try using Backup manager to restore plugins later."
+msgstr "Tut uns leid. Wegen Wartungsarbeiten sind die Feeds z.Z. nicht erreichbar. Bitte Backup Verwaltung später benutzen um Plugins wieder herzustellen."
 
-msgid "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
-msgstr "Tut uns leid die Feeds sind wegen Wartungsarbeiten nicht erreichbar. Bitte später nochmal versuchen mit der Backup Verwaltung Plugins wiederherzustellen."
+msgid "Sorry the feeds are down for maintenance. Please try using the Backup manager to restore plugins later."
+msgstr "Tut uns leid. Wegen Wartungsarbeiten sind die Feeds z.Z. nicht erreichbar. Bitte Backup Verwaltung später benutzen um Plugins wieder herzustellen."
 
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Tut uns leid aber die Datei is nicht kompatibel mit dieser Image-Version."
@@ -739,11 +766,11 @@ msgstr "Tut uns leid aber die Datei is nicht kompatibel mit dieser Image-Version
 msgid "Sorry, but the restore failed."
 msgstr "Sorry, aber die Wiederherstellung ist fehlgeschlagen."
 
-msgid "Sorry, no physical devices that supports swap attached. Can't create Swap file on network or fat32 filesystems"
-msgstr "Tut uns leid. Kein Gerät verbunden das Swap erlauben würde. Kann Swap-Datei nicht auf Netzwerk oder Fat32 erzeugen."
+msgid "Sorry, no physical devices that supports SWAP attached. Can't create SWAP file on network or fat32 file-systems."
+msgstr "Tut uns leid. Es gibt kein Laufwerk das Swap unterstützt. Swap Datei kann nicht im Netzwerk oder auf FAT32 Geräten erstellt werden."
 
-msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
-msgstr "Sorry, nicht genügend RAM und kein Gerät für eine Auslagerungsdatei angeschlossen. Keine Auslagerungsdatei im Netzwerk oder auf FAT32 möglich. Backup kann nicht erstellt werden"
+msgid "Sorry, not enough free RAM found, and no physical devices that supports SWAP attached. Can't create SWAP file on network or fat32 file-systems, unable to make backup."
+msgstr "Tut uns leid. Nicht genug freier Speicher gefunden und es gibt kein Laufwerk das Swap unterstützt. Swap Datei kann nicht im Netzwerk oder auf FAT32 Geräten erstellt werden. Backup nicht möglich."
 
 msgid "Start"
 msgstr "Start"
@@ -756,18 +783,6 @@ msgstr "Status:"
 
 msgid "Stop"
 msgstr "Stopp"
-
-msgid "Swap file not found. You have to create the file before you try to activate it."
-msgstr "Swap-Datei nicht gefunden. Du musst eine Swap-Datei werzeugen bevor sie aktiviert werden kann."
-
-msgid "Swap manager"
-msgstr "Swap Verwaltung"
-
-msgid "Swap place:"
-msgstr "Swap Zielverzeichnis:"
-
-msgid "Swap size:"
-msgstr "Swap Größe:"
 
 msgid "TB"
 msgstr ""
@@ -792,6 +807,9 @@ msgstr ""
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "Der gewählte Speicherort existiert nicht, nutze /media/hdd"
 
+msgid "The chosen location does not exist, using /media/hdd."
+msgstr "Der gewählte Ort existiert nicht. /media/hdd wird benutzt."
+
 msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
 msgstr "Der Name von der Box kann im Backupnamen enthalten sein macht den Namen aber etwas länger."
 
@@ -800,6 +818,21 @@ msgstr "Der Assistent wurde beendet jetzt folgt ein Neustart"
 
 msgid "The wizard is finished now."
 msgstr "Der Assistent ist abgeschlossen."
+
+msgid "There is no backup to delete."
+msgstr "Kein Backup zum löschen."
+
+msgid "There is no backup to restore."
+msgstr "Kein Backup zum wieder herstellen."
+
+msgid "There is no image to delete."
+msgstr "Kein Image zum löschen."
+
+msgid "There is no image to download."
+msgstr "Kein Image zum Download."
+
+msgid "There is no image to flash."
+msgstr "Kein Image zum flashen."
 
 msgid "This device is already mounted as HDD."
 msgstr "Dieses Gerät wurde schon als HDD gemountet."
@@ -816,8 +849,8 @@ msgstr ""
 msgid "Un-mount"
 msgstr ""
 
-msgid "Updating mount locations."
-msgstr "Freigaben erneuern."
+msgid "Updating mount locations..."
+msgstr "Erneuern der Mountpunkte..."
 
 msgid "Use as HDD"
 msgstr "Als HDD verwenden"
@@ -837,17 +870,17 @@ msgstr "ViX Image Verwaltung"
 msgid "ViX Mount manager"
 msgstr "ViX Mount Verwaltung"
 
+msgid "ViX SWAP manager"
+msgstr "ViX Swap Verwaltung"
+
 msgid "ViX Script runner"
 msgstr "ViX Script ausführen"
-
-msgid "ViX Swap manager"
-msgstr "ViX Swap Verwaltung"
 
 msgid "View progress"
 msgstr "Fortschritt anzeigen"
 
-msgid "Wait please while creating swapfile..."
-msgstr "WÄhrend der Erstellung derAUslagerungsdatei bitte warten..."
+msgid "Wait please while creating SWAP file..."
+msgstr "Bitte warten. Swap Datei wird erzeugt."
 
 msgid ""
 "Wait please while scanning\n"
@@ -880,35 +913,24 @@ msgid "YES, to restore settings"
 msgstr "JA, um Einstellungen wieder herzustellen"
 
 msgid ""
-"You are about to flash an eMMC flash, we cannot take any responsibility for any errors or damage to your box during this process.\n"
+"You are about to flash an eMMC flash; we cannot take any responsibility for any errors or damage to your box during this process.\n"
 "Proceed with CAUTION!:\n"
 "Are you sure you want to flash this image:\n"
 " "
 msgstr ""
-"Du willst gerade eMMC Flash schreiben. Wir können keine Garantie bei eventuellen Fehlern und Beschädigungen übernehmen.\n"
-"Fortfahren mit Vorsicht:\n"
-"Bist Du sichewr das dieses Image geflashed werden soll?"
+"Du bist dabei eMMC Flash zu flashen. Wir können keine Garantie für Fehler oder Beschädigungen an der Box übernehmen die durch diesen Prozess entstehen.\n"
+"Mit Vorsicht fortfahren!\n"
+"Bist Du sicher das dieses Image geflashed werden soll?"
 
 msgid "You have decided not to flash image."
 msgstr "Du hast dich entschieden das Image nicht zu flashen."
 
-msgid "You have no backup to delete."
-msgstr "Keine Backup zum Löschen."
+msgid "You have to create a SWAP file before trying to activate the autostart."
+msgstr "Du musst eine Swap Datei erstellen bevor Autostart aktiviert werden kann."
 
-msgid "You have no backups to restore."
-msgstr "Kein Backups zum Wiederherstellen."
-
-msgid "You have no image to delete."
-msgstr "Kein Image zum löschen"
-
-msgid "You have no image to download."
-msgstr "Kein Image zum Herunterladen."
-
-msgid "You have no image to flash."
-msgstr "Du hast kein Image zum Wiederherstellen."
-
-msgid "You have to create a swap file before trying to activate the autostart."
-msgstr "Du musst eine Swap-Datei erzeugen bevor autostart aktiviert werden kann."
+#, python-format
+msgid "Your %s %s could not connect to the plugin feeds at this time. Please try using the Backup manager to restore plugins later."
+msgstr "Deine %s %s kann sich nicht mit dem Feed verbinden. Bitte die Plugins mit der Backup Verwaltung später wieder herstellen."
 
 #, python-format
 msgid ""
@@ -920,34 +942,31 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Your %s %s is about to run a backup of your settings and detect your plugins,\n"
+"Your %s %s is about to run a backup of your settings and to detect your plugins.\n"
 "Do you want to allow this?"
 msgstr ""
-"Die %s %s wird gleich ein Backup der Einstellungen und Plugins starten.\n"
-"Soll Backup erlaubt werden?"
+"Deine %s %s startet gleich ein Backup von deinen Einstellungen und deinen Plugins.\n"
+"Fortfahren?"
 
 #, python-format
-msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr "Die %s %s ist nicht mit dem Internet verbunden. Bitte die Plugins mit der Back Verwaltung später wiederherstellen."
+msgid "Your %s %s is not connected to a network. Please check your network settings and try again."
+msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte Netzwerkeinstellungen prüfen und erneut versuchen."
 
 #, python-format
-msgid "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
-msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte später nochmal versuchen mit der Backup Verwaltung Plugins wiederherzustellen."
+msgid "Your %s %s is not connected to a network. Please try using the Backup manager to restore plugins later when a network connection is available."
+msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte die Plugins mit der Backup Verwaltung später wieder herstellen wenn eine Netzwerkverbindung besteht."
 
 #, python-format
-msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
-msgstr "Die %s %s ist nicht mit dem Internet verbunden. Bitte Netzwerkeinstellungen überprüfen."
-
-msgid "flash image unzip successful"
-msgstr "Flash Image entpacken erfolgreich"
+msgid "Your %s %s is not connected to the Internet. Please check your network settings and try again."
+msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte Netzwerkeinstellungen prüfen und erneut versuchen."
 
 #, python-format
-msgid ""
-"ofgwrite error (also sent to any debug log):\n"
-"%s"
-msgstr ""
-"ofgwrite Fehler (auch in Debug.Log):\n"
-"%s"
+msgid "Your %s %s is not connected to the Internet. Please try using Backup manager to restore plugins later."
+msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte die Plugins mit der Backup Verwaltung später wieder herstellen."
+
+#, python-format
+msgid "Your %s %s is not connected to the Internet. Please try using the Backup manager to restore plugins later."
+msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte die Plugins mit der Backup Verwaltung später wieder herstellen."
 
 #, python-format
 msgid "slot%s - %s"
@@ -967,13 +986,8 @@ msgstr "da gibt es ein Problem mit dem Gerät. Bitte neu formatieren und erneut 
 msgid "unavailable"
 msgstr "nicht verfügbar"
 
-#, python-format
-msgid ""
-"unzip error (also sent to any debug log):\n"
-"%s"
-msgstr ""
-"Fehler beim Entpacken:\n"
-"%s"
+#~ msgid "A background update check is is progress, please try again."
+#~ msgstr "Im Hintergrund wird auf mögliche Updates geprüft. Bitte später erneut versuchen."
 
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "Eine Updateprüfung läuft im Hintergrund. Bitte warten und erneut versuchen."
@@ -993,6 +1007,9 @@ msgstr ""
 #~ msgid "Are you ready to create a backup image ?"
 #~ msgstr "Image jetzt erstellen? "
 
+#~ msgid "Are you sure you want to delete image slot %s"
+#~ msgstr "Lösche Image in Slot %s. Sicher?"
+
 #~ msgid ""
 #~ "Are you sure you want to restore this image:\n"
 #~ " "
@@ -1005,6 +1022,9 @@ msgstr ""
 
 #~ msgid "Backing up Root file system..."
 #~ msgstr "Sichern vom Root Dateisystem..."
+
+#~ msgid "Backup Complete..."
+#~ msgstr "Backup abgeschlossen..."
 
 #~ msgid "Backup Confirmation"
 #~ msgstr "Backup bestätigen"
@@ -1024,12 +1044,25 @@ msgstr ""
 #~ msgid "Backup Manager Setup"
 #~ msgstr "Einstellungen Backup Verwaltung"
 
+#~ msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
+#~ msgstr "Backup fehlgeschlagen - z.B. falscher Sicherungsort oder zu wenig freier Speicher auf dem Sicherungslaufwerk"
+
 #~ msgid ""
 #~ "Backup in progress,\n"
 #~ "Please for it to finish, before trying again"
 #~ msgstr ""
 #~ "Backup wird durchgeführt,\n"
 #~ "Bitte vor neuem Versuch Beendigung abwarten"
+
+#~ msgid ""
+#~ "Backup in progress,\n"
+#~ "Please wait for it to finish, before trying again"
+#~ msgstr ""
+#~ "Backup findet statt.\n"
+#~ "Bitte auf das Ende warten und erneut versuchen"
+
+#~ msgid "Can't un-mount the partition, make sure it is not being used for swap or record/timeshift paths"
+#~ msgstr "Partition kann nicht ausgehängt werden. Bitte sicher stellen das sie nicht für Swap oder TimeShift/Aufnahmen benutzt wird"
 
 #~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
 #~ msgstr "Partition kann nicht ausgehängt (umount) werden. Überprüfe ob sie nicht für Swap oder Aufnahme/TimeShift benutzt wird"
@@ -1053,6 +1086,12 @@ msgstr ""
 #~ msgid "Choose Files"
 #~ msgstr "Dateien auswählen"
 
+#~ msgid "Choose local ipk's folder"
+#~ msgstr "Lokalen IPK Ordner wählen"
+
+#~ msgid "Create and Manage your swap files."
+#~ msgstr "Swap Datei erzeugen oder verwalten."
+
 #~ msgid "Create and Manage your swapfiles."
 #~ msgstr "Erzeuge und verwalte Swapdateien"
 
@@ -1062,11 +1101,17 @@ msgstr ""
 #~ msgid "Create and Restore complete images of your system."
 #~ msgstr "Komplette Images vom System erzeugen oder flashen."
 
+#~ msgid "Create empty slot"
+#~ msgstr "Ereuge leeren Slot"
+
 #~ msgid "Creating Backup Files..."
 #~ msgstr "Backup-Dateien werden erstellt..."
 
 #~ msgid "Creating Swap.."
 #~ msgstr "Auslagerungsdatei wird erstellt..."
+
+#~ msgid "Creating swap.."
+#~ msgstr "Erzeuge Swap..."
 
 #~ msgid "Current Status:"
 #~ msgstr "Status:"
@@ -1086,8 +1131,14 @@ msgstr ""
 #~ msgid "Enable Swap at startup"
 #~ msgstr "Auslagerungsdatei-Autostart aktivieren"
 
+#~ msgid "Enable swap at startup"
+#~ msgstr "Aktiviere Swap nach Start"
+
 #~ msgid "Enough Retries, delaying till next schedule."
 #~ msgstr "Zu viele Versuche, bis zur nächsten Zeitplan-Aktion zurückgestellt."
+
+#~ msgid "Found non-standard softcam, trying to start, this may fail"
+#~ msgstr "Nichtstandard Softcam gefunden. Versuch zu starten. Es kann fehlschlagen."
 
 #~ msgid "Found none standard softcam, trying to start, this may fail"
 #~ msgstr "Nicht standardisiertes  SoftCam gefunden. Startversuch, schlägt möglicherweise fehl"
@@ -1107,11 +1158,17 @@ msgstr ""
 #~ msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 #~ msgstr "Es sieht so aus als wenn Du noch keinen Extra-Ort angegeben hast. Bitte Extra-Ort in den Einstellungen von der Backup-Verwaltung festlegen."
 
+#~ msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
+#~ msgstr "Ort für Backups scheint nicht eingestellt zu sein. Bitte den Ort im Menü vom Backup Verwaltung einstellen."
+
 #~ msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
 #~ msgstr "Es sieht so aus als wenn kein Extra Ort konfiguriert wurde. Bitte in den Einstellungen vom Backup-Manager einstellen."
 
 #~ msgid "Location of where image backup should be saved."
 #~ msgstr "Ort wo Image Backups gespeichert werden sollen."
+
+#~ msgid "MGcamd can't run whilst CCcam is running"
+#~ msgstr "Während CCcam läuft kann MGcamd nicht ausgeführt werden"
 
 #~ msgid "Manage you devices mountpoints."
 #~ msgstr "Verwalte deine Einhängepunkte"
@@ -1122,8 +1179,14 @@ msgstr ""
 #~ msgid "Mount Manager"
 #~ msgstr "Mount Verwaltung"
 
+#~ msgid "Mount failed"
+#~ msgstr "Einhängen fehlgeschlagen"
+
 #~ msgid "Moving to Backup Location..."
 #~ msgstr "An Sicherungsspeicherort verschieben..."
+
+#~ msgid "Multiboot Image Manager"
+#~ msgstr "Multiboot Image Verwaltung"
 
 #~ msgid "New Backup"
 #~ msgstr "Neues Backup"
@@ -1132,11 +1195,46 @@ msgstr ""
 #~ msgstr "Nächstes Backup: "
 
 #~ msgid ""
+#~ "No config files found, please setup CCcam first\n"
+#~ "in /etc/CCcam.cfg"
+#~ msgstr ""
+#~ "Keine Konfigurationsdateien gefunden, bitte zuerst CCcam einrichten\n"
+#~ "in /etc/CCcam.cfg"
+
+#~ msgid ""
+#~ "No config files found, please setup Hypercam first\n"
+#~ "in /etc/hypercam.cfg"
+#~ msgstr ""
+#~ "Keine Konfigurationsdateien gefunden, bitte zuerst Hypercam einrichten\n"
+#~ "in /etc/hypercam.cfg"
+
+#~ msgid ""
+#~ "No config files found, please setup MGcamd first\n"
+#~ "in /usr/keys"
+#~ msgstr ""
+#~ "Keine Kanfigurationdatei gefunden, bitte MGCamd erst einrichten\n"
+#~ "in /usr/keys"
+
+#~ msgid ""
 #~ "No config files found, please setup MGcamd first\n"
 #~ "in /var/keys"
 #~ msgstr ""
 #~ "Keine Konfigurationsdateien gefunden, bitte zuerst MGcamd einrichten\n"
 #~ "in /var/keys"
+
+#~ msgid ""
+#~ "No config files found, please setup Oscam first\n"
+#~ "in /etc/tuxbox/config"
+#~ msgstr ""
+#~ "Keine Konfigurationsdateien gefunden, bitte zuerst OScam einrichten\n"
+#~ "in /etc/tuxbox/config"
+
+#~ msgid ""
+#~ "No config files found, please setup Oscam first\n"
+#~ "in /etc/tuxbox/config or /etc/tuxbox/config/oscam"
+#~ msgstr ""
+#~ "Keine  Config Datei gefunden. Bitte Oscam erst konfigurieren.\n"
+#~ "Konfiguration gehört nach /etc/tuxbox/config oder /etc/tuxbox/config/oscam"
 
 #~ msgid "No plugins where needed to be installed"
 #~ msgstr "Es müssen keine Plugins installiert werden"
@@ -1144,8 +1242,14 @@ msgstr ""
 #~ msgid "No, do not flash image"
 #~ msgstr "Nein, Image nicht flashen"
 
+#~ msgid "Note: slot list does not show current image or empty slots"
+#~ msgstr "Achtung: Slot-Liste zeigt nicht das aktuelle Image oder leere Slots"
+
 #~ msgid "Please copy the folder"
 #~ msgstr "Bitte den Ordner kopieren"
+
+#~ msgid "Please select device to use as swapfile location"
+#~ msgstr "Bitte Gerät für Auslagerungsdatei auswählen"
 
 #~ msgid "Please wait while gathers information..."
 #~ msgstr "Bitte warten während Informationen gesammelt werden..."
@@ -1159,11 +1263,17 @@ msgstr ""
 #~ msgid "Please wait while restore prepares"
 #~ msgstr "Bitte warten solange Wiederherstellung sich vorbereitet"
 
+#~ msgid "Please wait while the flash prepares"
+#~ msgstr "Bitte warten. Flash wird vorbereitet."
+
 #~ msgid "Please wait while the restore prepares"
 #~ msgstr "Bitte warten. Wiederherstellung wird vorbereitet"
 
 #~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 #~ msgstr "Auflistung der Plugins fehlgeschlagen - z.B. falscher Sicherungsspeicherort oder ungenügend Speicher auf dem Sicherungslaufwerk"
+
+#~ msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
+#~ msgstr "Auflistung der Plugins fehlgeschlagen. Vielleicht falscher Ort von Backup oder kein Speicher mehr frei"
 
 #~ msgid "Remove Confirmation"
 #~ msgstr "Löschen bestätigen"
@@ -1188,6 +1298,9 @@ msgstr ""
 
 #~ msgid "Select an image to restore:"
 #~ msgstr "Wähle ein Image zur Wiederherstellung:"
+
+#~ msgid "Select the Swap File Size:"
+#~ msgstr "Größe der Auslagerungsdatei auswählen:"
 
 #~ msgid "Setting Up..."
 #~ msgstr "Stellt ein..."
@@ -1225,11 +1338,23 @@ msgstr ""
 #~ msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
 #~ msgstr "Sorry aber dieser Ort existiert nicht oder wurde nicht konfiguriert. Bitte in den Einstellungen von der Backup-Verwaltung festlegen."
 
+#~ msgid "Sorry but that location does not exist or is not setup, please set it up in the Backup Manager setup menu "
+#~ msgstr "Entschuldigung aber der Ort für Backups existiert nicht oder ist nicht eingestellt. Bitte den Ort im Menü vom Backup Verwaltung einstellen."
+
 #~ msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
 #~ msgstr "Tut uns leid aber der Ort ist nicht vorhanden oder nicht konfiguriert. Bitte in den Einstellungen vom Backup-Manager einstellen."
 
+#~ msgid "Sorry feeds are down for maintenance, Please try again later."
+#~ msgstr "Tut uns leid. Feeds sind wegen Wartung nicht erreichbar. Bitte später erneut versuchen."
+
 #~ msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
 #~ msgstr "Tut uns leid. Feeds sind wegen Wartung nicht erreichbar. Bitte Plugins mit Backup Verwaltung später wiederherstellen."
+
+#~ msgid "Sorry the feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
+#~ msgstr "Tut uns leid. Wegen Wartungsarbeiten sind die Feeds nicht verfügbar. Backup-Verwaltung später erneut versuchen um Plugins wieder herzustellen."
+
+#~ msgid "Sorry the feeds are down for maintenance, Please try using the Backup Manager to restore plugins later."
+#~ msgstr "Tut uns leid die Feeds sind wegen Wartungsarbeiten nicht erreichbar. Bitte später nochmal versuchen mit der Backup Verwaltung Plugins wiederherzustellen."
 
 #~ msgid "Sorry you %s %s is not yet compatible."
 #~ msgstr "Tut uns leid aber %s %s ist noch nicht kompatibel."
@@ -1239,6 +1364,12 @@ msgstr ""
 
 #~ msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
 #~ msgstr "Sorry, kein geeignetes Gerät für Auslagerungsdatei angeschlossen. Keine Auslagerungsdatei im Netzwerk oder mit FAT32 möglich"
+
+#~ msgid "Sorry, no physical devices that supports swap attached. Can't create Swap file on network or fat32 filesystems"
+#~ msgstr "Tut uns leid. Kein Gerät verbunden das Swap erlauben würde. Kann Swap-Datei nicht auf Netzwerk oder Fat32 erzeugen."
+
+#~ msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
+#~ msgstr "Sorry, nicht genügend RAM und kein Gerät für eine Auslagerungsdatei angeschlossen. Keine Auslagerungsdatei im Netzwerk oder auf FAT32 möglich. Backup kann nicht erstellt werden"
 
 #~ msgid "Swap File not found. You have to create the file before to activate."
 #~ msgstr "Auslagerungsdatei nicht gefunden. Vor Aktivierung muss die Datei erstellt werden-"
@@ -1251,6 +1382,18 @@ msgstr ""
 
 #~ msgid "Swap Size:"
 #~ msgstr "Größe:"
+
+#~ msgid "Swap file not found. You have to create the file before you try to activate it."
+#~ msgstr "Swap-Datei nicht gefunden. Du musst eine Swap-Datei werzeugen bevor sie aktiviert werden kann."
+
+#~ msgid "Swap manager"
+#~ msgstr "Swap Verwaltung"
+
+#~ msgid "Swap place:"
+#~ msgstr "Swap Zielverzeichnis:"
+
+#~ msgid "Swap size:"
+#~ msgstr "Swap Größe:"
 
 #~ msgid "Temp Folder"
 #~ msgstr "Temp Ordner"
@@ -1270,6 +1413,9 @@ msgstr ""
 #~ msgid "Unmount"
 #~ msgstr "Aushängen"
 
+#~ msgid "Updating mount locations."
+#~ msgstr "Freigaben erneuern."
+
 #~ msgid "ViX Backup Manager"
 #~ msgstr "ViX Backup Verwaltung"
 
@@ -1285,8 +1431,14 @@ msgstr ""
 #~ msgid "ViX Swap Manager"
 #~ msgstr "ViX Swap Verwaltung"
 
+#~ msgid "ViX Swap manager"
+#~ msgstr "ViX Swap Verwaltung"
+
 #~ msgid "View Progress"
 #~ msgstr "Fortschritt anzeigen"
+
+#~ msgid "Wait please while creating swapfile..."
+#~ msgstr "WÄhrend der Erstellung derAUslagerungsdatei bitte warten..."
 
 #~ msgid "Wait please while scanning for devices..."
 #~ msgstr "Bitte warten während Suchlauf nach Geräten..."
@@ -1311,11 +1463,46 @@ msgstr ""
 #~ msgid "Yes, without backup"
 #~ msgstr "Nein, ohne Backup"
 
+#~ msgid ""
+#~ "You are about to flash an eMMC flash, we cannot take any responsibility for any errors or damage to your box during this process.\n"
+#~ "Proceed with CAUTION!:\n"
+#~ "Are you sure you want to flash this image:\n"
+#~ " "
+#~ msgstr ""
+#~ "Du willst gerade eMMC Flash schreiben. Wir können keine Garantie bei eventuellen Fehlern und Beschädigungen übernehmen.\n"
+#~ "Fortfahren mit Vorsicht:\n"
+#~ "Bist Du sichewr das dieses Image geflashed werden soll?"
+
+#~ msgid "You have no backup to delete."
+#~ msgstr "Keine Backup zum Löschen."
+
+#~ msgid "You have no backups to restore."
+#~ msgstr "Kein Backups zum Wiederherstellen."
+
+#~ msgid "You have no image to delete."
+#~ msgstr "Kein Image zum löschen"
+
+#~ msgid "You have no image to download."
+#~ msgstr "Kein Image zum Herunterladen."
+
+#~ msgid "You have no image to flash."
+#~ msgstr "Du hast kein Image zum Wiederherstellen."
+
 #~ msgid "You have no image to restore."
 #~ msgstr "Kein Image zur Wiederherstellung vorhanden"
 
 #~ msgid "You have to create a Swap File before to activate the autostart."
 #~ msgstr "Vor dem Aktivieren des Autostarts muss eine Auslagerungsdatei erstellt werden. "
+
+#~ msgid "You have to create a swap file before trying to activate the autostart."
+#~ msgstr "Du musst eine Swap-Datei erzeugen bevor autostart aktiviert werden kann."
+
+#~ msgid ""
+#~ "Your %s %s is about to run a backup of your settings and detect your plugins,\n"
+#~ "Do you want to allow this?"
+#~ msgstr ""
+#~ "Die %s %s wird gleich ein Backup der Einstellungen und Plugins starten.\n"
+#~ "Soll Backup erlaubt werden?"
 
 #~ msgid ""
 #~ "Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
@@ -1324,8 +1511,27 @@ msgstr ""
 #~ "Die %s %s wird gleich ein Image erstellen.\n"
 #~ "Soll Image erstellt werden?"
 
+#~ msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
+#~ msgstr "Die %s %s ist nicht mit dem Internet verbunden. Bitte die Plugins mit der Back Verwaltung später wiederherstellen."
+
+#~ msgid "Your %s %s is not connected to the internet, Please try using the Backup Manager to restore plugins later."
+#~ msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte später nochmal versuchen mit der Backup Verwaltung Plugins wiederherzustellen."
+
+#~ msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
+#~ msgstr "Die %s %s ist nicht mit dem Internet verbunden. Bitte Netzwerkeinstellungen überprüfen."
+
 #~ msgid "echo 'Downloading Image.'"
 #~ msgstr "echo 'Image herunterladen.'"
+
+#~ msgid "flash image unzip successful"
+#~ msgstr "Flash Image entpacken erfolgreich"
+
+#~ msgid ""
+#~ "ofgwrite error (also sent to any debug log):\n"
+#~ "%s"
+#~ msgstr ""
+#~ "ofgwrite Fehler (auch in Debug.Log):\n"
+#~ "%s"
 
 #~ msgid "slot%s - %s (current image) with, backup"
 #~ msgstr "Slot%s - %s (aktuelles Image), mit Backup"
@@ -1347,3 +1553,10 @@ msgstr ""
 
 #~ msgid "to a USB stick, place in front USB port of reciver and power on"
 #~ msgstr "auf einen USB-Stick, in der vorderen USB Buchse stecken und Einschalten"
+
+#~ msgid ""
+#~ "unzip error (also sent to any debug log):\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Fehler beim Entpacken:\n"
+#~ "%s"

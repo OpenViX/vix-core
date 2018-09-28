@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-22 13:31+0100\n"
-"PO-Revision-Date: 2018-09-26 07:35+0200\n"
+"POT-Creation-Date: 2018-09-28 07:50+0100\n"
+"PO-Revision-Date: 2018-09-28 16:13+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -407,8 +407,8 @@ msgstr "Keer om"
 msgid "Ipkg"
 msgstr "IPKG"
 
-msgid "It seems you have not setup an extra location; please set it up in the Backup manager setup menu."
-msgstr "Het lijkt er op dat u geen extra lokatie hebt ingesteld. U kunt deze instellen in het menu van de Back-up manager."
+msgid "It seems you have not setup an extra location. Please set it up in the Backup manager setup menu."
+msgstr "Het lijkt erop, dat u geen extra lokatie hebt ingesteld. U kunt dit doen vanuit het Back-up manager menu."
 
 msgid "Location of where backup should be saved."
 msgstr "Lokatie waar back-up moet worden opgeslagen."
@@ -472,14 +472,6 @@ msgstr "Nieuwe back-up"
 
 msgid "Next backup: "
 msgstr "Volgende back-up: "
-
-#, python-format
-msgid ""
-"Nnzip error (also sent to any debug log):\n"
-"%s"
-msgstr ""
-"Unzip fout (ook opgenomen in enig debug log):\n"
-"%s"
 
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -592,7 +584,7 @@ msgid "Query before backup starts"
 msgstr "Melding als back-up start"
 
 msgid "Query before image backup starts"
-msgstr "Vragen alvorens de image back-up te starten."
+msgstr "Vragen alvorens de image back-up te starten"
 
 msgid "Query before starting backup."
 msgstr "Vragen als back-up start."
@@ -685,17 +677,14 @@ msgstr "Scriptrunner instellingen"
 msgid "Select"
 msgstr "Selecteer"
 
-msgid "Select a backup to Restore:"
-msgstr "Kies een back-up om terug te zetten:"
-
 msgid "Select a backup to restore:"
 msgstr "Kies een back-up om te herstellen:"
 
 msgid "Select a package to install:"
 msgstr "Selecteer een pakket om te installeren:"
 
-msgid "Select an image to Download:"
-msgstr "Selecteer een image om te downloaden:"
+msgid "Select an image to download:"
+msgstr "Kies een image om te downloaden:"
 
 msgid "Select an image to flash:"
 msgstr "Kies een image om te flashen:"
@@ -757,8 +746,8 @@ msgstr "Softcam stopt..."
 msgid "SoftcamCheck"
 msgstr "Softcam controle"
 
-msgid "Sorry but that location does not exist or is not setup; please set it up in the Backup manager setup menu."
-msgstr "Die lokatie bestaat niet of is niet ingesteld. U kunt deze instellen in het menu van de Back-up manager."
+msgid "Sorry but that location does not exist or is not setup. Please set it up in the Backup manager setup menu."
+msgstr "Die locatie bestaat niet of is niet ingesteld.  U kunt dit doen vanuit het Back-up manager menu."
 
 msgid "Sorry the feeds are down for maintenance. Please try again later."
 msgstr "Vanwege onderhoud zijn de feeds niet beschikbaar. Probeer het later nog eens."
@@ -813,17 +802,14 @@ msgstr ""
 "Het systeem moet herstart worden om deze aanpassing te effectueren.\n"
 "Uw %s %s nu herstarten?"
 
-msgid "The chosen location does not exist, using /media/hdd"
-msgstr "De gekozen lokatie bestaat niet, gebruik nu /media/hdd"
-
 msgid "The chosen location does not exist, using /media/hdd."
 msgstr "De gekozen lokatie bestaat niet; gebruikt /media/hdd."
 
 msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
 msgstr "De naam van de STB kan worden opgenomen in de naam van het back-up bestand, maar dat kan de naam wel lang maken."
 
-msgid "The wizard is finished now, and will reboot"
-msgstr "De wizard is gereed; uw systeem wordt opnieuw gestart."
+msgid "The wizard is finished now, and will reboot."
+msgstr "De wizard is nu gereed; uw STB gaat herstarten."
 
 msgid "The wizard is finished now."
 msgstr "De wizard is nu gereed."
@@ -857,6 +843,14 @@ msgstr "USB: "
 
 msgid "Un-mount"
 msgstr "Un-mount"
+
+#, python-format
+msgid ""
+"Unzip error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"Unzip-fout (ook naar enig debuglog gestuurd):\n"
+"%s"
 
 msgid "Updating mount locations..."
 msgstr "Mount-lokaties worden geüpdatet..."
@@ -989,8 +983,8 @@ msgstr "slot%s - %s "
 msgid "slot%s - %s (current image)"
 msgstr "slot%s - %s (huidige image)"
 
-msgid "there is a problem with this device, please reformat it and try again."
-msgstr "Er is een probleem met dit apparaat; initieer het en probeer het opnieuw."
+msgid "there is a problem with this device. Please reformat it and try again."
+msgstr "Er is een probleem met dit apparaat. Formatteer het en probeer opnieuw."
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
@@ -1173,6 +1167,9 @@ msgstr "niet beschikbaar"
 #~ msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
 #~ msgstr "Het lijkt erop dat u geen extra locatie heeft ingesteld; doe dat in het context menu van de back-up manager."
 
+#~ msgid "It seems you have not setup an extra location; please set it up in the Backup manager setup menu."
+#~ msgstr "Het lijkt er op dat u geen extra lokatie hebt ingesteld. U kunt deze instellen in het menu van de Back-up manager."
+
 #~ msgid "Location of where image backup should be saved."
 #~ msgstr "Locatie waar images moeten worden opgeslagen."
 
@@ -1202,6 +1199,13 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Next Backup: "
 #~ msgstr "Volgende back-up: "
+
+#~ msgid ""
+#~ "Nnzip error (also sent to any debug log):\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Unzip fout (ook opgenomen in enig debug log):\n"
+#~ "%s"
 
 #~ msgid ""
 #~ "No config files found, please setup CCcam first\n"
@@ -1303,6 +1307,12 @@ msgstr "niet beschikbaar"
 #~ msgid "Script Runner Setup"
 #~ msgstr "Scriptrunner instellingen"
 
+#~ msgid "Select a backup to Restore:"
+#~ msgstr "Kies een back-up om terug te zetten:"
+
+#~ msgid "Select an image to Download:"
+#~ msgstr "Selecteer een image om te downloaden:"
+
 #~ msgid "Select an image to restore:"
 #~ msgstr "Kies een image om terug te zetten"
 
@@ -1350,6 +1360,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
 #~ msgstr "Die locatie bestaat niet of is niet ingesteld; maak de juiste instelling in het context menu van de back-up manager."
+
+#~ msgid "Sorry but that location does not exist or is not setup; please set it up in the Backup manager setup menu."
+#~ msgstr "Die lokatie bestaat niet of is niet ingesteld. U kunt deze instellen in het menu van de Back-up manager."
 
 #~ msgid "Sorry feeds are down for maintenance, Please try again later."
 #~ msgstr "Vanwege onderhoud zijn de feeds niet actief. Probeer het later opnieuw."
@@ -1410,6 +1423,12 @@ msgstr "niet beschikbaar"
 
 #~ msgid "The backup location does not have enough freespace.\n"
 #~ msgstr "De back-up locatie heeft niet genoeg vrije ruimte.\n"
+
+#~ msgid "The chosen location does not exist, using /media/hdd"
+#~ msgstr "De gekozen lokatie bestaat niet, gebruik nu /media/hdd"
+
+#~ msgid "The wizard is finished now, and will reboot"
+#~ msgstr "De wizard is gereed; uw systeem wordt opnieuw gestart."
 
 #~ msgid "This Device is already mounted as HDD."
 #~ msgstr "Dit medium is al gemount als HDD."
@@ -1567,6 +1586,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "there is a problem with this device, please reformat and try again."
 #~ msgstr "er is een probleem met dit apparaat; formatteer het en probeer het nogmaals."
+
+#~ msgid "there is a problem with this device, please reformat it and try again."
+#~ msgstr "Er is een probleem met dit apparaat; initieer het en probeer het opnieuw."
 
 #~ msgid "there was a problem with this device, please reformat and try again."
 #~ msgstr "er was een probleem met dit medium; formatteer opnieuw en probeer het weer."

@@ -381,7 +381,7 @@ class VIXImageManager(Screen):
 			self.message = _("Recording(s) are in progress or coming up in few seconds!\nDo you still want to flash image\n%s?") % self.sel
 		else:
 			self.message = _("Do you want to flash image\n%s") % self.sel
-		if getImageFileSystem().replace(' ','') in ('tar.bz2', 'hd-emmc', 'hdemmc'):
+		if getImageFileSystem().replace(' ','') in ('tar.bz2', 'hd-emmc', 'hdemmc', 'octagonemmc'):
 			message = _("You are about to flash an eMMC flash; we cannot take any responsibility for any errors or damage to your box during this process.\nProceed with CAUTION!:\nAre you sure you want to flash this image:\n ") + self.sel
 		else:
 			message = _("Are you sure you want to flash this image:\n ") + self.sel

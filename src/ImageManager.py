@@ -424,7 +424,7 @@ class VIXImageManager(Screen):
 				self.multibootslot = retval
 				print "ImageManager", retval, self.imagelist
 				if SystemInfo["HasHiSi"]:
-					if "sda" in self.imagelist[retval]['part']:
+					if "sd" in self.imagelist[retval]['part']:
 						self.MTDKERNEL = "%s%s" %(SystemInfo["canMultiBoot"][2], int(self.imagelist[retval]['part'][3])-1)
 						self.MTDROOTFS = "%s" %(self.imagelist[retval]['part'])
 					else:

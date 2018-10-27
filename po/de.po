@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-22 10:44+0100\n"
-"PO-Revision-Date: 2018-09-27 10:08+0200\n"
+"POT-Creation-Date: 2018-10-26 17:25+0100\n"
+"PO-Revision-Date: 2018-10-27 18:59+0200\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -17,6 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.1.1\n"
+
+msgid " "
+msgstr ""
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -127,6 +130,12 @@ msgstr "Automatische Einstellungssicherung"
 
 msgid "Autostart"
 msgstr "Autostart"
+
+msgid "Backing up eMMC ..."
+msgstr ""
+
+msgid "Backing up eMMC..."
+msgstr ""
 
 msgid "Backing up files..."
 msgstr "Sichert Dateien..."
@@ -375,6 +384,12 @@ msgstr "Boxname beim Beackupnamen benutzen"
 msgid "Info"
 msgstr "Info"
 
+msgid "Init SDCARD"
+msgstr ""
+
+msgid "Init SDcard"
+msgstr ""
+
 msgid "Install"
 msgstr "Installieren"
 
@@ -399,8 +414,8 @@ msgstr "Invertieren"
 msgid "Ipkg"
 msgstr ""
 
-msgid "It seems you have not setup an extra location; please set it up in the Backup manager setup menu."
-msgstr "Es sieht so aus als wenn kein Extra Ort definiert wurde. Bitte im Menü der Backup Verwaltung einrichten."
+msgid "It seems you have not setup an extra location. Please set it up in the Backup manager setup menu."
+msgstr "Es sieht so aus asl wenn noch ein Extra Ort konfiguriert wurde. Bitte dem Ort in der Backup Verwaltung konfigurieren."
 
 msgid "Location of where backup should be saved."
 msgstr "Pfad wo Backups gespeichert werden sollen."
@@ -453,6 +468,12 @@ msgstr "Multiboot Verwaltung"
 msgid "Multiboot image manager"
 msgstr "Multiboot Image Verwaltung"
 
+msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX."
+msgstr "Multiboot Verwaltung - SD-Karte wurde initialisiert. Bitte Box neu starten."
+
+msgid "Multiboot manager - The SDcard must be at least 8MB."
+msgstr "Multiboot Verwaltung. Die SD-Karte muss m indestens 8MB groß sein."
+
 msgid "NO, do not restore plugins"
 msgstr "NEIN, Plugins nicht wieder herstellen"
 
@@ -464,14 +485,6 @@ msgstr "Neues Backup"
 
 msgid "Next backup: "
 msgstr "Nächstes Backup:"
-
-#, python-format
-msgid ""
-"Nnzip error (also sent to any debug log):\n"
-"%s"
-msgstr ""
-"Unzip Fehler (auch in Debug Log):\n"
-"%s"
 
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -538,8 +551,8 @@ msgstr "Bitte einen Ordner wählen der Pakete enthält."
 msgid "Please select device to use as SWAP file location."
 msgstr "Bitte Geräte als Ort für Swap Datei wählen."
 
-msgid "Please select the file to restore ?"
-msgstr "Bitte wähle Datei die wieder hergestellt werden soll."
+msgid "Please select the file to restore."
+msgstr "Bitte Datei zur Wiederherstellung wählen."
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Bitte warten bis Plugins wiederhergestellt sind"
@@ -574,6 +587,9 @@ msgstr "Erzeuge Plugin Liste fehlgeschlagen. Entweder falscher Ort oder nicht me
 
 msgid "Preparing extra plugins..."
 msgstr "Bereite Extra Plugins vor"
+
+msgid "Press Init to format SDcard."
+msgstr "Wähle Init um SD-Karte zu formatieren."
 
 msgid "Press OK to toggle the selection."
 msgstr "Drücke OK um die Auswahl umzukehren"
@@ -649,6 +665,9 @@ msgstr "Ausführen"
 msgid "Run your shell scripts."
 msgstr "Führe dein Script aus."
 
+msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format."
+msgstr "SD-Karte erkannt aber sie ist nicht für Multiboot formatiert. Bitte die Multiboot Verwaltung zum formatieren benutzen."
+
 msgid "SWAP file not found. You have to create the file before you try to activate it."
 msgstr "Swap Datei nicht gefunden. Swap Datei muss erzeugt werden bevor sie aktiviert werden kann."
 
@@ -676,17 +695,14 @@ msgstr "Script Ausführung Einstellungen"
 msgid "Select"
 msgstr "Auswählen"
 
-msgid "Select a backup to Restore:"
-msgstr "Wähle ein Backup zur Wiederherstellung:"
-
 msgid "Select a backup to restore:"
 msgstr "Wähle ein Backup zum Wiederherstellen"
 
 msgid "Select a package to install:"
 msgstr "Paket zur Installation wählen:"
 
-msgid "Select an image to Download:"
-msgstr "Image zum Herunterladen auswählen:"
+msgid "Select an image to download:"
+msgstr "Wähle Image zum herunterladen:"
 
 msgid "Select an image to flash:"
 msgstr "Wähle ein Image zum Wiederherstellen:"
@@ -748,8 +764,8 @@ msgstr "Softcam stoppt..."
 msgid "SoftcamCheck"
 msgstr "Softcam-Überprüfung"
 
-msgid "Sorry but that location does not exist or is not setup; please set it up in the Backup manager setup menu."
-msgstr "Tut uns leid. Der Ort existiert nicht oder ist noch nicht eingerichtet. Bitte Ort im Menü von der Backup Verwaltung einrichten."
+msgid "Sorry but that location does not exist or is not setup. Please set it up in the Backup manager setup menu."
+msgstr "Entschuldigung aber diesen Ort gibt es nicht oder ist nicht konfiguriert. Bitte in der Konfiguration der Backup Verwaltung einrichten."
 
 msgid "Sorry the feeds are down for maintenance. Please try again later."
 msgstr "Tut uns leid. Wegen Wartungsarbeiten sind die Feeds z.Z. nicht erreichbar. Bitte später erneut versuchen."
@@ -804,20 +820,20 @@ msgstr ""
 "Die Änderungen erfordern einen Neustart.\n"
 "Jetzt %s %s neu starten?"
 
-msgid "The chosen location does not exist, using /media/hdd"
-msgstr "Der gewählte Speicherort existiert nicht, nutze /media/hdd"
-
 msgid "The chosen location does not exist, using /media/hdd."
 msgstr "Der gewählte Ort existiert nicht. /media/hdd wird benutzt."
 
 msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
 msgstr "Der Name von der Box kann im Backupnamen enthalten sein macht den Namen aber etwas länger."
 
-msgid "The wizard is finished now, and will reboot"
-msgstr "Der Assistent wurde beendet jetzt folgt ein Neustart"
+msgid "The wizard is finished now, and will reboot."
+msgstr "Der Assistent wurde beendet. Jetzt wird neu gestartet."
 
 msgid "The wizard is finished now."
 msgstr "Der Assistent ist abgeschlossen."
+
+msgid "There is a problem with this device. Please reformat it and try again."
+msgstr "Es gibt ein Problem mit diesem Gerät. Bitte erneut formatieren und versuchen."
 
 msgid "There is no backup to delete."
 msgstr "Kein Backup zum löschen."
@@ -848,6 +864,12 @@ msgstr ""
 
 msgid "Un-mount"
 msgstr ""
+
+#, python-format
+msgid ""
+"Unzip error (also sent to any debug log):\n"
+"%s"
+msgstr "Fehler bei Unzip (auch in Debug Log):%s"
 
 msgid "Updating mount locations..."
 msgstr "Erneuern der Mountpunkte..."
@@ -980,8 +1002,8 @@ msgstr ""
 msgid "slot%s - %s (current image)"
 msgstr ""
 
-msgid "there is a problem with this device, please reformat it and try again."
-msgstr "da gibt es ein Problem mit dem Gerät. Bitte neu formatieren und erneut versuchen."
+msgid "there is a problem with this device. Please reformat it and try again."
+msgstr "Es gibt ein Problem mit diesem Gerät. Bitte erneut formatieren und versuchen."
 
 msgid "unavailable"
 msgstr "nicht verfügbar"
@@ -1164,6 +1186,9 @@ msgstr "nicht verfügbar"
 #~ msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
 #~ msgstr "Es sieht so aus als wenn kein Extra Ort konfiguriert wurde. Bitte in den Einstellungen vom Backup-Manager einstellen."
 
+#~ msgid "It seems you have not setup an extra location; please set it up in the Backup manager setup menu."
+#~ msgstr "Es sieht so aus als wenn kein Extra Ort definiert wurde. Bitte im Menü der Backup Verwaltung einrichten."
+
 #~ msgid "Location of where image backup should be saved."
 #~ msgstr "Ort wo Image Backups gespeichert werden sollen."
 
@@ -1193,6 +1218,13 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Next Backup: "
 #~ msgstr "Nächstes Backup: "
+
+#~ msgid ""
+#~ "Nnzip error (also sent to any debug log):\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Unzip Fehler (auch in Debug Log):\n"
+#~ "%s"
 
 #~ msgid ""
 #~ "No config files found, please setup CCcam first\n"
@@ -1251,6 +1283,9 @@ msgstr "nicht verfügbar"
 #~ msgid "Please select device to use as swapfile location"
 #~ msgstr "Bitte Gerät für Auslagerungsdatei auswählen"
 
+#~ msgid "Please select the file to restore ?"
+#~ msgstr "Bitte wähle Datei die wieder hergestellt werden soll."
+
 #~ msgid "Please wait while gathers information..."
 #~ msgstr "Bitte warten während Informationen gesammelt werden..."
 
@@ -1295,6 +1330,12 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Script Runner Setup"
 #~ msgstr "Script ausführen Einstellungen"
+
+#~ msgid "Select a backup to Restore:"
+#~ msgstr "Wähle ein Backup zur Wiederherstellung:"
+
+#~ msgid "Select an image to Download:"
+#~ msgstr "Image zum Herunterladen auswählen:"
 
 #~ msgid "Select an image to restore:"
 #~ msgstr "Wähle ein Image zur Wiederherstellung:"
@@ -1343,6 +1384,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Sorry but that location does not exist or is not setup, please setup in Backup Manager setup menu "
 #~ msgstr "Tut uns leid aber der Ort ist nicht vorhanden oder nicht konfiguriert. Bitte in den Einstellungen vom Backup-Manager einstellen."
+
+#~ msgid "Sorry but that location does not exist or is not setup; please set it up in the Backup manager setup menu."
+#~ msgstr "Tut uns leid. Der Ort existiert nicht oder ist noch nicht eingerichtet. Bitte Ort im Menü von der Backup Verwaltung einrichten."
 
 #~ msgid "Sorry feeds are down for maintenance, Please try again later."
 #~ msgstr "Tut uns leid. Feeds sind wegen Wartung nicht erreichbar. Bitte später erneut versuchen."
@@ -1403,6 +1447,12 @@ msgstr "nicht verfügbar"
 
 #~ msgid "The backup location does not have enough freespace.\n"
 #~ msgstr "Das Sicherungs Verzeichnis hat nicht genug freien Speicher.\n"
+
+#~ msgid "The chosen location does not exist, using /media/hdd"
+#~ msgstr "Der gewählte Speicherort existiert nicht, nutze /media/hdd"
+
+#~ msgid "The wizard is finished now, and will reboot"
+#~ msgstr "Der Assistent wurde beendet jetzt folgt ein Neustart"
 
 #~ msgid "This Device is already mounted as HDD."
 #~ msgstr "Das Gerät ist bereits als HDD eingehängt."
@@ -1547,6 +1597,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "there is a problem with this device, please reformat and try again."
 #~ msgstr "Es gibt ein Problem mit dem Medium. Bitte neu formatieren und erneut versuchen"
+
+#~ msgid "there is a problem with this device, please reformat it and try again."
+#~ msgstr "da gibt es ein Problem mit dem Gerät. Bitte neu formatieren und erneut versuchen."
 
 #~ msgid "there was a problem with this device, please reformat and try again."
 #~ msgstr "Es gibt ein Problem mit dem Gerät, bitte formatieren und erneut versuchen."

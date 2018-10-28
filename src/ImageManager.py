@@ -393,8 +393,8 @@ class VIXImageManager(Screen):
 	def keyResstore0(self, answer):
 		if answer:
 			if SystemInfo["canMultiBoot"]:
-				if SystemInfo["HasHiSi"]:
-	 				if pathExists('/dev/%s1' %SystemInfo["canMultiBoot"][2]):
+				if SystemInfo["HasSDmmc"]:
+	 				if pathExists('/dev/%s4' %SystemInfo["canMultiBoot"][2]):
 						self.getImageList = GetImagelist(self.keyRestore1)
 					else:
 						self.session.open(MessageBox, _("SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format."), MessageBox.TYPE_INFO, timeout=15)
@@ -413,7 +413,7 @@ class VIXImageManager(Screen):
 		choices = []
 		HIslot = len(imagedict) + 1
 		currentimageslot = GetCurrentImage()
-		if SystemInfo["HasHiSi"]:
+		if SystemInfo["HasSDmmc"]:
 			currentimageslot += 1
 		print "ImageManager", currentimageslot, self.imagelist
 		for x in range(1,HIslot):
@@ -425,7 +425,7 @@ class VIXImageManager(Screen):
 			if SystemInfo["canMultiBoot"]:
 				self.multibootslot = retval
 				print "ImageManager", retval, self.imagelist
-				if SystemInfo["HasHiSi"]:
+				if SystemInfo["HasSDmmc"]:
 					if "sd" in self.imagelist[retval]['part']:
 						self.MTDKERNEL = "%s%s" %(SystemInfo["canMultiBoot"][2], int(self.imagelist[retval]['part'][3])-1)
 						self.MTDROOTFS = "%s" %(self.imagelist[retval]['part'])
@@ -478,11 +478,11 @@ class VIXImageManager(Screen):
 		MAINDEST = '%s/%s' % (self.TEMPDESTROOT,getImageFolder())
 		if ret == 0:
 			if SystemInfo["canMultiBoot"]:
- 				if SystemInfo["HasHiSi"]:
+ 				if SystemInfo["HasSDmmc"]:
 					CMD = "/usr/bin/ofgwrite -r%s -k%s '%s'" % (self.MTDROOTFS, self.MTDKERNEL, MAINDEST)
 				else:
 					CMD = "/usr/bin/ofgwrite -k -r -m%s '%s'" % (self.multibootslot, MAINDEST)
- 			elif SystemInfo["HasHiSi"]:
+ 			elif SystemInfo["HasSDmmc"]:
 				CMD = "/usr/bin/ofgwrite -r%s -k%s '%s'" % (self.MTDROOTFS, self.MTDKERNEL, MAINDEST)
 			else:
 				CMD = "/usr/bin/ofgwrite -k -r '%s'" % MAINDEST
@@ -686,7 +686,10 @@ class ImageBackup(Screen):
 		self.MODEL = getBoxType()
 		if SystemInfo["canMultiBoot"]:
 			kernel = GetCurrentImage()
-			if SystemInfo["HasHiSi"]:
+			if SystemInfo["HasSDmmc"]:
+				if 'octagonemmc' in getImageFileSystem():
+					self.MTDBOOT = "none"
+					self.EMMCIMG = "usb_update.bin"
 				f = open('/sys/firmware/devicetree/base/chosen/bootargs', 'r').read()
 				if "sda" in f :
 					kern =  kernel*2

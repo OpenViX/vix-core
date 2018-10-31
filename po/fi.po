@@ -6,8 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
+
 "POT-Creation-Date: 2018-10-30 17:40+0000\n"
 "PO-Revision-Date: 2018-10-31 22:55+0200\n"
+=======
+
 "Last-Translator: Kojo\n"
 "Language-Team: Samzan/Kojo\n"
 "Language: fi\n"
@@ -188,6 +191,7 @@ msgstr "Säilytettävä varmuuskopioiden määrä"
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam ei voi käynnistyä kun MGcamd on käynnissä"
 
+
 msgid "CCcam can't run whilst MGcamd is running."
 msgstr "CCcam ei voi käynnistyä kun MGcamd on käynnissä."
 
@@ -326,7 +330,10 @@ msgid "Empty slot"
 msgstr "Tyhjä paikka"
 
 msgid "Enable SWAP at startup"
+
 msgstr "SWAP päälle käynnistyksessä"
+=======
+
 
 msgid "Enable frozen check"
 msgstr "Ota käyttöön jumittumisen tarkistus"
@@ -418,8 +425,10 @@ msgstr "Käänteinen"
 msgid "Ipkg"
 msgstr "Ipkg"
 
+
 msgid "It seems you have not setup an extra location. Please set it up in the Backup manager setup menu."
 msgstr "Et ole asettanut ylimääräistä sijaintia. Aseta se Varmuuskopioiden hallintatyökalulla."
+
 
 msgid "Location of where backup should be saved."
 msgstr "Varmuuskopioiden tallennuskansio."
@@ -472,6 +481,7 @@ msgstr "MultiBoot-hallinnointi"
 msgid "Multiboot image manager"
 msgstr "Multiboot-imagen hallinnointi"
 
+
 msgid "Multiboot manager - Cannot initialise SDcard when running image on SDcard"
 msgstr "Multiboot-hallinnointi - SDkorttia ei voi alustaa, koska siellä oleva image on käytössä"
 
@@ -492,6 +502,14 @@ msgstr "Uusi varmuuskopio"
 
 msgid "Next backup: "
 msgstr "Seuraava varmuuskopio:"
+
+#, python-format
+msgid ""
+"Nnzip error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"Nnzip virhe (virhe lähetetty debug-lokiin):\n"
+"%s"
 
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -534,8 +552,10 @@ msgstr "Lisäosia ei tarvitse asentaa"
 msgid "None"
 msgstr "Ei mitään"
 
+
 msgid "Note: slot list does not show current image or empty slots"
 msgstr "Huom: paikkalistaus ei näytä nykyistä imagea tai tyhjiä paikkoja"
+
 
 msgid "Now skipping restore process"
 msgstr "Ohitetaan palautusprosessia"
@@ -674,8 +694,10 @@ msgstr "Suorita"
 msgid "Run your shell scripts."
 msgstr "Suorita komentorivin käskyjonoja (scripts)."
 
+
 msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format."
 msgstr "SDkortti havaittu, mutta ei alustettu Multibootille - käytä ViX Multiboot hallintatyökalua alustukseen."
+
 
 msgid "SWAP file not found. You have to create the file before you try to activate it."
 msgstr "SWAP-tiedostoa ei löytynyt. Luo se ensin, ennen kuin yrität aktivoida sitä."
@@ -688,6 +710,10 @@ msgstr "Paikka SWAP:lle"
 
 msgid "SWAP size:"
 msgstr "SWAP:n koko:"
+
+msgid "SWAP size:"
+msgstr "SWAP-tiedoston koko:"
+
 
 msgid "Save"
 msgstr "Tallenna"
@@ -773,8 +799,10 @@ msgstr "Softcam pysähtymässä..."
 msgid "SoftcamCheck"
 msgstr "Softcam-tarkistus"
 
+
 msgid "Sorry but that location does not exist or is not setup. Please set it up in the Backup manager setup menu."
 msgstr "Tämä sijainti ei ole olemassa, tai sitä ei ole asetettu. Aseta se Varmuuskopioiden hallinnointityökalulla."
+
 
 msgid "Sorry the feeds are down for maintenance. Please try again later."
 msgstr "Syötteitä huolletaan, kokeile myöhemmin uudestaan."
@@ -832,6 +860,9 @@ msgstr ""
 msgid "The chosen location does not exist, using /media/hdd."
 msgstr "Valittua hakemistoa ei ole, käytetään /media/hdd."
 
+msgid "The chosen location does not exist, using /media/hdd."
+msgstr "Valittua hakemistoa ei ole, käytetään /media/hdd."
+
 msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
 msgstr "Laitteen nimi voidaan lisätä varmuuskopiotiedoston nimeen, mutta se tekee tiedoston nimestä melko pitkän."
 
@@ -840,6 +871,7 @@ msgstr "Avustaja on valmis ja uudelleenkäynnistyy."
 
 msgid "The wizard is finished now."
 msgstr "Tehtävä suoritettu loppuun."
+
 
 msgid "There is a problem with this device. Please reformat it and try again."
 msgstr "Tässä laitteessa on ongelma. Alusta se ja yritä uudelleen."
@@ -873,6 +905,7 @@ msgstr "USB: "
 
 msgid "Un-mount"
 msgstr "Poista liitos"
+
 
 #, python-format
 msgid ""
@@ -958,6 +991,7 @@ msgstr "Olet päättänyt olla päivittämättä imagea."
 msgid "You have to create a SWAP file before trying to activate the autostart."
 msgstr "Sinun pitää ensin luoda SWAP-tiedosto, ennen kuin aktivoit sen automaattisen käynnistyksen."
 
+
 #, python-format
 msgid "Your %s %s could not connect to the plugin feeds at this time. Please try using the Backup manager to restore plugins later."
 msgstr "Sinun %s %s ei saa yhteyttä plugin-syötteisiin. Yritä myöhemmin palauttaa pluginit käyttäen varmuuskopioiden hallinta-työkalua."
@@ -1001,6 +1035,12 @@ msgstr "Sinun %s %s ei saa yhteyttä internettiin. Yritä myöhemmin palauttaa p
 #, python-format
 msgid "slot%s - %s"
 msgstr "paikka%s - %s"
+
+
+#, python-format
+msgid "slot%s - %s (current image)"
+msgstr "paikka%s - %s (nykyinen image)"
+
 
 #, python-format
 msgid "slot%s - %s "
@@ -1213,6 +1253,7 @@ msgstr "Ei saatavilla"
 #~ msgstr "Seuraava varmuuskopio: "
 
 #~ msgid ""
+
 #~ "Nnzip error (also sent to any debug log):\n"
 #~ "%s"
 #~ msgstr ""
@@ -1220,6 +1261,8 @@ msgstr "Ei saatavilla"
 #~ "%s"
 
 #~ msgid ""
+
+
 #~ "No config files found, please setup CCcam first\n"
 #~ "in /etc/CCcam.cfg"
 #~ msgstr ""
@@ -1264,6 +1307,7 @@ msgstr "Ei saatavilla"
 #~ msgid "No plugins where needed to be installed"
 #~ msgstr "Lisäosia ei tarvinnut asentaa"
 
+
 #~ msgid "Note: slot list does not show current image or empty slots."
 #~ msgstr "HUOM: Paikkalistaus ei näytä nykyistä imagea, tai tyhjiä paikkoja."
 
@@ -1272,6 +1316,7 @@ msgstr "Ei saatavilla"
 
 #~ msgid "Please select the file to restore ?"
 #~ msgstr "Valitse palautettava tiedosto?"
+
 
 #~ msgid "Please wait while gathers information..."
 #~ msgstr "Odota, kerätään tietoja..."

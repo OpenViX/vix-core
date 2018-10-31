@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-28 07:50+0100\n"
-"PO-Revision-Date: 2018-09-28 16:13+0200\n"
+"POT-Creation-Date: 2018-10-26 17:52+0100\n"
+"PO-Revision-Date: 2018-10-29 10:49+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -16,7 +16,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
+
+msgid " "
+msgstr " "
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -64,7 +67,7 @@ msgid "Allows the script runner to be launched from extensions."
 msgstr "Maakt het mogelijk dit script te laten lopen vanuit het extensieoverzicht."
 
 msgid "Allows the softcam manager to be launched from extensions."
-msgstr "Geeft de mogelijkheid de softcammanager vanuit de extensies te starten."
+msgstr "Geeft de mogelijkheid de softcam manager vanuit de extensies te starten."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Controleert of de softcam nog werkt en herstart die als dat niet het geval is."
@@ -132,6 +135,12 @@ msgstr "Automatische settingsback-up"
 msgid "Autostart"
 msgstr "Autostart"
 
+msgid "Backing up eMMC ..."
+msgstr "Maakt back-up van eMMC ..."
+
+msgid "Backing up eMMC..."
+msgstr "Maakt back-up van eMMC ..."
+
 msgid "Backing up files..."
 msgstr "Bestanden worden geback-upped..."
 
@@ -170,7 +179,7 @@ msgid "Backup manager"
 msgstr "Back-up manager"
 
 msgid "Backup manager settings"
-msgstr "Back-upmanager instellingen"
+msgstr "Back-up manager instellingen"
 
 msgid "Backup prefix"
 msgstr "Back-up prefix"
@@ -281,7 +290,7 @@ msgid ""
 "%s"
 msgstr ""
 "Wilt u image\n"
-"%s flashen?"
+"%s flashen"
 
 msgid "Do you want to restart GUI now ?"
 msgstr "Wilt u de gebruikersinterface nu opnieuw starten?"
@@ -372,7 +381,7 @@ msgid "Image manager"
 msgstr "Image manager"
 
 msgid "Image manager settings"
-msgstr "Imagemanager instellingen"
+msgstr "Image manager instellingen"
 
 msgid "Inactive"
 msgstr "Inactief"
@@ -382,6 +391,12 @@ msgstr "Neem de STB-naam op in de naam van de back-up"
 
 msgid "Info"
 msgstr "Info"
+
+msgid "Init SDCARD"
+msgstr "Init SD-kaart"
+
+msgid "Init SDcard"
+msgstr "Init SD-kaart"
 
 msgid "Install"
 msgstr "Installeer"
@@ -460,6 +475,12 @@ msgstr "MultiBoot manager"
 
 msgid "Multiboot image manager"
 msgstr "Multiboot image manager"
+
+msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX."
+msgstr "Multiboot manager - SD-kaart initialisatie, herstart OpenViX."
+
+msgid "Multiboot manager - The SDcard must be at least 8MB."
+msgstr "Multiboot manager - De SD-kaart moet tenminste 8MB groot zijn."
 
 msgid "NO, do not restore plugins"
 msgstr "NEE, installeer de plugins niet"
@@ -540,8 +561,8 @@ msgstr "Kies een folder die plugins bevat."
 msgid "Please select device to use as SWAP file location."
 msgstr "Kies het medium voor het SWAP-bestand."
 
-msgid "Please select the file to restore ?"
-msgstr "Kies bestanden die teruggeplaatst moeten worden."
+msgid "Please select the file to restore."
+msgstr "Kies het bestand hat hersteld moet worden."
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Even wachten tot het installeren van plugins gereed is..."
@@ -576,6 +597,9 @@ msgstr "Plugin-lijst mislukt - mogelijk a.g.v. een verkeerde back-up lokatie of 
 
 msgid "Preparing extra plugins..."
 msgstr "Bereidt extra plugins voor.."
+
+msgid "Press Init to format SDcard."
+msgstr "Druk op Init om de SD-kaart te initialiseren."
 
 msgid "Press OK to toggle the selection."
 msgstr "Druk op OK om de selectie om te wisselen.."
@@ -649,6 +673,9 @@ msgstr "Voer uit"
 
 msgid "Run your shell scripts."
 msgstr "Voer uw shell scripts uit."
+
+msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format."
+msgstr "SD-kaart gedetecteerd, maar niet geformatteerd voor multiboot - gebruik de ViX MultiBoot manager 0m te formatteren."
 
 msgid "SWAP file not found. You have to create the file before you try to activate it."
 msgstr "SWAP-bestand niet gevonden. U moet dit aanmaken alvorens het te kunnen gebruiken."
@@ -735,7 +762,7 @@ msgid "Softcam manager"
 msgstr "Softcam manager"
 
 msgid "Softcam manager settings"
-msgstr "Softcammanager instellingen"
+msgstr "Softcam manager instellingen"
 
 msgid "Softcam starting..."
 msgstr "Softcam start..."
@@ -813,6 +840,9 @@ msgstr "De wizard is nu gereed; uw STB gaat herstarten."
 
 msgid "The wizard is finished now."
 msgstr "De wizard is nu gereed."
+
+msgid "There is a problem with this device. Please reformat it and try again."
+msgstr "Er is een probleem met dit apparaat. Formatteer en probeer opnieuw."
 
 msgid "There is no backup to delete."
 msgstr "Er is geen back-up om te verwijderen."
@@ -923,7 +953,8 @@ msgid ""
 msgstr ""
 "U staat op het punt een eMMC flash uit te voeren; wij kunnen geen verantwoordelijkheid nemen voor fouten of schade aan uw STB tijdens dit proces,\n"
 "Ga voorzichtig door!\n"
-"Weet u zeker dat u dit image wilt flashen:"
+"Weet u zeker dat u dit image wilt flashen:\n"
+" "
 
 msgid "You have decided not to flash image."
 msgstr "U heeft besloten geen image te flashen."
@@ -1194,6 +1225,12 @@ msgstr "niet beschikbaar"
 #~ msgid "Multiboot Image Manager"
 #~ msgstr "Multiboot Image Manager"
 
+#~ msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX"
+#~ msgstr "Multibootmanager - SD-kaart initialisatie, herstart OpenViX."
+
+#~ msgid "Multiboot manager - The SDcard must be at least 8MB"
+#~ msgstr "Multibootmanager - De SD-kaart moet minimaal 8MB groot zijn."
+
 #~ msgid "New Backup"
 #~ msgstr "Nieuwe back-up"
 
@@ -1262,6 +1299,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Please select device to use as swapfile location"
 #~ msgstr "Selecteer het medium dat u voor de swapfile wilt gebruiken"
 
+#~ msgid "Please select the file to restore ?"
+#~ msgstr "Kies bestanden die teruggeplaatst moeten worden."
+
 #~ msgid "Please wait while gathers information..."
 #~ msgstr "De informatie wordt verzameld..."
 
@@ -1297,6 +1337,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Restore confirmation"
 #~ msgstr "Herstellen bevestigen"
+
+#~ msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format"
+#~ msgstr "SD-kaart gedetecteerd maar niet geformatteerd voor multiboot - gebruik de VIX Multibootmanager om te formatteren."
 
 #~ msgid "Schedule Backups"
 #~ msgstr "Plan back-ups"

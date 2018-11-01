@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-26 17:52+0100\n"
-"PO-Revision-Date: 2018-10-29 10:49+0100\n"
+"POT-Creation-Date: 2018-11-01 09:33+0000\n"
+"PO-Revision-Date: 2018-11-01 12:14+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
 "X-Generator: Poedit 2.2\n"
-
-msgid " "
-msgstr " "
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -135,11 +132,11 @@ msgstr "Automatische settingsback-up"
 msgid "Autostart"
 msgstr "Autostart"
 
-msgid "Backing up eMMC ..."
-msgstr "Maakt back-up van eMMC ..."
+msgid "Backing up eMMC partitions for USB flash ..."
+msgstr "Maakt back-up van eMMC partities voor USB flash..."
 
-msgid "Backing up eMMC..."
-msgstr "Maakt back-up van eMMC ..."
+msgid "Backing up eMMC partitions for USB flash..."
+msgstr "Maakt back-up van eMMC partities voor USB flash..."
 
 msgid "Backing up files..."
 msgstr "Bestanden worden geback-upped..."
@@ -476,11 +473,14 @@ msgstr "MultiBoot manager"
 msgid "Multiboot image manager"
 msgstr "Multiboot image manager"
 
-msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX."
-msgstr "Multiboot manager - SD-kaart initialisatie, herstart OpenViX."
+msgid "Multiboot manager - Cannot initialise SDcard when running image on SDcard"
+msgstr "Multibootmanager - Kan SD-kaart niet initialiseren wanneer het image loopt vanaf de SD-kaart."
 
-msgid "Multiboot manager - The SDcard must be at least 8MB."
-msgstr "Multiboot manager - De SD-kaart moet tenminste 8MB groot zijn."
+msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX"
+msgstr "Multibootmanager - SD-kaart initialisatie, herstart OpenViX."
+
+msgid "Multiboot manager - The SDcard must be at least 8MB"
+msgstr "Multibootmanager - De SD-kaart moet minimaal 8MB groot zijn."
 
 msgid "NO, do not restore plugins"
 msgstr "NEE, installeer de plugins niet"
@@ -535,8 +535,8 @@ msgstr "Er hoefden geen plugins geïnstalleerd te worden"
 msgid "None"
 msgstr "Geen"
 
-msgid "Note: slot list does not show current image or empty slots."
-msgstr "Opm.: De slot-lijst toont het huidige image en lege slots niet."
+msgid "Note: slot list does not show current image or empty slots"
+msgstr "Opm.: Slotlijst toont huidig image en lege slots niet."
 
 msgid "Now skipping restore process"
 msgstr "Slaat het herstel proces over"
@@ -1014,11 +1014,11 @@ msgstr "slot%s - %s "
 msgid "slot%s - %s (current image)"
 msgstr "slot%s - %s (huidige image)"
 
-msgid "there is a problem with this device. Please reformat it and try again."
-msgstr "Er is een probleem met dit apparaat. Formatteer het en probeer opnieuw."
-
 msgid "unavailable"
 msgstr "niet beschikbaar"
+
+#~ msgid " "
+#~ msgstr " "
 
 #~ msgid "A background update check is is progress, please try again."
 #~ msgstr "Er wordt momenteel op updates gecontroleerd; probeer het later nogmaals."
@@ -1056,6 +1056,12 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Backing up Root file system..."
 #~ msgstr "Er wordt een back-up gemaakt van het root-bestandssysteem..."
+
+#~ msgid "Backing up eMMC ..."
+#~ msgstr "Maakt back-up van eMMC ..."
+
+#~ msgid "Backing up eMMC..."
+#~ msgstr "Maakt back-up van eMMC ..."
 
 #~ msgid "Backup Complete..."
 #~ msgstr "Back-up compleet..."
@@ -1225,11 +1231,11 @@ msgstr "niet beschikbaar"
 #~ msgid "Multiboot Image Manager"
 #~ msgstr "Multiboot Image Manager"
 
-#~ msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX"
-#~ msgstr "Multibootmanager - SD-kaart initialisatie, herstart OpenViX."
+#~ msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX."
+#~ msgstr "Multiboot manager - SD-kaart initialisatie, herstart OpenViX."
 
-#~ msgid "Multiboot manager - The SDcard must be at least 8MB"
-#~ msgstr "Multibootmanager - De SD-kaart moet minimaal 8MB groot zijn."
+#~ msgid "Multiboot manager - The SDcard must be at least 8MB."
+#~ msgstr "Multiboot manager - De SD-kaart moet tenminste 8MB groot zijn."
 
 #~ msgid "New Backup"
 #~ msgstr "Nieuwe back-up"
@@ -1290,8 +1296,8 @@ msgstr "niet beschikbaar"
 #~ msgid "No, do not flash image"
 #~ msgstr "Nee, flash geen image."
 
-#~ msgid "Note: slot list does not show current image or empty slots"
-#~ msgstr "Opm.: Slotlijst toont huidig image en lege slots niet."
+#~ msgid "Note: slot list does not show current image or empty slots."
+#~ msgstr "Opm.: De slot-lijst toont het huidige image en lege slots niet."
 
 #~ msgid "Please copy the folder"
 #~ msgstr "Kopieer de map"
@@ -1632,6 +1638,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "there is a problem with this device, please reformat it and try again."
 #~ msgstr "Er is een probleem met dit apparaat; initieer het en probeer het opnieuw."
+
+#~ msgid "there is a problem with this device. Please reformat it and try again."
+#~ msgstr "Er is een probleem met dit apparaat. Formatteer het en probeer opnieuw."
 
 #~ msgid "there was a problem with this device, please reformat and try again."
 #~ msgstr "er was een probleem met dit medium; formatteer opnieuw en probeer het weer."

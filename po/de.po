@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-26 17:25+0100\n"
-"PO-Revision-Date: 2018-10-27 18:59+0200\n"
+"POT-Creation-Date: 2018-11-05 06:13+0000\n"
+"PO-Revision-Date: 2018-11-05 14:52+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.1.1\n"
-
-msgid " "
-msgstr ""
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -131,11 +128,11 @@ msgstr "Automatische Einstellungssicherung"
 msgid "Autostart"
 msgstr "Autostart"
 
-msgid "Backing up eMMC ..."
-msgstr ""
+msgid "Backing up eMMC partitions for USB flash ..."
+msgstr "Sicherung der eMMC Partitionen für den USB-Stick..."
 
-msgid "Backing up eMMC..."
-msgstr ""
+msgid "Backing up eMMC partitions for USB flash..."
+msgstr "Sicherung der eMMC Partitionen für den USB-Stick..."
 
 msgid "Backing up files..."
 msgstr "Sichert Dateien..."
@@ -468,8 +465,11 @@ msgstr "Multiboot Verwaltung"
 msgid "Multiboot image manager"
 msgstr "Multiboot Image Verwaltung"
 
-msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX."
-msgstr "Multiboot Verwaltung - SD-Karte wurde initialisiert. Bitte Box neu starten."
+msgid "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
+msgstr "Multiboot Verwaltung - SD Karte kann nicht initialisiert werden wenn ein Image von dieser Karte gestartet ist."
+
+msgid "Multiboot manager - SDcard initialization run, please restart OpenViX."
+msgstr "Multiboot Verwaltung - SD Karte wurde initialisiert. Bitte OpenViX neu starten."
 
 msgid "Multiboot manager - The SDcard must be at least 8MB."
 msgstr "Multiboot Verwaltung. Die SD-Karte muss m indestens 8MB groß sein."
@@ -675,10 +675,10 @@ msgid "SWAP manager"
 msgstr "Swap Verwaltung"
 
 msgid "SWAP place:"
-msgstr ""
+msgstr "SWAP Ort:"
 
 msgid "SWAP size:"
-msgstr ""
+msgstr "SWAP Größe:"
 
 msgid "Save"
 msgstr "Speichern"
@@ -717,7 +717,7 @@ msgid "Select folder that contains plugins"
 msgstr "Bitte Ordner mit Plugins auswählen"
 
 msgid "Select the SWAP file size:"
-msgstr ""
+msgstr "Wähle Größe von Swap-Datei:"
 
 msgid "Select:"
 msgstr "Auswählen:"
@@ -992,18 +992,15 @@ msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte die Plugins mit 
 
 #, python-format
 msgid "slot%s - %s"
-msgstr ""
+msgstr "Slot%s - %s "
 
 #, python-format
 msgid "slot%s - %s "
-msgstr ""
+msgstr "Slot%s - %s "
 
 #, python-format
 msgid "slot%s - %s (current image)"
-msgstr ""
-
-msgid "there is a problem with this device. Please reformat it and try again."
-msgstr "Es gibt ein Problem mit diesem Gerät. Bitte erneut formatieren und versuchen."
+msgstr "Slot%s - %s (aktuelle Image)"
 
 msgid "unavailable"
 msgstr "nicht verfügbar"
@@ -1212,6 +1209,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Multiboot Image Manager"
 #~ msgstr "Multiboot Image Verwaltung"
+
+#~ msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX."
+#~ msgstr "Multiboot Verwaltung - SD-Karte wurde initialisiert. Bitte Box neu starten."
 
 #~ msgid "New Backup"
 #~ msgstr "Neues Backup"
@@ -1600,6 +1600,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "there is a problem with this device, please reformat it and try again."
 #~ msgstr "da gibt es ein Problem mit dem Gerät. Bitte neu formatieren und erneut versuchen."
+
+#~ msgid "there is a problem with this device. Please reformat it and try again."
+#~ msgstr "Es gibt ein Problem mit diesem Gerät. Bitte erneut formatieren und versuchen."
 
 #~ msgid "there was a problem with this device, please reformat and try again."
 #~ msgstr "Es gibt ein Problem mit dem Gerät, bitte formatieren und erneut versuchen."

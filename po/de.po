@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 06:13+0000\n"
-"PO-Revision-Date: 2018-11-05 14:52+0100\n"
+"POT-Creation-Date: 2018-12-09 10:20+0000\n"
+"PO-Revision-Date: 2018-12-09 19:15+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -461,6 +461,13 @@ msgstr "Verschiebe nach Backup-Zielverzeichnis"
 
 msgid "MultiBoot manager"
 msgstr "Multiboot Verwaltung"
+
+msgid "Multiboot ERROR! - no STARTUP in /boot -Please check /etc/fstab for correct boot partition."
+msgstr "Multiboot Fehler! - kein STARTUP in /boot - Bitte /etc/fstab auf korrekte Boot Partition prüfen."
+
+#, python-format
+msgid "Multiboot ERROR! - no STARTUP_%s in /boot - Image may need manual restart."
+msgstr "Multiboot Fehler! - kein STARTUP_%s in /boot - Image könnte manuelle Neustart benötigen."
 
 msgid "Multiboot image manager"
 msgstr "Multiboot Image Verwaltung"

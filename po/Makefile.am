@@ -1,5 +1,7 @@
 dist_noinst_SCRIPTS = xml2po.py
 
+plugindir = $(libdir)/enigma2/python/Plugins/SystemPlugins/ViX
+
 LANGS = ar bg ca cs da de el en en_GB es et fa fi fr fy he hr hu is it ku lt lv nl no nb pl pt pt_BR ro ru sv sk sl sr th tr uk
 LANGMO = $(LANGS:=.mo)
 LANGPO = $(LANGS:=.po)
@@ -35,13 +37,13 @@ dist-hook: $(LANGPO)
 
 install-data-local: $(LANGMO)
 	for lang in $(LANGS); do \
-		$(mkinstalldirs) $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/$$lang/LC_MESSAGES; \
-		$(INSTALL_DATA) $$lang.po $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/vix-$$lang.po; \
-		$(INSTALL_DATA) $$lang.mo $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/$$lang/LC_MESSAGES/vix.mo; \
+		$(mkinstalldirs) $(DESTDIR)$(plugindir)/locale/$$lang/LC_MESSAGES; \
+		$(INSTALL_DATA) $$lang.po $(DESTDIR)$(plugindir)/locale/vix-$$lang.po; \
+		$(INSTALL_DATA) $$lang.mo $(DESTDIR)$(plugindir)/locale/$$lang/LC_MESSAGES/vix.mo; \
 	done
 
 uninstall-local:
 	for lang in $(LANGS); do \
-		$(RM) $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/vix-$$lang.po; \
-		$(RM) $(DESTDIR)/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/locale/$$lang/LC_MESSAGES/vix.mo; \
+		$(RM) $(DESTDIR)$(plugindir)/locale/vix-$$lang.po; \
+		$(RM) $(DESTDIR)$(plugindir)/locale/$$lang/LC_MESSAGES/vix.mo; \
 	done

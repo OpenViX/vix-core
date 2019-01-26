@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-19 17:55+0000\n"
-"PO-Revision-Date: 2019-01-20 08:06+0100\n"
+"POT-Creation-Date: 2019-01-26 07:34+0000\n"
+"PO-Revision-Date: 2019-01-26 08:48+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -473,7 +473,7 @@ msgstr "Verandert back-up lokatie..."
 msgid "MultiBoot manager"
 msgstr "MultiBoot manager"
 
-msgid "Multiboot ERROR! - no STARTUP in boot partition"
+msgid "Multiboot ERROR! - no STARTUP in boot partition."
 msgstr "Multiboot FOUT! - geen STARTUP in bootpartitie."
 
 msgid "Multiboot image manager"
@@ -679,6 +679,9 @@ msgstr "Voer uit"
 
 msgid "Run your shell scripts."
 msgstr "Voer uw shell scripts uit."
+
+msgid "SDCARD: "
+msgstr "SDCARD: "
 
 msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format."
 msgstr "SD-kaart gedetecteerd, maar niet geformatteerd voor multiboot - gebruik de ViX MultiBoot manager 0m te formatteren."
@@ -1239,6 +1242,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Multiboot ERROR! - no STARTUP in /boot -Please check /etc/fstab for correct boot partition."
 #~ msgstr "Multiboot FOUT! - geen STARTUP in /boot - Check /etc/fstab op juiste bootpartitie."
+
+#~ msgid "Multiboot ERROR! - no STARTUP in boot partition"
+#~ msgstr "Multiboot FOUT! - geen STARTUP in bootpartitie."
 
 #~ msgid "Multiboot ERROR! - no STARTUP_%s in /boot - Image may need manual restart"
 #~ msgstr "Multiboot FOUT! - geen STARTUP_%s in /boot - Box moet mogelijk handmatig opnieuw gestart worden."

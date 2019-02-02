@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-26 07:34+0000\n"
-"PO-Revision-Date: 2019-01-26 08:48+0100\n"
+"POT-Creation-Date: 2019-02-01 20:29+0000\n"
+"PO-Revision-Date: 2019-02-02 08:08+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -17,6 +17,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
 "X-Generator: Poedit 2.2.1\n"
+
+msgid " "
+msgstr " "
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -240,6 +243,10 @@ msgstr "Creëert leeg slot."
 
 msgid "Create:"
 msgstr "Creëer:"
+
+#, python-format
+msgid "Create: Recovery Fullbackup %s"
+msgstr "Creëer: recovery back-up %s"
 
 msgid "Creating SWAP.."
 msgstr "Creëert SWAP..."
@@ -488,6 +495,9 @@ msgstr "Multiboot manager - SD-kaart initialisatie, herstart OpenViX."
 msgid "Multiboot manager - The SDcard must be at least 8MB."
 msgstr "Multiboot manager - De SD-kaart moet tenminste 8MB groot zijn."
 
+msgid "Multiboot only able to restore this backup to mmc slot1"
+msgstr "Multiboot kan deze back-up alleen maar herstellen van mmc slot1"
+
 msgid "NO, do not restore plugins"
 msgstr "NEE, installeer de plugins niet"
 
@@ -568,7 +578,7 @@ msgid "Please select device to use as SWAP file location."
 msgstr "Kies het medium voor het SWAP-bestand."
 
 msgid "Please select the file to restore."
-msgstr "Kies het bestand hat hersteld moet worden."
+msgstr "Kies het bestand dat hersteld moet worden."
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Even wachten tot het installeren van plugins gereed is..."
@@ -682,9 +692,6 @@ msgstr "Voer uw shell scripts uit."
 
 msgid "SDCARD: "
 msgstr "SDCARD: "
-
-msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format."
-msgstr "SD-kaart gedetecteerd, maar niet geformatteerd voor multiboot - gebruik de ViX MultiBoot manager 0m te formatteren."
 
 msgid "SWAP file not found. You have to create the file before you try to activate it."
 msgstr "SWAP-bestand niet gevonden. U moet dit aanmaken alvorens het te kunnen gebruiken."
@@ -1025,9 +1032,6 @@ msgstr "slot%s - %s (huidige image)"
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
-
-#~ msgid " "
-#~ msgstr " "
 
 #~ msgid "A background update check is is progress, please try again."
 #~ msgstr "Er wordt momenteel op updates gecontroleerd; probeer het later nogmaals."
@@ -1376,6 +1380,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format"
 #~ msgstr "SD-kaart gedetecteerd maar niet geformatteerd voor multiboot - gebruik de VIX Multibootmanager om te formatteren."
+
+#~ msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format."
+#~ msgstr "SD-kaart gedetecteerd, maar niet geformatteerd voor multiboot - gebruik de ViX MultiBoot manager 0m te formatteren."
 
 #~ msgid "Schedule Backups"
 #~ msgstr "Plan back-ups"

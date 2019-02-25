@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-01 20:29+0000\n"
-"PO-Revision-Date: 2019-02-02 08:08+0100\n"
+"POT-Creation-Date: 2019-02-22 19:03+0000\n"
+"PO-Revision-Date: 2019-02-25 13:23+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
 "X-Generator: Poedit 2.2.1\n"
-
-msgid " "
-msgstr " "
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -378,6 +375,12 @@ msgstr "Controle interval"
 msgid "GB"
 msgstr "GB"
 
+msgid "H9 SDcard manager"
+msgstr "H9 SD-kaart manager"
+
+msgid "H9SDcard Manager"
+msgstr "H9SD-kaart Manager"
+
 msgid "HARD DISK: "
 msgstr "HARDE SCHIJF: "
 
@@ -404,6 +407,12 @@ msgstr "Init SD-kaart"
 
 msgid "Init SDcard"
 msgstr "Init SD-kaart"
+
+msgid "Init Zgemma H9 SDCARD - please reboot after use."
+msgstr "Init Zgemma H9 SD-kaart - start opnieuw op.."
+
+msgid "Init Zgemma H9 USB/SDA1 - please reboot after use."
+msgstr "Init Zgemma H9 USB/SDA1 - start opnieuw op."
 
 msgid "Install"
 msgstr "Installeer"
@@ -473,6 +482,9 @@ msgstr "Mount manager"
 
 msgid "Mount: "
 msgstr "Mount: "
+
+msgid "Move Nand root to SD card"
+msgstr "Verplaats Nand root naar SD-kaart"
 
 msgid "Moving to backup Location..."
 msgstr "Verandert back-up lokatie..."
@@ -620,6 +632,9 @@ msgstr "Druk op Init om de SD-kaart te initialiseren."
 msgid "Press OK to toggle the selection."
 msgstr "Druk op OK om de selectie om te wisselen.."
 
+msgid "Press appropiate Init to move Nand root to SDcard."
+msgstr "Drul op de betreffende Init om Nand root naar SD-kaart te verplaatsen."
+
 msgid "Query before backup starts"
 msgstr "Melding als back-up start"
 
@@ -631,6 +646,9 @@ msgstr "Vragen als back-up start."
 
 msgid "Query before starting image backup."
 msgstr "Vragen alvorens image back-up te starten."
+
+msgid "Reboot"
+msgstr "Opnieuw opstarten"
 
 msgid "Rebooting..."
 msgstr "Bezig met rebooten..."
@@ -1032,6 +1050,9 @@ msgstr "slot%s - %s (huidige image)"
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
+
+#~ msgid " "
+#~ msgstr " "
 
 #~ msgid "A background update check is is progress, please try again."
 #~ msgstr "Er wordt momenteel op updates gecontroleerd; probeer het later nogmaals."

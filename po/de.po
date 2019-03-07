@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-09 10:20+0000\n"
-"PO-Revision-Date: 2018-12-09 19:15+0100\n"
+"POT-Creation-Date: 2019-03-07 18:27+0000\n"
+"PO-Revision-Date: 2019-03-07 21:02+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.1\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -232,6 +232,13 @@ msgstr "Erzeuge und flashe komplettes Image von deinem System"
 msgid "Create empty slot."
 msgstr "Erzeuge leeren Slot."
 
+msgid "Create:"
+msgstr ""
+
+#, python-format
+msgid "Create: Recovery Fullbackup %s"
+msgstr "Erzeuge: Komplettbackup %s für Recovery"
+
 msgid "Creating SWAP.."
 msgstr "Erzeuge Swap..."
 
@@ -360,6 +367,12 @@ msgstr "Freeze-Prüfung Intervall"
 msgid "GB"
 msgstr "GB"
 
+msgid "H9 SDcard manager"
+msgstr "H9 SD-Karten Verwaltung"
+
+msgid "H9SDcard Manager"
+msgstr "H9 SD-Karten Verwaltung"
+
 msgid "HARD DISK: "
 msgstr "FESTPLATTE: "
 
@@ -386,6 +399,12 @@ msgstr ""
 
 msgid "Init SDcard"
 msgstr ""
+
+msgid "Init Zgemma H9 SDCARD - please reboot after use."
+msgstr "Init Zgemma H9 SDCARD - Bitte neu starten nach Benutzung."
+
+msgid "Init Zgemma H9 USB/SDA1 - please reboot after use."
+msgstr "Init Zgemma H9 USB/SDA1 - Bitte neu starten nach Benutzung."
 
 msgid "Install"
 msgstr "Installieren"
@@ -456,18 +475,17 @@ msgstr "Mount Verwaltung"
 msgid "Mount: "
 msgstr "Mount: "
 
+msgid "Move Nand root to SD card"
+msgstr "Verschiebe Nand root auf SD Karte"
+
 msgid "Moving to backup Location..."
 msgstr "Verschiebe nach Backup-Zielverzeichnis"
 
 msgid "MultiBoot manager"
 msgstr "Multiboot Verwaltung"
 
-msgid "Multiboot ERROR! - no STARTUP in /boot -Please check /etc/fstab for correct boot partition."
-msgstr "Multiboot Fehler! - kein STARTUP in /boot - Bitte /etc/fstab auf korrekte Boot Partition prüfen."
-
-#, python-format
-msgid "Multiboot ERROR! - no STARTUP_%s in /boot - Image may need manual restart."
-msgstr "Multiboot Fehler! - kein STARTUP_%s in /boot - Image könnte manuelle Neustart benötigen."
+msgid "Multiboot ERROR! - no STARTUP in boot partition."
+msgstr "Multiboot Fehler! - kein STARTUP in Boot-Partition"
 
 msgid "Multiboot image manager"
 msgstr "Multiboot Image Verwaltung"
@@ -480,6 +498,9 @@ msgstr "Multiboot Verwaltung - SD Karte wurde initialisiert. Bitte OpenViX neu s
 
 msgid "Multiboot manager - The SDcard must be at least 8MB."
 msgstr "Multiboot Verwaltung. Die SD-Karte muss m indestens 8MB groß sein."
+
+msgid "Multiboot only able to restore this backup to mmc slot1"
+msgstr "Multiboot kann dieses Backup nur auf MMC Slot 1 wieder herstellen"
 
 msgid "NO, do not restore plugins"
 msgstr "NEIN, Plugins nicht wieder herstellen"
@@ -601,6 +622,9 @@ msgstr "Wähle Init um SD-Karte zu formatieren."
 msgid "Press OK to toggle the selection."
 msgstr "Drücke OK um die Auswahl umzukehren"
 
+msgid "Press appropiate Init to move Nand root to SDcard."
+msgstr "Drücke das passende Init um das Nand root auf die SD-Karte zu verschieben"
+
 msgid "Query before backup starts"
 msgstr "Fragen bevor Backup startet"
 
@@ -612,6 +636,9 @@ msgstr "Fragen bevor Backup startet."
 
 msgid "Query before starting image backup."
 msgstr "Vor Imagesicherung fragen."
+
+msgid "Reboot"
+msgstr ""
 
 msgid "Rebooting..."
 msgstr "Neustart..."
@@ -672,8 +699,8 @@ msgstr "Ausführen"
 msgid "Run your shell scripts."
 msgstr "Führe dein Script aus."
 
-msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format."
-msgstr "SD-Karte erkannt aber sie ist nicht für Multiboot formatiert. Bitte die Multiboot Verwaltung zum formatieren benutzen."
+msgid "SDCARD: "
+msgstr ""
 
 msgid "SWAP file not found. You have to create the file before you try to activate it."
 msgstr "Swap Datei nicht gefunden. Swap Datei muss erzeugt werden bevor sie aktiviert werden kann."
@@ -1214,6 +1241,12 @@ msgstr "nicht verfügbar"
 #~ msgid "Moving to Backup Location..."
 #~ msgstr "An Sicherungsspeicherort verschieben..."
 
+#~ msgid "Multiboot ERROR! - no STARTUP in /boot -Please check /etc/fstab for correct boot partition."
+#~ msgstr "Multiboot Fehler! - kein STARTUP in /boot - Bitte /etc/fstab auf korrekte Boot Partition prüfen."
+
+#~ msgid "Multiboot ERROR! - no STARTUP_%s in /boot - Image may need manual restart."
+#~ msgstr "Multiboot Fehler! - kein STARTUP_%s in /boot - Image könnte manuelle Neustart benötigen."
+
 #~ msgid "Multiboot Image Manager"
 #~ msgstr "Multiboot Image Verwaltung"
 
@@ -1328,6 +1361,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Restore confirmation"
 #~ msgstr "Wiederherstellen Bestätigung"
+
+#~ msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format."
+#~ msgstr "SD-Karte erkannt aber sie ist nicht für Multiboot formatiert. Bitte die Multiboot Verwaltung zum formatieren benutzen."
 
 #~ msgid "Schedule Backups"
 #~ msgstr "Zeitgeplante Backups"

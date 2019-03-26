@@ -1325,6 +1325,9 @@ class BackupFiles(Screen):
 		if path.exists('/tmp/3rdPartyPluginsLocation'):
 			tmplist.append('/tmp/3rdPartyPluginsLocation')
 		self.backupdirs = ' '.join(tmplist)
+		config.misc.restorewizardrun.setValue(True)
+		config.misc.restorewizardrun.save()
+		configfile.save()
 		print '[BackupManager] Backup running'
 		backupdate = datetime.now()
 		backupType = "-"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-22 19:03+0000\n"
-"PO-Revision-Date: 2019-02-25 13:23+0100\n"
+"POT-Creation-Date: 2019-04-28 17:24+0100\n"
+"PO-Revision-Date: 2019-04-29 10:25+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -240,10 +240,6 @@ msgstr "Creëert leeg slot."
 
 msgid "Create:"
 msgstr "Creëer:"
-
-#, python-format
-msgid "Create: Recovery Fullbackup %s"
-msgstr "Creëer: recovery back-up %s"
 
 msgid "Creating SWAP.."
 msgstr "Creëert SWAP..."
@@ -545,10 +541,10 @@ msgstr ""
 
 msgid ""
 "No config files found, please setup Oscam first\n"
-"in /etc/tuxbox/config or in /etc/tuxbox/config/oscam."
+"in /etc/tuxbox/config"
 msgstr ""
-"Geen configuratiebestand gevonden. U moet eerst Oscam instellen\n"
-"in /etc/tuxbox/config of in /etc/tuxbox/config/oscam."
+"Geen configuratiebestand gevonden; maak eerst de Oscam instellingen\n"
+"in /etc/tuxbox/config"
 
 msgid ""
 "No config files found, please setup Oscam first\n"
@@ -611,6 +607,10 @@ msgstr "Wacht terwijl er gestart wordt\n"
 msgid "Please wait while stopping\n"
 msgstr "Wacht terwijl er gestopt wordt\n"
 
+#, python-format
+msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - to access the new image use Multiboot restart."
+msgstr "Even wachten terwijl de flash voorbereid wordt. Nadat het image is geflashed zal uw %s herstarten - om het nieuwe image te benaderen gebruikt u Multiboot herstart."
+
 msgid "Please wait while the flash prepares."
 msgstr "Wacht terwijl het flashen wordt voorbereid."
 
@@ -661,6 +661,10 @@ msgid ""
 msgstr ""
 "Opname(s) lopen of starten zeer binnenkort!\n"
 "Wilt u toch image %s flashen?"
+
+#, python-format
+msgid "Removal of this slot will not show in %s Gui.  Are you sure you want to delete image slot %s ?"
+msgstr "Het verwijderen van dit slot zal niet zichtbaar zijn in de GUI van de %s. Weet u zeker dat u het image in slot %s wilt verwijderen?"
 
 msgid "Remove confirmation"
 msgstr "Verwijder bevestiging"
@@ -1178,6 +1182,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Create empty slot"
 #~ msgstr "Creëer leeg slot"
 
+#~ msgid "Create: Recovery Fullbackup %s"
+#~ msgstr "Creëer: recovery back-up %s"
+
 #~ msgid "Creating Backup Files..."
 #~ msgstr "Creëert back-upbestanden..."
 
@@ -1333,17 +1340,17 @@ msgstr "niet beschikbaar"
 
 #~ msgid ""
 #~ "No config files found, please setup Oscam first\n"
-#~ "in /etc/tuxbox/config"
-#~ msgstr ""
-#~ "Geen configuratiebestand gevonden; maak eerst de Oscam instellingen\n"
-#~ "in /etc/tuxbox/config"
-
-#~ msgid ""
-#~ "No config files found, please setup Oscam first\n"
 #~ "in /etc/tuxbox/config or /etc/tuxbox/config/oscam"
 #~ msgstr ""
 #~ "Geen configuratiebestand gevonden; maak eerst de Oscam instellingen\n"
 #~ "in /etc/tuxbox/config of /etc/tuxbox/config/oscam"
+
+#~ msgid ""
+#~ "No config files found, please setup Oscam first\n"
+#~ "in /etc/tuxbox/config or in /etc/tuxbox/config/oscam."
+#~ msgstr ""
+#~ "Geen configuratiebestand gevonden. U moet eerst Oscam instellen\n"
+#~ "in /etc/tuxbox/config of in /etc/tuxbox/config/oscam."
 
 #~ msgid "No plugins where needed to be installed"
 #~ msgstr "Er hoefden geen plugins te worden geïnstalleerd"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-17 08:30+0100\n"
-"PO-Revision-Date: 2019-04-18 23:50+0200\n"
+"POT-Creation-Date: 2019-07-02 07:52+0100\n"
+"PO-Revision-Date: 2019-07-04 23:44+0200\n"
 "Last-Translator: Kojo\n"
 "Language-Team: Samzan/Kojo\n"
 "Language: fi\n"
@@ -19,6 +19,9 @@ msgstr ""
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
+
+msgid "'User' url has not been specified, please use MENU button to initialise"
+msgstr "'Käyttäjän' URL:ia ei ole määritelty, paina MENU-nappulaa"
 
 msgid "128 Mb"
 msgstr "128 Mb"
@@ -222,6 +225,9 @@ msgstr "Sulje ikkunan tehtävän onnistuessa"
 msgid "Comparing against backup..."
 msgstr "Vertaillaan varmuuskopioon..."
 
+msgid "Compress"
+msgstr "Pakkaa"
+
 msgid "Create"
 msgstr "Luo"
 
@@ -239,10 +245,6 @@ msgstr "Luo tyhjä paikka."
 
 msgid "Create:"
 msgstr "Luo:"
-
-#, python-format
-msgid "Create: Recovery Fullbackup %s"
-msgstr "Luo: Täysi varmuuskopio %s"
 
 msgid "Creating SWAP.."
 msgstr "Luodaan sivutustiedostoa..."
@@ -280,6 +282,9 @@ msgstr "Laite: Ei yhtään saatavilla"
 msgid "Disable startup"
 msgstr "Käynnistys pois päältä"
 
+msgid "Do you want to change download url"
+msgstr "Haluatko vaihtaa latausosoitteen?"
+
 msgid ""
 "Do you want to create a full image backup?\n"
 "This can take about 6 minutes to complete."
@@ -306,6 +311,9 @@ msgstr "Haluatko palauttaa käyttämäsi Enigma2-asetukset?"
 
 msgid "Do you want to restore your enigma2 settings ?"
 msgstr "Haluatko palauttaa enigma2 -asetuksesi?"
+
+msgid "DownLoad"
+msgstr "Lataa"
 
 msgid "Download"
 msgstr "Lataa"
@@ -350,6 +358,9 @@ msgstr "Pyyhi"
 msgid "Exit the restore wizard"
 msgstr "Sulje palautusohjelma"
 
+msgid "Expand"
+msgstr "Laajenna"
+
 msgid "Extra IPK's"
 msgstr "Lisä IPK:t"
 
@@ -383,14 +394,42 @@ msgstr "H9SD-kortin hallinnointi"
 msgid "HARD DISK: "
 msgstr "Kiintolevy: "
 
+msgid "Http url for OpenATV Images"
+msgstr "Http URL OpenATV imagelle"
+
+msgid "Http url for OpenPli Images"
+msgstr "Http URL OpenPli imagelle"
+
+msgid "Http url for OpenViX Images"
+msgstr "Http URL OpenViX imagelle"
+
+msgid "Http url for User Images"
+msgstr "Http URL käyttäjien tekemille imagelle"
+
 msgid "IPK installer"
 msgstr "IPK:n asennus"
+
+#, python-format
+msgid "Image Version %s"
+msgstr "Imagen versio %s"
 
 msgid "Image manager"
 msgstr "Imagen hallinnointi"
 
 msgid "Image manager settings"
 msgstr "Imagen hallinnoinnin asetukset"
+
+msgid "ImageLib_ATV"
+msgstr "ImageLib_ATV"
+
+msgid "ImageLib_Pli"
+msgstr "ImageLib_Pli"
+
+msgid "ImageLib_User"
+msgstr "ImageLib_User"
+
+msgid "ImageLib_ViX"
+msgstr "ImageLib_ViX"
 
 msgid "Inactive"
 msgstr "Ei käytössä"
@@ -556,6 +595,9 @@ msgstr ""
 "Asetus-tiedostoa ei löytynyt, asenna Oscam-asetukset\n"
 "hakemistoon /etc/tuxbox/config."
 
+msgid "No images found for selected download server...if password check validity"
+msgstr "Valitulta palvelimelta ei löytynyt imagea, jos vaatii salasanan, varmista että se on oikein"
+
 msgid "No plugins needed to be installed"
 msgstr "Lisäosia ei tarvitse asentaa"
 
@@ -610,6 +652,10 @@ msgstr "Odota, käynnistetään\n"
 msgid "Please wait while stopping\n"
 msgstr "Odota, pysäytetään\n"
 
+#, python-format
+msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - if error please use Recovery mode to restart."
+msgstr "Odota että päivitys valmistuu, %s uudelleenkäynnistyy kun image on asennettu. Jos tulee virheitä, käytä Recovery-tilaa uudelleenkäynnistykseen."
+
 msgid "Please wait while the flash prepares."
 msgstr "Odota kun asennusta valmistellaan."
 
@@ -661,6 +707,10 @@ msgstr ""
 "Tallennus käynnissä, tai alkamassa hetken kuluttua\n"
 "Haluatko silti päivittää imagen\n"
 "%s?"
+
+#, python-format
+msgid "Removal of this slot will not show in %s Gui.  Are you sure you want to delete image slot %s ?"
+msgstr "Tämän paikan poisto ei näy %s käyttöliittymässä. Oletko varma että haluat poistaa imagen paikasta %s ?"
 
 msgid "Remove confirmation"
 msgstr "Poista vahvistus"
@@ -744,8 +794,9 @@ msgstr "Valitse palautettava varmuskopio:"
 msgid "Select a package to install:"
 msgstr "Valitse asennettava ohjelmapaketti:"
 
-msgid "Select an image to download:"
-msgstr "Valitse ladattava image:"
+#, python-format
+msgid "Select an image to download for %s:"
+msgstr "Valitse ladattava image laitteelle %s:"
 
 msgid "Select an image to flash:"
 msgstr "Valitse päivitettävä image:"
@@ -886,9 +937,6 @@ msgstr "Ei ole varmuuskopiota mitä palauttaa."
 
 msgid "There is no image to delete."
 msgstr "Ei ole imagea mitä poistaa."
-
-msgid "There is no image to download."
-msgstr "Ei ole imagea mitä ladata."
 
 msgid "There is no image to flash."
 msgstr "Ei ole imagea mitä päivittää."
@@ -1163,6 +1211,9 @@ msgstr "ei saatavilla"
 #~ msgid "Create and Restore complete images of your system."
 #~ msgstr "Muokkaa image-varmuuskopioita"
 
+#~ msgid "Create: Recovery Fullbackup %s"
+#~ msgstr "Luo: Täysi varmuuskopio %s"
+
 #~ msgid "Creating Swap.."
 #~ msgstr "Luodaan sivutustiedostoa..."
 
@@ -1368,6 +1419,9 @@ msgstr "ei saatavilla"
 #~ msgid "Select an image to Download:"
 #~ msgstr "Valitse ladattava ohjelmisto:"
 
+#~ msgid "Select an image to download:"
+#~ msgstr "Valitse ladattava image:"
+
 #~ msgid "Select an image to restore:"
 #~ msgstr "Valitse palautettava varmuuskopio:"
 
@@ -1469,6 +1523,9 @@ msgstr "ei saatavilla"
 
 #~ msgid "The wizard is finished now, and will reboot"
 #~ msgstr "Tehtävä suoritettu loppuun, laite käynnistyy uudelleen"
+
+#~ msgid "There is no image to download."
+#~ msgstr "Ei ole imagea mitä ladata."
 
 #~ msgid "This Device is already mounted as HDD."
 #~ msgstr "Tämä laite on jo liitetty HDD:nä."

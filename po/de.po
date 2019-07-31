@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-07 18:27+0000\n"
-"PO-Revision-Date: 2019-03-07 21:02+0100\n"
+"POT-Creation-Date: 2019-07-25 01:17+0100\n"
+"PO-Revision-Date: 2019-07-31 19:20+0200\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -20,6 +20,9 @@ msgstr ""
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
+
+msgid "'User' url has not been specified, please use MENU button to initialise"
+msgstr "'Benutzer' URL nicht angegeben. Beiite benutze Menü Button zum Initialisieren."
 
 msgid "128 Mb"
 msgstr ""
@@ -217,6 +220,9 @@ msgstr "Fenster bei Erfolg schließen"
 msgid "Comparing against backup..."
 msgstr "Vergleiche mit Backup..."
 
+msgid "Compress"
+msgstr ""
+
 msgid "Create"
 msgstr "Erstellen"
 
@@ -234,10 +240,6 @@ msgstr "Erzeuge leeren Slot."
 
 msgid "Create:"
 msgstr ""
-
-#, python-format
-msgid "Create: Recovery Fullbackup %s"
-msgstr "Erzeuge: Komplettbackup %s für Recovery"
 
 msgid "Creating SWAP.."
 msgstr "Erzeuge Swap..."
@@ -275,6 +277,9 @@ msgstr "Gerät: keines verfügbar"
 msgid "Disable startup"
 msgstr "Deaktiviere Startup"
 
+msgid "Do you want to change download url"
+msgstr "Willst Du URL für Download ändern?"
+
 msgid ""
 "Do you want to create a full image backup?\n"
 "This can take about 6 minutes to complete."
@@ -301,6 +306,9 @@ msgstr "Willst Du deine Enigma2 Einstellungen wieder herstellen?"
 
 msgid "Do you want to restore your enigma2 settings ?"
 msgstr "Willst Du die Enigma2-Einstellungen wieder herstellen?"
+
+msgid "DownLoad"
+msgstr ""
 
 msgid "Download"
 msgstr "Herunterladen"
@@ -343,6 +351,9 @@ msgstr "Löschen"
 msgid "Exit the restore wizard"
 msgstr "Wiederherstellungsassistenten beenden"
 
+msgid "Expand"
+msgstr ""
+
 msgid "Extra IPK's"
 msgstr "Extra IPK's"
 
@@ -376,14 +387,42 @@ msgstr "H9 SD-Karten Verwaltung"
 msgid "HARD DISK: "
 msgstr "FESTPLATTE: "
 
+msgid "Http url for OpenATV Images"
+msgstr "HTTP URL für OpenATV Images"
+
+msgid "Http url for OpenPli Images"
+msgstr "HTTP URL für OpenPli Images"
+
+msgid "Http url for OpenViX Images"
+msgstr "HTTP URL für OpenViX Images"
+
+msgid "Http url for User Images"
+msgstr "HTTP URL für Benutzer Images"
+
 msgid "IPK installer"
 msgstr "IPK Instalieren"
+
+#, python-format
+msgid "Image Version %s"
+msgstr ""
 
 msgid "Image manager"
 msgstr "Image Verwaltung"
 
 msgid "Image manager settings"
 msgstr "Image Verwaltung Einstellungen"
+
+msgid "ImageLib_ATV"
+msgstr ""
+
+msgid "ImageLib_Pli"
+msgstr ""
+
+msgid "ImageLib_User"
+msgstr ""
+
+msgid "ImageLib_ViX"
+msgstr ""
 
 msgid "Inactive"
 msgstr "Inaktiv"
@@ -467,7 +506,7 @@ msgid "Mount"
 msgstr "Einhängen"
 
 msgid "Mount failed."
-msgstr ""
+msgstr "Mount fehlgeschlagen."
 
 msgid "Mount manager"
 msgstr "Mount Verwaltung"
@@ -493,11 +532,15 @@ msgstr "Multiboot Image Verwaltung"
 msgid "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
 msgstr "Multiboot Verwaltung - SD Karte kann nicht initialisiert werden wenn ein Image von dieser Karte gestartet ist."
 
-msgid "Multiboot manager - SDcard initialization run, please restart OpenViX."
-msgstr "Multiboot Verwaltung - SD Karte wurde initialisiert. Bitte OpenViX neu starten."
+msgid "Multiboot manager - SDcard initialization run, please restart your Image."
+msgstr "Multiboot Verwaltung - Initialisierung der DS-Karte läuft. Bitte danach Image neu starten."
 
 msgid "Multiboot manager - The SDcard must be at least 8MB."
 msgstr "Multiboot Verwaltung. Die SD-Karte muss m indestens 8MB groß sein."
+
+#, python-format
+msgid "Multiboot manager - to use this routine %s image must be at OpenViX 4.2.043 or later and USB flashed - reply Yes to continue"
+msgstr "Multiboot Verwaltung - Um diese Routine zu benutzen %s Image muss OpenViX 4.2.043 oder neuer sein. Wähle Ja um fortzufahren."
 
 msgid "Multiboot only able to restore this backup to mmc slot1"
 msgstr "Multiboot kann dieses Backup nur auf MMC Slot 1 wieder herstellen"
@@ -537,10 +580,10 @@ msgstr ""
 
 msgid ""
 "No config files found, please setup Oscam first\n"
-"in /etc/tuxbox/config or in /etc/tuxbox/config/oscam."
+"in /etc/tuxbox/config"
 msgstr ""
-"Keine Konfigdatei gefunden. Bitte OScam erst einrichten\n"
-"in /etc/tuxbox/config oder /etc/tuxbox/config/oscam."
+"Keine Konfigurationsdateien gefunden, bitte zuerst OScam einrichten\n"
+"in /etc/tuxbox/config"
 
 msgid ""
 "No config files found, please setup Oscam first\n"
@@ -548,6 +591,9 @@ msgid ""
 msgstr ""
 "Keine Konfigdatei gefunden. Bitte OScam erst einrichten\n"
 "in /etc/tuxbox/config"
+
+msgid "No images found for selected download server...if password check validity"
+msgstr "Keine Images auf gewähltem Server gefunden. Falls mit Passwort überprüfe Gültigkeit."
 
 msgid "No plugins needed to be installed"
 msgstr "Es war nicht nötig Plugins zu installieren"
@@ -601,6 +647,10 @@ msgstr "Startvorgang abwarten\n"
 msgid "Please wait while stopping\n"
 msgstr "Bitte Stoppvorgang abwarten\n"
 
+#, python-format
+msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - if error please use Recovery mode to restart."
+msgstr "Bitte warten während Flash vorbereitet wird. Nachdem das Image geflashed wurde wird deine %s neu gestartet. Bei Fehler benutze den Recovery-Modus zum Neustart."
+
 msgid "Please wait while the flash prepares."
 msgstr "Bitte warten während Flash sich vorbereitet."
 
@@ -652,6 +702,10 @@ msgstr ""
 "Aufnahme(n) laufen oder starten in wenigen Sekunden!\n"
 "Willst Du immer noch das Image \n"
 "%s flashen?"
+
+#, python-format
+msgid "Removal of this slot will not show in %s Gui.  Are you sure you want to delete image slot %s ?"
+msgstr "Löschen von diesem Slot wird nicht in der GUI von %s angezeigt. Bist Du sicher das Du Slot %s löschen willst?"
 
 msgid "Remove confirmation"
 msgstr "Entfernen Bestätigung"
@@ -735,8 +789,9 @@ msgstr "Wähle ein Backup zum Wiederherstellen"
 msgid "Select a package to install:"
 msgstr "Paket zur Installation wählen:"
 
-msgid "Select an image to download:"
-msgstr "Wähle Image zum herunterladen:"
+#, python-format
+msgid "Select an image to download for %s:"
+msgstr "Wähle ein Image zum download für %s:"
 
 msgid "Select an image to flash:"
 msgstr "Wähle ein Image zum Wiederherstellen:"
@@ -877,9 +932,6 @@ msgstr "Kein Backup zum wieder herstellen."
 
 msgid "There is no image to delete."
 msgstr "Kein Image zum löschen."
-
-msgid "There is no image to download."
-msgstr "Kein Image zum Download."
 
 msgid "There is no image to flash."
 msgstr "Kein Image zum flashen."
@@ -1157,6 +1209,9 @@ msgstr "nicht verfügbar"
 #~ msgid "Create empty slot"
 #~ msgstr "Ereuge leeren Slot"
 
+#~ msgid "Create: Recovery Fullbackup %s"
+#~ msgstr "Erzeuge: Komplettbackup %s für Recovery"
+
 #~ msgid "Creating Backup Files..."
 #~ msgstr "Backup-Dateien werden erstellt..."
 
@@ -1253,6 +1308,9 @@ msgstr "nicht verfügbar"
 #~ msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX."
 #~ msgstr "Multiboot Verwaltung - SD-Karte wurde initialisiert. Bitte Box neu starten."
 
+#~ msgid "Multiboot manager - SDcard initialization run, please restart OpenViX."
+#~ msgstr "Multiboot Verwaltung - SD Karte wurde initialisiert. Bitte OpenViX neu starten."
+
 #~ msgid "New Backup"
 #~ msgstr "Neues Backup"
 
@@ -1296,17 +1354,17 @@ msgstr "nicht verfügbar"
 
 #~ msgid ""
 #~ "No config files found, please setup Oscam first\n"
-#~ "in /etc/tuxbox/config"
-#~ msgstr ""
-#~ "Keine Konfigurationsdateien gefunden, bitte zuerst OScam einrichten\n"
-#~ "in /etc/tuxbox/config"
-
-#~ msgid ""
-#~ "No config files found, please setup Oscam first\n"
 #~ "in /etc/tuxbox/config or /etc/tuxbox/config/oscam"
 #~ msgstr ""
 #~ "Keine  Config Datei gefunden. Bitte Oscam erst konfigurieren.\n"
 #~ "Konfiguration gehört nach /etc/tuxbox/config oder /etc/tuxbox/config/oscam"
+
+#~ msgid ""
+#~ "No config files found, please setup Oscam first\n"
+#~ "in /etc/tuxbox/config or in /etc/tuxbox/config/oscam."
+#~ msgstr ""
+#~ "Keine Konfigdatei gefunden. Bitte OScam erst einrichten\n"
+#~ "in /etc/tuxbox/config oder /etc/tuxbox/config/oscam."
 
 #~ msgid "No plugins where needed to be installed"
 #~ msgstr "Es müssen keine Plugins installiert werden"
@@ -1379,6 +1437,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Select an image to Download:"
 #~ msgstr "Image zum Herunterladen auswählen:"
+
+#~ msgid "Select an image to download:"
+#~ msgstr "Wähle Image zum herunterladen:"
 
 #~ msgid "Select an image to restore:"
 #~ msgstr "Wähle ein Image zur Wiederherstellung:"
@@ -1496,6 +1557,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "The wizard is finished now, and will reboot"
 #~ msgstr "Der Assistent wurde beendet jetzt folgt ein Neustart"
+
+#~ msgid "There is no image to download."
+#~ msgstr "Kein Image zum Download."
 
 #~ msgid "This Device is already mounted as HDD."
 #~ msgstr "Das Gerät ist bereits als HDD eingehängt."

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-28 17:24+0100\n"
-"PO-Revision-Date: 2019-04-29 10:25+0200\n"
+"POT-Creation-Date: 2019-08-18 19:34+0000\n"
+"PO-Revision-Date: 2019-08-19 04:57+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -16,10 +16,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
+
+msgid "'User' url has not been specified, please use MENU button to initialise"
+msgstr "'User' url is niet gespecificeerd; gebruik de MENU-toets om die te initialiseren"
 
 msgid "128 Mb"
 msgstr "128 Mb"
@@ -223,6 +226,9 @@ msgstr "Sluit venster indien geslaagd"
 msgid "Comparing against backup..."
 msgstr "Vergelijkt met back-up..."
 
+msgid "Compress"
+msgstr "Comprimeer"
+
 msgid "Create"
 msgstr "Creëer"
 
@@ -277,6 +283,9 @@ msgstr "Apparaat: geen beschikbaar"
 msgid "Disable startup"
 msgstr "Schakel opstarten uit"
 
+msgid "Do you want to change download url"
+msgstr "Wilt u de download url veranderen"
+
 msgid ""
 "Do you want to create a full image backup?\n"
 "This can take about 6 minutes to complete."
@@ -303,6 +312,9 @@ msgstr "Wilt u de Enigma2 instellingen terugplaatsen?"
 
 msgid "Do you want to restore your enigma2 settings ?"
 msgstr "Wilt u de Enigma2-instellingen terugzetten?"
+
+msgid "DownLoad"
+msgstr "DownLoad"
 
 msgid "Download"
 msgstr "Download"
@@ -347,6 +359,9 @@ msgstr "Wis"
 msgid "Exit the restore wizard"
 msgstr "Beeindig de herstel wizard"
 
+msgid "Expand"
+msgstr "Decomprimeer"
+
 msgid "Extra IPK's"
 msgstr "Extra IPK's"
 
@@ -380,14 +395,42 @@ msgstr "H9SD-kaart Manager"
 msgid "HARD DISK: "
 msgstr "HARDE SCHIJF: "
 
+msgid "Http url for OpenATV Images"
+msgstr "Http url voor OpenATV Images"
+
+msgid "Http url for OpenPli Images"
+msgstr "Http url voor OpenPli Images"
+
+msgid "Http url for OpenViX Images"
+msgstr "Http url voor OpenViX Images"
+
+msgid "Http url for User Images"
+msgstr "Http url voor gebruikersimages"
+
 msgid "IPK installer"
 msgstr "IPK installeren"
+
+#, python-format
+msgid "Image Version %s"
+msgstr "Image Versie %s"
 
 msgid "Image manager"
 msgstr "Image manager"
 
 msgid "Image manager settings"
 msgstr "Image manager instellingen"
+
+msgid "ImageLib_ATV"
+msgstr "ImageLib_ATV"
+
+msgid "ImageLib_Pli"
+msgstr "ImageLib_Pli"
+
+msgid "ImageLib_User"
+msgstr "ImageLib_User"
+
+msgid "ImageLib_ViX"
+msgstr "ImageLib_ViX"
 
 msgid "Inactive"
 msgstr "Inactief"
@@ -497,11 +540,15 @@ msgstr "Multiboot image manager"
 msgid "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
 msgstr "Multiboot manager - Kan SD-kaart niet initialiseren als het image vanaf de kaart loopt."
 
-msgid "Multiboot manager - SDcard initialization run, please restart OpenViX."
-msgstr "Multiboot manager - SD-kaart initialisatie, herstart OpenViX."
+msgid "Multiboot manager - SDcard initialization run, please restart your Image."
+msgstr "Multiboot manager - SDcard initialisatie, herstart uw STB."
 
 msgid "Multiboot manager - The SDcard must be at least 8MB."
 msgstr "Multiboot manager - De SD-kaart moet tenminste 8MB groot zijn."
+
+#, python-format
+msgid "Multiboot manager - to use this routine %s image must be at OpenViX 4.2.043 or later and USB flashed - reply Yes to continue"
+msgstr "Multiboot manager - om dee routine te gebruiken moet %s image OpenViX 4.2.043 of later zijn en USB geflashed - antwoord Yes om door te gaan"
 
 msgid "Multiboot only able to restore this backup to mmc slot1"
 msgstr "Multiboot kan deze back-up alleen maar herstellen van mmc slot1"
@@ -552,6 +599,9 @@ msgid ""
 msgstr ""
 "Geen configuratiebestand gevonden. U moet eerst Oscam instellen\n"
 "in /etc/tuxbox/config."
+
+msgid "No images found for selected download server...if password check validity"
+msgstr "Geen images gevonden op de geselecteerde downloadserver. Indien er een wachtwoord wordt gebruikt, moet u dat controleren"
 
 msgid "No plugins needed to be installed"
 msgstr "Er hoefden geen plugins geïnstalleerd te worden"
@@ -608,8 +658,8 @@ msgid "Please wait while stopping\n"
 msgstr "Wacht terwijl er gestopt wordt\n"
 
 #, python-format
-msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - to access the new image use Multiboot restart."
-msgstr "Even wachten terwijl de flash voorbereid wordt. Nadat het image is geflashed zal uw %s herstarten - om het nieuwe image te benaderen gebruikt u Multiboot herstart."
+msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - if error please use Recovery mode to restart."
+msgstr "Wacht terwijl de flash voorbereid wordt; nadat het image is geflashed, zal uw %s herstarten. Als er een fout optreedt, gebruikt u de recovery modus om te herstarten."
 
 msgid "Please wait while the flash prepares."
 msgstr "Wacht terwijl het flashen wordt voorbereid."
@@ -748,8 +798,9 @@ msgstr "Kies een back-up om te herstellen:"
 msgid "Select a package to install:"
 msgstr "Selecteer een pakket om te installeren:"
 
-msgid "Select an image to download:"
-msgstr "Kies een image om te downloaden:"
+#, python-format
+msgid "Select an image to download for %s:"
+msgstr "Selecteer een image om te downloaden voor %s:"
 
 msgid "Select an image to flash:"
 msgstr "Kies een image om te flashen:"
@@ -890,9 +941,6 @@ msgstr "Er is geen back-up om te herstellen."
 
 msgid "There is no image to delete."
 msgstr "Er is geen image om te verwijderen."
-
-msgid "There is no image to download."
-msgstr "Er is geen image om te downloaden."
 
 msgid "There is no image to flash."
 msgstr "Er is geen image om te flashen."
@@ -1296,6 +1344,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX."
 #~ msgstr "Multiboot manager - SD-kaart initialisatie, herstart OpenViX."
 
+#~ msgid "Multiboot manager - SDcard initialization run, please restart OpenViX."
+#~ msgstr "Multiboot manager - SD-kaart initialisatie, herstart OpenViX."
+
 #~ msgid "Multiboot manager - The SDcard must be at least 8MB"
 #~ msgstr "Multibootmanager - De SD-kaart moet minimaal 8MB groot zijn."
 
@@ -1385,6 +1436,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Please wait while the flash prepares"
 #~ msgstr "Wacht terwijl het flashen wordt voorbereid"
 
+#~ msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - to access the new image use Multiboot restart."
+#~ msgstr "Even wachten terwijl de flash voorbereid wordt. Nadat het image is geflashed zal uw %s herstarten - om het nieuwe image te benaderen gebruikt u Multiboot herstart."
+
 #~ msgid "Please wait while the restore prepares"
 #~ msgstr "Wacht terwijl het herstellen wordt voorbereid."
 
@@ -1426,6 +1480,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Select an image to Download:"
 #~ msgstr "Selecteer een image om te downloaden:"
+
+#~ msgid "Select an image to download:"
+#~ msgstr "Kies een image om te downloaden:"
 
 #~ msgid "Select an image to restore:"
 #~ msgstr "Kies een image om terug te zetten"
@@ -1543,6 +1600,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "The wizard is finished now, and will reboot"
 #~ msgstr "De wizard is gereed; uw systeem wordt opnieuw gestart."
+
+#~ msgid "There is no image to download."
+#~ msgstr "Er is geen image om te downloaden."
 
 #~ msgid "This Device is already mounted as HDD."
 #~ msgstr "Dit medium is al gemount als HDD."

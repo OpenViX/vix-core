@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-18 19:34+0000\n"
-"PO-Revision-Date: 2019-08-19 04:57+0200\n"
+"PO-Revision-Date: 2019-09-05 17:55+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -412,7 +412,7 @@ msgstr "IPK installeren"
 
 #, python-format
 msgid "Image Version %s"
-msgstr "Image Versie %s"
+msgstr "Image versie %s"
 
 msgid "Image manager"
 msgstr "Image manager"
@@ -548,7 +548,7 @@ msgstr "Multiboot manager - De SD-kaart moet tenminste 8MB groot zijn."
 
 #, python-format
 msgid "Multiboot manager - to use this routine %s image must be at OpenViX 4.2.043 or later and USB flashed - reply Yes to continue"
-msgstr "Multiboot manager - om dee routine te gebruiken moet %s image OpenViX 4.2.043 of later zijn en USB geflashed - antwoord Yes om door te gaan"
+msgstr "Multiboot manager - om deze routine te gebruiken moet %s image OpenViX 4.2.043 of later zijn en USB geflashed - antwoord \"Ja\" om door te gaan"
 
 msgid "Multiboot only able to restore this backup to mmc slot1"
 msgstr "Multiboot kan deze back-up alleen maar herstellen van mmc slot1"

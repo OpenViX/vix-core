@@ -3,33 +3,34 @@ from boxbranding import getBoxType, getImageType, getImageDistro, getImageVersio
 from os import path, stat, system, mkdir, makedirs, listdir, remove, rename, statvfs, chmod, walk, symlink, unlink
 from shutil import rmtree, move, copy, copyfile
 from time import localtime, time, strftime, mktime
+import urllib, urllib2, json
 
 from enigma import eTimer, fbClass
 
 from . import _, PluginLanguageDomain
 import Components.Task
 from Components.ActionMap import ActionMap
-from Components.Label import Label
 from Components.Button import Button
-from Components.MenuList import MenuList
+from Components.ChoiceList import ChoiceList, ChoiceEntryComponent
 from Components.config import config, ConfigSubsection, ConfigYesNo, ConfigSelection, ConfigText, ConfigNumber, NoSave, ConfigClock
+from Components.Console import Console
 from Components.Harddisk import harddiskmanager, getProcMounts
+from Components.Label import Label
+from Components.MenuList import MenuList
 from Components.Sources.StaticText import StaticText
 from Components.SystemInfo import SystemInfo
+from Screens.Console import Console as ScreenConsole
+from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Setup import Setup
-from Components.Console import Console
-from Screens.Console import Console as ScreenConsole
-from Screens.TaskView import JobView
-from Screens.MessageBox import MessageBox
 from Screens.Standby import TryQuitMainloop
-from Tools.Notifications import AddPopupWithCallback
+from Screens.TaskView import JobView
+from Tools.BoundFunction import boundFunction
 from Tools.Directories import fileExists, fileCheck, pathExists, fileHas
 import Tools.CopyFiles
-from Tools.Multiboot import GetImagelist, GetCurrentImage, GetCurrentKern, GetCurrentRoot
-from Components.ChoiceList import ChoiceList, ChoiceEntryComponent
 from Tools.HardwareInfo import HardwareInfo
-import urllib, urllib2, json
+from Tools.Multiboot import GetImagelist, GetCurrentImage, GetCurrentKern, GetCurrentRoot
+from Tools.Notifications import AddPopupWithCallback
 
 RAMCHEKFAILEDID = 'RamCheckFailedNotification'
 

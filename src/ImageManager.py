@@ -34,16 +34,18 @@ from Tools.Notifications import AddPopupWithCallback
 
 RAMCHEKFAILEDID = 'RamCheckFailedNotification'
 
-hddchoises = []
+hddchoices = []
 for p in harddiskmanager.getMountedPartitions():
 	if path.exists(p.mountpoint):
 		d = path.normpath(p.mountpoint)
-		if p.mountpoint != '/':
-			hddchoises.append((p.mountpoint, d))
+		if SystemInfo["canMultiBoot"] and SystemInfo["canMultiBoot"][2] in d:
+				continue
+		elif p.mountpoint != '/':
+			hddchoices.append((p.mountpoint, d))
 config.imagemanager = ConfigSubsection()
 defaultprefix = getImageDistro() + '-' + getBoxType()
 config.imagemanager.folderprefix = ConfigText(default=defaultprefix, fixed_size=False)
-config.imagemanager.backuplocation = ConfigSelection(choices=hddchoises)
+config.imagemanager.backuplocation = ConfigSelection(choices=hddchoices)
 config.imagemanager.schedule = ConfigYesNo(default=False)
 config.imagemanager.scheduletime = ConfigClock(default=0)  # 1:00
 config.imagemanager.repeattype = ConfigSelection(default="daily", choices=[("daily", _("Daily")), ("weekly", _("Weekly")), ("monthly", _("30 Days"))])
@@ -134,6 +136,7 @@ class VIXImageManager(Screen):
 		self["key_red"] = Button(_("Delete"))
 
 		self.BackupRunning = False
+		self.BackupDirectory = " "
 		if SystemInfo["canMultiBoot"]:
 			self.mtdboot = "%s1" % SystemInfo["canMultiBoot"][2]
 	 		if SystemInfo["canMultiBoot"][2] == "sda":
@@ -197,6 +200,8 @@ class VIXImageManager(Screen):
 			self["list"].instance.moveSelection(self["list"].instance.moveDown)
 
 	def refreshList(self):
+		if self.BackupDirectory == " ":
+			return
 		images = listdir(self.BackupDirectory)
 		self.oldlist = images
 		del self.emlist[:]
@@ -220,14 +225,6 @@ class VIXImageManager(Screen):
 		Components.Task.job_manager.in_background = in_background
 
 	def populate_List(self):
-		imparts = []
-		for p in harddiskmanager.getMountedPartitions():
-			if path.exists(p.mountpoint):
-				d = path.normpath(p.mountpoint)
-				if p.mountpoint != '/':
-					imparts.append((p.mountpoint, d))
-		config.imagemanager.backuplocation.setChoices(imparts)
-
 		if config.imagemanager.backuplocation.value.endswith('/'):
 			mount = config.imagemanager.backuplocation.value, config.imagemanager.backuplocation.value[:-1]
 		else:

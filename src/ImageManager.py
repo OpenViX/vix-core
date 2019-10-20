@@ -1459,7 +1459,7 @@ class ImageManagerDownload(Screen):
 		self.urlb = self.urli+self.boxtype+'/'
 		
 		if "atv" in self.urli:
-			imagecat = [6.2,6.3]
+			imagecat = [6.2,6.3, 6.4]
 		elif "www.openvix" in self.urli:
 			imagecat = [5.3]
 

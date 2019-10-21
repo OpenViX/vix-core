@@ -221,32 +221,14 @@ class VIXBackupManager(Screen):
 		else:
 			mount = config.backupmanager.backuplocation.value + '/', config.backupmanager.backuplocation.value
 		hdd = '/media/hdd/', '/media/hdd'
-		if mount not in config.backupmanager.backuplocation.choices.choices:
-			if hdd in config.backupmanager.backuplocation.choices.choices:
-				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "TimerEditActions"],
-											  {
-											  'cancel': self.close,
-											  'ok': self.keyResstore,
-											  'red': self.keyDelete,
-											  'green': self.GreenPressed,
-											  'yellow': self.keyResstore,
-											  "menu": self.createSetup,
-											  'log': self.showLog,
-											  }, -1)
+		if mount not in config.backupmanager.backuplocation.choices.choices and hdd not in config.backupmanager.backuplocation.choices.choices:
+			self['myactions'] = ActionMap(['OkCancelActions', "MenuActions"],
+										  {
+										  'cancel': self.close,
+										  "menu": self.createSetup,
+										  }, -1)
 
-				self.BackupDirectory = '/media/hdd/backup/'
-				config.backupmanager.backuplocation.value = '/media/hdd/'
-				config.backupmanager.backuplocation.save()
-				self['lab1'].setText(_("The chosen location does not exist, using /media/hdd.") + "\n" + _("Select a backup to restore:"))
-			else:
-				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "TimerEditActions"],
-											  {
-											  'cancel': self.close,
-											  "menu": self.createSetup,
-											  'log': self.showLog,
-											  }, -1)
-
-				self['lab1'].setText(_("Device: none available") + "\n" + _("Select a backup to restore:"))
+			self['lab1'].setText(_("Device: none available") + "\n" + _("Press 'Menu' to select a storage device"))
 		else:
 			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "TimerEditActions"],
 										  {
@@ -258,25 +240,29 @@ class VIXBackupManager(Screen):
 										  "menu": self.createSetup,
 										  'log': self.showLog,
 										  }, -1)
-
-			self.BackupDirectory = config.backupmanager.backuplocation.value + 'backup/'
-			self['lab1'].setText(_("Device: ") + config.backupmanager.backuplocation.value + "\n" + _("Select a backup to restore:"))
-
-		try:
-			if not path.exists(self.BackupDirectory):
-				mkdir(self.BackupDirectory, 0755)
-			images = listdir(self.BackupDirectory)
-			del self.emlist[:]
-			mtimes = []
-			for fil in images:
-				if fil.endswith('.tar.gz'): # prefix should only be used for naming files, not browsing them... # and fil.startswith(config.backupmanager.folderprefix.value):
-					mtimes.append((fil, stat(self.BackupDirectory + fil).st_mtime)) # (filname, mtime)
-			for fil in [x[0] for x in sorted(mtimes, key=lambda x: x[1], reverse=True)]: # sort by mtime
-				self.emlist.append(fil)
-			self["list"].setList(self.emlist)
-			self["list"].show()
-		except:
-			self['lab1'].setText(_("Device: ") + config.backupmanager.backuplocation.value + "\n" + _("There is a problem with this device. Please reformat it and try again."))
+			if mount not in config.backupmanager.backuplocation.choices.choices:
+					self.BackupDirectory = '/media/hdd/backup/'
+					config.backupmanager.backuplocation.value = '/media/hdd/'
+					config.backupmanager.backuplocation.save()
+					self['lab1'].setText(_("The chosen location does not exist, using /media/hdd.") + "\n" + _("Select a backup to restore:"))
+			else:
+				self.BackupDirectory = config.backupmanager.backuplocation.value + 'backup/'
+				self['lab1'].setText(_("Device: ") + config.backupmanager.backuplocation.value + "\n" + _("Select a backup to restore:"))
+			try:
+				if not path.exists(self.BackupDirectory):
+					mkdir(self.BackupDirectory, 0755)
+				images = listdir(self.BackupDirectory)
+				del self.emlist[:]
+				mtimes = []
+				for fil in images:
+					if fil.endswith('.tar.gz') and fil.startswith(config.backupmanager.folderprefix.value):
+						mtimes.append((fil, stat(self.BackupDirectory + fil).st_mtime)) # (filname, mtime)
+				for fil in [x[0] for x in sorted(mtimes, key=lambda x: x[1], reverse=True)]: # sort by mtime
+					self.emlist.append(fil)
+				self["list"].setList(self.emlist)
+				self["list"].show()
+			except:
+				self['lab1'].setText(_("Device: ") + config.backupmanager.backuplocation.value + "\n" + _("There is a problem with this device. Please reformat it and try again."))
 
 	def createSetup(self):
 		self.session.openWithCallback(self.setupDone, VIXBackupManagerMenu, 'vixbackupmanager', 'SystemPlugins/ViX', self.menu_path, PluginLanguageDomain)

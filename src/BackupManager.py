@@ -19,6 +19,7 @@ from Components.Harddisk import harddiskmanager
 from Components.Sources.StaticText import StaticText
 from Components.FileList import MultiFileSelectList, FileList
 from Components.ScrollLabel import ScrollLabel
+from Components.SystemInfo import SystemInfo
 from Screens.Screen import Screen
 from Components.Console import Console
 from Screens.MessageBox import MessageBox
@@ -31,17 +32,20 @@ SETTINGSRESTOREQUESTIONID = 'RestoreSettingsNotification'
 PLUGINRESTOREQUESTIONID = 'RestorePluginsNotification'
 NOPLUGINS = 'NoPluginsNotification'
 
-hddchoises = []
+hddchoices = []
 for p in harddiskmanager.getMountedPartitions():
 	if path.exists(p.mountpoint):
 		d = path.normpath(p.mountpoint)
-		if p.mountpoint != '/':
-			hddchoises.append((p.mountpoint, d))
+		if SystemInfo["canMultiBoot"] and SystemInfo["canMultiBoot"][2] in d:
+				continue
+		elif p.mountpoint != '/':
+			hddchoices.append((p.mountpoint, d))
+
 config.backupmanager = ConfigSubsection()
 config.backupmanager.showboxname = ConfigYesNo(default=False)
 defaultprefix = getImageDistro()[4:]
 config.backupmanager.folderprefix = ConfigText(default=defaultprefix, fixed_size=False)
-config.backupmanager.backuplocation = ConfigSelection(choices=hddchoises)
+config.backupmanager.backuplocation = ConfigSelection(choices=hddchoices)
 config.backupmanager.schedule = ConfigYesNo(default=False)
 config.backupmanager.scheduletime = ConfigClock(default=0)  # 1:00
 config.backupmanager.repeattype = ConfigSelection(default="daily", choices=[("daily", _("Daily")), ("weekly", _("Weekly")), ("monthly", _("30 Days"))])
@@ -154,6 +158,7 @@ class VIXBackupManager(Screen):
 		self["key_red"] = Button(_("Delete"))
 
 		self.BackupRunning = False
+		self.BackupDirectory = " "
 		self.onChangedEntry = []
 		self.emlist = []
 		self['list'] = MenuList(self.emlist)
@@ -211,14 +216,6 @@ class VIXBackupManager(Screen):
 		Components.Task.job_manager.in_background = in_background
 
 	def populate_List(self):
-		imparts = []
-		for p in harddiskmanager.getMountedPartitions():
-			if path.exists(p.mountpoint):
-				d = path.normpath(p.mountpoint)
-				if p.mountpoint != '/':
-					imparts.append((p.mountpoint, d))
-		config.backupmanager.backuplocation.setChoices(imparts)
-
 		if config.backupmanager.backuplocation.value.endswith('/'):
 			mount = config.backupmanager.backuplocation.value, config.backupmanager.backuplocation.value[:-1]
 		else:

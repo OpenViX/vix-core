@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-25 01:17+0100\n"
-"PO-Revision-Date: 2019-07-31 19:20+0200\n"
+"POT-Creation-Date: 2019-11-11 09:48+0000\n"
+"PO-Revision-Date: 2019-11-12 18:26+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -16,13 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
 
 msgid "'User' url has not been specified, please use MENU button to initialise"
-msgstr "'Benutzer' URL nicht angegeben. Beiite benutze Menü Button zum Initialisieren."
+msgstr "'Benutzer' URL nicht angegeben. Bitte benutze Menü Button zum Initialisieren."
 
 msgid "128 Mb"
 msgstr ""
@@ -185,7 +185,7 @@ msgid "CCcam can't run whilst MGcamd is running"
 msgstr "Während MGcamd läuft kann CCcam nicht ausgeführt werden"
 
 msgid "CCcam can't run whilst MGcamd is running."
-msgstr "CCcam kann nicht zusammen mit MGcamd laufen.-"
+msgstr "CCcam kann nicht zusammen mit MGcamd laufen."
 
 msgid "Can't un-mount the partition; make sure it is not being used for SWAP or record/timeshift paths."
 msgstr "Unmount vom GHerät nicht möglich. Bitte sicher stellen das es nicht von Swap, Aufnahme oder Timeshift benutzt wird."
@@ -197,7 +197,7 @@ msgid "Change location"
 msgstr "Ändere Zielverzeichnis"
 
 msgid "Checking free RAM.."
-msgstr "Prüfe freien Speicher"
+msgstr "Prüfe freien Speicher."
 
 msgid "Checking softcams..."
 msgstr "Überprüfe Softcams..."
@@ -233,7 +233,7 @@ msgid "Create and Manage your SWAP files."
 msgstr "Erzeuge und verwalte Swap Dateien."
 
 msgid "Create and flash complete images of your system."
-msgstr "Erzeuge und flashe komplettes Image von deinem System"
+msgstr "Erzeuge und flashe komplettes Image von deinem System."
 
 msgid "Create empty slot."
 msgstr "Erzeuge leeren Slot."
@@ -455,7 +455,7 @@ msgid "Install confirmation"
 msgstr "Installation Bestätigung"
 
 msgid "Install extensions."
-msgstr "Installiere Erweiterung"
+msgstr "Installiere Erweiterungen."
 
 msgid "Install local extension"
 msgstr "IPK-Dateien installieren"
@@ -518,13 +518,13 @@ msgid "Move Nand root to SD card"
 msgstr "Verschiebe Nand root auf SD Karte"
 
 msgid "Moving to backup Location..."
-msgstr "Verschiebe nach Backup-Zielverzeichnis"
+msgstr "Verschiebe nach Backup-Zielverzeichnis..."
 
 msgid "MultiBoot manager"
 msgstr "Multiboot Verwaltung"
 
 msgid "Multiboot ERROR! - no STARTUP in boot partition."
-msgstr "Multiboot Fehler! - kein STARTUP in Boot-Partition"
+msgstr "Multiboot Fehler! - kein STARTUP in Boot-Partition."
 
 msgid "Multiboot image manager"
 msgstr "Multiboot Image Verwaltung"
@@ -590,7 +590,7 @@ msgid ""
 "in /etc/tuxbox/config."
 msgstr ""
 "Keine Konfigdatei gefunden. Bitte OScam erst einrichten\n"
-"in /etc/tuxbox/config"
+"in /etc/tuxbox/config."
 
 msgid "No images found for selected download server...if password check validity"
 msgstr "Keine Images auf gewähltem Server gefunden. Falls mit Passwort überprüfe Gültigkeit."
@@ -629,7 +629,7 @@ msgid "Please select the file to restore."
 msgstr "Bitte Datei zur Wiederherstellung wählen."
 
 msgid "Please wait while plugins restore completes..."
-msgstr "Bitte warten bis Plugins wiederhergestellt sind"
+msgstr "Bitte warten bis Plugins wiederhergestellt sind..."
 
 msgid "Please wait while scanning for devices..."
 msgstr "Bitte warten. Suche Geräte..."
@@ -639,7 +639,7 @@ msgid "Please wait while scanning your %s %s devices..."
 msgstr "Bitte warten. Suche Geräte für %s %s..."
 
 msgid "Please wait while settings restore completes..."
-msgstr "Bitte warten bis Einstellungen wiederhergestellt sind"
+msgstr "Bitte warten bis Einstellungen wiederhergestellt sind..."
 
 msgid "Please wait while starting\n"
 msgstr "Startvorgang abwarten\n"
@@ -664,16 +664,19 @@ msgid "Plugin listing failed - e. g. wrong backup destination or no space left o
 msgstr "Erzeuge Plugin Liste fehlgeschlagen. Entweder falscher Ort oder nicht mehr genug freier Speicher auf dem Gerät."
 
 msgid "Preparing extra plugins..."
-msgstr "Bereite Extra Plugins vor"
+msgstr "Bereite Extra Plugins vor..."
+
+msgid "Press 'Menu' to select a storage device"
+msgstr ""
 
 msgid "Press Init to format SDcard."
 msgstr "Wähle Init um SD-Karte zu formatieren."
 
 msgid "Press OK to toggle the selection."
-msgstr "Drücke OK um die Auswahl umzukehren"
+msgstr "Drücke OK um die Auswahl umzukehren."
 
 msgid "Press appropiate Init to move Nand root to SDcard."
-msgstr "Drücke das passende Init um das Nand root auf die SD-Karte zu verschieben"
+msgstr "Drücke das passende Init um das Nand root auf die SD-Karte zu verschieben."
 
 msgid "Query before backup starts"
 msgstr "Fragen bevor Backup startet"
@@ -711,7 +714,7 @@ msgid "Remove confirmation"
 msgstr "Entfernen Bestätigung"
 
 msgid "Removing temp mounts..."
-msgstr "Entferne temporäre Mounts"
+msgstr "Entferne temporäre Mounts..."
 
 msgid "Repeat how often"
 msgstr "Wie oft wiederholen"
@@ -745,7 +748,7 @@ msgid "Restoring plugins..."
 msgstr "Plugins wiederherstellen..."
 
 msgid "Retrieving image slots - Please wait..."
-msgstr "Suche Image-Slots - Bitte warten"
+msgstr "Suche Image-Slots - Bitte warten..."
 
 msgid "Run"
 msgstr "Ausführen"
@@ -784,7 +787,7 @@ msgid "Select"
 msgstr "Auswählen"
 
 msgid "Select a backup to restore:"
-msgstr "Wähle ein Backup zum Wiederherstellen"
+msgstr "Wähle ein Backup zum Wiederherstellen:"
 
 msgid "Select a package to install:"
 msgstr "Paket zur Installation wählen:"
@@ -964,7 +967,7 @@ msgid "Use as HDD"
 msgstr "Als HDD verwenden"
 
 msgid "Use the cursor keys to select an installed image and then Erase button."
-msgstr "Benutze die Cursortasten um ein installiertes Image zu wählen und dann den Lösche Button"
+msgstr "Benutze die Cursortasten um ein installiertes Image zu wählen und dann den Lösche Button."
 
 msgid "ViX"
 msgstr "ViX"
@@ -1028,7 +1031,7 @@ msgid ""
 msgstr ""
 "Du bist dabei eMMC Flash zu flashen. Wir können keine Garantie für Fehler oder Beschädigungen an der Box übernehmen die durch diesen Prozess entstehen.\n"
 "Mit Vorsicht fortfahren!\n"
-"Bist Du sicher das dieses Image geflashed werden soll?"
+"Bist Du sicher das dieses Image geflashed werden soll:"
 
 msgid "You have decided not to flash image."
 msgstr "Du hast dich entschieden das Image nicht zu flashen."
@@ -1078,7 +1081,7 @@ msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte die Plugins mit 
 
 #, python-format
 msgid "slot%s - %s"
-msgstr "Slot%s - %s "
+msgstr "Slot%s - %s"
 
 #, python-format
 msgid "slot%s - %s "

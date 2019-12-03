@@ -63,11 +63,18 @@ for arg in sys.argv[1:]:
 	for (k, c) in attrlist:
 		print
 		print '#: ' + arg
-		string.replace(k, "\\n", "\"\n\"")
+# We need to escape all "s that we have in the string.
+# This replace() *must* come before anything that adds "s!! (such as the
+# newline-handling code).
+# Ideally we'd do this "intelligently" (check for no current preceding \)
+# but there is no reason for there ever to be one, so....
+#
+		k = str(k).replace('"', '\\"')
+		k = k.replace("\\n", "\"\n\"")
 		if c:
 			for l in c.split('\n'):
 				print "#. ", l
-		print 'msgid "' + str(k) + '"'
+		print 'msgid "' + k + '"'
 		print 'msgstr ""'
 
 	attrlist = set()

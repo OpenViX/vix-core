@@ -33,9 +33,10 @@ hddchoices = []
 for p in harddiskmanager.getMountedPartitions():
 	if path.exists(p.mountpoint):
 		d = path.normpath(p.mountpoint)
-		if SystemInfo["canMultiBoot"] and SystemInfo["canMultiBoot"][2] in d:
+		if SystemInfo["canMultiBoot"]:
+			if "mmcblk0p" in d or "mmcblk1p" in d:
 				continue
-		elif p.mountpoint != '/':
+		if p.mountpoint != '/':
 			hddchoices.append((p.mountpoint, d))
 
 config.backupmanager = ConfigSubsection()

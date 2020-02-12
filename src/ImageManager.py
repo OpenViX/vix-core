@@ -400,7 +400,7 @@ class VIXImageManager(Screen):
 	def keyResstore0(self, answer):
 		if answer:
 			if SystemInfo["canMultiBoot"]:
-				if SystemInfo["HasHiSi]:
+				if SystemInfo["HasHiSi"]:
 	 				if pathExists('/dev/sda4'):
 						self.HasSDmmc = True
 						self.getImageList = GetImagelist(self.keyRestore1)

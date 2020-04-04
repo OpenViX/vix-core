@@ -1,806 +1,1235 @@
-# Turkish translations for plugins package.
-# Copyright (C) 2011 THE plugins'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the plugins package.
-# Automatically generated, 2011.
+# Turkish translations for PACKAGE package.
+# Copyright (C) 2020 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# audi06_19 <info@dreamosat-forum.com>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2-vix-core\n"
+"Project-Id-Version: enigma2-vision-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-14 14:16+0100\n"
-"PO-Revision-Date: 2013-12-16 08:18+0100\n"
-"Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
-"Language-Team: CÜNEYT OCAKLILAR <ocaklilar@gmail.com>\n"
+"POT-Creation-Date: 2020-03-21 01:17+0300\n"
+"PO-Revision-Date: 2020-03-21 01:30+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Turkish\n"
-"X-Poedit-Country: TURKEY\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "%a %e %b  %-H:%M"
-msgstr ""
-
-msgid "128 Mb"
-msgstr ""
-
-msgid "16 Mb"
-msgstr "16 Mb"
-
-msgid "256 Mb"
-msgstr ""
-
+#: BackupManager.py:49 ImageManager.py:52
 msgid "30 Days"
 msgstr "30 Gün"
 
-msgid "32 Mb"
-msgstr "32 Mb"
+#: BackupManager.py:49 ImageManager.py:52
+msgid "Daily"
+msgstr "Günlük"
 
-msgid "64 Mb"
-msgstr "64 Mb"
+#: BackupManager.py:49 ImageManager.py:52
+msgid "Weekly"
+msgstr "Haftalık"
 
-msgid "8 Mb"
-msgstr "8 Mb"
+#: BackupManager.py:131 BackupManager.py:197 BackupManager.py:329
+#: BackupManager.py:344 BackupManager.py:387 BackupManager.py:405
+#: BackupManager.py:1147 ImageManager.py:372 ui.py:67
+msgid "Backup manager"
+msgstr "Yedekleme yöneticisi"
 
-msgid "96 Mb"
-msgstr "96 Mb"
+#: BackupManager.py:155
+msgid "Restore"
+msgstr "Geri yükle"
 
-msgid "A background update check is is progress, please wait for retry."
-msgstr "Arkaplan güncelleme kontrolu sürüyor, tekrar denemek için lütfen bekleyin."
+#: BackupManager.py:156 ImageManager.py:137 SwapManager.py:202
+msgid "Delete"
+msgstr "Sil"
 
-msgid "A backup has been detected."
-msgstr "Bir yedek bulundu."
+#: BackupManager.py:171 BackupManager.py:305 ImageManager.py:157
+#: ImageManager.py:313
+msgid "%a %e %b  %-H:%M"
+msgstr "%a %e %b  %-H:%M"
 
-msgid "Activate"
-msgstr "Etkinleştir"
+#: BackupManager.py:171 BackupManager.py:173 BackupManager.py:305
+#: BackupManager.py:307 ImageManager.py:157 ImageManager.py:159
+#: ImageManager.py:313 ImageManager.py:315
+msgid "Next backup: "
+msgstr "Sonraki yedekleme: "
 
-msgid "Active"
-msgstr "Etkin"
+#: BackupManager.py:200 BackupManager.py:341 BackupManager.py:384
+#: ImageManager.py:186 ImageManager.py:359
+msgid "View progress"
+msgstr "İlerlemeyi görüntüle"
 
-msgid "Active:"
-msgstr "Etkin:"
+#: BackupManager.py:202 ImageManager.py:188
+msgid "New backup"
+msgstr "Yeni yedekleme"
 
-msgid "Allows the softcam manager to be launched from extensions."
-msgstr "Softcam yöneticisinin uzantılardan indirilmesini sağlar."
+#: BackupManager.py:229
+msgid "Device: none available"
+msgstr "Cihaz: mevcut değil"
 
-msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
-msgstr "Softcamin çalışma kontrolunu, gerekirse tekrar otomatik olarak başlamasını sağlar."
+#: BackupManager.py:229 ImageManager.py:238
+msgid "Press 'Menu' to select a storage device"
+msgstr "Bir depolama cihazı seçmek için 'Menü'ye basın"
 
-msgid "Allows you have the window close automatically."
-msgstr "Pencereyi otomatik olarak kapamanızı sağlar."
+#: BackupManager.py:245 BackupManager.py:248
+msgid "Select a backup to restore:"
+msgstr "Geri yüklenecek bir yedek seçin:"
 
-msgid "Allows you schedule your backups."
-msgstr "Yedeklerinizi zamanlamanızı sağlar."
+#: BackupManager.py:245 ImageManager.py:257
+msgid "The chosen location does not exist, using /media/hdd."
+msgstr "/media/hdd kullanılarak seçilen konum mevcut değil."
 
-msgid "Allows you schedule your image backups."
-msgstr "İmaj yedeklerinizi zamanlamanızı sağlar."
+#: BackupManager.py:248 BackupManager.py:268 ImageManager.py:262
+#: ImageManager.py:271 MountManager.py:144 MountManager.py:279
+#: MountManager.py:294
+msgid "Device: "
+msgstr "Cihaz: "
 
-msgid "Allows you to tag your backups to a box. (default is box name/type)"
-msgstr "İmaj yedeklerinizi bir alıcı ile ilişkilendirmenizi sağlar. (varsayılan, alıcı adı/tipi)"
+#: BackupManager.py:268 ImageManager.py:271
+msgid "There is a problem with this device. Please reformat it and try again."
+msgstr "Bu cihazla ilgili bir sorun var. Lütfen yeniden biçimlendirin ve tekrar deneyin."
 
-msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr "İmaj yedeklerinizi bir alıcı ile ilişkilendirmenizi sağlar. (varsayılan, alıcı adı/tipi)"
-
-msgid "Are you ready to create a backup image ?"
-msgstr "Yedek imajı yaratmaya hazır mısınız?"
-
-msgid "Are you ready to install ?"
-msgstr "Yüklemeye hazır mısınız?"
-
+#: BackupManager.py:313
 msgid ""
 "Are you sure you want to delete this backup:\n"
 " "
 msgstr ""
-"Bu yedeği silmek istediğinizden emin misiniz:\n"
+"Bu yedeklemeyi silmek istediğinizden emin misiniz:\n"
 " "
 
+#: BackupManager.py:315 ImageManager.py:323 Multibootmgr.py:138
+#: Multibootmgr.py:142 Multibootmgr.py:157
+msgid "Remove confirmation"
+msgstr "Onayı kaldır"
+
+#: BackupManager.py:317
+msgid "There is no backup to delete."
+msgstr "Silinecek yedek yok."
+
+#: BackupManager.py:358
+msgid "There is no backup to restore."
+msgstr "Geri yüklenecek yedek yok."
+
+#: BackupManager.py:360
 msgid ""
-"Are you sure you want to download this image:\n"
-" "
+"Backup in progress,\n"
+"Please wait for it to finish, before trying again."
 msgstr ""
-"Bu imajı indirmek istediğinizden emin misiniz:\n"
-" "
+"Yedekleme devam ediyor,\n"
+"Lütfen tekrar denemeden önce bitmesini bekleyin."
 
+#: BackupManager.py:371 BackupManager.py:373 RestoreWizard.py:185
+#: RestoreWizard.py:189
+msgid "Sorry, but the file is not compatible with this image version."
+msgstr "Maalesef dosya bu resim sürümüyle uyumlu değil."
+
+#: BackupManager.py:376
 msgid ""
 "Are you sure you want to restore this backup:\n"
 " "
 msgstr ""
-"Bu yedeği geri yüklemek istediğinizden emin misiniz:\n"
+"Bu yedeklemeyi geri yüklemek istediğinizden emin misiniz:\n"
 " "
 
-msgid ""
-"Are you sure you want to restore this image:\n"
-" "
-msgstr ""
-"Bu imajı geri yüklemek istediğinizden emin misiniz:\n"
-" "
+#: BackupManager.py:378
+msgid "Restore Confirmation"
+msgstr "Onayı Geri Yükle"
 
-msgid "Autostart"
-msgstr "Oto-başlama"
+#: BackupManager.py:407 BackupManager.py:411 BackupManager.py:415
+msgid "Restoring backup..."
+msgstr "Yedekleme geri yükleniyor ..."
 
-msgid "Backing up files..."
-msgstr "Dosyalar yedekleniyor..."
-
-msgid "Backup Complete..."
-msgstr "Yedekleme tamamlandı..."
-
-msgid "Backup Confirmation"
-msgstr "Yedekleme Onayı"
-
-msgid "Backup Created"
-msgstr "Yedek Oluşturuldu"
-
-msgid "Backup Location"
-msgstr "Yedek Konumu"
-
-msgid "Backup Manager"
-msgstr "Yedekleme Yöneticisi"
-
-msgid "Backup Manager Log"
-msgstr "Yedekleme Yönetici Günlüğü"
-
-msgid "Backup Manager Setup"
-msgstr "Yedekleme Yöneticisi Kurulumu"
-
-msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Yedekleme başarısız - yanlış yedek konumu veya yedekleme ünitesinde yer kalmadı"
-
-msgid ""
-"Backup in progress,\n"
-"Please for it to finish, before trying again"
-msgstr ""
-"Yedekleniyor,\n"
-"Lütfen tekrar denemeden bitmesini bekleyin"
-
-msgid "Backup prefix"
-msgstr "Yedek öneki"
-
-msgid "CCcam can't run whilst MGcamd is running"
-msgstr "MGcamd çalışırken CCcam çalışamaz"
-
-msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Bölüm çıkarılamıyor, swap veya kayıt/zaman kaydırma yollarında kullanılmadığından emin olun"
-
-msgid "Cancel"
-msgstr "İptal"
-
-msgid "Change Location"
-msgstr "Konum Değiştir"
-
-#, python-format
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your %s %s now?"
-msgstr ""
-"Değişikliklerin etkinleşmesi için sistemin yeniden başlaması gerekiyor.\n"
-"%s %s nız şimdi tekrar başlatılsın mı?"
-
-msgid "Checking Free RAM.."
-msgstr "Boş RAM denetleniyor..."
-
-msgid "Checking softcams..."
-msgstr "Softcams denetleniyor..."
-
-msgid "Choose Files"
-msgstr "Dosyaları Seçin"
-
-msgid "Choose local ipk's folder"
-msgstr "Yerel ipk dosyasını seç"
-
-msgid "Choose where to mount your devices to:"
-msgstr "Aygıtlarınızın bağlanacağı konumu seçin:"
-
-msgid "Close"
-msgstr "Kapat"
-
-msgid "Close window on success"
-msgstr "Başarılı olunca pencereyi kapat"
-
-msgid "Comparing against backup..."
-msgstr "Yedek ile karşılaştırılıyor..."
-
-msgid "Create"
-msgstr "Yarat"
-
-msgid "Create and Manage your swapfiles."
-msgstr "Swap dosyalarınızı Yaratın ve Yönetin."
-
-msgid "Create and Restore complete images of the system."
-msgstr "Sistemin tüm imajlarını Yarat ve Yükle."
-
-msgid "Creating Backup Files..."
-msgstr "Yedek Dosyaları Yaratılıyor..."
-
-msgid "Creating Swap.."
-msgstr "Swap Yaratılıyor..."
-
+#: BackupManager.py:419 BackupManager.py:423 BackupManager.py:1157
+#: BackupManager.py:1161
 msgid "Creating list of installed plugins..."
-msgstr "Yüklenmiş eklentilerin listesi yaratılıyor..."
+msgstr "Yüklü eklentiler listesi yaratılıyor ..."
 
-msgid "Creating zip..."
-msgstr "Zip yaratılıyor..."
+#: BackupManager.py:427 BackupManager.py:431
+msgid "Comparing against backup..."
+msgstr "Yedekle karşılaştırılıyor ..."
 
-msgid "Current Status:"
-msgstr "Güncel Durum:"
+#: BackupManager.py:435 BackupManager.py:439
+msgid "Restoring plugins..."
+msgstr "Eklentiler geri yükleniyor ..."
 
-msgid "Daily"
-msgstr "Günlük"
+#: BackupManager.py:443 BackupManager.py:447
+msgid "Restoring plugins, this can take a long time..."
+msgstr "Eklentileri geri yüklemek uzun zaman alabilir ..."
 
-msgid "Deactivate"
-msgstr "Kapat"
+#: BackupManager.py:451
+msgid "Rebooting..."
+msgstr "Yeniden başlatılıyor ..."
 
-msgid "Delete"
-msgstr "Sil"
+#: BackupManager.py:459
+msgid "Do you want to restore your enigma2 settings ?"
+msgstr "Enigma2 ayarlarınızı geri yüklemek istiyor musunuz?"
 
-msgid "Deselect"
-msgstr "Seçme"
+#: BackupManager.py:490
+msgid "Sorry, but the restore failed."
+msgstr "Üzgünüm, ancak geri yükleme başarısız."
 
-msgid "Device: "
-msgstr "Aygıt:"
+#: BackupManager.py:517 RestoreWizard.py:159 RestoreWizard.py:270
+msgid "A background update check is in progress, please try again."
+msgstr "Bir arka plan güncelleme kontrolü devam ediyor, lütfen tekrar deneyin."
 
-msgid "Device: None available"
-msgstr "Aygıt: Yok"
+#: BackupManager.py:554
+#, python-format
+msgid "Your %s %s is not connected to a network. Please check your network settings and try again."
+msgstr "%s %s cihazınız bir ağa bağlı değil. Lütfen ağ ayarlarınızı kontrol edin ve tekrar deneyin."
 
-msgid "Disable Startup"
-msgstr "Başlamayı Engelle"
+#: BackupManager.py:563
+msgid "Sorry the feeds are down for maintenance. Please try again later."
+msgstr "Üzgünüz, özet akışları bakım için kapalı. Lütfen daha sonra tekrar deneyin."
 
-msgid "Do you want to restart GUI now ?"
-msgstr "GUI yi şimdi tekrar başlatmak ister misiniz ?"
+#: BackupManager.py:572
+#, python-format
+msgid "Your %s %s is not connected to the Internet. Please check your network settings and try again."
+msgstr "%s %s cihazınız İnternet'e bağlı değil. Lütfen ağ ayarlarınızı kontrol edin ve tekrar deneyin."
 
+#: BackupManager.py:664
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Enigma2 eklentilerinizi geri yüklemek istiyor musunuz?"
 
-msgid "Do you want to restore your Enigma2 settings ?"
-msgstr "Enigma2 ayarlarınızı geri yüklemek istiyor musunuz?"
-
-msgid "Download"
-msgstr "İndir"
-
-msgid "Download Confirmation"
-msgstr "İndirme Onayı"
-
-msgid "Downloading Image..."
-msgstr "İmaj İndiriliyor..."
-
-msgid "Downloads"
-msgstr "İndirilenler"
-
-msgid "Enable Startup"
-msgstr "Başlamayı Etkinleştir"
-
-msgid "Enable Swap at startup"
-msgstr "Başlangıçta Swapı Etkinleştir"
-
-msgid "Enable frozen check"
-msgstr "Donma kontrolunu etkinleştirin"
-
-msgid "Enough Retries, delaying till next schedule."
-msgstr "Yeterli yeniden deneme, sonraki zamanlamaya kadar erteleniyor."
-
-msgid "Exit the restore wizard"
-msgstr "Yeniden yükleme sihirbazından çık"
-
-msgid "Extra IPK's"
-msgstr "Ek IPK lar"
-
-msgid "Found none standard softcam, trying to start, this may fail"
-msgstr "Standart dışı softcam bulundu, başlatılmaya çalışılıyor, başarısız olabilir"
-
-msgid "Free space:"
-msgstr "Boş alan:"
-
-msgid "Frozen check interval"
-msgstr "Donma kontrolu aralığı"
-
-msgid "GB"
-msgstr "GB"
-
-msgid "HARD DISK: "
-msgstr "HARD DISK: "
-
-msgid "IPK Installer"
-msgstr "IPK Yükleyici"
-
-msgid "Image Manager"
-msgstr "İmaj Yöneticisi"
-
-msgid "Image Manager Setup"
-msgstr "İmaj Yöneticisi Kurulumu"
-
-msgid "Inactive"
-msgstr "Aktif değil"
-
-msgid "Info"
-msgstr "Bilgi"
-
-msgid "Install"
-msgstr "Yükle"
-
-msgid "Install Confirmation"
-msgstr "Yükleme Onayı"
-
-msgid "Install IPK's from your tmp folder."
-msgstr "tmp klasöründen IPK'leri yükle."
-
-msgid "Install extensions."
-msgstr "Uzantıları kur."
-
-msgid "Install local extension"
-msgstr "Yerel genişletmeleri yükle"
-
-msgid "Installing..."
-msgstr "Yüklüyor..."
-
-msgid "Invert"
-msgstr "Tersine çevir"
-
-msgid "Ipkg"
-msgstr ""
-
-msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
-msgstr "Ek bir konum belirlememişsiniz, lütfen Yedekleme Yöneticisi kurulum menüsünde belirleyin"
-
-msgid "Location of where backup should be saved."
-msgstr "Yedeğin kaydedileceği konum."
-
-msgid "Location of where image backup should be saved."
-msgstr "İmaj yedeğinin kaydedileceği konum."
-
-msgid "MB"
-msgstr "MB"
-
-msgid "MGcamd can't run whilst CCcam is running"
-msgstr "CCcam çalışırken MGcamd çalışamaz"
-
-msgid "Manage you devices mountpoints."
-msgstr "Aygıtlarınızın bağlantı noktalarını yönetin."
-
-msgid "Manage your backups of your settings."
-msgstr "Ayarlarınızın yedeklerini yönetin."
-
-msgid "Mount"
-msgstr "Bağla"
-
-msgid "Mount Manager"
-msgstr "Bağlantı Yöneticisi"
-
-msgid "Mount failed"
-msgstr "Bağlantı başarısız"
-
-msgid "Mount: "
-msgstr "Bağlantı:"
-
-msgid "Moving to Backup Location..."
-msgstr "Yedekleme Konumuna taşıyor..."
-
-msgid "NO, do not restore plugins"
-msgstr "HAYIR, eklentileri geri yükleme"
-
-msgid "NO, do not restore settings"
-msgstr "HAYIR, ayarları geri yükleme"
-
-msgid "New Backup"
-msgstr "Yeni Yedek"
-
-msgid "Next Backup: "
-msgstr "Sonraki Yedek:"
-
-msgid ""
-"No config files found, please setup CCcam first\n"
-"in /etc/CCcam.cfg"
-msgstr ""
-"Yapılandırma dosyası bulunamadı, lütfen önce CCcam kurun\n"
-" konum: /etc/CCcam.cfg"
-
-msgid ""
-"No config files found, please setup Hypercam first\n"
-"in /etc/hypercam.cfg"
-msgstr ""
-"Yapılandırma dosyası bulunamadı, lütfen önce Hypercam kurun\n"
-" konum: /etc/hypercam.cfg"
-
-msgid ""
-"No config files found, please setup MGcamd first\n"
-"in /var/keys"
-msgstr ""
-"Yapılandırma dosyası bulunamadı, lütfen önce MGcamd kurun\n"
-" konum: /var/keys"
-
-msgid ""
-"No config files found, please setup Oscam first\n"
-"in /etc/tuxbox/config"
-msgstr ""
-"Yapılandırma dosyası bulunamadı, lütfen önce Oscam kurun\n"
-" konum: /etc/tuxbox/config"
-
-msgid "No plugins where needed to be installed"
-msgstr "Yüklenmesi gereken eklenti yok"
-
-msgid "None"
-msgstr "Hiç"
-
+#: BackupManager.py:681
 msgid "Now skipping restore process"
-msgstr "Geri yükleme işlemi atlanıyor"
+msgstr "Şimdi geri yükleme işlemi atlanıyor"
 
-msgid "OK"
-msgstr "OK"
+#: BackupManager.py:730
+msgid "Select files/folders to backup"
+msgstr "Yedeklenecek dosyaları / klasörleri seç"
 
-msgid "OK, to perform a restore"
-msgstr "Geri yükleme için OK"
+#: BackupManager.py:744 BackupManager.py:844 BackupManager.py:943
+#: MountManager.py:367 Multibootmgr.py:62 Multibootmgr.py:84
+msgid "Cancel"
+msgstr "İptal"
 
-msgid "Please copy the folder"
-msgstr "Lütfen dosyayı kopyalayın"
-
-msgid "Please enter a folder that contains some packages."
-msgstr "Bazı paketler içeren bir dosya girin."
-
-msgid "Please select device to use as swapfile location"
-msgstr "Lütfen swap dosyası konumu için kullanılacak aygıtı seçin"
-
-msgid "Please select the file to restore ?"
-msgstr "Lütfen geri yüklenecek dosyayı seçin."
-
-msgid "Please wait while gathers information..."
-msgstr "Bilgi toplarken lütfen bekleyin..."
-
-msgid "Please wait while plugins restore completes..."
-msgstr "Eklenti yüklemesi bitene kadar bekleyin..."
-
-msgid "Please wait while restore prepares"
-msgstr "Geri yükleme hazırlanırken lütfen bekleyin"
-
-msgid "Please wait while settings restore completes..."
-msgstr "Ayar geri yükleme bitene kadar bekleyin..."
-
-msgid "Please wait while starting\n"
-msgstr "Lütfen başlarken bekleyin\n"
-
-msgid "Please wait while stopping\n"
-msgstr "Lütfen dururken bekleyin\n"
-
-msgid "Please wait."
-msgstr "Lütfen bekleyin."
-
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Eklenti Listeleme başarısız - yanlış yedek konumu veya yedekleme ünitesinde yer kalmadı"
-
-msgid "Preparing extra plugins..."
-msgstr "Ek eklentiler hazırlanıyor..."
-
-msgid "Press OK to toggle the selection."
-msgstr "Seçime geçiş için OK e basın."
-
-msgid "Rebooting..."
-msgstr "Yeniden başlıyor..."
-
-msgid "Remove Confirmation"
-msgstr "Kaldırma Onayı"
-
-msgid "Removing temp mounts..."
-msgstr "Geçici bağlantılar kaldırılıyor..."
-
-msgid "Repeat how often"
-msgstr "Tekrarlama sıklığı"
-
-msgid "Restart"
-msgstr "Yeniden başlat"
-
-#, python-format
-msgid "Restart %s %s."
-msgstr "%s %s i tekrar başlat."
-
-msgid "Restart Enigma2."
-msgstr "Enigma2'yi yeniden başlat."
-
-msgid "Restore"
-msgstr "Geri yükle"
-
-msgid "Restore Confirmation"
-msgstr "Geri Yükleme Onayı"
-
-msgid "Restore Wizard"
-msgstr "Geri Yükleme Sihirbazı"
-
-msgid "Restoring backup..."
-msgstr "Yedek geri yükleniyor..."
-
-msgid "Restoring plugins, this can take a long time..."
-msgstr "Eklentiler geri yükleniyor, uzun zaman alabilir..."
-
-msgid "Restoring plugins..."
-msgstr "Eklentiler geri yükleniyor..."
-
-msgid "Run"
-msgstr "Çalıştır"
-
-msgid "Run your shell scripts."
-msgstr "Shell betiklerinizi çalıştırın."
-
+#: BackupManager.py:745 BackupManager.py:845 MountManager.py:366
 msgid "Save"
-msgstr "Sakla"
+msgstr "Kaydet"
 
-msgid "Schedule Backups"
-msgstr "Yedekleri Zamanla"
+#: BackupManager.py:778
+msgid "Deselect"
+msgstr "Seçimi kaldır"
 
-msgid "Script Runner"
-msgstr "Komut Dizisi Çalıştırıcı"
-
-msgid "Script Runner Setup"
-msgstr "Komut Dizisi Çalıştırıcı  Kurulumu"
-
+#: BackupManager.py:780
 msgid "Select"
 msgstr "Seç"
 
-msgid "Select a backup to Restore:"
-msgstr "Geri yüklenecek bir yedek seçin:"
-
-msgid "Select a package to install:"
-msgstr "Yüklenecek bir paket seçin:"
-
-msgid "Select an image to Download:"
-msgstr "İndirilecek bir imaj seçin:"
-
-msgid "Select an image to restore:"
-msgstr "Geri yüklenecek bir imaj seçin:"
-
+#: BackupManager.py:831
 msgid "Select extra packages folder"
-msgstr "Ek paketler dosyasını seçin"
+msgstr "Ek paketler klasörü seç"
 
-msgid "Select files/folders to backup"
-msgstr "Yedeklenecek dosyaları/klasörleri seçin"
-
+#: BackupManager.py:874
 msgid "Select folder that contains plugins"
-msgstr "Eklenti içeren dosyayı seçin"
+msgstr "Eklentiler içeren klasörü seç"
 
-msgid "Select the Swap File Size:"
-msgstr "Swap Dosya Boyutunu seçin:"
+#: BackupManager.py:900
+msgid "Please enter a folder that contains some packages."
+msgstr "Lütfen bazı paketler içeren bir klasör girin."
 
+#: BackupManager.py:944 RestoreWizard.py:111
+msgid "OK"
+msgstr "Tamam"
+
+#: BackupManager.py:945
+msgid "Choose files"
+msgstr "Dosya seç"
+
+#: BackupManager.py:946
+msgid "Choose local IPK's folder"
+msgstr "Yerel IPK'nın klasörünü seç"
+
+#: BackupManager.py:969 SoftcamManager.py:545
+msgid "Logs"
+msgstr "Günlükler"
+
+#: BackupManager.py:984
+msgid "Backup created"
+msgstr "Yedek oluşturuldu"
+
+#: BackupManager.py:1086
+#, python-format
+msgid ""
+"Your %s %s is about to run a backup of your settings and to detect your plugins.\n"
+"Do you want to allow this?"
+msgstr ""
+"%s %s ayarlarınızda bir yedek çalıştırmak ve eklentilerinizi tespit etmek üzere.\n"
+"Buna izin vermek istiyor musunuz?"
+
+#: BackupManager.py:1111 ImageManager.py:651
+msgid "Enough retries, delaying till next schedule."
+msgstr "Bir sonraki programa kadar erteleme yeterlidir."
+
+#: BackupManager.py:1149 BackupManager.py:1153
+msgid "Starting..."
+msgstr "Başlatılıyor ..."
+
+#: BackupManager.py:1165 BackupManager.py:1169 BackupManager.py:1181
+#: BackupManager.py:1185
+msgid "Backing up files..."
+msgstr "Dosyalar yedekleniyor ..."
+
+#: BackupManager.py:1173 BackupManager.py:1177
+msgid "Preparing extra plugins..."
+msgstr "Fazladan eklentiler hazırlanıyor ..."
+
+#: BackupManager.py:1189
+msgid "Backup complete..."
+msgstr "Yedekleme tamamlandı ..."
+
+#: BackupManager.py:1250
+msgid "The backup location does not have enough free space."
+msgstr "Yedekleme yerinde yeterli boş alan yok."
+
+#: BackupManager.py:1290
+msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device."
+msgstr "Eklenti listesi başarısız oldu - örneğin yanlış yedekleme hedefi veya yedekleme cihazında boş alan kalmadı."
+
+#: BackupManager.py:1358
+msgid "Backup failed - e. g. wrong backup destination or no space left on backup device."
+msgstr "Yedekleme başarısız - örn. yanlış yedekleme hedefi veya yedekleme cihazında boş alan kalmamış."
+
+#: H9SDmanager.py:34
+msgid "H9 SDcard manager"
+msgstr "H9 SD kart yöneticisi"
+
+#: H9SDmanager.py:56
+msgid "Press appropiate Init to move Nand root to SDcard."
+msgstr "Nand kökü SDcard'a taşımak için uygun Init tuşuna basın."
+
+#: H9SDmanager.py:57
+msgid "Reboot"
+msgstr "Yeniden başlat"
+
+#: H9SDmanager.py:58 Multibootmgr.py:65 Multibootmgr.py:89
+msgid "Init SDcard"
+msgstr "SDcard'ı başlat"
+
+#: H9SDmanager.py:73
+msgid "Init Zgemma H9 SDCARD - please reboot after use."
+msgstr "Init Zgemma H9 SDCARD - lütfen kullanımdan sonra yeniden başlatın."
+
+#: H9SDmanager.py:97
+msgid "Init Zgemma H9 USB/SDA1 - please reboot after use."
+msgstr "Init Zgemma H9 USB / SDA1 - lütfen kullanımdan sonra yeniden başlatın."
+
+#: IPKInstaller.py:37 IPKInstaller.py:180
+msgid "IPK installer"
+msgstr "IPK yükleyici"
+
+#: IPKInstaller.py:65 IPKInstaller.py:187 ImageManager.py:1361
+#: SoftcamManager.py:118 SwapManager.py:128 ui.py:78
+msgid "Close"
+msgstr "Kapat"
+
+#: IPKInstaller.py:66 IPKInstaller.py:188
+msgid "Install"
+msgstr "Yükle"
+
+#: IPKInstaller.py:94 IPKInstaller.py:113
+msgid "Extra IPK's"
+msgstr "Ekstra IPK'lar"
+
+#: IPKInstaller.py:97
+msgid "It seems you have not setup an extra location. Please set it up in the Backup manager setup menu."
+msgstr "Görünüşe göre fazladan bir konum ayarlamadınız. Lütfen bunu Backup manager kurulum menüsünde ayarlayın."
+
+#: IPKInstaller.py:99 IPKInstaller.py:103
+msgid "Change location"
+msgstr "Konumu değiştir"
+
+#: IPKInstaller.py:101
+msgid "Sorry but that location does not exist or is not setup. Please set it up in the Backup manager setup menu."
+msgstr "Maalesef bu konum mevcut değil veya ayarlanmadı. Lütfen bunu Backup manager ayarlar menüsünde ayarlayın."
+
+#: IPKInstaller.py:107 IPKInstaller.py:115
+msgid "Temp folder"
+msgstr "Temp klasörü"
+
+#: IPKInstaller.py:117
+msgid "Select a package to install:"
+msgstr "Kurulacak paketi seçin:"
+
+#: IPKInstaller.py:135
+msgid "Are you ready to install ?"
+msgstr "Yüklemeye hazır mısınız?"
+
+#: IPKInstaller.py:137
+msgid "Install confirmation"
+msgstr "Yükleme onayı"
+
+#: IPKInstaller.py:145
+msgid "Installing..."
+msgstr "Yükleniyor ..."
+
+#: IPKInstaller.py:148
+msgid "Do you want to restart GUI now ?"
+msgstr "GUI'yi şimdi yeniden başlatmak istiyor musunuz?"
+
+#: IPKInstaller.py:150
+msgid "Restart GUI."
+msgstr "GUI'yi yeniden başlat."
+
+#: IPKInstaller.py:190
+msgid "Invert"
+msgstr "Tersine çevir"
+
+#: IPKInstaller.py:191
+msgid "Press OK to toggle the selection."
+msgstr "Seçimi değiştirmek için OK tuşuna basın."
+
+#: ImageManager.py:111 ImageManager.py:183 ImageManager.py:341
+#: ImageManager.py:362 ImageManager.py:767 ui.py:68
+msgid "Image manager"
+msgstr "Görüntü yöneticisi"
+
+#: ImageManager.py:134
+msgid "Flash"
+msgstr "Flash"
+
+#: ImageManager.py:136 ImageManager.py:1345
+msgid "Downloads"
+msgstr "İndirilenler"
+
+#: ImageManager.py:238
+msgid "Device: None available"
+msgstr "Cihaz: Yok"
+
+#: ImageManager.py:257 ImageManager.py:262
+msgid "Select an image to flash:"
+msgstr "Flaşlanacak bir resim seçin:"
+
+#: ImageManager.py:262
+msgid "Free space:"
+msgstr "Boş alan:"
+
+#: ImageManager.py:262 MountManager.py:133
+msgid "MB"
+msgstr "MB"
+
+#: ImageManager.py:279
+msgid "Do you want to change download url"
+msgstr "İndirme URL'sini değiştirmek istiyor musunuz"
+
+#: ImageManager.py:287
+msgid "'User' url has not been specified, please use MENU button to initialise"
+msgstr "'Kullanıcı' URL'si belirtilmedi, lütfen başlatmak için MENU düğmesini kullanın"
+
+#: ImageManager.py:321
+msgid ""
+"Are you sure you want to delete this image backup:\n"
+" "
+msgstr ""
+"Bu resim yedeklemesini silmek istediğinizden emin misiniz:\n"
+" "
+
+#: ImageManager.py:325
+msgid "There is no image to delete."
+msgstr "Silinecek resim yok."
+
+#: ImageManager.py:350
+msgid ""
+"Do you want to create a full image backup?\n"
+"This can take about 6 minutes to complete."
+msgstr ""
+"Tam bir görüntü yedeği oluşturmak istiyor musunuz?\n"
+"Bu işlemin tamamlanması yaklaşık 6 dakika sürebilir."
+
+#: ImageManager.py:352
+msgid "Backup confirmation"
+msgstr "Yedekleme onayı"
+
+#: ImageManager.py:390
+#, python-format
+msgid ""
+"Recording(s) are in progress or coming up in few seconds!\n"
+"Do you still want to flash image\n"
+"%s?"
+msgstr ""
+"Kayıtlar devam ediyor veya birkaç saniye içinde çıkıyor!\n"
+"Hala görüntüyü flaş etmek istiyor musunuz\n"
+"%s?"
+
+#: ImageManager.py:392
+#, python-format
+msgid ""
+"Do you want to flash image\n"
+"%s"
+msgstr ""
+"Görüntüyü flaş etmek istiyor musunuz\n"
+"%s"
+
+#: ImageManager.py:394
+msgid ""
+"You are about to flash an eMMC flash; we cannot take any responsibility for any errors or damage to your box during this process.\n"
+"Proceed with CAUTION!:\n"
+"Are you sure you want to flash this image:\n"
+" "
+msgstr ""
+"Bir eMMC flaşı yanıp sönmek üzeresiniz; bu işlem sırasında kutunuzdaki herhangi bir hata veya hasar için herhangi bir sorumluluk kabul edemeyiz.\n"
+"DİKKAT ile devam edin!:\n"
+"Bu resmi flaşlamak istediğinizden emin misiniz:\n"
+" "
+
+#: ImageManager.py:396
+msgid ""
+"Are you sure you want to flash this image:\n"
+" "
+msgstr ""
+"Bu resmi flaşlamak istediğinizden emin misiniz:\n"
+" "
+
+#: ImageManager.py:398
+msgid "Flash confirmation"
+msgstr "Flaş onayı"
+
+#: ImageManager.py:427
+#, python-format
+msgid "slot%s - %s"
+msgstr "slot%s - %s"
+
+#: ImageManager.py:427
+#, python-format
+msgid "slot%s - %s (current image)"
+msgstr "slot%s - %s (geçerli resim)"
+
+#: ImageManager.py:443
+msgid "There is no image to flash."
+msgstr "Flash görüntü yok."
+
+#: ImageManager.py:445
+msgid "You have decided not to flash image."
+msgstr "Görüntüyü flaş etmemeye karar verdiniz."
+
+#: ImageManager.py:450
+#, python-format
+msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - if error please use Recovery mode to restart."
+msgstr "Lütfen flaş hazırlanırken bekleyin, görüntü yanıp söndükten sonra %s 'niz yeniden başlatılır - hata olursa lütfen yeniden başlatmak için Kurtarma modunu kullanın."
+
+#: ImageManager.py:452
+msgid "Please wait while the flash prepares."
+msgstr "Lütfen flaş hazırlanırken bekleyin."
+
+#: ImageManager.py:464
+msgid "Flash image unzip successful."
+msgstr "Flash resmi unzip başarılı."
+
+#: ImageManager.py:466
+msgid ""
+"ET8500 Multiboot: Yes to restore OS1 No to restore OS2:\n"
+" "
+msgstr ""
+"ET8500 Multiboot: OS1'i geri yüklemek için Evet OS2'yi geri yüklemek için Hayır:\n"
+" "
+
+#: ImageManager.py:468
+msgid "ET8500 Image Restore"
+msgstr "ET8500 Görüntü Geri Yükleme"
+
+#: ImageManager.py:472 ImageManager.py:1248
+msgid "Multiboot only able to restore this backup to mmc slot1"
+msgstr "Çoklu önyükleme yalnızca bu yedeklemeyi mmc slot1'e geri yükleyebilir"
+
+#: ImageManager.py:478
+#, python-format
+msgid ""
+"Unzip error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"Sıkıştırılmış hata (hata ayıklama günlüğüne de gönderilir):\n"
+"%s"
+
+#: ImageManager.py:525
+#, python-format
+msgid ""
+"OFGwrite error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"OFGwrite hatası (hata ayıklama günlüğüne de gönderilir):\n"
+"%s"
+
+#: ImageManager.py:534
+msgid "Multiboot ERROR! - no STARTUP in boot partition."
+msgstr "Çoklu önyükleme HATASI! - önyükleme bölümünde BAŞLATMA yok."
+
+#: ImageManager.py:626
+#, python-format
+msgid ""
+"Your %s %s is about to create a full image backup, this can take about 6 minutes to complete.\n"
+"Do you want to allow this?"
+msgstr ""
+"%s %s tam bir görüntü yedeklemesi oluşturmak üzere, bu işlemin tamamlanması yaklaşık 6 dakika sürebilir.\n"
+"Buna izin vermek istiyor musunuz?"
+
+#: ImageManager.py:769
+msgid "Setting up..."
+msgstr "Ayarlanıyor ..."
+
+#: ImageManager.py:773
+msgid "Checking free RAM.."
+msgstr "Ücretsiz RAM denetleniyor .."
+
+#: ImageManager.py:777
+msgid "Creating SWAP.."
+msgstr "SWAP oluşturuluyor .."
+
+#: ImageManager.py:781 ImageManager.py:785
+msgid "Backing up kernel..."
+msgstr "Çekirdek yedekleniyor ..."
+
+#: ImageManager.py:789 ImageManager.py:793
+msgid "Backing up root file system..."
+msgstr "Kök dosya sistemi yedekleniyor ..."
+
+#: ImageManager.py:797
+msgid "Backing up eMMC partitions for USB flash ..."
+msgstr "USB flash için eMMC bölümleri yedekleniyor ..."
+
+#: ImageManager.py:801
+msgid "Backing up eMMC partitions for USB flash..."
+msgstr "USB flash için eMMC bölümleri yedekleniyor ..."
+
+#: ImageManager.py:805 ImageManager.py:809
+msgid "Removing temp mounts..."
+msgstr "Geçici bağlantıların kaldırılması ..."
+
+#: ImageManager.py:813 ImageManager.py:817
+msgid "Moving to backup Location..."
+msgstr "Yedeği yedeklemeye geçiliyor ..."
+
+#: ImageManager.py:821 ImageManager.py:825
+msgid "Creating zip..."
+msgstr "Zip oluşturuluyor ..."
+
+#: ImageManager.py:829
+msgid "Backup complete."
+msgstr "Yedekleme tamamlandı."
+
+#: ImageManager.py:850
+msgid "The backup location does not have enough free space.\n"
+msgstr "Yedekleme yerinde yeterli boş alan yok.\n"
+
+#: ImageManager.py:887
+msgid "Sorry, not enough free RAM found, and no physical devices that supports SWAP attached. Can't create SWAP file on network or fat32 file-systems, unable to make backup."
+msgstr "Üzgünüm, yeterli boş RAM bulunamadı ve SWAP'ı destekleyen fiziksel cihazlar bağlı değil. Ağda veya fat32 dosya sistemlerinde SWAP dosyası oluşturulamıyor, yedekleme yapılamıyor."
+
+#: ImageManager.py:975 ImageManager.py:978 ImageManager.py:981
+#: ImageManager.py:983 ImageManager.py:985
+msgid "Create:"
+msgstr "Oluştur:"
+
+#: ImageManager.py:1360
+#, python-format
+msgid "Select an image to download for %s:"
+msgstr "%s için indirmek için bir resim seçin:"
+
+#: ImageManager.py:1362
+msgid "Download"
+msgstr "İndir"
+
+#: ImageManager.py:1369
+msgid "No images found for selected download server...if password check validity"
+msgstr "Seçilen indirme sunucusu için resim bulunamadı ... eğer şifre kontrol geçerliliği"
+
+#: ImageManager.py:1411
+#, python-format
+msgid "Image Version %s"
+msgstr "Görüntü Sürümü%s"
+
+#: ImageManager.py:1481
+msgid "Compress"
+msgstr "Sıkıştır"
+
+#: ImageManager.py:1481
+msgid "Expand"
+msgstr "Genişlet"
+
+#: ImageManager.py:1483
+msgid "DownLoad"
+msgstr "DownLoad"
+
+#: ImageManager.py:1513
+msgid ""
+"Are you sure you want to download this image:\n"
+" "
+msgstr ""
+"Bu resmi indirmek istediğinizden emin misiniz:\n"
+" "
+
+#: ImageManager.py:1515
+msgid "Download confirmation"
+msgstr "İndirme onayı"
+
+#: ImageManager.py:1532
+msgid "Downloading"
+msgstr "İndiriliyor"
+
+#: MountManager.py:84
+msgid "HARD DISK: "
+msgstr "SABİT DİSK: "
+
+#: MountManager.py:96
+msgid "USB: "
+msgstr "USB: "
+
+#: MountManager.py:102
+msgid "SDCARD: "
+msgstr "SDCARD: "
+
+#: MountManager.py:109 MountManager.py:111 MountManager.py:122
+msgid "None"
+msgstr "Yok"
+
+#: MountManager.py:110 MountManager.py:123 MountManager.py:135
+msgid "unavailable"
+msgstr "kullanılamıyor"
+
+#: MountManager.py:123 MountManager.py:129 MountManager.py:131
+#: MountManager.py:133 MountManager.py:135
+msgid "Size: "
+msgstr "Boyut: "
+
+#: MountManager.py:129
+msgid "TB"
+msgstr "TB"
+
+#: MountManager.py:131
+msgid "GB"
+msgstr "GB"
+
+#: MountManager.py:144 MountManager.py:278 MountManager.py:293
+msgid "Mount: "
+msgstr "Bağla: "
+
+#: MountManager.py:144
+msgid "Type: "
+msgstr "Tür: "
+
+#: MountManager.py:195 ui.py:70
+msgid "Mount manager"
+msgstr "Mount yöneticisi"
+
+#: MountManager.py:217
+msgid "Setup mounts"
+msgstr "Kurulum bağlar"
+
+#: MountManager.py:218
+msgid "Un-mount"
+msgstr "Montajdan kaldır"
+
+#: MountManager.py:219
+msgid "Mount"
+msgstr "Bağla"
+
+#: MountManager.py:241
+msgid "Use as HDD"
+msgstr "HDD Olarak Kullan"
+
+#: MountManager.py:257
+msgid "Please wait while scanning for devices..."
+msgstr "Lütfen cihazları tararken bekleyin ..."
+
+#: MountManager.py:284
+msgid "Mount failed."
+msgstr "Bağlama başarısız."
+
+#: MountManager.py:301
+msgid "Can't un-mount the partition; make sure it is not being used for SWAP or record/timeshift paths."
+msgstr "Bölüm kaldırılamıyor; SWAP veya kayıt / zaman kaydırma yolları için kullanılmadığından emin olun."
+
+#: MountManager.py:318
+msgid "This device is already mounted as HDD."
+msgstr "Bu aygıt zaten HDD olarak monte edilmiş."
+
+#: MountManager.py:353
+msgid "Choose where to mount your devices to:"
+msgstr "Cihazlarınızı nereye monte edeceğinizi seçin:"
+
+#: MountManager.py:376
+#, python-format
+msgid "Please wait while scanning your %s %s devices..."
+msgstr "%s %s cihazlarınızı tararken lütfen bekleyin ..."
+
+#: MountManager.py:398
+msgid "Updating mount locations..."
+msgstr "Bağlama konumları güncelleniyor ..."
+
+#: MountManager.py:400
+msgid "Please wait."
+msgstr "Lütfen bekleyin."
+
+#: MountManager.py:403
+#, python-format
+msgid ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
+msgstr ""
+"Değişikliklerin etkili olması için sistemin yeniden başlatılması gerekir.\n"
+"%s %s cihazınızı şimdi yeniden başlatmak istiyor musunuz?"
+
+#: MountManager.py:405
+#, python-format
+msgid "Restart %s %s."
+msgstr "%s %s Yeniden başlatın."
+
+#: Multibootmgr.py:39
+msgid "Multiboot image manager"
+msgstr "Çoklu önyükleme görüntü yöneticisi"
+
+#: Multibootmgr.py:63
+msgid "Press Init to format SDcard."
+msgstr "SD kartı formatlamak için Init tuşuna basın."
+
+#: Multibootmgr.py:85
+msgid "Use the cursor keys to select an installed image and then Erase button."
+msgstr "Yüklü bir görüntüyü seçmek için imleç tuşlarını kullanın ve ardından Sil düğmesini tıklayın."
+
+#: Multibootmgr.py:86
+msgid "Note: slot list does not show current image or empty slots."
+msgstr "Not: yuva listesi geçerli görüntüyü veya boş yuvaları göstermiyor."
+
+#: Multibootmgr.py:87
+msgid "Erase"
+msgstr "Sil"
+
+#: Multibootmgr.py:92
+msgid "Retrieving image slots - Please wait..."
+msgstr "Görüntü yuvaları alınıyor - Lütfen bekleyin ..."
+
+#: Multibootmgr.py:127
+msgid "Empty slot"
+msgstr "Boş yuva"
+
+#: Multibootmgr.py:128
+#, python-format
+msgid "slot%s - %s "
+msgstr "slot%s - %s "
+
+#: Multibootmgr.py:136
+#, python-format
+msgid "Removal of this slot will not show in %s Gui.  Are you sure you want to delete image slot %s ?"
+msgstr "Bu yuvanın kaldırılması %s Gui'de gösterilmez.  %s resim alanını silmek istediğinizden emin misiniz?"
+
+#: Multibootmgr.py:140
+#, python-format
+msgid "Are you sure you want to delete image slot %s ?"
+msgstr "% s resim yuvasını silmek istediğinizden emin misiniz?"
+
+#: Multibootmgr.py:150
+msgid "Init SDCARD"
+msgstr "SDCARD'ı başlat"
+
+#: Multibootmgr.py:152
+msgid "Multiboot manager - Cannot initialise SDcard when running image on SDcard."
+msgstr "Çoklu önyükleme yöneticisi - Görüntüyü SDcard üzerinde çalıştırırken SDcard başlatılamıyor."
+
+#: Multibootmgr.py:155
+#, python-format
+msgid "Multiboot manager - to use this routine %s image must be at OpenViX 4.2.043 or later and USB flashed - reply Yes to continue"
+msgstr "Çoklu önyükleme yöneticisi - Bu rutin %s görüntüyü kullanmak için OpenViX 4.2.043 veya sonrasında olmalı ve USB yanıp sönüyor - devam etmek için Evet yanıtını verin"
+
+#: Multibootmgr.py:165
+msgid "Multiboot manager - The SDcard must be at least 8MB."
+msgstr "Çoklu önyükleme yöneticisi - SD kart en az 8 MB olmalıdır."
+
+#: Multibootmgr.py:180
+msgid "Multiboot manager - SDcard initialization run, please restart your Image."
+msgstr "Çoklu önyükleme yöneticisi - SDcard başlatma çalıştırması, lütfen Resminizi yeniden başlatın."
+
+#: RestoreWizard.py:93
+msgid "Exit the restore wizard"
+msgstr "Geri yükleme sihirbazından çık"
+
+#: RestoreWizard.py:93
+msgid "OK, to perform a restore"
+msgstr "Tamam, geri yükleme gerçekleştirmek için"
+
+#: RestoreWizard.py:97
+msgid "NO, do not restore settings"
+msgstr "HAYIR, ayarları geri yükleme"
+
+#: RestoreWizard.py:97
+msgid "YES, to restore settings"
+msgstr "EVET, ayarları geri yüklemek için"
+
+#: RestoreWizard.py:103 RestoreWizard.py:106
+msgid "YES, to restore plugins"
+msgstr "EVET, eklentileri geri yüklemek için"
+
+#: RestoreWizard.py:104 RestoreWizard.py:107
+msgid "NO, do not restore plugins"
+msgstr "HAYIR, eklentileri geri yükleme"
+
+#: RestoreWizard.py:131 RestoreWizard.py:136
+msgid "Please wait while the system gathers information..."
+msgstr "Lütfen sistem bilgi toplarken bekleyin ..."
+
+#: RestoreWizard.py:132 RestoreWizard.py:137 RestoreWizard.py:144
+#: RestoreWizard.py:150 RestoreWizard.py:156 RestoreWizard.py:160
+#: RestoreWizard.py:186 RestoreWizard.py:190 RestoreWizard.py:199
+#: RestoreWizard.py:255 RestoreWizard.py:259 RestoreWizard.py:263
+#: RestoreWizard.py:267 RestoreWizard.py:271 plugin.py:181
+msgid "Restore wizard"
+msgstr "Geri yükleme sihirbazı"
+
+#: RestoreWizard.py:143
+msgid "Please wait while plugins restore completes..."
+msgstr "Lütfen eklentilerin geri yüklenmesi tamamlanırken bekleyin ..."
+
+#: RestoreWizard.py:149
+msgid "Sorry the feeds are down for maintenance. Please try using Backup manager to restore plugins later."
+msgstr "Üzgünüz, özet akışları bakım için kapalı. Lütfen eklentileri daha sonra geri yüklemek için Yedekleme yöneticisini kullanmayı deneyin."
+
+#: RestoreWizard.py:155
+#, python-format
+msgid "Your %s %s is not connected to the Internet. Please try using Backup manager to restore plugins later."
+msgstr "%s %s cihazınız İnternet'e bağlı değil. Eklentileri daha sonra geri yüklemek için lütfen Yedekleme yöneticisini kullanmayı deneyin."
+
+#: RestoreWizard.py:198
+msgid "Please wait while settings restore completes..."
+msgstr "Lütfen ayarların geri yüklenmesi tamamlanırken bekleyin ..."
+
+#: RestoreWizard.py:254
+#, python-format
+msgid "Your %s %s is not connected to a network. Please try using the Backup manager to restore plugins later when a network connection is available."
+msgstr "%s % s cihazınız bir ağa bağlı değil. Lütfen bir ağ bağlantısı olduğunda eklentileri geri yüklemek için Yedekleme yöneticisini kullanmayı deneyin."
+
+#: RestoreWizard.py:258
+#, python-format
+msgid "Your %s %s could not connect to the plugin feeds at this time. Please try using the Backup manager to restore plugins later."
+msgstr "%s %s, şu anda eklenti özet akışlarına bağlanamadı. Eklentileri daha sonra geri yüklemek için lütfen Yedekleme yöneticisini kullanmayı deneyin."
+
+#: RestoreWizard.py:262
+#, python-format
+msgid "Your %s %s is not connected to the Internet. Please try using the Backup manager to restore plugins later."
+msgstr "%s %s cihazınız İnternet'e bağlı değil. Eklentileri daha sonra geri yüklemek için lütfen Yedekleme yöneticisini kullanmayı deneyin."
+
+#: RestoreWizard.py:266
+msgid "Sorry the feeds are down for maintenance. Please try using the Backup manager to restore plugins later."
+msgstr "Üzgünüz, özet akışları bakım için kapalı. Lütfen eklentileri daha sonra geri yüklemek için Yedekleme yöneticisini kullanmayı deneyin."
+
+#: ScriptRunner.py:43 plugin.py:175 ui.py:71
+msgid "Script runner"
+msgstr "Komut dosyası koşucusu"
+
+#: ScriptRunner.py:65
+msgid "Run"
+msgstr "Çalıştır"
+
+#: SoftcamManager.py:79 plugin.py:99 plugin.py:173
+msgid "Softcam manager"
+msgstr "Softcam yöneticisi"
+
+#: SoftcamManager.py:80 ui.py:45
+msgid "Main menu"
+msgstr "Ana menü"
+
+#: SoftcamManager.py:80 ui.py:45
+msgid "Setup"
+msgstr "Kurulum"
+
+#: SoftcamManager.py:80
+msgid "Softcam"
+msgstr "Softcam"
+
+#: SoftcamManager.py:95
 msgid "Select:"
 msgstr "Seç:"
 
-msgid "Set the interval to be checked in mins."
-msgstr "Kontrol aralığını dakika olarak ayarlayın."
+#: SoftcamManager.py:96 SoftcamManager.py:169
+msgid "Active:"
+msgstr "Aktif:"
 
-msgid "Set the repeat interval of backup schedule."
-msgstr "Yedekleme programının tekrarlanma aralığını belirleyin."
+#: SoftcamManager.py:121 SwapManager.py:131
+msgid "Autostart"
+msgstr "Otomatik başlatma"
 
-msgid "Set the time of backup to start."
-msgstr "Yedeklemenin başlayacağı zamanı belirleyin."
-
-msgid "Setting Up..."
-msgstr "Kuruluyor..."
-
-msgid "Setup Mounts"
-msgstr "Bağlantıları Kur"
-
-msgid "Show in extensions"
-msgstr "Uzantılarda göster"
-
-msgid "Size: "
-msgstr "Boyut:"
-
-msgid "Softcam Manager"
-msgstr "Softcam Yöneticisi"
-
-msgid "Softcam Manager Log"
-msgstr "Softcam Yönetici Günlüğü"
-
-msgid "Softcam Manager Setup"
-msgstr "Softcam Yöneticisi Kurulumu"
-
-msgid "Softcam Setup"
-msgstr "Softcam Kurulumu"
-
-msgid "Softcam Starting..."
-msgstr "Softcam Başlıyor..."
-
-msgid "Softcam Stopping..."
-msgstr "Softcam Durduruluyor..."
-
-msgid "SoftcamCheck"
-msgstr "SoftcamKontrol"
-
-msgid "Sorry Image Restore is not supported on the"
-msgstr "Üzgünüz,İmaj Geri yüklemeyi desteklemiyor"
-
-msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-msgstr "Üzgünüz, konum yok ya da belirlenmemiş, Yedekleme Yöneticisi kurulum menüsünde belirleyin"
-
-msgid "Sorry feeds are down for maintenance, Please try again later."
-msgstr "Beslemeler bakımda, sonra tekrar deneyin."
-
-msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr "Beslemeler bakımda, eklentileri geri yüklemek için yedekleme yöneticisini  sonra kullanmayı deneyin."
-
-#, python-format
-msgid "Sorry you %s %s is not yet compatible."
-msgstr "Üzgünüz, %s %s niz henüz uyumlu değil."
-
-msgid "Sorry, but the restore failed."
-msgstr "Üzgünüz, geri yükleme başarısız."
-
-msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
-msgstr "Üzgünüm, SWAP destekleyen cihaz bağlı değil. Ağ veya fat32 dosya sistemi üzerinde Swap dosyası yaratılamaz"
-
-msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
-msgstr "Üzgünüm, yeterli boş bellek yok ve SWAP destekleyen cihaz bağlı değil. Ağ veya fat32 dosya sistemi üzerinde Swap dosyası yaratılamaz, yedekleme yapılamıyor"
-
+#: SoftcamManager.py:156
 msgid "Start"
-msgstr "Başla"
+msgstr "Başlat"
 
-msgid "Starting..."
-msgstr "Başlıyor..."
-
-msgid "Status:"
-msgstr "Durum:"
-
+#: SoftcamManager.py:158
 msgid "Stop"
 msgstr "Durdur"
 
-msgid "Swap File not found. You have to create the file before to activate."
-msgstr "Swap dosyası bulunamadı. Etkinleştirmek için önce dosyayı yaratmalısınız."
+#: SoftcamManager.py:162
+msgid "Restart"
+msgstr "Yeniden başlat"
 
-msgid "Swap Manager"
-msgstr "Swap Yöneticisi"
+#: SoftcamManager.py:165
+msgid "Disable startup"
+msgstr "Başlamayı devre dışı bırak"
 
-msgid "Swap Place:"
-msgstr "Swap Konumu:"
+#: SoftcamManager.py:167
+msgid "Enable startup"
+msgstr "Başlatmayı etkinleştir"
 
-msgid "Swap Size:"
-msgstr "Swap Boyutu:"
-
-msgid "TB"
-msgstr ""
-
-msgid "Temp Folder"
-msgstr "Geçici Klasör"
-
-msgid "The backup location does not have enough freespace."
-msgstr "Yedek konumunda yeterli boş yer yok."
-
-msgid "The chosen location does not exist, using /media/hdd"
-msgstr "Seçilen konum yok, /media/hdd kullanılıyor"
-
-msgid "The wizard is finished now, and will reboot"
-msgstr "Sihirbaz şimdi bitti, alıcı yeniden başlatılacak"
-
-msgid "The wizard is finished now."
-msgstr "Sihirbaz şimdi bitti."
-
-msgid "This Device is already mounted as HDD."
-msgstr "Bu aygıt zaten HDD olarak bağlanmış."
-
-msgid "Time of Backup to start"
-msgstr "Yedeğin başlayacağı zaman"
-
-msgid "Type: "
-msgstr "Tip:"
-
-msgid "USB: "
-msgstr ""
-
-msgid "Unmount"
-msgstr "Çıkar"
-
-msgid "Updating mount locations."
-msgstr "Bağlantı konumları güncelleniyor."
-
-msgid "Use as HDD"
-msgstr "HDD olarak kullan"
-
-msgid "ViX"
-msgstr "ViX"
-
-msgid "ViX Backup Manager"
-msgstr "ViX Yedekleme Yöneticisi"
-
-msgid "ViX Image Manager"
-msgstr "ViX İmaj Yöneticisi"
-
-msgid "ViX Mount Manager"
-msgstr "ViX Bağlantı Yöneticisi"
-
-msgid "ViX Script Runner"
-msgstr "ViX Komut Yürütücü"
-
-msgid "ViX Swap Manager"
-msgstr "ViX Swap Yöneticisi"
-
-msgid "View Progress"
-msgstr "İşlemi izle"
-
-msgid "Wait please while creating swapfile..."
-msgstr "Lütfen Swap dosyası yaratılırken bekleyin..."
-
+#: SoftcamManager.py:188
 msgid ""
 "Wait please while scanning\n"
 "for softcam's..."
 msgstr ""
-"Lütfen bekleyin\n"
-"softcamlar taranıyor..."
+"Tarama sırasında lütfen bekleyin\n"
+"softcam için ..."
 
-msgid "Wait please while scanning for devices..."
-msgstr "Lütfen aygıtlar incelenirken bekleyin..."
+#: SoftcamManager.py:233 SoftcamManager.py:297
+msgid ""
+"No config files found, please setup CCcam first\n"
+"in /etc/CCcam.cfg."
+msgstr ""
+"Yapılandırma dosyası bulunamadı, lütfen önce CCcam kurulumunu yapın\n"
+"/etc/CCcam.cfg içinde."
 
-#, python-format
-msgid "Wait please while scanning your %s %s devices..."
-msgstr "%s %s aygıtlarınız taranırken bekleyin..."
+#: SoftcamManager.py:238
+msgid "CCcam can't run whilst MGcamd is running"
+msgstr "MGcamd çalışırken CCcam çalışamıyor"
 
+#: SoftcamManager.py:241
+msgid ""
+"No config files found, please setup Hypercam first\n"
+"in /etc/hypercam.cfg."
+msgstr ""
+"Yapılandırma dosyası bulunamadı, lütfen önce Hypercam'ı kurun\n"
+"/etc/hypercam.cfg içinde."
+
+#: SoftcamManager.py:246
+msgid ""
+"No config files found, please setup Oscam first\n"
+"in /etc/tuxbox/config"
+msgstr ""
+"Yapılandırma dosyası bulunamadı, lütfen önce Oscam'i kurun\n"
+"/etc/tuxbox/config içinde"
+
+#: SoftcamManager.py:252 SoftcamManager.py:308
+msgid ""
+"No config files found, please setup MGcamd first\n"
+"in /usr/keys."
+msgstr ""
+"Yapılandırma dosyası bulunamadı, lütfen önce MGcamd kurulumunu yapın\n"
+"içinde /usr/keys."
+
+#: SoftcamManager.py:254 SoftcamManager.py:310
+msgid "MGcamd can't run whilst CCcam is running."
+msgstr "MGcamd CCcam çalışırken çalışamaz."
+
+#: SoftcamManager.py:260 SoftcamManager.py:314
+msgid "Found non-standard softcam, trying to start, this may fail."
+msgstr "Standart dışı softcam bulundu, başlatmaya çalışıyor, bu başarısız olabilir."
+
+#: SoftcamManager.py:295
+msgid "CCcam can't run whilst MGcamd is running."
+msgstr "MGcamd çalışırken CCcam çalışamıyor."
+
+#: SoftcamManager.py:303
+msgid ""
+"No config files found, please setup Oscam first\n"
+"in /etc/tuxbox/config."
+msgstr ""
+"Yapılandırma dosyası bulunamadı, lütfen önce Oscam'i kurun\n"
+"/etc/tuxbox/config içinde."
+
+#: SoftcamManager.py:332
+msgid "Softcam starting..."
+msgstr "Softcam başlıyor ..."
+
+#: SoftcamManager.py:334
+msgid "Please wait while starting\n"
+msgstr "Lütfen başlarken bekleyin\n"
+
+#: SoftcamManager.py:449
+msgid "Softcam stopping..."
+msgstr "Softcam duruyor ..."
+
+#: SoftcamManager.py:451
+msgid "Please wait while stopping\n"
+msgstr "Lütfen dururken bekleyin\n"
+
+#: SoftcamManager.py:633
+msgid "SoftcamCheck"
+msgstr "SoftcamKontrol"
+
+#: SoftcamManager.py:635
+msgid "Checking softcams..."
+msgstr "Softcams kontrol ediliyor ..."
+
+#: SwapManager.py:102 ui.py:72
+msgid "SWAP manager"
+msgstr "SWAP yöneticisi"
+
+#: SwapManager.py:121
+msgid "SWAP place:"
+msgstr "SWAP yeri:"
+
+#: SwapManager.py:123
+msgid "SWAP size:"
+msgstr "SWAP boyutu:"
+
+#: SwapManager.py:125
+msgid "Status:"
+msgstr "Durum:"
+
+#: SwapManager.py:126 SwapManager.py:253
+msgid "Inactive"
+msgstr "Aktif değil"
+
+#: SwapManager.py:127 SwapManager.py:248
+msgid "Active"
+msgstr "Aktif"
+
+#: SwapManager.py:129 SwapManager.py:252
+msgid "Activate"
+msgstr "Etkinleştir"
+
+#: SwapManager.py:130 SwapManager.py:192
+msgid "Create"
+msgstr "Yarat"
+
+#: SwapManager.py:154 SwapManager.py:248 SwapManager.py:253
+msgid "Current status:"
+msgstr "Şu anki durum:"
+
+#: SwapManager.py:155
 msgid "Wait please while scanning..."
-msgstr "Lütfen incelenirken bekleyin..."
+msgstr "Lütfen tararken bekleyin ..."
 
-msgid "Weekly"
-msgstr "Haftalık"
+#: SwapManager.py:247
+msgid "Deactivate"
+msgstr "Devre dışı bırak"
 
-msgid ""
-"Welcome to the restore wizard.\n"
-"\n"
-"A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
-msgstr ""
-"Geri yükleme sihirbazına hoşgeldiniz.\n"
-"\n"
-"Bir yedek bulundu.\n"
-"Ayarlarınızı ve eklentilerinizi geri yüklemek için bu sihirbazı kullanabilirsiniz.\n"
+#: SwapManager.py:255
+msgid "Enable SWAP at startup"
+msgstr "Başlangıçta SWAP'yi etkinleştir"
 
-msgid "YES, to restore plugins"
-msgstr "Eklentileri geri yüklemek için EVET"
+#: SwapManager.py:271
+msgid "SWAP file not found. You have to create the file before you try to activate it."
+msgstr "SWAP dosyası bulunamadı. Etkinleştirmeye çalışmadan önce dosyayı oluşturmanız gerekir."
 
-msgid "YES, to restore settings"
-msgstr "Ayarları geri yüklemek için EVET"
+#: SwapManager.py:272 SwapManager.py:338
+msgid "Info"
+msgstr "Bilgi"
 
-msgid "You have no backup to delete."
-msgstr "Silinecek yedeğiniz yok."
+#: SwapManager.py:304
+msgid "Please select device to use as SWAP file location."
+msgstr "Lütfen SWAP dosyası konumu olarak kullanılacak cihazı seçin."
 
-msgid "You have no backups to restore."
-msgstr "Geri yüklenecek yedeğiniz yok."
+#: SwapManager.py:306
+msgid "Sorry, no physical devices that supports SWAP attached. Can't create SWAP file on network or fat32 file-systems."
+msgstr "Maalesef, SWAP'ı destekleyen hiçbir fiziksel cihaz bağlı değil. Ağda veya fat32 dosya sistemlerinde SWAP dosyası oluşturulamıyor."
 
-msgid "You have no image to delete."
-msgstr "Silinecek imajınız yok."
+#: SwapManager.py:311
+msgid "128 Mb"
+msgstr "128 Mb"
 
-msgid "You have no image to download."
-msgstr "İndirilecek imajınız yok."
+#: SwapManager.py:311
+msgid "16 Mb"
+msgstr "16 Mb"
 
-msgid "You have no image to restore."
-msgstr "Geri yüklenecek imajınız yok."
+#: SwapManager.py:311
+msgid "256 Mb"
+msgstr "256 Mb"
 
-msgid "You have to create a Swap File before to activate the autostart."
-msgstr "Otomatik başlamayı etkinleştirmek için önce bir Swap dosyası yaratmalısınız."
+#: SwapManager.py:311
+msgid "32 Mb"
+msgstr "32 Mb"
 
-#, python-format
-msgid ""
-"Your %s %s is about to run a backup of your settings and detect your plugins,\n"
-"Do you want to allow this?"
-msgstr ""
-"%s %s' niz ayarlarınızı yedeklemek ve eklentilerinizi bulmak üzere,\n"
-"Buna izin veriyor musunuz?"
+#: SwapManager.py:311
+msgid "64 Mb"
+msgstr "64 Mb"
 
-#, python-format
-msgid ""
-"Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
-"do you want to allow this?"
-msgstr ""
-"%s %s' niz tam imaj yedeklemek üzere, bitmesi 6 dakikja kadar sürebilir,\n"
-"buna izin veriyor musunuz"
+#: SwapManager.py:311
+msgid "8 Mb"
+msgstr "8 Mb"
 
-#, python-format
-msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr "%s %s'niz internete bağlı değil, eklentileri yüklemek için Yedekleme Yöneticisini kullanmayı sonra tekrar deneyin."
+#: SwapManager.py:311
+msgid "96 Mb"
+msgstr "96 Mb"
 
-#, python-format
-msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
-msgstr "%s %s'niz internete bağlı değil, ağ ayarlarınızı kontrol edip yine deneyin."
+#: SwapManager.py:312
+msgid "Select the SWAP file size:"
+msgstr "SWAP dosya boyutunu seçin:"
 
-msgid "echo 'Downloading Image.'"
-msgstr "echo 'İmaj İndiriliyor.'"
+#: SwapManager.py:317
+msgid "Wait please while creating SWAP file..."
+msgstr "SWAP dosyası oluşturulurken lütfen bekleyin ..."
 
-msgid "there was a problem with this device, please reformat and try again."
-msgstr "Bu aygıtta bir problem var, lütfen tekrar biçimleyin ve yeniden deneyin."
+#: SwapManager.py:337
+msgid "You have to create a SWAP file before trying to activate the autostart."
+msgstr "Otomatik başlatmayı etkinleştirmeye çalışmadan önce bir SWAP dosyası oluşturmanız gerekir."
 
-msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr "bir USB belleğe, alıcının ön USB girişine takıp gücü açın"
+#: plugin.py:84 plugin.py:170 ui.py:44
+msgid "ViX"
+msgstr "ViX"
 
-msgid "unavailable"
-msgstr "bulunamıyor"
+#: plugin.py:164
+msgid "Install extensions."
+msgstr "Uzantıları yükle."
 
+#: plugin.py:182
+msgid "Ipkg"
+msgstr "Ipkg"
+
+#: plugin.py:183
+msgid "ViX Backup manager"
+msgstr "ViX Yedekleme yöneticisi"
+
+#: plugin.py:184
+msgid "ViX Image manager"
+msgstr "ViX Görüntü yöneticisi"
+
+#: plugin.py:185
+msgid "ViX Mount manager"
+msgstr "ViX Mount yöneticisi"
+
+#: plugin.py:186
+msgid "ViX Script runner"
+msgstr "ViX Komut dosyası koşucusu"
+
+#: plugin.py:187
+msgid "ViX SWAP manager"
+msgstr "ViX SWAP yöneticisi"
+
+#: ui.py:67
+msgid "Manage the backups of your settings."
+msgstr "Ayarlarınızın yedeklerini yönetin."
+
+#: ui.py:68
+msgid "Create and flash complete images of your system."
+msgstr "Sisteminizin eksiksiz görüntülerini oluşturun ve flash yapın."
+
+#: ui.py:69
+msgid "Install IPK's from your tmp folder."
+msgstr "IPK'leri tmp klasörünüzden yükleyin."
+
+#: ui.py:69
+msgid "Install local extension"
+msgstr "Yerel uzantıyı kur"
+
+#: ui.py:70
+msgid "Manage your devices mount points."
+msgstr "Cihazlarınızın bağlama noktalarını yönetin."
+
+#: ui.py:71
+msgid "Run your shell scripts."
+msgstr "Kabuk betiklerinizi çalıştırın."
+
+#: ui.py:72
+msgid "Create and Manage your SWAP files."
+msgstr "SWAP dosyalarınızı oluşturun ve yönetin."
+
+#: ui.py:74
+msgid "Create empty slot."
+msgstr "Boş yuva oluştur."
+
+#: ui.py:74
+msgid "MultiBoot manager"
+msgstr "MultiBoot yöneticisi"
+
+#: ui.py:76
+msgid "H9SDcard Manager"
+msgstr "H9SDcard Yöneticisi"
+
+#: ui.py:76
+msgid "Move Nand root to SD card"
+msgstr "Nand kökünü SD karta taşı"

@@ -1,59 +1,48 @@
-# Russian translations for plugins package.
-# Copyright (C) 2011 THE plugins'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the plugins package.
-# Automatically generated, 2011.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-19 21:00+0200\n"
-"PO-Revision-Date: 2013-10-20 17:17+0100\n"
-"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
-"Language-Team: RU locale by Sowa\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: litvcom\n"
+"Language-Team: Russian localization by litvcom\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-
-msgid "%a %e %b  %-H:%M"
-msgstr "%a %e %b  %-H:%M"
-
-msgid "128 Mb"
-msgstr ""
+"X-Generator: Poedit 2.3.1\n"
 
 msgid "16 Mb"
-msgstr "16 МБайт"
-
-msgid "256 Mb"
-msgstr ""
+msgstr "16 МБ"
 
 msgid "30 Days"
-msgstr "30 Дней"
+msgstr "30 дней"
 
 msgid "32 Mb"
-msgstr "32 МБайта"
+msgstr "32 МБ"
 
 msgid "64 Mb"
-msgstr "64 МБайта"
+msgstr "64 МБ"
 
 msgid "8 Mb"
-msgstr "8 МБайт"
+msgstr "8 МБ"
 
 msgid "96 Mb"
-msgstr "96 МБайт"
+msgstr "96 МБ"
 
-msgid "A background update check is is progress, please wait for retry."
-msgstr "Выполняется фоновая проверка обновлений, пожалуйста, ждите"
+msgid "A background update check is in progress, please try again."
+msgstr ""
+"Идет проверка наличие обновлений в фоновом режиме. Пожалуйста, попробуйте "
+"позже."
 
 msgid "A backup has been detected."
-msgstr "Обнаружена резервная копия."
+msgstr "Резервная копия была обнаружена."
 
 msgid "Activate"
-msgstr "Активировать"
+msgstr "Включить"
 
 msgid "Active"
 msgstr "Активный"
@@ -61,137 +50,179 @@ msgstr "Активный"
 msgid "Active:"
 msgstr "Активный:"
 
+msgid "Allows the script runner to be launched from extensions."
+msgstr "Позволяет запускать скрипт из дополнений."
+
 msgid "Allows the softcam manager to be launched from extensions."
+msgstr "Позволяет запускать эмулятор из дополнений."
+
+msgid ""
+"Allows the softcam to be checked if it stopped working, and restarted "
+"automatically if needed."
 msgstr ""
+"Позволяет эмулятору проверять его работу и при необходимости автоматически "
+"перезапускать."
 
-msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
-msgstr "Позволяет проверять работу эмулятора и автоматически перезапускать его при необходимости."
+msgid "Allows you to close the window automatically."
+msgstr "Позволяет автоматически закрывать окно."
 
-msgid "Allows you have the window close automatically."
+msgid "Allows you to schedule your backups."
+msgstr "Позволяет планировать резервное копирование."
+
+msgid "Allows you to schedule your image backups."
+msgstr "Позволяет планировать резервное копирование имиджа."
+
+msgid "Allows you to tag your backups to a box."
+msgstr "Позволяет создавать резервные копии для ресивера."
+
+msgid ""
+"Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr ""
-
-msgid "Allows you schedule your backups."
-msgstr "Позволяет планировать создание резервных копий."
-
-msgid "Allows you schedule your image backups."
-msgstr "Позволяет планировать создание резервных копий прошивки."
-
-msgid "Allows you to tag your backups to a box. (default is box name/type)"
-msgstr "Указывает принадлежность резервной копии ресиверу (по умолчанию имя/тип)"
-
-msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr "Указывает принадлежность резервной копии прошивки ресиверу (по умолчанию имя/тип)"
-
-msgid "Are you ready to create a backup image ?"
-msgstr "Вы готовы к созданию полной копии прошивки?"
+"Позволяет помечать резервные копии имиджа. (По умолчанию: имя ресивера/тип "
+"ресивера)"
 
 msgid "Are you ready to install ?"
-msgstr "Вы готовы к инсталляции?"
+msgstr "Вы готовы к установке?"
+
+msgid "Are you sure you want to delete image slot %s ?"
+msgstr "Вы уверены, что хотите удалить слот имиджа %s?"
 
 msgid ""
 "Are you sure you want to delete this backup:\n"
 " "
 msgstr ""
-"Вы действительно хотите удалить этоу копию:\n"
+"Вы уверены, что хотите удалить эту резервную копию:\n"
+" "
+
+msgid ""
+"Are you sure you want to delete this image backup:\n"
+" "
+msgstr ""
+"Вы уверены, что хотите удалить эту резервную копию имиджа:\n"
 " "
 
 msgid ""
 "Are you sure you want to download this image:\n"
 " "
-msgstr "Вы действительно хотите загрузить имидж:"
+msgstr ""
+"Вы уверены, что хотите скачать этот имидж:\n"
+" "
+
+msgid ""
+"Are you sure you want to flash this image:\n"
+" "
+msgstr ""
+"Вы уверены, что хотите прошить этот имидж:\n"
+" "
 
 msgid ""
 "Are you sure you want to restore this backup:\n"
 " "
 msgstr ""
-"Вы действительно хотите восстановить этоу копию:\n"
+"Вы уверены, что хотите восстановить эту резервную копию:\n"
 " "
 
-msgid ""
-"Are you sure you want to restore this image:\n"
-" "
-msgstr ""
-"Вы уверены, что хотите восстановить этот имидж:\n"
-" "
+msgid "Automatic settings backup"
+msgstr "Автосохранение настроек"
 
 msgid "Autostart"
-msgstr "Автостарт"
+msgstr "Автозапуск"
+
+msgid "Backing up eMMC partitions for USB flash ..."
+msgstr "Копирование разделов eMMC для USB-флеш..."
+
+msgid "Backing up eMMC partitions for USB flash..."
+msgstr "Копирование разделов eMMC для USB-флеш..."
 
 msgid "Backing up files..."
 msgstr "Резервное копирование файлов..."
 
-msgid "Backup Complete..."
+msgid "Backing up kernel..."
+msgstr "Резервное копирование ядра..."
+
+msgid "Backing up root file system..."
+msgstr "Резервное копирование корневой файловой системы..."
+
+msgid "Backup complete."
+msgstr "Резервное копирование завершено."
+
+msgid "Backup complete..."
 msgstr "Резервное копирование завершено..."
 
-msgid "Backup Confirmation"
-msgstr "Подтверждение создания резервной копии"
+msgid "Backup confirmation"
+msgstr "Подтверждение резервного копирования"
 
-msgid "Backup Created"
-msgstr "Создание резервной копии"
+msgid "Backup created"
+msgstr "Резервная копия создана"
 
-msgid "Backup Location"
-msgstr "Расположение резервной копии"
-
-msgid "Backup Manager"
-msgstr "Резервироание настроек"
-
-msgid "Backup Manager Log"
-msgstr "Протокол резервного копирования"
-
-msgid "Backup Manager Setup"
-msgstr "Настройки резервного копирования"
-
-msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Резервное копирование неудачно - возможно, неправильное расположение или нет свободного места на выбранном устройстве"
+msgid ""
+"Backup failed - e. g. wrong backup destination or no space left on backup "
+"device."
+msgstr ""
+"Ошибка резервного копирования! Неправильное место назначения или на "
+"устройстве резервного копирования не осталось места."
 
 msgid ""
 "Backup in progress,\n"
-"Please for it to finish, before trying again"
+"Please wait for it to finish, before trying again."
 msgstr ""
-"Копия создаётся...\n"
-"Дождитесь окончания перед следующим действием"
+"Выполняется резервное копирование,\n"
+"Пожалуйста, дождитесь завершение, прежде чем пытаться снова."
+
+msgid "Backup location"
+msgstr "Расположение"
+
+msgid "Backup manager"
+msgstr "Резервное копирование"
+
+msgid "Backup manager settings"
+msgstr "Резервное копирование"
 
 msgid "Backup prefix"
-msgstr "Добавить префикс к имени резервной копии"
+msgstr "Префикс копии"
+
+msgid "Backups to keep"
+msgstr "Копии для хранения"
 
 msgid "CCcam can't run whilst MGcamd is running"
-msgstr "CCcam не работает одновременно с MgCamd"
+msgstr "CCcam не может быть запущен во время работы MGcamd"
 
-msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
-msgstr "Не можете размонтировать раздел, убедитесь, что он не используется для подкачки или в путях записи/TimeShift"
+msgid "CCcam can't run whilst MGcamd is running."
+msgstr "CCcam не может работать с MGcamd."
+
+msgid ""
+"Can't un-mount the partition; make sure it is not being used for SWAP or "
+"record/timeshift paths."
+msgstr ""
+"Невозможно отсоединить раздел! Убедитесь, что он не используется для "
+"подкачки, записи или таймшифта."
 
 msgid "Cancel"
-msgstr "Отмена"
+msgstr "Отменить"
 
-msgid "Change Location"
-msgstr "Изменить местоположение"
+msgid "Change location"
+msgstr "Изменить расположение"
 
-#, python-format
-msgid ""
-"Changes need a system restart to take effect.\n"
-"Restart your %s %s now?"
-msgstr ""
-
-msgid "Checking Free RAM.."
-msgstr "Проверка свободной памяти.."
+msgid "Checking free RAM.."
+msgstr "Проверка свободной оперативной памяти."
 
 msgid "Checking softcams..."
-msgstr "Проверка эмуляторов..."
+msgstr "Проверка эмулятора..."
 
-msgid "Choose Files"
-msgstr "Выбор файлов"
+msgid "Choose files"
+msgstr "Выбрать файлы"
 
-msgid "Choose local ipk's folder"
-msgstr "Выберите локальную папку содержащую пакеты ipk"
+msgid "Choose local IPK's folder"
+msgstr "Выбрать локальную папку с IPK"
 
 msgid "Choose where to mount your devices to:"
-msgstr "Выбор точки монтирования:"
+msgstr "Выберите, точки монтирования устройств:"
 
 msgid "Close"
 msgstr "Закрыть"
 
 msgid "Close window on success"
-msgstr ""
+msgstr "Закрыть окно в случае успеха"
 
 msgid "Comparing against backup..."
 msgstr "Сравнение с резервной копией..."
@@ -199,173 +230,276 @@ msgstr "Сравнение с резервной копией..."
 msgid "Create"
 msgstr "Создать"
 
-msgid "Create and Manage your swapfiles."
+msgid "Create a settings backup before updating."
+msgstr "Перед обновлением выполнять резервное копирование настроек."
+
+msgid "Create and Manage your SWAP files."
 msgstr "Создание и управление файлом подкачки"
 
-msgid "Create and Restore complete images of the system."
-msgstr "Создание и восстанавление полных образов системы"
+msgid "Create and flash complete images of your system."
+msgstr "Создание и прошивка имиджа системы"
 
-msgid "Creating Backup Files..."
-msgstr "Создание резервных копий..."
-
-msgid "Creating Swap.."
+msgid "Creating SWAP.."
 msgstr "Создание файла подкачки..."
 
 msgid "Creating list of installed plugins..."
-msgstr "Создать список установленных плагинов..."
+msgstr "Создание списка установленных плагинов..."
 
 msgid "Creating zip..."
-msgstr ""
+msgstr "Создание архива ZIP..."
 
-msgid "Current Status:"
-msgstr "Текущее состояние:"
+msgid "Current status:"
+msgstr "Текущий статус:"
 
 msgid "Daily"
 msgstr "Ежедневно"
 
 msgid "Deactivate"
-msgstr "Деактивировать"
+msgstr "Отключить"
 
 msgid "Delete"
 msgstr "Удалить"
 
 msgid "Deselect"
-msgstr "Отмена выбора"
+msgstr "Отменить"
 
 msgid "Device: "
-msgstr "Место хранения: "
+msgstr "Устройство: "
 
 msgid "Device: None available"
-msgstr "Место хранения: Не выбрано!"
+msgstr "Устройство: не доступно"
 
-msgid "Disable Startup"
-msgstr "Отключить автостарт"
+msgid "Device: none available"
+msgstr "Устройство: не доступно"
+
+msgid "Disable startup"
+msgstr "Отключить запуск"
+
+msgid "Do you want to change download url"
+msgstr "Вы хотите изменить URL-адрес загрузки?"
+
+msgid ""
+"Do you want to create a full image backup?\n"
+"This can take about 6 minutes to complete."
+msgstr ""
+"Хотите создать полную резервную копию имиджа?\n"
+"Это может занять около 6 минут."
+
+msgid ""
+"Do you want to flash image\n"
+"%s"
+msgstr ""
+"Вы хотите прошить имидж\n"
+"%s"
+
+msgid "Do you want to restart GUI now ?"
+msgstr "Хотите перезагрузить GUI сейчас?"
 
 msgid "Do you want to restore your Enigma2 plugins ?"
-msgstr "Вы хотите восстановить сохранённые плагины?"
+msgstr "Хотите восстановить свои плагины Enigma2?"
 
 msgid "Do you want to restore your Enigma2 settings ?"
-msgstr "Вы хотите восстановить сохранённые настройки?"
+msgstr "Хотите восстановить свои настройки Enigma2?"
+
+msgid "Do you want to restore your enigma2 settings ?"
+msgstr "Хотите восстановить свои настройки Enigma2?"
 
 msgid "Download"
 msgstr "Загрузить"
 
-msgid "Download Confirmation"
+msgid "Download confirmation"
 msgstr "Подтверждение загрузки"
 
-msgid "Downloading Image..."
-msgstr "Загружается прошивка..."
+msgid "Downloading"
+msgstr "Загрузка"
 
 msgid "Downloads"
-msgstr "Скачать"
+msgstr "Загрузить"
 
-msgid "Enable Startup"
-msgstr "Включить автостарт"
+msgid "ET8500 Image Restore"
+msgstr "Восстановление имиджа"
 
-msgid "Enable Swap at startup"
-msgstr "Включить автостарт файла подкачки"
+msgid ""
+"ET8500 Multiboot: Yes to restore OS1 No to restore OS2:\n"
+" "
+msgstr ""
+"Мультизагрузка: 'Да', чтобы восстановить ОС1 'Нет', чтобы восстановить ОС2:\n"
+" "
+
+msgid "Empty slot"
+msgstr "Пустой слот"
+
+msgid "Enable SWAP at startup"
+msgstr "SWAP при запуске"
 
 msgid "Enable frozen check"
-msgstr ""
+msgstr "Включить проверку на зависание"
 
-msgid "Enough Retries, delaying till next schedule."
-msgstr "Достаточно повторов, задержка до следующего пункта планировщика."
+msgid "Enable startup"
+msgstr "Включить запуск"
+
+msgid "Enough retries, delaying till next schedule."
+msgstr "Достаточно попыток, подождите до следующего старта."
+
+msgid "Erase"
+msgstr "Очистить"
 
 msgid "Exit the restore wizard"
-msgstr "Выход из Мастера восстановления"
+msgstr "Выход из мастера восстановления"
 
 msgid "Extra IPK's"
-msgstr "Дополнительные пакеты ipk"
+msgstr "Дополнительные IPK"
 
-msgid "Found none standard softcam, trying to start, this may fail"
-msgstr "Найден нестандартный эмулятор, возможны проблемы при запуске"
+msgid "Flash"
+msgstr "Прошить"
+
+msgid "Flash confirmation"
+msgstr "Подтверждение прошивки"
+
+msgid "Flash image unzip successful."
+msgstr "Имидж успешно распакован."
+
+msgid "Found non-standard softcam, trying to start, this may fail."
+msgstr ""
+"Найден неподдерживаемый эмулятор, попытка запуска, но может не удаться."
 
 msgid "Free space:"
-msgstr "Свободно:"
+msgstr "Свободно памяти:"
 
 msgid "Frozen check interval"
-msgstr "Интервал проверки "
+msgstr "Интервал проверки"
 
 msgid "GB"
-msgstr "ГБайт"
+msgstr "ГБ"
+
+msgid "H9 SDcard manager"
+msgstr "Управление SDCard"
+
+msgid "H9SDcard Manager"
+msgstr "Управление SDCard"
 
 msgid "HARD DISK: "
-msgstr "Жёсткий диск: "
+msgstr "ЖЕСТКИЙ ДИСК: "
 
-msgid "IPK Installer"
-msgstr "Установщик IPK"
+msgid "Http url for OpenATV Images"
+msgstr "URL-адрес для имиджа OpenATV"
 
-msgid "Image Manager"
-msgstr "Управление прошивкой"
+msgid "Http url for OpenPli Images"
+msgstr "URL-адрес для имиджа OpenPli"
 
-msgid "Image Manager Setup"
-msgstr "Настройки сохранения прошивки"
+msgid "Http url for OpenViX Images"
+msgstr "URL-адрес для имиджа OpenViX"
+
+msgid "Http url for User Images"
+msgstr "URL-адрес для имиджа пользователя"
+
+msgid "IPK installer"
+msgstr "Установка IPK"
+
+msgid "Image manager"
+msgstr "Управление имиджами"
+
+msgid "Image manager settings"
+msgstr "Управление имиджами"
 
 msgid "Inactive"
-msgstr "Неактивный"
+msgstr "Неактивен"
+
+msgid "Include machine name in backup name"
+msgstr "Включить имя ресивера в имя резервной копии"
 
 msgid "Info"
 msgstr "Инфо"
 
-msgid "Install"
-msgstr "Установка"
+msgid "Init Zgemma H9 SDCARD - please reboot after use."
+msgstr "Инициализация Карта SD… Пожалуйста, перезагрузите после использования."
 
-msgid "Install Confirmation"
-msgstr "Подтверждение установки"
+msgid "Init Zgemma H9 USB/SDA1 - please reboot after use."
+msgstr ""
+"Инициализация USB/SDA1... Пожалуйста, перезагрузите после использования."
+
+msgid "Install"
+msgstr "Установить"
 
 msgid "Install IPK's from your tmp folder."
-msgstr "Установка IPK пакетов из папки /tmp"
+msgstr "Установка IPK из каталога tmp"
+
+msgid "Install confirmation"
+msgstr "Подтверждение установки"
 
 msgid "Install extensions."
-msgstr "Установка расширений."
+msgstr "Установить дополнения."
 
 msgid "Install local extension"
-msgstr "Установка дополнений"
+msgstr "Установка локальных плагинов"
 
 msgid "Installing..."
-msgstr "Устанавливается..."
+msgstr "Установка..."
 
 msgid "Invert"
-msgstr "Изменить порядок"
+msgstr "Инвертировать"
 
-msgid "Ipkg"
-msgstr "Пакеты ipk"
-
-msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
-msgstr "Вы не указали путь для дополнительных пакетов ipk, укажите его в меню настроек резервного копирования"
+msgid ""
+"It seems you have not setup an extra location. Please set it up in the "
+"Backup manager setup menu."
+msgstr ""
+"Похоже, дополнительное местоположение не было настроено. Пожалуйста, "
+"настройте его в меню настроек резервного копирования."
 
 msgid "Location of where backup should be saved."
-msgstr "Место расположения резервных копий"
+msgstr "Место, где должна быть сохранена резервная копия."
 
-msgid "Location of where image backup should be saved."
-msgstr "Место для сохранения резервной копии имиджа."
+msgid "Location of where the image backup should be saved."
+msgstr "Место, где должен быть сохранена имидж резервной копии."
 
 msgid "MB"
-msgstr "МБайт"
+msgstr "МБ"
 
-msgid "MGcamd can't run whilst CCcam is running"
-msgstr "MgCamd не работает одновременно с работающим CCcam"
+msgid "MGcamd can't run whilst CCcam is running."
+msgstr "MGcamd не может работать с CCcam."
 
-msgid "Manage you devices mountpoints."
-msgstr "Работа с точками монтирования"
+msgid "Main menu"
+msgstr "Основное меню"
 
-msgid "Manage your backups of your settings."
-msgstr "Управление сохранениями настроек"
+msgid "Manage the backups of your settings."
+msgstr "Управление резервными копиями Ваших настроек"
+
+msgid "Manage your devices mount points."
+msgstr "Управление точками монтирования своих устройств"
+
+msgid "Max backups to keep (0==all)"
+msgstr "Максимальное количество копий (0==все)"
+
+msgid "Max image backups to keep (0==all)"
+msgstr "Максимальное количество копий имиджа (0==все)"
 
 msgid "Mount"
 msgstr "Монтировать"
 
-msgid "Mount Manager"
+msgid "Mount failed."
+msgstr "Монтирование не удалось!"
+
+msgid "Mount manager"
 msgstr "Менеджер монтирования"
 
-msgid "Mount failed"
-msgstr "Монтирование неудачно!"
-
 msgid "Mount: "
-msgstr "Точка монтирования: "
+msgstr "Монт.: "
 
-msgid "Moving to Backup Location..."
-msgstr "Перейти к месту хранения..."
+msgid "Move Nand root to SD card"
+msgstr "Переместить NAND на SD-карту"
+
+msgid "Moving to backup Location..."
+msgstr "Перемещение в каталог резервного копирования..."
+
+msgid "Multiboot ERROR! - no STARTUP in boot partition."
+msgstr "ОШИБКА мультизагрузки! - нет запуска в загрузочном разделе."
+
+msgid "Multiboot image manager"
+msgstr "Мультизагрузка"
+
+msgid "Multiboot only able to restore this backup to mmc slot1"
+msgstr ""
+"Мультизагрузчик может восстановить эту резервную копию только на MMC слот1"
 
 msgid "NO, do not restore plugins"
 msgstr "Нет, не восстанавливать плагины"
@@ -373,130 +507,187 @@ msgstr "Нет, не восстанавливать плагины"
 msgid "NO, do not restore settings"
 msgstr "Нет, не восстанавливать настройки"
 
-msgid "New Backup"
+msgid "New backup"
 msgstr "Новая копия"
 
-msgid "Next Backup: "
-msgstr "Следующее резервирование: "
+msgid "Next backup: "
+msgstr "Следующая копия:"
 
 msgid ""
 "No config files found, please setup CCcam first\n"
-"in /etc/CCcam.cfg"
+"in /etc/CCcam.cfg."
 msgstr ""
-"Отсутствуют файлы конфигурации, установите настройки CCcam\n"
-"в /etc/CCcam.cfg"
+"Конфигурационные файлы не найдены, настройте CCcam\n"
+"в /etc/CCcam.cfg."
 
 msgid ""
 "No config files found, please setup Hypercam first\n"
-"in /etc/hypercam.cfg"
+"in /etc/hypercam.cfg."
 msgstr ""
-"Отсутствуют файлы конфигурации, установите настройки Hypercam\n"
-"в /etc/hypercam.cfg"
+"Конфигурационные файлы не найдены, настройте Hypercam\n"
+"в /etc/hypercam.cfg."
 
 msgid ""
 "No config files found, please setup MGcamd first\n"
-"in /var/keys"
+"in /usr/keys."
 msgstr ""
-"Отсутствуют файлы конфигурации, установите настройки MGcamd\n"
-"в /var/keys"
+"Конфигурационные файлы не найдены, настройте MGcamd\n"
+"в /usr/keys."
 
 msgid ""
 "No config files found, please setup Oscam first\n"
 "in /etc/tuxbox/config"
 msgstr ""
-"Отсутствуют файлы конфигурации, установите настройки Oscam\n"
-"в /etc/tuxbox/config"
+"Конфигурационные файлы не найдены, настройте OSCam\n"
+"в /etc/tuxbox/config."
 
-msgid "No plugins where needed to be installed"
-msgstr "Нет необходимых плагинов для установки"
+msgid ""
+"No config files found, please setup Oscam first\n"
+"in /etc/tuxbox/config."
+msgstr ""
+"Конфигурационные файлы не найдены, настройте OSCam\n"
+"в /etc/tuxbox/config."
+
+msgid ""
+"No images found for selected download server...if password check validity"
+msgstr "На выбранном сервере не найдено ни одного имиджа. Проверьте с паролем"
+
+msgid "No plugins needed to be installed"
+msgstr "Нет необходимости устанавливать плагин"
 
 msgid "None"
 msgstr "Нет"
 
+msgid "Note: slot list does not show current image or empty slots."
+msgstr ""
+"Информация: в списке слотов не отображается текущее имиджи или пустые слоты."
+
 msgid "Now skipping restore process"
-msgstr "Пропустить процесс восстановления"
+msgstr "Пропустить восстановление"
 
 msgid "OK"
-msgstr "ОК"
+msgstr "OK"
 
 msgid "OK, to perform a restore"
-msgstr "Нажмите ОК для восстановления"
-
-msgid "Please copy the folder"
-msgstr "Пожалуйста, скопируйте папку"
+msgstr "ОК, чтобы восстановить"
 
 msgid "Please enter a folder that contains some packages."
-msgstr "Пожалуйста, введите путь к папке, которая содержит установочные пакеты."
+msgstr "Пожалуйста, введите папку, которая содержит несколько пакетов."
 
-msgid "Please select device to use as swapfile location"
-msgstr "Пожалуйста, выберите место расположения файла подкачки"
+msgid "Please select device to use as SWAP file location."
+msgstr ""
+"Пожалуйста, выберите устройство для использования в качестве местоположения "
+"файла SWAP."
 
-msgid "Please select the file to restore ?"
-msgstr "Выберите файл для восстановления"
-
-msgid "Please wait while gathers information..."
-msgstr "Пожалуйста подождите, идет сбор информации..."
+msgid "Please select the file to restore."
+msgstr "Пожалуйста, выберите файл для восстановления."
 
 msgid "Please wait while plugins restore completes..."
-msgstr "Ждите, идёт восстановление плагинов..."
+msgstr "Пожалуйста, подождите, пока завершится восстановление плагинов..."
 
-msgid "Please wait while restore prepares"
-msgstr ""
+msgid "Please wait while scanning for devices..."
+msgstr "Пожалуйста, подождите, пока идет сканирование для устройств..."
+
+msgid "Please wait while scanning your %s %s devices..."
+msgstr "Пожалуйста, подождите, пока идет сканирование устройства %s %s ..."
 
 msgid "Please wait while settings restore completes..."
-msgstr "Ждите, идёт восстановление настроек..."
+msgstr "Пожалуйста, подождите, пока завершится восстановление настроек..."
 
 msgid "Please wait while starting\n"
-msgstr "Ожидайте запуска\n"
+msgstr "Подождите, идет запуск\n"
 
 msgid "Please wait while stopping\n"
-msgstr "Ожидайте остановки\n"
+msgstr "Подождите, идет остановка\n"
+
+msgid "Please wait while the flash prepares."
+msgstr "Пожалуйста, подождите, пока подготавливается прошивка."
+
+msgid "Please wait while the system gathers information..."
+msgstr "Пожалуйста, подождите, пока система соберет информацию..."
 
 msgid "Please wait."
-msgstr "Пожалуйста, ждите..."
+msgstr "Пожалуйста, подождите."
 
-msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Список плагинов не сохранён -возможно, неправильное расположение или нет свободного места на выбранном устройстве"
+msgid ""
+"Plugin listing failed - e. g. wrong backup destination or no space left on "
+"backup device."
+msgstr ""
+"Не удалось добавить плагин! Неправильное место назначения или на устройстве "
+"резервного копирования не осталось места."
 
 msgid "Preparing extra plugins..."
 msgstr "Подготовка дополнительных плагинов..."
 
+msgid "Press 'Menu' to select a storage device"
+msgstr "Нажмите 'Меню', чтобы выбрать устройство хранения"
+
 msgid "Press OK to toggle the selection."
-msgstr "Нажмите OK для отметки/отключения выбора."
+msgstr "Нажмите ОК для подтверждения выбора или отмены."
+
+msgid "Press appropiate Init to move Nand root to SDcard."
+msgstr "Нажмите 'Инициализация', чтобы переместить NAND на SD-карту."
+
+msgid "Query before backup starts"
+msgstr "Запрос перед началом копирования"
+
+msgid "Query before image backup starts"
+msgstr "Запрос перед началом копирования имиджа"
+
+msgid "Query before starting backup."
+msgstr "Запрос перед началом резервного копирования."
+
+msgid "Query before starting image backup."
+msgstr "Запрос перед началом резервного копирования имиджа."
 
 msgid "Rebooting..."
 msgstr "Перезагрузка..."
 
-msgid "Remove Confirmation"
-msgstr "Подтверждение удаления"
+msgid ""
+"Recording(s) are in progress or coming up in few seconds!\n"
+"Do you still want to flash image\n"
+"%s?"
+msgstr ""
+"Запись(и) идёт или начнётся в ближайшие несколько секунд!\n"
+"Вы все еще хотите прошить имидж\n"
+"%s?"
+
+msgid ""
+"Removal of this slot will not show in %s Gui.  Are you sure you want to "
+"delete image slot %s ?"
+msgstr ""
+"Удаление этого слота не будет отображаться в %s GUI. Вы уверены, что хотите "
+"удалить слот %s ?"
+
+msgid "Remove confirmation"
+msgstr "Удаление с подтверждением"
 
 msgid "Removing temp mounts..."
-msgstr "Удаление времееных точек монтирования..."
+msgstr "Удаление временных монтирований..."
 
 msgid "Repeat how often"
-msgstr "Как часто повторять"
+msgstr "Повторять, как часто"
 
 msgid "Restart"
-msgstr "Перезапуск"
+msgstr "Перезагрузить"
 
-#, python-format
 msgid "Restart %s %s."
-msgstr ""
+msgstr "Перезапуск %s %s."
 
-msgid "Restart Enigma2."
-msgstr "Перезагрузка Энигмы"
+msgid "Restart GUI."
+msgstr "Перезагрузка GUI."
 
 msgid "Restore"
-msgstr "Восстановление"
+msgstr "Восстановить"
 
 msgid "Restore Confirmation"
 msgstr "Подтверждение восстановления"
 
-msgid "Restore Wizard"
+msgid "Restore wizard"
 msgstr "Мастер восстановления"
 
 msgid "Restoring backup..."
-msgstr "Восстановление резервных копий..."
+msgstr "Восстановление резервной копии..."
 
 msgid "Restoring plugins, this can take a long time..."
 msgstr "Восстановление плагинов, это может занять много времени..."
@@ -504,120 +695,156 @@ msgstr "Восстановление плагинов, это может зан�
 msgid "Restoring plugins..."
 msgstr "Восстановление плагинов..."
 
+msgid "Retrieving image slots - Please wait..."
+msgstr "Получение загрузочных разделов. Пожалуйста, подождите..."
+
 msgid "Run"
-msgstr "Выполнить"
+msgstr "Запустить"
 
 msgid "Run your shell scripts."
-msgstr "Запуск скриптов"
+msgstr "Запуск своих скриптов"
+
+msgid ""
+"SWAP file not found. You have to create the file before you try to activate "
+"it."
+msgstr ""
+"Файл подкачки не найден. Вы должны создать файл, прежде чем пытаться его "
+"активировать."
+
+msgid "SWAP manager"
+msgstr "Управление файлом подкачки"
+
+msgid "SWAP place:"
+msgstr "Путь:"
+
+msgid "SWAP size:"
+msgstr "Размер:"
 
 msgid "Save"
 msgstr "Сохранить"
 
-msgid "Schedule Backups"
-msgstr "Автосохранение"
+msgid "Schedule backups"
+msgstr "Расписание копирования"
 
-msgid "Script Runner"
-msgstr "Выполнить скрипт"
+msgid "Script runner"
+msgstr "Запуск скриптов"
 
-msgid "Script Runner Setup"
-msgstr ""
+msgid "Script runner settings"
+msgstr "Настройки"
 
 msgid "Select"
-msgstr "Выбор"
+msgstr "Выбрать"
 
-msgid "Select a backup to Restore:"
-msgstr "Выберите резервную копию для восстановления:"
+msgid "Select a backup to restore:"
+msgstr "Выберите копию для восстановления:"
 
 msgid "Select a package to install:"
-msgstr "Выбор пакета для установки:"
+msgstr "Выберите пакет для установки:"
 
-msgid "Select an image to Download:"
-msgstr "Выбор имиджа для загрузки:"
+msgid "Select an image to download for %s:"
+msgstr "Выберите имидж для загрузки на %s:"
 
-msgid "Select an image to restore:"
-msgstr "Выберите имидж для восстановления:"
+msgid "Select an image to flash:"
+msgstr "Выберите имидж для прошивки:"
 
 msgid "Select extra packages folder"
-msgstr "Выберите папку дополнительных пакетов"
+msgstr "Пожалуйста, выберите папку с плагинами"
 
 msgid "Select files/folders to backup"
-msgstr "Выбор файлов/папок для создания резервной копии"
+msgstr "Выбор файлов/папок для копирования"
 
 msgid "Select folder that contains plugins"
-msgstr "Выберите папку содержащую плагины"
+msgstr "Выберите папку, содержащую плагины"
 
-msgid "Select the Swap File Size:"
-msgstr "Задайте размер файла подкачки:"
+msgid "Select the SWAP file size:"
+msgstr "Выберите размер файла подкачки:"
 
 msgid "Select:"
-msgstr "Выбор:"
+msgstr "Выбрать:"
 
 msgid "Set the interval to be checked in mins."
-msgstr "Установка интервала проверки в мин."
+msgstr "Установите интервал для проверки в минутах."
 
 msgid "Set the repeat interval of backup schedule."
-msgstr "Установите интервал повторения автоматического создания резервных копий"
+msgstr "Установите интервал повторения резервного копирования."
 
 msgid "Set the time of backup to start."
-msgstr "Установите время старта создания резервной копии."
+msgstr "Установите время для запуска резервного копирования."
 
-msgid "Setting Up..."
+msgid "Setting up..."
 msgstr "Настройка..."
 
-msgid "Setup Mounts"
-msgstr "Настройки монтирования"
+msgid "Setup"
+msgstr "Настройки"
+
+msgid "Setup mounts"
+msgstr "Настройки"
 
 msgid "Show in extensions"
-msgstr ""
+msgstr "Показывать в меню дополнений"
 
 msgid "Size: "
 msgstr "Размер: "
 
-msgid "Softcam Manager"
-msgstr "Управление эмуляторами"
+msgid "Softcam manager"
+msgstr "Управление эмуляторамы"
 
-msgid "Softcam Manager Log"
-msgstr "Протокол управления эмуляторами"
+msgid "Softcam manager settings"
+msgstr "Управление эмуляторамы"
 
-msgid "Softcam Manager Setup"
-msgstr ""
+msgid "Softcam starting..."
+msgstr "Запускается..."
 
-msgid "Softcam Setup"
-msgstr "Настройка эмулятора"
-
-msgid "Softcam Starting..."
-msgstr "Запуск эмулятора..."
-
-msgid "Softcam Stopping..."
-msgstr "Эмулятор останавливается..."
+msgid "Softcam stopping..."
+msgstr "Остановка..."
 
 msgid "SoftcamCheck"
 msgstr "Проверка эмулятора"
 
-msgid "Sorry Image Restore is not supported on the"
-msgstr "К сожалению, имидж не подходит для восстановления"
-
-msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
-msgstr "К сожалению указанный путь не существует или не настроен, пожалуйста, настройте в меню резервного копирования, Диспетчера резервирования"
-
-msgid "Sorry feeds are down for maintenance, Please try again later."
-msgstr "Извините, ресурс закрыт на техническое обслуживание, пожалуйста, повторите попытку позже!"
-
-msgid "Sorry feeds are down for maintenance, Please try using Backup Manager to restore plugins later."
-msgstr "Извините, ресурс закрыт на техническое обслуживание. Пожалуйста, попробуйте использовать Менеджер резервного копирования для восстановления плагинов позже."
-
-#, python-format
-msgid "Sorry you %s %s is not yet compatible."
+msgid ""
+"Sorry but that location does not exist or is not setup. Please set it up in "
+"the Backup manager setup menu."
 msgstr ""
+"Извините, но это местоположение не существует или не настроено. Пожалуйста, "
+"настройте его в меню настроек резервного копирования."
+
+msgid "Sorry the feeds are down for maintenance. Please try again later."
+msgstr "Извините, сервер отключен для обслуживания, повторите попытку позже."
+
+msgid ""
+"Sorry the feeds are down for maintenance. Please try using Backup manager to "
+"restore plugins later."
+msgstr ""
+"Извините, сервер отключен для обслуживания. Для восстановления плагинов, "
+"повторите попытку позже."
+
+msgid ""
+"Sorry the feeds are down for maintenance. Please try using the Backup "
+"manager to restore plugins later."
+msgstr ""
+"Извините, сервер отключен для обслуживания. Для восстановления плагинов, "
+"повторите попытку позже."
+
+msgid "Sorry, but the file is not compatible with this image version."
+msgstr "Извините, но файл не совместим с этой версией имиджа."
 
 msgid "Sorry, but the restore failed."
 msgstr "Извините, но восстановление не удалось."
 
-msgid "Sorry, no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems"
-msgstr "Не обнаружено устройств, поддерживающих создание файла подкачки. Невозможно создание на сетевых дисках или в файловой системе FAT32"
+msgid ""
+"Sorry, no physical devices that supports SWAP attached. Can't create SWAP "
+"file on network or fat32 file-systems."
+msgstr ""
+"К сожалению, нет устройств, поддерживающих файл подкачки. Невозможно создать "
+"подкачку в сетевых или файловых системах FAT32."
 
-msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
-msgstr "Не хватает свободной памяти, и нет устройств, поддерживающих создание файла подкачки. Невозможно создание на сетевых дисках или в файловой системе FAT32, невозможно создать резервную копию"
+msgid ""
+"Sorry, not enough free RAM found, and no physical devices that supports SWAP "
+"attached. Can't create SWAP file on network or fat32 file-systems, unable to "
+"make backup."
+msgstr ""
+"К сожалению, недостаточно свободной оперативной памяти, и нет устройств, "
+"поддерживающих файл подкачки. Невозможно создать резервную копию!"
 
 msgid "Start"
 msgstr "Старт"
@@ -626,169 +853,228 @@ msgid "Starting..."
 msgstr "Запуск..."
 
 msgid "Status:"
-msgstr "Состояние:"
+msgstr "Статус:"
 
 msgid "Stop"
 msgstr "Стоп"
 
-msgid "Swap File not found. You have to create the file before to activate."
-msgstr "Файл подкачки не найден. Вы должны создать файл, прежде чем активировать."
+msgid "Temp folder"
+msgstr "Временная папка"
 
-msgid "Swap Manager"
-msgstr "Файл подкачки"
+msgid "The backup location does not have enough free space."
+msgstr "В хранилище резервных копий недостаточно свободного места."
 
-msgid "Swap Place:"
-msgstr "Расположение:"
+msgid "The backup location does not have enough free space.\n"
+msgstr "В хранилище резервных копий недостаточно свободного места.\n"
 
-msgid "Swap Size:"
-msgstr "Размер:"
+msgid ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
+msgstr ""
+"Изменения требуют перезагрузки.\n"
+"Перезагрузите Ваш %s %s сейчас?"
 
-msgid "TB"
-msgstr "ТВ"
+msgid "The chosen location does not exist, using /media/hdd."
+msgstr "Выбранное местоположение не существует, используется /media/hdd."
 
-msgid "Temp Folder"
-msgstr "Временный каталог"
+msgid ""
+"The name of the receiver can be included in the backup filename, but makes "
+"the filename lengthy."
+msgstr ""
+"Имя ресивера может быть включено в имя резервной копии, но делает имя "
+"немного длиннее."
 
-msgid "The backup location does not have enough freespace."
-msgstr "Выбранный путь не имеет достаточно свободного места"
-
-msgid "The chosen location does not exist, using /media/hdd"
-msgstr "Выбранное место не существует, используйте /media/hdd"
-
-msgid "The wizard is finished now, and will reboot"
-msgstr "Мастер закончил работу, ресивер будет перезагружен"
+msgid "The wizard is finished now, and will reboot."
+msgstr "Мастер закончил работу и перезагружается."
 
 msgid "The wizard is finished now."
-msgstr "Мастер закончил работу"
+msgstr "Мастер закончил работу."
 
-msgid "This Device is already mounted as HDD."
-msgstr "Данное устройство уже смонтировано как HDD"
+msgid "There is a problem with this device. Please reformat it and try again."
+msgstr ""
+"Есть проблема с этим устройством. Пожалуйста, отформатируйте и попробуйте "
+"снова."
 
-msgid "Time of Backup to start"
-msgstr "Время автосохранения"
+msgid "There is no backup to delete."
+msgstr "Нет резервной копии для удаления."
+
+msgid "There is no backup to restore."
+msgstr "Нет резервной копии для восстановления."
+
+msgid "There is no image to delete."
+msgstr "Нет имиджа для удаления."
+
+msgid "There is no image to flash."
+msgstr "Нет имиджа для прошивки."
+
+msgid "This device is already mounted as HDD."
+msgstr "Это устройство уже было установлено как HDD."
+
+msgid "Time of backup to start"
+msgstr "Время начала копирования"
 
 msgid "Type: "
 msgstr "Тип: "
 
-msgid "USB: "
-msgstr "USB: "
+msgid "Un-mount"
+msgstr "Размонтировать"
 
-msgid "Unmount"
-msgstr "Отмонтир."
+msgid ""
+"Unzip error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"Ошибка распаковки (также в журнале отладки):\n"
+"%s"
 
-msgid "Updating mount locations."
-msgstr "Обновление точек монтирования"
+msgid "Updating mount locations..."
+msgstr "Обновление точек монтирования..."
 
 msgid "Use as HDD"
 msgstr "Использовать как HDD"
 
+msgid "Use the cursor keys to select an installed image and then Erase button."
+msgstr ""
+"Используйте клавиши курсора, чтобы выбрать установленное изображение, а "
+"затем кнопку удаления."
+
+msgid "VIX"
+msgstr "ViX"
+
 msgid "ViX"
-msgstr "VIX"
+msgstr "ViX"
 
-msgid "ViX Backup Manager"
-msgstr "ViX Диспетчер резервирования"
+msgid "ViX Backup manager"
+msgstr "Резервное копирование"
 
-msgid "ViX Image Manager"
-msgstr "ViX Диспетчер имиджей"
+msgid "ViX Image manager"
+msgstr "Управление имиджами"
 
-msgid "ViX Mount Manager"
-msgstr "ViX Диспетчер точек монтирования"
+msgid "ViX Mount manager"
+msgstr "Менеджер монтирования"
 
-msgid "ViX Script Runner"
-msgstr "ViX Запустить скрипт"
+msgid "ViX SWAP manager"
+msgstr "Управление файлом подкачки"
 
-msgid "ViX Swap Manager"
-msgstr "ViX Диспетчер файла подкачки"
+msgid "ViX Script runner"
+msgstr "Запуск скриптов"
 
-msgid "View Progress"
-msgstr "Наблюдать выполнение"
+msgid "View progress"
+msgstr "Процесс выполнения"
 
-msgid "Wait please while creating swapfile..."
-msgstr "Пожалуйста, подождите, создаётся файла подкачки..."
+msgid "Wait please while creating SWAP file..."
+msgstr "Пожалуйста, подождите, пока создается файл подкачки..."
 
 msgid ""
 "Wait please while scanning\n"
 "for softcam's..."
 msgstr ""
-"Подождите, идёт поиск\n"
-"эмуляторов..."
-
-msgid "Wait please while scanning for devices..."
-msgstr "Подождите, сканируются накопители..."
-
-#, python-format
-msgid "Wait please while scanning your %s %s devices..."
-msgstr ""
+"Пожалуйста, подождите, пока идет поиск\n"
+"эмулятора..."
 
 msgid "Wait please while scanning..."
-msgstr "Подождите, идёт поиск..."
+msgstr "Пожалуйста, подождите, пока идет сканирования..."
 
 msgid "Weekly"
 msgstr "Еженедельно"
 
-msgid ""
-"Welcome to the restore wizard.\n"
-"\n"
-"A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
-msgstr ""
-"Добро пожаловать в Мастер восстановления.\n"
-"\n"
-"Резервная копия обнаружена.\n"
-"Вы можете использовать Мастер для восстановления настроек и плагинов, сохранённых при создании резервной копии.\n"
-
 msgid "YES, to restore plugins"
-msgstr "Да, восстановить плагины"
+msgstr "Да, чтобы восстановить плагины"
 
 msgid "YES, to restore settings"
-msgstr "Да, восстановить настройки"
+msgstr "Да, чтобы восстановить настройки"
 
-msgid "You have no backup to delete."
-msgstr "Нет копии для удаления."
-
-msgid "You have no backups to restore."
-msgstr "Нет копии для восстановления."
-
-msgid "You have no image to delete."
-msgstr "Нет прошивки для удаления."
-
-msgid "You have no image to download."
-msgstr "Нет прошивки для загрузки."
-
-msgid "You have no image to restore."
-msgstr "Не обнаружен имидж для восстановления."
-
-msgid "You have to create a Swap File before to activate the autostart."
-msgstr "Вы должны создать файл подкачки прежде, чем активировать автозапуск."
-
-#, python-format
 msgid ""
-"Your %s %s is about to run a backup of your settings and detect your plugins,\n"
+"You are about to flash an eMMC flash; we cannot take any responsibility for "
+"any errors or damage to your box during this process.\n"
+"Proceed with CAUTION!:\n"
+"Are you sure you want to flash this image:\n"
+" "
+msgstr ""
+"Вы собираетесь прошить имидж на eMMC. Мы не несем никакой ответственности за "
+"любые ошибки или повреждение, вызванные этим процессом.\n"
+"Продолжайте с осторожностью!\n"
+"Вы уверены, что хотите прошить имидж:"
+
+msgid "You have decided not to flash image."
+msgstr "Вы отказались прошивать имидж."
+
+msgid "You have to create a SWAP file before trying to activate the autostart."
+msgstr "Вам нужно создать файл подкачки, прежде чем активировать автозапуск."
+
+msgid ""
+"Your %s %s could not connect to the plugin feeds at this time. Please try "
+"using the Backup manager to restore plugins later."
+msgstr ""
+"Ваш %s %s не может подключиться к фиду. Для восстановления плагинов, "
+"повторите попытку позже."
+
+msgid ""
+"Your %s %s is about to create a full image backup, this can take about 6 "
+"minutes to complete.\n"
 "Do you want to allow this?"
 msgstr ""
+"Ваш %s %s создает полную резервную копию имиджа, это может занять около 6 "
+"минут.\n"
+"Продолжить?"
 
-#, python-format
 msgid ""
-"Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
-"do you want to allow this?"
+"Your %s %s is about to run a backup of your settings and to detect your "
+"plugins.\n"
+"Do you want to allow this?"
 msgstr ""
+"Ваш %s %s запускает резервное копирование настроек и плагинов.\n"
+"Продолжить?"
 
-#, python-format
-msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
+msgid ""
+"Your %s %s is not connected to a network. Please check your network settings "
+"and try again."
 msgstr ""
+"Ваш %s %s не подключен к сети. Пожалуйста, проверьте настройки сети и "
+"попробуйте снова."
 
-#, python-format
-msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
+msgid ""
+"Your %s %s is not connected to a network. Please try using the Backup "
+"manager to restore plugins later when a network connection is available."
 msgstr ""
+"Ваш %s %s не подключен к сети. Для восстановления плагинов, повторите "
+"попытку позже, когда будет доступно сетевое соединение."
 
-msgid "echo 'Downloading Image.'"
-msgstr "echo 'Загружается имидж.'"
+msgid ""
+"Your %s %s is not connected to the Internet. Please check your network "
+"settings and try again."
+msgstr ""
+"Ваш %s %s не подключен к Интернету. Пожалуйста, проверьте настройки сети и "
+"попробуйте снова."
 
-msgid "there was a problem with this device, please reformat and try again."
-msgstr "Возникла проблема с накопителем, пожалуйста, отформатируйте и попробуйте снова."
+msgid ""
+"Your %s %s is not connected to the Internet. Please try using Backup manager "
+"to restore plugins later."
+msgstr ""
+"Ваш %s %s не подключен к Интернету. Для восстановления плагинов, повторите "
+"попытку позже."
 
-msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr " USB-флешь, вставьте USB-флешь в передний порт ресивера и включите его"
+msgid ""
+"Your %s %s is not connected to the Internet. Please try using the Backup "
+"manager to restore plugins later."
+msgstr ""
+"Ваш %s %s не подключен к Интернету. Для восстановления плагинов, повторите "
+"попытку позже."
+
+msgid ""
+"ofgwrite error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"Ошибка ofgwrite (также в журнале отладки):\n"
+"%s"
+
+msgid "slot%s - %s"
+msgstr "Слот%s - %s"
+
+msgid "slot%s - %s "
+msgstr "Слот%s - %s "
+
+msgid "slot%s - %s (current image)"
+msgstr "Слот%s - %s (текущий имидж)"
 
 msgid "unavailable"
-msgstr "недоступен"
+msgstr "Недоступен"

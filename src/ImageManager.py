@@ -260,10 +260,15 @@ class VIXImageManager(Screen):
 		self.session.openWithCallback(self.setupDone, Setup, "viximagemanager", "SystemPlugins/ViX", self.menu_path, PluginLanguageDomain)
 
 	def doDownload(self):
-		self.choices = [("OpenViX", 1), ("OpenATV", 2), ("OpenPli",3)]
-		self.urlchoices = [config.imagemanager.imagefeed_ViX.value, config.imagemanager.imagefeed_ATV.value, config.imagemanager.imagefeed_Pli.value]
-		self.message = _("Do you want to change download url")
-		self.session.openWithCallback(self.doDownload2, MessageBox, self.message, list=self.choices, default=1, simple=True)
+		try:
+			urllib2.urlopen('http://google.co.uk', timeout=1)
+		except:
+			self.session.open(MessageBox, _("No internet connection detected!"), MessageBox.TYPE_INFO, timeout=10)
+		else:
+			self.choices = [("OpenViX", 1), ("OpenATV", 2), ("OpenPli",3)]
+			self.urlchoices = [config.imagemanager.imagefeed_ViX.value, config.imagemanager.imagefeed_ATV.value, config.imagemanager.imagefeed_Pli.value]
+			self.message = _("Do you want to change download url")
+			self.session.openWithCallback(self.doDownload2, MessageBox, self.message, list=self.choices, default=1, simple=True)
 
 	def doDownload2(self, retval):
 		if retval:
@@ -1385,8 +1390,8 @@ class ImageManagerDownload(Screen):
 				try:
 					conn = urllib2.urlopen(self.urlBox)
 					html = conn.read()
-				except urllib2.HTTPError as e:
-					print "[ImageManager] HTTP download ERROR: %s" % e.code
+				except:
+					print "[ImageManager] HTTP download ERROR: " + self.urlBox
 					continue
 				soup = BeautifulSoup(html)
 				links = soup.find_all("a")

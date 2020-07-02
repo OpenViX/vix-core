@@ -412,7 +412,7 @@ msgid "Info"
 msgstr "Инфо"
 
 msgid "Init Zgemma H9 SDCARD - please reboot after use."
-msgstr "Инициализация Карта SD… Пожалуйста, перезагрузите после использования."
+msgstr "Инициализация SD-карты… Пожалуйста, перезагрузите после использования."
 
 msgid "Init Zgemma H9 USB/SDA1 - please reboot after use."
 msgstr ""

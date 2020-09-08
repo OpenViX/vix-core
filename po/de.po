@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-18 17:42+0000\n"
-"PO-Revision-Date: 2020-07-28 10:04+0200\n"
+"POT-Creation-Date: 2020-09-07 20:35+0000\n"
+"PO-Revision-Date: 2020-09-08 10:53+0200\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -16,13 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
-
-msgid "'User' url has not been specified, please use MENU button to initialise"
-msgstr "'Benutzer' URL nicht angegeben. Bitte benutze Menü Button zum Initialisieren."
 
 msgid "128 Mb"
 msgstr ""
@@ -221,7 +218,7 @@ msgid "Comparing against backup..."
 msgstr "Vergleiche mit Backup..."
 
 msgid "Compress"
-msgstr ""
+msgstr "packen"
 
 msgid "Create"
 msgstr "Erstellen"
@@ -235,11 +232,8 @@ msgstr "Erzeuge und verwalte Swap Dateien."
 msgid "Create and flash complete images of your system."
 msgstr "Erzeuge und flashe komplettes Image von deinem System."
 
-msgid "Create empty slot."
-msgstr "Erzeuge leeren Slot."
-
 msgid "Create:"
-msgstr ""
+msgstr "Erstellen:"
 
 msgid "Creating SWAP.."
 msgstr "Erzeuge Swap..."
@@ -278,7 +272,7 @@ msgid "Disable startup"
 msgstr "Deaktiviere Startup"
 
 msgid "Do you want to change download url"
-msgstr "Willst Du URL für Download ändern?"
+msgstr "Willst Du URL für Download ändern"
 
 msgid ""
 "Do you want to create a full image backup?\n"
@@ -308,7 +302,7 @@ msgid "Do you want to restore your enigma2 settings ?"
 msgstr "Willst Du die Enigma2-Einstellungen wieder herstellen?"
 
 msgid "DownLoad"
-msgstr ""
+msgstr "Runterladen"
 
 msgid "Download"
 msgstr "Herunterladen"
@@ -352,7 +346,7 @@ msgid "Exit the restore wizard"
 msgstr "Wiederherstellungsassistenten beenden"
 
 msgid "Expand"
-msgstr ""
+msgstr "entpacken"
 
 msgid "Extra IPK's"
 msgstr "Extra IPK's"
@@ -433,9 +427,6 @@ msgstr "Boxname beim Beackupnamen benutzen"
 msgid "Info"
 msgstr "Info"
 
-msgid "Init SDCARD"
-msgstr ""
-
 msgid "Init SDcard"
 msgstr ""
 
@@ -487,9 +478,6 @@ msgstr "MB"
 msgid "MGcamd can't run whilst CCcam is running."
 msgstr "MGcamd kann nicht zusammen mit CCcam laufen."
 
-msgid "Main menu"
-msgstr "Hauptmenü"
-
 msgid "Manage the backups of your settings."
 msgstr "Verwalte die Backups der Einstellungen."
 
@@ -520,27 +508,11 @@ msgstr "Verschiebe Nand root auf SD Karte"
 msgid "Moving to backup Location..."
 msgstr "Verschiebe nach Backup-Zielverzeichnis..."
 
-msgid "MultiBoot manager"
-msgstr "Multiboot Verwaltung"
-
 msgid "Multiboot ERROR! - no STARTUP in boot partition."
 msgstr "Multiboot Fehler! - kein STARTUP in Boot-Partition."
 
 msgid "Multiboot image manager"
 msgstr "Multiboot Image Verwaltung"
-
-msgid "Multiboot manager - Cannot initialise SDcard when running image on SDcard."
-msgstr "Multiboot Manager - SD-Karte kann nicht initialisiert werden wenn ein Image von der SD-Karte läuft."
-
-msgid "Multiboot manager - SDcard initialization run, please restart your Image."
-msgstr "Multiboot Verwaltung - Initialisierung der DS-Karte läuft. Bitte danach Image neu starten."
-
-msgid "Multiboot manager - The SDcard must be at least 8MB."
-msgstr "Multiboot Verwaltung. Die SD-Karte muss m indestens 8MB groß sein."
-
-#, python-format
-msgid "Multiboot manager - to use this routine %s image must be at OpenViX 4.2.043 or later and USB flashed - reply Yes to continue"
-msgstr "Multiboot Verwaltung - Um diese Routine zu benutzen %s Image muss OpenViX 4.2.043 oder neuer sein. Wähle Ja um fortzufahren."
 
 msgid "Multiboot only able to restore this backup to mmc slot1"
 msgstr "Multiboot kann dieses Backup nur auf MMC Slot 1 wieder herstellen"
@@ -555,7 +527,7 @@ msgid "New backup"
 msgstr "Neues Backup"
 
 msgid "Next backup: "
-msgstr "Nächstes Backup:"
+msgstr "Nächstes Backup: "
 
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -593,7 +565,7 @@ msgstr ""
 "in /etc/tuxbox/config."
 
 msgid "No images found for selected download server...if password check validity"
-msgstr "Keine Images auf gewähltem Server gefunden. Falls mit Passwort überprüfe Gültigkeit."
+msgstr "Keine Images auf gewähltem Server gefunden. Falls mit Passwort überprüfe Gültigkeit"
 
 msgid "No plugins needed to be installed"
 msgstr "Es war nicht nötig Plugins zu installieren"
@@ -606,12 +578,6 @@ msgstr "Info:Slot Liste zeigt nicht das aktuelle Image oder leere Slots."
 
 msgid "Now skipping restore process"
 msgstr "Überspinge die Wiederherstellung"
-
-#, python-format
-msgid ""
-"OFGwrite error (also sent to any debug log):\n"
-"%s"
-msgstr "OFGwrite Fehler (auch im Debug Log): m%s"
 
 msgid "OK"
 msgstr "OK"
@@ -647,10 +613,6 @@ msgstr "Startvorgang abwarten\n"
 msgid "Please wait while stopping\n"
 msgstr "Bitte Stoppvorgang abwarten\n"
 
-#, python-format
-msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - if error please use Recovery mode to restart."
-msgstr "Bitte warten während Flash vorbereitet wird. Nachdem das Image geflashed wurde wird deine %s neu gestartet. Bei Fehler benutze den Recovery-Modus zum Neustart."
-
 msgid "Please wait while the flash prepares."
 msgstr "Bitte warten während Flash sich vorbereitet."
 
@@ -668,9 +630,6 @@ msgstr "Bereite Extra Plugins vor..."
 
 msgid "Press 'Menu' to select a storage device"
 msgstr "Drücke Menü um einen Massenspeicher zu wählen"
-
-msgid "Press Init to format SDcard."
-msgstr "Wähle Init um SD-Karte zu formatieren."
 
 msgid "Press OK to toggle the selection."
 msgstr "Drücke OK um die Auswahl umzukehren."
@@ -826,9 +785,6 @@ msgstr "Gebe das Zeitintervall für automatische Image-Backups an."
 msgid "Setting up..."
 msgstr "Konfiguriere..."
 
-msgid "Setup"
-msgstr "Einstellungen"
-
 msgid "Setup mounts"
 msgstr "Konfigiriere Mounts"
 
@@ -837,9 +793,6 @@ msgstr "Zeige in Erweiterungen"
 
 msgid "Size: "
 msgstr "Größe: "
-
-msgid "Softcam"
-msgstr ""
 
 msgid "Softcam manager"
 msgstr "Softcam Verwaltung"
@@ -1072,6 +1025,14 @@ msgid "Your %s %s is not connected to the Internet. Please try using the Backup 
 msgstr "Deine %s %s ist nicht mit dem Internet verbunden. Bitte die Plugins mit der Backup Verwaltung später wieder herstellen."
 
 #, python-format
+msgid ""
+"ofgwrite error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"ofgwrite Fehler (auch in Debug.Log):\n"
+"%s"
+
+#, python-format
 msgid "slot%s - %s"
 msgstr "Slot%s - %s"
 
@@ -1085,6 +1046,9 @@ msgstr "Slot%s - %s (aktuelle Image)"
 
 msgid "unavailable"
 msgstr "nicht verfügbar"
+
+#~ msgid "'User' url has not been specified, please use MENU button to initialise"
+#~ msgstr "'Benutzer' URL nicht angegeben. Bitte benutze Menü Button zum Initialisieren."
 
 #~ msgid "A background update check is is progress, please try again."
 #~ msgstr "Im Hintergrund wird auf mögliche Updates geprüft. Bitte später erneut versuchen."
@@ -1204,6 +1168,9 @@ msgstr "nicht verfügbar"
 #~ msgid "Create empty slot"
 #~ msgstr "Ereuge leeren Slot"
 
+#~ msgid "Create empty slot."
+#~ msgstr "Erzeuge leeren Slot."
+
 #~ msgid "Create: Recovery Fullbackup %s"
 #~ msgstr "Erzeuge: Komplettbackup %s für Recovery"
 
@@ -1276,6 +1243,9 @@ msgstr "nicht verfügbar"
 #~ msgid "MGcamd can't run whilst CCcam is running"
 #~ msgstr "Während CCcam läuft kann MGcamd nicht ausgeführt werden"
 
+#~ msgid "Main menu"
+#~ msgstr "Hauptmenü"
+
 #~ msgid "Manage you devices mountpoints."
 #~ msgstr "Verwalte deine Einhängepunkte"
 
@@ -1291,6 +1261,9 @@ msgstr "nicht verfügbar"
 #~ msgid "Moving to Backup Location..."
 #~ msgstr "An Sicherungsspeicherort verschieben..."
 
+#~ msgid "MultiBoot manager"
+#~ msgstr "Multiboot Verwaltung"
+
 #~ msgid "Multiboot ERROR! - no STARTUP in /boot -Please check /etc/fstab for correct boot partition."
 #~ msgstr "Multiboot Fehler! - kein STARTUP in /boot - Bitte /etc/fstab auf korrekte Boot Partition prüfen."
 
@@ -1300,6 +1273,9 @@ msgstr "nicht verfügbar"
 #~ msgid "Multiboot Image Manager"
 #~ msgstr "Multiboot Image Verwaltung"
 
+#~ msgid "Multiboot manager - Cannot initialise SDcard when running image on SDcard."
+#~ msgstr "Multiboot Manager - SD-Karte kann nicht initialisiert werden wenn ein Image von der SD-Karte läuft."
+
 #~ msgid "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
 #~ msgstr "Multiboot Verwaltung - SD Karte kann nicht initialisiert werden wenn ein Image von dieser Karte gestartet ist."
 
@@ -1308,6 +1284,15 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Multiboot manager - SDcard initialization run, please restart OpenViX."
 #~ msgstr "Multiboot Verwaltung - SD Karte wurde initialisiert. Bitte OpenViX neu starten."
+
+#~ msgid "Multiboot manager - SDcard initialization run, please restart your Image."
+#~ msgstr "Multiboot Verwaltung - Initialisierung der DS-Karte läuft. Bitte danach Image neu starten."
+
+#~ msgid "Multiboot manager - The SDcard must be at least 8MB."
+#~ msgstr "Multiboot Verwaltung. Die SD-Karte muss m indestens 8MB groß sein."
+
+#~ msgid "Multiboot manager - to use this routine %s image must be at OpenViX 4.2.043 or later and USB flashed - reply Yes to continue"
+#~ msgstr "Multiboot Verwaltung - Um diese Routine zu benutzen %s Image muss OpenViX 4.2.043 oder neuer sein. Wähle Ja um fortzufahren."
 
 #~ msgid "New Backup"
 #~ msgstr "Neues Backup"
@@ -1373,6 +1358,11 @@ msgstr "nicht verfügbar"
 #~ msgid "Note: slot list does not show current image or empty slots"
 #~ msgstr "Achtung: Slot-Liste zeigt nicht das aktuelle Image oder leere Slots"
 
+#~ msgid ""
+#~ "OFGwrite error (also sent to any debug log):\n"
+#~ "%s"
+#~ msgstr "OFGwrite Fehler (auch im Debug Log): m%s"
+
 #~ msgid "Please copy the folder"
 #~ msgstr "Bitte den Ordner kopieren"
 
@@ -1397,6 +1387,9 @@ msgstr "nicht verfügbar"
 #~ msgid "Please wait while the flash prepares"
 #~ msgstr "Bitte warten. Flash wird vorbereitet."
 
+#~ msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - if error please use Recovery mode to restart."
+#~ msgstr "Bitte warten während Flash vorbereitet wird. Nachdem das Image geflashed wurde wird deine %s neu gestartet. Bei Fehler benutze den Recovery-Modus zum Neustart."
+
 #~ msgid "Please wait while the restore prepares"
 #~ msgstr "Bitte warten. Wiederherstellung wird vorbereitet"
 
@@ -1405,6 +1398,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
 #~ msgstr "Auflistung der Plugins fehlgeschlagen. Vielleicht falscher Ort von Backup oder kein Speicher mehr frei"
+
+#~ msgid "Press Init to format SDcard."
+#~ msgstr "Wähle Init um SD-Karte zu formatieren."
 
 #~ msgid "Remove Confirmation"
 #~ msgstr "Löschen bestätigen"
@@ -1447,6 +1443,9 @@ msgstr "nicht verfügbar"
 
 #~ msgid "Setting Up..."
 #~ msgstr "Stellt ein..."
+
+#~ msgid "Setup"
+#~ msgstr "Einstellungen"
 
 #~ msgid "Setup Mounts"
 #~ msgstr "Mounts einstellen"
@@ -1691,13 +1690,6 @@ msgstr "nicht verfügbar"
 
 #~ msgid "flash image unzip successful"
 #~ msgstr "Flash Image entpacken erfolgreich"
-
-#~ msgid ""
-#~ "ofgwrite error (also sent to any debug log):\n"
-#~ "%s"
-#~ msgstr ""
-#~ "ofgwrite Fehler (auch in Debug.Log):\n"
-#~ "%s"
 
 #~ msgid "slot%s - %s (current image) with, backup"
 #~ msgstr "Slot%s - %s (aktuelles Image), mit Backup"

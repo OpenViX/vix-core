@@ -1,3 +1,3 @@
 installdir = /etc/
 SUBDIRS = cron
-install_DATA = exports readme.txt
+install_DATA = exports

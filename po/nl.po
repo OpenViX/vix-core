@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-21 11:01+0000\n"
-"PO-Revision-Date: 2019-12-23 14:35+0100\n"
+"POT-Creation-Date: 2020-11-25 05:02+0000\n"
+"PO-Revision-Date: 2020-11-25 14:26+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -16,13 +16,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.2\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
-
-msgid "'User' url has not been specified, please use MENU button to initialise"
-msgstr "'User' url is niet gespecificeerd; gebruik de MENU-toets om die te initialiseren"
 
 msgid "128 Mb"
 msgstr "128 Mb"
@@ -241,9 +238,6 @@ msgstr "Creeeer en beheer uw SWAP-bestanden."
 msgid "Create and flash complete images of your system."
 msgstr "Maakt en flasht volledige images van uw systeem."
 
-msgid "Create empty slot."
-msgstr "Creëert leeg slot."
-
 msgid "Create:"
 msgstr "Creëer:"
 
@@ -411,8 +405,8 @@ msgid "IPK installer"
 msgstr "IPK installeren"
 
 #, python-format
-msgid "Image Version %s"
-msgstr "Image versie %s"
+msgid "Image Version %s%s"
+msgstr "Image-versie %s%s"
 
 msgid "Image manager"
 msgstr "Image manager"
@@ -440,9 +434,6 @@ msgstr "Neem de STB-naam op in de naam van de back-up"
 
 msgid "Info"
 msgstr "Info"
-
-msgid "Init SDCARD"
-msgstr "Init SD-kaart"
 
 msgid "Init SDcard"
 msgstr "Init SD-kaart"
@@ -495,9 +486,6 @@ msgstr "MB"
 msgid "MGcamd can't run whilst CCcam is running."
 msgstr "MGcamd kan niet draaien terwijl CCcam draait."
 
-msgid "Main menu"
-msgstr "Hoofdmenu"
-
 msgid "Manage the backups of your settings."
 msgstr "Beheer de back-ups van uw instellingen."
 
@@ -528,27 +516,11 @@ msgstr "Verplaats Nand root naar SD-kaart"
 msgid "Moving to backup Location..."
 msgstr "Verandert back-up lokatie..."
 
-msgid "MultiBoot manager"
-msgstr "MultiBoot manager"
-
 msgid "Multiboot ERROR! - no STARTUP in boot partition."
 msgstr "Multiboot FOUT! - geen STARTUP in bootpartitie."
 
 msgid "Multiboot image manager"
 msgstr "Multiboot image manager"
-
-msgid "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
-msgstr "Multiboot manager - Kan SD-kaart niet initialiseren als het image vanaf de kaart loopt."
-
-msgid "Multiboot manager - SDcard initialization run, please restart your Image."
-msgstr "Multiboot manager - SDcard initialisatie, herstart uw STB."
-
-msgid "Multiboot manager - The SDcard must be at least 8MB."
-msgstr "Multiboot manager - De SD-kaart moet tenminste 8MB groot zijn."
-
-#, python-format
-msgid "Multiboot manager - to use this routine %s image must be at OpenViX 4.2.043 or later and USB flashed - reply Yes to continue"
-msgstr "Multiboot manager - om deze routine te gebruiken moet %s image OpenViX 4.2.043 of later zijn en USB geflashed - antwoord \"Ja\" om door te gaan"
 
 msgid "Multiboot only able to restore this backup to mmc slot1"
 msgstr "Multiboot kan deze back-up alleen maar herstellen van mmc slot1"
@@ -615,14 +587,6 @@ msgstr "Opm.: De slot-lijst toont het huidige image en lege slots niet."
 msgid "Now skipping restore process"
 msgstr "Slaat het herstel proces over"
 
-#, python-format
-msgid ""
-"OFGwrite error (also sent to any debug log):\n"
-"%s"
-msgstr ""
-"OFGwrite-fout (ook opgenomen in enig debug log):\n"
-"%s"
-
 msgid "OK"
 msgstr "OK"
 
@@ -657,10 +621,6 @@ msgstr "Wacht terwijl er gestart wordt\n"
 msgid "Please wait while stopping\n"
 msgstr "Wacht terwijl er gestopt wordt\n"
 
-#, python-format
-msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - if error please use Recovery mode to restart."
-msgstr "Wacht terwijl de flash voorbereid wordt; nadat het image is geflashed, zal uw %s herstarten. Als er een fout optreedt, gebruikt u de recovery modus om te herstarten."
-
 msgid "Please wait while the flash prepares."
 msgstr "Wacht terwijl het flashen wordt voorbereid."
 
@@ -678,9 +638,6 @@ msgstr "Bereidt extra plugins voor.."
 
 msgid "Press 'Menu' to select a storage device"
 msgstr "Druk op 'Menu' om een opslagruimte te kiezen"
-
-msgid "Press Init to format SDcard."
-msgstr "Druk op Init om de SD-kaart te initialiseren."
 
 msgid "Press OK to toggle the selection."
 msgstr "Druk op OK om de selectie om te wisselen.."
@@ -835,9 +792,6 @@ msgstr "Stel de tijd in waarop een back-up wordt gemaakt."
 msgid "Setting up..."
 msgstr "Maakt instellingen..."
 
-msgid "Setup"
-msgstr "Instellingen"
-
 msgid "Setup mounts"
 msgstr "Mounts instellen"
 
@@ -846,9 +800,6 @@ msgstr "Toon in extensies"
 
 msgid "Size: "
 msgstr "Afmetingen: "
-
-msgid "Softcam"
-msgstr "Softcam"
 
 msgid "Softcam manager"
 msgstr "Softcam manager"
@@ -1084,6 +1035,14 @@ msgid "Your %s %s is not connected to the Internet. Please try using the Backup 
 msgstr "Uw %s %s is niet verbonden met het internet.  U kunt later de Back-up manager gebruiken om de plugins alsnog te herstellen."
 
 #, python-format
+msgid ""
+"ofgwrite error (also sent to any debug log):\n"
+"%s"
+msgstr ""
+"ofgwrite-fout (ook opgenomen in alle debuglogs):\n"
+"%s"
+
+#, python-format
 msgid "slot%s - %s"
 msgstr "slot%s - %s"
 
@@ -1100,6 +1059,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid " "
 #~ msgstr " "
+
+#~ msgid "'User' url has not been specified, please use MENU button to initialise"
+#~ msgstr "'User' url is niet gespecificeerd; gebruik de MENU-toets om die te initialiseren"
 
 #~ msgid "A background update check is is progress, please try again."
 #~ msgstr "Er wordt momenteel op updates gecontroleerd; probeer het later nogmaals."
@@ -1225,6 +1187,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Create empty slot"
 #~ msgstr "Creëer leeg slot"
 
+#~ msgid "Create empty slot."
+#~ msgstr "Creëert leeg slot."
+
 #~ msgid "Create: Recovery Fullbackup %s"
 #~ msgstr "Creëer: recovery back-up %s"
 
@@ -1276,6 +1241,12 @@ msgstr "niet beschikbaar"
 #~ msgid "Image Manager Setup"
 #~ msgstr "Imagemanager instellingen"
 
+#~ msgid "Image Version %s"
+#~ msgstr "Image versie %s"
+
+#~ msgid "Init SDCARD"
+#~ msgstr "Init SD-kaart"
+
 #~ msgid "Install Confirmation"
 #~ msgstr "Installatie bevestiging"
 
@@ -1297,6 +1268,9 @@ msgstr "niet beschikbaar"
 #~ msgid "MGcamd can't run whilst CCcam is running"
 #~ msgstr "MGcamd en CCcam kunnen niet beide actief zijn"
 
+#~ msgid "Main menu"
+#~ msgstr "Hoofdmenu"
+
 #~ msgid "Manage you devices mountpoints."
 #~ msgstr "Beheer de mountpoints van uw apparaten."
 
@@ -1311,6 +1285,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Moving to Backup Location..."
 #~ msgstr "Verplaatsen naar back-up locatie"
+
+#~ msgid "MultiBoot manager"
+#~ msgstr "MultiBoot manager"
 
 #~ msgid "Multiboot ERROR! - no STARTUP in /boot -Please check /etc/fstab for correct boot partition"
 #~ msgstr "Multiboot FOUT! - geen STARTUP in /boot - Check /etc/fstab op correct bootpartitie."
@@ -1333,6 +1310,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Multiboot manager - Cannot initialise SDcard when running image on SDcard"
 #~ msgstr "Multibootmanager - Kan SD-kaart niet initialiseren wanneer het image loopt vanaf de SD-kaart."
 
+#~ msgid "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
+#~ msgstr "Multiboot manager - Kan SD-kaart niet initialiseren als het image vanaf de kaart loopt."
+
 #~ msgid "Multiboot manager - SDcard initialisation run, please restart OpenViX"
 #~ msgstr "Multibootmanager - SD-kaart initialisatie, herstart OpenViX."
 
@@ -1342,8 +1322,17 @@ msgstr "niet beschikbaar"
 #~ msgid "Multiboot manager - SDcard initialization run, please restart OpenViX."
 #~ msgstr "Multiboot manager - SD-kaart initialisatie, herstart OpenViX."
 
+#~ msgid "Multiboot manager - SDcard initialization run, please restart your Image."
+#~ msgstr "Multiboot manager - SDcard initialisatie, herstart uw STB."
+
 #~ msgid "Multiboot manager - The SDcard must be at least 8MB"
 #~ msgstr "Multibootmanager - De SD-kaart moet minimaal 8MB groot zijn."
+
+#~ msgid "Multiboot manager - The SDcard must be at least 8MB."
+#~ msgstr "Multiboot manager - De SD-kaart moet tenminste 8MB groot zijn."
+
+#~ msgid "Multiboot manager - to use this routine %s image must be at OpenViX 4.2.043 or later and USB flashed - reply Yes to continue"
+#~ msgstr "Multiboot manager - om deze routine te gebruiken moet %s image OpenViX 4.2.043 of later zijn en USB geflashed - antwoord \"Ja\" om door te gaan"
 
 #~ msgid "New Backup"
 #~ msgstr "Nieuwe back-up"
@@ -1407,6 +1396,13 @@ msgstr "niet beschikbaar"
 #~ msgid "Note: slot list does not show current image or empty slots"
 #~ msgstr "Opm.: Slotlijst toont huidig image en lege slots niet."
 
+#~ msgid ""
+#~ "OFGwrite error (also sent to any debug log):\n"
+#~ "%s"
+#~ msgstr ""
+#~ "OFGwrite-fout (ook opgenomen in enig debug log):\n"
+#~ "%s"
+
 #~ msgid "Please copy the folder"
 #~ msgstr "Kopieer de map"
 
@@ -1431,6 +1427,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Please wait while the flash prepares"
 #~ msgstr "Wacht terwijl het flashen wordt voorbereid"
 
+#~ msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - if error please use Recovery mode to restart."
+#~ msgstr "Wacht terwijl de flash voorbereid wordt; nadat het image is geflashed, zal uw %s herstarten. Als er een fout optreedt, gebruikt u de recovery modus om te herstarten."
+
 #~ msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - to access the new image use Multiboot restart."
 #~ msgstr "Even wachten terwijl de flash voorbereid wordt. Nadat het image is geflashed zal uw %s herstarten - om het nieuwe image te benaderen gebruikt u Multiboot herstart."
 
@@ -1442,6 +1441,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device"
 #~ msgstr "Het maken van een lijst van plugins is mislukt - b.v. omdat er een verkeerde bestemming is gekozen of omdat er niet voldoende ruimte is."
+
+#~ msgid "Press Init to format SDcard."
+#~ msgstr "Druk op Init om de SD-kaart te initialiseren."
 
 #~ msgid "Remove Confirmation"
 #~ msgstr "Bevestig verwijderen"
@@ -1488,11 +1490,17 @@ msgstr "niet beschikbaar"
 #~ msgid "Setting Up..."
 #~ msgstr "Bezig met instellen...."
 
+#~ msgid "Setup"
+#~ msgstr "Instellingen"
+
 #~ msgid "Setup Mounts"
 #~ msgstr "Mounts instellingen"
 
 #~ msgid "SoftCam and CI"
 #~ msgstr "SoftCam en CI"
+
+#~ msgid "Softcam"
+#~ msgstr "Softcam"
 
 #~ msgid "Softcam Manager"
 #~ msgstr "Softcammanager"
@@ -1744,13 +1752,6 @@ msgstr "niet beschikbaar"
 
 #~ msgid "flash image unzip successful"
 #~ msgstr "flash image unzip gelukt"
-
-#~ msgid ""
-#~ "ofgwrite error (also sent to any debug log):\n"
-#~ "%s"
-#~ msgstr ""
-#~ "ofgwrite-fout (ook opgenomen in alle debuglogs):\n"
-#~ "%s"
 
 #~ msgid "slot%s - %s (current image) with, backup"
 #~ msgstr "slot%s - %s (huidig image), met back-up"

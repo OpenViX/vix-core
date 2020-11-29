@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 msgid "16 Mb"
 msgstr "16 МБ"
@@ -396,6 +396,9 @@ msgstr "URL-адрес для имиджа пользователя"
 msgid "IPK installer"
 msgstr "Установка IPK"
 
+msgid "Image Version %s%s"
+msgstr "Версия имиджа %s%s"
+
 msgid "Image manager"
 msgstr "Управление имиджами"
 
@@ -457,9 +460,6 @@ msgstr "МБ"
 
 msgid "MGcamd can't run whilst CCcam is running."
 msgstr "MGcamd не может работать с CCcam."
-
-msgid "Main menu"
-msgstr "Основное меню"
 
 msgid "Manage the backups of your settings."
 msgstr "Управление резервными копиями Ваших настроек"

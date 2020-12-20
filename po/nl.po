@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-25 05:02+0000\n"
-"PO-Revision-Date: 2020-11-25 14:26+0100\n"
+"POT-Creation-Date: 2020-12-20 04:17+0000\n"
+"PO-Revision-Date: 2020-12-20 16:26+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -20,6 +20,14 @@ msgstr ""
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
+
+#, python-format
+msgid "%s downloads"
+msgstr "%s downloads"
+
+#, python-format
+msgid "%s: "
+msgstr "%s: "
 
 msgid "128 Mb"
 msgstr "128 Mb"
@@ -50,6 +58,9 @@ msgstr "Er wordt momenteel op updates gecontroleerd; probeer het later nogmaals.
 
 msgid "A backup has been detected."
 msgstr "Een back-up is verwijderd."
+
+msgid "ATV library"
+msgstr "ATV-bibliotheek"
 
 msgid "Activate"
 msgstr "Activeer"
@@ -92,32 +103,11 @@ msgid "Are you sure you want to delete image slot %s ?"
 msgstr "Weet u zeker dat u het image in slot %s wilt verwijderen?"
 
 msgid ""
-"Are you sure you want to delete this backup:\n"
-" "
-msgstr ""
-"Weet u zeker dat u deze back-up wilt verwijderen:\n"
-" "
-
-msgid ""
-"Are you sure you want to delete this image backup:\n"
-" "
-msgstr ""
-"Weet u zeker dat u deze image-back-up wilt verwijderen:\n"
-"  "
-
-msgid ""
 "Are you sure you want to download this image:\n"
 " "
 msgstr ""
 "Weet u zeker dat u dit image wilt downloaden:\n"
 " "
-
-msgid ""
-"Are you sure you want to flash this image:\n"
-" "
-msgstr ""
-"Weet u zeker dat u dit image wilt flashen:\n"
-"  "
 
 msgid ""
 "Are you sure you want to restore this backup:\n"
@@ -181,6 +171,9 @@ msgstr "Back-up manager instellingen"
 msgid "Backup prefix"
 msgstr "Back-up prefix"
 
+msgid "Backup/Flash/ReBoot system image."
+msgstr "Backup/Flash/Reboot system image."
+
 msgid "Backups to keep"
 msgstr "Back-ups die bewaard moeten worden"
 
@@ -190,11 +183,12 @@ msgstr "CCcam en MGcamd kunnen niet beide actief zijn"
 msgid "CCcam can't run whilst MGcamd is running."
 msgstr "CCcam kan niet draaien terwijl MGcamd draait."
 
-msgid "Can't un-mount the partition; make sure it is not being used for SWAP or record/timeshift paths."
-msgstr "Kan de partitie niet unmounten; stel zeker dat deze niet in gebruik is voor SWAP/opname/timeshift/logs."
-
 msgid "Cancel"
 msgstr "Annuleer"
+
+#, python-format
+msgid "Cannot unmount partition '%s'.  Make sure this partition is not in use.  (SWAP, record/timeshift, etc.)"
+msgstr "Kan partitie '%s' niet unmounten.  Stel zeker dat deze partitie niet in gebruik is (SWAP, opname/timeshift, etc.)."
 
 msgid "Change location"
 msgstr "Verander lokatie"
@@ -235,9 +229,6 @@ msgstr "Maakt een back-up van uw instellingen alvorens te updaten."
 msgid "Create and Manage your SWAP files."
 msgstr "Creeeer en beheer uw SWAP-bestanden."
 
-msgid "Create and flash complete images of your system."
-msgstr "Maakt en flasht volledige images van uw systeem."
-
 msgid "Create:"
 msgstr "Creëer:"
 
@@ -264,6 +255,16 @@ msgstr "Verwijder"
 
 msgid "Deselect"
 msgstr "Deselecteer"
+
+msgid "Developer password"
+msgstr "Developer wachtwoord"
+
+msgid "Developer username"
+msgstr "Developer gebruikersnaam"
+
+#, python-format
+msgid "Device %s"
+msgstr "Device %s"
 
 msgid "Device: "
 msgstr "Apparaat: "
@@ -347,6 +348,12 @@ msgstr "Schakel opstarten in"
 msgid "Enough retries, delaying till next schedule."
 msgstr "Genoeg ingangen, vertraagt tot volgende schema."
 
+msgid "Enter your OpenViX developer password."
+msgstr "Geef uw OpenViX developer wachtwoord."
+
+msgid "Enter your OpenViX developer username."
+msgstr "Geef uw OpenViX developer gebruikersnaam."
+
 msgid "Erase"
 msgstr "Wis"
 
@@ -361,9 +368,6 @@ msgstr "Extra IPK's"
 
 msgid "Flash"
 msgstr "Flash"
-
-msgid "Flash confirmation"
-msgstr "Bevestig flashen"
 
 msgid "Flash image unzip successful."
 msgstr "Unzippen van image-bestand gelukt."
@@ -386,45 +390,17 @@ msgstr "H9 SD-kaart manager"
 msgid "H9SDcard Manager"
 msgstr "H9SD-kaart Manager"
 
-msgid "HARD DISK: "
-msgstr "HARDE SCHIJF: "
-
-msgid "Http url for OpenATV Images"
-msgstr "Http url voor OpenATV Images"
-
-msgid "Http url for OpenPli Images"
-msgstr "Http url voor OpenPli Images"
-
-msgid "Http url for OpenViX Images"
-msgstr "Http url voor OpenViX Images"
-
-msgid "Http url for User Images"
-msgstr "Http url voor gebruikersimages"
-
 msgid "IPK installer"
 msgstr "IPK installeren"
 
-#, python-format
-msgid "Image Version %s%s"
-msgstr "Image-versie %s%s"
+msgid "If you are an OpenViX developer you can enter your login details to have direct access to OpenViX developer images for your receiver. This feature is only available via 'https' connections."
+msgstr "Indien u een OpenViX developer bent, kunt u uw accountgegevens invoeren om direct de OpenViX ontwikkel-images rechtstreeks op uw ontvanger te kunnen ontvangen. Dit is uitsluitend mogelijk via 'https'-verbindingen."
 
 msgid "Image manager"
 msgstr "Image manager"
 
 msgid "Image manager settings"
 msgstr "Image manager instellingen"
-
-msgid "ImageLib_ATV"
-msgstr "ImageLib_ATV"
-
-msgid "ImageLib_Pli"
-msgstr "ImageLib_Pli"
-
-msgid "ImageLib_User"
-msgstr "ImageLib_User"
-
-msgid "ImageLib_ViX"
-msgstr "ImageLib_ViX"
 
 msgid "Inactive"
 msgstr "Inactief"
@@ -437,6 +413,9 @@ msgstr "Info"
 
 msgid "Init SDcard"
 msgstr "Init SD-kaart"
+
+msgid "Init USB/SDA1"
+msgstr "Init USB/SDA1"
 
 msgid "Init Zgemma H9 SDCARD - please reboot after use."
 msgstr "Init Zgemma H9 SD-kaart - start opnieuw op.."
@@ -477,6 +456,9 @@ msgstr "Lokatie waar back-up moet worden opgeslagen."
 msgid "Location of where the image backup should be saved."
 msgstr "Lokatie waar image back-up moet worden opgeslagen."
 
+msgid "Login as an OpenViX developer"
+msgstr "Login als OpenViX developer"
+
 msgid "Logs"
 msgstr "Logs"
 
@@ -486,8 +468,8 @@ msgstr "MB"
 msgid "MGcamd can't run whilst CCcam is running."
 msgstr "MGcamd kan niet draaien terwijl CCcam draait."
 
-msgid "Manage the backups of your settings."
-msgstr "Beheer de back-ups van uw instellingen."
+msgid "Manage settings backup."
+msgstr "Beheer settings back-ups."
 
 msgid "Manage your devices mount points."
 msgstr "Beheer hoe uw apparaten gemount zijn."
@@ -501,8 +483,9 @@ msgstr "Max aantal back-up behouden (0=alle)"
 msgid "Mount"
 msgstr "Mount"
 
-msgid "Mount failed."
-msgstr "Mounten mislukt."
+#, python-format
+msgid "Mount failed for '%s', error code = '%s'."
+msgstr "Mount failed voor '%s', foutcode = '%s'."
 
 msgid "Mount manager"
 msgstr "Mount manager"
@@ -572,8 +555,8 @@ msgstr ""
 "Geen configuratiebestand gevonden. U moet eerst Oscam instellen\n"
 "in /etc/tuxbox/config."
 
-msgid "No images found for selected download server...if password check validity"
-msgstr "Geen images gevonden op de geselecteerde downloadserver. Indien er een wachtwoord wordt gebruikt, moet u dat controleren"
+msgid "No images found on the selected download server...if password check validity"
+msgstr "Geen images gevonden op de gekozen server... Controleer wachtwoord indien van toepassing."
 
 msgid "No plugins needed to be installed"
 msgstr "Er hoefden geen plugins geïnstalleerd te worden"
@@ -592,6 +575,10 @@ msgstr "OK"
 
 msgid "OK, to perform a restore"
 msgstr "JA, voer een herstelactie uit"
+
+#, python-format
+msgid "Partition: %s  Mount: %s unmounted successfully; if all partitions now unmounted you can remove device."
+msgstr "Partitie: %s  Mount: %s unmount succesvol; indien nu alle partities zijn unmount, kunt u het device verwijderen."
 
 msgid "Please enter a folder that contains some packages."
 msgstr "Kies een folder die plugins bevat."
@@ -630,6 +617,9 @@ msgstr "Wacht terwijl het systeem informatie verzamelt..."
 msgid "Please wait."
 msgstr "Even wachten."
 
+msgid "Pli library"
+msgstr "Pli-bibliotheek"
+
 msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device."
 msgstr "Plugin-lijst mislukt - mogelijk a.g.v. een verkeerde back-up lokatie of te weinig ruimte op het medium."
 
@@ -642,8 +632,8 @@ msgstr "Druk op 'Menu' om een opslagruimte te kiezen"
 msgid "Press OK to toggle the selection."
 msgstr "Druk op OK om de selectie om te wisselen.."
 
-msgid "Press appropiate Init to move Nand root to SDcard."
-msgstr "Drul op de betreffende Init om Nand root naar SD-kaart te verplaatsen."
+msgid "Press appropiate Init to move Nand root to SDcard or USB."
+msgstr "Druk op de juiste init om Nand root naar SD-kaart of USB te verplaatsen."
 
 msgid "Query before backup starts"
 msgstr "Melding als back-up start"
@@ -721,9 +711,6 @@ msgstr "Voer uit"
 
 msgid "Run your shell scripts."
 msgstr "Voer uw shell scripts uit."
-
-msgid "SDCARD: "
-msgstr "SDCARD: "
 
 msgid "SWAP file not found. You have to create the file before you try to activate it."
 msgstr "SWAP-bestand niet gevonden. U moet dit aanmaken alvorens het te kunnen gebruiken."
@@ -887,14 +874,8 @@ msgstr "De wizard is nu gereed."
 msgid "There is a problem with this device. Please reformat it and try again."
 msgstr "Er is een probleem met dit apparaat. Formatteer en probeer opnieuw."
 
-msgid "There is no backup to delete."
-msgstr "Er is geen back-up om te verwijderen."
-
 msgid "There is no backup to restore."
 msgstr "Er is geen back-up om te herstellen."
-
-msgid "There is no image to delete."
-msgstr "Er is geen image om te verwijderen."
 
 msgid "There is no image to flash."
 msgstr "Er is geen image om te flashen."
@@ -902,14 +883,20 @@ msgstr "Er is geen image om te flashen."
 msgid "This device is already mounted as HDD."
 msgstr "Dit apparaat is al gemount als HDD."
 
+msgid "This http url for the OpenATV image library being accessed."
+msgstr "Deze http-url voor toegang tot OpenATV-image bibliotheek."
+
+msgid "This http url for the OpenPLi image library being accessed."
+msgstr "Deze http-url voor toegang tot OpenPLi-image bibliotheek."
+
+msgid "This http url for the OpenViX image library being accessed."
+msgstr "Deze http-url voor toegang tot OpenViX-image bibliotheek."
+
 msgid "Time of backup to start"
 msgstr "Back-up starttijd"
 
 msgid "Type: "
 msgstr "Type: "
-
-msgid "USB: "
-msgstr "USB: "
 
 msgid "Un-mount"
 msgstr "Un-mount"
@@ -937,6 +924,9 @@ msgstr "ViX"
 msgid "ViX Backup manager"
 msgstr "ViX Back-up manager"
 
+msgid "ViX Image Management"
+msgstr "ViX-image beheer"
+
 msgid "ViX Image manager"
 msgstr "ViX Image manager"
 
@@ -948,6 +938,9 @@ msgstr "ViX SWAP manager"
 
 msgid "ViX Script runner"
 msgstr "ViX Script runner"
+
+msgid "ViX library"
+msgstr "ViX-bibliotheek"
 
 msgid "View progress"
 msgstr "Bekijk voortgang"
@@ -968,25 +961,22 @@ msgstr "Een ogenblikje geduld, zoeken is bezig..."
 msgid "Weekly"
 msgstr "Wekelijks"
 
-msgid "Welcome to the restore wizard.A backup has been detected.You can use this wizard to restore your settings and any extra plugins that were installed when the backup was created."
-msgstr "Welkom bij de herstelwizard. Er is een back-up gevonden. U kunt deze wizard gebruiken om instellingen en/of plugins terug te zetten van het moment dat de back-up is gemaakt."
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your settings and any extra plugins that were installed when the backup was created.\n"
+msgstr ""
+"Welkom bij de herstel-wizard.\n"
+"\n"
+"Er is een back-up gevonden.\n"
+"U kunt deze wizard gebruiken om de instellingen en/of de plugins van die back-up terug te plaatsen.\n"
 
 msgid "YES, to restore plugins"
 msgstr "JA, installeer plugins weer"
 
 msgid "YES, to restore settings"
 msgstr "JA, plaats de instellingen weer terug"
-
-msgid ""
-"You are about to flash an eMMC flash; we cannot take any responsibility for any errors or damage to your box during this process.\n"
-"Proceed with CAUTION!:\n"
-"Are you sure you want to flash this image:\n"
-" "
-msgstr ""
-"U staat op het punt een eMMC flash uit te voeren; wij kunnen geen verantwoordelijkheid nemen voor fouten of schade aan uw STB tijdens dit proces,\n"
-"Ga voorzichtig door!\n"
-"Weet u zeker dat u dit image wilt flashen:\n"
-" "
 
 msgid "You have decided not to flash image."
 msgstr "U heeft besloten geen image te flashen."
@@ -1088,6 +1078,27 @@ msgstr "niet beschikbaar"
 #~ msgstr "Weet u zeker dat u het image in slot %s wilt verwijderen?"
 
 #~ msgid ""
+#~ "Are you sure you want to delete this backup:\n"
+#~ " "
+#~ msgstr ""
+#~ "Weet u zeker dat u deze back-up wilt verwijderen:\n"
+#~ " "
+
+#~ msgid ""
+#~ "Are you sure you want to delete this image backup:\n"
+#~ " "
+#~ msgstr ""
+#~ "Weet u zeker dat u deze image-back-up wilt verwijderen:\n"
+#~ "  "
+
+#~ msgid ""
+#~ "Are you sure you want to flash this image:\n"
+#~ " "
+#~ msgstr ""
+#~ "Weet u zeker dat u dit image wilt flashen:\n"
+#~ "  "
+
+#~ msgid ""
 #~ "Are you sure you want to restore this image:\n"
 #~ " "
 #~ msgstr ""
@@ -1147,6 +1158,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Can't un-mount the partition, make sure it is not being used for swap or record/timeshift paths"
 #~ msgstr "Kan de partitie niet 'unmounten', stel zeker dat deze niet gebruikt wordt voor SWAP, logs, picons, opname of timeshift."
 
+#~ msgid "Can't un-mount the partition; make sure it is not being used for SWAP or record/timeshift paths."
+#~ msgstr "Kan de partitie niet unmounten; stel zeker dat deze niet in gebruik is voor SWAP/opname/timeshift/logs."
+
 #~ msgid "Can't unmount partition, make sure it is not being used for swap or record/timeshift paths"
 #~ msgstr "Kan de partitie niet 'unmounten'; kijk of deze niet wordt gebruikt voor SWAP/Opname/Timeshift/Logs/EPG."
 
@@ -1183,6 +1197,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Create and Restore complete images of your system."
 #~ msgstr "Maak en herstel complete images van uw systeem."
+
+#~ msgid "Create and flash complete images of your system."
+#~ msgstr "Maakt en flasht volledige images van uw systeem."
 
 #~ msgid "Create empty slot"
 #~ msgstr "Creëer leeg slot"
@@ -1226,11 +1243,29 @@ msgstr "niet beschikbaar"
 #~ msgid "Enough Retries, delaying till next schedule."
 #~ msgstr "Vaak genoeg geprobeerd, wacht op de volgende geplande tijd."
 
+#~ msgid "Flash confirmation"
+#~ msgstr "Bevestig flashen"
+
 #~ msgid "Found non-standard softcam, trying to start, this may fail"
 #~ msgstr "Niet-standaard CAM gevonden. Er wordt geprobeerd deze te starten, maar dit kan mislukken."
 
 #~ msgid "Found none standard softcam, trying to start, this may fail"
 #~ msgstr "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, maar dat kan mislukken"
+
+#~ msgid "HARD DISK: "
+#~ msgstr "HARDE SCHIJF: "
+
+#~ msgid "Http url for OpenATV Images"
+#~ msgstr "Http url voor OpenATV Images"
+
+#~ msgid "Http url for OpenPli Images"
+#~ msgstr "Http url voor OpenPli Images"
+
+#~ msgid "Http url for OpenViX Images"
+#~ msgstr "Http url voor OpenViX Images"
+
+#~ msgid "Http url for User Images"
+#~ msgstr "Http url voor gebruikersimages"
 
 #~ msgid "IPK Installer"
 #~ msgstr "IPK Installeren"
@@ -1243,6 +1278,21 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Image Version %s"
 #~ msgstr "Image versie %s"
+
+#~ msgid "Image Version %s%s"
+#~ msgstr "Image-versie %s%s"
+
+#~ msgid "ImageLib_ATV"
+#~ msgstr "ImageLib_ATV"
+
+#~ msgid "ImageLib_Pli"
+#~ msgstr "ImageLib_Pli"
+
+#~ msgid "ImageLib_User"
+#~ msgstr "ImageLib_User"
+
+#~ msgid "ImageLib_ViX"
+#~ msgstr "ImageLib_ViX"
 
 #~ msgid "Init SDCARD"
 #~ msgstr "Init SD-kaart"
@@ -1271,6 +1321,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Main menu"
 #~ msgstr "Hoofdmenu"
 
+#~ msgid "Manage the backups of your settings."
+#~ msgstr "Beheer de back-ups van uw instellingen."
+
 #~ msgid "Manage you devices mountpoints."
 #~ msgstr "Beheer de mountpoints van uw apparaten."
 
@@ -1282,6 +1335,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Mount failed"
 #~ msgstr "Mounten mislukt"
+
+#~ msgid "Mount failed."
+#~ msgstr "Mounten mislukt."
 
 #~ msgid "Moving to Backup Location..."
 #~ msgstr "Verplaatsen naar back-up locatie"
@@ -1387,6 +1443,9 @@ msgstr "niet beschikbaar"
 #~ "Geen configuratiebestand gevonden. U moet eerst Oscam instellen\n"
 #~ "in /etc/tuxbox/config of in /etc/tuxbox/config/oscam."
 
+#~ msgid "No images found for selected download server...if password check validity"
+#~ msgstr "Geen images gevonden op de geselecteerde downloadserver. Indien er een wachtwoord wordt gebruikt, moet u dat controleren"
+
 #~ msgid "No plugins where needed to be installed"
 #~ msgstr "Er hoefden geen plugins te worden geïnstalleerd"
 
@@ -1445,6 +1504,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Press Init to format SDcard."
 #~ msgstr "Druk op Init om de SD-kaart te initialiseren."
 
+#~ msgid "Press appropiate Init to move Nand root to SDcard."
+#~ msgstr "Drul op de betreffende Init om Nand root naar SD-kaart te verplaatsen."
+
 #~ msgid "Remove Confirmation"
 #~ msgstr "Bevestig verwijderen"
 
@@ -1456,6 +1518,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Restore confirmation"
 #~ msgstr "Herstellen bevestigen"
+
+#~ msgid "SDCARD: "
+#~ msgstr "SDCARD: "
 
 #~ msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format"
 #~ msgstr "SD-kaart gedetecteerd maar niet geformatteerd voor multiboot - gebruik de VIX Multibootmanager om te formatteren."
@@ -1604,6 +1669,12 @@ msgstr "niet beschikbaar"
 #~ msgid "The wizard is finished now, and will reboot"
 #~ msgstr "De wizard is gereed; uw systeem wordt opnieuw gestart."
 
+#~ msgid "There is no backup to delete."
+#~ msgstr "Er is geen back-up om te verwijderen."
+
+#~ msgid "There is no image to delete."
+#~ msgstr "Er is geen image om te verwijderen."
+
 #~ msgid "There is no image to download."
 #~ msgstr "Er is geen image om te downloaden."
 
@@ -1612,6 +1683,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Time of Backup to start"
 #~ msgstr "Tijd waarop de back-up wordt uitgevoerd"
+
+#~ msgid "USB: "
+#~ msgstr "USB: "
 
 #~ msgid "Unmount"
 #~ msgstr "Unmount"
@@ -1660,16 +1734,8 @@ msgstr "niet beschikbaar"
 #~ "Er is een back-up gevonden.\n"
 #~ "U kunt deze wizard gebruiken om uw instellingen terug te plaatsen, evenals de plugins die ten tijde van het maken van de back-up waren geïnstalleerd.\n"
 
-#~ msgid ""
-#~ "Welcome to the restore wizard.\n"
-#~ "\n"
-#~ "A backup has been detected.\n"
-#~ "You can use this wizard to restore your settings and any extra plugins that were installed when the backup was created.\n"
-#~ msgstr ""
-#~ "Welkom bij de herstel-wizard.\n"
-#~ "\n"
-#~ "Er is een back-up gevonden.\n"
-#~ "U kunt deze wizard gebruiken om de instellingen en/of de plugins van die back-up terug te plaatsen.\n"
+#~ msgid "Welcome to the restore wizard.A backup has been detected.You can use this wizard to restore your settings and any extra plugins that were installed when the backup was created."
+#~ msgstr "Welkom bij de herstelwizard. Er is een back-up gevonden. U kunt deze wizard gebruiken om instellingen en/of plugins terug te zetten van het moment dat de back-up is gemaakt."
 
 #~ msgid "Yes, with backup"
 #~ msgstr "Ja, met back-up"
@@ -1687,6 +1753,17 @@ msgstr "niet beschikbaar"
 #~ "Betracht de nodige voorzichtigheid!:\n"
 #~ "Weet u zeker dat u dit image wilt flashen:\n"
 #~ "    "
+
+#~ msgid ""
+#~ "You are about to flash an eMMC flash; we cannot take any responsibility for any errors or damage to your box during this process.\n"
+#~ "Proceed with CAUTION!:\n"
+#~ "Are you sure you want to flash this image:\n"
+#~ " "
+#~ msgstr ""
+#~ "U staat op het punt een eMMC flash uit te voeren; wij kunnen geen verantwoordelijkheid nemen voor fouten of schade aan uw STB tijdens dit proces,\n"
+#~ "Ga voorzichtig door!\n"
+#~ "Weet u zeker dat u dit image wilt flashen:\n"
+#~ " "
 
 #~ msgid "You have no backup to delete."
 #~ msgstr "Er is geen back-up die verwijderd kan worden."

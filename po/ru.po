@@ -275,9 +275,6 @@ msgstr "Устройство: не доступно"
 msgid "Disable startup"
 msgstr "Отключить запуск"
 
-msgid "Do you want to change download url"
-msgstr "Вы хотите изменить URL-адрес загрузки?"
-
 msgid ""
 "Do you want to create a full image backup?\n"
 "This can take about 6 minutes to complete."
@@ -365,6 +362,9 @@ msgstr ""
 
 msgid "Free space:"
 msgstr "Свободно памяти:"
+
+msgid "From which image library do you want to download?"
+msgstr "Из какой библиотеки Вы хотите скачать?"
 
 msgid "Frozen check interval"
 msgstr "Интервал проверки"

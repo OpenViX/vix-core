@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 04:17+0000\n"
-"PO-Revision-Date: 2020-12-20 16:26+0100\n"
+"POT-Creation-Date: 2021-01-02 04:32+0000\n"
+"PO-Revision-Date: 2021-01-02 12:06+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -278,9 +278,6 @@ msgstr "Apparaat: geen beschikbaar"
 msgid "Disable startup"
 msgstr "Schakel opstarten uit"
 
-msgid "Do you want to change download url"
-msgstr "Wilt u de download url veranderen"
-
 msgid ""
 "Do you want to create a full image backup?\n"
 "This can take about 6 minutes to complete."
@@ -377,6 +374,9 @@ msgstr "Een niet-standaard softcam gevonden; probeer deze te starten maar dit ka
 
 msgid "Free space:"
 msgstr "Vrije ruimte:"
+
+msgid "From which image library do you want to download?"
+msgstr "Vanuit welke bibliotheek wilt u downloaden?"
 
 msgid "Frozen check interval"
 msgstr "Controle interval"
@@ -1224,6 +1224,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Disable Startup"
 #~ msgstr "Startup uitschakelen"
+
+#~ msgid "Do you want to change download url"
+#~ msgstr "Wilt u de download url veranderen"
 
 #~ msgid "Download Confirmation"
 #~ msgstr "Download confirmatie"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-02 04:32+0000\n"
-"PO-Revision-Date: 2021-01-02 12:06+0100\n"
+"POT-Creation-Date: 2021-01-29 03:13+0000\n"
+"PO-Revision-Date: 2021-01-29 14:32+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -58,9 +58,6 @@ msgstr "Er wordt momenteel op updates gecontroleerd; probeer het later nogmaals.
 
 msgid "A backup has been detected."
 msgstr "Een back-up is verwijderd."
-
-msgid "ATV library"
-msgstr "ATV-bibliotheek"
 
 msgid "Activate"
 msgstr "Activeer"
@@ -390,6 +387,9 @@ msgstr "H9 SD-kaart manager"
 msgid "H9SDcard Manager"
 msgstr "H9SD-kaart Manager"
 
+msgid "INFO"
+msgstr "INFO"
+
 msgid "IPK installer"
 msgstr "IPK installeren"
 
@@ -464,6 +464,9 @@ msgstr "Logs"
 
 msgid "MB"
 msgstr "MB"
+
+msgid "MENU"
+msgstr "MENU"
 
 msgid "MGcamd can't run whilst CCcam is running."
 msgstr "MGcamd kan niet draaien terwijl CCcam draait."
@@ -616,9 +619,6 @@ msgstr "Wacht terwijl het systeem informatie verzamelt..."
 
 msgid "Please wait."
 msgstr "Even wachten."
-
-msgid "Pli library"
-msgstr "Pli-bibliotheek"
 
 msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device."
 msgstr "Plugin-lijst mislukt - mogelijk a.g.v. een verkeerde back-up lokatie of te weinig ruimte op het medium."
@@ -883,15 +883,6 @@ msgstr "Er is geen image om te flashen."
 msgid "This device is already mounted as HDD."
 msgstr "Dit apparaat is al gemount als HDD."
 
-msgid "This http url for the OpenATV image library being accessed."
-msgstr "Deze http-url voor toegang tot OpenATV-image bibliotheek."
-
-msgid "This http url for the OpenPLi image library being accessed."
-msgstr "Deze http-url voor toegang tot OpenPLi-image bibliotheek."
-
-msgid "This http url for the OpenViX image library being accessed."
-msgstr "Deze http-url voor toegang tot OpenViX-image bibliotheek."
-
 msgid "Time of backup to start"
 msgstr "Back-up starttijd"
 
@@ -938,9 +929,6 @@ msgstr "ViX SWAP manager"
 
 msgid "ViX Script runner"
 msgstr "ViX Script runner"
-
-msgid "ViX library"
-msgstr "ViX-bibliotheek"
 
 msgid "View progress"
 msgstr "Bekijk voortgang"
@@ -1058,6 +1046,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "A background update check is is progress, please wait for retry."
 #~ msgstr "De feeds worden gecontroleerd; even wachten."
+
+#~ msgid "ATV library"
+#~ msgstr "ATV-bibliotheek"
 
 #~ msgid "Allows you have the window close automatically."
 #~ msgstr "Maakt het mogelijk het venster automatisch te sluiten."
@@ -1498,6 +1489,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Please wait while the restore prepares"
 #~ msgstr "Wacht terwijl het herstellen wordt voorbereid."
 
+#~ msgid "Pli library"
+#~ msgstr "Pli-bibliotheek"
+
 #~ msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
 #~ msgstr "Maken van een lijst met plugins is mislukt - of een verkeerde back-up locatie of onvoldoende vrije ruimte"
 
@@ -1684,6 +1678,15 @@ msgstr "niet beschikbaar"
 #~ msgid "This Device is already mounted as HDD."
 #~ msgstr "Dit medium is al gemount als HDD."
 
+#~ msgid "This http url for the OpenATV image library being accessed."
+#~ msgstr "Deze http-url voor toegang tot OpenATV-image bibliotheek."
+
+#~ msgid "This http url for the OpenPLi image library being accessed."
+#~ msgstr "Deze http-url voor toegang tot OpenPLi-image bibliotheek."
+
+#~ msgid "This http url for the OpenViX image library being accessed."
+#~ msgstr "Deze http-url voor toegang tot OpenViX-image bibliotheek."
+
 #~ msgid "Time of Backup to start"
 #~ msgstr "Tijd waarop de back-up wordt uitgevoerd"
 
@@ -1713,6 +1716,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "ViX Swap manager"
 #~ msgstr "ViX Swap manager"
+
+#~ msgid "ViX library"
+#~ msgstr "ViX-bibliotheek"
 
 #~ msgid "View Progress"
 #~ msgstr "Bekijk voortgang"

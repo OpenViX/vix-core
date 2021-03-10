@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-29 03:13+0000\n"
-"PO-Revision-Date: 2021-01-29 14:32+0100\n"
+"POT-Creation-Date: 2021-03-09 21:19+0000\n"
+"PO-Revision-Date: 2021-03-10 13:47+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -196,11 +196,11 @@ msgstr "Controleert beschikbare RAM..."
 msgid "Checking softcams..."
 msgstr "Controleert softcams..."
 
+msgid "Choose IPK folder"
+msgstr "Kies IPK-map"
+
 msgid "Choose files"
 msgstr "Kies bestanden"
-
-msgid "Choose local IPK's folder"
-msgstr "Kies lokale IPK-map"
 
 msgid "Choose where to mount your devices to:"
 msgstr "U wilt het apparaat mounten als:"
@@ -377,9 +377,6 @@ msgstr "Vanuit welke bibliotheek wilt u downloaden?"
 
 msgid "Frozen check interval"
 msgstr "Controle interval"
-
-msgid "GB"
-msgstr "GB"
 
 msgid "H9 SDcard manager"
 msgstr "H9 SD-kaart manager"
@@ -788,6 +785,21 @@ msgstr "Toon in extensies"
 msgid "Size: "
 msgstr "Afmetingen: "
 
+#, python-format
+msgid "Size: %sGB"
+msgstr "Grootte: %sGB"
+
+#, python-format
+msgid "Size: %sMB"
+msgstr "Grootte: %sMB"
+
+#, python-format
+msgid "Size: %sTB"
+msgstr "Grootte: %sTB"
+
+msgid "Size: unavailable"
+msgstr "Grootte: niet beschikbaar"
+
 msgid "Softcam manager"
 msgstr "Softcam manager"
 
@@ -838,9 +850,6 @@ msgstr "Status:"
 
 msgid "Stop"
 msgstr "Stop"
-
-msgid "TB"
-msgstr "TB"
 
 msgid "Temp folder"
 msgstr "Tijdelijke map"
@@ -1174,6 +1183,9 @@ msgstr "niet beschikbaar"
 #~ msgid "Choose Files"
 #~ msgstr "Kies bestanden"
 
+#~ msgid "Choose local IPK's folder"
+#~ msgstr "Kies lokale IPK-map"
+
 #~ msgid "Choose local ipk's folder"
 #~ msgstr "Kies lokale IPK-folder"
 
@@ -1245,6 +1257,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Found none standard softcam, trying to start, this may fail"
 #~ msgstr "Een niet-standaard softcam gevonden; er wordt geprobeerd te herstarten, maar dat kan mislukken"
+
+#~ msgid "GB"
+#~ msgstr "GB"
 
 #~ msgid "HARD DISK: "
 #~ msgstr "HARDE SCHIJF: "
@@ -1650,6 +1665,9 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Swap size:"
 #~ msgstr "Swap grootte:"
+
+#~ msgid "TB"
+#~ msgstr "TB"
 
 #~ msgid "Temp Folder"
 #~ msgstr "Tijdelijke folder"

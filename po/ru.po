@@ -181,6 +181,9 @@ msgstr "Резервное копирование"
 msgid "Backup prefix"
 msgstr "Префикс копии"
 
+msgid "Backup/Flash/ReBoot system image."
+msgstr "Копирование/Прошивка/Перезагрузка имиджа"
+
 msgid "Backups to keep"
 msgstr "Копии для хранения"
 
@@ -209,11 +212,11 @@ msgstr "Проверка свободной оперативной памяти.
 msgid "Checking softcams..."
 msgstr "Проверка эмулятора..."
 
+msgid "Choose IPK folder"
+msgstr "Выбрать папку с IPK"
+
 msgid "Choose files"
 msgstr "Выбрать файлы"
-
-msgid "Choose local IPK's folder"
-msgstr "Выбрать локальную папку с IPK"
 
 msgid "Choose where to mount your devices to:"
 msgstr "Выберите, точки монтирования устройств:"
@@ -369,9 +372,6 @@ msgstr "Из какой библиотеки Вы хотите скачать?"
 msgid "Frozen check interval"
 msgstr "Интервал проверки"
 
-msgid "GB"
-msgstr "ГБ"
-
 msgid "H9 SDcard manager"
 msgstr "Управление SDCard"
 
@@ -461,8 +461,8 @@ msgstr "МБ"
 msgid "MGcamd can't run whilst CCcam is running."
 msgstr "MGcamd не может работать с CCcam."
 
-msgid "Manage the backups of your settings."
-msgstr "Управление резервными копиями Ваших настроек"
+msgid "Manage settings backup."
+msgstr "Управление резервными копиями"
 
 msgid "Manage your devices mount points."
 msgstr "Управление точками монтирования своих устройств"
@@ -786,6 +786,21 @@ msgstr "Показывать в меню дополнений"
 msgid "Size: "
 msgstr "Размер: "
 
+#, python-format
+msgid "Size: %sGB"
+msgstr "Размер: %sGB"
+
+#, python-format
+msgid "Size: %sMB"
+msgstr "Размер: %sMB"
+
+#, python-format
+msgid "Size: %sTB"
+msgstr "Размер: %sTB"
+
+msgid "Size: unavailable"
+msgstr "Размер: недоступно"
+
 msgid "Softcam manager"
 msgstr "Управление эмуляторамы"
 
@@ -945,6 +960,9 @@ msgstr "ViX"
 
 msgid "ViX Backup manager"
 msgstr "Резервное копирование"
+
+msgid "ViX Image Management"
+msgstr "Управление ViX"
 
 msgid "ViX Image manager"
 msgstr "Управление имиджами"

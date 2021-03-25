@@ -23,7 +23,7 @@ from Components.SystemInfo import SystemInfo
 import Components.Task
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, fileExists
 
 config.softcammanager = ConfigSubsection()
 config.softcammanager.softcams_autostart = ConfigLocations(default="")
@@ -33,6 +33,13 @@ config.softcammanager.showinextensions = ConfigYesNo(default=True)
 
 softcamautopoller = None
 
+###global
+NAMEBIN = " "
+if fileExists("/tmp/.oscam/oscam.version"):
+	NAMEBIN = "oscam"
+elif fileExists("/tmp/.ncam/ncam.version"):
+	NAMEBIN = "ncam"
+###global
 
 def updateExtensions(configElement):
 	plugins.clearPluginList()
@@ -128,6 +135,7 @@ class VIXSoftcamManager(Screen):
 
 	def selectionChanged(self):
 		cams = []
+		global NAMEBIN
 		if path.exists("/usr/softcams/"):
 			cams = listdir("/usr/softcams")
 		SystemInfo["CCcamInstalled"] = False
@@ -135,7 +143,7 @@ class VIXSoftcamManager(Screen):
 		for softcam in cams:
 			if softcam.lower().startswith("cccam"):
 				SystemInfo["CCcamInstalled"] = True
-			elif softcam.lower().startswith("oscam"):
+			elif softcam.lower().startswith("%s" % NAMEBIN):
 				SystemInfo["OScamInstalled"] = True
 		selcam = ""
 		if cams:
@@ -215,6 +223,7 @@ class VIXSoftcamManager(Screen):
 
 	def keyStart(self):
 		cams = []
+		global NAMEBIN
 		if path.exists("/usr/softcams/"):
 			cams = listdir("/usr/softcams")
 		if cams:
@@ -234,9 +243,9 @@ class VIXSoftcamManager(Screen):
 						self.session.open(MessageBox, _("No config files found, please setup Hypercam first\nin /etc/hypercam.cfg."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 					else:
 						self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
-				elif selcam.lower().startswith("oscam"):
-					if not path.exists("/etc/tuxbox/config/oscam.conf"):
-						self.session.open(MessageBox, _("No config files found, please setup Oscam first\nin /etc/tuxbox/config"), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
+				elif selcam.lower().startswith("%s" % NAMEBIN):
+					if not path.exists("/etc/tuxbox/config/%s.conf" % NAMEBIN):
+						self.session.open(MessageBox, _("No config files found, please setup %s first\nin /etc/tuxbox/config" % NAMEBIN), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 					else:
 						self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 				elif selcam.lower().startswith("mgcam"):
@@ -265,6 +274,7 @@ class VIXSoftcamManager(Screen):
 			self.Console.ePopen("pidof " + selectedcam, self.keyRestart, selectedcam)
 
 	def keyRestart(self, result, retval, extra_args):
+		global NAMEBIN
 		selectedcam = extra_args
 		strpos = self.currentactivecam.find(selectedcam)
 		if strpos < 0:
@@ -288,12 +298,12 @@ class VIXSoftcamManager(Screen):
 					self.session.open(MessageBox, _("CCcam can't run whilst MGcamd is running."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 			elif selectedcam.lower().startswith("cccam") and path.exists("/etc/CCcam.cfg") == False:
 				self.session.open(MessageBox, _("No config files found, please setup CCcam first\nin /etc/CCcam.cfg."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
-			elif selectedcam.lower().startswith("oscam") and path.exists("/etc/tuxbox/config/oscam.conf") == True:
+			elif selectedcam.lower().startswith("%s" % NAMEBIN) and path.exists("/etc/tuxbox/config/%s.conf" % NAMEBIN) == True:
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
-			elif selectedcam.lower().startswith("oscam") and path.exists("/etc/tuxbox/config/oscam.conf") == False:
+			elif selectedcam.lower().startswith("%s" % NAMEBIN) and path.exists("/etc/tuxbox/config/%s.conf" % NAMEBIN) == False:
 				if not path.exists("/etc/tuxbox/config"):
 					makedirs("/etc/tuxbox/config")
-				self.session.open(MessageBox, _("No config files found, please setup Oscam first\nin /etc/tuxbox/config."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
+				self.session.open(MessageBox, _("No config files found, please setup %s first\nin /etc/tuxbox/config." % NAMEBIN), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 			elif selectedcam.lower().startswith("mgcam") and path.exists("/var/keys/mg_cfg") == True:
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 			elif selectedcam.lower().startswith("mgcam") and path.exists("/var/keys/mg_cfg") == False:
@@ -303,7 +313,7 @@ class VIXSoftcamManager(Screen):
 					self.session.open(MessageBox, _("MGcamd can't run whilst CCcam is running."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 			elif selectedcam.lower().startswith("scam"):
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
-			elif not selectedcam.lower().startswith("cccam") or selectedcam.lower().startswith("oscam") or selectedcam.lower().startswith("mgcamd"):
+			elif not selectedcam.lower().startswith("cccam") or selectedcam.lower().startswith("%s" % NAMEBIN) or selectedcam.lower().startswith("mgcamd"):
 				self.session.open(MessageBox, _("Found non-standard softcam, trying to start, this may fail."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 
@@ -334,6 +344,7 @@ class VIXStartCam(Screen):
 		self.onClose.append(self.delTimer)
 
 	def startShow(self):
+		global NAMEBIN
 		self.curpix = 0
 		self.count = 0
 		self["connect"].setPixmapNum(0)
@@ -388,7 +399,7 @@ class VIXStartCam(Screen):
 			output.close()
 			if startselectedcam.lower().startswith("hypercam"):
 				self.Console.ePopen("ulimit -s 1024;/usr/softcams/" + startselectedcam + " -c /etc/hypercam.cfg")
-			elif startselectedcam.lower().startswith("oscam"):
+			elif startselectedcam.lower().startswith("%s" % NAMEBIN):
 				self.Console.ePopen("ulimit -s 1024;/usr/softcams/" + startselectedcam + " -b")
 			elif startselectedcam.lower().startswith("gbox"):
 				self.Console.ePopen("ulimit -s 1024;/usr/softcams/" + startselectedcam)
@@ -621,6 +632,7 @@ class SoftcamAutoPoller:
 		return job
 
 	def JobStart(self):
+		global NAMEBIN
 		self.autostartcams = config.softcammanager.softcams_autostart.value
 		self.Console = Console()
 		if path.exists("/tmp/cam.check.log"):
@@ -710,12 +722,12 @@ class SoftcamAutoPoller:
 						now = datetime.now()
 						output.write(now.strftime("%Y-%m-%d %H:%M") + ": " + softcamcheck + " running OK\n")
 						output.close()
-						if softcamcheck.lower().startswith("oscam"):
+						if softcamcheck.lower().startswith("%s" % NAMEBIN):
 							if path.exists("/tmp/status.html"):
 								remove("/tmp/status.html")
 							port = ""
-							if path.exists("/etc/tuxbox/config/oscam.conf"):
-								oscamconf = "/etc/tuxbox/config/oscam.conf"
+							if path.exists("/etc/tuxbox/config/%s.conf" % NAMEBIN):
+								oscamconf = "/etc/tuxbox/config/%s.conf" % NAMEBIN
 							f = open(oscamconf, "r")
 							for line in f.readlines():
 								if line.find("httpport") != -1:
@@ -748,9 +760,9 @@ class SoftcamAutoPoller:
 								output.close()
 								self.Console.ePopen("killall -9 " + softcamcheck)
 								sleep(1)
-								self.Console.ePopen("ps.procps | grep softcams | grep -v grep | awk 'NR==1' | awk '{print $5}'| awk  -F'[/]' '{print $4}' > /tmp/oscamRuningCheck.tmp")
+								self.Console.ePopen("ps.procps | grep softcams | grep -v grep | awk 'NR==1' | awk '{print $5}'| awk  -F'[/]' '{print $4}' > /tmp/%sRuningCheck.tmp" % NAMEBIN)
 								sleep(2)
-								file = open("/tmp/oscamRuningCheck.tmp")
+								file = open("/tmp/%sRuningCheck.tmp" % NAMEBIN)
 								cccamcheck_process = file.read()
 								file.close()
 								cccamcheck_process = cccamcheck_process.replace("\n", "")
@@ -835,7 +847,7 @@ class SoftcamAutoPoller:
 						now = datetime.now()
 						output.write(now.strftime("%Y-%m-%d %H:%M") + ": Couldn't find " + softcamcheck + " running, Starting " + softcamcheck + "\n")
 						output.close()
-						if softcamcheck.lower().startswith("oscam"):
+						if softcamcheck.lower().startswith("%s" % NAMEBIN):
 							self.Console.ePopen("ps.procps | grep softcams | grep -v grep | awk 'NR==1' | awk '{print $5}'| awk  -F'[/]' '{print $4}' > /tmp/softcamRuningCheck.tmp")
 							sleep(2)
 							file = open("/tmp/softcamRuningCheck.tmp")

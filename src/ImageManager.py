@@ -1264,7 +1264,9 @@ class ImageBackup(Screen):
 		#    trim the number of backups kept...
 		import fnmatch
 		try:
-			if config.imagemanager.number_to_keep.value > 0 and path.exists(self.BackupDirectory):  # !?!
+			if (config.imagemanager.schedule.value and              # Only if we are scheduling...
+			    config.imagemanager.number_to_keep.value > 0 and    # and have set a limit...
+			    path.exists(self.BackupDirectory)):                 # and the directory exists!
 				images = listdir(self.BackupDirectory)
 				patt = config.imagemanager.folderprefix.value + "-*.zip"
 				emlist = []
@@ -1278,7 +1280,9 @@ class ImageBackup(Screen):
 				if len(emlist) > config.imagemanager.number_to_keep.value:
 					emlist = emlist[0:len(emlist) - config.imagemanager.number_to_keep.value]
 					for fil in emlist:
-						remove(self.BackupDirectory + fil)
+						file_togo = self.BackupDirectory + fil
+						remove(file_togo)
+						print("[ImageManager] autoclean removed", file_togo)
 		except Exception:
 			pass
 		if config.imagemanager.schedule.value:

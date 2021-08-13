@@ -1344,8 +1344,9 @@ class BackupFiles(Screen):
 # Trim the number of backups to the configured setting...
 #
 		try:
-			if config.backupmanager.number_to_keep.value > 0 \
-			 and path.exists(self.BackupDirectory): # !?!
+			if (config.backupmanager.schedule.value and             # Only if we are scheduling...
+			    config.backupmanager.number_to_keep.value > 0 and   # and have set a limit...
+			    path.exists(self.BackupDirectory)):                 # and the directory exists!
 				images = listdir(self.BackupDirectory)
 # Only try to delete backups with the current user prefix
 				emlist = []
@@ -1359,7 +1360,9 @@ class BackupFiles(Screen):
 				if len(emlist) > config.backupmanager.number_to_keep.value:
 					emlist = emlist[0:len(emlist) - config.backupmanager.number_to_keep.value]
 					for fil in emlist:
-						remove(self.BackupDirectory + fil)
+						file_togo = self.BackupDirectory + fil
+						remove(file_togo)
+						print("[BackupManager] autoclean removed", file_togo)
 		except:
 			pass
 		if config.backupmanager.schedule.value:

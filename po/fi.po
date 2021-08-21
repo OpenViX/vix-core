@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-05-21 06:40+0200\n"
+"PO-Revision-Date: 2021-06-27 11:21+0200\n"
 "Last-Translator: Kojo\n"
-"Language-Team: Samzan/Kojo\n"
+"Language-Team: Samzan/Kojo/Orlandox\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,6 +43,9 @@ msgstr "96 Mb"
 msgid "A background update check is in progress, please try again."
 msgstr "Taustalla ajettava päivitystarkistus käynnissä, yritä uudelleen."
 
+msgid "A backup has been detected."
+msgstr "Varmuuskopio löydetty"
+
 msgid "Activate"
 msgstr "Aktivoi"
 
@@ -51,6 +54,36 @@ msgstr "Aktiivinen"
 
 msgid "Active:"
 msgstr "Aktiivinen:"
+
+msgid "Allows the script runner to be launched from extensions."
+msgstr "Sallii scriptin suorittajan käynnistymisen laajennuksista."
+
+msgid "Allows the softcam manager to be launched from extensions."
+msgstr "Sallii softcam:n hallinnoinnin käynnistymisen laajennuksista."
+
+msgid ""
+"Allows the softcam to be checked if it stopped working, and restarted "
+"automatically if needed."
+msgstr ""
+"Sallii softcam:n pysähtymisen tarkistuksen ja uudelleenkäynnistyksen "
+"automaattisesti."
+
+msgid "Allows you to close the window automatically."
+msgstr "Sallii ikkunan sulkemisen automaattisesti."
+
+msgid "Allows you to schedule your backups."
+msgstr "Sallii varmuuskopion ajastuksen tekemisen."
+
+msgid "Allows you to schedule your image backups."
+msgstr "Sallii imagen varmuuskopion ajastuksen tekemisen."
+
+msgid "Allows you to tag your backups to a box."
+msgstr "Sallii varmuuskopioiden merkinnän boksille."
+
+msgid ""
+"Allows you to tag your image backup to a box. (default is box name/type)"
+msgstr ""
+"Sallii imagen varmuuskopioiden merkinnän boksille. (Oletuksena nimi/tyyppi)"
 
 msgid "Are you ready to install ?"
 msgstr "Oletko valmiina asentamaan?"
@@ -131,6 +164,12 @@ msgstr "Varmuuskopioinnin asetukset"
 msgid "Backup prefix"
 msgstr "Varmuuskopion etuliite"
 
+msgid "Backup/Flash/ReBoot system image."
+msgstr "Varmuuskopioi/Flashaa/Käynnistä uudelleen image"
+
+msgid "Backups to keep"
+msgstr "Säilytettävien varmuuskopioden määrä"
+
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam ei voi käynnistyä kun MGcamd on käynnissä"
 
@@ -139,6 +178,13 @@ msgstr "CCcam ei voi käynnistyä kun MGcamd on käynnissä."
 
 msgid "Cancel"
 msgstr "Keskeytä"
+
+msgid ""
+"Cannot unmount partition '%s'.  Make sure this partition is not in use.  "
+"(SWAP, record/timeshift, etc.)"
+msgstr ""
+"Osiota '%s' ei voi vapauttaa. Varmista, että tämä osio ei ole käytössä. "
+"(SWAP, tallennus/ajansiirto, jne.)"
 
 msgid "Change location"
 msgstr "Vaihda sijainti"
@@ -161,6 +207,9 @@ msgstr "Valitse minne laitteet liitetään:"
 msgid "Close"
 msgstr "Sulje"
 
+msgid "Close window on success"
+msgstr "Sulje ikkuna onnistumisesta"
+
 msgid "Comparing against backup..."
 msgstr "Vertaillaan varmuuskopioon..."
 
@@ -169,6 +218,9 @@ msgstr "Pakkaa"
 
 msgid "Create"
 msgstr "Luo"
+
+msgid "Create a settings backup before updating."
+msgstr "Luo asetusten varmuuskopio ennen päivitystä.         "
 
 msgid "Create and Manage your SWAP files."
 msgstr "Luo ja hallinnoi SWAP-tiedostoja."
@@ -197,8 +249,20 @@ msgstr "Poista käytöstä"
 msgid "Delete"
 msgstr "Poista"
 
+msgid "Delete failure - check device available."
+msgstr "Poisto epäonnistui - tarkista laitteen saatavuus."
+
 msgid "Deselect"
 msgstr "Poista valinta"
+
+msgid "Developer password"
+msgstr "Developer salasana"
+
+msgid "Developer username"
+msgstr "Developer käyttäjänimi"
+
+msgid "Device %s"
+msgstr "Laite %s"
 
 msgid "Device: "
 msgstr "Laite: "
@@ -307,6 +371,15 @@ msgstr "H9SD-kortin hallinnointi"
 msgid "IPK installer"
 msgstr "IPK:n asennus"
 
+msgid ""
+"If you are an OpenViX developer you can enter your login details to have "
+"direct access to OpenViX developer images for your receiver. This feature is "
+"only available via 'https' connections."
+msgstr ""
+"Jos olet OpenViX kehittäjä, voit syöttää kirjautumistietosi saadaksesi "
+"suoran pääsyn laitteesi OpenViX kehittäjä -imageihin. Tämä ominaisuus on "
+"käytettävissä vain 'https' -yhteyksillä."
+
 msgid "Image manager"
 msgstr "Imagen hallinnointi"
 
@@ -367,6 +440,12 @@ msgstr "Kirjaudu sisään OpenViX kehittäjänä"
 
 msgid "Logs"
 msgstr "Lokit"
+
+msgid "Location of where backup should be saved."
+msgstr "Varmuuskopioiden tallennuspaikka."
+
+msgid "Location of where the image backup should be saved."
+msgstr "Imagen varmuuskopioiden tallennuspaikka.                "
 
 msgid "MB"
 msgstr "MB"
@@ -616,7 +695,7 @@ msgid "Select"
 msgstr "Valitse"
 
 msgid "Select a backup to restore:"
-msgstr "Valitse palautettava varmuskopio:"
+msgstr "Valitse palautettava varmuuskopio:"
 
 msgid "Select a package to install:"
 msgstr "Valitse asennettava ohjelmapaketti:"
@@ -625,7 +704,7 @@ msgid "Select an image to download for %s:"
 msgstr "Valitse ladattava image laitteelle %s:"
 
 msgid "Select an image to flash:"
-msgstr "Valitse päivitettävä image:"
+msgstr "Valitse flashattava image:"
 
 msgid "Select extra packages folder"
 msgstr "Valitse lisäohjelmapakettien hakemisto"
@@ -906,5 +985,8 @@ msgstr "paikka%s - %s "
 msgid "slot%s - %s (current image)"
 msgstr "paikka%s - %s (nykyinen image)"
 
-msgid "Create a settings backup before updating."
-msgstr "Luo varmuuskopio asetuksista ennen päivitystä."
+msgid "Manage settings backup."
+msgstr "Hallinnoi asetusten varmuuskopioita."
+
+msgid "From which image library do you want to download?"
+msgstr "Mistä image-kirjastosta haluat ladata?"

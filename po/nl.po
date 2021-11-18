@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 01:09+0000\n"
-"PO-Revision-Date: 2021-06-26 10:50+0200\n"
+"POT-Creation-Date: 2021-11-17 04:39+0000\n"
+"PO-Revision-Date: 2021-11-18 08:50+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -28,6 +28,21 @@ msgstr "%s downloads"
 #, python-format
 msgid "%s: "
 msgstr "%s: "
+
+msgid "- Max backups to keep (0==all)"
+msgstr "- Max te bewaren back-ups (0==alle)"
+
+msgid "- Query before backup starts"
+msgstr "- Vragen alvorens back-up te starten"
+
+msgid "- Query before image backup starts"
+msgstr "- Vragen alvorens image back-up te starten"
+
+msgid "- Repeat how often"
+msgstr "- Hoe vaak herhalen"
+
+msgid "- Time of backup to start"
+msgstr "- Tijd waarop back-up start"
 
 msgid "128 Mb"
 msgstr "128 Mb"
@@ -67,6 +82,9 @@ msgstr "Actief"
 
 msgid "Active:"
 msgstr "Actief:"
+
+msgid "All"
+msgstr "Alle"
 
 msgid "Allows the script runner to be launched from extensions."
 msgstr "De script runner kan vanuit de extensies worden geopend."
@@ -115,6 +133,9 @@ msgstr ""
 
 msgid "Automatic settings backup"
 msgstr "Automatische instellingen back-up"
+
+msgid "Automatically created"
+msgstr "Automatisch aangemaakt"
 
 msgid "Autostart"
 msgstr "Autostart"
@@ -173,6 +194,9 @@ msgstr "Backup/Flash/Reboot system image."
 
 msgid "Backups to keep"
 msgstr "Aantal te bewaren back-ups"
+
+msgid "Backups to prune"
+msgstr "Te reduceren back-ups"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam en MGcamd kunnen niet beide actief zijn"
@@ -406,7 +430,7 @@ msgid "Inactive"
 msgstr "Inactief"
 
 msgid "Include machine name in backup name"
-msgstr "Neem de ontvangernaam op in de bestandsnaam."
+msgstr "Neem de ontvangernaam op in de bestandsnaam"
 
 msgid "Info"
 msgstr "Info"
@@ -477,11 +501,11 @@ msgstr "Beheer settings back-ups."
 msgid "Manage your devices mount points."
 msgstr "Beheer hoe uw apparaten gemount zijn."
 
-msgid "Max backups to keep (0==all)"
-msgstr "Max aantal back-ups te bewaren (0==alle)"
-
 msgid "Max image backups to keep (0==all)"
 msgstr "Max aantal image back-ups te bewaren (0==alle)"
+
+msgid "Maximum number of backups to keep. Older backups are given priority for removal, so the fresher ones remain."
+msgstr "Maximum aantal back-ups dat bewaart moet worden. De oudste back-ups worden als eerste verwijderd."
 
 msgid "Mount"
 msgstr "Mount"
@@ -593,6 +617,9 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "JA, voer een herstelactie uit"
 
+msgid "Only scheduled"
+msgstr "Alleen geplande"
+
 #, python-format
 msgid "Partition: %s  Mount: %s unmounted successfully; if all partitions now unmounted you can remove device."
 msgstr "Partitie: %s  Mount: %s unmount succesvol; indien nu alle partities zijn unmount, kunt u het device verwijderen."
@@ -649,12 +676,6 @@ msgstr "Druk op OK om de selectie om te wisselen.."
 msgid "Press appropiate Init to move Nand root to SDcard or USB."
 msgstr "Druk op de juiste init om Nand root naar SD-kaart of USB te verplaatsen."
 
-msgid "Query before backup starts"
-msgstr "Vraag alvorens back-up te starten"
-
-msgid "Query before image backup starts"
-msgstr "Vraag alvorens image back-up te starten"
-
 msgid "Query before starting backup."
 msgstr "Vraag alvorens back-up te starten."
 
@@ -685,9 +706,6 @@ msgstr "Verwijder bevestiging"
 
 msgid "Removing temp mounts..."
 msgstr "Verwijdert tijdelijke mounts..."
-
-msgid "Repeat how often"
-msgstr "Hoe vaak herhalen"
 
 msgid "Restart"
 msgstr "Herstart"
@@ -909,11 +927,11 @@ msgstr "Er is geen image om te flashen."
 msgid "This device is already mounted as HDD."
 msgstr "Dit apparaat is al gemount als HDD."
 
-msgid "Time of backup to start"
-msgstr "Tijd waarop back-up moet starten"
-
 msgid "Type: "
 msgstr "Type: "
+
+msgid "Types of backups to remove when stale."
+msgstr "Type back-up dat verwijderd wordt indien te oud."
 
 msgid "Un-mount"
 msgstr "Un-mount"
@@ -1060,3 +1078,18 @@ msgstr "slot%s - %s (huidige image)"
 
 msgid "unavailable"
 msgstr "niet beschikbaar"
+
+#~ msgid "Max backups to keep (0==all)"
+#~ msgstr "Max aantal back-ups te bewaren (0==alle)"
+
+#~ msgid "Query before backup starts"
+#~ msgstr "Vraag alvorens back-up te starten"
+
+#~ msgid "Query before image backup starts"
+#~ msgstr "Vraag alvorens image back-up te starten"
+
+#~ msgid "Repeat how often"
+#~ msgstr "Hoe vaak herhalen"
+
+#~ msgid "Time of backup to start"
+#~ msgstr "Tijd waarop back-up moet starten"

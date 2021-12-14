@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-09 04:33+0000\n"
-"PO-Revision-Date: 2021-08-23 09:16+0200\n"
+"POT-Creation-Date: 2021-12-11 22:30+0000\n"
+"PO-Revision-Date: 2021-12-14 12:18+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.0\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr ""
@@ -28,6 +28,21 @@ msgstr ""
 #, python-format
 msgid "%s: "
 msgstr ""
+
+msgid "- Max backups to keep (0==all)"
+msgstr "- Max. Anzahl von Backups (0 = alle)"
+
+msgid "- Query before backup starts"
+msgstr "- Frage bevor Backup startet"
+
+msgid "- Query before image backup starts"
+msgstr "- Frage bevor Image Backup startet"
+
+msgid "- Repeat how often"
+msgstr "- Wie oft wiederholen"
+
+msgid "- Time of backup to start"
+msgstr "- Zeit zum Start von Backups"
 
 msgid "128 Mb"
 msgstr ""
@@ -67,6 +82,9 @@ msgstr "Aktiv"
 
 msgid "Active:"
 msgstr "Aktiv:"
+
+msgid "All"
+msgstr ""
 
 msgid "Allows the script runner to be launched from extensions."
 msgstr "Erlaubt die Scriptausführung aus Erweiterungen."
@@ -115,6 +133,9 @@ msgstr ""
 
 msgid "Automatic settings backup"
 msgstr "Automatisch Backup der Einstellungen"
+
+msgid "Automatically created"
+msgstr "Automatisch erzeugt"
 
 msgid "Autostart"
 msgstr "Autostart"
@@ -171,6 +192,9 @@ msgstr "Backup/Flash/Neustart vom Image."
 
 msgid "Backups to keep"
 msgstr "Anzahl der zu haltenden Backups"
+
+msgid "Backups to prune"
+msgstr "Backups zu löschen"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "Während MGcamd läuft kann CCcam nicht ausgeführt werden"
@@ -475,11 +499,11 @@ msgstr "Verwalte Backups der Einstellungen."
 msgid "Manage your devices mount points."
 msgstr "Verwalte die Einhängepunkte."
 
-msgid "Max backups to keep (0==all)"
-msgstr "Max. Anzahl von Backups der Einstellungen behalten (0 = alle)"
-
 msgid "Max image backups to keep (0==all)"
 msgstr "Max. Anzahl von Backups des Images behalten (0 = alle)"
+
+msgid "Maximum number of backups to keep. Older backups are given priority for removal, so the fresher ones remain."
+msgstr "Maximale Anzahl von Backups die gespeichert bleiben sollen. Ältere werden bei Bedarf gelöscht."
 
 msgid "Mount"
 msgstr "Einhängen"
@@ -591,6 +615,9 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "OK, zum Wiederherstellen"
 
+msgid "Only scheduled"
+msgstr "Nur zeitgesteuert"
+
 #, python-format
 msgid "Partition: %s  Mount: %s unmounted successfully; if all partitions now unmounted you can remove device."
 msgstr "Partition: '%s' Einhängepunkt: '%s' erfolgreich freigegeben. Wenn alle Partition freigegeben sind kannst Du das Laufwerk jetzt entfernen."
@@ -647,12 +674,6 @@ msgstr "Drücke OK um die Auswahl umzukehren."
 msgid "Press appropiate Init to move Nand root to SDcard or USB."
 msgstr "Drücke passenden Init um Nans root auf SD-Karte oder USB-Laufwerk zu verschieben."
 
-msgid "Query before backup starts"
-msgstr "Frage bevor Backup der Einstellungen startet"
-
-msgid "Query before image backup starts"
-msgstr "Frage bevor Backup des Images startet"
-
 msgid "Query before starting backup."
 msgstr "Frage bevor Backup der Einstellungen startet."
 
@@ -684,9 +705,6 @@ msgstr "Entfernen Bestätigung"
 
 msgid "Removing temp mounts..."
 msgstr "Entferne temporäre Mounts..."
-
-msgid "Repeat how often"
-msgstr "Wie oft wiederholen"
 
 msgid "Restart"
 msgstr "Neustart"
@@ -908,11 +926,11 @@ msgstr "Kein Image zum flashen."
 msgid "This device is already mounted as HDD."
 msgstr "Dieses Gerät wurde schon als HDD gemountet."
 
-msgid "Time of backup to start"
-msgstr "Zeit wann Backup gestartet werden soll"
-
 msgid "Type: "
 msgstr "Typ: "
+
+msgid "Types of backups to remove when stale."
+msgstr "Art von Backups die gelöscht werden sollen wenn übefällig."
 
 msgid "Un-mount"
 msgstr ""
@@ -1057,3 +1075,18 @@ msgstr "Slot%s - %s (aktuelle Image)"
 
 msgid "unavailable"
 msgstr "nicht verfügbar"
+
+#~ msgid "Max backups to keep (0==all)"
+#~ msgstr "Max. Anzahl von Backups der Einstellungen behalten (0 = alle)"
+
+#~ msgid "Query before backup starts"
+#~ msgstr "Frage bevor Backup der Einstellungen startet"
+
+#~ msgid "Query before image backup starts"
+#~ msgstr "Frage bevor Backup des Images startet"
+
+#~ msgid "Repeat how often"
+#~ msgstr "Wie oft wiederholen"
+
+#~ msgid "Time of backup to start"
+#~ msgstr "Zeit wann Backup gestartet werden soll"

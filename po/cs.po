@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:17+0430\n"
+"POT-Creation-Date: 2021-12-18 09:16+0000\n"
 "PO-Revision-Date: 2015-11-01 20:22+0100\n"
 "Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
 "Language-Team: jerry\n"
@@ -18,82 +18,107 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Poedit 1.8.6\n"
 
-#: ../src/BackupManager.py:159 ../src/BackupManager.py:298
-#: ../src/ImageManager.py:158 ../src/ImageManager.py:298
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
 
-#: ../src/ImageManager.py:1309
 #, fuzzy, python-format
 msgid "%s downloads"
 msgstr "Stažení"
 
-#: ../src/MountManager.py:115
 #, python-format
 msgid "%s: "
 msgstr ""
 
-#: ../src/SwapManager.py:306
+msgid "- Max backups to keep (0==all)"
+msgstr ""
+
+msgid "- Query before backup starts"
+msgstr ""
+
+msgid "- Query before image backup starts"
+msgstr ""
+
+msgid "- Repeat how often"
+msgstr ""
+
+msgid "- Time of backup to start"
+msgstr ""
+
 msgid "128 Mb"
 msgstr "128 Mb"
 
-#: ../src/SwapManager.py:306
 msgid "16 Mb"
 msgstr "16 Mb"
 
-#: ../src/SwapManager.py:306
 msgid "256 Mb"
 msgstr "256 Mb"
 
-#: ../src/BackupManager.py:57 ../src/ImageManager.py:61
 msgid "30 Days"
 msgstr "30 dní"
 
-#: ../src/SwapManager.py:306
 msgid "32 Mb"
 msgstr "32 Mb"
 
-#: ../src/SwapManager.py:306
 msgid "64 Mb"
 msgstr "64 Mb"
 
-#: ../src/SwapManager.py:306
 msgid "8 Mb"
 msgstr "8 Mb"
 
-#: ../src/SwapManager.py:306
 msgid "96 Mb"
 msgstr "96 Mb"
 
-#: ../src/BackupManager.py:503 ../src/RestoreWizard.py:162
-#: ../src/RestoreWizard.py:274
 msgid "A background update check is in progress, please try again."
 msgstr "Běží kontrola na pozadí, prosím zkuste to znovu později."
 
-#: ../src/SwapManager.py:122 ../src/SwapManager.py:247
+msgid "A backup has been detected."
+msgstr ""
+
 msgid "Activate"
 msgstr "Aktivovat"
 
-#: ../src/SwapManager.py:120 ../src/SwapManager.py:243
 msgid "Active"
 msgstr "Aktivní"
 
-#: ../src/SoftcamManager.py:86 ../src/SoftcamManager.py:162
 msgid "Active:"
 msgstr "Aktivní:"
 
-#: ../src/IPKInstaller.py:125
+msgid "All"
+msgstr ""
+
+msgid "Allows the script runner to be launched from extensions."
+msgstr ""
+
+msgid "Allows the softcam manager to be launched from extensions."
+msgstr ""
+
+msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
+msgstr ""
+
+msgid "Allows you to close the window automatically."
+msgstr ""
+
+msgid "Allows you to schedule your backups."
+msgstr ""
+
+msgid "Allows you to schedule your image backups."
+msgstr ""
+
+msgid "Allows you to tag your backups to a box."
+msgstr ""
+
+msgid "Allows you to tag your image backup to a box. (default is box name/type)"
+msgstr ""
+
 msgid "Are you ready to install ?"
 msgstr "Jste připraveni instalovat ?"
 
-#: ../src/Multibootmgr.py:95
 #, fuzzy, python-format
 msgid "Are you sure you want to delete image slot %s ?"
 msgstr ""
 "Opravdu chcete smazat tuto zálohu:\n"
 " "
 
-#: ../src/ImageManager.py:1429
 msgid ""
 "Are you sure you want to download this image:\n"
 " "
@@ -101,65 +126,57 @@ msgstr ""
 "Opravdu chcete stáhnout tento image:\n"
 " "
 
-#: ../src/BackupManager.py:361
 msgid ""
 "Are you sure you want to restore this backup:\n"
 " "
 msgstr "Opravdu chcete obnovit tuto zálohu:"
 
-#: ../src/SoftcamManager.py:111 ../src/SwapManager.py:124
+msgid "Automatic settings backup"
+msgstr ""
+
+msgid "Automatically created"
+msgstr ""
+
 msgid "Autostart"
 msgstr "Autostart"
 
-#: ../src/ImageManager.py:758
 msgid "Backing up eMMC partitions for USB flash ..."
 msgstr ""
 
-#: ../src/ImageManager.py:762
 msgid "Backing up eMMC partitions for USB flash..."
 msgstr ""
 
-#: ../src/BackupManager.py:1129 ../src/BackupManager.py:1133
-#: ../src/BackupManager.py:1145 ../src/BackupManager.py:1149
 msgid "Backing up files..."
 msgstr "Zálohuji soubory..."
 
-#: ../src/ImageManager.py:742 ../src/ImageManager.py:746
 #, fuzzy
 msgid "Backing up kernel..."
 msgstr "Zálohuji kernel ..."
 
-#: ../src/ImageManager.py:750 ../src/ImageManager.py:754
 #, fuzzy
 msgid "Backing up root file system..."
 msgstr "Zálohuji souborový systém ..."
 
-#: ../src/ImageManager.py:790
 #, fuzzy
 msgid "Backup complete."
 msgstr "Záloha dokončena..."
 
-#: ../src/BackupManager.py:1153
 #, fuzzy
 msgid "Backup complete..."
 msgstr "Záloha dokončena..."
 
-#: ../src/ImageManager.py:328
 #, fuzzy
 msgid "Backup confirmation"
 msgstr "Ověření zálohy"
 
-#: ../src/BackupManager.py:946
 #, fuzzy
 msgid "Backup created"
 msgstr "Záloha vytvořena"
 
-#: ../src/BackupManager.py:1327
 #, fuzzy
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device."
 msgstr "Záloha selhala - třeba nesprávné umístění nebo zbývá málo místa na cílové jednotce"
 
-#: ../src/BackupManager.py:344
 #, fuzzy
 msgid ""
 "Backup in progress,\n"
@@ -168,160 +185,143 @@ msgstr ""
 "Záloha probíhá,\n"
 "prosím počkejte na její dokončení a zkuste to znovu."
 
-#: ../src/ui.py:51 ../src/BackupManager.py:135 ../src/BackupManager.py:183
-#: ../src/BackupManager.py:313 ../src/BackupManager.py:328
-#: ../src/BackupManager.py:372 ../src/BackupManager.py:390
-#: ../src/BackupManager.py:1111 ../src/ImageManager.py:348
+msgid "Backup location"
+msgstr ""
+
 #, fuzzy
 msgid "Backup manager"
 msgstr "Správce zálohy"
 
-#: ../src/ui.py:52
+msgid "Backup manager settings"
+msgstr ""
+
+msgid "Backup prefix"
+msgstr ""
+
 msgid "Backup/Flash/ReBoot system image."
 msgstr ""
 
-#: ../src/SoftcamManager.py:234
+msgid "Backups to keep"
+msgstr ""
+
+msgid "Backups to prune"
+msgstr ""
+
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam nelze provozovat zároveň s MGcamdem"
 
-#: ../src/SoftcamManager.py:291
 #, fuzzy
 msgid "CCcam can't run whilst MGcamd is running."
 msgstr "CCcam nelze provozovat zároveň s MGcamdem"
 
-#: ../src/MountManager.py:364 ../src/BackupManager.py:727
-#: ../src/BackupManager.py:816 ../src/BackupManager.py:915
-#: ../src/Multibootmgr.py:42
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: ../src/MountManager.py:298
 #, fuzzy, python-format
 msgid "Cannot unmount partition '%s'.  Make sure this partition is not in use.  (SWAP, record/timeshift, etc.)"
 msgstr "Nelze odpojit oddíl, zkontrolujte, není-li používán pro SWAP nebo pro timeshift/záznam"
 
-#: ../src/IPKInstaller.py:89 ../src/IPKInstaller.py:93
 #, fuzzy
 msgid "Change location"
 msgstr "Změna umístění"
 
-#: ../src/ImageManager.py:734
 #, fuzzy
 msgid "Checking free RAM.."
 msgstr "Kontrola volné RAM."
 
-#: ../src/SoftcamManager.py:624
 msgid "Checking softcams..."
 msgstr "Kontrola softcamu..."
 
-#: ../src/BackupManager.py:918
 #, fuzzy
 msgid "Choose IPK folder"
 msgstr "Zvolte adresář s IPK balíčky"
 
-#: ../src/BackupManager.py:917
 #, fuzzy
 msgid "Choose files"
 msgstr "Vyberte soubory"
 
-#: ../src/MountManager.py:362
 msgid "Choose where to mount your devices to:"
 msgstr "Vyberte, kam chcete připojit své zařízení:"
 
-#: ../src/ui.py:60 ../src/ImageManager.py:1313 ../src/SoftcamManager.py:108
-#: ../src/IPKInstaller.py:55 ../src/IPKInstaller.py:178
-#: ../src/SwapManager.py:121
 msgid "Close"
 msgstr "Zavřít"
 
-#: ../src/BackupManager.py:412 ../src/BackupManager.py:416
+msgid "Close window on success"
+msgstr ""
+
 msgid "Comparing against backup..."
 msgstr "Srovnávání zálohy..."
 
-#: ../src/ImageManager.py:1397
 msgid "Compress"
 msgstr ""
 
-#: ../src/SwapManager.py:123 ../src/SwapManager.py:187
 msgid "Create"
 msgstr "Vytvořit"
 
-#: ../src/ui.py:56
+msgid "Create a settings backup before updating."
+msgstr ""
+
 #, fuzzy
 msgid "Create and Manage your SWAP files."
 msgstr "Vytvořit a spravovat swap soubory."
 
-#: ../src/ImageManager.py:938 ../src/ImageManager.py:941
-#: ../src/ImageManager.py:944 ../src/ImageManager.py:946
-#: ../src/ImageManager.py:948
 #, fuzzy
 msgid "Create:"
 msgstr "Vytvořit"
 
-#: ../src/ImageManager.py:738
 #, fuzzy
 msgid "Creating SWAP.."
 msgstr "Vytvářím swap.."
 
-#: ../src/BackupManager.py:404 ../src/BackupManager.py:408
-#: ../src/BackupManager.py:1121 ../src/BackupManager.py:1125
 msgid "Creating list of installed plugins..."
 msgstr "Vytvářím seznam nainstalovaných pluginů..."
 
-#: ../src/ImageManager.py:782 ../src/ImageManager.py:786
 msgid "Creating zip..."
 msgstr "Zipuji ..."
 
-#: ../src/SwapManager.py:147 ../src/SwapManager.py:243
-#: ../src/SwapManager.py:248
 #, fuzzy
 msgid "Current status:"
 msgstr "Nynější stav:"
 
-#: ../src/BackupManager.py:57 ../src/ImageManager.py:61
 msgid "Daily"
 msgstr "Denně"
 
-#: ../src/SwapManager.py:242
 msgid "Deactivate"
 msgstr "Deaktivovat"
 
-#: ../src/BackupManager.py:141 ../src/ImageManager.py:134
-#: ../src/SwapManager.py:197
 msgid "Delete"
 msgstr "Smazat"
 
-#: ../src/BackupManager.py:761
+msgid "Delete failure - check device available."
+msgstr ""
+
 msgid "Deselect"
 msgstr "Odznačit"
 
-#: ../src/MountManager.py:103
+msgid "Developer password"
+msgstr ""
+
+msgid "Developer username"
+msgstr ""
+
 #, fuzzy, python-format
 msgid "Device %s"
 msgstr "Zařízení: "
 
-#: ../src/MountManager.py:158 ../src/MountManager.py:292
-#: ../src/MountManager.py:308 ../src/BackupManager.py:235
-#: ../src/BackupManager.py:261 ../src/ImageManager.py:257
-#: ../src/ImageManager.py:266
 msgid "Device: "
 msgstr "Zařízení: "
 
-#: ../src/ImageManager.py:234
 msgid "Device: None available"
 msgstr "Zařízení: Nedostupné"
 
-#: ../src/BackupManager.py:216
 #, fuzzy
 msgid "Device: none available"
 msgstr "Zařízení: Nedostupné"
 
-#: ../src/SoftcamManager.py:158
 #, fuzzy
 msgid "Disable startup"
 msgstr "Nespouštět"
 
-#: ../src/ImageManager.py:326
 #, fuzzy
 msgid ""
 "Do you want to create a full image backup?\n"
@@ -330,7 +330,6 @@ msgstr ""
 "Váš %s %s se chystá provést kompletní zálohu image, toto trvá kolem 6 minut.\n"
 "Chcete to provést?"
 
-#: ../src/ImageManager.py:368
 #, fuzzy, python-format
 msgid ""
 "Do you want to flash image\n"
@@ -339,287 +338,255 @@ msgstr ""
 "Opravdu chcete stáhnout tento image:\n"
 " "
 
-#: ../src/IPKInstaller.py:138
 msgid "Do you want to restart GUI now ?"
 msgstr "Chcete nyní restartovat uživatelské rozhranní?"
 
-#: ../src/BackupManager.py:658
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Chcete obnovit vaše pluginy v Enigmy2 ?"
 
-#: ../src/BackupManager.py:444
+msgid "Do you want to restore your Enigma2 settings ?"
+msgstr ""
+
 #, fuzzy
 msgid "Do you want to restore your enigma2 settings ?"
 msgstr "Chcete obnovit vaše nastavení Enigmy2 ?"
 
-#: ../src/ImageManager.py:1399
 #, fuzzy
 msgid "DownLoad"
 msgstr "Stáhnout"
 
-#: ../src/ImageManager.py:1314
 msgid "Download"
 msgstr "Stáhnout"
 
-#: ../src/ImageManager.py:1431
 #, fuzzy
 msgid "Download confirmation"
 msgstr "Potvrzení stažení"
 
-#: ../src/ImageManager.py:1446
 #, fuzzy
 msgid "Downloading"
 msgstr "Stáhnout"
 
-#: ../src/ImageManager.py:136
 msgid "Downloads"
 msgstr "Stažení"
 
-#: ../src/ImageManager.py:420
 msgid "ET8500 Image Restore"
 msgstr ""
 
-#: ../src/ImageManager.py:418
 msgid ""
 "ET8500 Multiboot: Yes to restore OS1 No to restore OS2:\n"
 " "
 msgstr ""
 
-#: ../src/Multibootmgr.py:82
 msgid "Empty slot"
 msgstr ""
 
-#: ../src/SwapManager.py:250
 #, fuzzy
 msgid "Enable SWAP at startup"
 msgstr "Povolit swap po startu"
 
-#: ../src/SoftcamManager.py:160
+msgid "Enable frozen check"
+msgstr ""
+
 #, fuzzy
 msgid "Enable startup"
 msgstr "Povolit spuštění"
 
-#: ../src/BackupManager.py:1074 ../src/ImageManager.py:611
 #, fuzzy
 msgid "Enough retries, delaying till next schedule."
 msgstr "Opakování, zpoždění do dalšího plánu."
 
-#: ../src/Multibootmgr.py:45
+msgid "Enter your OpenViX developer password."
+msgstr ""
+
+msgid "Enter your OpenViX developer username."
+msgstr ""
+
 msgid "Erase"
 msgstr ""
 
-#: ../src/RestoreWizard.py:96
 msgid "Exit the restore wizard"
 msgstr "Ukončit průvodce obnovou"
 
-#: ../src/ImageManager.py:1397
 msgid "Expand"
 msgstr ""
 
-#: ../src/IPKInstaller.py:84 ../src/IPKInstaller.py:103
 msgid "Extra IPK's"
 msgstr "Extra IPK balíčky"
 
-#: ../src/ImageManager.py:137
 msgid "Flash"
 msgstr ""
 
-#: ../src/ImageManager.py:416
 msgid "Flash image unzip successful."
 msgstr ""
 
-#: ../src/SoftcamManager.py:256 ../src/SoftcamManager.py:310
 #, fuzzy
 msgid "Found non-standard softcam, trying to start, this may fail."
 msgstr "Nalezen nestandardní softcam, snažící se spustit, může to selhat"
 
-#: ../src/ImageManager.py:257
 msgid "Free space:"
 msgstr "Volné místo:"
 
-#: ../src/ImageManager.py:273
 msgid "From which image library do you want to download?"
 msgstr ""
 
-#: ../src/H9SDmanager.py:39 ../src/H9SDmanager.py:55
+msgid "Frozen check interval"
+msgstr ""
+
 #, fuzzy
 msgid "H9 SDcard manager"
 msgstr "Správce Softcamu"
 
-#: ../src/ui.py:58
 #, fuzzy
 msgid "H9SDcard Manager"
 msgstr "Správce odkládání"
 
-#: ../src/BackupManager.py:144 ../src/SoftcamManager.py:114
 msgid "INFO"
 msgstr ""
 
-#: ../src/IPKInstaller.py:40 ../src/IPKInstaller.py:171
 #, fuzzy
 msgid "IPK installer"
 msgstr "Instalátor IPK"
 
-#: ../src/ui.py:52 ../src/ImageManager.py:130 ../src/ImageManager.py:178
-#: ../src/ImageManager.py:317 ../src/ImageManager.py:338
-#: ../src/ImageManager.py:728
+msgid "If you are an OpenViX developer you can enter your login details to have direct access to OpenViX developer images for your receiver. This feature is only available via 'https' connections."
+msgstr ""
+
 #, fuzzy
 msgid "Image manager"
 msgstr "Správce image"
 
-#: ../src/SwapManager.py:119 ../src/SwapManager.py:248
+msgid "Image manager settings"
+msgstr ""
+
 msgid "Inactive"
 msgstr "Neaktivní"
 
-#: ../src/SwapManager.py:267 ../src/SwapManager.py:333
+msgid "Include machine name in backup name"
+msgstr ""
+
 msgid "Info"
 msgstr "Info"
 
-#: ../src/H9SDmanager.py:42
 msgid "Init SDcard"
 msgstr ""
 
-#: ../src/H9SDmanager.py:43
 msgid "Init USB/SDA1"
 msgstr ""
 
-#: ../src/H9SDmanager.py:59
 msgid "Init Zgemma H9 SDCARD - please reboot after use."
 msgstr ""
 
-#: ../src/H9SDmanager.py:86
 msgid "Init Zgemma H9 USB/SDA1 - please reboot after use."
 msgstr ""
 
-#: ../src/IPKInstaller.py:56 ../src/IPKInstaller.py:179
 msgid "Install"
 msgstr "Instalovat"
 
-#: ../src/ui.py:53
 msgid "Install IPK's from your tmp folder."
 msgstr "Instalace IPK ze složky tmp."
 
-#: ../src/IPKInstaller.py:127
 #, fuzzy
 msgid "Install confirmation"
 msgstr "Potvrzení instalace"
 
-#: ../src/plugin.py:186
 msgid "Install extensions."
 msgstr "Instaluje rozšíření."
 
-#: ../src/ui.py:53
 msgid "Install local extension"
 msgstr "Instalovat místní balíčky"
 
-#: ../src/IPKInstaller.py:135
 msgid "Installing..."
 msgstr "Instaluji..."
 
-#: ../src/IPKInstaller.py:181
 msgid "Invert"
 msgstr "Invertovat"
 
-#: ../src/plugin.py:204
 msgid "Ipkg"
 msgstr "Ipkg"
 
-#: ../src/IPKInstaller.py:87
 #, fuzzy
 msgid "It seems you have not setup an extra location. Please set it up in the Backup manager setup menu."
 msgstr "Vypadá to, že nemáte nastaveno další umístění, nastavte jej prosím ve Správci zálohování."
 
-#: ../src/BackupManager.py:942 ../src/SoftcamManager.py:544
+msgid "Location of where backup should be saved."
+msgstr ""
+
+msgid "Location of where the image backup should be saved."
+msgstr ""
+
+msgid "Login as an OpenViX developer"
+msgstr ""
+
 msgid "Logs"
 msgstr ""
 
-#: ../src/ImageManager.py:257
 msgid "MB"
 msgstr "MB"
 
-#: ../src/BackupManager.py:143 ../src/ImageManager.py:139
-#: ../src/SoftcamManager.py:113
 msgid "MENU"
 msgstr ""
 
-#: ../src/SoftcamManager.py:250 ../src/SoftcamManager.py:306
 #, fuzzy
 msgid "MGcamd can't run whilst CCcam is running."
 msgstr "MGcamd nelze provozovat zároveň s CCcamem"
 
-#: ../src/ui.py:51
 #, fuzzy
 msgid "Manage settings backup."
 msgstr "Obnova zálohy..."
 
-#: ../src/ui.py:54
 msgid "Manage your devices mount points."
 msgstr "Spravovat připojovací body."
 
-#: ../src/MountManager.py:226
+msgid "Max image backups to keep (0==all)"
+msgstr ""
+
+msgid "Maximum number of backups to keep. Older backups are given priority for removal, so the fresher ones remain."
+msgstr ""
+
 msgid "Mount"
 msgstr "Připojit"
 
-#: ../src/MountManager.py:311
 #, python-format
 msgid "Mount failed for '%s', error code = '%s'."
 msgstr ""
 
-#: ../src/ui.py:54 ../src/MountManager.py:222
 #, fuzzy
 msgid "Mount manager"
 msgstr "Správce připojení"
 
-#: ../src/MountManager.py:158 ../src/MountManager.py:291
-#: ../src/MountManager.py:307
 msgid "Mount: "
 msgstr "Připojeno: "
 
-#: ../src/ui.py:58
 msgid "Move Nand root to SD card"
 msgstr ""
 
-#: ../src/ImageManager.py:774 ../src/ImageManager.py:778
 #, fuzzy
 msgid "Moving to backup Location..."
 msgstr "Přesun do místa zálohy..."
 
-#: ../src/ImageManager.py:493
 msgid "Multiboot ERROR! - no STARTUP in boot partition."
 msgstr ""
 
-#: ../src/Multibootmgr.py:40
 #, fuzzy
 msgid "Multiboot image manager"
 msgstr "ViX Správce Image"
 
-#: ../src/ImageManager.py:424 ../src/ImageManager.py:1212
 msgid "Multiboot only able to restore this backup to mmc slot1"
 msgstr ""
 
-#: ../src/RestoreWizard.py:107 ../src/RestoreWizard.py:110
 msgid "NO, do not restore plugins"
 msgstr "NE, neobnovovat pluginy"
 
-#: ../src/RestoreWizard.py:100
 msgid "NO, do not restore settings"
 msgstr "NE, neobnovovat nastavení "
 
-#: ../src/BackupManager.py:139 ../src/BackupManager.py:188
-#: ../src/ImageManager.py:183
 #, fuzzy
 msgid "New backup"
 msgstr "Nová záloha"
 
-#: ../src/BackupManager.py:159 ../src/BackupManager.py:161
-#: ../src/BackupManager.py:298 ../src/BackupManager.py:300
-#: ../src/ImageManager.py:158 ../src/ImageManager.py:160
-#: ../src/ImageManager.py:298 ../src/ImageManager.py:300
 #, fuzzy
 msgid "Next backup: "
 msgstr "Další záloha: "
 
-#: ../src/SoftcamManager.py:229 ../src/SoftcamManager.py:293
 #, fuzzy
 msgid ""
 "No config files found, please setup CCcam first\n"
@@ -628,7 +595,6 @@ msgstr ""
 "Nenalezen config, nastavte nejdříve CCcam\n"
 "v /etc/CCcam.cfg"
 
-#: ../src/SoftcamManager.py:237
 #, fuzzy
 msgid ""
 "No config files found, please setup Hypercam first\n"
@@ -637,7 +603,6 @@ msgstr ""
 "Nenalezen config, nastavte nejdříve Hypercam\n"
 "v /etc/hypercam.cfg"
 
-#: ../src/SoftcamManager.py:248 ../src/SoftcamManager.py:304
 #, fuzzy
 msgid ""
 "No config files found, please setup MGcamd first\n"
@@ -646,7 +611,16 @@ msgstr ""
 "Nenalezen config, nastavte nejdříve MGcamd\n"
 "v /var/keys"
 
-#: ../src/SoftcamManager.py:242
+msgid ""
+"No config files found, please setup Ncam first\n"
+"in /etc/tuxbox/config"
+msgstr ""
+
+msgid ""
+"No config files found, please setup Ncam first\n"
+"in /etc/tuxbox/config."
+msgstr ""
+
 msgid ""
 "No config files found, please setup Oscam first\n"
 "in /etc/tuxbox/config"
@@ -654,7 +628,6 @@ msgstr ""
 "Nenalezen config, nastavte nejdříve Oscam\n"
 "v /etc/tuxbox/config"
 
-#: ../src/SoftcamManager.py:299
 #, fuzzy
 msgid ""
 "No config files found, please setup Oscam first\n"
@@ -663,114 +636,102 @@ msgstr ""
 "Nenalezen config, nastavte nejdříve Oscam\n"
 "v /etc/tuxbox/config"
 
-#: ../src/ImageManager.py:1333
 msgid "No images found on the selected download server...if password check validity"
 msgstr ""
 
-#: ../src/MountManager.py:124 ../src/MountManager.py:126
-#: ../src/MountManager.py:137
+msgid "No plugins needed to be installed"
+msgstr ""
+
 msgid "None"
 msgstr "Nic"
 
-#: ../src/Multibootmgr.py:44
 msgid "Note: slot list does not show current image or empty slots."
 msgstr ""
 
-#: ../src/BackupManager.py:675
 msgid "Now skipping restore process"
 msgstr "Vynechání procesu obnovy"
 
-#: ../src/BackupManager.py:916 ../src/RestoreWizard.py:114
 msgid "OK"
 msgstr "OK"
 
-#: ../src/RestoreWizard.py:96
 msgid "OK, to perform a restore"
 msgstr "OK, provedete obnovu"
 
-#: ../src/MountManager.py:295
+msgid "Only scheduled"
+msgstr ""
+
 #, python-format
 msgid "Partition: %s  Mount: %s unmounted successfully; if all partitions now unmounted you can remove device."
 msgstr ""
 
-#: ../src/BackupManager.py:872
 msgid "Please enter a folder that contains some packages."
 msgstr "Zadejte složku, která obsahuje nějaké balíčky."
 
-#: ../src/SwapManager.py:299
 #, fuzzy
 msgid "Please select device to use as SWAP file location."
 msgstr "Vyberte zařízení pro odkládání"
 
-#: ../src/RestoreWizard.py:146
+msgid "Please select the file to restore."
+msgstr ""
+
 msgid "Please wait while plugins restore completes..."
 msgstr "Počkejte prosím na obnovení pluginů..."
 
-#: ../src/MountManager.py:227
 msgid "Please wait while scanning for devices..."
 msgstr "Počkejte prosím na prohledání zařízení..."
 
-#: ../src/MountManager.py:377
 #, python-format
 msgid "Please wait while scanning your %s %s devices..."
 msgstr "Počkejte prosím na prohledání zařízení %s %s ..."
 
-#: ../src/RestoreWizard.py:201
 msgid "Please wait while settings restore completes..."
 msgstr "Počkejte prosím na obnovení nastavení ..."
 
-#: ../src/SoftcamManager.py:331
 msgid "Please wait while starting\n"
 msgstr "Čekejte, spouští se\n"
 
-#: ../src/SoftcamManager.py:449
 msgid "Please wait while stopping\n"
 msgstr "Čekejte, zastavuje se\n"
 
-#: ../src/ImageManager.py:404
 #, fuzzy
 msgid "Please wait while the flash prepares."
 msgstr "Počkejte, než se připraví obnovení"
 
-#: ../src/RestoreWizard.py:134 ../src/RestoreWizard.py:139
 msgid "Please wait while the system gathers information..."
 msgstr "Prosím počkejte, systém shromažďuje potřebné informace..."
 
-#: ../src/MountManager.py:399
 msgid "Please wait."
 msgstr "Prosím čekejte."
 
-#: ../src/BackupManager.py:1255
 #, fuzzy
 msgid "Plugin listing failed - e. g. wrong backup destination or no space left on backup device."
 msgstr "Soupis pluginů selhal - např. chybné umístění cíle nebo málo místa v úložišti."
 
-#: ../src/BackupManager.py:1137 ../src/BackupManager.py:1141
 msgid "Preparing extra plugins..."
 msgstr "Připravuji extra pluginy..."
 
-#: ../src/BackupManager.py:216 ../src/ImageManager.py:234
 msgid "Press 'Menu' to select a storage device"
 msgstr ""
 
-#: ../src/IPKInstaller.py:182
 msgid "Press OK to toggle the selection."
 msgstr "Zvol OK pro výběr."
 
-#: ../src/H9SDmanager.py:40
 msgid "Press appropiate Init to move Nand root to SDcard or USB."
 msgstr ""
 
-#: ../src/H9SDmanager.py:41
+msgid "Query before starting backup."
+msgstr ""
+
+msgid "Query before starting image backup."
+msgstr ""
+
 #, fuzzy
 msgid "Reboot"
 msgstr "Restartuje se..."
 
-#: ../src/BackupManager.py:436
 msgid "Rebooting..."
 msgstr "Restartuje se..."
 
-#: ../src/ImageManager.py:366
 #, python-format
 msgid ""
 "Recording(s) are in progress or coming up in few seconds!\n"
@@ -778,274 +739,228 @@ msgid ""
 "%s?"
 msgstr ""
 
-#: ../src/Multibootmgr.py:91
 #, python-format
 msgid "Removal of this slot will not show in %s Gui.  Are you sure you want to delete image slot %s ?"
 msgstr ""
 
-#: ../src/Multibootmgr.py:93 ../src/Multibootmgr.py:97
 #, fuzzy
 msgid "Remove confirmation"
 msgstr "Odebrat konfiguraci"
 
-#: ../src/ImageManager.py:766 ../src/ImageManager.py:770
 msgid "Removing temp mounts..."
 msgstr "Odstraňuji dočasná připojení..."
 
-#: ../src/SoftcamManager.py:155
 msgid "Restart"
 msgstr "Restart"
 
-#: ../src/MountManager.py:404
 #, python-format
 msgid "Restart %s %s."
 msgstr "Restart %s %s."
 
-#: ../src/IPKInstaller.py:140
 #, fuzzy
 msgid "Restart GUI."
 msgstr "Restart"
 
-#: ../src/BackupManager.py:140
 msgid "Restore"
 msgstr "Obnova"
 
-#: ../src/BackupManager.py:363
 msgid "Restore Confirmation"
 msgstr "Obnova konfigurace"
 
-#: ../src/RestoreWizard.py:135 ../src/RestoreWizard.py:140
-#: ../src/RestoreWizard.py:147 ../src/RestoreWizard.py:153
-#: ../src/RestoreWizard.py:159 ../src/RestoreWizard.py:163
-#: ../src/RestoreWizard.py:189 ../src/RestoreWizard.py:193
-#: ../src/RestoreWizard.py:202 ../src/RestoreWizard.py:259
-#: ../src/RestoreWizard.py:263 ../src/RestoreWizard.py:267
-#: ../src/RestoreWizard.py:271 ../src/RestoreWizard.py:275 ../src/plugin.py:203
 #, fuzzy
 msgid "Restore wizard"
 msgstr "Průvodce obnovou"
 
-#: ../src/BackupManager.py:392 ../src/BackupManager.py:396
-#: ../src/BackupManager.py:400
 msgid "Restoring backup..."
 msgstr "Obnova zálohy..."
 
-#: ../src/BackupManager.py:428 ../src/BackupManager.py:432
 msgid "Restoring plugins, this can take a long time..."
 msgstr "Obnovuji pluginy, může to chvilku trvat..."
 
-#: ../src/BackupManager.py:420 ../src/BackupManager.py:424
 msgid "Restoring plugins..."
 msgstr "Obnova pluginů..."
 
-#: ../src/Multibootmgr.py:47
 msgid "Retrieving image slots - Please wait..."
 msgstr ""
 
-#: ../src/ScriptRunner.py:51
 msgid "Run"
 msgstr "Spustit"
 
-#: ../src/ui.py:55
 msgid "Run your shell scripts."
 msgstr "Spustit shell skripty."
 
-#: ../src/SwapManager.py:266
 #, fuzzy
 msgid "SWAP file not found. You have to create the file before you try to activate it."
 msgstr "Odkládací soubor nebyl nalezen. Musíte soubor před aktivací vytvořit."
 
-#: ../src/ui.py:56 ../src/SwapManager.py:109
 #, fuzzy
 msgid "SWAP manager"
 msgstr "Správce odkládání"
 
-#: ../src/SwapManager.py:114
 #, fuzzy
 msgid "SWAP place:"
 msgstr "Místo Swapu:"
 
-#: ../src/SwapManager.py:116
 #, fuzzy
 msgid "SWAP size:"
 msgstr "Vel.: "
 
-#: ../src/MountManager.py:363 ../src/BackupManager.py:728
-#: ../src/BackupManager.py:817
 msgid "Save"
 msgstr "Ulož"
 
-#: ../src/ui.py:55 ../src/ScriptRunner.py:48 ../src/plugin.py:197
+msgid "Schedule backups"
+msgstr ""
+
 #, fuzzy
 msgid "Script runner"
 msgstr "Spouštěč skriptu"
 
-#: ../src/BackupManager.py:763
+msgid "Script runner settings"
+msgstr ""
+
 msgid "Select"
 msgstr "Vyber"
 
-#: ../src/BackupManager.py:232 ../src/BackupManager.py:235
 #, fuzzy
 msgid "Select a backup to restore:"
 msgstr "Vyberte zálohu k obnově:"
 
-#: ../src/IPKInstaller.py:107
 msgid "Select a package to install:"
 msgstr "Vyberte balíček k instalaci:"
 
-#: ../src/ImageManager.py:1312
 #, fuzzy, python-format
 msgid "Select an image to download for %s:"
 msgstr "Vyberte image ke stažení:"
 
-#: ../src/ImageManager.py:252 ../src/ImageManager.py:257
 #, fuzzy
 msgid "Select an image to flash:"
 msgstr "Vyberte image ke stažení:"
 
-#: ../src/BackupManager.py:814
 msgid "Select extra packages folder"
 msgstr "Vyberte extra adresář s balíčky"
 
-#: ../src/BackupManager.py:725
 msgid "Select files/folders to backup"
 msgstr "Vyberte soubory/složky na zálohování"
 
-#: ../src/BackupManager.py:846
 msgid "Select folder that contains plugins"
 msgstr "Vyberte adresář, který obsahuje pluginy."
 
-#: ../src/SwapManager.py:307
 #, fuzzy
 msgid "Select the SWAP file size:"
 msgstr "Velikost odkl. souboru:"
 
-#: ../src/SoftcamManager.py:85
 msgid "Select:"
 msgstr "Vybrat:"
 
-#: ../src/ImageManager.py:730
+msgid "Set the interval to be checked in mins."
+msgstr ""
+
+msgid "Set the repeat interval of backup schedule."
+msgstr ""
+
+msgid "Set the time of backup to start."
+msgstr ""
+
 #, fuzzy
 msgid "Setting up..."
 msgstr "Nastavuji..."
 
-#: ../src/MountManager.py:224
 #, fuzzy
 msgid "Setup mounts"
 msgstr "Připojování"
 
-#: ../src/MountManager.py:138
+msgid "Show in extensions"
+msgstr ""
+
 msgid "Size: "
 msgstr "Vel.: "
 
-#: ../src/MountManager.py:147
 #, fuzzy, python-format
 msgid "Size: %sGB"
 msgstr "Vel.: "
 
-#: ../src/MountManager.py:145
 #, fuzzy, python-format
 msgid "Size: %sMB"
 msgstr "Vel.: "
 
-#: ../src/MountManager.py:149
 #, fuzzy, python-format
 msgid "Size: %sTB"
 msgstr "Vel.: "
 
-#: ../src/MountManager.py:143
 #, fuzzy
 msgid "Size: unavailable"
 msgstr "nedostupné"
 
-#: ../src/SoftcamManager.py:83 ../src/plugin.py:115 ../src/plugin.py:195
 #, fuzzy
 msgid "Softcam manager"
 msgstr "Správce Softcamu"
 
-#: ../src/SoftcamManager.py:329
+msgid "Softcam manager settings"
+msgstr ""
+
 #, fuzzy
 msgid "Softcam starting..."
 msgstr "Spouštím Softcam..."
 
-#: ../src/SoftcamManager.py:447
 #, fuzzy
 msgid "Softcam stopping..."
 msgstr "Zastavuji Softcam..."
 
-#: ../src/SoftcamManager.py:622
 msgid "SoftcamCheck"
 msgstr "KontrolaSoftcamu"
 
-#: ../src/IPKInstaller.py:91
 #, fuzzy
 msgid "Sorry but that location does not exist or is not setup. Please set it up in the Backup manager setup menu."
 msgstr "Toto umístění není nastaveno nebo neexistuje. Nastavte správné umístění ve správci zálohování."
 
-#: ../src/BackupManager.py:551
 #, fuzzy
 msgid "Sorry the feeds are down for maintenance. Please try again later."
 msgstr "Aktualizační servery jsou mimo provoz kvůli údržbě. Zkuste to prosím později."
 
-#: ../src/RestoreWizard.py:152
 #, fuzzy
 msgid "Sorry the feeds are down for maintenance. Please try using Backup manager to restore plugins later."
 msgstr "Aktualizační servery jsou mimo provoz kvůli údržbě. Zkuste obnovit pluginy později."
 
-#: ../src/RestoreWizard.py:270
 #, fuzzy
 msgid "Sorry the feeds are down for maintenance. Please try using the Backup manager to restore plugins later."
 msgstr "Aktualizační servery jsou mimo provoz kvůli údržbě. Zkuste to prosím později."
 
-#: ../src/BackupManager.py:356 ../src/BackupManager.py:358
-#: ../src/RestoreWizard.py:188 ../src/RestoreWizard.py:192
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Soubor není kompatibilní s touto verzí image."
 
-#: ../src/BackupManager.py:475
 msgid "Sorry, but the restore failed."
 msgstr "Obnova selhala."
 
-#: ../src/SwapManager.py:301
 #, fuzzy
 msgid "Sorry, no physical devices that supports SWAP attached. Can't create SWAP file on network or fat32 file-systems."
 msgstr "Soráč, nepřipojeno zařízení,podporující odkládání. Nelze vytvořit odkládací soubor na síti nebo fat32 jednotce"
 
-#: ../src/ImageManager.py:850
 #, fuzzy
 msgid "Sorry, not enough free RAM found, and no physical devices that supports SWAP attached. Can't create SWAP file on network or fat32 file-systems, unable to make backup."
 msgstr "Soráč,nedostatek volné RAM, a není připojeno žádné zařízení, podporující "
 
-#: ../src/SoftcamManager.py:149
 msgid "Start"
 msgstr "Start"
 
-#: ../src/BackupManager.py:1113 ../src/BackupManager.py:1117
 msgid "Starting..."
 msgstr "Spouštím..."
 
-#: ../src/SwapManager.py:118
 msgid "Status:"
 msgstr "Stav:"
 
-#: ../src/SoftcamManager.py:151
 msgid "Stop"
 msgstr "Stop"
 
-#: ../src/IPKInstaller.py:97 ../src/IPKInstaller.py:105
 #, fuzzy
 msgid "Temp folder"
 msgstr "dočasné soubory"
 
-#: ../src/BackupManager.py:1214
 msgid "The backup location does not have enough free space."
 msgstr "Málo místa v úložišti záloh."
 
-#: ../src/ImageManager.py:812
 msgid "The backup location does not have enough free space.\n"
 msgstr "Málo místa v úložišti záloh.\n"
 
-#: ../src/MountManager.py:402
 #, python-format
 msgid ""
 "The changes need a system restart to take effect.\n"
@@ -1054,107 +969,96 @@ msgstr ""
 "Změny vyžadují restart systému.\n"
 "Restartovat %s %s nyní?"
 
-#: ../src/BackupManager.py:232 ../src/ImageManager.py:252
 #, fuzzy
 msgid "The chosen location does not exist, using /media/hdd."
 msgstr "Vybrané umístění neexistuje, použijte /media/hdd"
 
-#: ../src/BackupManager.py:261 ../src/ImageManager.py:266
+msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
+msgstr ""
+
+msgid "The wizard is finished now, and will reboot."
+msgstr ""
+
+msgid "The wizard is finished now."
+msgstr ""
+
 #, fuzzy
 msgid "There is a problem with this device. Please reformat it and try again."
 msgstr "S tímto zařízením jsou problémy, prosím zkontrolujte a spusťte znovu."
 
-#: ../src/BackupManager.py:342
 #, fuzzy
 msgid "There is no backup to restore."
 msgstr "Nemáte žádnou zálohu k obnovení."
 
-#: ../src/ImageManager.py:399
 #, fuzzy
 msgid "There is no image to flash."
 msgstr "Nemáte žádný image ke stažení."
 
-#: ../src/MountManager.py:326
 #, fuzzy
 msgid "This device is already mounted as HDD."
 msgstr "Toto zařízení je již připojeno jako HDD."
 
-#: ../src/MountManager.py:158
 msgid "Type: "
 msgstr "Typ: "
 
-#: ../src/MountManager.py:225
+msgid "Types of backups to remove when stale."
+msgstr ""
+
 #, fuzzy
 msgid "Un-mount"
 msgstr "Odpojit"
 
-#: ../src/ImageManager.py:430
 #, python-format
 msgid ""
 "Unzip error (also sent to any debug log):\n"
 "%s"
 msgstr ""
 
-#: ../src/MountManager.py:397
 #, fuzzy
 msgid "Updating mount locations..."
 msgstr "Aktualizuji přípojné body."
 
-#: ../src/MountManager.py:255
 msgid "Use as HDD"
 msgstr "Užít jako HDD"
 
-#: ../src/Multibootmgr.py:43
 msgid "Use the cursor keys to select an installed image and then Erase button."
 msgstr ""
 
-#: ../src/ui.py:47 ../src/plugin.py:96
 msgid "ViX"
 msgstr "ViX"
 
-#: ../src/plugin.py:205
 #, fuzzy
 msgid "ViX Backup manager"
 msgstr "ViX Správce zálohy"
 
-#: ../src/plugin.py:192
 #, fuzzy
 msgid "ViX Image Management"
 msgstr "ViX Správce Image"
 
-#: ../src/plugin.py:206
 #, fuzzy
 msgid "ViX Image manager"
 msgstr "ViX Správce Image"
 
-#: ../src/plugin.py:207
 #, fuzzy
 msgid "ViX Mount manager"
 msgstr "ViX Správce připojovacích bodů"
 
-#: ../src/plugin.py:209
 #, fuzzy
 msgid "ViX SWAP manager"
 msgstr "ViX Správce odkládání"
 
-#: ../src/plugin.py:208
 #, fuzzy
 msgid "ViX Script runner"
 msgstr "ViX Správce skriptů"
 
-#: ../src/BackupManager.py:186 ../src/BackupManager.py:325
-#: ../src/BackupManager.py:369 ../src/ImageManager.py:181
-#: ../src/ImageManager.py:335
 #, fuzzy
 msgid "View progress"
 msgstr "Průběh"
 
-#: ../src/SwapManager.py:312
 #, fuzzy
 msgid "Wait please while creating SWAP file..."
 msgstr "Čekejte při vytváření odkl. souboru..."
 
-#: ../src/SoftcamManager.py:181
 msgid ""
 "Wait please while scanning\n"
 "for softcam's..."
@@ -1162,37 +1066,36 @@ msgstr ""
 "Čekejte prosím na\n"
 "prohledání softcamů."
 
-#: ../src/SwapManager.py:148
 msgid "Wait please while scanning..."
 msgstr "Čekejte na dokončení skenování..."
 
-#: ../src/BackupManager.py:57 ../src/ImageManager.py:61
 msgid "Weekly"
 msgstr "Týdně"
 
-#: ../src/RestoreWizard.py:106 ../src/RestoreWizard.py:109
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your settings and any extra plugins that were installed when the backup was created.\n"
+msgstr ""
+
 msgid "YES, to restore plugins"
 msgstr "ANO, obnovíte pluginy"
 
-#: ../src/RestoreWizard.py:100
 msgid "YES, to restore settings"
 msgstr "ANO, obnovíte nastavení"
 
-#: ../src/ImageManager.py:401
 msgid "You have decided not to flash image."
 msgstr ""
 
-#: ../src/SwapManager.py:332
 #, fuzzy
 msgid "You have to create a SWAP file before trying to activate the autostart."
 msgstr "Musíte vytvořit odkládací soubor, než se aktivuje automatické spuštění."
 
-#: ../src/RestoreWizard.py:262
 #, fuzzy, python-format
 msgid "Your %s %s could not connect to the plugin feeds at this time. Please try using the Backup manager to restore plugins later."
 msgstr "Váš %s %s není připojen k internetu, zkontrolujte nastavení připojení a zkuste znovu prostřednictvím Správce zálohování."
 
-#: ../src/ImageManager.py:586
 #, fuzzy, python-format
 msgid ""
 "Your %s %s is about to create a full image backup, this can take about 6 minutes to complete.\n"
@@ -1201,7 +1104,6 @@ msgstr ""
 "Váš %s %s se chystá provést kompletní zálohu image, toto trvá kolem 6 minut.\n"
 "Chcete to provést?"
 
-#: ../src/BackupManager.py:1049
 #, fuzzy, python-format
 msgid ""
 "Your %s %s is about to run a backup of your settings and to detect your plugins.\n"
@@ -1210,53 +1112,43 @@ msgstr ""
 "Váš %s %s se chystá provést zálohu nastavení a zjištění pluginů.\n"
 "Chcete to provést?"
 
-#: ../src/BackupManager.py:542
 #, fuzzy, python-format
 msgid "Your %s %s is not connected to a network. Please check your network settings and try again."
 msgstr "Váš %s %s není připojen k internetu, zkontrolujte nastavení připojení a zkuste znovu."
 
-#: ../src/RestoreWizard.py:258
 #, fuzzy, python-format
 msgid "Your %s %s is not connected to a network. Please try using the Backup manager to restore plugins later when a network connection is available."
 msgstr "Váš %s %s není připojen k internetu, zkontrolujte nastavení připojení a zkuste znovu prostřednictvím Správce zálohování."
 
-#: ../src/BackupManager.py:560
 #, fuzzy, python-format
 msgid "Your %s %s is not connected to the Internet. Please check your network settings and try again."
 msgstr "Váš %s %s není připojen k internetu, zkontrolujte nastavení připojení a zkuste znovu."
 
-#: ../src/RestoreWizard.py:158
 #, fuzzy, python-format
 msgid "Your %s %s is not connected to the Internet. Please try using Backup manager to restore plugins later."
 msgstr "Váš %s %s není připojen k internetu, zkontrolujte nastavení připojení a zkuste znovu prostřednictvím Správce zálohování."
 
-#: ../src/RestoreWizard.py:266
 #, fuzzy, python-format
 msgid "Your %s %s is not connected to the Internet. Please try using the Backup manager to restore plugins later."
 msgstr "Váš %s %s není připojen k internetu, zkontrolujte nastavení připojení a zkuste znovu prostřednictvím Správce zálohování."
 
-#: ../src/ImageManager.py:483
 #, python-format
 msgid ""
 "ofgwrite error (also sent to any debug log):\n"
 "%s"
 msgstr ""
 
-#: ../src/ImageManager.py:383
 #, python-format
 msgid "slot%s - %s"
 msgstr ""
 
-#: ../src/Multibootmgr.py:83
 #, python-format
 msgid "slot%s - %s "
 msgstr ""
 
-#: ../src/ImageManager.py:383
 #, python-format
 msgid "slot%s - %s (current image)"
 msgstr ""
 
-#: ../src/MountManager.py:125 ../src/MountManager.py:138
 msgid "unavailable"
 msgstr "nedostupné"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
+"POT-Creation-Date: 2021-12-18 09:16+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: litvcom\n"
 "Language-Team: Russian localization by litvcom\n"
@@ -17,11 +17,28 @@ msgstr ""
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
 
+#, python-format
 msgid "%s downloads"
 msgstr "%s загрузок"
 
+#, python-format
 msgid "%s: "
 msgstr "%s: "
+
+msgid "- Max backups to keep (0==all)"
+msgstr ""
+
+msgid "- Query before backup starts"
+msgstr ""
+
+msgid "- Query before image backup starts"
+msgstr ""
+
+msgid "- Repeat how often"
+msgstr ""
+
+msgid "- Time of backup to start"
+msgstr ""
 
 msgid "128 Mb"
 msgstr "128 МБ"
@@ -62,6 +79,9 @@ msgstr "Активный"
 msgid "Active:"
 msgstr "Активный:"
 
+msgid "All"
+msgstr ""
+
 msgid "Allows the script runner to be launched from extensions."
 msgstr "Позволяет запускать 'Запуск скриптов' из расширений."
 
@@ -89,6 +109,7 @@ msgstr "Позыволяет изменить имя резервных копи
 msgid "Are you ready to install ?"
 msgstr "Вы готовы к установке?"
 
+#, python-format
 msgid "Are you sure you want to delete image slot %s ?"
 msgstr "Вы уверены, что хотите удалить слот имиджа %s?"
 
@@ -108,6 +129,9 @@ msgstr ""
 
 msgid "Automatic settings backup"
 msgstr "Автоматическое резервное копирование настроек"
+
+msgid "Automatically created"
+msgstr ""
 
 msgid "Autostart"
 msgstr "Автозапуск"
@@ -167,6 +191,9 @@ msgstr "Копирование/Прошивка/Перезагрузка ими�
 msgid "Backups to keep"
 msgstr "Количество хранимых резервных копий"
 
+msgid "Backups to prune"
+msgstr ""
+
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam не может быть запущен во время работы MGcamd"
 
@@ -176,6 +203,7 @@ msgstr "CCcam не может работать с MGcamd."
 msgid "Cancel"
 msgstr "Отменить"
 
+#, python-format
 msgid "Cannot unmount partition '%s'.  Make sure this partition is not in use.  (SWAP, record/timeshift, etc.)"
 msgstr "Невозможно отсоединить раздел '%s'. Убедитесь, что он не используется для подкачки, записи или таймшифта."
 
@@ -254,6 +282,7 @@ msgstr "Пароль разработчика"
 msgid "Developer username"
 msgstr "Логин разработчика"
 
+#, python-format
 msgid "Device %s"
 msgstr "Устройство %s"
 
@@ -468,15 +497,16 @@ msgstr "Управление резервными копиями"
 msgid "Manage your devices mount points."
 msgstr "Управление точками монтирования своих устройств"
 
-msgid "Max backups to keep (0==all)"
-msgstr "Максимальное количество резервных копий для хранения (0==все)"
-
 msgid "Max image backups to keep (0==all)"
 msgstr "Максимальное количество резервных копий имиджа для хранения (0==все)"
+
+msgid "Maximum number of backups to keep. Older backups are given priority for removal, so the fresher ones remain."
+msgstr ""
 
 msgid "Mount"
 msgstr "Монтировать"
 
+#, python-format
 msgid "Mount failed for '%s', error code = '%s'."
 msgstr "Не удалось смонтировать '%s', код ошибки = '%s'."
 
@@ -583,6 +613,9 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "ОК, чтобы восстановить"
 
+msgid "Only scheduled"
+msgstr ""
+
 #, python-format
 msgid "Partition: %s  Mount: %s unmounted successfully; if all partitions now unmounted you can remove device."
 msgstr "Раздел: %s Монтирование: %s успешно размонтировано; если все разделы отключены, можете удалить устройство."
@@ -639,12 +672,6 @@ msgstr "Нажмите ОК для подтверждения выбора ил�
 msgid "Press appropiate Init to move Nand root to SDcard or USB."
 msgstr "Нажмите 'Инициализация', чтобы переместить NAND на SD-карту или USB."
 
-msgid "Query before backup starts"
-msgstr "Спросить перед началом резервного копирования"
-
-msgid "Query before image backup starts"
-msgstr "Спросить перед началом резервного копирования имиджа"
-
 msgid "Query before starting backup."
 msgstr "Спросить перед началом резервного копирования."
 
@@ -676,9 +703,6 @@ msgstr "Удаление с подтверждением"
 
 msgid "Removing temp mounts..."
 msgstr "Удаление временных монтирований..."
-
-msgid "Repeat how often"
-msgstr "Как часто повторять"
 
 msgid "Restart"
 msgstr "Перезагрузить"
@@ -900,11 +924,11 @@ msgstr "Нет имиджа для прошивки."
 msgid "This device is already mounted as HDD."
 msgstr "Это устройство уже было установлено как HDD."
 
-msgid "Time of backup to start"
-msgstr "Время начала резервное копирование"
-
 msgid "Type: "
 msgstr "Тип: "
+
+msgid "Types of backups to remove when stale."
+msgstr ""
 
 msgid "Un-mount"
 msgstr "Размонтировать"
@@ -1051,3 +1075,18 @@ msgstr "Слот%s - %s (текущий имидж)"
 
 msgid "unavailable"
 msgstr "Недоступен"
+
+#~ msgid "Max backups to keep (0==all)"
+#~ msgstr "Максимальное количество резервных копий для хранения (0==все)"
+
+#~ msgid "Query before backup starts"
+#~ msgstr "Спросить перед началом резервного копирования"
+
+#~ msgid "Query before image backup starts"
+#~ msgstr "Спросить перед началом резервного копирования имиджа"
+
+#~ msgid "Repeat how often"
+#~ msgstr "Как часто повторять"
+
+#~ msgid "Time of backup to start"
+#~ msgstr "Время начала резервное копирование"

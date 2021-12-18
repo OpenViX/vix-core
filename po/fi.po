@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-26 00:08+0000\n"
-"PO-Revision-Date: 2021-12-17 20:28+0200\n"
+"PO-Revision-Date: 2021-12-18 21:56+0200\n"
 "Last-Translator: Orlandox\n"
 "Language-Team: Samzan/Kojo/Orlandox\n"
 "Language: fi\n"
@@ -15,6 +15,27 @@ msgstr ""
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
+
+msgid "%s downloads"
+msgstr "%s lataukset"
+
+msgid "%s: "
+msgstr "%s: "
+
+msgid "- Max backups to keep (0==all)"
+msgstr "- Varmuuskopioita säilytetään enintään (0==kaikki)"
+
+msgid "- Query before backup starts"
+msgstr "- Kysy ennen varmuuskopioinnin aloittamista"
+
+msgid "- Query before image backup starts"
+msgstr "- Kysy ennen imagen varmuuskopioinnin aloittamista"
+
+msgid "- Repeat how often"
+msgstr "- Kuinka useasti toistetaan"
+
+msgid "- Time of backup to start"
+msgstr "- Varmuuskopioinnin aloittamisaika"
 
 msgid "128 Mb"
 msgstr "128 Mb"
@@ -300,6 +321,9 @@ msgstr "Haluatko käynnistää käyttöliittymän nyt uudelleen?"
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "Haluatko palauttaa käyttämäsi Enigma2-lisäosat?"
 
+msgid "Do you want to restore your Enigma2 settings ?"
+msgstr "Haluatko palauttaa Enigma2 asetuksesi ?"
+
 msgid "Do you want to restore your enigma2 settings ?"
 msgstr "Haluatko palauttaa enigma2 -asetuksesi?"
 
@@ -334,11 +358,20 @@ msgstr "Tyhjä paikka"
 msgid "Enable SWAP at startup"
 msgstr "SWAP päälle käynnistyksessä"
 
+msgid "Enable frozen check"
+msgstr "Salli jumitarkistus"
+
 msgid "Enable startup"
 msgstr "Käynnistys päälle"
 
 msgid "Enough retries, delaying till next schedule."
 msgstr "Tarpeeksi yrityksiä, koitetaan uudestaan seuraavalla kerralla."
+
+msgid "Enter your OpenViX developer password."
+msgstr "Syötä OpenViX kehittäjän salasana."
+
+msgid "Enter your OpenViX developer username."
+msgstr "Syötä OpenViX kehittäjän käyttäjänimi."
 
 msgid "Erase"
 msgstr "Pyyhi"
@@ -367,21 +400,23 @@ msgstr "Vapaa tila:"
 msgid "From which image library do you want to download?"
 msgstr "Mistä image-kirjastosta haluat ladata?"
 
+msgid "Frozen check interval"
+msgstr "Jumituksen tarkistusväli"
+
 msgid "H9 SDcard manager"
 msgstr "H9 SD-kortin hallinnointi"
 
 msgid "H9SDcard Manager"
 msgstr "H9SD-kortin hallinnointi"
 
+msgid "INFO"
+msgstr "INFO"
+
 msgid "IPK installer"
 msgstr "IPK:n asennus"
 
-msgid ""
-"If you are an OpenViX developer you can enter your login details to have direct access to OpenViX developer "
-"images for your receiver. This feature is only available via 'https' connections."
-msgstr ""
-"Jos olet OpenViX kehittäjä, voit syöttää kirjautumistietosi saadaksesi suoran pääsyn laitteesi OpenViX kehittäjä -"
-"imageihin. Tämä ominaisuus on käytettävissä vain 'https' -yhteyksillä."
+msgid "If you are an OpenViX developer you can enter your login details to have direct access to OpenViX developer images for your receiver. This feature is only available via 'https' connections."
+msgstr "Jos olet OpenViX kehittäjä, voit syöttää kirjautumistietosi saadaksesi suoran pääsyn laitteesi OpenViX kehittäjä -imageihin. Tämä ominaisuus on käytettävissä vain 'https' -yhteyksillä."
 
 msgid "Image manager"
 msgstr "Imagen hallinnointi"
@@ -400,6 +435,9 @@ msgstr "Tietoja"
 
 msgid "Init SDcard"
 msgstr "Alusta SDcard"
+
+msgid "Init USB/SDA1"
+msgstr "Alusta USB/SDA1"
 
 msgid "Init Zgemma H9 SDCARD - please reboot after use."
 msgstr "Alusta Zgemma H9 SD-kortti - Vaatii uudelleenkäynnistyksen."
@@ -449,6 +487,9 @@ msgstr "Lokit"
 msgid "MB"
 msgstr "MB"
 
+msgid "MENU"
+msgstr "VALIKKO"
+
 msgid "MGcamd can't run whilst CCcam is running."
 msgstr "MGcamd ei voi käynnistyä kun CCcam on käynnissä."
 
@@ -458,14 +499,14 @@ msgstr "Hallinnoi asetusten varmuuskopioita."
 msgid "Manage your devices mount points."
 msgstr "Muokkaa laitteen liitoksia."
 
-msgid "- Max backups to keep (0==all)"
-msgstr "- Varmuuskopioita säilytetään enintään (0==kaikki)"
-
 msgid "Max image backups to keep (0==all)"
 msgstr "Imagen varmuuskopioita säilytetään enintään (0==kaikki)"
 
 msgid "Mount"
 msgstr "Liitä"
+
+msgid "Mount failed for '%s', error code = '%s'."
+msgstr "Liitos epäonnistui '%s':lle, virhekoodi = '%s'."
 
 msgid "Mount manager"
 msgstr "Liitosten hallinnointi"
@@ -522,6 +563,13 @@ msgstr ""
 "hakemistoon /usr/keys."
 
 msgid ""
+"No config files found, please setup Ncam first\n"
+"in /etc/tuxbox/config."
+msgstr ""
+"Asetustiedostoja ei löytynyt, määritä Ncam ensiksi\n"
+"/etc/tuxbox/config -polkuun."
+
+msgid ""
 "No config files found, please setup Oscam first\n"
 "in /etc/tuxbox/config"
 msgstr ""
@@ -534,6 +582,12 @@ msgid ""
 msgstr ""
 "Asetus-tiedostoa ei löytynyt, asenna Oscam-asetukset\n"
 "hakemistoon /etc/tuxbox/config."
+
+msgid "No images found on the selected download server...if password check validity"
+msgstr "Imageja ei löydy valitulta latauspalvelimelta...jos salasanan tarkistuskelpoisuus"
+
+msgid "No plugins needed to be installed"
+msgstr "Lisäosia ei tarvitse asentaa"
 
 msgid "None"
 msgstr "Ei mitään"
@@ -550,11 +604,17 @@ msgstr "OK"
 msgid "OK, to perform a restore"
 msgstr "OK, suorita palautus"
 
+msgid "Partition: %s  Mount: %s unmounted successfully; if all partitions now unmounted you can remove device."
+msgstr "Partitio: %s Liitos: %s liitos poistettu onnistuneesti; jos kaikkien partitioiden liitokset poistettu, voit poistaa laitteen."
+
 msgid "Please enter a folder that contains some packages."
 msgstr "Valitse hakemisto joka sisältää asennuspaketteja."
 
 msgid "Please select device to use as SWAP file location."
 msgstr "Valitse laite, jota käytetään SWAP-tiedoston tallentamiseen."
+
+msgid "Please select the file to restore."
+msgstr "Valitse palautettava tiedosto."
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Odota, lisäosien palautusta suoritetaan..."
@@ -589,14 +649,20 @@ msgstr "Pluginien listaus epäonnistui - väärä varmuuskopion sijainti tai lev
 msgid "Preparing extra plugins..."
 msgstr "Valmistellaan ylimääräisiä lisäosia..."
 
+msgid "Press 'Menu' to select a storage device"
+msgstr "Paina 'MENU' valitaksesi tallennuslaitteen"
+
 msgid "Press OK to toggle the selection."
 msgstr "Suorita valinta OK-näppäimellä."
 
-msgid "- Query before backup starts"
-msgstr "- Kysy ennen varmuuskopioinnin aloittamista"
+msgid "Press appropiate Init to move Nand root to SDcard or USB."
+msgstr "Paina sopivaa Init:ä siirtääksesi Nand:n juuren SD-kortille tai USB:lle."
 
-msgid "- Query before image backup starts"
-msgstr "- Kysy ennen imagen varmuuskopioinnin aloittamista"
+msgid "Query before starting backup."
+msgstr "Kysy ennen varmuuskopioinnin aloitusta."
+
+msgid "Query before starting image backup."
+msgstr "Kysy ennen imagen varmuuskopioinnin aloitusta."
 
 msgid "Reboot"
 msgstr "Uudelleenkäynnistys"
@@ -621,9 +687,6 @@ msgstr "Poista vahvistus"
 
 msgid "Removing temp mounts..."
 msgstr "Poistetaan väliaikaiset liitokset..."
-
-msgid "- Repeat how often"
-msgstr "- Kuinka useasti toistetaan"
 
 msgid "Restart"
 msgstr "Käynnistä uudelleen"
@@ -682,6 +745,9 @@ msgstr "Ajasta varmuuskopiot"
 msgid "Script runner"
 msgstr "Skriptien ajo"
 
+msgid "Script runner settings"
+msgstr "Skriptien ajon asetukset"
+
 msgid "Select"
 msgstr "Valitse"
 
@@ -712,17 +778,44 @@ msgstr "Valitse SWAP:n koko:"
 msgid "Select:"
 msgstr "Valitse:"
 
+msgid "Set the interval to be checked in mins."
+msgstr "Aseta tarkistuksen intervalli minuuteissa."
+
+msgid "Set the repeat interval of backup schedule."
+msgstr "Aseta toisto intervalli varmuuskopion aikatauluun."
+
+msgid "Set the time of backup to start."
+msgstr "Aseta varmuuskopion aloitusaika."
+
 msgid "Setting up..."
 msgstr "Asennus käynnissä..."
 
 msgid "Setup mounts"
 msgstr "Aseta liitokset"
 
+msgid "Show in extensions"
+msgstr "Näytä laajennuksissa"
+
 msgid "Size: "
 msgstr "Koko: "
 
+msgid "Size: %sGB"
+msgstr "Koko: %sGB"
+
+msgid "Size: %sMB"
+msgstr "Koko: %sMB"
+
+msgid "Size: %sTB"
+msgstr "Koko: %sT"
+
+msgid "Size: unavailable"
+msgstr "Koko: ei saatavilla"
+
 msgid "Softcam manager"
 msgstr "Softcam:n hallinnointi"
+
+msgid "Softcam manager settings"
+msgstr "Softcam hallinnoinnin asetukset"
 
 msgid "Softcam starting..."
 msgstr "Softcam käynnistyy..."
@@ -751,18 +844,11 @@ msgstr "Tiedosto ei ole yhteensopiva tämän ohjelmaversion kanssa."
 msgid "Sorry, but the restore failed."
 msgstr "Palautus epäonnistui."
 
-msgid ""
-"Sorry, no physical devices that supports SWAP attached. Can't create SWAP file on network or fat32 file-systems."
-msgstr ""
-"Fyysisiä laitteita, jotka tukevat SWAP-tiedostoa, ei ole. SWAP-tiedostoa ei pysty luomaan verkkolevylle tai FAT32-"
-"levyjärjestelmään."
+msgid "Sorry, no physical devices that supports SWAP attached. Can't create SWAP file on network or fat32 file-systems."
+msgstr "Fyysisiä laitteita, jotka tukevat SWAP-tiedostoa, ei ole. SWAP-tiedostoa ei pysty luomaan verkkolevylle tai FAT32-levyjärjestelmään."
 
-msgid ""
-"Sorry, not enough free RAM found, and no physical devices that supports SWAP attached. Can't create SWAP file on "
-"network or fat32 file-systems, unable to make backup."
-msgstr ""
-"Vapaata RAM-muistia ei ole tarpeeksi, eikä fyysistä laitetta löydy, joka tukisi SWAP-tiedostoa. SWAP-tiedostoa ei "
-"voida luoda verkkolevylle tai FAT32-tiedostojärjestelmään. Varmuuskopiota ei pysty tekemään."
+msgid "Sorry, not enough free RAM found, and no physical devices that supports SWAP attached. Can't create SWAP file on network or fat32 file-systems, unable to make backup."
+msgstr "Vapaata RAM-muistia ei ole tarpeeksi, eikä fyysistä laitetta löydy, joka tukisi SWAP-tiedostoa. SWAP-tiedostoa ei voida luoda verkkolevylle tai FAT32-tiedostojärjestelmään. Varmuuskopiota ei pysty tekemään."
 
 msgid "Start"
 msgstr "Käynnistä"
@@ -795,6 +881,15 @@ msgstr ""
 msgid "The chosen location does not exist, using /media/hdd."
 msgstr "Valittua hakemistoa ei ole, käytetään /media/hdd."
 
+msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
+msgstr "Boksin nimi voidaan lisätä varmuuskopion tiedostonimeen, mutta se tekee tiedostonimestä pitkähkön."
+
+msgid "The wizard is finished now, and will reboot."
+msgstr "Velho on suoritettu loppuun, uudelleenkäynnistetään."
+
+msgid "The wizard is finished now."
+msgstr "Velho on suoritettu loppuun."
+
 msgid "There is a problem with this device. Please reformat it and try again."
 msgstr "Tässä laitteessa on ongelma. Alusta se ja yritä uudelleen."
 
@@ -806,9 +901,6 @@ msgstr "Ei ole imagea mitä päivittää."
 
 msgid "This device is already mounted as HDD."
 msgstr "Tämä laite on jo liitetty kovalevyksi."
-
-msgid "- Time of backup to start"
-msgstr "- Varmuuskopioinnin aloittamisaika"
 
 msgid "Type: "
 msgstr "Tyyppi: "
@@ -872,6 +964,17 @@ msgstr "Odota, tietoja haetaan..."
 msgid "Weekly"
 msgstr "Viikoittain"
 
+msgid ""
+"Welcome to the restore wizard.\n"
+"\n"
+"A backup has been detected.\n"
+"You can use this wizard to restore your settings and any extra plugins that were installed when the backup was created.\n"
+msgstr ""
+"Tervetuloa palautusvelhoon.\n"
+"\n"
+"Varmuuskopio löydetty.\n"
+"Voit käyttää tätä velhoa palauttaaksesi asetuksesi ja minkä tahansa extra lisäosan mikä oli asennettuna, kun varmuuskopio luotiin.\n"
+
 msgid "YES, to restore plugins"
 msgstr "KYLLÄ, palauttaa lisäosat"
 
@@ -884,12 +987,8 @@ msgstr "Olet päättänyt olla päivittämättä imagea."
 msgid "You have to create a SWAP file before trying to activate the autostart."
 msgstr "Sinun pitää ensin luoda SWAP-tiedosto, ennen kuin aktivoit sen automaattisen käynnistyksen."
 
-msgid ""
-"Your %s %s could not connect to the plugin feeds at this time. Please try using the Backup manager to restore "
-"plugins later."
-msgstr ""
-"Sinun %s %s ei saa yhteyttä plugin-syötteisiin. Yritä myöhemmin palauttaa pluginit käyttäen varmuuskopioiden "
-"hallinta-työkalua."
+msgid "Your %s %s could not connect to the plugin feeds at this time. Please try using the Backup manager to restore plugins later."
+msgstr "Sinun %s %s ei saa yhteyttä plugin-syötteisiin. Yritä myöhemmin palauttaa pluginit käyttäen varmuuskopioiden hallinta-työkalua."
 
 msgid ""
 "Your %s %s is about to create a full image backup, this can take about 6 minutes to complete.\n"
@@ -908,25 +1007,14 @@ msgstr ""
 msgid "Your %s %s is not connected to a network. Please check your network settings and try again."
 msgstr "Sinun %s %s ei saa yhteyttä verkkoon. Tarkista verkkoasetuksesi, ja kokeile uudestaan."
 
-msgid ""
-"Your %s %s is not connected to a network. Please try using the Backup manager to restore plugins later when a "
-"network connection is available."
-msgstr ""
-"Sinun %s %s ei saa yhteyttä verkkoon. Yritä myöhemmin palauttaa pluginit käyttäen varmuuskopioiden hallinta-"
-"työkalua, kun verkkoyhteys on saatavilla."
+msgid "Your %s %s is not connected to a network. Please try using the Backup manager to restore plugins later when a network connection is available."
+msgstr "Sinun %s %s ei saa yhteyttä verkkoon. Yritä myöhemmin palauttaa pluginit käyttäen varmuuskopioiden hallinta-työkalua, kun verkkoyhteys on saatavilla."
 
 msgid "Your %s %s is not connected to the Internet. Please check your network settings and try again."
 msgstr "Sinun %s %s ei ole yhteydessä internettiin. Tarkasta verkkoasetukset ja kokeile uudestaan."
 
 msgid "Your %s %s is not connected to the Internet. Please try using Backup manager to restore plugins later."
-msgstr ""
-"Sinun %s %s ei saa yhteyttä internettiin. Yritä myöhemmin palauttaa pluginit käyttäen varmuuskopioiden hallinta-"
-"työkalua."
-
-msgid "Your %s %s is not connected to the Internet. Please try using the Backup manager to restore plugins later."
-msgstr ""
-"Sinun %s %s ei saa yhteyttä internettiin. Yritä myöhemmin palauttaa pluginit käyttäen varmuuskopioiden hallinta-"
-"työkalua."
+msgstr "Sinun %s %s ei saa yhteyttä internettiin. Yritä myöhemmin palauttaa pluginit käyttäen varmuuskopioiden hallinta-työkalua."
 
 msgid ""
 "ofgwrite error (also sent to any debug log):\n"
@@ -967,3 +1055,6 @@ msgstr "ylempi"
 
 msgid "emulator"
 msgstr "emulaattori"
+
+msgid "unavailable"
+msgstr "ei käytettävissä"

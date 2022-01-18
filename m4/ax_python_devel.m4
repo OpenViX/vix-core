@@ -278,33 +278,10 @@ EOD`
 	LIBS="$ac_save_LIBS $PYTHON_LIBS $PYTHON_EXTRA_LIBS $PYTHON_EXTRA_LIBS"
 	LDFLAGS="$ac_save_LDFLAGS $PYTHON_EXTRA_LDFLAGS"
 	CPPFLAGS="$ac_save_CPPFLAGS $PYTHON_CPPFLAGS"
-	AC_LANG_PUSH([C])
-	AC_LINK_IFELSE([
-		AC_LANG_PROGRAM([[#include <Python.h>]],
-				[[Py_Initialize();]])
-		],[pythonexists=yes],[pythonexists=no])
-	AC_LANG_POP([C])
 	# turn back to default flags
 	CPPFLAGS="$ac_save_CPPFLAGS"
 	LIBS="$ac_save_LIBS"
 	LDFLAGS="$ac_save_LDFLAGS"
-
-	AC_MSG_RESULT([$pythonexists])
-
-        if test ! "x$pythonexists" = "xyes"; then
-	   AC_MSG_FAILURE([
-  Could not link test program to Python. Maybe the main Python library has been
-  installed in some non-standard library path. If so, pass it to configure,
-  via the LIBS environment variable.
-  Example: ./configure LIBS="-L/usr/non-standard-path/python/lib"
-  ============================================================================
-   ERROR!
-   You probably have to install the development version of the Python package
-   for your distribution.  The exact name of this package varies among them.
-  ============================================================================
-	   ])
-	  PYTHON_VERSION=""
-	fi
 
 	#
 	# all done!

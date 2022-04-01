@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-17 04:39+0000\n"
-"PO-Revision-Date: 2021-11-18 08:56+0100\n"
+"POT-Creation-Date: 2022-03-31 22:59+0000\n"
+"PO-Revision-Date: 2022-04-01 16:31+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -98,6 +98,9 @@ msgstr "Er kan gecontroleerd worden of de softcam gestopt is en indien nodig dez
 msgid "Allows you to close the window automatically."
 msgstr "Het window kan automatisch gesloten worden."
 
+msgid "Allows you to give your image filename a custom prefix."
+msgstr "Geeft de mogelijkheid en eigen voorvoegsel toe te voegen aan uw image bestandsnaam."
+
 msgid "Allows you to schedule your backups."
 msgstr "U kunt een schema instellen om back-ups te maken."
 
@@ -106,9 +109,6 @@ msgstr "U kunt een schema instellen om image back-ups te maken."
 
 msgid "Allows you to tag your backups to a box."
 msgstr "U kunt de naam van de back-ups aanpassen."
-
-msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr "U kunt de naam van de image back-ups aanpassen (standaard is stb name/type)."
 
 msgid "Are you ready to install ?"
 msgstr "Bent u gereed te installeren?"
@@ -886,6 +886,9 @@ msgstr "Status:"
 msgid "Stop"
 msgstr "Stop"
 
+msgid "Swap enabled at startup"
+msgstr "Swap ingeschakeld bij opstarten"
+
 msgid "Temp folder"
 msgstr "Tijdelijke map"
 
@@ -1056,6 +1059,9 @@ msgstr "Uw %s %s is niet verbonden met het internet.  U kunt later de Back-up ma
 msgid "Your %s %s is not connected to the Internet. Please try using the Backup manager to restore plugins later."
 msgstr "Uw %s %s is niet verbonden met het internet.  U kunt later de Back-up manager gebruiken om de plugins alsnog te herstellen."
 
+msgid "manufacturer defined swap"
+msgstr "swap bepaald door fabrikant"
+
 #, python-format
 msgid ""
 "ofgwrite error (also sent to any debug log):\n"
@@ -1065,19 +1071,22 @@ msgstr ""
 "%s"
 
 #, python-format
-msgid "slot%s - %s"
-msgstr "slot%s - %s"
+msgid "slot%s %s - %s"
+msgstr "slot%s %s - %s"
+
+#, python-format
+msgid "slot%s %s - %s (current image)"
+msgstr "slot%s %s - %s (huidig image)"
 
 #, python-format
 msgid "slot%s - %s "
 msgstr "slot%s - %s "
 
-#, python-format
-msgid "slot%s - %s (current image)"
-msgstr "slot%s - %s (huidige image)"
-
 msgid "unavailable"
 msgstr "niet beschikbaar"
+
+#~ msgid "Allows you to tag your image backup to a box. (default is box name/type)"
+#~ msgstr "U kunt de naam van de image back-ups aanpassen (standaard is stb name/type)."
 
 #~ msgid "Max backups to keep (0==all)"
 #~ msgstr "Max aantal back-ups te bewaren (0==alle)"
@@ -1093,3 +1102,11 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Time of backup to start"
 #~ msgstr "Tijd waarop back-up moet starten"
+
+#, python-format
+#~ msgid "slot%s - %s"
+#~ msgstr "slot%s - %s"
+
+#, python-format
+#~ msgid "slot%s - %s (current image)"
+#~ msgstr "slot%s - %s (huidige image)"

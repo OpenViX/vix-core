@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-26 00:08+0000\n"
-"PO-Revision-Date: 2021-12-18 21:56+0200\n"
+"PO-Revision-Date: 2022-04-17 13:30+0300\n"
 "Last-Translator: Orlandox\n"
 "Language-Team: Samzan/Kojo/Orlandox\n"
 "Language: fi\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -86,7 +86,7 @@ msgid "Backups to prune"
 msgstr "Karsittavat varmuuskopiot"
 
 msgid "Maximum number of backups to keep. Older backups are given priority for removal, so the fresher ones remain."
-msgstr "Säilytettävien varmuuskopioiden maksimimäärä. Vanhat varmuuskopiot poistetaan, joten tuoreemmat sailyvät."
+msgstr "Säilytettävien varmuuskopioiden maksimimäärä. Vanhat varmuuskopiot poistetaan, joten tuoreemmat säilyvät."
 
 msgid "Only scheduled"
 msgstr "Vain aikataulutetut"
@@ -114,9 +114,6 @@ msgstr "Sallii imagen varmuuskopion ajastuksen tekemisen."
 
 msgid "Allows you to tag your backups to a box."
 msgstr "Sallii varmuuskopioiden merkinnän boksille."
-
-msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr "Sallii imagen varmuuskopioiden merkinnän boksille. (Oletuksena nimi/tyyppi)"
 
 msgid "Are you ready to install ?"
 msgstr "Oletko valmiina asentamaan?"
@@ -197,7 +194,7 @@ msgid "Backup/Flash/ReBoot system image."
 msgstr "Varmuuskopioi/Flashaa/Käynnistä uudelleen image."
 
 msgid "Backups to keep"
-msgstr "Säilytettävien varmuuskopioden määrä"
+msgstr "Säilytettävien varmuuskopioiden määrä"
 
 msgid "CCcam can't run whilst MGcamd is running"
 msgstr "CCcam ei voi käynnistyä kun MGcamd on käynnissä"
@@ -1023,14 +1020,14 @@ msgstr ""
 "ofgwrite-virhe (lähetetty myös debug-lokiin):\n"
 "%s"
 
-msgid "slot%s - %s"
-msgstr "paikka%s - %s"
+msgid "slot%s %s - %s"
+msgstr "paikka%s %s - %s"
+
+msgid "slot%s %s - %s (current image)"
+msgstr "paikka%s %s - %s (nykyinen image)"
 
 msgid "slot%s - %s "
 msgstr "paikka%s - %s "
-
-msgid "slot%s - %s (current image)"
-msgstr "paikka%s - %s (nykyinen image)"
 
 msgid "Event Info"
 msgstr "Ohjelmatiedot"
@@ -1058,3 +1055,9 @@ msgstr "emulaattori"
 
 msgid "unavailable"
 msgstr "ei käytettävissä"
+
+msgid "Allows you to give your image filename a custom prefix."
+msgstr "Sallii antaa imagen tiedostonimelle mukautetun etuliitteen."
+
+msgid "Swap enabled at startup"
+msgstr "Swap käytössä käynnistyksessä"

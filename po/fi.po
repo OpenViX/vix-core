@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-26 00:08+0000\n"
-"PO-Revision-Date: 2022-04-17 13:30+0300\n"
+"PO-Revision-Date: 2022-06-18 20:28+0300\n"
 "Last-Translator: Orlandox\n"
 "Language-Team: Samzan/Kojo/Orlandox\n"
 "Language: fi\n"
@@ -1061,3 +1061,9 @@ msgstr "Sallii antaa imagen tiedostonimelle mukautetun etuliitteen."
 
 msgid "Swap enabled at startup"
 msgstr "Swap käytössä käynnistyksessä"
+
+msgid "Homebuild URL"
+msgstr "Kotitekoisen koontiversion verkko-osoite"
+
+msgid "If you are running your own build server and want to download your own images directly into ImageManager you can link to the URL of your JSON index. If you need help with implementing this please ask on the forum."
+msgstr "Jos käytät omaa koontiversiopalvelinta ja haluat ladata oman imagesi suoraan Imagen hallinnointiin, voit linkittää JSON-indeksisi verkko-osoitteeseen. Jos tarvitset apua tämän toteutuksessa, niin kysy keskustelupalstalta."

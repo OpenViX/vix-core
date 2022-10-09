@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-13 14:02+0000\n"
-"PO-Revision-Date: 2022-06-24 11:53+0200\n"
+"POT-Creation-Date: 2022-10-01 23:16+0000\n"
+"PO-Revision-Date: 2022-10-09 15:46+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
@@ -44,6 +44,9 @@ msgstr "- Hoe vaak herhalen"
 msgid "- Time of backup to start"
 msgstr "- Tijd waarop back-up start"
 
+msgid "1024 Mb"
+msgstr "1024 Mb"
+
 msgid "128 Mb"
 msgstr "128 Mb"
 
@@ -59,8 +62,14 @@ msgstr "30 dagen"
 msgid "32 Mb"
 msgstr "32 Mb"
 
+msgid "512 Mb"
+msgstr "512 Mb"
+
 msgid "64 Mb"
 msgstr "64 Mb"
+
+msgid "756 Mb"
+msgstr "756 Mb"
 
 msgid "8 Mb"
 msgstr "8 Mb"
@@ -377,6 +386,14 @@ msgstr "Voer uw OpenViX ontwikkelaar-gebruikersnaam in."
 
 msgid "Erase"
 msgstr "Wis"
+
+#, python-format
+msgid ""
+"Error creating backup folder:\n"
+"%s: %s"
+msgstr ""
+"Fout in het maken van back-up map:\n"
+"%s: %s"
 
 msgid "Exit the restore wizard"
 msgstr "Beeindig de herstel wizard"
@@ -756,8 +773,8 @@ msgstr "SWAP-bestand niet gevonden. U moet dit aanmaken alvorens het te kunnen g
 msgid "SWAP manager"
 msgstr "SWAP manager"
 
-msgid "SWAP place:"
-msgstr "SWAP lokatie:"
+msgid "SWAP name:"
+msgstr "SWAP naam:"
 
 msgid "SWAP size:"
 msgstr "SWAP grootte:"
@@ -891,9 +908,6 @@ msgstr "Status:"
 
 msgid "Stop"
 msgstr "Stop"
-
-msgid "Swap enabled at startup"
-msgstr "Swap ingeschakeld bij opstarten"
 
 msgid "Temp folder"
 msgstr "Tijdelijke map"
@@ -1068,6 +1082,9 @@ msgstr "Uw %s %s is niet verbonden met het internet.  U kunt later de Back-up ma
 msgid "manufacturer defined swap"
 msgstr "swap bepaald door fabrikant"
 
+msgid "manufacturer defined swap enabled at startup"
+msgstr "door de fabrikant bepaalde swap is ingeschakeld bij het opstarten"
+
 #, python-format
 msgid ""
 "ofgwrite error (also sent to any debug log):\n"
@@ -1105,6 +1122,12 @@ msgstr "niet beschikbaar"
 
 #~ msgid "Repeat how often"
 #~ msgstr "Hoe vaak herhalen"
+
+#~ msgid "SWAP place:"
+#~ msgstr "SWAP lokatie:"
+
+#~ msgid "Swap enabled at startup"
+#~ msgstr "Swap ingeschakeld bij opstarten"
 
 #~ msgid "Time of backup to start"
 #~ msgstr "Tijd waarop back-up moet starten"

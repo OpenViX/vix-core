@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-26 00:08+0000\n"
-"PO-Revision-Date: 2022-10-09 19:24+0300\n"
+"PO-Revision-Date: 2022-11-29 17:13+0200\n"
 "Last-Translator: Orlandox\n"
 "Language-Team: Samzan/Kojo/Orlandox\n"
 "Language: fi\n"
@@ -294,9 +294,6 @@ msgstr "Laite %s"
 
 msgid "Device: "
 msgstr "Laite: "
-
-msgid "Device: None available"
-msgstr "Laite: ei saatavilla"
 
 msgid "Device: none available"
 msgstr "Laite: Ei yhtään saatavilla"
@@ -589,6 +586,9 @@ msgstr ""
 msgid "No images found on the selected download server...if password check validity"
 msgstr "Imageja ei löydy valitulta latauspalvelimelta... salasana ?"
 
+msgid " Press 'Menu' to select a storage device - none available"
+msgstr " Paina 'MENU' valitaksesi tallennuslaitteen - ei yhtään saatavilla"
+
 msgid "No plugins needed to be installed"
 msgstr "Lisäosia ei tarvitse asentaa"
 
@@ -652,8 +652,8 @@ msgstr "Pluginien listaus epäonnistui - väärä varmuuskopion sijainti tai lev
 msgid "Preparing extra plugins..."
 msgstr "Valmistellaan ylimääräisiä lisäosia..."
 
-msgid "Press 'Menu' to select a storage device"
-msgstr "Paina 'MENU' valitaksesi tallennuslaitteen"
+msgid "Device: Press 'Menu' to select a storage device - none available"
+msgstr "Laite: Paina 'MENU' valitaksesi tallennuslaitteen - ei yhtään saatavilla"
 
 msgid "Press OK to toggle the selection."
 msgstr "Suorita valinta OK-näppäimellä."

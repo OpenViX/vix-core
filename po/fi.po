@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-26 00:08+0000\n"
-"PO-Revision-Date: 2023-03-04 08:09+0200\n"
+"PO-Revision-Date: 2023-03-04 09:59+0200\n"
 "Last-Translator: Orlandox\n"
 "Language-Team: Samzan/Kojo/Orlandox\n"
 "Language: fi\n"
@@ -1179,3 +1179,6 @@ msgstr "Kun flashataan palautus-imagesta, on se mahdollista flashata palautuspai
 
 msgid "The new image will overwrite the previous one including any client images that were also configured, so care needs to be taken to make any full image backups (including client images) before overwriting the recovery image."
 msgstr "Uusi image korvaa edellisen, mukaan lukien kaikki klientti-imaget, jotka oli myös määritetty, joten on huolehdittava kaikkien imagejen varmuuskopioiden tekemisestä (mukaan lukien klientti-imaget) ennen palautus-imagen ylikirjoittamista."
+
+msgid "Select 'no' to flash to a different slot."
+msgstr "Valitse 'Ei' flashataksesi eri paikkaan."

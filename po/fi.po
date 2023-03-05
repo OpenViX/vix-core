@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-26 00:08+0000\n"
-"PO-Revision-Date: 2023-03-04 09:59+0200\n"
+"PO-Revision-Date: 2023-03-05 09:46+0200\n"
 "Last-Translator: Orlandox\n"
 "Language-Team: Samzan/Kojo/Orlandox\n"
 "Language: fi\n"
@@ -1182,3 +1182,9 @@ msgstr "Uusi image korvaa edellisen, mukaan lukien kaikki klientti-imaget, jotka
 
 msgid "Select 'no' to flash to a different slot."
 msgstr "Valitse 'Ei' flashataksesi eri paikkaan."
+
+msgid "Extensive search"
+msgstr "Laaja haku"
+
+msgid "Locations searched when creating the images list. Select 'yes' to search all likely locations on your system where images may be located. Select 'no' to limit the search to just the user selected backup location."
+msgstr "Image-listaa luotaessa sijainnit haettiin. Valitse 'kyllä', jos haluat etsiä järjestelmästäsi kaikista mahdollisista paikoista, joissa imaget saattavat sijaita. Valitse 'ei', jos haluat rajoittaa haun vain käyttäjän valitsemaan varmuuskopioinnin sijaintiin."

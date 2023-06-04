@@ -241,7 +241,7 @@ class VIXBackupManager(Screen):
 										  "menu": self.createSetup,
 										  }, -1)
 			self["key_red"].hide()
-			self["key_green"].hide()			
+			self["key_green"].hide()
 			self["key_yellow"].hide()
 			self["lab1"].setText(_("Device: Press 'Menu' to select a storage device - none available"))
 		else:
@@ -659,7 +659,7 @@ class VIXBackupManager(Screen):
 							for file in available:
 								if file:
 									fileparts = file.strip().split("_")
-#									print("[BackupManager] fileparts, ipk", fileparts, ipk)									
+#									print("[BackupManager] fileparts, ipk", fileparts, ipk)
 									if fileparts[0] == ipk:
 										self.thirdpartyPluginsLocation = self.thirdpartyPluginsLocation.replace(" ", "%20")
 										ipk = path.join(self.thirdpartyPluginsLocation, file)
@@ -731,7 +731,7 @@ class VIXBackupManager(Screen):
 		if self.didPluginsRestore or self.didSettingsRestore:
 			if self.didSettingsRestore:
 				self.ConsoleB.ePopen("tar -xzvf " + self.BackupDirectory + self.sel + " -C /" + " etc/enigma2/settings")
-				print("[BackupManager] Restoring Stage 6: restored settings file again")				
+				print("[BackupManager] Restoring Stage 6: restored settings file again")
 				self.ConsoleB.ePopen("killall -9 enigma2 && init 6")
 			else:
 				print("[BackupManager] Stage 6 Restoring Completed rebooting")
@@ -759,7 +759,7 @@ class BackupSelection(Screen):
 			0, 0, 140, 40, 20,
 			140, 0, 140, 40, 20,
 			280, 0, 140, 40, 20,
-			5, 50, 550, 250, 25, 19, 
+			5, 50, 550, 250, 25, 19,
 		]
 
 	def __init__(self, session):
@@ -857,7 +857,7 @@ class XtraPluginsSelection(Screen):
 			0, 0, 140, 40, 20,
 			140, 0, 140, 40, 20,
 			280, 0, 140, 40, 20,
-			5, 50, 550, 250, 25, 19, 
+			5, 50, 550, 250, 25, 19,
 		]
 
 	def __init__(self, session):
@@ -967,7 +967,7 @@ class VIXBackupManagerMenu(Setup):
 		0, 90, 560, 375, 25, 19, # config
 		0, 75, 560, 75, 18, # description
 	]
-		
+
 	def __init__(self, session, setup, plugin=None, PluginLanguageDomain=None):
 		Setup.__init__(self, session, setup, plugin, PluginLanguageDomain)
 		self.skinName = "VIXBackupManagerMenu"
@@ -1170,7 +1170,7 @@ class BackupFiles(Screen):
 		Screen.__init__(self, session)
 		self.Console = Console()
 		self.ConsoleB = Console(binary=True)
-		self.backuptype = backuptype	
+		self.backuptype = backuptype
 		self.BackupDevice = config.backupmanager.backuplocation.value
 		print("[BackupManager] Device: " + self.BackupDevice)
 		self.BackupDirectory = config.backupmanager.backuplocation.value + "backup/"
@@ -1448,7 +1448,7 @@ class BackupFiles(Screen):
 							emlist.append(fil)
 						elif config.backupmanager.types_to_prune.value == "auto" and ("-Sch-" in fil or "-IM-" in fil or "-SU-" in fil):
 							emlist.append(fil)
-						
+
 # sort by oldest first...
 				emlist.sort(key=lambda fil: path.getmtime(self.BackupDirectory + fil))
 # ...then, if we have too many, remove the <n> newest from the end

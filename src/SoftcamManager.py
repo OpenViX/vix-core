@@ -75,7 +75,7 @@ def spinnerSkin(skinName):
 	</screen>""",
 		484, 150,
 		460, 60, 20,
-	]	 
+	]
 
 
 class VIXSoftcamManager(Screen):
@@ -248,7 +248,7 @@ class VIXSoftcamManager(Screen):
 				file.close()
 				SoftcamsScriptsRunning = SoftcamsScriptsRunning.replace("\n", ", ")
 				self.currentactivecam += SoftcamsScriptsRunning
-			self["activecam"].setText(self.currentactivecam)				
+			self["activecam"].setText(self.currentactivecam)
 			print("[SoftcamManager] Active:%s ScriptCam=%s" % (self.currentactivecam, config.misc.softcams.value))
 			if config.misc.softcams.value != "None":
 				self["activecam"].setText("SoftcamScript running")
@@ -371,7 +371,7 @@ class VIXSoftcamManager(Screen):
 
 class VIXStartCam(Screen):
 	skin = None
-		
+
 	def __init__(self, session, selectedcam):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("Softcam starting..."))

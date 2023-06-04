@@ -14,11 +14,11 @@ from .IPKInstaller import IpkgInstaller
 
 config.misc.restorewizardrun = ConfigBoolean(default=False)
 
-#	On plugin initialisation (called by StartEnigma). language will be assigned as follows if config.misc.firstrun.value:  
+#	On plugin initialisation (called by StartEnigma). language will be assigned as follows if config.misc.firstrun.value:
 #	Default language en_GB (OpenViX) is set by SetupDevices called by StartEnigma
 #	If no backup, the languagewizard will be inserted by Plugin into the wizards.
 #	If backup, then language will be set here from config.osd.language if in backup, else default language
-#  
+#
 
 
 def setLanguageFromBackup(backupfile):
@@ -43,7 +43,7 @@ def setLanguageFromBackup(backupfile):
 			language.activateLanguage(languageToSelect)
 			config.misc.languageselected.value = 0		# 0 means found
 			config.misc.languageselected.save()
-			break	
+			break
 	tar.close()
 
 

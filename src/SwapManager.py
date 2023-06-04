@@ -77,7 +77,7 @@ class StartSwap:
 		if swap_Pname and not swap_Fname:				
 			print("[SwapManager][StartSwap] SWAP partition active on ", swap_Pname)			
 		if swap_Pname and swap_Fname:
-			print("[SwapManager][StartSwap] SWAP file %s chosen before swap partition on %s by priority" %(swap_Fname, swap_Pname))
+			print("[SwapManager][StartSwap] SWAP file %s chosen before swap partition on %s by priority" % (swap_Fname, swap_Pname))
 
 
 
@@ -218,7 +218,7 @@ class VIXSwap(Screen):
 							self.MMCdevice = True						
 							self.swap_Pname = parts[0]
 #							self["key_blue"].setText("")						
-							self.swap_name =  _("manufacturer defined swap")	
+							self.swap_name = _("manufacturer defined swap")	
 						self.swap_Pactive = True
 				f.close()
 		self["key_blue"].setText(_("Create"))

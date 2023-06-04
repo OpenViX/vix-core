@@ -124,8 +124,10 @@ def ImageManagerautostart(reason, session=None, **kwargs):
 			print("[ImageManager] Stop")
 			autoImageManagerTimer.stop()
 
+
 class tmp:
 	dir = None
+
 
 class VIXImageManager(Screen):
 	skin = ["""<screen name="VIXImageManager" position="center,center" size="%d,%d">
@@ -413,7 +415,6 @@ class VIXImageManager(Screen):
 					break
 			self.showJobView(job)
 
-
 	def getImagesDownloaded(self):
 		def getImages(files):
 			for file in files:
@@ -630,7 +631,6 @@ class VIXImageManager(Screen):
 		else:
 			self.session.openWithCallback(self.restore_infobox.close, MessageBox, _("ofgwrite error (also sent to any debug log):\n%s") % result, MessageBox.TYPE_INFO, timeout=20)
 			print("[ImageManager] OFGWriteResult failed:\n", result)
-
 
 	def dualBoot(self):
 		rootfs2 = False

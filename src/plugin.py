@@ -20,6 +20,7 @@ config.misc.restorewizardrun = ConfigBoolean(default=False)
 #	If backup, then language will be set here from config.osd.language if in backup, else default language
 #  
 
+
 def setLanguageFromBackup(backupfile):
 	print("[ViX plugin][setLanguageFromBackup] backupfile", backupfile)
 	import tarfile
@@ -104,6 +105,7 @@ def startSetup(menuid):
 def RestoreWizard(*args, **kwargs):
 	from .RestoreWizard import RestoreWizard
 	return RestoreWizard(*args, **kwargs)
+
 
 def LanguageWizard(*args, **kwargs):
 	from Screens.LanguageSelection import LanguageWizard

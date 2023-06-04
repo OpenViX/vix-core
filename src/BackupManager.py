@@ -968,7 +968,6 @@ class VIXBackupManagerMenu(Setup):
 		0, 75, 560, 75, 18, # description
 	]
 		
-
 	def __init__(self, session, setup, plugin=None, PluginLanguageDomain=None):
 		Setup.__init__(self, session, setup, plugin, PluginLanguageDomain)
 		self.skinName = "VIXBackupManagerMenu"
@@ -1166,6 +1165,7 @@ class BackupFiles(Screen):
 	TYPE_SOFTWAREUPDATE = 1
 	TYPE_SCHEDULE = 2
 	TYPE_FACTORYRESET = 3
+
 	def __init__(self, session, backuptype=None):
 		Screen.__init__(self, session)
 		self.Console = Console()

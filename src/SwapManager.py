@@ -80,7 +80,6 @@ class StartSwap:
 			print("[SwapManager][StartSwap] SWAP file %s chosen before swap partition on %s by priority" % (swap_Fname, swap_Pname))
 
 
-
 class VIXSwap(Screen):
 	skin = ["""
 	<screen name="VIXSwap" position="center,center" size="%d,%d">
@@ -124,7 +123,6 @@ class VIXSwap(Screen):
 		160, 200, 100, 30, 20,
 	]
 		
-
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.setTitle(_("SWAP manager"))
@@ -326,7 +324,6 @@ class VIXSwap(Screen):
 				mybox = self.session.open(MessageBox, _("SWAP file not found. You have to create the file before you try to activate it."), MessageBox.TYPE_INFO)
 				mybox.setTitle(_("Info"))
 		self.updateSwap()
-
 
 	def createDel(self):
 		if self.swap_Fname:

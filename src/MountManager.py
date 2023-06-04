@@ -383,8 +383,6 @@ class DeviceMountSetup(Screen, ConfigListScreen):
 		0, 365, 560, 20, 18,
 	]
 		
-		
-
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.partitionList = []

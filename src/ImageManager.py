@@ -676,7 +676,7 @@ class VIXImageManager(Screen):
 		if installedHDD and pathExists("/media/hdd"):
 			if not pathExists("/media/hdd/%s" % getBoxType()):
 				mkdir("/media/hdd/%s" % getBoxType())
-			for slotnum in range(1,4):
+			for slotnum in range(1, 4):
 				if pathExists("/linuxrootfs%s" % slotnum):
 					if pathExists("/media/hdd/%s/linuxrootfs%s/" % (getBoxType(), slotnum)):
 						rmtree("/media/hdd/%s/linuxrootfs%s" % (getBoxType(), slotnum), ignore_errors=True)

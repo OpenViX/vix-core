@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 04:38+0000\n"
-"PO-Revision-Date: 2023-04-02 12:24+0200\n"
+"POT-Creation-Date: 2023-06-08 13:08+0000\n"
+"PO-Revision-Date: 2023-06-10 15:33+0200\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
 "Language: nl\n"
@@ -552,6 +552,9 @@ msgstr "Hierdoor kunnen aanpassingen gemaakt worden in de wetenschap dat de box 
 
 msgid "It seems you have not setup an extra location. Please set it up in the Backup manager setup menu."
 msgstr "Het lijkt erop, dat u geen extra locatie hebt ingesteld. U kunt dit doen vanuit het Back-up manager menu."
+
+msgid "Language Wizard"
+msgstr "Taal Wizard"
 
 msgid "Location of where backup should be saved."
 msgstr "Plaats waar de back-ups bewaard moeten worden."
@@ -1107,6 +1110,9 @@ msgstr "ViX Script runner"
 
 msgid "View progress"
 msgstr "Bekijk voortgang"
+
+msgid "Vu+ ImageManager wizard"
+msgstr "Vu+ ImageManager wizard"
 
 msgid "Wait please while creating SWAP file..."
 msgstr "Wacht tijdens het aanmaken van het SWAP-bestand..."

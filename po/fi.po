@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: enigma2-vix-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-26 00:08+0000\n"
-"PO-Revision-Date: 2023-03-16 18:02+0200\n"
+"PO-Revision-Date: 2023-06-25 16:05+0300\n"
 "Last-Translator: Orlandox\n"
 "Language-Team: Samzan/Kojo/Orlandox\n"
 "Language: fi\n"
@@ -1200,3 +1200,24 @@ msgstr "eMMC-paikkojen kopioinnin vahvistus"
 
 msgid "ImageManager - no HDD unable to backup Vu Multiboot eMMC slots"
 msgstr "Imagen hallinnointi - ei HDD:tä, joten ei pysty varmuuskopioimaan Vu Multiboot eMMC -paikkoja"
+
+msgid "Vu+ ImageManager wizard"
+msgstr "Vu+ Imagen Hallinnointi -velho"
+
+msgid "Are you sure you want to overwrite the Recovery image?"
+msgstr "Haluatko varmasti korvata palautusimagen?"
+
+msgid "This change will overwrite all eMMC slots."
+msgstr "Tämä muutos korvaa kaikki eMMC-paikat."
+
+msgid "We advise flashing the new image to a regular MultiBoot slot and restoring a settings backup."
+msgstr "Suosittelemme flashaamaan uuden imagen tavalliseen MultiBoot-paikkaan ja palauttamaan asetusten varmuuskopion."
+
+msgid "Select 'Flash regular slot' to flash a regular MultiBoot slot or select 'Overwrite Recovery' to overwrite the Recovery image."
+msgstr "Valitse 'Flashaa tavallinen paikka' flashataksesi tavallisen MultiBoot-paikan tai valitse 'Korvaa palautusimage' korvataksesi palautusimagen."
+
+msgid "Flash regular slot"
+msgstr "Flashaa tavallinen paikka"
+
+msgid "Overwrite Recovery"
+msgstr "Korvaa palautusimage"
